@@ -1,0 +1,59 @@
+@include media($tablet) {
+	/* 8 COLUMN LAYOUT
+    */
+    body:before {
+    	content: 'TABLET :: ' + $grid-columns
+    }
+    body {
+        max-width: $tablet-size;
+        margin: 0 auto;
+        // background-color: $light;
+        @include outer-container();
+    }
+
+    header {
+        @include span-columns(8 of 8);
+        // margin-bottom: -10%;
+        position: relative;
+
+        #site-logo {
+          @include span-columns(4 of 8);
+          // @include display-element();
+          img {
+            padding-top: 1rem;
+            padding-left: 1rem;
+          }
+        }
+
+        #site-description {
+            @include span-columns(3 of 8);
+            @include shift(0.5);
+            text-align: center;
+            padding-top: 6.5%;
+
+            h3 {
+                font-size: 1.5rem;
+                line-height: 1.618rem;
+                margin: 0;
+                padding: 0;
+            }
+
+            @include fractal-divider();
+        }
+    }
+
+    aside#sidebar {
+        @include span-columns(2);
+        // @include display-element();
+
+        img {
+            width: 100%;
+        }
+    }
+
+    #main {
+        @include span-columns(6);
+        @include omega();
+        // @include display-element();
+    }
+}
