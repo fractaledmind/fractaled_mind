@@ -1,0 +1,90 @@
+// PROTOTYPING HELPERS
+@mixin show-baseline-grid() {
+  @include background-image(linear-gradient(top, #fff 95%, #000 100%));
+  background-size: 100% $base-line-height*1rem;
+}
+
+@mixin display-element($element: 0) {
+  // generate three random color codes
+  $red: random(256)-1;
+  $green: random(256)-1;
+  $blue: random(256)-1;
+
+  // If no element is given, simply add background
+  @if $element == 0 {
+    // set the background to a semi-transparent color
+    background: rgba($red, $green, $blue, 0.5);
+  // If element is given, apply background to it
+  } @else {
+    #{$element} {
+      background: rgba($red, $green, $blue, 0.5);
+    }
+  }
+}
+
+@mixin vertical-align {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin rotate($deg) {
+    transform: rotate(#{$deg} deg);
+}
+
+@mixin golden-line-height($pre-height)  {
+  // find number of lines required to contain input height
+  $num_lines: ceil(strip-units($pre-height) / $base-line-height);
+  // get new height for that number of lines
+  $new_height: ($num_lines * $base-line-height);
+  line-height: $new_height*1rem;
+}
+
+@mixin golden-height($pre-height)  {
+  // find number of lines required to contain input height
+  $num_lines: ceil(strip-units($pre-height) / $base-line-height);
+  // get new height for that number of lines
+  $new_height: ($num_lines * $base-line-height);
+  height: $new_height*1rem;
+}
+
+@mixin fractal-divider($background: $light) {
+  hr {
+    display: block;
+    border: none;
+    border-top: thin solid black;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1rem;
+    padding-bottom: 0;
+    height: 1rem;
+    margin: 0.75rem auto -0.375rem auto;
+
+    &:after {
+      display: inline-block;
+      font-family: "fontello";
+      font-size: 1.5rem;
+      content: '\e800';
+      transform: rotate(90deg);
+      background-color: $background;
+      padding: 0.5em 0;
+      position: relative;
+      top: -1.25rem;
+    }
+  }
+}
+
+@mixin show-logo($version: 'full') {
+  @if $version == 'full' {
+    #site-logo {
+        img.image_full { display: block; }
+        img.image_mobile { display: none; }
+    }
+  } @else {
+    #site-logo {
+        img.image_full { display: none; }
+        img.image_mobile { display: block; }
+    }
+  }
+}
