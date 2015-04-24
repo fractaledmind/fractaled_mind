@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <title>Blog Title<%= ' - ' + current_article.title unless current_article.nil? %></title>
+    <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
+    <link rel="stylesheet" type="text/css" media="only screen" href="/stylesheets/main.css">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700'
+          rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="fonts/fractal/fontello.css">
+
+    <script type="text/javascript" src="javascripts/slideout.js"></script>
+  </head>
+  <body>
+    <header>
+      <div id="site-logo">
+        <img src="images/large-logo.png" class="image_full" alt="fractaled mind">
+      </div>
+      <div id="site-description">
+        <h3>Disparate thoughts,</h3>
+        <hr>
+        <h3>connected</h3>
+      </div>
+
+      <%= partial "partials/banner" %>
+    </header>
+
+    <%= partial "partials/nav" %>
+
+    <div id="main" role="main">
+      <div id="body"><%= yield %></div>
+    </div>
+
+    <%= partial "partials/footer" %>
+
+  </body>
+</html>

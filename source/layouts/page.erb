@@ -1,0 +1,6 @@
+<% wrap_layout :layout do %>
+  <%= partial '/blog/article', :locals => {:article => current_article, :digest => false} %>
+<% end %>
+      <!-- only exists on non-index pages -->
+      <div id="header-guard"></div>
+      <div id="body"><%= yield %></div>
