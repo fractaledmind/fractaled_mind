@@ -8,9 +8,16 @@ gem "middleman-blog", "~> 3.5.3"
 # For feed.xml.builder
 gem "builder", "~> 3.0"
 
-# For deployment to GitHub Pages
-gem 'middleman-gh-pages'
+# Sass Toolkit
+gem 'bitters'
+gem 'bourbon'
+gem 'neat'
 
-group :development do
-  gem 'middleman-livereload'
-end
+# Middleman Plugins
+gem 'middleman-gh-pages'
+gem 'middleman-autoprefixer'
+gem 'middleman-livereload'
+gem 'jquery-middleman'
+
+# For article summary
+gem 'nokogiri'
