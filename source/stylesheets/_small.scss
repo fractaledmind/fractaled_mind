@@ -1,0 +1,46 @@
+@include media($mobile) {
+    body:before {
+    	content: 'MOBILE :: ' + $grid-columns
+    }
+    header {
+    	position: relative;
+    	margin-bottom: -20%;
+    	aside, #site-description {
+    		display: none;
+    		// visibility: hidden;
+    	}
+
+    	// #site-description {
+    	//     @include span-columns(2 of 4);
+    	//     @include shift(0.5);
+    	//     text-align: center;
+    	//     padding-top: 6.5%;
+    	//     position:absolute;
+    	//     top:55%;
+    	//     right:-7.5%;
+
+    	//     h3 {
+    	//         font-size: 1rem;
+    	//         line-height: 1.618rem;
+    	//         margin: 0;
+    	//         padding: 0;
+    	//     }
+
+    	//     @include fractal-divider();
+    	// }
+    }
+
+    aside#sidebar {
+    	display: none;
+    	// visibility: hidden;
+    }
+
+    #main {
+    	#header-guard {
+    	    // background-color: #ff9;
+    	    width:40%;
+    	    padding-bottom:20%;
+    	    float:left;
+    	}
+    }
+}

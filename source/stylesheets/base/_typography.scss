@@ -1,0 +1,72 @@
+// Custom Fonts
+@font-face {
+  font-family: Born;
+  src: url('../../fonts/Born/Born.otf') format('opentype');
+}
+
+@font-face {
+  font-family: SkolaSans;
+  src: url('../../fonts/SkolaSansPro/SkolaSans Pro OTF/SkolaSans-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: SkolaSans;
+  font-weight: bold;
+  src: url('../../fonts/SkolaSansPro/SkolaSans Pro OTF/SkolaSans-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: SkolaSans;
+  font-style: italic;
+  src: url('../../fonts/SkolaSansPro/SkolaSans Pro OTF/SkolaSans-Italic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: SkolaSans;
+  font-weight: bold;
+  font-style: italic;
+  src: url('../../fonts/SkolaSansPro/SkolaSans Pro OTF/SkolaSans-BoldItalic.otf') format('opentype');
+}
+
+
+// Bourbon's `modular-scale` mixin Overrides
+$pi: 3.1416;
+$modular-scale-ratio: $perfect-fourth;
+// scale starts at h1 and will work down
+$modular-scale-base: $pi*1em;
+
+$font-stack: (
+  primary: #{SkolaSans, 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif},
+  secondary: #{Born, Lato, 'Times New Roman', serif},
+  code: #{Inconsolata, Monaco, Menlo, Consolas, 'Courier New', monospace}
+);
+
+/*
+Semantic sizes scale down from PI along the Perfect Fourth scale:
+  3.1416
+  2.357
+  1.768
+  1.326
+*/
+$type-sizes: (
+  alpha: modular-scale(0, 3.1416em, $perfect-fourth),
+  beta: modular-scale(-1, 3.1416em, $perfect-fourth),
+  gamma: modular-scale(-2, 3.1416em, $perfect-fourth),
+  delta: modular-scale(-3, 3.1416em, $perfect-fourth),
+);
+
+/*
+Semantic scales mirror Goldilocks Approach 3-device schema.
+Scales down from 1 along Minor Third scale:
+  1
+  0.833
+  0.694
+*/
+$type-scales: (
+  desktop: pow($minor-third, 0),
+  tablet: pow($minor-third, 1),
+  mobile: pow($minor-third, 2),
+);
+
+//map-get($type-sizes, alpha) / map-get($type-scales, mobile)
+//map-get(map-get(map-get($type-details, alpha), desktop), font-size)
