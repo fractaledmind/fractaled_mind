@@ -1,0 +1,16 @@
+All headers in main index reduced to h5 size
+sidebar visible in large layout only
+in medium layout, body starts in little bottom corner of fractal
+move searchbar to sidebar
+make searchbar white when active
+move Read this Article to bottom right of cards
+remove aside when reading article (only in Index)
+fill in text bubbles (not transparent)
+move nav bar in header to bottom equal with MIND
+
+font awesome
+    cogs
+    code
+    graduation-cap
+    newspaper-o
+    terminal
