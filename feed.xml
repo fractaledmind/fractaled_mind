@@ -129,7 +129,7 @@ ZotQuery will kick you to the &lt;code&gt;z:config&lt;/code&gt; command if you t
 without having first configured your settings.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=9b88b18ee5b3d8d536a927e0b5a996ce" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=9b88b18ee5b3d8d536a927e0b5a996ce" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;On first run, the configurator will begin by searching for, and creating if
@@ -155,7 +155,7 @@ fails, it will ask you to select one manually. The title of the dialog box
 will alert you to what path the configurator requires:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=7d71b31d83673897c100ec3a4b0e7633" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=7d71b31d83673897c100ec3a4b0e7633" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Once all paths are stored, the configurator moves on to set up your &lt;a href="http://www.zotero.org/support/dev/server_api/v2/start"&gt;Zotero
@@ -165,7 +165,7 @@ for the user to utilize these functions, they must have and set up a Zotero
 private key. Step one requires your Zotero User ID:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=c8f2d8b4869679f42a33d8a4bf22d34d" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=c8f2d8b4869679f42a33d8a4bf22d34d" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -175,7 +175,7 @@ find my User ID?&lt;/code&gt; button. This will open Zotero’s "Feeds/API” ta
 may need to login. Once logged in, you will see a page similar to this:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=f34d6b70c8cec4a86a28d0a41dd588c6" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=f34d6b70c8cec4a86a28d0a41dd588c6" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -194,7 +194,7 @@ you will likely need to right-click and manually paste in the ID).&lt;/p&gt;
 &lt;p&gt;Second, you will need to input your API Key:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=b7501351a8c6a90d28231d36d00658b5" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=b7501351a8c6a90d28231d36d00658b5" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -210,7 +210,7 @@ style and format. Once you have entered your API information, the configurator
 will move to setting your export preferences:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=8ae028368baf4f061bea37f51385f81d" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=8ae028368baf4f061bea37f51385f81d" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -224,7 +224,7 @@ Scannable Cites format&lt;/a&gt;
 citations and references.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=7ff796cc5a872bf574512cbf3bb5324a" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=7ff796cc5a872bf574512cbf3bb5324a" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -235,7 +235,7 @@ version 4.0) can export in either
 Text&lt;/a&gt;.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=c7e913cc09149923b802797069f1c709" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=c7e913cc09149923b802797069f1c709" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -245,7 +245,7 @@ text editor. You can also alter your export preferences at any point, using
 the &lt;code&gt;z:settings&lt;/code&gt; command.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=a86e2f7f739addd226aa593a18a7647a" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=a86e2f7f739addd226aa593a18a7647a" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -256,7 +256,7 @@ Firefox&lt;/a&gt;. This will determine which app will
 open any items that you select.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=257d5b317228aee2b301ca06261d5190" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=257d5b317228aee2b301ca06261d5190" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -268,7 +268,7 @@ ZotQuery is configured. If you open the workflow data folder, you will see
 these files:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=1081f506d257c156abc564cf028b8b3b" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=1081f506d257c156abc564cf028b8b3b" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -324,7 +324,7 @@ you can search using lowercase queries and still get matches.&lt;/p&gt;
 &lt;code&gt;z&lt;/code&gt;.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=567ee0cd7ff26f4ae9e679e264e7c422" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=567ee0cd7ff26f4ae9e679e264e7c422" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -341,7 +341,7 @@ characters. This ensures faster, smarter results. Until you have typed at
 least 3 characters, you will see this result:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=119d542fbf0d08e0d912797e4312a0ef" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=119d542fbf0d08e0d912797e4312a0ef" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -351,7 +351,7 @@ a list of all of your Zotero items that match the query. If your query doesn’t
 have any matches, ZotQuery returns an error:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=91df1cf87a6292d94203ae51ee388d21" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=91df1cf87a6292d94203ae51ee388d21" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -359,7 +359,7 @@ have any matches, ZotQuery returns an error:&lt;/p&gt;
 &lt;p&gt;If, however, you have results, ZotQuery presents them in a ranked order:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=952fa142d27bcab9d39be9bcde86b468" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=952fa142d27bcab9d39be9bcde86b468" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -372,7 +372,7 @@ types:&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=801d472963cdd47d17b4e423ae92f76b" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=801d472963cdd47d17b4e423ae92f76b" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
@@ -380,7 +380,7 @@ types:&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=02a65430e04057941572246f75e4ca45" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=02a65430e04057941572246f75e4ca45" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
@@ -388,7 +388,7 @@ types:&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=e404e2022a785ecad903a1eb624fb16d" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=e404e2022a785ecad903a1eb624fb16d" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
@@ -396,7 +396,7 @@ types:&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=b92404da1b2d697fdd6200f122052341" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=b92404da1b2d697fdd6200f122052341" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
@@ -404,7 +404,7 @@ types:&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=3f05898b857bce2e4d3b1cfb417406db" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=3f05898b857bce2e4d3b1cfb417406db" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -414,7 +414,7 @@ will the subtitle field. The subtitle field will include &lt;code&gt;Attachments
 where n is the number of attachments:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=856f7cded42691f4b6a9e662fba932cb" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=856f7cded42691f4b6a9e662fba932cb" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -426,7 +426,7 @@ where n is the number of attachments:&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=7dfa101e4fee44a787be1f6ba0722c5d" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=7dfa101e4fee44a787be1f6ba0722c5d" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
@@ -434,7 +434,7 @@ where n is the number of attachments:&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=71696e8a904bf33971cd7129c63d6405" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=71696e8a904bf33971cd7129c63d6405" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
@@ -442,7 +442,7 @@ where n is the number of attachments:&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=cf268e5c336c11f233a58ec9450540b3" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=cf268e5c336c11f233a58ec9450540b3" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
@@ -450,7 +450,7 @@ where n is the number of attachments:&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=7df21b5a4d7c4b9d467915f0bd4f8cab" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=7df21b5a4d7c4b9d467915f0bd4f8cab" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
@@ -458,7 +458,7 @@ where n is the number of attachments:&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=7b4a61b3c257078b45f8de901c3ddb28" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=7b4a61b3c257078b45f8de901c3ddb28" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -468,7 +468,7 @@ where n is the number of attachments:&lt;/p&gt;
 &lt;p&gt;The &lt;strong&gt;Author&lt;/strong&gt; search is launched by &lt;code&gt;zot:a&lt;/code&gt; or the short version &lt;code&gt;za&lt;/code&gt;.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=c1d303aaf08f5b03e7446988121e942b" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=c1d303aaf08f5b03e7446988121e942b" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -478,7 +478,7 @@ For example: &lt;code&gt;zot:a thomas&lt;/code&gt; will return all the items tha
 editor, translator, etc.) with the last name “Thomas”.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=d2c5b84736ad2de96028bbee7e960222" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=d2c5b84736ad2de96028bbee7e960222" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -488,7 +488,7 @@ editor, translator, etc.) with the last name “Thomas”.&lt;/p&gt;
 &lt;p&gt;The &lt;strong&gt;Title&lt;/strong&gt; search is launched by &lt;code&gt;zot:t&lt;/code&gt; or the short version &lt;code&gt;zt&lt;/code&gt;.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=7b5e6b51eb3b46a7cb048d4e2e01f09e" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=7b5e6b51eb3b46a7cb048d4e2e01f09e" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -498,7 +498,7 @@ editor, translator, etc.) with the last name “Thomas”.&lt;/p&gt;
 “Virgil”.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=2f0de99ae931231f194351517cf62eff" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=2f0de99ae931231f194351517cf62eff" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -514,7 +514,7 @@ one, you search &lt;em&gt;for&lt;/em&gt; a particular Tag or Collection; in step
 &lt;p&gt;The &lt;strong&gt;Tag&lt;/strong&gt; search is launched by &lt;code&gt;z:tag&lt;/code&gt; or the short version &lt;code&gt;ztg&lt;/code&gt;.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=3c6078a201c565c54c43200eef925f39" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=3c6078a201c565c54c43200eef925f39" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -522,7 +522,7 @@ one, you search &lt;em&gt;for&lt;/em&gt; a particular Tag or Collection; in step
 &lt;p&gt;This allows you to search through all of your Zotero tags.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=c20da7212db7d31c6c69f0c0ae0a68d6" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=c20da7212db7d31c6c69f0c0ae0a68d6" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -533,7 +533,7 @@ search, which will search within that tag for your query. The &lt;code&gt;zot:ta
 limited to those items with the previously chosen tag.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=a95c8266614a5fb5a5dde419e750a3cb" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=a95c8266614a5fb5a5dde419e750a3cb" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -542,7 +542,7 @@ limited to those items with the previously chosen tag.&lt;/p&gt;
 which begins a search for all of your Zotero collections.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=45af428e10bf4776fd1aafdb401b5533" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=45af428e10bf4776fd1aafdb401b5533" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -550,7 +550,7 @@ which begins a search for all of your Zotero collections.&lt;/p&gt;
 &lt;p&gt;As you type, it will filter any collections that contain the query.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=24bb7bbb5e767eaabc75836c141475bb" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=24bb7bbb5e767eaabc75836c141475bb" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -559,7 +559,7 @@ which begins a search for all of your Zotero collections.&lt;/p&gt;
 search (also &lt;code&gt;znc&lt;/code&gt;), which will search within that particular collection.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=ed949dcfbf97280c489d968053d9a7f6" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=ed949dcfbf97280c489d968053d9a7f6" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -575,7 +575,7 @@ default application. As of now, &lt;code&gt;z:att&lt;/code&gt; only allows for y
 attached files.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=aef0a0cb460d6ce88448f3caa347da59" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=aef0a0cb460d6ce88448f3caa347da59" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -623,7 +623,7 @@ will open to that item.&lt;/p&gt;
 reference to that item.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=3562b6bd48f3409ee5e4b7f7063fd69a" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=3562b6bd48f3409ee5e4b7f7063fd69a" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -637,7 +637,7 @@ types.&lt;/p&gt;
 your chosen format.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=740b599810168fb989a80e4ac83676c6" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=740b599810168fb989a80e4ac83676c6" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -647,7 +647,7 @@ your chosen format.&lt;/p&gt;
 &lt;p&gt;Next, if you hit &lt;code&gt;shift+return&lt;/code&gt;, you will open the attachment of that item.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=526c10ac14908120e81ffa4bbacd74f3" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=526c10ac14908120e81ffa4bbacd74f3" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -656,7 +656,7 @@ your chosen format.&lt;/p&gt;
 temporary bibliography file.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=e3dcf0e83756d44fcad3b99ab4e705c3" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=e3dcf0e83756d44fcad3b99ab4e705c3" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -668,7 +668,7 @@ citations in the temporary file, you need only run the &lt;code&gt;z:bib&lt;/cod
 export them.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=b3b5f6d4ca7f4c53ee7444f04bf2203c" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=b3b5f6d4ca7f4c53ee7444f04bf2203c" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -678,7 +678,7 @@ organize them in alphabetical order, and copy the result to the clipboard. A
 result in Markdown format will resemble this:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=a3f6f23b57bd0bdcf16df2411b6f5a85" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=a3f6f23b57bd0bdcf16df2411b6f5a85" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -694,7 +694,7 @@ can use &lt;code&gt;control+return&lt;/code&gt; to export a bibliography of that
 instead of simply searching within that Tag or Collection by hitting &lt;code&gt;return&lt;/code&gt;.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=09b7b508e0acf574c48525b863adb3fe" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=09b7b508e0acf574c48525b863adb3fe" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -735,7 +735,7 @@ JSON cache of your Zotero database. This file is created and then updated with
 the keyword &lt;code&gt;z:cache&lt;/code&gt;.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=0198a2224d2866f8710c5fbc314ed956" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=0198a2224d2866f8710c5fbc314ed956" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -769,7 +769,7 @@ the hotkey, you can launch immediately into the title search (with a snazzy
 interface):&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=7b86435a68eef43d7bc23de556f9e928" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=7b86435a68eef43d7bc23de556f9e928" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -784,7 +784,7 @@ Alfred’s preferences and go to the &lt;code&gt;Features&lt;/code&gt; tab. Near
 you will see a button to &lt;code&gt;Setup fallback results&lt;/code&gt;:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=cd8b68f3be995849abf7ffb9ea724300" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=cd8b68f3be995849abf7ffb9ea724300" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -792,7 +792,7 @@ you will see a button to &lt;code&gt;Setup fallback results&lt;/code&gt;:&lt;/p&
 &lt;p&gt;When you click that button a panel will slide out of top:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=06d1584167b4402788114f761eb2464f" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=06d1584167b4402788114f761eb2464f" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -802,7 +802,7 @@ can even re-order the fallback searches, and put ZotQuery near the top. When
 setup, this will allow you to search in Alfred like this:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=a51520dec46dbcbd4f0282c5abd9de0f" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=a51520dec46dbcbd4f0282c5abd9de0f" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -810,7 +810,7 @@ setup, this will allow you to search in Alfred like this:&lt;/p&gt;
 &lt;p&gt;And have it immediately become a ZotQuery search:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=9e1e267ba1c0a89a68af19aa9c6beefb" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="" src="/images/?hash=9e1e267ba1c0a89a68af19aa9c6beefb" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -1438,7 +1438,7 @@ def function(*args, **kwargs):
     print(args)
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="fractal" src="../images/dragon_curve.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="fractal" src="/images/dragon_curve.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;fin.&lt;/p&gt;
 </content>
