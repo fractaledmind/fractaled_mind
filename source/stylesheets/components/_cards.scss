@@ -79,21 +79,22 @@
     .card-title {
       $font-size: map-get($type-sizes, delta) / map-get($type-scales, desktop);
       display:block;
-      text-transform:uppercase;
-      font-size:$font-size;
+      // text-transform:uppercase;
+      font-family: FontinSans;
+      font-size: $font-size;
       font-weight: bold;
       line-height: golden-height($font-size);
-      color:$card-font-color;
-      margin:0;
+      color: $card-font-color;
+      margin: 0 0.5rem;
       margin-top: 0.5rem;
     }
 
     .card-date {
       $font-size: map-get($type-sizes, delta) / map-get($type-scales, mobile);
-      display:block;
-      font-size:$font-size;
+      display: block;
+      font-size: $font-size;
       line-height: golden-height($font-size);
-      color:$light;
+      color: $light;
     }
   }
 
