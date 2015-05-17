@@ -1,26 +1,35 @@
 @charset 'utf-8';
 
+// $visual-grid: true;
+// $visual-grid-color: #a7adba !default;
+
 // Thoughtbot Toolchain
 @import 'vendors/bourbon/all';
 @import 'vendors/bitters/variables';   // Bitters needs to be imported before Neat
 @import 'vendors/bitters/buttons';
 @import 'vendors/bitters/lists';
-@import 'vendors/bitters/typography';
 @import 'vendors/neat/all';
+
+@import 'base/colors';
 
 // Thoughtbot Overrides
 @import 'vendors-extensions/grid-settings';
+@import 'vendors-extensions/typography';
 
 // Base color and typography details
-@import 'base/typography';
-@import 'base/colors';
 @import 'helpers/mixins';
+@import 'components/hyperlinks';
+@import 'components/hr';
+@import 'components/tags';
 @import 'components/cards';
+@import 'layout/sidebar';
+@import 'layout/header';
+@import 'layout/footer';
 
 @import 'small';
 @import 'medium';
 @import 'large';
 
 body {
-	background-color: $light;
+	background-color: $lighterest;
 }

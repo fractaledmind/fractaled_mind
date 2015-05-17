@@ -1,41 +1,31 @@
 header {
-  // header spans entire page
-  @include span-columns(12);
-  // relative so that search bar can be properly positioned
-  position: relative;
-  // allow for content and aside to overlay
-  margin-bottom: -9%;
-  @include media(max-width 480px) {
-      margin-bottom: -1%;
-  }
+  // relative so that site-info can be properly positioned
+  // position: relative;
 
   // MAIN SITE LOGO (LEFT SIDE)
   #site-logo {
-    @include span-columns(6 of 12);
     img {
-      padding-top: 1rem;
-      padding-left: 1rem;
+      padding-top: $golden-ratio*1rem;
+      // padding-left: 1rem;
     }
   }
 
-  // MAIN SITE INFO (RIGHT SIDE)
-  #site-info {
-    @include span-columns(6 of 12);
+  #social-networks {
+    text-align: right;
+    padding-right: 1.5rem;
+    //increased because img sits slightly below frame
+    padding-top: $golden-ratio*1.5rem;
 
-    // site description
-    h2 {
-      font-family: SkolaSans;
-      text-transform: uppercase;
-      // position it relative to bottom-right
-      position: absolute;
-      bottom: 0;
-      margin-bottom: 12%;
-      width: 50%;
-      text-align: right;
-      padding-right: 3.5%;
+    li {
+      display: inline-block;
+      padding: 0 0.5rem;
+    }
 
-      @include media(max-width 480px) {
-        display: none;
+    a {
+      color: $darkest;
+
+      &:hover, &:focus, &:active {
+          color: $red;
       }
     }
   }

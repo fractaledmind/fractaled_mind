@@ -1,7 +1,7 @@
 ---
 title: my interesting new article
 date: 2015-03-30 22:58 UTC
-tags:
+tags: work, play, sample, example
 ---
 
 Welcome to Ghost

@@ -2,66 +2,113 @@
   @include display(flex);
   @include flex-wrap(wrap);
   @include justify-content(space-between);
+  padding: 12.944px;
 }
 
 .card {
-  $base-border-color: $dark !default;
-  $base-border-radius: 6px !default;
-  $base-background-color: $light !default;
-  $base-spacing: 1.5em !default;
-  $action-color: $blue !default;
-  $base-link-color: $action-color !default;
-  $dark-gray: $darker !default;
-  $base-font-color: $dark-gray !default;
-  $card-border-color: $base-border-color;
-  $card-border: 1px solid $card-border-color;
-  $card-background: $base-background-color;
-  $card-header-background: $card-background;
-  $card-hover-background: lighten($card-background, 5%);
-  $card-image-background: #DBD199;
-  $card-image-hover-background: lighten($card-image-background, 5%);
-  $card-margin: 1em;
+  $card-border-radius: 3px !default;
+  $card-spacing: 1.5em !default;
+  $card-font-color: $darkest !default;
+  $card-border: 1px solid $lightest;
+  $card-background: white;
 
-  @include flex-basis(15em);
+
+  @include flex-basis(18em);
   @include flex-grow(1);
+  @include transition(all 0.25s ease-in-out);
   background-color: $card-background;
-  border-radius: $base-border-radius;
+  border-radius: $card-border-radius;
   border: $card-border;
-  box-shadow: 0 2px 4px darken($base-background-color, 10%);
-  cursor: pointer;
-  margin: 0 $card-margin $base-spacing $card-margin;
+  box-shadow: 0 2px 4px darken($lightest, 10%);
+  // with parent padding, = 25.888px (gutter) margins all 'round
+  margin: 12.944px;
   position: relative;
+
+  .card-link {
+    @include transition(box-shadow 0.25s ease-in-out);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    &:focus,
+    &:hover,
+    &:active {
+      cursor: pointer;
+      box-shadow: 0px 8px 16px darken($lightest, 40%);
+    }
+  }
+
+  .card-tags {
+    position: absolute;
+    top: -0.75rem;
+    right: 0;
+    margin: 0 7.5px;
+
+    li { display: inline-block; }
+
+    .badge {
+      @include badge();
+    }
+  }
 
   .card-image {
     overflow: hidden;
-    max-height: 150px;
+    padding-top: 1rem;
+    max-height: 11rem; // padding-top + img height
 
     img {
-      background: $card-image-background;
-      border-top-left-radius: $base-border-radius;
-      border-top-right-radius: $base-border-radius;
-      width: 100%;
+      display: block;
+      margin: 0 auto;
+      height: 10rem;
+    }
+
+    #tag-filler-space {
+      min-height: 1rem;
     }
   }
 
   .card-header {
-    background-color: $card-header-background;
-    border-radius: $base-border-radius $base-border-radius 0 0;
-    font-weight: bold;
-    line-height: 1.5em;
-    padding: ($base-spacing / 3) ($base-spacing / 2);
-  }
+    background-color: $card-background;
+    color: $card-font-color;
+    // padding: ($card-spacing / 3) ($card-spacing / 2);
+    text-align:center;
 
-  @include fractal-divider($card-header-background);
+    .card-title {
+      $font-size: map-get($type-sizes, delta) / map-get($type-scales, desktop);
+      display:block;
+      text-transform:uppercase;
+      font-size:$font-size;
+      font-weight: bold;
+      line-height: golden-height($font-size);
+      color:$card-font-color;
+      margin:0;
+      margin-top: 0.5rem;
+    }
 
-  .card-copy {
-    font-size: 0.9em;
-    line-height: 1.5em;
-    padding: ($base-spacing / 2) ($base-spacing / 2);
-
-    p {
-      margin: 0 0 ($base-spacing / 2);
+    .card-date {
+      $font-size: map-get($type-sizes, delta) / map-get($type-scales, mobile);
+      display:block;
+      font-size:$font-size;
+      line-height: golden-height($font-size);
+      color:$light;
     }
   }
 
+  hr.fractal {
+    @include fractal-divider($card-background);
+  }
+
+  .card-copy {
+    $font-size: map-get($type-sizes, delta) / map-get($type-scales, mobile);
+    color: $card-font-color;
+    font-size: $font-size;
+    line-height: golden-height($font-size);
+    padding: 0 1em;
+    margin: 0 0 ($card-spacing / 2);
+
+    h1, h2, h3, h4, h5, h6 { font-size: 1.1rem; font-weight: bold; }
+  }
 }

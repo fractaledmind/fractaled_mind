@@ -1,0 +1,35 @@
+$badge-font-size: 0.75em !default;
+
+@mixin badge($color: $red) {
+  /* STYLE */
+  font-family: map-get($font-stack, primary);
+  font-size: $badge-font-size;
+  font-weight: bold;
+  border-radius: $badge-font-size;
+  line-height: 1;
+  // background-color: $color;
+  color: $lighterest;
+
+  /* POSITION */
+  padding: 0.25rem 1rem;
+  margin: 0 4px;
+
+  &:hover,
+  &:focus,
+  &:active {
+      @include transform(scale(1.1));
+  }
+}
+
+// Give each tag a different color (up to 8 colors, then repeats start)
+<% blog.tags.to_enum.with_index(1).each do |obj, idx| %>
+    .badge[href*="<%= obj[0] %>"] {
+        $i: <%= idx %>;
+        @if $i > length($rainbow-list) {
+          // More tags than colors, so start over on colors
+          $i: $i - length($rainbow-list);
+        }
+        $current-color: nth($rainbow-list, $i);
+        background-color: $current-color;
+    }
+<% end %>

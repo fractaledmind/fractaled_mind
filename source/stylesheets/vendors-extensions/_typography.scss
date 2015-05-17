@@ -1,0 +1,152 @@
+// Custom Fonts
+@font-face {
+  font-family: Born;
+  src: url('../../fonts/Born/Born.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'fractal';
+  src: url('./../fonts/fractal/src/fontello.eot'); /* IE9 Compat Modes */
+  src: url('font/fontello.eot?35233069#iefix') format('embedded-opentype'),
+       url('./../fonts/fractal/src/fontello.woff') format('woff'), /* Pretty Modern Browsers */
+       url('./../fonts/fractal/src/fontello.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('./../fonts/fractal/src/fontello.svg') format('svg'); /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: SkolaSans;
+  src: url('../../fonts/SkolaSansPro/SkolaSans Pro OTF/SkolaSans-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: SkolaSans;
+  font-weight: bold;
+  src: url('../../fonts/SkolaSansPro/SkolaSans Pro OTF/SkolaSans-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: SkolaSans;
+  font-style: italic;
+  src: url('../../fonts/SkolaSansPro/SkolaSans Pro OTF/SkolaSans-Italic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: SkolaSans;
+  font-weight: bold;
+  font-style: italic;
+  src: url('../../fonts/SkolaSansPro/SkolaSans Pro OTF/SkolaSans-BoldItalic.otf') format('opentype');
+}
+
+$font-stack: (
+  primary: #{SkolaSans, 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif},
+  secondary: #{Born, Lato, 'Times New Roman', serif},
+  code: #{Inconsolata, Monaco, Menlo, Consolas, 'Courier New', monospace}
+);
+
+// Bourbon Overrides
+$pi: 3.1416;
+$golden-ratio: 1.618;
+$modular-scale-ratio: $perfect-fourth;
+// scale starts at h1 and will work down
+$modular-scale-base: $pi*1rem;
+
+// Typography
+$base-font-family: map-get($font-stack, primary);
+$heading-font-family: map-get($font-stack, primary);
+
+// Font Sizes
+$base-font-size: 1em;
+
+// Line height
+$base-line-height: $golden-ratio;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Font Colors
+$base-background-color: #fff;
+$base-font-color: $darkerest;
+$action-color: $red;
+
+
+// Fixed vertical typographic scale mixins
+@function num-baselines($input-height) {
+  // find number of lines required to contain input height
+  $num-lines: ceil(strip-units($input-height) / $base-line-height);
+  // get new height for that number of lines
+  $new-height: ($num-lines * $base-line-height);
+  @return $new-height*1rem;
+}
+
+@function golden-height($input-height) {
+  @return $input-height * $base-line-height;
+}
+
+/*
+Semantic sizes scale down from PI along the Perfect Fourth scale:
+  3.1416
+  2.357
+  1.768
+  1.326
+*/
+$type-sizes: (
+  alpha: modular-scale(0,  $modular-scale-base, $modular-scale-ratio),
+  beta:  modular-scale(-1, $modular-scale-base, $modular-scale-ratio),
+  gamma: modular-scale(-2, $modular-scale-base, $modular-scale-ratio),
+  delta: modular-scale(-3, $modular-scale-base, $modular-scale-ratio),
+);
+/*
+Semantic scales mirror Goldilocks Approach 3-device schema.
+Scales down from 1 along Minor Third scale:
+  1
+  0.833
+  0.694
+*/
+$type-scales: (
+  desktop: pow($minor-third, 0),
+  tablet:  pow($minor-third, 1),
+  mobile:  pow($minor-third, 2),
+);
+//map-get($type-sizes, alpha) / map-get($type-scales, mobile)
+
+body {
+  @include font-feature-settings("kern", "liga", "pnum");
+  -webkit-font-smoothing: antialiased;
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height*1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font-family;
+  margin: 0 0 $small-spacing;
+}
+
+p {
+  margin: 0 0 $small-spacing;
+}
+
+hr {
+  border-bottom: $base-border;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: $base-spacing 0;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}

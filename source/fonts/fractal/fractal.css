@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'fontello';
+  font-family: 'fractal';
   src: url('font/fontello.eot?35233069');
   src: url('font/fontello.eot?35233069#iefix') format('embedded-opentype'),
        url('font/fontello.woff?35233069') format('woff'),
@@ -20,7 +20,7 @@
 */
 
  [class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: "fontello";
+  font-family: "fractal";
   font-style: normal;
   font-weight: normal;
   speak: none;

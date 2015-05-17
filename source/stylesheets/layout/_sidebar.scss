@@ -1,0 +1,55 @@
+#sidebar {
+  // padding-left: 1rem;
+
+  h5 {
+    $font-size: map-get($type-sizes, delta) / map-get($type-scales, tablet);
+    font-size:$font-size;
+    font-weight: bold;
+    line-height: golden-height($font-size);
+  }
+
+  #nav {
+    margin-bottom: 1rem;
+
+    li {
+      $font-size: map-get($type-sizes, delta) / map-get($type-scales, desktop);
+      font-family: map-get($font-stack, primary);
+      font-size: $font-size;
+      line-height: golden-height($font-size);
+    }
+  }
+
+  #search {
+    @import "../components/searchbar";
+    margin-bottom: 1rem;
+  }
+
+  #comic {
+    text-align: center;
+  }
+
+  hr.fractal {
+    @include fractal-divider();
+  }
+
+  #recent-articles {
+    li {
+      margin-bottom:10px;
+      font-size: 0.8rem;
+    }
+    .fa-li {
+      top: .4em;
+      color: $red;
+    }
+  }
+
+  #all-tags {
+    li { display: inline-block; }
+
+    .badge {
+      @include badge($blue);
+      display: inline-block;
+      margin-bottom: 0.25rem;
+    }
+  }
+}

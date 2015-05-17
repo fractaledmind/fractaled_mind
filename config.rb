@@ -7,19 +7,21 @@
 activate :blog do |blog|
   blog.name = "fractaled mind"
   # This will add a prefix to all links, template references and source paths
-  blog.prefix = "article"
+  #blog.prefix = ""
+  blog.default_extension = ".markdown"
 
-  blog.permalink = "{title}.html"
-  # Matcher for blog source files
-  # blog.sources = "{year}-{month}-{day}-{title}.html"
+  # Matcher for blog source files (originals have `default_extension`)
+  blog.sources = "article/{title}.html"
+  # Template for article URL slugs
+  blog.permalink = "article/{title}.html"
+  # Template for tag URL slugs
   blog.taglink = "categories/{tag}.html"
   # blog.layout = "layout"
   blog.summary_separator = /(READMORE)/
-  blog.summary_length = 250
+  blog.summary_length = 200
   # blog.year_link = "{year}.html"
   # blog.month_link = "{year}/{month}.html"
   # blog.day_link = "{year}/{month}/{day}.html"
-  blog.default_extension = ".markdown"
 
   blog.tag_template = "tag.html"
   blog.calendar_template = "calendar.html"
@@ -31,7 +33,8 @@ activate :blog do |blog|
 end
 
 page "/feed.xml", :layout => false
-page "/*", :layout => "page"
+# Wrap articles in proper HTML
+page "article/*", :layout => "page"
 
 ###
 # Compass
@@ -68,7 +71,7 @@ page "/*", :layout => "page"
 ###
 
 # Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
+#activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
 configure :development do
@@ -105,4 +108,13 @@ configure :build do
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
+end
+
+activate :deploy do |deploy|
+  deploy.method = :git
+  # Optional Settings
+  # deploy.remote   = 'custom-remote' # remote name or git url, default: origin
+  # deploy.branch   = 'custom-branch' # default: gh-pages
+  # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
+  # deploy.commit_message = 'custom-message'      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
 end

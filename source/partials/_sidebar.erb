@@ -1,0 +1,52 @@
+<aside id="sidebar">
+
+  <ul id="nav">
+    <li><a href="/about">about</a></li>
+    <li><a href="/donate">support</a></li>
+    <li><a href="/contact">contact</a></li>
+    <li><a href="/newsletter">newsletter</a></li>
+  </ul>
+
+  <div id="search">
+    <div class="search-bar">
+      <form role="search">
+        <input type="search" placeholder="Search..." />
+        <button type="submit">
+          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png" alt="Search Icon">
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div id="comic">
+    <%= image_tag 'pair-of-ducks.png', :alt => "Pair of Ducks" %>
+    <h5>Paradox</h5>
+  </div>
+
+  <hr class="fractal">
+
+  <div id="recent-articles">
+    <h5>Recent Articles</h5>
+    <ul class="fa-ul">
+      <% blog.articles[0...5].each do |article| %>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <%= link_to article.title, article %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div id="all-tags">
+    <h5>Tags</h5>
+    <ul>
+      <% blog.tags.each do |tag, articles| %>
+        <li>
+          <%= link_to "#{tag} (#{articles.size})", tag_path(tag),
+              :class => "badge no-hvr" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+</aside>

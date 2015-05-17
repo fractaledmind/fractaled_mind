@@ -1,0 +1,26 @@
+// requires `base/colors` and `base/typography`
+@mixin fractal-divider($background: $lighterest) {
+  display: block;
+  border: none;
+  border-top: thin solid $dark;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1rem;
+  padding-bottom: 0;
+  height: 1rem;
+  margin: 0.75rem auto 0.25rem auto;
+
+  &:after {
+    display: inline-block;
+    font-family: fractal;
+    font-size: 1.5rem;
+    content: '\e800';
+    transform: rotate(90deg);
+    background-color: $background;
+    color: $dark;
+    padding: 0.5em 0;
+    position: relative;
+    top: -1.25rem;
+  }
+}

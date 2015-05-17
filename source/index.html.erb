@@ -13,18 +13,41 @@ per_page: 10
 <ul class="cards">
   <% page_articles.each_with_index do |article, i| %>
     <li class="card">
-      <div class="card-header">
-        <h3><%= link_to article.title, article %></h3>
-        <h5><%= article.date.strftime('%d %B %Y') %></h5>
+      <a href="<%= article.url %>" class="card-link no-hvr"></a>
+      <ul class="card-tags">
+        <% article.tags.each do |tag| %>
+          <li>
+            <%= link_to "#{tag}", tag_path(tag),
+                :class => "badge no-hvr" %>
+          </li>
+        <% end %>
+      </ul>
+      <div class="card-image">
+        <%# if article has header image, add it %>
+        <% if !article.data['header-image'].nil? && article.data['header-image'] != "" %>
+          <%= image_tag article.data['header-image'] %>
+        <%# if no image, but tags, add filler element %>
+        <% elsif !article.tags.to_a.empty? %>
+          <div id="tag-filler-space"></div>
+        <% end %>
       </div>
-      <hr>
+      <div class="card-header">
+        <h3 class="card-title">
+          <!-- <%= link_to article.title, article %> -->
+          <%= article.title %>
+        </h3>
+        <h5 class="card-date">
+          <%= article.date.strftime('%d %B %Y') %>
+        </h5>
+      </div>
+      <hr class="fractal">
       <div class="card-copy">
-      <p><%= article.summary %></p>
-      <div class="read"><%= link_to 'Read this article <i class="fa fa-chevron-circle-right"></i>', article %></div>
+        <%= article.summary %>
       </div>
     </li>
   <% end %>
 </ul>
+
 
 <% if paginate %>
   <% if next_page %>

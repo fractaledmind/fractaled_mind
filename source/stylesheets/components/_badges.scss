@@ -1,37 +1,18 @@
 $badge-font-size: 0.75em !default;
-$medium-gray: $lighterest !default;
-$alert-color: $blue !default;
-$error-color: $red !default;
-$notice-color: $violet !default;
-$success-color: $green !default;
 
-@mixin badge($color: $medium-gray) {
-  background-color: $color;
-  border-radius: $badge-font-size * 5;
-  color: darken($color, 60%);
+@mixin badge($color: $red) {
+  // background-color: $color;
+  color: $lighterest;
+  border-radius: $badge-font-size;
   display: inline-block;
+  font-family: map-get($font-stack, primary);
   font-size: $badge-font-size;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
-  padding: 0.4em 1.2em;
-}
+  padding: 0.25rem 1rem;
+  margin: 0 4px;
 
-.badge {
-  @include badge;
-}
-
-.badge-alert {
-  @include badge($alert-color);
-}
-
-.badge-error {
-  @include badge($error-color);
-}
-
-.badge-notice {
-  @include badge($notice-color);
-}
-
-.badge-success {
-  @include badge($success-color);
+  &:hover, &:active {
+      background-color: lighten($color, 10%);
+  }
 }

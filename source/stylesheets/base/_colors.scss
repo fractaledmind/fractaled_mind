@@ -4,10 +4,10 @@ $darkerest:  #2b303b;
 $darkest:    #343d46;
 $darker:     #4f5b66;
 $dark:       #65737e;
-$lighterest: #a7adba;
-$lightest:   #c0c5ce;
-$lighter:    #dfe1e8;
-$light:      #eff1f5;
+$light:		 #a7adba;
+$lighter:    #c0c5ce;
+$lightest:   #dfe1e8;
+$lighterest: #eff1f5;
 
 // Rainbow
 $red:        #bf616a;
@@ -18,3 +18,11 @@ $blue:       #96b5b4;
 $indigo:     #8fa1b3;
 $violet:     #b48ead;
 $brown:      #ab7967;
+
+$rainbow-list: $red $orange $yellow $green $blue $indigo $violet $brown;
+
+// Social
+$facebook: #3b5998;
+$twitter: #4099FF;
+$github: #171515;
+$rss: #FF6600;

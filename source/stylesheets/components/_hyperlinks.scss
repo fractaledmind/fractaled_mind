@@ -1,0 +1,54 @@
+@mixin underline-from-center() {
+  /* http://tobiasahlin.com/blog/css-trick-animating-link-underlines/ */
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  color: $red;
+  line-height:1;
+
+  &:hover {
+    color: $red;
+  }
+
+  &:before {
+    visibility: hidden;
+    content: "";
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: $red;
+    transform: scaleX(0);
+    transition: all 0.25s ease-in-out 0s;
+  }
+  &:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+}
+
+@mixin no-hover-effect() {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:before {
+    visibility: hidden;
+    content: "";
+  }
+  &:hover:before {
+    visibility: hidden;
+  }
+}
+
+.no-hvr {
+  @include no-hover-effect();
+}
+
+a {
+  @include underline-from-center();
+}
