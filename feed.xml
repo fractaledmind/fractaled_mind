@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Blog Name</title>
-  <subtitle>Blog subtitle</subtitle>
+  <title>Fractaled Mind</title>
+  <subtitle>Disparate thoughts, connected</subtitle>
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
   <updated>2015-05-16T16:40:00-04:00</updated>
   <author>
-    <name>Blog Author</name>
+    <name>Stephen Margheim</name>
   </author>
   <entry>
     <title>ZotQuery&amp;#58; an Alfred Workflow for Zotero</title>
-    <link rel="alternate" href="http://blog.url.com/article/zotquery-an-alfred-workflow-for-zotero.html"/>
-    <id>http://blog.url.com/article/zotquery-an-alfred-workflow-for-zotero.html</id>
+    <link rel="alternate" href="http://blog.url.com/articles/zotquery-an-alfred-workflow-for-zotero.html"/>
+    <id>http://blog.url.com/articles/zotquery-an-alfred-workflow-for-zotero.html</id>
     <published>2015-05-16T16:40:00-04:00</published>
     <updated>2015-05-16T16:44:04-04:00</updated>
     <author>
-      <name>Article Author</name>
+      <name>Stephen Margheim</name>
     </author>
-    <content type="html">&lt;h3 id="search-zotero-from-the-comfort-of-your-keyboard"&gt;Search Zotero. From the comfort of your keyboard.&lt;/h3&gt;
+    <content type="html">&lt;h3&gt;Search Zotero. From the comfort of your keyboard.&lt;/h3&gt;
 
 &lt;p&gt;I know that I have been M.I.A. lately, but the end of the semester is always
 an insane time, and even more so in graduate school. But I haven’t been
 slacking. I’ve actually spent a lot of my free time for the past few weeks
 working on a new little “application” that utilizes the power of version 2 of
-[Alfred](http://www.alfredapp.com/ "Alfred App - Productivity App for Mac OS
+[Alfred](http://www.alfredapp.com/ &amp;ldquo;Alfred App - Productivity App for Mac OS
 X”). Although Alfred is free, there is a paid upgrade for the “PowerPack”,
 which opens up the Workflows feature. In short, Workflows allow users to use
 Alfred as a platform to build interactive “apps” on top of Alfred’s framework.
@@ -46,9 +46,9 @@ since this will more easily allow you to upgrade the workflow over time. If
 you are interested in my code, you can find it all on &lt;a href="https://github.com/smargh/ZotQuery"&gt;my GitHub
 repo&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;h3 id="new-version--85"&gt;New Version — 8.5&lt;/h3&gt;
+&lt;h3&gt;New Version — 8.5&lt;/h3&gt;
 
 &lt;p&gt;Smallest code footprint to-date. All external dependencies are handled by an
 external bundler and the entire code base resides in one script,
@@ -58,57 +58,57 @@ external bundler and the entire code base resides in one script,
 that ZotQuery allows:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;z&lt;/code&gt; = &lt;code&gt;zot&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;zt&lt;/code&gt; = &lt;code&gt;zot:t&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;za&lt;/code&gt; = &lt;code&gt;zot:a&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;znc&lt;/code&gt; = &lt;code&gt;zot:c&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;znt&lt;/code&gt; = &lt;code&gt;zot:tag&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;zn&lt;/code&gt; = &lt;code&gt;zot:n&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;zat&lt;/code&gt; = &lt;code&gt;z:att&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;ztg&lt;/code&gt; = &lt;code&gt;z:tag&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;zc&lt;/code&gt; = &lt;code&gt;z:col&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;z&lt;/code&gt; = &lt;code&gt;zot&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;zt&lt;/code&gt; = &lt;code&gt;zot:t&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;za&lt;/code&gt; = &lt;code&gt;zot:a&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;znc&lt;/code&gt; = &lt;code&gt;zot:c&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;znt&lt;/code&gt; = &lt;code&gt;zot:tag&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;zn&lt;/code&gt; = &lt;code&gt;zot:n&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;zat&lt;/code&gt; = &lt;code&gt;z:att&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ztg&lt;/code&gt; = &lt;code&gt;z:tag&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;zc&lt;/code&gt; = &lt;code&gt;z:col&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; All previous, long keywords still work. Workflow is backwards compatible.&lt;/p&gt;
 
 &lt;p&gt;Also, version 6.2 adds the debugging keyword &lt;code&gt;z:bug&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h3 id="versions"&gt;VERSIONS:&lt;/h3&gt;
+&lt;h3&gt;VERSIONS:&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;v. 8.5: use &lt;a href="http://www.alfredforum.com/topic/4255-alfred-dependency-downloader-framework/"&gt;Alfred Bundler&lt;/a&gt; for all external dependencies&lt;/li&gt;
-  &lt;li&gt;v. 8.1: various bug fixes&lt;/li&gt;
-  &lt;li&gt;v. 8.0: condensed all code to &lt;code&gt;zotquery.py&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;v. 7.1: fix bug with multi-word queries&lt;/li&gt;
-  &lt;li&gt;v. 7.0: Object-Oriented code base. Added Group Library support.&lt;/li&gt;
-  &lt;li&gt;v. 6.6.1: changed creators list in the sub-title.&lt;/li&gt;
-  &lt;li&gt;v. 6.6: fix bug in &lt;code&gt;z:tag&lt;/code&gt; search&lt;/li&gt;
-  &lt;li&gt;v. 6.5: Choose primary Zotero client (Standalone or Firefox) in preferences&lt;/li&gt;
-  &lt;li&gt;v. 6.4: Search Unicode with ASCII queries&lt;/li&gt;
-  &lt;li&gt;v. 6.2: Added new, shorter query keywords&lt;/li&gt;
-  &lt;li&gt;v. 6.1: Temporarily removed PDF attachments&lt;/li&gt;
-  &lt;li&gt;v. 6.0: Moved to new Python-Alfred backbone&lt;/li&gt;
-  &lt;li&gt;v. 5.0: Add PDF attachments to items in Zotero library&lt;/li&gt;
-  &lt;li&gt;v. 4.2-8: Various bug fixes. Bundled feed parser and pytz modules with pyzotero package.&lt;/li&gt;
-  &lt;li&gt;v. 4.1: Search attachments only.&lt;/li&gt;
-  &lt;li&gt;v. 4.0: Export Rich Text. Choose CSL Style.&lt;/li&gt;
-  &lt;li&gt;v. 3.2: Fixed caching bug.&lt;/li&gt;
-  &lt;li&gt;v. 3.1: Bug fixes.&lt;/li&gt;
-  &lt;li&gt;v. 3.0: New configuration ability, few new icons, stability&lt;/li&gt;
-  &lt;li&gt;v. 2.6: New icons for items with attachments and bug fixes.&lt;/li&gt;
-  &lt;li&gt;v. 2.5: Various bug fixes and maintenance.&lt;/li&gt;
-  &lt;li&gt;v. 2.4: Fixed bug that kept initial z:cache from creating cache file.&lt;/li&gt;
-  &lt;li&gt;v. 2.3: Fixed alp bug.&lt;/li&gt;
-  &lt;li&gt;v. 2.2: New Fallback Search. Bug fixes and more error logging.&lt;/li&gt;
-  &lt;li&gt;v. 2.0: Add ability to open attachments.&lt;/li&gt;
-  &lt;li&gt;v. 1.2: Various bug fixes. New Notifications.&lt;/li&gt;
-  &lt;li&gt;v. 1.1: Added feature to export bibliography of Collections or Tags.&lt;/li&gt;
-  &lt;li&gt;v. 1.0: Added features to export formatted citations and references of items.&lt;/li&gt;
-  &lt;li&gt;v. 0.9: Added new script filters.&lt;/li&gt;
-  &lt;li&gt;v. 0.8: First public release of ZotQuery.&lt;/li&gt;
+&lt;li&gt;v. 8.5: use &lt;a href="http://www.alfredforum.com/topic/4255-alfred-dependency-downloader-framework/"&gt;Alfred Bundler&lt;/a&gt; for all external dependencies&lt;/li&gt;
+&lt;li&gt;v. 8.1: various bug fixes&lt;/li&gt;
+&lt;li&gt;v. 8.0: condensed all code to &lt;code&gt;zotquery.py&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;v. 7.1: fix bug with multi-word queries&lt;/li&gt;
+&lt;li&gt;v. 7.0: Object-Oriented code base. Added Group Library support.&lt;/li&gt;
+&lt;li&gt;v. 6.6.1: changed creators list in the sub-title.&lt;/li&gt;
+&lt;li&gt;v. 6.6: fix bug in &lt;code&gt;z:tag&lt;/code&gt; search&lt;/li&gt;
+&lt;li&gt;v. 6.5: Choose primary Zotero client (Standalone or Firefox) in preferences&lt;/li&gt;
+&lt;li&gt;v. 6.4: Search Unicode with ASCII queries&lt;/li&gt;
+&lt;li&gt;v. 6.2: Added new, shorter query keywords&lt;/li&gt;
+&lt;li&gt;v. 6.1: Temporarily removed PDF attachments&lt;/li&gt;
+&lt;li&gt;v. 6.0: Moved to new Python-Alfred backbone&lt;/li&gt;
+&lt;li&gt;v. 5.0: Add PDF attachments to items in Zotero library&lt;/li&gt;
+&lt;li&gt;v. 4.2-8: Various bug fixes. Bundled feed parser and pytz modules with pyzotero package.&lt;/li&gt;
+&lt;li&gt;v. 4.1: Search attachments only.&lt;/li&gt;
+&lt;li&gt;v. 4.0: Export Rich Text. Choose CSL Style.&lt;/li&gt;
+&lt;li&gt;v. 3.2: Fixed caching bug.&lt;/li&gt;
+&lt;li&gt;v. 3.1: Bug fixes.&lt;/li&gt;
+&lt;li&gt;v. 3.0: New configuration ability, few new icons, stability&lt;/li&gt;
+&lt;li&gt;v. 2.6: New icons for items with attachments and bug fixes.&lt;/li&gt;
+&lt;li&gt;v. 2.5: Various bug fixes and maintenance.&lt;/li&gt;
+&lt;li&gt;v. 2.4: Fixed bug that kept initial z:cache from creating cache file.&lt;/li&gt;
+&lt;li&gt;v. 2.3: Fixed alp bug.&lt;/li&gt;
+&lt;li&gt;v. 2.2: New Fallback Search. Bug fixes and more error logging.&lt;/li&gt;
+&lt;li&gt;v. 2.0: Add ability to open attachments.&lt;/li&gt;
+&lt;li&gt;v. 1.2: Various bug fixes. New Notifications.&lt;/li&gt;
+&lt;li&gt;v. 1.1: Added feature to export bibliography of Collections or Tags.&lt;/li&gt;
+&lt;li&gt;v. 1.0: Added features to export formatted citations and references of items.&lt;/li&gt;
+&lt;li&gt;v. 0.9: Added new script filters.&lt;/li&gt;
+&lt;li&gt;v. 0.8: First public release of ZotQuery.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id="requirements"&gt;REQUIREMENTS&lt;/h3&gt;
+&lt;h3&gt;REQUIREMENTS&lt;/h3&gt;
 
 &lt;p&gt;To date, it has only been tested on a Mac with both Zotero Firefox and
 Standalone installed. ZotQuery should work with only Zotero Firefox or
@@ -119,9 +119,9 @@ standard Python distribution for Mac OS X Mavericks (10.9), which is 2.7.6,
 and not on Python 3. Once again, if anyone is using the workflow successfully
 on another distribution of Python, please let me know.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
-&lt;h3 id="configuration"&gt;CONFIGURATION&lt;/h3&gt;
+&lt;h3&gt;CONFIGURATION&lt;/h3&gt;
 
 &lt;p&gt;When you first download the workflow, you will need to run &lt;code&gt;z:config&lt;/code&gt; first to
 configure the necessary settings before you attempt any queries. In fact,
@@ -129,7 +129,7 @@ ZotQuery will kick you to the &lt;code&gt;z:config&lt;/code&gt; command if you t
 without having first configured your settings.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=9b88b18ee5b3d8d536a927e0b5a996ce" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=9b88b18ee5b3d8d536a927e0b5a996ce" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;On first run, the configurator will begin by searching for, and creating if
@@ -145,9 +145,9 @@ This has already removed a vast majority of the support issues.&lt;/p&gt;
 ZotQuery requires the full path to 3 things:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;your Zotero sqlite database&lt;/li&gt;
-  &lt;li&gt;your Zotero storage folder&lt;/li&gt;
-  &lt;li&gt;the folder that holds your linked attachments&lt;/li&gt;
+&lt;li&gt;your Zotero sqlite database&lt;/li&gt;
+&lt;li&gt;your Zotero storage folder&lt;/li&gt;
+&lt;li&gt;the folder that holds your linked attachments&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;The configurator attempts to find all necessary paths automatically, but if it
@@ -155,7 +155,7 @@ fails, it will ask you to select one manually. The title of the dialog box
 will alert you to what path the configurator requires:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=7d71b31d83673897c100ec3a4b0e7633" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=7d71b31d83673897c100ec3a4b0e7633" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Once all paths are stored, the configurator moves on to set up your &lt;a href="http://www.zotero.org/support/dev/server_api/v2/start"&gt;Zotero
@@ -165,55 +165,55 @@ for the user to utilize these functions, they must have and set up a Zotero
 private key. Step one requires your Zotero User ID:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=c8f2d8b4869679f42a33d8a4bf22d34d" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=c8f2d8b4869679f42a33d8a4bf22d34d" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;If you do not have or do not know your Zotero User ID, click the &lt;code&gt;Where do I
-find my User ID?&lt;/code&gt; button. This will open Zotero’s "Feeds/API” tab, where you
+find my User ID?&lt;/code&gt; button. This will open Zotero’s &amp;quot;Feeds/API” tab, where you
 may need to login. Once logged in, you will see a page similar to this:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=f34d6b70c8cec4a86a28d0a41dd588c6" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=f34d6b70c8cec4a86a28d0a41dd588c6" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;This shows a user who has two API keys set up, one for personal use and one
 for the iOS app &lt;a title="PaperShip - Manage,
 Annotate, and Share your Papers On The Go ..." href="http://www.papershipapp.com/"&gt;PaperShip&lt;/a&gt;. If you do not have a Personal
-API key, you can easily set one up by clicking the "Create new private key"
+API key, you can easily set one up by clicking the &amp;quot;Create new private key&amp;rdquo;
 link. Your User ID will be a number, probably less than 8 digits. Insert it
 into the text field and click &lt;code&gt;Set User ID&lt;/code&gt; (&lt;strong&gt;Note&lt;/strong&gt;: Applescript text input
 dialog boxes do not respond, typically, to the keyboard shortcut for paste, so
 you will likely need to right-click and manually paste in the ID).&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;Second, you will need to input your API Key:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=b7501351a8c6a90d28231d36d00658b5" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=b7501351a8c6a90d28231d36d00658b5" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;Since ZotQuery reads this &lt;code&gt;settings.json&lt;/code&gt; file whenever it attempts to connect
-to the Zotero API, if you don’t insert the proper data here, the "Export
-Citation" and "Export Reference” (see below) functions &lt;strong&gt;will not work&lt;/strong&gt;.&lt;/p&gt;
+to the Zotero API, if you don’t insert the proper data here, the &amp;ldquo;Export
+Citation&amp;rdquo; and &amp;ldquo;Export Reference” (see below) functions &lt;strong&gt;will not work&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;Finally, ZotQuery (now in version 4.0) will also allow you to set your export
 style and format. Once you have entered your API information, the configurator
 will move to setting your export preferences:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=8ae028368baf4f061bea37f51385f81d" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=8ae028368baf4f061bea37f51385f81d" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;First, you will select the &lt;a href="http://citationstyles.org/"&gt;CSL Style&lt;/a&gt; that you
 wish to use. Currently ZotQuery can export data in 5 different styles: Chicago
@@ -224,10 +224,10 @@ Scannable Cites format&lt;/a&gt;
 citations and references.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=7ff796cc5a872bf574512cbf3bb5324a" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=7ff796cc5a872bf574512cbf3bb5324a" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;Next, you will select the text formatting for exported data. ZotQuery (in
 version 4.0) can export in either
@@ -235,20 +235,20 @@ version 4.0) can export in either
 Text&lt;/a&gt;.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=c7e913cc09149923b802797069f1c709" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=c7e913cc09149923b802797069f1c709" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;All exported text is put in your clipboard, so you can use it anywhere in any
 text editor. You can also alter your export preferences at any point, using
 the &lt;code&gt;z:settings&lt;/code&gt; command.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=a86e2f7f739addd226aa593a18a7647a" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=a86e2f7f739addd226aa593a18a7647a" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;Finally, you will need to select which Zotero client you use, either &lt;a href="https://www.zotero.org/download/"&gt;Zotero
 Standalone&lt;/a&gt; or &lt;a href="https://www.zotero.org/download/"&gt;Zotero for
@@ -256,10 +256,10 @@ Firefox&lt;/a&gt;. This will determine which app will
 open any items that you select.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=257d5b317228aee2b301ca06261d5190" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=257d5b317228aee2b301ca06261d5190" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;Once all settings and preferences are set, the configurator will finally build
 the JSON cache of your Zotero data. ZotQuery will clone your Zotero database
@@ -268,10 +268,10 @@ ZotQuery is configured. If you open the workflow data folder, you will see
 these files:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=1081f506d257c156abc564cf028b8b3b" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=1081f506d257c156abc564cf028b8b3b" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;These are the essential files for ZotQuery to function, so do not accidentally
 delete them. With the configuration finished and these files created, you can
@@ -279,7 +279,7 @@ now use ZotQuery.&lt;/p&gt;
 
 &lt;p&gt;- - -&lt;/p&gt;
 
-&lt;h3 id="functions"&gt;FUNCTIONS&lt;/h3&gt;
+&lt;h3&gt;FUNCTIONS&lt;/h3&gt;
 
 &lt;p&gt;ZotQuery has 5 main functions:&lt;/p&gt;
 
@@ -318,214 +318,214 @@ to cite or open an item, you will first need to search and select it.&lt;/p&gt;
 &lt;p&gt;Note that all searches coerce both the query and the data into lowercase, so
 you can search using lowercase queries and still get matches.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;The &lt;strong&gt;General&lt;/strong&gt; search is launched by the keyword &lt;code&gt;zot&lt;/code&gt; or the short version
 &lt;code&gt;z&lt;/code&gt;.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=567ee0cd7ff26f4ae9e679e264e7c422" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=567ee0cd7ff26f4ae9e679e264e7c422" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;This will search your entire Zotero database for any use of the query
 provided. The search script is “loose,” that is, it searches for matches of
 the query “in” the data not matches that “equal” the data. This means you can
 search half words, words in the middle of titles, etc.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;ZotQuery will not begin searching until you have entered at least 3
 characters. This ensures faster, smarter results. Until you have typed at
 least 3 characters, you will see this result:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=119d542fbf0d08e0d912797e4312a0ef" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=119d542fbf0d08e0d912797e4312a0ef" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;Once you complete your query, and the script catches up with you, you will see
 a list of all of your Zotero items that match the query. If your query doesn’t
 have any matches, ZotQuery returns an error:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=91df1cf87a6292d94203ae51ee388d21" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=91df1cf87a6292d94203ae51ee388d21" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;If, however, you have results, ZotQuery presents them in a ranked order:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=952fa142d27bcab9d39be9bcde86b468" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=952fa142d27bcab9d39be9bcde86b468" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;For ease of use, the workflow provides unique icons for the various item
 types:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;article&lt;/li&gt;
+&lt;li&gt;article&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=801d472963cdd47d17b4e423ae92f76b" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=801d472963cdd47d17b4e423ae92f76b" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;book&lt;/li&gt;
+&lt;li&gt;book&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=02a65430e04057941572246f75e4ca45" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=02a65430e04057941572246f75e4ca45" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;chapter&lt;/li&gt;
+&lt;li&gt;chapter&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=e404e2022a785ecad903a1eb624fb16d" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=e404e2022a785ecad903a1eb624fb16d" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;conference paper&lt;/li&gt;
+&lt;li&gt;conference paper&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=b92404da1b2d697fdd6200f122052341" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=b92404da1b2d697fdd6200f122052341" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;other&lt;/li&gt;
+&lt;li&gt;other&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=3f05898b857bce2e4d3b1cfb417406db" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=3f05898b857bce2e4d3b1cfb417406db" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;If your item has an attachment, the icon changes to signal the addition as
 will the subtitle field. The subtitle field will include &lt;code&gt;Attachments: n&lt;/code&gt;,
 where n is the number of attachments:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=856f7cded42691f4b6a9e662fba932cb" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=856f7cded42691f4b6a9e662fba932cb" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;The altered icons each have a small plus sign in the top-right corner:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;article + attachment&lt;/li&gt;
+&lt;li&gt;article + attachment&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=7dfa101e4fee44a787be1f6ba0722c5d" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=7dfa101e4fee44a787be1f6ba0722c5d" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;book + attachment&lt;/li&gt;
+&lt;li&gt;book + attachment&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=71696e8a904bf33971cd7129c63d6405" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=71696e8a904bf33971cd7129c63d6405" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;chapter + attachment&lt;/li&gt;
+&lt;li&gt;chapter + attachment&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=cf268e5c336c11f233a58ec9450540b3" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=cf268e5c336c11f233a58ec9450540b3" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;conference paper + attachment&lt;/li&gt;
+&lt;li&gt;conference paper + attachment&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=7df21b5a4d7c4b9d467915f0bd4f8cab" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=7df21b5a4d7c4b9d467915f0bd4f8cab" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;other + attachment&lt;/li&gt;
+&lt;li&gt;other + attachment&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=7b4a61b3c257078b45f8de901c3ddb28" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=7b4a61b3c257078b45f8de901c3ddb28" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;The &lt;strong&gt;Author&lt;/strong&gt; search is launched by &lt;code&gt;zot:a&lt;/code&gt; or the short version &lt;code&gt;za&lt;/code&gt;.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=c1d303aaf08f5b03e7446988121e942b" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=c1d303aaf08f5b03e7446988121e942b" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;This search only queries the last names of the authors of your Zotero data.
 For example: &lt;code&gt;zot:a thomas&lt;/code&gt; will return all the items that have an author (or
 editor, translator, etc.) with the last name “Thomas”.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=d2c5b84736ad2de96028bbee7e960222" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=d2c5b84736ad2de96028bbee7e960222" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;The &lt;strong&gt;Title&lt;/strong&gt; search is launched by &lt;code&gt;zot:t&lt;/code&gt; or the short version &lt;code&gt;zt&lt;/code&gt;.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=7b5e6b51eb3b46a7cb048d4e2e01f09e" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=7b5e6b51eb3b46a7cb048d4e2e01f09e" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;This search only queries the title fields of your Zotero data. For example:
 &lt;code&gt;zot:t virgil&lt;/code&gt; will return all of the items whose title contains the word
 “Virgil”.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=2f0de99ae931231f194351517cf62eff" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=2f0de99ae931231f194351517cf62eff" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;The final two searches (Tag and Collection) are two-step searches. In step-
 one, you search &lt;em&gt;for&lt;/em&gt; a particular Tag or Collection; in step-two you search
 &lt;em&gt;within&lt;/em&gt; that particular Tag or Collection for your query.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;The &lt;strong&gt;Tag&lt;/strong&gt; search is launched by &lt;code&gt;z:tag&lt;/code&gt; or the short version &lt;code&gt;ztg&lt;/code&gt;.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=3c6078a201c565c54c43200eef925f39" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=3c6078a201c565c54c43200eef925f39" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;This allows you to search through all of your Zotero tags.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=c20da7212db7d31c6c69f0c0ae0a68d6" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=c20da7212db7d31c6c69f0c0ae0a68d6" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;Once you select a tag, Alfred will automatically initiate the &lt;code&gt;zot:tag&lt;/code&gt;
 search, which will search within that tag for your query. The &lt;code&gt;zot:tag&lt;/code&gt; (or
@@ -533,40 +533,40 @@ search, which will search within that tag for your query. The &lt;code&gt;zot:ta
 limited to those items with the previously chosen tag.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=a95c8266614a5fb5a5dde419e750a3cb" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=a95c8266614a5fb5a5dde419e750a3cb" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;The &lt;strong&gt;Collection&lt;/strong&gt; search is similar. It is launched by &lt;code&gt;z:col&lt;/code&gt;, or by &lt;code&gt;zc&lt;/code&gt;,
 which begins a search for all of your Zotero collections.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=45af428e10bf4776fd1aafdb401b5533" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=45af428e10bf4776fd1aafdb401b5533" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;As you type, it will filter any collections that contain the query.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=24bb7bbb5e767eaabc75836c141475bb" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=24bb7bbb5e767eaabc75836c141475bb" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;Once you choose a particular collection, Alfred will initiate the &lt;code&gt;zot:c&lt;/code&gt;
 search (also &lt;code&gt;znc&lt;/code&gt;), which will search within that particular collection.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=ed949dcfbf97280c489d968053d9a7f6" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=ed949dcfbf97280c489d968053d9a7f6" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;As above, the &lt;code&gt;zot:c&lt;/code&gt; search functions just like the simple &lt;code&gt;zot&lt;/code&gt; search.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;Finally, you can now (after version 4.1) search only items with attachments
 using the &lt;code&gt;z:att&lt;/code&gt; query (short version = &lt;code&gt;zat&lt;/code&gt;). This query allows you to
@@ -575,25 +575,25 @@ default application. As of now, &lt;code&gt;z:att&lt;/code&gt; only allows for y
 attached files.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=aef0a0cb460d6ce88448f3caa347da59" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=aef0a0cb460d6ce88448f3caa347da59" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;Similarly, you can use &lt;code&gt;zot:n&lt;/code&gt; (or &lt;code&gt;zn&lt;/code&gt;) to search through the notes for any
 items. This can prove very helpful for people who use Zotero as their notes
 repository for all of their secondary sources.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;Finally, the &lt;code&gt;z:new&lt;/code&gt; search will bring all of the items added to Zotero since
 the last cache update. This feature is there to make it easier to find items
 if you do one long research run, adding lots of items to Zotero before re-
 using ZotQuery. Using &lt;code&gt;z:new&lt;/code&gt; you can double check exactly what’s been added.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;Together these 8 search options provide you with various ways to find the
 exact item you need. Once you find that item, you have a few options with what
@@ -617,49 +617,49 @@ options:&lt;/p&gt;
 &lt;p&gt;If you merely hit &lt;code&gt;return&lt;/code&gt; on your chosen item, option 1 will occur and Zotero
 will open to that item.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;If you hit &lt;code&gt;option+return&lt;/code&gt; when you choose your item, you will export a short
 reference to that item.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=3562b6bd48f3409ee5e4b7f7063fd69a" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=3562b6bd48f3409ee5e4b7f7063fd69a" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;Depending on your style and format settings, your reference will be of various
 types.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;If you hit &lt;code&gt;control+return&lt;/code&gt;, you will export a full citation of the item in
 your chosen format.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=740b599810168fb989a80e4ac83676c6" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=740b599810168fb989a80e4ac83676c6" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;Next, if you hit &lt;code&gt;shift+return&lt;/code&gt;, you will open the attachment of that item.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=526c10ac14908120e81ffa4bbacd74f3" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=526c10ac14908120e81ffa4bbacd74f3" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;Finally, if you hit &lt;code&gt;fn+return&lt;/code&gt;, you will append a citation of the item to a
 temporary bibliography file.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=e3dcf0e83756d44fcad3b99ab4e705c3" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=e3dcf0e83756d44fcad3b99ab4e705c3" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;This bibliography file is stored in the workflow’s cache folder. You can add
 as many citations to it as you wish. This function allows you to dynamically
@@ -668,20 +668,20 @@ citations in the temporary file, you need only run the &lt;code&gt;z:bib&lt;/cod
 export them.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=b3b5f6d4ca7f4c53ee7444f04bf2203c" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=b3b5f6d4ca7f4c53ee7444f04bf2203c" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;This will take all of the citations in the temporary bibliography file,
 organize them in alphabetical order, and copy the result to the clipboard. A
 result in Markdown format will resemble this:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=a3f6f23b57bd0bdcf16df2411b6f5a85" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=a3f6f23b57bd0bdcf16df2411b6f5a85" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;The temporary bibliography file is not the only way, however, to automatically
 generate a full Bibliography/Works Cited page. Since many Zotero users, myself
@@ -694,10 +694,10 @@ can use &lt;code&gt;control+return&lt;/code&gt; to export a bibliography of that
 instead of simply searching within that Tag or Collection by hitting &lt;code&gt;return&lt;/code&gt;.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=09b7b508e0acf574c48525b863adb3fe" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=09b7b508e0acf574c48525b863adb3fe" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;Thus, if you organize the citations for particular project within a certain
 Collection or under a certain Tag, you can create full, formatted Works Cited
@@ -722,9 +722,9 @@ both for short references and full citations (examples above). If you wish to
 use another of Zotero’s CSL styles, you will need to change the style via the
 &lt;code&gt;z:settings&lt;/code&gt; command. Since ZotQuery now exports BibTeX and RTF-Scan cite
 keys, even users who prefer to write in
-[MultiMarkdown](http://fletcherpenney.net/multimarkdown/ "MultiMarkdown -
+&lt;a href="http://fletcherpenney.net/multimarkdown/ &amp;quot;MultiMarkdown -
 fletcherpenney.net”) and convert to [LaTeX](http://www.latex-project.org/
-"LaTeX – A document preparation system”) can utilize ZotQuery.&lt;/p&gt;
+&amp;quot;LaTeX – A document preparation system”"&gt;MultiMarkdown&lt;/a&gt; can utilize ZotQuery.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: These features will also require that you have the proper Zotero API data in the &lt;code&gt;settings.json&lt;/code&gt; file. For instructions on setting this up, see above.&lt;/p&gt;
 
@@ -735,10 +735,10 @@ JSON cache of your Zotero database. This file is created and then updated with
 the keyword &lt;code&gt;z:cache&lt;/code&gt;.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=0198a2224d2866f8710c5fbc314ed956" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=0198a2224d2866f8710c5fbc314ed956" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;This function will find your Zotero sqlite database, read its contents, and
 create a JSON cache of the pertinent information.&lt;/p&gt;
@@ -760,7 +760,7 @@ but will let it auto-update most of the time.&lt;/p&gt;
 
 &lt;p&gt;- - -&lt;/p&gt;
 
-&lt;h3 id="additional-features"&gt;ADDITIONAL FEATURES&lt;/h3&gt;
+&lt;h3&gt;ADDITIONAL FEATURES&lt;/h3&gt;
 
 &lt;p&gt;Aside from the core features, ZotQuery comes with some additional features.
 First, ZotQuery comes with the ability to set up a keyboard shortcut to launch
@@ -769,14 +769,14 @@ the hotkey, you can launch immediately into the title search (with a snazzy
 interface):&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=7b86435a68eef43d7bc23de556f9e928" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=7b86435a68eef43d7bc23de556f9e928" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;You can also change this hotkey to launch whichever query you like.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;ZotQuery also has the ability to be an option in your Alfred fallback
 searches. In order to setup ZotQuery as a fallback search option, open
@@ -784,36 +784,36 @@ Alfred’s preferences and go to the &lt;code&gt;Features&lt;/code&gt; tab. Near
 you will see a button to &lt;code&gt;Setup fallback results&lt;/code&gt;:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=cd8b68f3be995849abf7ffb9ea724300" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=cd8b68f3be995849abf7ffb9ea724300" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;When you click that button a panel will slide out of top:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=06d1584167b4402788114f761eb2464f" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=06d1584167b4402788114f761eb2464f" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;Click the &lt;code&gt;+&lt;/code&gt; button and select ZotQuery from the &lt;code&gt;Workflow Trigger&lt;/code&gt; list. You
 can even re-order the fallback searches, and put ZotQuery near the top. When
 setup, this will allow you to search in Alfred like this:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=a51520dec46dbcbd4f0282c5abd9de0f" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=a51520dec46dbcbd4f0282c5abd9de0f" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;And have it immediately become a ZotQuery search:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="" src="images/?hash=9e1e267ba1c0a89a68af19aa9c6beefb" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/?hash=9e1e267ba1c0a89a68af19aa9c6beefb" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;It’s also possible to manually determine what ZotQuery will use to search for
 the various query types. &lt;strong&gt;NOTE:&lt;/strong&gt; This is probably a &lt;em&gt;power-user&lt;/em&gt; feature and
@@ -827,18 +827,25 @@ format. The keys are the various types of filters (&lt;code&gt;general&lt;/code&
 collection&lt;/code&gt;, etc). For each key, there is a list of items that it will search.
 This items are themselves lists with two items (except for &lt;code&gt;notes&lt;/code&gt;, which is
 only one item). To remove an item, be sure to remove its entirety:&lt;/p&gt;
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;
+[
 
-&lt;p&gt;```&lt;/p&gt;
+"data",
 
-&lt;p&gt;[&lt;/p&gt;
+"title"
 
-&lt;p&gt;"data",&lt;/p&gt;
+],
 
-&lt;p&gt;"title"&lt;/p&gt;
-
-&lt;p&gt;],&lt;/p&gt;
-
-&lt;p&gt;```&lt;/p&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
 
 &lt;p&gt;You could also use a scripting language to read the JSON, manipulate the
 dictionary, then overwrite the file with new JSON.&lt;/p&gt;
@@ -857,16 +864,16 @@ to &lt;code&gt;z:cache&lt;/code&gt; you will find this:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;python zotquery.py --cache True False&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;These three arguments tell zotquery to use the caching object (&lt;code&gt;--cache&lt;/code&gt;), to
-force a cache update (&lt;code&gt;True&lt;/code&gt;) and to not limit the scope to only the user's
+force a cache update (&lt;code&gt;True&lt;/code&gt;) and to not limit the scope to only the user&amp;rsquo;s
 personal library (&lt;code&gt;False&lt;/code&gt;). As detailed in the description at the top of
 &lt;code&gt;zotquery.py&lt;/code&gt;, the last argument is a Boolean value for whether or not to
-limit the scope of the cache to the user's personal library. By default, it is
-set to &lt;code&gt;False&lt;/code&gt;, which means that group libraries are included in ZotQuery's
+limit the scope of the cache to the user&amp;rsquo;s personal library. By default, it is
+set to &lt;code&gt;False&lt;/code&gt;, which means that group libraries are included in ZotQuery&amp;rsquo;s
 cache. If you change this to &lt;code&gt;True&lt;/code&gt;, ZotQuery will only cache your personal
 library, and thus will only search your personal library.&lt;/p&gt;
 
 &lt;p&gt;ZotQuery also has a cache updater that runs each time you perform an action.
-This is the Run Script action beneath the "Citation Copied!" notification for
+This is the Run Script action beneath the &amp;quot;Citation Copied!&amp;rdquo; notification for
 each filter type. If you open this Run Script action you will see:&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;python zotquery.py --cache False False&lt;/code&gt;.&lt;/p&gt;
@@ -884,396 +891,465 @@ each of these Run Script actions to:&lt;/p&gt;
 &lt;p&gt;The Hackademic,&lt;/p&gt;
 
 &lt;p&gt;Stephen Margheim&lt;/p&gt;
-
 </content>
   </entry>
   <entry>
     <title>Pandoctor&amp;#58; An Alfred GUI for Pandoc</title>
-    <link rel="alternate" href="http://blog.url.com/article/pandoctor.html"/>
-    <id>http://blog.url.com/article/pandoctor.html</id>
+    <link rel="alternate" href="http://blog.url.com/articles/pandoctor.html"/>
+    <id>http://blog.url.com/articles/pandoctor.html</id>
     <published>2015-05-15T14:25:00-04:00</published>
     <updated>2015-05-16T17:10:01-04:00</updated>
     <author>
-      <name>Article Author</name>
+      <name>Stephen Margheim</name>
     </author>
-    <content type="html">&lt;h3 id="version-102"&gt;Version: 1.0.2&lt;/h3&gt;
+    <content type="html">&lt;h3&gt;Version: 1.0.2&lt;/h3&gt;
 
 &lt;p&gt;Download from &lt;a href="http://www.packal.org/workflow/pandoctor"&gt;Packal&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Changelog&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;version 1.0.5: fixes a small bug in the template variables&lt;/li&gt;
-  &lt;li&gt;version 1.0.2: fixes bug with user template commands&lt;/li&gt;
-  &lt;li&gt;version 1.0.1: adds pdf as output in &lt;code&gt;dr:out&lt;/code&gt; filter&lt;/li&gt;
+&lt;li&gt;version 1.0.5: fixes a small bug in the template variables&lt;/li&gt;
+&lt;li&gt;version 1.0.2: fixes bug with user template commands&lt;/li&gt;
+&lt;li&gt;version 1.0.1: adds pdf as output in &lt;code&gt;dr:out&lt;/code&gt; filter&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;a href="https://github.com/jgm/pandoc/releases/tag/1.13.0.1"&gt;Pandoc 1.13.0.1&lt;/a&gt; is now out. This is a major upgrade, which includes the &lt;code&gt;.docx&lt;/code&gt; files as input files. This means you can convert Word files to Markdown files! Anyways, once you update pandoc, you will need to run &lt;code&gt;dr:config&lt;/code&gt; again for &lt;code&gt;Pandoctor&lt;/code&gt; to update its internals for the new version of pandoc. This will then show &lt;code&gt;.docx&lt;/code&gt; in the inputs window, and will properly interface with Pandoc 1.13.&lt;/p&gt;
 
 &lt;p&gt;So, enjoy the newest versions of Pandoc and Pandoctor!&lt;/p&gt;
 
-&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;Pandoctor&lt;/code&gt; is a relatively simple, easy-to-use way to bring the high-powered functionality of &lt;a href="http://johnmacfarlane.net/pandoc/"&gt;&lt;code&gt;Pandoc&lt;/code&gt;&lt;/a&gt; to you. For those new to &lt;code&gt;Pandoc&lt;/code&gt;, &lt;code&gt;Pandoc&lt;/code&gt; is "the universal document converter". It is an amazingly powerful utility that allows you to convert structured text from a ton of possible input formats to an even larger number of output formats.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Pandoctor&lt;/code&gt; is a relatively simple, easy-to-use way to bring the high-powered functionality of &lt;a href="http://johnmacfarlane.net/pandoc/"&gt;&lt;code&gt;Pandoc&lt;/code&gt;&lt;/a&gt; to you. For those new to &lt;code&gt;Pandoc&lt;/code&gt;, &lt;code&gt;Pandoc&lt;/code&gt; is &amp;ldquo;the universal document converter&amp;rdquo;. It is an amazingly powerful utility that allows you to convert structured text from a ton of possible input formats to an even larger number of output formats.&lt;/p&gt;
 
 &lt;!-- ![All possible `Pandoc` conversions](http://johnmacfarlane.net/pandoc/diagram.png) --&gt;
 
-&lt;p&gt;A potential downside to &lt;code&gt;Pandoc&lt;/code&gt;, however, for many users is that it is entirely a command line utility. This means, on the Mac, you &lt;em&gt;have to&lt;/em&gt; open Terminal to use it. For many Mac/Alfred users, this is at least slightly daunting. Yet I believe that this should not be a deterrent to more people coming to use the power of &lt;code&gt;Pandoc&lt;/code&gt;. This is the reason for &lt;code&gt;Pandoctor&lt;/code&gt;. Now, Alfred users can enjoy the comfortability and familiarity of the Alfred interface to manage &lt;code&gt;Pandoc&lt;/code&gt;. Here's how:&lt;/p&gt;
+&lt;p&gt;A potential downside to &lt;code&gt;Pandoc&lt;/code&gt;, however, for many users is that it is entirely a command line utility. This means, on the Mac, you &lt;em&gt;have to&lt;/em&gt; open Terminal to use it. For many Mac/Alfred users, this is at least slightly daunting. Yet I believe that this should not be a deterrent to more people coming to use the power of &lt;code&gt;Pandoc&lt;/code&gt;. This is the reason for &lt;code&gt;Pandoctor&lt;/code&gt;. Now, Alfred users can enjoy the comfortability and familiarity of the Alfred interface to manage &lt;code&gt;Pandoc&lt;/code&gt;. Here&amp;rsquo;s how:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;Pandoctor&lt;/code&gt; is accessed via &lt;a href="http://support.alfredapp.com/workflows:config:triggers-file-action"&gt;File Actions&lt;/a&gt;. The basic file action is "New Pandoc Conversion", which will kick off a series of interactive Alfred menus to create your &lt;code&gt;Pandoc&lt;/code&gt; conversion. Once you have chosen the file you want to convert and selected the file action, &lt;code&gt;Pandoctor&lt;/code&gt; works in 4 stages:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Pandoctor&lt;/code&gt; is accessed via &lt;a href="http://support.alfredapp.com/workflows:config:triggers-file-action"&gt;File Actions&lt;/a&gt;. The basic file action is &amp;ldquo;New Pandoc Conversion&amp;rdquo;, which will kick off a series of interactive Alfred menus to create your &lt;code&gt;Pandoc&lt;/code&gt; conversion. Once you have chosen the file you want to convert and selected the file action, &lt;code&gt;Pandoctor&lt;/code&gt; works in 4 stages:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;specify the text format of the chosen file&lt;/li&gt;
-  &lt;li&gt;chose the output format you want for the converted file&lt;/li&gt;
-  &lt;li&gt;chose any options you want for the conversion process&lt;/li&gt;
-  &lt;li&gt;run &lt;code&gt;Pandoc&lt;/code&gt; to convert the input file using your chosen options&lt;/li&gt;
+&lt;li&gt;specify the text format of the chosen file&lt;/li&gt;
+&lt;li&gt;chose the output format you want for the converted file&lt;/li&gt;
+&lt;li&gt;chose any options you want for the conversion process&lt;/li&gt;
+&lt;li&gt;run &lt;code&gt;Pandoc&lt;/code&gt; to convert the input file using your chosen options&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Luckily, &lt;code&gt;Pandoctor&lt;/code&gt; is built to move you through these four steps seamlessly and without any interaction on your part aside from selecting and setting the formats and options you want. Let's walk through the steps.&lt;/p&gt;
+&lt;p&gt;Luckily, &lt;code&gt;Pandoctor&lt;/code&gt; is built to move you through these four steps seamlessly and without any interaction on your part aside from selecting and setting the formats and options you want. Let&amp;rsquo;s walk through the steps.&lt;/p&gt;
 
-&lt;h2 id="configuration"&gt;Configuration&lt;/h2&gt;
+&lt;h2&gt;Configuration&lt;/h2&gt;
 
 &lt;p&gt;When you first download &lt;code&gt;Pandoctor&lt;/code&gt;, you will need to configure a few settings. Luckily, &lt;code&gt;Pandoctor&lt;/code&gt; takes care of this for you. All you need to do is use the &lt;code&gt;dr:config&lt;/code&gt; keyword to get everything set up. Once you see the completion notification, you can start using &lt;code&gt;Pandoctor&lt;/code&gt; for real.&lt;/p&gt;
 
-&lt;h2 id="running-a-new-pandoc-conversion"&gt;Running a new &lt;code&gt;Pandoc&lt;/code&gt; Conversion&lt;/h2&gt;
+&lt;h2&gt;Running a new &lt;code&gt;Pandoc&lt;/code&gt; Conversion&lt;/h2&gt;
 
-&lt;h3 id="using-the-file-action"&gt;Using the File Action&lt;/h3&gt;
+&lt;h3&gt;Using the File Action&lt;/h3&gt;
 
-&lt;p&gt;If you've configured, you begin &lt;code&gt;Pandoctor&lt;/code&gt; by using &lt;a href="http://support.alfredapp.com/features:file-search"&gt;Alfred's file navigation abilities&lt;/a&gt; to find the file you want &lt;code&gt;Pandoc&lt;/code&gt; to convert for you. Once you've found the file, enter Alfred's File Actions pane for that file (by default this is &lt;code&gt;→&lt;/code&gt;). Then find &lt;code&gt;Pandoctor&lt;/code&gt;'s "New Pandoc Conversion" file action:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="New Conversion File Action" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/file_action_new.png" /&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id="selecting-the-input-format"&gt;Selecting the Input Format&lt;/h3&gt;
-
-&lt;p&gt;This tells &lt;code&gt;Pandoctor&lt;/code&gt; to begin a new conversion on that file. Once you select "New Pandoc Conversion", &lt;code&gt;Pandoctor&lt;/code&gt; will automatically ask you to choose the format of this input file:&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;ve configured, you begin &lt;code&gt;Pandoctor&lt;/code&gt; by using &lt;a href="http://support.alfredapp.com/features:file-search"&gt;Alfred&amp;rsquo;s file navigation abilities&lt;/a&gt; to find the file you want &lt;code&gt;Pandoc&lt;/code&gt; to convert for you. Once you&amp;rsquo;ve found the file, enter Alfred&amp;rsquo;s File Actions pane for that file (by default this is &lt;code&gt;→&lt;/code&gt;). Then find &lt;code&gt;Pandoctor&lt;/code&gt;&amp;rsquo;s &amp;ldquo;New Pandoc Conversion&amp;rdquo; file action:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="`dr:in` Filter" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_in.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="New Conversion File Action" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/file_action_new.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;code&gt;Pandoctor&lt;/code&gt; tries to be smart about formatting, so it will pre-fill the search bar with what it believes to be the file's formatting. However, if you need to, you can simply delete this and start searching yourself. You will see that &lt;code&gt;Pandoctor&lt;/code&gt; displays the full name of the input format as well as a short description to help you discern between similar formats (such as the 4 types of &lt;a href="http://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; &lt;code&gt;Pandoc&lt;/code&gt; accepts).&lt;/p&gt;
+&lt;h3&gt;Selecting the Input Format&lt;/h3&gt;
 
-&lt;h3 id="selecting-the-output-format"&gt;Selecting the Output Format&lt;/h3&gt;
+&lt;p&gt;This tells &lt;code&gt;Pandoctor&lt;/code&gt; to begin a new conversion on that file. Once you select &amp;ldquo;New Pandoc Conversion&amp;rdquo;, &lt;code&gt;Pandoctor&lt;/code&gt; will automatically ask you to choose the format of this input file:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="`dr:in` Filter" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_in.png" /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code&gt;Pandoctor&lt;/code&gt; tries to be smart about formatting, so it will pre-fill the search bar with what it believes to be the file&amp;rsquo;s formatting. However, if you need to, you can simply delete this and start searching yourself. You will see that &lt;code&gt;Pandoctor&lt;/code&gt; displays the full name of the input format as well as a short description to help you discern between similar formats (such as the 4 types of &lt;a href="http://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; &lt;code&gt;Pandoc&lt;/code&gt; accepts).&lt;/p&gt;
+
+&lt;h3&gt;Selecting the Output Format&lt;/h3&gt;
 
 &lt;p&gt;When you choose the input format, &lt;code&gt;Pandoctor&lt;/code&gt; will then automatically ask you to select what format you want the outputted, converted file to be:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="`dr:out` Filter" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_out.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="`dr:out` Filter" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_out.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;You have access to the full range of possible output formats from this selection. You can use the arrow keys to navigate down, or start searching for your desired output format by name:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="`dr:out` Searching" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_out_search.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="`dr:out` Searching" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_out_search.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id="selecting-any-options"&gt;Selecting any Options&lt;/h3&gt;
+&lt;h3&gt;Selecting any Options&lt;/h3&gt;
 
 &lt;p&gt;As soon as you select the output format, &lt;code&gt;Pandoctor&lt;/code&gt; will ask you what Options you want to add to this &lt;code&gt;Pandoc&lt;/code&gt; conversion:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="`dr:opt` Filter" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_opt.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="`dr:opt` Filter" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_opt.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4 id="pandoctor-ui"&gt;&lt;code&gt;Pandoctor&lt;/code&gt; UI&lt;/h4&gt;
+&lt;h4&gt;&lt;code&gt;Pandoctor&lt;/code&gt; UI&lt;/h4&gt;
 
 &lt;p&gt;There are a few elements to the UI that require more explanation. First, you see that some items have the inner rectangle filled, and others do not. This is your visual cue to determine which options are active for this conversion (filled) and which are not (empty).&lt;/p&gt;
 
-&lt;h4 id="pandoctor-default-options"&gt;&lt;code&gt;Pandoctor&lt;/code&gt; Default Options&lt;/h4&gt;
+&lt;h4&gt;&lt;code&gt;Pandoctor&lt;/code&gt; Default Options&lt;/h4&gt;
 
-&lt;p&gt;When you first come to this "screen" or "window" (not sure what to call individual Alfred windows/pop-ups), you will see that some options are already filled, even though you didn't select them. These are &lt;code&gt;Pandoctor&lt;/code&gt;'s &lt;code&gt;Default Options&lt;/code&gt;. The file (&lt;code&gt;pandoc_defaults.json&lt;/code&gt;) specifying which options are by default always on (filled) can be found inside the workflow's folder (if you need to open this folder, you can do so easily using the &lt;code&gt;dr:help&lt;/code&gt; keyword and selecting &lt;code&gt;Root&lt;/code&gt;). This file also has comments for most options, which gives some information about them (Obviously, for detailed information about &lt;code&gt;Pandoc&lt;/code&gt;'s options, visit the &lt;a href="http://johnmacfarlane.net/pandoc/README.html"&gt;User Guide&lt;/a&gt;). When installed, &lt;code&gt;Pandoctor&lt;/code&gt; has 4 default options on:&lt;/p&gt;
+&lt;p&gt;When you first come to this &amp;ldquo;screen&amp;rdquo; or &amp;ldquo;window&amp;rdquo; (not sure what to call individual Alfred windows/pop-ups), you will see that some options are already filled, even though you didn&amp;rsquo;t select them. These are &lt;code&gt;Pandoctor&lt;/code&gt;&amp;rsquo;s &lt;code&gt;Default Options&lt;/code&gt;. The file (&lt;code&gt;pandoc_defaults.json&lt;/code&gt;) specifying which options are by default always on (filled) can be found inside the workflow&amp;rsquo;s folder (if you need to open this folder, you can do so easily using the &lt;code&gt;dr:help&lt;/code&gt; keyword and selecting &lt;code&gt;Root&lt;/code&gt;). This file also has comments for most options, which gives some information about them (Obviously, for detailed information about &lt;code&gt;Pandoc&lt;/code&gt;&amp;rsquo;s options, visit the &lt;a href="http://johnmacfarlane.net/pandoc/README.html"&gt;User Guide&lt;/a&gt;). When installed, &lt;code&gt;Pandoctor&lt;/code&gt; has 4 default options on:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;parse-raw&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Description: "Parse untranslatable HTML codes and LaTeX environments as raw HTML or LaTeX, instead of ignoring them."&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;smart&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Description: "Produce typographically correct output, converting straight quotes to curly quotes, — to em-dashes, – to en-dashes, and … to ellipses."&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;normalize&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Description: "Normalize the document after reading: merge adjacent Str or Emph elements, for example, and remove repeated Spaces."&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;standalone&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Description: "Produce output with an appropriate header and footer (e.g. a standalone HTML, LaTeX, or RTF file, not a fragment)."&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;parse-raw&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Description: &amp;ldquo;Parse untranslatable HTML codes and LaTeX environments as raw HTML or LaTeX, instead of ignoring them.&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;smart&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Description: &amp;ldquo;Produce typographically correct output, converting straight quotes to curly quotes, &amp;mdash; to em-dashes, &amp;ndash; to en-dashes, and &amp;hellip; to ellipses.&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;normalize&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Description: &amp;ldquo;Normalize the document after reading: merge adjacent Str or Emph elements, for example, and remove repeated Spaces.&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;standalone&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Description: &amp;ldquo;Produce output with an appropriate header and footer (e.g. a standalone HTML, LaTeX, or RTF file, not a fragment).&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id="user-default-options"&gt;User Default Options&lt;/h4&gt;
+&lt;h4&gt;User Default Options&lt;/h4&gt;
 
-&lt;p&gt;If you want to set your own default options (overriding these), you can use the &lt;code&gt;dr:defs&lt;/code&gt; keyword. This will provide a "window" similar to the standard Options window, but without anything selected. Here select whatever items you want to be on by default for any new conversion.&lt;/p&gt;
+&lt;p&gt;If you want to set your own default options (overriding these), you can use the &lt;code&gt;dr:defs&lt;/code&gt; keyword. This will provide a &amp;ldquo;window&amp;rdquo; similar to the standard Options window, but without anything selected. Here select whatever items you want to be on by default for any new conversion.&lt;/p&gt;
 
-&lt;h3 id="selecting-any-options-pt-2"&gt;Selecting any Options, pt. 2&lt;/h3&gt;
+&lt;h3&gt;Selecting any Options, pt. 2&lt;/h3&gt;
 
 &lt;p&gt;Back to the &lt;code&gt;Options Selection&lt;/code&gt;, tho. You will also see that that there are 2 basic types of options:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Boolean&lt;/li&gt;
-  &lt;li&gt;Argument&lt;/li&gt;
+&lt;li&gt;Boolean&lt;/li&gt;
+&lt;li&gt;Argument&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id="selecting-boolean-options"&gt;Selecting Boolean Options&lt;/h4&gt;
+&lt;h4&gt;Selecting Boolean Options&lt;/h4&gt;
 
-&lt;p&gt;If you select a Boolean option, it will simply "turn on" (the rectangle will be filled) and this screen will refresh. For example, here's this screen right before I choose to "turn on" the &lt;code&gt;strict&lt;/code&gt; option:&lt;/p&gt;
+&lt;p&gt;If you select a Boolean option, it will simply &amp;ldquo;turn on&amp;rdquo; (the rectangle will be filled) and this screen will refresh. For example, here&amp;rsquo;s this screen right before I choose to &amp;ldquo;turn on&amp;rdquo; the &lt;code&gt;strict&lt;/code&gt; option:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="`parse` Option off" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_opt_parse_off.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="`parse` Option off" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_opt_parse_off.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;and here's what the screen looks like as soon as it refreshes after I selected that option:&lt;/p&gt;
+&lt;p&gt;and here&amp;rsquo;s what the screen looks like as soon as it refreshes after I selected that option:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="`parse` Option on" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_opt_parse_on.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="`parse` Option on" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_opt_parse_on.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4 id="selecting-argument-options"&gt;Selecting Argument Options&lt;/h4&gt;
+&lt;h4&gt;Selecting Argument Options&lt;/h4&gt;
 
-&lt;p&gt;So, "turning on" Boolean options is simple. Argument options, however, require a bit more work. As the name suggests, this type of option requires more information (an "argument"). (Again, if any of this is confusing, I would highly recommend reading through &lt;code&gt;Pandoc&lt;/code&gt;'s &lt;a href="http://johnmacfarlane.net/pandoc/README.html"&gt;User Guide&lt;/a&gt;). This means that you will need to tell &lt;code&gt;Pandoctor&lt;/code&gt; what you want the "argument", the information, to be. So, whenever you select an &lt;code&gt;Argument&lt;/code&gt; option, you are taken to an intermediary "screen" where you can supply the needed information. For example, if I were to select the &lt;code&gt;toc-depth&lt;/code&gt; argument option, I would then see this screen:&lt;/p&gt;
+&lt;p&gt;So, &amp;ldquo;turning on&amp;rdquo; Boolean options is simple. Argument options, however, require a bit more work. As the name suggests, this type of option requires more information (an &amp;ldquo;argument&amp;rdquo;). (Again, if any of this is confusing, I would highly recommend reading through &lt;code&gt;Pandoc&lt;/code&gt;&amp;rsquo;s &lt;a href="http://johnmacfarlane.net/pandoc/README.html"&gt;User Guide&lt;/a&gt;). This means that you will need to tell &lt;code&gt;Pandoctor&lt;/code&gt; what you want the &amp;ldquo;argument&amp;rdquo;, the information, to be. So, whenever you select an &lt;code&gt;Argument&lt;/code&gt; option, you are taken to an intermediary &amp;ldquo;screen&amp;rdquo; where you can supply the needed information. For example, if I were to select the &lt;code&gt;toc-depth&lt;/code&gt; argument option, I would then see this screen:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="Set Option Empty" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_opt_set_pre.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Set Option Empty" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_opt_set_pre.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;I would then fill in the information (I want the Table of Contents in the converted  file to only go 4 levels deep):&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="Set Option Filled" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_opt_set_filled.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Set Option Filled" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_opt_set_filled.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Once you fill in the information, press &lt;code&gt;return&lt;/code&gt; (i.e. "Set argument value of chosen option") and return to the base Options "screen".&lt;/p&gt;
+&lt;p&gt;Once you fill in the information, press &lt;code&gt;return&lt;/code&gt; (i.e. &amp;ldquo;Set argument value of chosen option&amp;rdquo;) and return to the base Options &amp;ldquo;screen&amp;rdquo;.&lt;/p&gt;
 
-&lt;h4 id="finalizing-options"&gt;Finalizing Options&lt;/h4&gt;
+&lt;h4&gt;Finalizing Options&lt;/h4&gt;
 
-&lt;p&gt;Now, as soon as you have set all of the options you need, you only need to select the top item on this "screen": &lt;code&gt;Done setting Options?&lt;/code&gt;. This will close this screen. As I've noted before, if you instead select an option, this screen will merely refresh.&lt;/p&gt;
+&lt;p&gt;Now, as soon as you have set all of the options you need, you only need to select the top item on this &amp;ldquo;screen&amp;rdquo;: &lt;code&gt;Done setting Options?&lt;/code&gt;. This will close this screen. As I&amp;rsquo;ve noted before, if you instead select an option, this screen will merely refresh.&lt;/p&gt;
 
-&lt;h4 id="pandoctor-ui-pt-2"&gt;&lt;code&gt;Pandoctor&lt;/code&gt; UI, pt. 2&lt;/h4&gt;
+&lt;h4&gt;&lt;code&gt;Pandoctor&lt;/code&gt; UI, pt. 2&lt;/h4&gt;
 
-&lt;p&gt;&lt;em&gt;A small UI note&lt;/em&gt;: there is always a "header" for every list that &lt;code&gt;Pandoctor&lt;/code&gt; displays. However, there are 2 different kinds of headers:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;A small UI note&lt;/em&gt;: there is always a &amp;ldquo;header&amp;rdquo; for every list that &lt;code&gt;Pandoctor&lt;/code&gt; displays. However, there are 2 different kinds of headers:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;informational and non-selectable&lt;/li&gt;
-  &lt;li&gt;interrogative and selectable&lt;/li&gt;
+&lt;li&gt;informational and non-selectable&lt;/li&gt;
+&lt;li&gt;interrogative and selectable&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;The purely informational headers have the little &lt;code&gt;i&lt;/code&gt; in the center. These headers are found when selecting input and output formats. They cannot be selected; they simply tell you what that "screen" is. The interrogative headers, however, can be selected. These have the &lt;code&gt;?&lt;/code&gt; in the center. You will use these to "close" the screen you are viewing.&lt;/p&gt;
+&lt;p&gt;The purely informational headers have the little &lt;code&gt;i&lt;/code&gt; in the center. These headers are found when selecting input and output formats. They cannot be selected; they simply tell you what that &amp;ldquo;screen&amp;rdquo; is. The interrogative headers, however, can be selected. These have the &lt;code&gt;?&lt;/code&gt; in the center. You will use these to &amp;ldquo;close&amp;rdquo; the screen you are viewing.&lt;/p&gt;
 
-&lt;h4 id="running-your-pandoc-conversion"&gt;Running your &lt;code&gt;Pandoc&lt;/code&gt; Conversion&lt;/h4&gt;
+&lt;h4&gt;Running your &lt;code&gt;Pandoc&lt;/code&gt; Conversion&lt;/h4&gt;
 
 &lt;p&gt;Returning to the flow of the conversion, you have just finished selecting all of the options for your &lt;code&gt;Pandoc&lt;/code&gt; conversion. As soon as you hit &lt;code&gt;Done setting Options?&lt;/code&gt;, &lt;code&gt;Pandoctor&lt;/code&gt; will begin processing the conversion. This process can take a bit of time (particularly when generating PDFs), but when it is complete, you will see a notification in the top right of your screen:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="notify" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_notification.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="notify" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_notification.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;That's all there is to it really. In 4 simple steps, you can convert just about anything. However, for those more inclined toward "power-use", there are a few other abilities under &lt;code&gt;Pandoctor&lt;/code&gt;'s hood.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s all there is to it really. In 4 simple steps, you can convert just about anything. However, for those more inclined toward &amp;ldquo;power-use&amp;rdquo;, there are a few other abilities under &lt;code&gt;Pandoctor&lt;/code&gt;&amp;rsquo;s hood.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
-&lt;h2 id="ignoring-options"&gt;Ignoring Options&lt;/h2&gt;
+&lt;h2&gt;Ignoring Options&lt;/h2&gt;
 
-&lt;p&gt;First off, &lt;code&gt;Pandoctor&lt;/code&gt; offers the ability to "hide" or "ignore" certain options in the Select Options screen. &lt;code&gt;Pandoc&lt;/code&gt; itself offers &lt;em&gt;a lot&lt;/em&gt; of options, and always seeing them all is often unnecessary. If there are any options that you &lt;strong&gt;never&lt;/strong&gt; use, you can simply remove them. To do this, you need to use the &lt;code&gt;dr:ignore&lt;/code&gt; keyword:&lt;/p&gt;
+&lt;p&gt;First off, &lt;code&gt;Pandoctor&lt;/code&gt; offers the ability to &amp;ldquo;hide&amp;rdquo; or &amp;ldquo;ignore&amp;rdquo; certain options in the Select Options screen. &lt;code&gt;Pandoc&lt;/code&gt; itself offers &lt;em&gt;a lot&lt;/em&gt; of options, and always seeing them all is often unnecessary. If there are any options that you &lt;strong&gt;never&lt;/strong&gt; use, you can simply remove them. To do this, you need to use the &lt;code&gt;dr:ignore&lt;/code&gt; keyword:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="`dr:ignore` Filter" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_ignore.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="`dr:ignore` Filter" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_ignore.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;This will bring up a "screen" almost identical to the Select Options screen, but here you are choosing what options are hidden from that other screen. Once again, the two icons are informative. If an item is filled in, this means that it is going to be ignored:&lt;/p&gt;
+&lt;p&gt;This will bring up a &amp;ldquo;screen&amp;rdquo; almost identical to the Select Options screen, but here you are choosing what options are hidden from that other screen. Once again, the two icons are informative. If an item is filled in, this means that it is going to be ignored:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="`data-dir` Ignored" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_ignore_data_on.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="`data-dir` Ignored" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_ignore_data_on.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Otherwise (not filled in), it will appear in the standard Select Options window:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="`data-dir` Not Ignored" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_ignore_data_off.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="`data-dir` Not Ignored" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_ignore_data_off.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;As with the basic window, you can search here or just use the arrow keys. Select all of the options you want to ignore, and when you are done, select &lt;code&gt;Done setting Ignore?&lt;/code&gt; to exit.&lt;/p&gt;
 
-&lt;h2 id="template-commands"&gt;Template Commands&lt;/h2&gt;
+&lt;h2&gt;Template Commands&lt;/h2&gt;
 
-&lt;p&gt;For those who use &lt;code&gt;Pandoc&lt;/code&gt; frequently, you will likely use the same basic command over and over again. If that's the case, &lt;code&gt;Pandoctor&lt;/code&gt; has a "power-user" feature just for you. In addition to the "on-the-fly" conversion available via the "New Pandoc Conversion" file action, &lt;code&gt;Pandoctor&lt;/code&gt; also hase a "Templated Pandoc Conversion" file action:&lt;/p&gt;
+&lt;p&gt;For those who use &lt;code&gt;Pandoc&lt;/code&gt; frequently, you will likely use the same basic command over and over again. If that&amp;rsquo;s the case, &lt;code&gt;Pandoctor&lt;/code&gt; has a &amp;ldquo;power-user&amp;rdquo; feature just for you. In addition to the &amp;ldquo;on-the-fly&amp;rdquo; conversion available via the &amp;ldquo;New Pandoc Conversion&amp;rdquo; file action, &lt;code&gt;Pandoctor&lt;/code&gt; also hase a &amp;ldquo;Templated Pandoc Conversion&amp;rdquo; file action:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="template" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/file_action_template.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="template" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/file_action_template.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;This action grants you access to any and all &lt;code&gt;Pandoc&lt;/code&gt; template commands you have set up. Before I detail how to create a new template, let's briefly discuss the elements of a template. &lt;code&gt;Pandoctor&lt;/code&gt; ships with a file in the workflow directory that has some sample templates. This file is titled &lt;code&gt;pandoc_templates.json&lt;/code&gt;. If you open this file in your text editor of choice, it will look just like this:&lt;/p&gt;
+&lt;p&gt;This action grants you access to any and all &lt;code&gt;Pandoc&lt;/code&gt; template commands you have set up. Before I detail how to create a new template, let&amp;rsquo;s briefly discuss the elements of a template. &lt;code&gt;Pandoctor&lt;/code&gt; ships with a file in the workflow directory that has some sample templates. This file is titled &lt;code&gt;pandoc_templates.json&lt;/code&gt;. If you open this file in your text editor of choice, it will look just like this:&lt;/p&gt;
 
-&lt;h3 id="sample-templates"&gt;Sample Templates&lt;/h3&gt;
+&lt;h3&gt;Sample Templates&lt;/h3&gt;
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;/*
+    PANDOC TEMPLATED COMMANDS
 
-&lt;p&gt;```
-/*
-    PANDOC TEMPLATED COMMANDS&lt;/p&gt;
+    The ``defaults``, at initiation the `parse-raw`, `smart`, `normalize`, and `standalone`
+    options, are found at ``pandoc_defaults.json``.
 
-&lt;pre&gt;&lt;code&gt;The ``defaults``, at initiation the `parse-raw`, `smart`, `normalize`, and `standalone`
-options, are found at ``pandoc_defaults.json``.
+    HOW TO CREATE TEMPLATE:
+        + take your CLI pandoc command
+            (e.g. "pandoc -s -S --toc -c pandoc.css -A footer.html README -o example3.html")
+        + convert all "short option + space + argument" to "long option + '=' + argument"
+            (e.g. "pandoc -s -S --toc --css=pandoc.css --include-after-body=footer.html README --output=example3.html")
+        + split all options into list of individual options
+            (e.g. [pandoc, -s, -S, --toc, --css=pandoc.css, --include-after-body=footer.html, README, --output=example3.html])
+        + remove initial call to `pandoc` and replace input text path with ``{input}`` variable
+            (e.g. [-s, -S, --toc, --css=pandoc.css, --include-after-body=footer.html, {input}, --output={input}.html])
+        + make sure every option is a JSON string
+            (e.g. ["-s", "-S", "--toc", "--css=pandoc.css", "--include-after-body=footer.html", "{input}", "--output={input}.html"])
+        + give it a memorable name
+        + determine if you want to automatically add your default options to the command or not.
 
-HOW TO CREATE TEMPLATE:
-    + take your CLI pandoc command
-        (e.g. "pandoc -s -S --toc -c pandoc.css -A footer.html README -o example3.html")
-    + convert all "short option + space + argument" to "long option + '=' + argument"
-        (e.g. "pandoc -s -S --toc --css=pandoc.css --include-after-body=footer.html README --output=example3.html")
-    + split all options into list of individual options
-        (e.g. [pandoc, -s, -S, --toc, --css=pandoc.css, --include-after-body=footer.html, README, --output=example3.html])
-    + remove initial call to `pandoc` and replace input text path with ``{input}`` variable
-        (e.g. [-s, -S, --toc, --css=pandoc.css, --include-after-body=footer.html, {input}, --output={input}.html])
-    + make sure every option is a JSON string
-        (e.g. ["-s", "-S", "--toc", "--css=pandoc.css", "--include-after-body=footer.html", "{input}", "--output={input}.html"])
-    + give it a memorable name
-    + determine if you want to automatically add your default options to the command or not.
+    In order to make your templates more extensible, you can use any of 3 built-in
+    variables that relate to the file chosen to convert:
+        * {input_file} = The full path to the file, including file extension
+        * {input_name} = The full path to the file, without file extension
+        * {input_dir} = The full path to the parent directory of the file
 
-In order to make your templates more extensible, you can use any of 3 built-in
-variables that relate to the file chosen to convert:
-    * {input_file} = The full path to the file, including file extension
-    * {input_name} = The full path to the file, without file extension
-    * {input_dir} = The full path to the parent directory of the file
-
-For example, this template would only work if you kept a project directory
-that contained both `biblio.bib` and `chicago-author-date.csl` alongside
-your input file.
+    For example, this template would only work if you kept a project directory
+    that contained both `biblio.bib` and `chicago-author-date.csl` alongside
+    your input file.
+        {
+            "name": "Biblio Test",
+            "use_defaults": false,
+            "options": [
+                "-s",
+                "-S",
+                "--biblio={input_dir}/biblio.bib",
+                "--csl={input_dir}/chicago-author-date.csl",
+                "{input_file}",
+                "--output={input_name}.html"
+            ]
+        }
+*/
+[
     {
-        "name": "Biblio Test",
-        "use_defaults": false,
+        "name": "XeLaTeX PDF",
+        "use_defaults": true,
         "options": [
-            "-s",
-            "-S",
-            "--biblio={input_dir}/biblio.bib",
-            "--csl={input_dir}/chicago-author-date.csl",
+            "-N",
+            "--variable=mainfont:Georgia",
+            "--variable=sansfont:Arial",
+            "--variable=monofont:\"Andale Mono\"",
+            "--variable=fontsize:12pt",
+            "{input_file}",
+            "--latex-engine=xelatex",
+            "--toc",
+            "--output={input_name}.pdf"
+        ]
+    },
+    {
+        "name": "Pandoc MD -&amp;gt; HTML",
+        "use_defaults": true,
+        "options": [
+            "--toc",
+            "--css=pandoc.css",
             "{input_file}",
             "--output={input_name}.html"
         ]
-    } */ [
-{
-    "name": "XeLaTeX PDF",
-    "use_defaults": true,
-    "options": [
-        "-N",
-        "--variable=mainfont:Georgia",
-        "--variable=sansfont:Arial",
-        "--variable=monofont:\"Andale Mono\"",
-        "--variable=fontsize:12pt",
-        "{input_file}",
-        "--latex-engine=xelatex",
-        "--toc",
-        "--output={input_name}.pdf"
-    ]
-},
-{
-    "name": "Pandoc MD -&amp;gt; HTML",
-    "use_defaults": true,
-    "options": [
-        "--toc",
-        "--css=pandoc.css",
-        "{input_file}",
-        "--output={input_name}.html"
-    ]
-} ] ```
-&lt;/code&gt;&lt;/pre&gt;
+    }
+]
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
 
-&lt;h3 id="template-elements"&gt;Template Elements&lt;/h3&gt;
+&lt;h3&gt;Template Elements&lt;/h3&gt;
 
-&lt;p&gt;As you can see, it comes with two "default" templates, as well as one commented-out template. These are there to help you see the format of the JSON as well as &lt;code&gt;Pandoctor&lt;/code&gt;'s unique features. As the default templates show, each template must have 3 keys:&lt;/p&gt;
+&lt;p&gt;As you can see, it comes with two &amp;ldquo;default&amp;rdquo; templates, as well as one commented-out template. These are there to help you see the format of the JSON as well as &lt;code&gt;Pandoctor&lt;/code&gt;&amp;rsquo;s unique features. As the default templates show, each template must have 3 keys:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;use_defaults&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;options&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;use_defaults&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;options&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;The type of value for each of these is fixed. For &lt;code&gt;name&lt;/code&gt;, you must use a string; for &lt;code&gt;use_defaults&lt;/code&gt;, you use a Boolean (either &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt;); and for &lt;code&gt;options&lt;/code&gt;, you use a list/array of strings. The &lt;code&gt;name&lt;/code&gt; parameter is simple; this is the name of your template (what will be displayed when you are asked to choose which template you want to use). The &lt;code&gt;use_defaults&lt;/code&gt; parameter is fairly self-explanatory as well; do you want to automatically add the default options to this command or not? It is the &lt;code&gt;options&lt;/code&gt; parameter where the magic happens, and this is the one that requires the most precision.&lt;/p&gt;
 
-&lt;p&gt;As the comments in the file will tell you, you need to properly format your &lt;code&gt;Pandoc&lt;/code&gt; command for use as a &lt;code&gt;Pandoctor&lt;/code&gt; template. This means, each option is its own item in the list and each option is without spaces (unless properly quoted). This will require you to use the "long" version of any option along with the an equals [&lt;code&gt;=&lt;/code&gt;]. The 3 given examples give thorough demonstration of what acceptable templates can look like.&lt;/p&gt;
+&lt;p&gt;As the comments in the file will tell you, you need to properly format your &lt;code&gt;Pandoc&lt;/code&gt; command for use as a &lt;code&gt;Pandoctor&lt;/code&gt; template. This means, each option is its own item in the list and each option is without spaces (unless properly quoted). This will require you to use the &amp;ldquo;long&amp;rdquo; version of any option along with the an equals [&lt;code&gt;=&lt;/code&gt;]. The 3 given examples give thorough demonstration of what acceptable templates can look like.&lt;/p&gt;
 
-&lt;h3 id="template-variables"&gt;Template Variables&lt;/h3&gt;
+&lt;h3&gt;Template Variables&lt;/h3&gt;
 
 &lt;p&gt;In addition to these formatting requirements, &lt;code&gt;Pandoctor&lt;/code&gt; also gives you the ability to abstract your template properly. For any template, you have access to 3 variables:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;{input_file}&lt;/code&gt; = The full path to the file, including file extension&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;{input_name}&lt;/code&gt; = The full path to the file, without file extension&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;{input_dir}&lt;/code&gt; = The full path to the parent directory of the file&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{input_file}&lt;/code&gt; = The full path to the file, including file extension&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{input_name}&lt;/code&gt; = The full path to the file, without file extension&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{input_dir}&lt;/code&gt; = The full path to the parent directory of the file&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;These variables will allow you to properly use your template with any conversion. You will see that every template should use &lt;code&gt;{input_file}&lt;/code&gt; and &lt;code&gt;{input_name}&lt;/code&gt; for the input and output options respectively. In addition, if you specify any outside resource files, you can then use &lt;code&gt;{input_dir}&lt;/code&gt; to ensure that the full path is properly constructed (see the "Biblio Test" example in the comments).&lt;/p&gt;
+&lt;p&gt;These variables will allow you to properly use your template with any conversion. You will see that every template should use &lt;code&gt;{input_file}&lt;/code&gt; and &lt;code&gt;{input_name}&lt;/code&gt; for the input and output options respectively. In addition, if you specify any outside resource files, you can then use &lt;code&gt;{input_dir}&lt;/code&gt; to ensure that the full path is properly constructed (see the &amp;ldquo;Biblio Test&amp;rdquo; example in the comments).&lt;/p&gt;
 
-&lt;h3 id="running-a-template-command"&gt;Running a Template Command&lt;/h3&gt;
+&lt;h3&gt;Running a Template Command&lt;/h3&gt;
 
 &lt;p&gt;Once you set up a template, it will make using &lt;code&gt;Pandoc&lt;/code&gt; &lt;em&gt;so much easier&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;All you have to do is select the file in Alfred's file navigator, choose the "Templated Pandoc Conversion" file action, and then choose which template you want to use. That's it.&lt;/p&gt;
+&lt;p&gt;All you have to do is select the file in Alfred&amp;rsquo;s file navigator, choose the &amp;ldquo;Templated Pandoc Conversion&amp;rdquo; file action, and then choose which template you want to use. That&amp;rsquo;s it.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="`Pandoctor` Templates Filter" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_temps.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="`Pandoctor` Templates Filter" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_temps.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;As with the New Conversion, the process takes a variable amount of time. Whenever the conversion does finish, however, you will see a notification in the top right of your screen:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="New Template Notification" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_notify.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="New Template Notification" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_notify.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id="creating-a-template"&gt;Creating a Template&lt;/h3&gt;
+&lt;h3&gt;Creating a Template&lt;/h3&gt;
 
 &lt;p&gt;So, how do you set up template commands? As the Template Elements section describes, each template requires 3 things. So, in order to create a new template, you will need to create each of these 3 elements. Hopefully, however, &lt;code&gt;Pandoctor&lt;/code&gt; makes this dead-simple to do.&lt;/p&gt;
 
 &lt;p&gt;To begin creating a new template, use the &lt;code&gt;dr:temp:set&lt;/code&gt; keyword:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="Keyword to Create New Template" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_set_kw.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Keyword to Create New Template" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_set_kw.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4 id="setting-template-name"&gt;Setting Template Name&lt;/h4&gt;
+&lt;h4&gt;Setting Template Name&lt;/h4&gt;
 
-&lt;p&gt;Type the keyword and then press &lt;code&gt;return&lt;/code&gt;. This will immediately jump you to assigning a name for your new template. This will be the "screen" that you see:&lt;/p&gt;
+&lt;p&gt;Type the keyword and then press &lt;code&gt;return&lt;/code&gt;. This will immediately jump you to assigning a name for your new template. This will be the &amp;ldquo;screen&amp;rdquo; that you see:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="New Template Add Name" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_set_name_pre.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="New Template Add Name" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_set_name_pre.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;To assign a name, simply type the name of the template. As seen in the screenshot above, this name will be all that you will see in the Script Filter to choose which template you want to run. As an example, I created a new template called "Template Test":&lt;/p&gt;
+&lt;p&gt;To assign a name, simply type the name of the template. As seen in the screenshot above, this name will be all that you will see in the Script Filter to choose which template you want to run. As an example, I created a new template called &amp;ldquo;Template Test&amp;rdquo;:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="New Template Set Name" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_set_name.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="New Template Set Name" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_set_name.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4 id="setting-template-defaults"&gt;Setting Template Defaults&lt;/h4&gt;
+&lt;h4&gt;Setting Template Defaults&lt;/h4&gt;
 
 &lt;p&gt;Once you finish typing your template name, hit &lt;code&gt;return&lt;/code&gt; and &lt;code&gt;Pandoctor&lt;/code&gt; will then automatically ask you if you want your Default Options to always be added to the template command:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="New Template Add Defaults" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_set_defs.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="New Template Add Defaults" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_set_defs.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;If you select &lt;code&gt;True&lt;/code&gt;, this means that whatever options your template command has, your assigned Default Options will be added to the final &lt;code&gt;Pandoc&lt;/code&gt; command. For example, if you have set &lt;code&gt;standalone&lt;/code&gt; to be a Default Option, regardless of whether or not you have that option in your template command, &lt;code&gt;Pandoc&lt;/code&gt; will still create a standalong document. If, however, you select &lt;code&gt;False&lt;/code&gt;, only the options you have in the template will be run through &lt;code&gt;Pandoc&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h4 id="setting-template-command"&gt;Setting Template Command&lt;/h4&gt;
+&lt;h4&gt;Setting Template Command&lt;/h4&gt;
 
 &lt;p&gt;The final element you need to add to create your new template is, of course, the actual &lt;code&gt;Pandoc&lt;/code&gt; command:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="New Template Add Command" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_set_cmd_pre.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="New Template Add Command" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_set_cmd_pre.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;As the section above described, &lt;code&gt;Pandoctor&lt;/code&gt; requires your template command options to be in a very specific format. However, must &lt;code&gt;Pandoc&lt;/code&gt; users don't actually type commands into Terminal in this format. In order to make &lt;code&gt;Pandoctor&lt;/code&gt; as simple as possible, I have written a script that will convert the standard, short-form &lt;code&gt;Pandoc&lt;/code&gt; command into the long-form &lt;code&gt;Pandoctor&lt;/code&gt; compliant format. This means that all you have to do is copy your command from Terminal and paste it into this field:&lt;/p&gt;
+&lt;p&gt;As the section above described, &lt;code&gt;Pandoctor&lt;/code&gt; requires your template command options to be in a very specific format. However, must &lt;code&gt;Pandoc&lt;/code&gt; users don&amp;rsquo;t actually type commands into Terminal in this format. In order to make &lt;code&gt;Pandoctor&lt;/code&gt; as simple as possible, I have written a script that will convert the standard, short-form &lt;code&gt;Pandoc&lt;/code&gt; command into the long-form &lt;code&gt;Pandoctor&lt;/code&gt; compliant format. This means that all you have to do is copy your command from Terminal and paste it into this field:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;img alt="New Template Set Command" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_set_cmd.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="New Template Set Command" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_set_cmd.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;As it is currently implemented, there is the possibility of some bugs in the conversion process. This means it is in your best interest to double check the &lt;code&gt;user_templates.json&lt;/code&gt; file in your workflow storage folder (you can open this folder easily using the &lt;code&gt;dr:help&lt;/code&gt; keyword and selecting &lt;code&gt;Storage&lt;/code&gt;). Ensure that the variables are properly used. Also ensure that the all of the short-form options where correctly translated into their long-form version. Remember, you can use the &lt;code&gt;pandoc_templates.json&lt;/code&gt; file as a guide for the template JSON format.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;I think that &lt;code&gt;Pandoctor&lt;/code&gt; has a lot of power, and I hope it proves useful to you. For example, I wrote this entire README in Markdown and generated an HTML file using &lt;code&gt;Pandoctor&lt;/code&gt;. If you have any problems, please let me know.&lt;/p&gt;
 
@@ -1283,42 +1359,42 @@ The Hackademic&lt;/p&gt;
   </entry>
   <entry>
     <title>This is Fractaled Mind</title>
-    <link rel="alternate" href="http://blog.url.com/article/this-is-fractaled-mind.html"/>
-    <id>http://blog.url.com/article/this-is-fractaled-mind.html</id>
+    <link rel="alternate" href="http://blog.url.com/articles/this-is-fractaled-mind.html"/>
+    <id>http://blog.url.com/articles/this-is-fractaled-mind.html</id>
     <published>2015-05-15T13:25:00-04:00</published>
     <updated>2015-05-16T19:40:21-04:00</updated>
     <author>
-      <name>Article Author</name>
+      <name>Stephen Margheim</name>
     </author>
-    <content type="html">&lt;p&gt;I've been programming in Python for &lt;a href=""&gt;a little over a year now&lt;/a&gt;. I really love Python, and I'm finally starting to feel comfortable reading other people's code. For me, this was an important plateau. Being able to read and understand someone else's code, regardless of their style, preferences, structure, or paradigm, means that I now understand enough Python to follow basically any particular code's logic. Once I reached this state, however, I started to think about what the next plateau should be. What's my next goal? I decided to set my sights on clean API design.&lt;/p&gt;
+    <content type="html">&lt;p&gt;I&amp;rsquo;ve been programming in Python for &lt;a href="#"&gt;a little over a year now&lt;/a&gt;. I really love Python, and I&amp;rsquo;m finally starting to feel comfortable reading other people&amp;rsquo;s code. For me, this was an important plateau. Being able to read and understand someone else&amp;rsquo;s code, regardless of their style, preferences, structure, or paradigm, means that I now understand enough Python to follow basically any particular code&amp;rsquo;s logic. Once I reached this state, however, I started to think about what the next plateau should be. What&amp;rsquo;s my next goal? I decided to set my sights on clean API design.&lt;/p&gt;
 
-&lt;p&gt;Like most programmers, of any level I would assume, I prefer clean, simple APIs. In Python, these APIs typically are our access points to libraries (whether in the &lt;a href=""&gt;Standard Library&lt;/a&gt; or a 3rd party library). API design centers around how you make the functionality of your code available to other users or programmers. A good API is simple, intuitive, and clean. Simple means it only grants access to the functionality a user needs; intuitive means you can understand and perhaps even predict its semantics; and clean means the underlying code is well-structured, properly decoupled, and tested. I've written a decent amount of Python over the last year, but I wouldn't call any of it simple, intuitive, or clean.&lt;/p&gt;
+&lt;p&gt;Like most programmers, of any level I would assume, I prefer clean, simple APIs. In Python, these APIs typically are our access points to libraries (whether in the &lt;a href="#"&gt;Standard Library&lt;/a&gt; or a 3rd party library). API design centers around how you make the functionality of your code available to other users or programmers. A good API is simple, intuitive, and clean. Simple means it only grants access to the functionality a user needs; intuitive means you can understand and perhaps even predict its semantics; and clean means the underlying code is well-structured, properly decoupled, and tested. I&amp;rsquo;ve written a decent amount of Python over the last year, but I wouldn&amp;rsquo;t call any of it simple, intuitive, or clean.&lt;/p&gt;
 
 &lt;p&gt;So, how do I start to learn API design? My first thought was to start a new project from scratch, with a focus on its API. However, I quickly moved away from this approach. Starting totally from scratch means that my API can look like anything, can do anything, can be structured in any way. Clean API design requires structure, which often requires limits. Plus, starting a project from scratch requires so much more work beyond the actual API design itself. I wanted an approach that allowed to focus heavily on the API side of the program. My solution, for better or worse, was to write a Python wrapper for a UNIX program. For my money, this is actually a great way to learn Python API design. In what follows, I will describe how my own project evolved, what I learned, and why I consider it an all-around success.&lt;/p&gt;
 
-&lt;p&gt;As with all programming aimed at learning, I believe its important to find a project/problem that interests you. I had been working with OS X's &lt;code&gt;mdfind&lt;/code&gt; utility for another project and realized that it was powerful, but a pain to use. All of the &lt;a href=""&gt;Spotlight attribute names&lt;/a&gt; are convoluted, the &lt;a href=""&gt;query syntax&lt;/a&gt; is convoluted, and it's far too easy to make a small mistake. All these issues aside, however, it's a program with a predefined API that does something helpful. This is a perfect place for me to write my own Python API to open up &lt;code&gt;mdfind&lt;/code&gt;'s functionality to Python programmers without the hassle of the Terminal and Spotlight's odd syntax.&lt;/p&gt;
+&lt;p&gt;As with all programming aimed at learning, I believe its important to find a project/problem that interests you. I had been working with OS X&amp;rsquo;s &lt;code&gt;mdfind&lt;/code&gt; utility for another project and realized that it was powerful, but a pain to use. All of the &lt;a href="#"&gt;Spotlight attribute names&lt;/a&gt; are convoluted, the &lt;a href="#"&gt;query syntax&lt;/a&gt; is convoluted, and it&amp;rsquo;s far too easy to make a small mistake. All these issues aside, however, it&amp;rsquo;s a program with a predefined API that does something helpful. This is a perfect place for me to write my own Python API to open up &lt;code&gt;mdfind&lt;/code&gt;&amp;rsquo;s functionality to Python programmers without the hassle of the Terminal and Spotlight&amp;rsquo;s odd syntax.&lt;/p&gt;
 
-&lt;p&gt;In designing the Python wrapper, I wanted to focus on flexibility and simplicity. This meant deconstructing the Spotlight query syntax. As you can read in the &lt;a href=""&gt;README&lt;/a&gt;, the basic unit of any &lt;code&gt;mdfind&lt;/code&gt; query is a "comparison", which is itself always composed of three parts:&lt;/p&gt;
+&lt;p&gt;In designing the Python wrapper, I wanted to focus on flexibility and simplicity. This meant deconstructing the Spotlight query syntax. As you can read in the &lt;a href="#"&gt;README&lt;/a&gt;, the basic unit of any &lt;code&gt;mdfind&lt;/code&gt; query is a &amp;ldquo;comparison&amp;rdquo;, which is itself always composed of three parts:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;attribute&lt;/li&gt;
-  &lt;li&gt;operator&lt;/li&gt;
-  &lt;li&gt;predicate&lt;/li&gt;
+&lt;li&gt;attribute&lt;/li&gt;
+&lt;li&gt;operator&lt;/li&gt;
+&lt;li&gt;predicate&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;So, my first question was, "How do I construct comparisons in Python?"&lt;/p&gt;
+&lt;p&gt;So, my first question was, &amp;ldquo;How do I construct comparisons in Python?&amp;rdquo;&lt;/p&gt;
 </content>
   </entry>
   <entry>
     <title>my interesting new article</title>
-    <link rel="alternate" href="http://blog.url.com/article/my-interesting-new-article.html"/>
-    <id>http://blog.url.com/article/my-interesting-new-article.html</id>
+    <link rel="alternate" href="http://blog.url.com/articles/my-interesting-new-article.html"/>
+    <id>http://blog.url.com/articles/my-interesting-new-article.html</id>
     <published>2015-03-30T18:58:00-04:00</published>
     <updated>2015-05-16T14:38:52-04:00</updated>
     <author>
-      <name>Article Author</name>
+      <name>Stephen Margheim</name>
     </author>
-    <content type="html">&lt;h1 id="welcome-to-ghost"&gt;Welcome to Ghost&lt;/h1&gt;
+    <content type="html">&lt;h1&gt;Welcome to Ghost&lt;/h1&gt;
 
 &lt;p&gt;You’re live! Nice. We’ve put together a little post to introduce you to
 the Ghost editor and get you started. You can manage your content by
@@ -1327,7 +1403,7 @@ arrive, you can select this post from a list on the left and see a
 preview of it on the right. Click the little pencil icon at the top of
 the preview to edit this post and read the next section!&lt;/p&gt;
 
-&lt;h2 id="getting-started"&gt;Getting Started&lt;/h2&gt;
+&lt;h2&gt;Getting Started&lt;/h2&gt;
 
 &lt;p&gt;Ghost uses something called Markdown for writing. Essentially, it’s a
 shorthand way to manage your post formatting as you write!&lt;/p&gt;
@@ -1337,31 +1413,31 @@ simply write as you normally would. Where appropriate, you can use
 &lt;em&gt;shortcuts&lt;/em&gt; to &lt;strong&gt;style&lt;/strong&gt; your content. For example, a list:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Item number one&lt;/li&gt;
-  &lt;li&gt;Item number two
-    &lt;ul&gt;
-      &lt;li&gt;A nested item&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;A final item&lt;/li&gt;
+&lt;li&gt;  Item number one&lt;/li&gt;
+&lt;li&gt;  Item number two
+
+&lt;ul&gt;
+&lt;li&gt;  A nested item&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;  A final item&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;or with numbers!&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Remember to buy some milk&lt;/li&gt;
-  &lt;li&gt;Drink the milk&lt;/li&gt;
-  &lt;li&gt;Tweet that I remembered to buy the milk, and drank it&lt;/li&gt;
+&lt;li&gt; Remember to buy some milk&lt;/li&gt;
+&lt;li&gt; Drink the milk&lt;/li&gt;
+&lt;li&gt; Tweet that I remembered to buy the milk, and drank it&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id="links"&gt;Links&lt;/h3&gt;
+&lt;h3&gt;Links&lt;/h3&gt;
 
 &lt;p&gt;Want to link to a source? No problem. If you paste in a URL, like
 &lt;a href="http://ghost.org"&gt;http://ghost.org&lt;/a&gt; - it’ll automatically be linked up. But if you want
 to customise your anchor text, you can do that too! Here’s a link to
 &lt;a href="http://ghost.org"&gt;the Ghost website&lt;/a&gt;. Neat.&lt;/p&gt;
 
-&lt;h3 id="what-about-images"&gt;What about Images?&lt;/h3&gt;
+&lt;h3&gt;What about Images?&lt;/h3&gt;
 
 &lt;p&gt;Images work too! Already know the URL of the image you want to include
 in your article? Simply paste it in like this to make it show up:&lt;/p&gt;
@@ -1372,7 +1448,7 @@ in your article? Simply paste it in like this to make it show up:&lt;/p&gt;
 a descriptive placeholder and keep writing. Come back later and drag and
 drop the image in to upload:&lt;/p&gt;
 
-&lt;h3 id="quoting"&gt;Quoting&lt;/h3&gt;
+&lt;h3&gt;Quoting&lt;/h3&gt;
 
 &lt;p&gt;Sometimes a link isn’t enough, you want to quote someone on what they’ve
 said. It was probably very wisdomous. Is wisdomous a word? Find out in a
@@ -1380,63 +1456,75 @@ future release when we introduce spellcheck! For now - it’s definitely a
 word.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Wisdomous - it’s definitely a word.&lt;/p&gt;
+&lt;p&gt;Wisdomous - it’s definitely a word.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id="working-with-code"&gt;Working with Code&lt;/h3&gt;
+&lt;h3&gt;Working with Code&lt;/h3&gt;
 
 &lt;p&gt;Got a streak of geek? We’ve got you covered there, too. You can write
 inline &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; blocks really easily with back ticks. Want to show off
 something more comprehensive? 4 spaces of indentation gets you there.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;.awesome-thing {
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;.awesome-thing {
     display: block;
     width: 100%;
 }
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
 
-&lt;h3 id="ready-for-a-break"&gt;Ready for a Break?&lt;/h3&gt;
+&lt;h3&gt;Ready for a Break?&lt;/h3&gt;
 
 &lt;p&gt;Throw 3 or more dashes down on any new line and you’ve got yourself a
 fancy new divider. Aw yeah.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
-&lt;h3 id="advanced-usage"&gt;Advanced Usage&lt;/h3&gt;
+&lt;h3&gt;Advanced Usage&lt;/h3&gt;
 
 &lt;p&gt;There’s one fantastic secret about Markdown. If you want, you can write
 plain old HTML and it’ll still work! Very flexible.&lt;/p&gt;
 
-&lt;p&gt;&lt;input type="text" placeholder="I'm an input field!" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;input type="text" placeholder="I'm an input field!"&gt;&lt;/p&gt;
 
 &lt;p&gt;That should be enough to get you started. Have fun - and let us know
 what you think :)&lt;/p&gt;
-
 </content>
   </entry>
   <entry>
     <title>Example Article</title>
-    <link rel="alternate" href="http://blog.url.com/article/example-article.html"/>
-    <id>http://blog.url.com/article/example-article.html</id>
+    <link rel="alternate" href="http://blog.url.com/articles/example-article.html"/>
+    <id>http://blog.url.com/articles/example-article.html</id>
     <published>2011-12-31T19:00:00-05:00</published>
-    <updated>2015-05-16T14:40:10-04:00</updated>
+    <updated>2015-05-19T13:08:48-04:00</updated>
     <author>
-      <name>Article Author</name>
+      <name>Stephen Margheim</name>
     </author>
     <content type="html">&lt;p&gt;This is an example article. You probably want to delete it and write your own articles!&lt;/p&gt;
 
-&lt;p&gt;&lt;a href="smargh.github.io"&gt;link&lt;/a&gt;&lt;/p&gt;
-
 &lt;p&gt;This is the content of my blog post.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Hello World&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Here I come&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;python
-def function(*args, **kwargs):
-    print(args)
-&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="smargh.github.io"&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight python"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="n"&gt;list_comp&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
 
 &lt;p&gt;&lt;img alt="fractal" src="../images/dragon_curve.png" /&gt;&lt;/p&gt;
 
