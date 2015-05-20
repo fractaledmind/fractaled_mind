@@ -1497,7 +1497,7 @@ what you think :)&lt;/p&gt;
     <link rel="alternate" href="http://blog.url.com/articles/example-article.html"/>
     <id>http://blog.url.com/articles/example-article.html</id>
     <published>2011-12-31T19:00:00-05:00</published>
-    <updated>2015-05-19T13:08:48-04:00</updated>
+    <updated>2015-05-19T20:15:43-04:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1509,7 +1509,7 @@ what you think :)&lt;/p&gt;
 
 &lt;p&gt;0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Hello World&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Hello World, I know that I&amp;rsquo;m here&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Here I come&lt;/strong&gt;&lt;/p&gt;
 
@@ -1526,7 +1526,9 @@ what you think :)&lt;/p&gt;
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
 
+&lt;blockquote&gt;
 &lt;p&gt;&lt;img alt="fractal" src="../images/dragon_curve.png" /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;fin.&lt;/p&gt;
 </content>
