@@ -8,19 +8,24 @@
   <title>Fractaled Mind</title>
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="feed.xml" />
 
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
+
   <link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
   <link href="../images/favicon.png" rel="icon" type="image/png" />
-  <!-- <script src="../javascripts/application.js" type="text/javascript"></script> -->
+  <script src="../javascripts/bigfoot.js" type="text/javascript"></script>
 
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <script type="text/javascript">
+    $.bigfoot();
+  </script>
 
 </head>
 
   <body>
     <header>
   <div id="site-logo">
-<a class="no-hvr" href="http://fractaledmind.com">      <img alt="Fractaled Mind" src="../images/daniel_logo.png" />
-</a>  </div>
+    <img alt="Fractaled Mind" src="../images/daniel_logo.png" />
+  </div>
 
   <ul id="social-networks">
     <li>
@@ -54,9 +59,9 @@
     <div class="navigation-wrapper">
   <nav role="navigation">
     <ul class="navigation-menu">
-      <li class="nav-link"><a href="about">About</a></li>
-      <li class="nav-link"><a href="projects">Projects</a></li>
-      <li class="nav-link"><a href="tags">Topics</a></li>
+      <li class="nav-link"><a href="/">home</a></li>
+      <li class="nav-link"><a href="/about">about</a></li>
+      <li class="nav-link"><a href="/projects">projects</a></li>
     </ul>
   </nav>
 
@@ -76,252 +81,12 @@
       <!-- Grab all projects in a single variable -->
 <ul class="cards">
       <li class="card">
-        <a class="card-link no-hvr" href="zotquery"></a>
+        <a class="card-link no-hvr" href="projects/bibquery"></a>
 
           <ul class="card-tags">
               <li>
                 <!-- If project-tag is also a blog-tag, link to it -->
-                  <a class="badge no-hvr" href="/categories/alfred/">alfred</a>
-                <!-- If project-tag is unique, show it, but no link -->
-              </li>
-          </ul>
-
-        <div class="card-image">
-            <img src="../images/projects/zotquery.png" />
-        </div>
-
-        <div class="card-header">
-            <h3 class="card-title">
-                ZotQuery
-            </h3>
-        </div>
-
-        <hr class="fractal">
-
-        <div class="card-copy">
-            <!-- Render Markdown as HTML -->
-            <p>Provides lightening fast access to a user&#39;s <a href="#">Zotero</a> citation data.</p>
-
-        </div>
-
-      </li>
-      <li class="card">
-        <a class="card-link no-hvr" href="pandoctor"></a>
-
-          <ul class="card-tags">
-              <li>
-                <!-- If project-tag is also a blog-tag, link to it -->
-                  <a class="badge no-hvr" href="/categories/alfred/">alfred</a>
-                <!-- If project-tag is unique, show it, but no link -->
-              </li>
-          </ul>
-
-        <div class="card-image">
-            <img src="../images/projects/pandoctor.png" />
-        </div>
-
-        <div class="card-header">
-            <h3 class="card-title">
-                Pandoctor
-            </h3>
-        </div>
-
-        <hr class="fractal">
-
-        <div class="card-copy">
-            <!-- Render Markdown as HTML -->
-            <p>Provides an intuitive GUI for the <code>[pandoc]()</code> document converter utility.</p>
-
-        </div>
-
-      </li>
-      <li class="card">
-        <a class="card-link no-hvr" href="skimmer"></a>
-
-          <ul class="card-tags">
-              <li>
-                <!-- If project-tag is also a blog-tag, link to it -->
-                  <a class="badge no-hvr" href="/categories/alfred/">alfred</a>
-                <!-- If project-tag is unique, show it, but no link -->
-              </li>
-          </ul>
-
-        <div class="card-image">
-            <img src="../images/projects/skimmer.png" />
-        </div>
-
-        <div class="card-header">
-            <h3 class="card-title">
-                Skimmer
-            </h3>
-        </div>
-
-        <hr class="fractal">
-
-        <div class="card-copy">
-            <!-- Render Markdown as HTML -->
-            <p>Extensions for the PDF application <a href="#">Skim</a> that allow users to split scanned PDF pages, export annotations, or ___.</p>
-
-        </div>
-
-      </li>
-      <li class="card">
-        <a class="card-link no-hvr" href="wikify"></a>
-
-          <ul class="card-tags">
-              <li>
-                <!-- If project-tag is also a blog-tag, link to it -->
-                  <a class="badge no-hvr" href="/categories/alfred/">alfred</a>
-                <!-- If project-tag is unique, show it, but no link -->
-              </li>
-          </ul>
-
-        <div class="card-image">
-            <img src="../images/projects/wikify.png" />
-        </div>
-
-        <div class="card-header">
-            <h3 class="card-title">
-                Wikify
-            </h3>
-        </div>
-
-        <hr class="fractal">
-
-        <div class="card-copy">
-            <!-- Render Markdown as HTML -->
-            <p>Add the power of a personal wiki and Markdown to <a href="#">Evernote</a>. Link pre-existing notes to new notes or old notes; write new notes and have references to pre-existing notes automatically linked; convert any Evernote note to Markdown, or write a new note in Markdown and have it converted into an Evernote note.</p>
-
-        </div>
-
-      </li>
-      <li class="card">
-        <a class="card-link no-hvr" href="snippets"></a>
-
-          <ul class="card-tags">
-              <li>
-                <!-- If project-tag is also a blog-tag, link to it -->
-                  <a class="badge no-hvr" href="/categories/alfred/">alfred</a>
-                <!-- If project-tag is unique, show it, but no link -->
-              </li>
-          </ul>
-
-        <div class="card-image">
-            <img src="../images/projects/snippets.png" />
-        </div>
-
-        <div class="card-header">
-            <h3 class="card-title">
-                Snippets
-            </h3>
-        </div>
-
-        <hr class="fractal">
-
-        <div class="card-copy">
-            <!-- Render Markdown as HTML -->
-            <p>Create on-the-fly text expansion snippets which <code>Snippets</code> will expand when you are finished writing.</p>
-
-        </div>
-
-      </li>
-      <li class="card">
-        <a class="card-link no-hvr" href="spritzr"></a>
-
-          <ul class="card-tags">
-              <li>
-                <!-- If project-tag is also a blog-tag, link to it -->
-                  <a class="badge no-hvr" href="/categories/alfred/">alfred</a>
-                <!-- If project-tag is unique, show it, but no link -->
-              </li>
-          </ul>
-
-        <div class="card-image">
-            <img src="../images/projects/spritzr.png" />
-        </div>
-
-        <div class="card-header">
-            <h3 class="card-title">
-                Spritzr
-            </h3>
-        </div>
-
-        <hr class="fractal">
-
-        <div class="card-copy">
-            <!-- Render Markdown as HTML -->
-            <p>Bring speed-reading to the desktop. Using the <a href="#">Spritz</a> technique, this workflow allows you to speed-read any text files on your Mac.</p>
-
-        </div>
-
-      </li>
-      <li class="card">
-        <a class="card-link no-hvr" href="libgen"></a>
-
-          <ul class="card-tags">
-              <li>
-                <!-- If project-tag is also a blog-tag, link to it -->
-                  <a class="badge no-hvr" href="/categories/alfred/">alfred</a>
-                <!-- If project-tag is unique, show it, but no link -->
-              </li>
-          </ul>
-
-        <div class="card-image">
-            <img src="../images/projects/libgen.png" />
-        </div>
-
-        <div class="card-header">
-            <h3 class="card-title">
-                LibGen
-            </h3>
-        </div>
-
-        <hr class="fractal">
-
-        <div class="card-copy">
-            <!-- Render Markdown as HTML -->
-            <p>Seach the <a href="#">Library Genesis</a> project&#39;s catalogue of books and download right from your keyboard, without ever launching a browser.</p>
-
-        </div>
-
-      </li>
-      <li class="card">
-        <a class="card-link no-hvr" href="parsers"></a>
-
-          <ul class="card-tags">
-              <li>
-                <!-- If project-tag is also a blog-tag, link to it -->
-                  <a class="badge no-hvr" href="/categories/alfred/">alfred</a>
-                <!-- If project-tag is unique, show it, but no link -->
-              </li>
-          </ul>
-
-        <div class="card-image">
-            <img src="../images/projects/parsers.png" />
-        </div>
-
-        <div class="card-header">
-            <h3 class="card-title">
-                Parsers
-            </h3>
-        </div>
-
-        <hr class="fractal">
-
-        <div class="card-copy">
-            <!-- Render Markdown as HTML -->
-            <p>Parse any Greek or Latin word lightening quick. This workflow uses the <a href="#">Perseus Digital Library</a> backend to provide parsing info on input text.</p>
-
-        </div>
-
-      </li>
-      <li class="card">
-        <a class="card-link no-hvr" href="bibquery"></a>
-
-          <ul class="card-tags">
-              <li>
-                <!-- If project-tag is also a blog-tag, link to it -->
-                  <a class="badge no-hvr" href="/categories/alfred/">alfred</a>
+                  <a class="badge no-hvr" href="/topics/alfred/">alfred</a>
                 <!-- If project-tag is unique, show it, but no link -->
               </li>
           </ul>
@@ -346,22 +111,15 @@
 
       </li>
       <li class="card">
-        <a class="card-link no-hvr" href="dots"></a>
+        <a class="card-link no-hvr" href="projects/classical-studies-resources"></a>
 
-          <ul class="card-tags">
-              <li>
-                <!-- If project-tag is also a blog-tag, link to it -->
-                  <span class="badge bash">bash</span>
-              </li>
-          </ul>
 
         <div class="card-image">
-            <img src="../images/projects/dots.png" />
         </div>
 
         <div class="card-header">
             <h3 class="card-title">
-                Dots
+                Classical Studies Resources
             </h3>
         </div>
 
@@ -369,18 +127,48 @@
 
         <div class="card-copy">
             <!-- Render Markdown as HTML -->
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>This is a work-in-progress collection of structured data and scripts for Classical Studies/Classics. The data has been compiled and organized from various online resources including the Perseus Project, Dickenson College Commentaries, The Diccionario Griego-Español Project, and L&#39;Année philologique.</p>
 
         </div>
 
       </li>
       <li class="card">
-        <a class="card-link no-hvr" href="metadata"></a>
+        <a class="card-link no-hvr" href="projects/libgen"></a>
 
           <ul class="card-tags">
               <li>
                 <!-- If project-tag is also a blog-tag, link to it -->
-                  <span class="badge python">python</span>
+                  <a class="badge no-hvr" href="/topics/alfred/">alfred</a>
+                <!-- If project-tag is unique, show it, but no link -->
+              </li>
+          </ul>
+
+        <div class="card-image">
+            <img src="../images/projects/libgen.png" />
+        </div>
+
+        <div class="card-header">
+            <h3 class="card-title">
+                LibGen
+            </h3>
+        </div>
+
+        <hr class="fractal">
+
+        <div class="card-copy">
+            <!-- Render Markdown as HTML -->
+            <p>Seach the <a href="#">Library Genesis</a> project&#39;s catalogue of books and download right from your keyboard, without ever launching a browser.</p>
+
+        </div>
+
+      </li>
+      <li class="card">
+        <a class="card-link no-hvr" href="projects/metadata"></a>
+
+          <ul class="card-tags">
+              <li>
+                <!-- If project-tag is also a blog-tag, link to it -->
+                  <span class="badge" id="python">python</span>
               </li>
           </ul>
 
@@ -404,7 +192,7 @@
 
       </li>
       <li class="card">
-        <a class="card-link no-hvr" href="pandoc-templates"></a>
+        <a class="card-link no-hvr" href="projects/pandoc-templates"></a>
 
 
         <div class="card-image">
@@ -427,15 +215,23 @@
 
       </li>
       <li class="card">
-        <a class="card-link no-hvr" href="classical-studies-resources"></a>
+        <a class="card-link no-hvr" href="projects/pandoctor"></a>
 
+          <ul class="card-tags">
+              <li>
+                <!-- If project-tag is also a blog-tag, link to it -->
+                  <a class="badge no-hvr" href="/topics/alfred/">alfred</a>
+                <!-- If project-tag is unique, show it, but no link -->
+              </li>
+          </ul>
 
         <div class="card-image">
+            <img src="../images/projects/pandoctor.png" />
         </div>
 
         <div class="card-header">
             <h3 class="card-title">
-                Classical Studies Resources
+                Pandoctor
             </h3>
         </div>
 
@@ -443,7 +239,216 @@
 
         <div class="card-copy">
             <!-- Render Markdown as HTML -->
-            <p>This is a work-in-progress collection of structured data and scripts for Classical Studies/Classics. The data has been compiled and organized from various online resources including the Perseus Project, Dickenson College Commentaries, The Diccionario Griego-Español Project, and L&#39;Année philologique.</p>
+            <p>Provides an intuitive GUI for the <code>[pandoc]()</code> document converter utility.</p>
+
+        </div>
+
+      </li>
+      <li class="card">
+        <a class="card-link no-hvr" href="projects/parsers"></a>
+
+          <ul class="card-tags">
+              <li>
+                <!-- If project-tag is also a blog-tag, link to it -->
+                  <a class="badge no-hvr" href="/topics/alfred/">alfred</a>
+                <!-- If project-tag is unique, show it, but no link -->
+              </li>
+          </ul>
+
+        <div class="card-image">
+            <img src="../images/projects/parsers.png" />
+        </div>
+
+        <div class="card-header">
+            <h3 class="card-title">
+                Parsers
+            </h3>
+        </div>
+
+        <hr class="fractal">
+
+        <div class="card-copy">
+            <!-- Render Markdown as HTML -->
+            <p>Parse any Greek or Latin word lightening quick. This workflow uses the <a href="#">Perseus Digital Library</a> backend to provide parsing info on input text.</p>
+
+        </div>
+
+      </li>
+      <li class="card">
+        <a class="card-link no-hvr" href="projects/reboot"></a>
+
+          <ul class="card-tags">
+              <li>
+                <!-- If project-tag is also a blog-tag, link to it -->
+                  <span class="badge" id="bash">bash</span>
+              </li>
+          </ul>
+
+        <div class="card-image">
+            <img src="../images/projects/dots.png" />
+        </div>
+
+        <div class="card-header">
+            <h3 class="card-title">
+                Reboot
+            </h3>
+        </div>
+
+        <hr class="fractal">
+
+        <div class="card-copy">
+            <!-- Render Markdown as HTML -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+        </div>
+
+      </li>
+      <li class="card">
+        <a class="card-link no-hvr" href="projects/skimmer"></a>
+
+          <ul class="card-tags">
+              <li>
+                <!-- If project-tag is also a blog-tag, link to it -->
+                  <a class="badge no-hvr" href="/topics/alfred/">alfred</a>
+                <!-- If project-tag is unique, show it, but no link -->
+              </li>
+          </ul>
+
+        <div class="card-image">
+            <img src="../images/projects/skimmer.png" />
+        </div>
+
+        <div class="card-header">
+            <h3 class="card-title">
+                Skimmer
+            </h3>
+        </div>
+
+        <hr class="fractal">
+
+        <div class="card-copy">
+            <!-- Render Markdown as HTML -->
+            <p>Extensions for the PDF application <a href="#">Skim</a> that allow users to split scanned PDF pages, export annotations, or ___.</p>
+
+        </div>
+
+      </li>
+      <li class="card">
+        <a class="card-link no-hvr" href="projects/snippets"></a>
+
+          <ul class="card-tags">
+              <li>
+                <!-- If project-tag is also a blog-tag, link to it -->
+                  <a class="badge no-hvr" href="/topics/alfred/">alfred</a>
+                <!-- If project-tag is unique, show it, but no link -->
+              </li>
+          </ul>
+
+        <div class="card-image">
+            <img src="../images/projects/snippets.png" />
+        </div>
+
+        <div class="card-header">
+            <h3 class="card-title">
+                Snippets
+            </h3>
+        </div>
+
+        <hr class="fractal">
+
+        <div class="card-copy">
+            <!-- Render Markdown as HTML -->
+            <p>Create on-the-fly text expansion snippets which <code>Snippets</code> will expand when you are finished writing.</p>
+
+        </div>
+
+      </li>
+      <li class="card">
+        <a class="card-link no-hvr" href="projects/spritzr"></a>
+
+          <ul class="card-tags">
+              <li>
+                <!-- If project-tag is also a blog-tag, link to it -->
+                  <a class="badge no-hvr" href="/topics/alfred/">alfred</a>
+                <!-- If project-tag is unique, show it, but no link -->
+              </li>
+          </ul>
+
+        <div class="card-image">
+            <img src="../images/projects/spritzr.png" />
+        </div>
+
+        <div class="card-header">
+            <h3 class="card-title">
+                Spritzr
+            </h3>
+        </div>
+
+        <hr class="fractal">
+
+        <div class="card-copy">
+            <!-- Render Markdown as HTML -->
+            <p>Bring speed-reading to the desktop. Using the <a href="#">Spritz</a> technique, this workflow allows you to speed-read any text files on your Mac.</p>
+
+        </div>
+
+      </li>
+      <li class="card">
+        <a class="card-link no-hvr" href="projects/wikify"></a>
+
+          <ul class="card-tags">
+              <li>
+                <!-- If project-tag is also a blog-tag, link to it -->
+                  <a class="badge no-hvr" href="/topics/alfred/">alfred</a>
+                <!-- If project-tag is unique, show it, but no link -->
+              </li>
+          </ul>
+
+        <div class="card-image">
+            <img src="../images/projects/wikify.png" />
+        </div>
+
+        <div class="card-header">
+            <h3 class="card-title">
+                Wikify
+            </h3>
+        </div>
+
+        <hr class="fractal">
+
+        <div class="card-copy">
+            <!-- Render Markdown as HTML -->
+            <p>Add the power of a personal wiki and Markdown to <a href="#">Evernote</a>. Link pre-existing notes to new notes or old notes; write new notes and have references to pre-existing notes automatically linked; convert any Evernote note to Markdown, or write a new note in Markdown and have it converted into an Evernote note.</p>
+
+        </div>
+
+      </li>
+      <li class="card">
+        <a class="card-link no-hvr" href="projects/zotquery"></a>
+
+          <ul class="card-tags">
+              <li>
+                <!-- If project-tag is also a blog-tag, link to it -->
+                  <a class="badge no-hvr" href="/topics/alfred/">alfred</a>
+                <!-- If project-tag is unique, show it, but no link -->
+              </li>
+          </ul>
+
+        <div class="card-image">
+            <img src="../images/projects/zotquery.png" />
+        </div>
+
+        <div class="card-header">
+            <h3 class="card-title">
+                ZotQuery
+            </h3>
+        </div>
+
+        <hr class="fractal">
+
+        <div class="card-copy">
+            <!-- Render Markdown as HTML -->
+            <p>Provides lightening fast access to a user&#39;s <a href="#">Zotero</a> citation data.</p>
 
         </div>
 
@@ -487,34 +492,31 @@
     <h5>Tags</h5>
     <ul>
         <li>
-          <a class="badge no-hvr" href="/categories/example/">example (2)</a>
+          <a class="badge no-hvr" href="/topics/example/">example (2)</a>
         </li>
         <li>
-          <a class="badge no-hvr" href="/categories/hello/">hello (1)</a>
+          <a class="badge no-hvr" href="/topics/hello/">hello (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" href="/categories/world/">world (1)</a>
+          <a class="badge no-hvr" href="/topics/world/">world (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" href="/categories/goodbye/">goodbye (1)</a>
+          <a class="badge no-hvr" href="/topics/goodbye/">goodbye (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" href="/categories/xoxo/">xoxo (1)</a>
+          <a class="badge no-hvr" href="/topics/xoxo/">xoxo (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" href="/categories/work/">work (1)</a>
+          <a class="badge no-hvr" href="/topics/work/">work (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" href="/categories/play/">play (1)</a>
+          <a class="badge no-hvr" href="/topics/play/">play (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" href="/categories/sample/">sample (1)</a>
+          <a class="badge no-hvr" href="/topics/alfred/">alfred (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" href="/categories/alfred/">alfred (1)</a>
-        </li>
-        <li>
-          <a class="badge no-hvr" href="/categories/workflow/">workflow (1)</a>
+          <a class="badge no-hvr" href="/topics/workflow/">workflow (1)</a>
         </li>
     </ul>
   </div>

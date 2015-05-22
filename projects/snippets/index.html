@@ -11,9 +11,9 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
 
-  <link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
-  <link href="../images/favicon.png" rel="icon" type="image/png" />
-  <script src="../javascripts/bigfoot.js" type="text/javascript"></script>
+  <link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
+  <link href="../../images/favicon.png" rel="icon" type="image/png" />
+  <script src="../../javascripts/bigfoot.js" type="text/javascript"></script>
 
   <script type="text/javascript">
     $.bigfoot();
@@ -24,7 +24,7 @@
   <body>
     <header>
   <div id="site-logo">
-    <img alt="Fractaled Mind" src="../images/daniel_logo.png" />
+    <img alt="Fractaled Mind" src="../../images/daniel_logo.png" />
   </div>
 
   <ul id="social-networks">
@@ -78,18 +78,43 @@
 </div>
 
     <div id="main" role="main">
-      <article class="card">
-  <h2>About</h2>
+      <div class="card" id="project-page">
 
-  <p>This is my personal blog.</p>
+      <ul class="card-tags">
+          <li>
+            <!-- If project-tag is also a blog-tag, link to it -->
+              <a class="badge no-hvr" href="/topics/alfred/">alfred</a>
+            <!-- If project-tag is unique, show it, but no link -->
+          </li>
+      </ul>
 
-</article>
+    <div class="card-image">
+      <!-- if project has tags, add filler element -->
+        <div id="tag-filler-space"></div>
+      <!-- if project has header image, add it -->
+        <img src="../../images/projects/snippets.png" />
+    </div>
+
+    <h2>Snippets</h2>
+
+    <hr class="fractal">
+
+    <h4><a href="https://github.com/smargh/alfred_snippets">GitHub Repo</a></h4>
+
+    <div id="description"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique ut quam non fermentum. In a sodales mi. Ut non ullamcorper ante, sit amet sagittis diam. Ut turpis orci, malesuada a lacus eu, fringilla faucibus felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec est at nibh mattis mattis eget sit amet leo. Cras tristique vestibulum nisi. Fusce iaculis venenatis metus, vitae luctus nunc blandit eget. Integer et nunc sed augue varius varius eu et elit. Suspendisse eu nisl venenatis, vehicula mi eu, rhoncus mauris. Integer magna diam, sodales a volutpat vel, cursus posuere nisi.</p>
+</div>
+
+    <!-- Get all projects for which there are articles -->
+    <!-- Iterate over these projects -->
+        <!-- If the project with articles matches the project passed in to create this template, list the articles -->
+        <!-- If the project with articles matches the project passed in to create this template, list the articles -->
+</div>
     </div>
 
     <aside id="sidebar">
 
   <div id="comic">
-    <img alt="Pair of Ducks" src="../images/pair-of-ducks.png" />
+    <img alt="Pair of Ducks" src="../../images/pair-of-ducks.png" />
     <h5>Paradox</h5>
   </div>
 
@@ -100,19 +125,19 @@
     <ul class="fa-ul">
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../articles/pandoctor/">Pandoctor&#58; An Alfred GUI for Pandoc</a>
+          <a href="../../articles/pandoctor/">Pandoctor&#58; An Alfred GUI for Pandoc</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../articles/this-is-fractaled-mind/">This is Fractaled Mind</a>
+          <a href="../../articles/this-is-fractaled-mind/">This is Fractaled Mind</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../articles/my-interesting-new-article/">my interesting new article</a>
+          <a href="../../articles/my-interesting-new-article/">my interesting new article</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../articles/example-article/">Example Article</a>
+          <a href="../../articles/example-article/">Example Article</a>
         </li>
     </ul>
   </div>

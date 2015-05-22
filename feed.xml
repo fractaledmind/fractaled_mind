@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://blog.url.com/articles/pandoctor/"/>
     <id>http://blog.url.com/articles/pandoctor/</id>
     <published>2015-05-15T14:25:00-04:00</published>
-    <updated>2015-05-20T17:18:07-04:00</updated>
+    <updated>2015-05-21T17:45:56-04:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -506,7 +506,7 @@ The Hackademic&lt;/p&gt;
     <link rel="alternate" href="http://blog.url.com/articles/my-interesting-new-article/"/>
     <id>http://blog.url.com/articles/my-interesting-new-article/</id>
     <published>2015-03-30T18:58:00-04:00</published>
-    <updated>2015-05-16T14:38:52-04:00</updated>
+    <updated>2015-05-21T17:56:28-04:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -613,13 +613,13 @@ what you think :)&lt;/p&gt;
     <link rel="alternate" href="http://blog.url.com/articles/example-article/"/>
     <id>http://blog.url.com/articles/example-article/</id>
     <published>2011-12-31T19:00:00-05:00</published>
-    <updated>2015-05-20T14:05:22-04:00</updated>
+    <updated>2015-05-21T18:34:23-04:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
     <content type="html">&lt;p&gt;This is an example article. You probably want to delete it and write your own articles!&lt;/p&gt;
 
-&lt;p&gt;This is the content of my blog post.&lt;/p&gt;
+&lt;p&gt;This is the content of my blog post. That&amp;rsquo;s some text with a footnote.&lt;sup id="fnref1"&gt;&lt;a href="#fn1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
 
@@ -646,9 +646,20 @@ what you think :)&lt;/p&gt;
 &lt;p&gt;This is an example block quote. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img alt="fractal" src="images/dragon_curve.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="fractal" src="../../images/dragon_curve.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;fin.&lt;/p&gt;
+
+&lt;div class="footnotes"&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+
+&lt;li id="fn1"&gt;
+&lt;p&gt;And that&amp;rsquo;s the footnote.&amp;nbsp;&lt;a href="#fnref1" rev="footnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;/ol&gt;
+&lt;/div&gt;
 </content>
   </entry>
 </feed>
