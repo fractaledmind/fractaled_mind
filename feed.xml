@@ -478,11 +478,11 @@ The Hackademic&lt;/p&gt;
     <link rel="alternate" href="http://blog.url.com/articles/this-is-fractaled-mind/"/>
     <id>http://blog.url.com/articles/this-is-fractaled-mind/</id>
     <published>2015-05-15T13:25:00-04:00</published>
-    <updated>2015-05-16T19:40:21-04:00</updated>
+    <updated>2015-05-22T14:00:48-04:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
-    <content type="html">&lt;p&gt;I&amp;rsquo;ve been programming in Python for &lt;a href="#"&gt;a little over a year now&lt;/a&gt;. I really love Python, and I&amp;rsquo;m finally starting to feel comfortable reading other people&amp;rsquo;s code. For me, this was an important plateau. Being able to read and understand someone else&amp;rsquo;s code, regardless of their style, preferences, structure, or paradigm, means that I now understand enough Python to follow basically any particular code&amp;rsquo;s logic. Once I reached this state, however, I started to think about what the next plateau should be. What&amp;rsquo;s my next goal? I decided to set my sights on clean API design.&lt;/p&gt;
+    <content type="html">&lt;p&gt;I&amp;rsquo;ve been programming in Python for &lt;a href="#"&gt;a little over a year now&lt;/a&gt;. I really love Python, and I&amp;rsquo;m finally starting to feel comfortable reading other people&amp;rsquo;s code. For me, this was an important plateau. That&amp;rsquo;s some text with a footnote.&lt;sup id="fnref1"&gt;&lt;a href="#fn1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; Being able to read and understand someone else&amp;rsquo;s code, regardless of their style, preferences, structure, or paradigm, means that I now understand enough Python to follow basically any particular code&amp;rsquo;s logic. Once I reached this state, however, I started to think about what the next plateau should be. What&amp;rsquo;s my next goal? I decided to set my sights on clean API design.&lt;/p&gt;
 
 &lt;p&gt;Like most programmers, of any level I would assume, I prefer clean, simple APIs. In Python, these APIs typically are our access points to libraries (whether in the &lt;a href="#"&gt;Standard Library&lt;/a&gt; or a 3rd party library). API design centers around how you make the functionality of your code available to other users or programmers. A good API is simple, intuitive, and clean. Simple means it only grants access to the functionality a user needs; intuitive means you can understand and perhaps even predict its semantics; and clean means the underlying code is well-structured, properly decoupled, and tested. I&amp;rsquo;ve written a decent amount of Python over the last year, but I wouldn&amp;rsquo;t call any of it simple, intuitive, or clean.&lt;/p&gt;
 
@@ -499,6 +499,17 @@ The Hackademic&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;So, my first question was, &amp;ldquo;How do I construct comparisons in Python?&amp;rdquo;&lt;/p&gt;
+
+&lt;div class="footnotes"&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+
+&lt;li id="fn1"&gt;
+&lt;p&gt;And that&amp;rsquo;s the footnote.&amp;nbsp;&lt;a href="#fnref1" rev="footnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;/ol&gt;
+&lt;/div&gt;
 </content>
   </entry>
   <entry>
@@ -613,7 +624,7 @@ what you think :)&lt;/p&gt;
     <link rel="alternate" href="http://blog.url.com/articles/example-article/"/>
     <id>http://blog.url.com/articles/example-article/</id>
     <published>2011-12-31T19:00:00-05:00</published>
-    <updated>2015-05-21T18:34:23-04:00</updated>
+    <updated>2015-05-22T14:07:09-04:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -621,7 +632,7 @@ what you think :)&lt;/p&gt;
 
 &lt;p&gt;This is the content of my blog post. That&amp;rsquo;s some text with a footnote.&lt;sup id="fnref1"&gt;&lt;a href="#fn1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;{{read more}}&lt;/p&gt;
 
 &lt;p&gt;0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789&lt;/p&gt;
 
@@ -655,7 +666,7 @@ what you think :)&lt;/p&gt;
 &lt;ol&gt;
 
 &lt;li id="fn1"&gt;
-&lt;p&gt;And that&amp;rsquo;s the footnote.&amp;nbsp;&lt;a href="#fnref1" rev="footnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This is a footnote for my &lt;code&gt;Example Article&lt;/code&gt;.&amp;nbsp;&lt;a href="#fnref1" rev="footnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 
 &lt;/ol&gt;

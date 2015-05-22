@@ -9,14 +9,17 @@
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="feed.xml" />
 
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script> -->
 
   <link href="stylesheets/main.css" rel="stylesheet" type="text/css" />
   <link href="images/favicon.png" rel="icon" type="image/png" />
-  <script src="javascripts/bigfoot.js" type="text/javascript"></script>
+  <script src="javascripts/jquery.min.js" type="text/javascript"></script>
+  <script src="javascripts/bigfoot.min.js" type="text/javascript"></script>
 
   <script type="text/javascript">
-    $.bigfoot();
+    $.bigfoot(
+      { numberResetSelector: "li.card" }
+    );
   </script>
 
 </head>
@@ -114,8 +117,10 @@
 <ul>
 <li>version 1.0.5: fixes a small bug in the template variables</li>
 <li>version 1.0.2: fixes bug with user template commands</li>
-<li>version 1.0.1: adds pdf as output in...</li>
+<li>version 1.0.1: adds pdf as output in <code>dr:out</code> filter</li>
 </ul>
+
+<p><strong>Note:</strong> <a href="https://github.com/jgm/pandoc/releases/tag/1.13.0.1">Pandoc 1.13.0.1</a> is now out...</p>
       </div>
     </li>
     <li class="card">
@@ -136,7 +141,16 @@
       </div>
       <hr class="fractal">
       <div class="card-copy">
-        <p>I’ve been programming in Python for <a href="#">a little over a year now</a>. I really love Python, and I’m finally starting to feel comfortable reading other people’s code. For me, this was an important plateau. Being...</p>
+        <p>I’ve been programming in Python for <a href="#">a little over a year now</a>. I really love Python, and I’m finally starting to feel comfortable reading other people’s code. For me, this was an important plateau. That’s some text with a footnote.<sup id="fnref1"><a href="#fn1" rel="footnote">1</a></sup> Being able to read...</p><div class="footnotes">
+<hr>
+<ol>
+
+<li id="fn1">
+<p>And that&rsquo;s the footnote.&nbsp;<a href="#fnref1" rev="footnote">&#8617;</a></p>
+</li>
+
+</ol>
+</div>
       </div>
     </li>
     <li class="card">
@@ -171,7 +185,8 @@
 
 <p>You’re live! Nice. We’ve put together a little post to introduce you to
 the Ghost editor and get you started. You can manage your content by
-signing in to the admin area at <code>&lt;your blog...</code></p>
+signing in to the admin area at <code>&lt;your blog URL&gt;/ghost/</code>. When you
+arrive, you can select this...</p>
       </div>
     </li>
     <li class="card">
@@ -213,7 +228,16 @@ signing in to the admin area at <code>&lt;your blog...</code></p>
 
 <p>This is the content of my blog post. That&rsquo;s some text with a footnote.<sup id="fnref1"><a href="#fn1" rel="footnote">1</a></sup></p>
 
-<p>
+<div class="footnotes">
+<hr>
+<ol>
+
+<li id="fn1">
+<p>This is a footnote for my <code>Example Article</code>.&nbsp;<a href="#fnref1" rev="footnote">&#8617;</a></p>
+</li>
+
+</ol>
+</div>
       </div>
     </li>
 </ul>
