@@ -1,25 +1,41 @@
 <!doctype html>
 <html lang="en">
   <head>
+  <!-- Metadata declarations -->
   <meta charset="utf-8" />
   <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Content declarations -->
   <title>Fractaled Mind - This is Fractaled Mind</title>
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="feed.xml" />
 
+  <!-- External Resources -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script> -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
 
+  <!-- Internal Resources -->
   <link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
   <link href="../../images/favicon.png" rel="icon" type="image/png" />
-  <script src="../../javascripts/jquery.min.js" type="text/javascript"></script>
   <script src="../../javascripts/bigfoot.min.js" type="text/javascript"></script>
 
+  <!-- Bigfoot.js Popover Footnotes -->
   <script type="text/javascript">
-    $.bigfoot(
-      { numberResetSelector: "li.card" }
-    );
+    $(document).ready(function(){
+      $.bigfoot(
+        { numberResetSelector: "li.card" }
+      );
+    });
+  </script>
+
+  <!-- Responsive Tables -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("td").each(function() {
+        var $th = $(this).closest('table').find('th').eq($(this).index());
+        $(this).attr('data-th', $th.text());
+      });
+    });
   </script>
 
 </head>
@@ -86,33 +102,30 @@
     <ul class="card-tags">
     </ul>
 
-    <p>I&rsquo;ve been programming in Python for <a href="#">a little over a year now</a>. I really love Python, and I&rsquo;m finally starting to feel comfortable reading other people&rsquo;s code. For me, this was an important plateau. That&rsquo;s some text with a footnote.<sup id="fnref1"><a href="#fn1" rel="footnote">1</a></sup> Being able to read and understand someone else&rsquo;s code, regardless of their style, preferences, structure, or paradigm, means that I now understand enough Python to follow basically any particular code&rsquo;s logic. Once I reached this state, however, I started to think about what the next plateau should be. What&rsquo;s my next goal? I decided to set my sights on clean API design.</p>
+    <p>I’ve been programming in Python for <a href="">a little over a year now</a>. I really love Python, and I’m finally starting to feel comfortable reading other people’s code. For me, this was an important plateau. That’s some text with a footnote.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> Being able to read and understand someone else’s code, regardless of their style, preferences, structure, or paradigm, means that I now understand enough Python to follow basically any particular code’s logic. Once I reached this state, however, I started to think about what the next plateau should be. What’s my next goal? I decided to set my sights on clean API design.</p>
 
-<p>Like most programmers, of any level I would assume, I prefer clean, simple APIs. In Python, these APIs typically are our access points to libraries (whether in the <a href="#">Standard Library</a> or a 3rd party library). API design centers around how you make the functionality of your code available to other users or programmers. A good API is simple, intuitive, and clean. Simple means it only grants access to the functionality a user needs; intuitive means you can understand and perhaps even predict its semantics; and clean means the underlying code is well-structured, properly decoupled, and tested. I&rsquo;ve written a decent amount of Python over the last year, but I wouldn&rsquo;t call any of it simple, intuitive, or clean.</p>
+<p>Like most programmers, of any level I would assume, I prefer clean, simple APIs. In Python, these APIs typically are our access points to libraries (whether in the <a href="">Standard Library</a> or a 3rd party library). API design centers around how you make the functionality of your code available to other users or programmers. A good API is simple, intuitive, and clean. Simple means it only grants access to the functionality a user needs; intuitive means you can understand and perhaps even predict its semantics; and clean means the underlying code is well-structured, properly decoupled, and tested. I’ve written a decent amount of Python over the last year, but I wouldn’t call any of it simple, intuitive, or clean.</p>
 
 <p>So, how do I start to learn API design? My first thought was to start a new project from scratch, with a focus on its API. However, I quickly moved away from this approach. Starting totally from scratch means that my API can look like anything, can do anything, can be structured in any way. Clean API design requires structure, which often requires limits. Plus, starting a project from scratch requires so much more work beyond the actual API design itself. I wanted an approach that allowed to focus heavily on the API side of the program. My solution, for better or worse, was to write a Python wrapper for a UNIX program. For my money, this is actually a great way to learn Python API design. In what follows, I will describe how my own project evolved, what I learned, and why I consider it an all-around success.</p>
 
-<p>As with all programming aimed at learning, I believe its important to find a project/problem that interests you. I had been working with OS X&rsquo;s <code>mdfind</code> utility for another project and realized that it was powerful, but a pain to use. All of the <a href="#">Spotlight attribute names</a> are convoluted, the <a href="#">query syntax</a> is convoluted, and it&rsquo;s far too easy to make a small mistake. All these issues aside, however, it&rsquo;s a program with a predefined API that does something helpful. This is a perfect place for me to write my own Python API to open up <code>mdfind</code>&rsquo;s functionality to Python programmers without the hassle of the Terminal and Spotlight&rsquo;s odd syntax.</p>
+<p>As with all programming aimed at learning, I believe its important to find a project/problem that interests you. I had been working with OS X’s <code>mdfind</code> utility for another project and realized that it was powerful, but a pain to use. All of the <a href="">Spotlight attribute names</a> are convoluted, the <a href="">query syntax</a> is convoluted, and it’s far too easy to make a small mistake. All these issues aside, however, it’s a program with a predefined API that does something helpful. This is a perfect place for me to write my own Python API to open up <code>mdfind</code>’s functionality to Python programmers without the hassle of the Terminal and Spotlight’s odd syntax.</p>
 
-<p>In designing the Python wrapper, I wanted to focus on flexibility and simplicity. This meant deconstructing the Spotlight query syntax. As you can read in the <a href="#">README</a>, the basic unit of any <code>mdfind</code> query is a &ldquo;comparison&rdquo;, which is itself always composed of three parts:</p>
+<p>In designing the Python wrapper, I wanted to focus on flexibility and simplicity. This meant deconstructing the Spotlight query syntax. As you can read in the <a href="">README</a>, the basic unit of any <code>mdfind</code> query is a “comparison”, which is itself always composed of three parts:</p>
 
 <ul>
-<li>attribute</li>
-<li>operator</li>
-<li>predicate</li>
+  <li>attribute</li>
+  <li>operator</li>
+  <li>predicate</li>
 </ul>
 
-<p>So, my first question was, &ldquo;How do I construct comparisons in Python?&rdquo;</p>
+<p>So, my first question was, “How do I construct comparisons in Python?”</p>
 
 <div class="footnotes">
-<hr>
-<ol>
-
-<li id="fn1">
-<p>And that&rsquo;s the footnote.&nbsp;<a href="#fnref1" rev="footnote">&#8617;</a></p>
-</li>
-
-</ol>
+  <ol>
+    <li id="fn:1">
+      <p>And that’s the footnote. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
 </div>
 
   </article>
@@ -122,7 +135,7 @@
     <aside id="sidebar">
 
   <div id="comic">
-    <img alt="Pair of Ducks" src="../../images/pair-of-ducks.png" />
+    <img alt="Paradox" src="../../images/pair-of-ducks.png" />
     <h5>Paradox</h5>
   </div>
 

@@ -1,25 +1,41 @@
 <!doctype html>
 <html lang="en">
   <head>
+  <!-- Metadata declarations -->
   <meta charset="utf-8" />
   <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Content declarations -->
   <title>Fractaled Mind</title>
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="feed.xml" />
 
+  <!-- External Resources -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script> -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
 
+  <!-- Internal Resources -->
   <link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
   <link href="../../images/favicon.png" rel="icon" type="image/png" />
-  <script src="../../javascripts/jquery.min.js" type="text/javascript"></script>
   <script src="../../javascripts/bigfoot.min.js" type="text/javascript"></script>
 
+  <!-- Bigfoot.js Popover Footnotes -->
   <script type="text/javascript">
-    $.bigfoot(
-      { numberResetSelector: "li.card" }
-    );
+    $(document).ready(function(){
+      $.bigfoot(
+        { numberResetSelector: "li.card" }
+      );
+    });
+  </script>
+
+  <!-- Responsive Tables -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("td").each(function() {
+        var $th = $(this).closest('table').find('th').eq($(this).index());
+        $(this).attr('data-th', $th.text());
+      });
+    });
   </script>
 
 </head>
@@ -102,9 +118,75 @@
 
     <hr class="fractal">
 
-    <h4><a href="https://github.com/smargh/alfred_skimmer">GitHub Repo</a></h4>
+    <h4 id="repo"><a href="https://github.com/smargh/alfred_skimmer">GitHub Repo</a></h4>
 
-    <div id="description"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique ut quam non fermentum. In a sodales mi. Ut non ullamcorper ante, sit amet sagittis diam. Ut turpis orci, malesuada a lacus eu, fringilla faucibus felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec est at nibh mattis mattis eget sit amet leo. Cras tristique vestibulum nisi. Fusce iaculis venenatis metus, vitae luctus nunc blandit eget. Integer et nunc sed augue varius varius eu et elit. Suspendisse eu nisl venenatis, vehicula mi eu, rhoncus mauris. Integer magna diam, sodales a volutpat vel, cursus posuere nisi.</p>
+    <div id="description"><h4 id="version-221">Version: 2.2.1</h4>
+
+<h4 id="download-at-packalhttpwwwpackalorgworkflowskimmer">Download at <a href="http://www.packal.org/workflow/skimmer">Packal</a></h4>
+
+<h3 id="description">Description</h3>
+
+<p>This is a fairly simple workflow that works with the free Mac PDF app <a href="http://skim-app.sourceforge.net/">Skim</a>. Skim is a fantastic app with great Applescript support. This workflow provides quick, easy access to a few custom Applescripts that I've written to deal with certain pesky problems I come across when dealing with PDFs. There are currently only 3 actions:</p>
+
+<ul>
+  <li>Crop and Split PDF</li>
+  <li>Extract Data and Search Google Scholar</li>
+  <li>Search your PDFs</li>
+</ul>
+
+<h3 id="cropping-and-splitting">Cropping and Splitting</h3>
+
+<p>First, Skimmer allows you to properly format those darned scanned PDFs. You know the ones I'm talking about, 2 books pages scanned into one, landscape-oriented PDF page. I want all of my PDFs in pretty, proper format with one PDF page corresponding to one portrait-oriented book/article page. In the past, it was quite the ordeal to crop the PDF so that the right- and left-hand margins were equal, and then to split each individual page and finally reconstruct the entire PDF. Skimmer makes this whole process as simple as π. You can use either a Hotkey (set in the workflow) or the Keyword <code>split</code> to activate this feature.</p>
+
+<p><img alt="skimmer_split.png" src="https://www.evernote.com/shard/s41/sh/83197405-2d1a-469e-a3ca-64cc4a481807/36b73f97006ac7fd5b650e22fb122769/deep/0/skimmer_split.png" /></p>
+
+<p>Skimmer then does 3 things:</p>
+
+<ul>
+  <li>Crop the PDF using a user-inserted Line Annotation (if necessary) (see image below)</li>
+  <li>Split the two-page PDF into individual pages</li>
+  <li>Re-assemble everything and clean up</li>
+</ul>
+
+<p>Let me walk you thru the process. To begin, you will need to ensure that the two scanned book pages have equal margins. Skimmer will split the PDF page right down the middle, so we want the middle of the PDF to be the middle of the two pages. If the margins are unequal, you only need to use Skim's Line Annotation to create a border for Skimmer. Here's an example:</p>
+
+<p><img alt="skimmer_original.png" src="https://www.evernote.com/shard/s41/sh/d34511a1-b571-4df0-a6df-5c7b370704a6/0759f2d2f21a614c9a39d72f8eab0d42/deep/0/skimmer_original.png" /></p>
+
+<p>Note the small, vertical line at the bottom of the page. Skimmer will crop off everything to the left of this line. You could put the line anywhere on the page. If you the right-hand margin were too big, you could put it to the right, and Skimmer would automatically crop the excess stuff to the right of that line. If both margins are too big, you can put two lines on each side and Skimmer will take care of the rest. <strong>Note</strong>, Skimmer will crop <em>every page</em> at this point, so find the farthest extremity on any page and use that as your guide. Skimmer can tell what page you are looking at, so it'll make things work (note that in the image above, this is one of the middle pages being used as the cropping template). Skimmer does not crop Top or Bottom Margins, so you will need to manually crop PDFs with wacky top and/or bottom margins.</p>
+
+<p>Once Skimmer has cropped the PDF, it will go thru and split each page into two separate pages. Depending on the length of the PDF, this can take a bit (appr. 0.67 seconds per original PDF page). This is all done invisibly though, so that's a bonus. In order to ensure that Skimer splits the PDF properly, regardless of orientation, the script will split the first page and ask you what portion of the page you are seeing (left-hand, right-hand, top-half, or bottom-half). Your choice will ensure that Skimmer does the splitting just so.</p>
+
+<p>After it splits all the pages, Skimmer will save a copy of your original PDF and then close it as it opens the new, split PDF. This new PDF will be properly formatted and saved in the same folder as the original PDF. Here's an example of the PDF above after it was automatically cropped and split:</p>
+
+<p><img alt="skimmer_final.png" src="https://www.evernote.com/shard/s41/sh/ac701fb0-3e1b-4ac6-ab6d-04dfdddae2f7/0cfdc3db448db7e430613b018a30f31e/deep/0/skimmer_final.png" /></p>
+
+<p>For anyone who deals with lots of scanned PDFs, I can promise you, this is a godsend.</p>
+
+<h3 id="extracting-data">Extracting Data</h3>
+
+<p>The second feature will take OCR'd PDFs and try to extract relevant search information and then search Google Scholar (which will make it easy to then add citation information to your citation manager of choice. Users of <a href="http://fractaledmind.com/projects/zotquery/">ZotQuery</a> will immediately see where I'm going with this…). This feature can be activated by a user-assigned Hotkey or by the Keyword <code>extract</code> when the desired PDF is open in Skim.</p>
+
+<p><img alt="skimmer_extract.png" src="https://www.evernote.com/shard/s41/sh/5bf09958-9d77-4a54-aaa2-b5fff51ef70a/7edaae34fc339aa9230a700703de218e/deep/0/skimmer_extract.png" /></p>
+
+<p>This feature will look for three possible things in the currently viewed page:</p>
+
+<ul>
+  <li>a DOI (<a href="http://www.doi.org/">Digital Object Identifier</a>)</li>
+  <li>an ISBN (for books)</li>
+  <li>JSTOR title page</li>
+</ul>
+
+<p>If it cannot find any of these things, it will present the user with a list of Capitalized Words from the currently viewed page. You then select whichever words you want to be the Google Scholar query. Once the query is chosen (whether automatically as one of the 3 types above, or user-chosen keywords), Skimmer will automatically launch your default browser to Google Scholar using the query. What you do from there is up to you.</p>
+
+<h3 id="searching-pdfs">Searching PDFs</h3>
+
+<p>Finally, you can also search through all of your PDFs and open any one of them right in Skim. Use either the keyword <code>skimmer</code> or the shorter <code>sk</code> to begin the query. Then enter your query term. The results will update as you type. You can hit <code>return</code> to open any item directly in Skim, or you can <code>right-arrow</code> to enter Alfred's file browser for that item.</p>
+
+<p>This search functionality will search through all PDFs on your machine, regardless of where they are saved (provided they have been indexed by <code>mdfind</code>).</p>
+
+<hr />
+
+<p>I, for one, use at least one of these tools once a week.</p>
 </div>
 
     <!-- Get all projects for which there are articles -->
@@ -117,7 +199,7 @@
     <aside id="sidebar">
 
   <div id="comic">
-    <img alt="Pair of Ducks" src="../../images/pair-of-ducks.png" />
+    <img alt="Paradox" src="../../images/pair-of-ducks.png" />
     <h5>Paradox</h5>
   </div>
 

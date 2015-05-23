@@ -1,25 +1,41 @@
 <!doctype html>
 <html lang="en">
   <head>
+  <!-- Metadata declarations -->
   <meta charset="utf-8" />
   <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Content declarations -->
   <title>Fractaled Mind</title>
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="feed.xml" />
 
+  <!-- External Resources -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script> -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
 
+  <!-- Internal Resources -->
   <link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
   <link href="../../images/favicon.png" rel="icon" type="image/png" />
-  <script src="../../javascripts/jquery.min.js" type="text/javascript"></script>
   <script src="../../javascripts/bigfoot.min.js" type="text/javascript"></script>
 
+  <!-- Bigfoot.js Popover Footnotes -->
   <script type="text/javascript">
-    $.bigfoot(
-      { numberResetSelector: "li.card" }
-    );
+    $(document).ready(function(){
+      $.bigfoot(
+        { numberResetSelector: "li.card" }
+      );
+    });
+  </script>
+
+  <!-- Responsive Tables -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("td").each(function() {
+        var $th = $(this).closest('table').find('th').eq($(this).index());
+        $(this).attr('data-th', $th.text());
+      });
+    });
   </script>
 
 </head>
@@ -102,9 +118,33 @@
 
     <hr class="fractal">
 
-    <h4><a href="https://github.com/smargh/alfred_parsers">GitHub Repo</a></h4>
+    <h4 id="repo"><a href="https://github.com/smargh/alfred_parsers">GitHub Repo</a></h4>
 
-    <div id="description"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique ut quam non fermentum. In a sodales mi. Ut non ullamcorper ante, sit amet sagittis diam. Ut turpis orci, malesuada a lacus eu, fringilla faucibus felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec est at nibh mattis mattis eget sit amet leo. Cras tristique vestibulum nisi. Fusce iaculis venenatis metus, vitae luctus nunc blandit eget. Integer et nunc sed augue varius varius eu et elit. Suspendisse eu nisl venenatis, vehicula mi eu, rhoncus mauris. Integer magna diam, sodales a volutpat vel, cursus posuere nisi.</p>
+    <div id="description"><h4 id="version-20">Version: 2.0</h4>
+
+<h4 id="download-at-packalhttpwwwpackalorgworkflowparsers">Download at <a href="http://www.packal.org/workflow/parsers">Packal</a></h4>
+
+<p>This is a somewhat specialized workflow, but for those who read Greek and Latin, it will likely prove beneficial. This workflow uses the <a href="http://www.alfredforum.com/topic/4336-parsers-greek-and-latin-parser-for-alfred/perseus.tufts.edu/hopper/morph">Perseus</a> parsing backend to allow full parsing of both Greek and Latin terms. Simply use the keyword <code>parse</code> followed by the unknown Greek or Latin word. Parsers will automatically fetch all of the parsing data from Perseus, munch it up, and offer you all of the possible parsings via Alfred's elegant UI.</p>
+
+<p><img alt="alfred_parser" src="https://www.evernote.com/shard/s41/sh/2c444d67-b4ca-40b3-b914-c20dc5ebbfb6/9d54f19c489deda365c65f1e6b5232e6/deep/0/alfred_parser.png" /></p>
+
+<p>If you would like a bit more information, Parsers adds two actions for any selected parsing. Using <code>cmd+return</code>, you can view a HUD of the parsing data chosen, pretty printed, and have that data copied to the clipboard.</p>
+
+<p><strong style="display:block;margin:0 auto;text-align:center;">Greek</strong>
+<img alt="greek_parse.png" src="https://www.evernote.com/shard/s41/sh/043fd393-5c5b-49e8-b658-246a44f2cba5/ecbdef8fbd41bc51d455dbfaaaa63c2a/deep/0/greek_parse.png" /></p>
+
+<p><strong style="display:block;margin:0 auto;text-align:center;">Latin</strong>
+<img alt="latin_parse.png" src="https://www.evernote.com/shard/s41/sh/1d21824c-5f6e-4f75-9652-af3455089d2a/302529257ecafa448e1ad4fd7e5e402b/deep/0/latin_parse.png" /></p>
+
+<p>Alternatively, you can use <code>shift+return</code> to view a HUD of the lexicon entry for that parsing term, and this lexicon data will also be copied to the clipboard (<em>NOTE</em>: Parsers will attempt to display the lexicon entry from the most concise lexicon available for the chosen term).</p>
+
+<p><strong style="display:block;margin:0 auto;text-align:center;">Greek</strong>
+<img alt="greek_lexicon.png" src="https://www.evernote.com/shard/s41/sh/9af6a591-228f-4558-b15d-3d782f06733c/49485fa38cf717590298d690a2fcbcab/deep/0/greek_lexicon.png" /></p>
+
+<p><strong style="display:block;margin:0 auto;text-align:center;">Latin</strong>
+<img alt="latin_lexicon.png" src="https://www.evernote.com/shard/s41/sh/e0161d67-6346-46ce-a717-b6e52a2e2f5a/c1690a24c88f127a553d0ae4973fd419/deep/0/latin_lexicon.png" /></p>
+
+<p>All you should need to read your Greek and/or Latin with ease.</p>
 </div>
 
     <!-- Get all projects for which there are articles -->
@@ -117,7 +157,7 @@
     <aside id="sidebar">
 
   <div id="comic">
-    <img alt="Pair of Ducks" src="../../images/pair-of-ducks.png" />
+    <img alt="Paradox" src="../../images/pair-of-ducks.png" />
     <h5>Paradox</h5>
   </div>
 

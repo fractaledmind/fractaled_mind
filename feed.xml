@@ -18,221 +18,226 @@
     <author>
       <name>Stephen Margheim</name>
     </author>
-    <content type="html">&lt;h3&gt;Version: 1.0.2&lt;/h3&gt;
+    <content type="html">&lt;h3 id="version-102"&gt;Version: 1.0.2&lt;/h3&gt;
 
 &lt;p&gt;Download from &lt;a href="http://www.packal.org/workflow/pandoctor"&gt;Packal&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Changelog&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;version 1.0.5: fixes a small bug in the template variables&lt;/li&gt;
-&lt;li&gt;version 1.0.2: fixes bug with user template commands&lt;/li&gt;
-&lt;li&gt;version 1.0.1: adds pdf as output in &lt;code&gt;dr:out&lt;/code&gt; filter&lt;/li&gt;
+  &lt;li&gt;version 1.0.5: fixes a small bug in the template variables&lt;/li&gt;
+  &lt;li&gt;version 1.0.2: fixes bug with user template commands&lt;/li&gt;
+  &lt;li&gt;version 1.0.1: adds pdf as output in &lt;code&gt;dr:out&lt;/code&gt; filter&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;a href="https://github.com/jgm/pandoc/releases/tag/1.13.0.1"&gt;Pandoc 1.13.0.1&lt;/a&gt; is now out. This is a major upgrade, which includes the &lt;code&gt;.docx&lt;/code&gt; files as input files. This means you can convert Word files to Markdown files! Anyways, once you update pandoc, you will need to run &lt;code&gt;dr:config&lt;/code&gt; again for &lt;code&gt;Pandoctor&lt;/code&gt; to update its internals for the new version of pandoc. This will then show &lt;code&gt;.docx&lt;/code&gt; in the inputs window, and will properly interface with Pandoc 1.13.&lt;/p&gt;
 
 &lt;p&gt;So, enjoy the newest versions of Pandoc and Pandoctor!&lt;/p&gt;
 
-&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;Pandoctor&lt;/code&gt; is a relatively simple, easy-to-use way to bring the high-powered functionality of &lt;a href="http://johnmacfarlane.net/pandoc/"&gt;&lt;code&gt;Pandoc&lt;/code&gt;&lt;/a&gt; to you. For those new to &lt;code&gt;Pandoc&lt;/code&gt;, &lt;code&gt;Pandoc&lt;/code&gt; is &amp;ldquo;the universal document converter&amp;rdquo;. It is an amazingly powerful utility that allows you to convert structured text from a ton of possible input formats to an even larger number of output formats.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Pandoctor&lt;/code&gt; is a relatively simple, easy-to-use way to bring the high-powered functionality of &lt;a href="http://johnmacfarlane.net/pandoc/"&gt;&lt;code&gt;Pandoc&lt;/code&gt;&lt;/a&gt; to you. For those new to &lt;code&gt;Pandoc&lt;/code&gt;, &lt;code&gt;Pandoc&lt;/code&gt; is “the universal document converter”. It is an amazingly powerful utility that allows you to convert structured text from a ton of possible input formats to an even larger number of output formats.&lt;/p&gt;
 
 &lt;!-- ![All possible `Pandoc` conversions](http://johnmacfarlane.net/pandoc/diagram.png) --&gt;
 
-&lt;p&gt;A potential downside to &lt;code&gt;Pandoc&lt;/code&gt;, however, for many users is that it is entirely a command line utility. This means, on the Mac, you &lt;em&gt;have to&lt;/em&gt; open Terminal to use it. For many Mac/Alfred users, this is at least slightly daunting. Yet I believe that this should not be a deterrent to more people coming to use the power of &lt;code&gt;Pandoc&lt;/code&gt;. This is the reason for &lt;code&gt;Pandoctor&lt;/code&gt;. Now, Alfred users can enjoy the comfortability and familiarity of the Alfred interface to manage &lt;code&gt;Pandoc&lt;/code&gt;. Here&amp;rsquo;s how:&lt;/p&gt;
+&lt;p&gt;A potential downside to &lt;code&gt;Pandoc&lt;/code&gt;, however, for many users is that it is entirely a command line utility. This means, on the Mac, you &lt;em&gt;have to&lt;/em&gt; open Terminal to use it. For many Mac/Alfred users, this is at least slightly daunting. Yet I believe that this should not be a deterrent to more people coming to use the power of &lt;code&gt;Pandoc&lt;/code&gt;. This is the reason for &lt;code&gt;Pandoctor&lt;/code&gt;. Now, Alfred users can enjoy the comfortability and familiarity of the Alfred interface to manage &lt;code&gt;Pandoc&lt;/code&gt;. Here’s how:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;Pandoctor&lt;/code&gt; is accessed via &lt;a href="http://support.alfredapp.com/workflows:config:triggers-file-action"&gt;File Actions&lt;/a&gt;. The basic file action is &amp;ldquo;New Pandoc Conversion&amp;rdquo;, which will kick off a series of interactive Alfred menus to create your &lt;code&gt;Pandoc&lt;/code&gt; conversion. Once you have chosen the file you want to convert and selected the file action, &lt;code&gt;Pandoctor&lt;/code&gt; works in 4 stages:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Pandoctor&lt;/code&gt; is accessed via &lt;a href="http://support.alfredapp.com/workflows:config:triggers-file-action"&gt;File Actions&lt;/a&gt;. The basic file action is “New Pandoc Conversion”, which will kick off a series of interactive Alfred menus to create your &lt;code&gt;Pandoc&lt;/code&gt; conversion. Once you have chosen the file you want to convert and selected the file action, &lt;code&gt;Pandoctor&lt;/code&gt; works in 4 stages:&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;specify the text format of the chosen file&lt;/li&gt;
-&lt;li&gt;chose the output format you want for the converted file&lt;/li&gt;
-&lt;li&gt;chose any options you want for the conversion process&lt;/li&gt;
-&lt;li&gt;run &lt;code&gt;Pandoc&lt;/code&gt; to convert the input file using your chosen options&lt;/li&gt;
+  &lt;li&gt;specify the text format of the chosen file&lt;/li&gt;
+  &lt;li&gt;chose the output format you want for the converted file&lt;/li&gt;
+  &lt;li&gt;chose any options you want for the conversion process&lt;/li&gt;
+  &lt;li&gt;run &lt;code&gt;Pandoc&lt;/code&gt; to convert the input file using your chosen options&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Luckily, &lt;code&gt;Pandoctor&lt;/code&gt; is built to move you through these four steps seamlessly and without any interaction on your part aside from selecting and setting the formats and options you want. Let&amp;rsquo;s walk through the steps.&lt;/p&gt;
+&lt;p&gt;Luckily, &lt;code&gt;Pandoctor&lt;/code&gt; is built to move you through these four steps seamlessly and without any interaction on your part aside from selecting and setting the formats and options you want. Let’s walk through the steps.&lt;/p&gt;
 
-&lt;h2&gt;Configuration&lt;/h2&gt;
+&lt;h2 id="configuration"&gt;Configuration&lt;/h2&gt;
 
 &lt;p&gt;When you first download &lt;code&gt;Pandoctor&lt;/code&gt;, you will need to configure a few settings. Luckily, &lt;code&gt;Pandoctor&lt;/code&gt; takes care of this for you. All you need to do is use the &lt;code&gt;dr:config&lt;/code&gt; keyword to get everything set up. Once you see the completion notification, you can start using &lt;code&gt;Pandoctor&lt;/code&gt; for real.&lt;/p&gt;
 
-&lt;h2&gt;Running a new &lt;code&gt;Pandoc&lt;/code&gt; Conversion&lt;/h2&gt;
+&lt;h2 id="running-a-new-pandoc-conversion"&gt;Running a new &lt;code&gt;Pandoc&lt;/code&gt; Conversion&lt;/h2&gt;
 
-&lt;h3&gt;Using the File Action&lt;/h3&gt;
+&lt;h3 id="using-the-file-action"&gt;Using the File Action&lt;/h3&gt;
 
-&lt;p&gt;If you&amp;rsquo;ve configured, you begin &lt;code&gt;Pandoctor&lt;/code&gt; by using &lt;a href="http://support.alfredapp.com/features:file-search"&gt;Alfred&amp;rsquo;s file navigation abilities&lt;/a&gt; to find the file you want &lt;code&gt;Pandoc&lt;/code&gt; to convert for you. Once you&amp;rsquo;ve found the file, enter Alfred&amp;rsquo;s File Actions pane for that file (by default this is &lt;code&gt;→&lt;/code&gt;). Then find &lt;code&gt;Pandoctor&lt;/code&gt;&amp;rsquo;s &amp;ldquo;New Pandoc Conversion&amp;rdquo; file action:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="New Conversion File Action" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/file_action_new.png" /&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3&gt;Selecting the Input Format&lt;/h3&gt;
-
-&lt;p&gt;This tells &lt;code&gt;Pandoctor&lt;/code&gt; to begin a new conversion on that file. Once you select &amp;ldquo;New Pandoc Conversion&amp;rdquo;, &lt;code&gt;Pandoctor&lt;/code&gt; will automatically ask you to choose the format of this input file:&lt;/p&gt;
+&lt;p&gt;If you’ve configured, you begin &lt;code&gt;Pandoctor&lt;/code&gt; by using &lt;a href="http://support.alfredapp.com/features:file-search"&gt;Alfred’s file navigation abilities&lt;/a&gt; to find the file you want &lt;code&gt;Pandoc&lt;/code&gt; to convert for you. Once you’ve found the file, enter Alfred’s File Actions pane for that file (by default this is &lt;code&gt;→&lt;/code&gt;). Then find &lt;code&gt;Pandoctor&lt;/code&gt;’s “New Pandoc Conversion” file action:&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="`dr:in` Filter" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_in.png" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="New Conversion File Action" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/file_action_new.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;code&gt;Pandoctor&lt;/code&gt; tries to be smart about formatting, so it will pre-fill the search bar with what it believes to be the file&amp;rsquo;s formatting. However, if you need to, you can simply delete this and start searching yourself. You will see that &lt;code&gt;Pandoctor&lt;/code&gt; displays the full name of the input format as well as a short description to help you discern between similar formats (such as the 4 types of &lt;a href="http://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; &lt;code&gt;Pandoc&lt;/code&gt; accepts).&lt;/p&gt;
+&lt;h3 id="selecting-the-input-format"&gt;Selecting the Input Format&lt;/h3&gt;
 
-&lt;h3&gt;Selecting the Output Format&lt;/h3&gt;
+&lt;p&gt;This tells &lt;code&gt;Pandoctor&lt;/code&gt; to begin a new conversion on that file. Once you select “New Pandoc Conversion”, &lt;code&gt;Pandoctor&lt;/code&gt; will automatically ask you to choose the format of this input file:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img alt="`dr:in` Filter" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_in.png" /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code&gt;Pandoctor&lt;/code&gt; tries to be smart about formatting, so it will pre-fill the search bar with what it believes to be the file’s formatting. However, if you need to, you can simply delete this and start searching yourself. You will see that &lt;code&gt;Pandoctor&lt;/code&gt; displays the full name of the input format as well as a short description to help you discern between similar formats (such as the 4 types of &lt;a href="http://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; &lt;code&gt;Pandoc&lt;/code&gt; accepts).&lt;/p&gt;
+
+&lt;h3 id="selecting-the-output-format"&gt;Selecting the Output Format&lt;/h3&gt;
 
 &lt;p&gt;When you choose the input format, &lt;code&gt;Pandoctor&lt;/code&gt; will then automatically ask you to select what format you want the outputted, converted file to be:&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="`dr:out` Filter" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_out.png" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="`dr:out` Filter" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_out.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;You have access to the full range of possible output formats from this selection. You can use the arrow keys to navigate down, or start searching for your desired output format by name:&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="`dr:out` Searching" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_out_search.png" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="`dr:out` Searching" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_out_search.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3&gt;Selecting any Options&lt;/h3&gt;
+&lt;h3 id="selecting-any-options"&gt;Selecting any Options&lt;/h3&gt;
 
 &lt;p&gt;As soon as you select the output format, &lt;code&gt;Pandoctor&lt;/code&gt; will ask you what Options you want to add to this &lt;code&gt;Pandoc&lt;/code&gt; conversion:&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="`dr:opt` Filter" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_opt.png" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="`dr:opt` Filter" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_opt.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4&gt;&lt;code&gt;Pandoctor&lt;/code&gt; UI&lt;/h4&gt;
+&lt;h4 id="pandoctor-ui"&gt;&lt;code&gt;Pandoctor&lt;/code&gt; UI&lt;/h4&gt;
 
 &lt;p&gt;There are a few elements to the UI that require more explanation. First, you see that some items have the inner rectangle filled, and others do not. This is your visual cue to determine which options are active for this conversion (filled) and which are not (empty).&lt;/p&gt;
 
-&lt;h4&gt;&lt;code&gt;Pandoctor&lt;/code&gt; Default Options&lt;/h4&gt;
+&lt;h4 id="pandoctor-default-options"&gt;&lt;code&gt;Pandoctor&lt;/code&gt; Default Options&lt;/h4&gt;
 
-&lt;p&gt;When you first come to this &amp;ldquo;screen&amp;rdquo; or &amp;ldquo;window&amp;rdquo; (not sure what to call individual Alfred windows/pop-ups), you will see that some options are already filled, even though you didn&amp;rsquo;t select them. These are &lt;code&gt;Pandoctor&lt;/code&gt;&amp;rsquo;s &lt;code&gt;Default Options&lt;/code&gt;. The file (&lt;code&gt;pandoc_defaults.json&lt;/code&gt;) specifying which options are by default always on (filled) can be found inside the workflow&amp;rsquo;s folder (if you need to open this folder, you can do so easily using the &lt;code&gt;dr:help&lt;/code&gt; keyword and selecting &lt;code&gt;Root&lt;/code&gt;). This file also has comments for most options, which gives some information about them (Obviously, for detailed information about &lt;code&gt;Pandoc&lt;/code&gt;&amp;rsquo;s options, visit the &lt;a href="http://johnmacfarlane.net/pandoc/README.html"&gt;User Guide&lt;/a&gt;). When installed, &lt;code&gt;Pandoctor&lt;/code&gt; has 4 default options on:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;parse-raw&lt;/code&gt;
+&lt;p&gt;When you first come to this “screen” or “window” (not sure what to call individual Alfred windows/pop-ups), you will see that some options are already filled, even though you didn’t select them. These are &lt;code&gt;Pandoctor&lt;/code&gt;’s &lt;code&gt;Default Options&lt;/code&gt;. The file (&lt;code&gt;pandoc_defaults.json&lt;/code&gt;) specifying which options are by default always on (filled) can be found inside the workflow’s folder (if you need to open this folder, you can do so easily using the &lt;code&gt;dr:help&lt;/code&gt; keyword and selecting &lt;code&gt;Root&lt;/code&gt;). This file also has comments for most options, which gives some information about them (Obviously, for detailed information about &lt;code&gt;Pandoc&lt;/code&gt;’s options, visit the &lt;a href="http://johnmacfarlane.net/pandoc/README.html"&gt;User Guide&lt;/a&gt;). When installed, &lt;code&gt;Pandoctor&lt;/code&gt; has 4 default options on:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Description: &amp;ldquo;Parse untranslatable HTML codes and LaTeX environments as raw HTML or LaTeX, instead of ignoring them.&amp;rdquo;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;smart&lt;/code&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Description: &amp;ldquo;Produce typographically correct output, converting straight quotes to curly quotes, &amp;mdash; to em-dashes, &amp;ndash; to en-dashes, and &amp;hellip; to ellipses.&amp;rdquo;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;normalize&lt;/code&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Description: &amp;ldquo;Normalize the document after reading: merge adjacent Str or Emph elements, for example, and remove repeated Spaces.&amp;rdquo;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;standalone&lt;/code&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Description: &amp;ldquo;Produce output with an appropriate header and footer (e.g. a standalone HTML, LaTeX, or RTF file, not a fragment).&amp;rdquo;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;parse-raw&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Description: “Parse untranslatable HTML codes and LaTeX environments as raw HTML or LaTeX, instead of ignoring them.”&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;smart&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Description: “Produce typographically correct output, converting straight quotes to curly quotes, — to em-dashes, – to en-dashes, and … to ellipses.”&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;normalize&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Description: “Normalize the document after reading: merge adjacent Str or Emph elements, for example, and remove repeated Spaces.”&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;standalone&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Description: “Produce output with an appropriate header and footer (e.g. a standalone HTML, LaTeX, or RTF file, not a fragment).”&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4&gt;User Default Options&lt;/h4&gt;
+&lt;h4 id="user-default-options"&gt;User Default Options&lt;/h4&gt;
 
-&lt;p&gt;If you want to set your own default options (overriding these), you can use the &lt;code&gt;dr:defs&lt;/code&gt; keyword. This will provide a &amp;ldquo;window&amp;rdquo; similar to the standard Options window, but without anything selected. Here select whatever items you want to be on by default for any new conversion.&lt;/p&gt;
+&lt;p&gt;If you want to set your own default options (overriding these), you can use the &lt;code&gt;dr:defs&lt;/code&gt; keyword. This will provide a “window” similar to the standard Options window, but without anything selected. Here select whatever items you want to be on by default for any new conversion.&lt;/p&gt;
 
-&lt;h3&gt;Selecting any Options, pt. 2&lt;/h3&gt;
+&lt;h3 id="selecting-any-options-pt-2"&gt;Selecting any Options, pt. 2&lt;/h3&gt;
 
 &lt;p&gt;Back to the &lt;code&gt;Options Selection&lt;/code&gt;, tho. You will also see that that there are 2 basic types of options:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Boolean&lt;/li&gt;
-&lt;li&gt;Argument&lt;/li&gt;
+  &lt;li&gt;Boolean&lt;/li&gt;
+  &lt;li&gt;Argument&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4&gt;Selecting Boolean Options&lt;/h4&gt;
+&lt;h4 id="selecting-boolean-options"&gt;Selecting Boolean Options&lt;/h4&gt;
 
-&lt;p&gt;If you select a Boolean option, it will simply &amp;ldquo;turn on&amp;rdquo; (the rectangle will be filled) and this screen will refresh. For example, here&amp;rsquo;s this screen right before I choose to &amp;ldquo;turn on&amp;rdquo; the &lt;code&gt;strict&lt;/code&gt; option:&lt;/p&gt;
+&lt;p&gt;If you select a Boolean option, it will simply “turn on” (the rectangle will be filled) and this screen will refresh. For example, here’s this screen right before I choose to “turn on” the &lt;code&gt;strict&lt;/code&gt; option:&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="`parse` Option off" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_opt_parse_off.png" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="`parse` Option off" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_opt_parse_off.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;and here&amp;rsquo;s what the screen looks like as soon as it refreshes after I selected that option:&lt;/p&gt;
+&lt;p&gt;and here’s what the screen looks like as soon as it refreshes after I selected that option:&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="`parse` Option on" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_opt_parse_on.png" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="`parse` Option on" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_opt_parse_on.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4&gt;Selecting Argument Options&lt;/h4&gt;
+&lt;h4 id="selecting-argument-options"&gt;Selecting Argument Options&lt;/h4&gt;
 
-&lt;p&gt;So, &amp;ldquo;turning on&amp;rdquo; Boolean options is simple. Argument options, however, require a bit more work. As the name suggests, this type of option requires more information (an &amp;ldquo;argument&amp;rdquo;). (Again, if any of this is confusing, I would highly recommend reading through &lt;code&gt;Pandoc&lt;/code&gt;&amp;rsquo;s &lt;a href="http://johnmacfarlane.net/pandoc/README.html"&gt;User Guide&lt;/a&gt;). This means that you will need to tell &lt;code&gt;Pandoctor&lt;/code&gt; what you want the &amp;ldquo;argument&amp;rdquo;, the information, to be. So, whenever you select an &lt;code&gt;Argument&lt;/code&gt; option, you are taken to an intermediary &amp;ldquo;screen&amp;rdquo; where you can supply the needed information. For example, if I were to select the &lt;code&gt;toc-depth&lt;/code&gt; argument option, I would then see this screen:&lt;/p&gt;
+&lt;p&gt;So, “turning on” Boolean options is simple. Argument options, however, require a bit more work. As the name suggests, this type of option requires more information (an “argument”). (Again, if any of this is confusing, I would highly recommend reading through &lt;code&gt;Pandoc&lt;/code&gt;’s &lt;a href="http://johnmacfarlane.net/pandoc/README.html"&gt;User Guide&lt;/a&gt;). This means that you will need to tell &lt;code&gt;Pandoctor&lt;/code&gt; what you want the “argument”, the information, to be. So, whenever you select an &lt;code&gt;Argument&lt;/code&gt; option, you are taken to an intermediary “screen” where you can supply the needed information. For example, if I were to select the &lt;code&gt;toc-depth&lt;/code&gt; argument option, I would then see this screen:&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Set Option Empty" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_opt_set_pre.png" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="Set Option Empty" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_opt_set_pre.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;I would then fill in the information (I want the Table of Contents in the converted  file to only go 4 levels deep):&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Set Option Filled" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_opt_set_filled.png" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="Set Option Filled" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_opt_set_filled.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Once you fill in the information, press &lt;code&gt;return&lt;/code&gt; (i.e. &amp;ldquo;Set argument value of chosen option&amp;rdquo;) and return to the base Options &amp;ldquo;screen&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Once you fill in the information, press &lt;code&gt;return&lt;/code&gt; (i.e. “Set argument value of chosen option”) and return to the base Options “screen”.&lt;/p&gt;
 
-&lt;h4&gt;Finalizing Options&lt;/h4&gt;
+&lt;h4 id="finalizing-options"&gt;Finalizing Options&lt;/h4&gt;
 
-&lt;p&gt;Now, as soon as you have set all of the options you need, you only need to select the top item on this &amp;ldquo;screen&amp;rdquo;: &lt;code&gt;Done setting Options?&lt;/code&gt;. This will close this screen. As I&amp;rsquo;ve noted before, if you instead select an option, this screen will merely refresh.&lt;/p&gt;
+&lt;p&gt;Now, as soon as you have set all of the options you need, you only need to select the top item on this “screen”: &lt;code&gt;Done setting Options?&lt;/code&gt;. This will close this screen. As I’ve noted before, if you instead select an option, this screen will merely refresh.&lt;/p&gt;
 
-&lt;h4&gt;&lt;code&gt;Pandoctor&lt;/code&gt; UI, pt. 2&lt;/h4&gt;
+&lt;h4 id="pandoctor-ui-pt-2"&gt;&lt;code&gt;Pandoctor&lt;/code&gt; UI, pt. 2&lt;/h4&gt;
 
-&lt;p&gt;&lt;em&gt;A small UI note&lt;/em&gt;: there is always a &amp;ldquo;header&amp;rdquo; for every list that &lt;code&gt;Pandoctor&lt;/code&gt; displays. However, there are 2 different kinds of headers:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;A small UI note&lt;/em&gt;: there is always a “header” for every list that &lt;code&gt;Pandoctor&lt;/code&gt; displays. However, there are 2 different kinds of headers:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;informational and non-selectable&lt;/li&gt;
-&lt;li&gt;interrogative and selectable&lt;/li&gt;
+  &lt;li&gt;informational and non-selectable&lt;/li&gt;
+  &lt;li&gt;interrogative and selectable&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;The purely informational headers have the little &lt;code&gt;i&lt;/code&gt; in the center. These headers are found when selecting input and output formats. They cannot be selected; they simply tell you what that &amp;ldquo;screen&amp;rdquo; is. The interrogative headers, however, can be selected. These have the &lt;code&gt;?&lt;/code&gt; in the center. You will use these to &amp;ldquo;close&amp;rdquo; the screen you are viewing.&lt;/p&gt;
+&lt;p&gt;The purely informational headers have the little &lt;code&gt;i&lt;/code&gt; in the center. These headers are found when selecting input and output formats. They cannot be selected; they simply tell you what that “screen” is. The interrogative headers, however, can be selected. These have the &lt;code&gt;?&lt;/code&gt; in the center. You will use these to “close” the screen you are viewing.&lt;/p&gt;
 
-&lt;h4&gt;Running your &lt;code&gt;Pandoc&lt;/code&gt; Conversion&lt;/h4&gt;
+&lt;h4 id="running-your-pandoc-conversion"&gt;Running your &lt;code&gt;Pandoc&lt;/code&gt; Conversion&lt;/h4&gt;
 
 &lt;p&gt;Returning to the flow of the conversion, you have just finished selecting all of the options for your &lt;code&gt;Pandoc&lt;/code&gt; conversion. As soon as you hit &lt;code&gt;Done setting Options?&lt;/code&gt;, &lt;code&gt;Pandoctor&lt;/code&gt; will begin processing the conversion. This process can take a bit of time (particularly when generating PDFs), but when it is complete, you will see a notification in the top right of your screen:&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="notify" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_notification.png" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="notify" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_notification.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;That&amp;rsquo;s all there is to it really. In 4 simple steps, you can convert just about anything. However, for those more inclined toward &amp;ldquo;power-use&amp;rdquo;, there are a few other abilities under &lt;code&gt;Pandoctor&lt;/code&gt;&amp;rsquo;s hood.&lt;/p&gt;
+&lt;p&gt;That’s all there is to it really. In 4 simple steps, you can convert just about anything. However, for those more inclined toward “power-use”, there are a few other abilities under &lt;code&gt;Pandoctor&lt;/code&gt;’s hood.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
-&lt;h2&gt;Ignoring Options&lt;/h2&gt;
+&lt;h2 id="ignoring-options"&gt;Ignoring Options&lt;/h2&gt;
 
-&lt;p&gt;First off, &lt;code&gt;Pandoctor&lt;/code&gt; offers the ability to &amp;ldquo;hide&amp;rdquo; or &amp;ldquo;ignore&amp;rdquo; certain options in the Select Options screen. &lt;code&gt;Pandoc&lt;/code&gt; itself offers &lt;em&gt;a lot&lt;/em&gt; of options, and always seeing them all is often unnecessary. If there are any options that you &lt;strong&gt;never&lt;/strong&gt; use, you can simply remove them. To do this, you need to use the &lt;code&gt;dr:ignore&lt;/code&gt; keyword:&lt;/p&gt;
+&lt;p&gt;First off, &lt;code&gt;Pandoctor&lt;/code&gt; offers the ability to “hide” or “ignore” certain options in the Select Options screen. &lt;code&gt;Pandoc&lt;/code&gt; itself offers &lt;em&gt;a lot&lt;/em&gt; of options, and always seeing them all is often unnecessary. If there are any options that you &lt;strong&gt;never&lt;/strong&gt; use, you can simply remove them. To do this, you need to use the &lt;code&gt;dr:ignore&lt;/code&gt; keyword:&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="`dr:ignore` Filter" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_ignore.png" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="`dr:ignore` Filter" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_ignore.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;This will bring up a &amp;ldquo;screen&amp;rdquo; almost identical to the Select Options screen, but here you are choosing what options are hidden from that other screen. Once again, the two icons are informative. If an item is filled in, this means that it is going to be ignored:&lt;/p&gt;
+&lt;p&gt;This will bring up a “screen” almost identical to the Select Options screen, but here you are choosing what options are hidden from that other screen. Once again, the two icons are informative. If an item is filled in, this means that it is going to be ignored:&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="`data-dir` Ignored" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_ignore_data_on.png" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="`data-dir` Ignored" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_ignore_data_on.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Otherwise (not filled in), it will appear in the standard Select Options window:&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="`data-dir` Not Ignored" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_ignore_data_off.png" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="`data-dir` Not Ignored" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_ignore_data_off.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;As with the basic window, you can search here or just use the arrow keys. Select all of the options you want to ignore, and when you are done, select &lt;code&gt;Done setting Ignore?&lt;/code&gt; to exit.&lt;/p&gt;
 
-&lt;h2&gt;Template Commands&lt;/h2&gt;
+&lt;h2 id="template-commands"&gt;Template Commands&lt;/h2&gt;
 
-&lt;p&gt;For those who use &lt;code&gt;Pandoc&lt;/code&gt; frequently, you will likely use the same basic command over and over again. If that&amp;rsquo;s the case, &lt;code&gt;Pandoctor&lt;/code&gt; has a &amp;ldquo;power-user&amp;rdquo; feature just for you. In addition to the &amp;ldquo;on-the-fly&amp;rdquo; conversion available via the &amp;ldquo;New Pandoc Conversion&amp;rdquo; file action, &lt;code&gt;Pandoctor&lt;/code&gt; also hase a &amp;ldquo;Templated Pandoc Conversion&amp;rdquo; file action:&lt;/p&gt;
+&lt;p&gt;For those who use &lt;code&gt;Pandoc&lt;/code&gt; frequently, you will likely use the same basic command over and over again. If that’s the case, &lt;code&gt;Pandoctor&lt;/code&gt; has a “power-user” feature just for you. In addition to the “on-the-fly” conversion available via the “New Pandoc Conversion” file action, &lt;code&gt;Pandoctor&lt;/code&gt; also hase a “Templated Pandoc Conversion” file action:&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="template" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/file_action_template.png" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="template" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/file_action_template.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;This action grants you access to any and all &lt;code&gt;Pandoc&lt;/code&gt; template commands you have set up. Before I detail how to create a new template, let&amp;rsquo;s briefly discuss the elements of a template. &lt;code&gt;Pandoctor&lt;/code&gt; ships with a file in the workflow directory that has some sample templates. This file is titled &lt;code&gt;pandoc_templates.json&lt;/code&gt;. If you open this file in your text editor of choice, it will look just like this:&lt;/p&gt;
+&lt;p&gt;This action grants you access to any and all &lt;code&gt;Pandoc&lt;/code&gt; template commands you have set up. Before I detail how to create a new template, let’s briefly discuss the elements of a template. &lt;code&gt;Pandoctor&lt;/code&gt; ships with a file in the workflow directory that has some sample templates. This file is titled &lt;code&gt;pandoc_templates.json&lt;/code&gt;. If you open this file in your text editor of choice, it will look just like this:&lt;/p&gt;
 
-&lt;h3&gt;Sample Templates&lt;/h3&gt;
+&lt;h3 id="sample-templates"&gt;Sample Templates&lt;/h3&gt;
+
+&lt;p&gt;```
+/*
+    PANDOC TEMPLATED COMMANDS&lt;/p&gt;
+
 &lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
 2
 3
@@ -295,177 +300,165 @@
 60
 61
 62
-63
-64
-65
-66
-67
-68
-69&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;/*
-    PANDOC TEMPLATED COMMANDS
+63&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;The ``defaults``, at initiation the `parse-raw`, `smart`, `normalize`, and `standalone`
+options, are found at ``pandoc_defaults.json``.
 
-    The ``defaults``, at initiation the `parse-raw`, `smart`, `normalize`, and `standalone`
-    options, are found at ``pandoc_defaults.json``.
+HOW TO CREATE TEMPLATE:
+    + take your CLI pandoc command
+        (e.g. "pandoc -s -S --toc -c pandoc.css -A footer.html README -o example3.html")
+    + convert all "short option + space + argument" to "long option + '=' + argument"
+        (e.g. "pandoc -s -S --toc --css=pandoc.css --include-after-body=footer.html README --output=example3.html")
+    + split all options into list of individual options
+        (e.g. [pandoc, -s, -S, --toc, --css=pandoc.css, --include-after-body=footer.html, README, --output=example3.html])
+    + remove initial call to `pandoc` and replace input text path with ``{input}`` variable
+        (e.g. [-s, -S, --toc, --css=pandoc.css, --include-after-body=footer.html, {input}, --output={input}.html])
+    + make sure every option is a JSON string
+        (e.g. ["-s", "-S", "--toc", "--css=pandoc.css", "--include-after-body=footer.html", "{input}", "--output={input}.html"])
+    + give it a memorable name
+    + determine if you want to automatically add your default options to the command or not.
 
-    HOW TO CREATE TEMPLATE:
-        + take your CLI pandoc command
-            (e.g. "pandoc -s -S --toc -c pandoc.css -A footer.html README -o example3.html")
-        + convert all "short option + space + argument" to "long option + '=' + argument"
-            (e.g. "pandoc -s -S --toc --css=pandoc.css --include-after-body=footer.html README --output=example3.html")
-        + split all options into list of individual options
-            (e.g. [pandoc, -s, -S, --toc, --css=pandoc.css, --include-after-body=footer.html, README, --output=example3.html])
-        + remove initial call to `pandoc` and replace input text path with ``{input}`` variable
-            (e.g. [-s, -S, --toc, --css=pandoc.css, --include-after-body=footer.html, {input}, --output={input}.html])
-        + make sure every option is a JSON string
-            (e.g. ["-s", "-S", "--toc", "--css=pandoc.css", "--include-after-body=footer.html", "{input}", "--output={input}.html"])
-        + give it a memorable name
-        + determine if you want to automatically add your default options to the command or not.
+In order to make your templates more extensible, you can use any of 3 built-in
+variables that relate to the file chosen to convert:
+    * {input_file} = The full path to the file, including file extension
+    * {input_name} = The full path to the file, without file extension
+    * {input_dir} = The full path to the parent directory of the file
 
-    In order to make your templates more extensible, you can use any of 3 built-in
-    variables that relate to the file chosen to convert:
-        * {input_file} = The full path to the file, including file extension
-        * {input_name} = The full path to the file, without file extension
-        * {input_dir} = The full path to the parent directory of the file
-
-    For example, this template would only work if you kept a project directory
-    that contained both `biblio.bib` and `chicago-author-date.csl` alongside
-    your input file.
-        {
-            "name": "Biblio Test",
-            "use_defaults": false,
-            "options": [
-                "-s",
-                "-S",
-                "--biblio={input_dir}/biblio.bib",
-                "--csl={input_dir}/chicago-author-date.csl",
-                "{input_file}",
-                "--output={input_name}.html"
-            ]
-        }
-*/
-[
+For example, this template would only work if you kept a project directory
+that contained both `biblio.bib` and `chicago-author-date.csl` alongside
+your input file.
     {
-        "name": "XeLaTeX PDF",
-        "use_defaults": true,
+        "name": "Biblio Test",
+        "use_defaults": false,
         "options": [
-            "-N",
-            "--variable=mainfont:Georgia",
-            "--variable=sansfont:Arial",
-            "--variable=monofont:\"Andale Mono\"",
-            "--variable=fontsize:12pt",
-            "{input_file}",
-            "--latex-engine=xelatex",
-            "--toc",
-            "--output={input_name}.pdf"
-        ]
-    },
-    {
-        "name": "Pandoc MD -&amp;gt; HTML",
-        "use_defaults": true,
-        "options": [
-            "--toc",
-            "--css=pandoc.css",
+            "-s",
+            "-S",
+            "--biblio={input_dir}/biblio.bib",
+            "--csl={input_dir}/chicago-author-date.csl",
             "{input_file}",
             "--output={input_name}.html"
         ]
-    }
-]
+    } */ [
+{
+    "name": "XeLaTeX PDF",
+    "use_defaults": true,
+    "options": [
+        "-N",
+        "--variable=mainfont:Georgia",
+        "--variable=sansfont:Arial",
+        "--variable=monofont:\"Andale Mono\"",
+        "--variable=fontsize:12pt",
+        "{input_file}",
+        "--latex-engine=xelatex",
+        "--toc",
+        "--output={input_name}.pdf"
+    ]
+},
+{
+    "name": "Pandoc MD -&amp;gt; HTML",
+    "use_defaults": true,
+    "options": [
+        "--toc",
+        "--css=pandoc.css",
+        "{input_file}",
+        "--output={input_name}.html"
+    ]
+} ] ```
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
 
-&lt;h3&gt;Template Elements&lt;/h3&gt;
+&lt;h3 id="template-elements"&gt;Template Elements&lt;/h3&gt;
 
-&lt;p&gt;As you can see, it comes with two &amp;ldquo;default&amp;rdquo; templates, as well as one commented-out template. These are there to help you see the format of the JSON as well as &lt;code&gt;Pandoctor&lt;/code&gt;&amp;rsquo;s unique features. As the default templates show, each template must have 3 keys:&lt;/p&gt;
+&lt;p&gt;As you can see, it comes with two “default” templates, as well as one commented-out template. These are there to help you see the format of the JSON as well as &lt;code&gt;Pandoctor&lt;/code&gt;’s unique features. As the default templates show, each template must have 3 keys:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;use_defaults&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;options&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;use_defaults&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;options&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;The type of value for each of these is fixed. For &lt;code&gt;name&lt;/code&gt;, you must use a string; for &lt;code&gt;use_defaults&lt;/code&gt;, you use a Boolean (either &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt;); and for &lt;code&gt;options&lt;/code&gt;, you use a list/array of strings. The &lt;code&gt;name&lt;/code&gt; parameter is simple; this is the name of your template (what will be displayed when you are asked to choose which template you want to use). The &lt;code&gt;use_defaults&lt;/code&gt; parameter is fairly self-explanatory as well; do you want to automatically add the default options to this command or not? It is the &lt;code&gt;options&lt;/code&gt; parameter where the magic happens, and this is the one that requires the most precision.&lt;/p&gt;
 
-&lt;p&gt;As the comments in the file will tell you, you need to properly format your &lt;code&gt;Pandoc&lt;/code&gt; command for use as a &lt;code&gt;Pandoctor&lt;/code&gt; template. This means, each option is its own item in the list and each option is without spaces (unless properly quoted). This will require you to use the &amp;ldquo;long&amp;rdquo; version of any option along with the an equals [&lt;code&gt;=&lt;/code&gt;]. The 3 given examples give thorough demonstration of what acceptable templates can look like.&lt;/p&gt;
+&lt;p&gt;As the comments in the file will tell you, you need to properly format your &lt;code&gt;Pandoc&lt;/code&gt; command for use as a &lt;code&gt;Pandoctor&lt;/code&gt; template. This means, each option is its own item in the list and each option is without spaces (unless properly quoted). This will require you to use the “long” version of any option along with the an equals [&lt;code&gt;=&lt;/code&gt;]. The 3 given examples give thorough demonstration of what acceptable templates can look like.&lt;/p&gt;
 
-&lt;h3&gt;Template Variables&lt;/h3&gt;
+&lt;h3 id="template-variables"&gt;Template Variables&lt;/h3&gt;
 
 &lt;p&gt;In addition to these formatting requirements, &lt;code&gt;Pandoctor&lt;/code&gt; also gives you the ability to abstract your template properly. For any template, you have access to 3 variables:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;{input_file}&lt;/code&gt; = The full path to the file, including file extension&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;{input_name}&lt;/code&gt; = The full path to the file, without file extension&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;{input_dir}&lt;/code&gt; = The full path to the parent directory of the file&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;{input_file}&lt;/code&gt; = The full path to the file, including file extension&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;{input_name}&lt;/code&gt; = The full path to the file, without file extension&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;{input_dir}&lt;/code&gt; = The full path to the parent directory of the file&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;These variables will allow you to properly use your template with any conversion. You will see that every template should use &lt;code&gt;{input_file}&lt;/code&gt; and &lt;code&gt;{input_name}&lt;/code&gt; for the input and output options respectively. In addition, if you specify any outside resource files, you can then use &lt;code&gt;{input_dir}&lt;/code&gt; to ensure that the full path is properly constructed (see the &amp;ldquo;Biblio Test&amp;rdquo; example in the comments).&lt;/p&gt;
+&lt;p&gt;These variables will allow you to properly use your template with any conversion. You will see that every template should use &lt;code&gt;{input_file}&lt;/code&gt; and &lt;code&gt;{input_name}&lt;/code&gt; for the input and output options respectively. In addition, if you specify any outside resource files, you can then use &lt;code&gt;{input_dir}&lt;/code&gt; to ensure that the full path is properly constructed (see the “Biblio Test” example in the comments).&lt;/p&gt;
 
-&lt;h3&gt;Running a Template Command&lt;/h3&gt;
+&lt;h3 id="running-a-template-command"&gt;Running a Template Command&lt;/h3&gt;
 
 &lt;p&gt;Once you set up a template, it will make using &lt;code&gt;Pandoc&lt;/code&gt; &lt;em&gt;so much easier&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;All you have to do is select the file in Alfred&amp;rsquo;s file navigator, choose the &amp;ldquo;Templated Pandoc Conversion&amp;rdquo; file action, and then choose which template you want to use. That&amp;rsquo;s it.&lt;/p&gt;
+&lt;p&gt;All you have to do is select the file in Alfred’s file navigator, choose the “Templated Pandoc Conversion” file action, and then choose which template you want to use. That’s it.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="`Pandoctor` Templates Filter" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_temps.png" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="`Pandoctor` Templates Filter" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/dr_temps.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;As with the New Conversion, the process takes a variable amount of time. Whenever the conversion does finish, however, you will see a notification in the top right of your screen:&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="New Template Notification" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_notify.png" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="New Template Notification" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_notify.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3&gt;Creating a Template&lt;/h3&gt;
+&lt;h3 id="creating-a-template"&gt;Creating a Template&lt;/h3&gt;
 
 &lt;p&gt;So, how do you set up template commands? As the Template Elements section describes, each template requires 3 things. So, in order to create a new template, you will need to create each of these 3 elements. Hopefully, however, &lt;code&gt;Pandoctor&lt;/code&gt; makes this dead-simple to do.&lt;/p&gt;
 
 &lt;p&gt;To begin creating a new template, use the &lt;code&gt;dr:temp:set&lt;/code&gt; keyword:&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Keyword to Create New Template" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_set_kw.png" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="Keyword to Create New Template" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_set_kw.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4&gt;Setting Template Name&lt;/h4&gt;
+&lt;h4 id="setting-template-name"&gt;Setting Template Name&lt;/h4&gt;
 
-&lt;p&gt;Type the keyword and then press &lt;code&gt;return&lt;/code&gt;. This will immediately jump you to assigning a name for your new template. This will be the &amp;ldquo;screen&amp;rdquo; that you see:&lt;/p&gt;
+&lt;p&gt;Type the keyword and then press &lt;code&gt;return&lt;/code&gt;. This will immediately jump you to assigning a name for your new template. This will be the “screen” that you see:&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="New Template Add Name" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_set_name_pre.png" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="New Template Add Name" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_set_name_pre.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;To assign a name, simply type the name of the template. As seen in the screenshot above, this name will be all that you will see in the Script Filter to choose which template you want to run. As an example, I created a new template called &amp;ldquo;Template Test&amp;rdquo;:&lt;/p&gt;
+&lt;p&gt;To assign a name, simply type the name of the template. As seen in the screenshot above, this name will be all that you will see in the Script Filter to choose which template you want to run. As an example, I created a new template called “Template Test”:&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="New Template Set Name" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_set_name.png" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="New Template Set Name" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_set_name.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4&gt;Setting Template Defaults&lt;/h4&gt;
+&lt;h4 id="setting-template-defaults"&gt;Setting Template Defaults&lt;/h4&gt;
 
 &lt;p&gt;Once you finish typing your template name, hit &lt;code&gt;return&lt;/code&gt; and &lt;code&gt;Pandoctor&lt;/code&gt; will then automatically ask you if you want your Default Options to always be added to the template command:&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="New Template Add Defaults" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_set_defs.png" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="New Template Add Defaults" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_set_defs.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;If you select &lt;code&gt;True&lt;/code&gt;, this means that whatever options your template command has, your assigned Default Options will be added to the final &lt;code&gt;Pandoc&lt;/code&gt; command. For example, if you have set &lt;code&gt;standalone&lt;/code&gt; to be a Default Option, regardless of whether or not you have that option in your template command, &lt;code&gt;Pandoc&lt;/code&gt; will still create a standalong document. If, however, you select &lt;code&gt;False&lt;/code&gt;, only the options you have in the template will be run through &lt;code&gt;Pandoc&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h4&gt;Setting Template Command&lt;/h4&gt;
+&lt;h4 id="setting-template-command"&gt;Setting Template Command&lt;/h4&gt;
 
 &lt;p&gt;The final element you need to add to create your new template is, of course, the actual &lt;code&gt;Pandoc&lt;/code&gt; command:&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="New Template Add Command" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_set_cmd_pre.png" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="New Template Add Command" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_set_cmd_pre.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;As the section above described, &lt;code&gt;Pandoctor&lt;/code&gt; requires your template command options to be in a very specific format. However, must &lt;code&gt;Pandoc&lt;/code&gt; users don&amp;rsquo;t actually type commands into Terminal in this format. In order to make &lt;code&gt;Pandoctor&lt;/code&gt; as simple as possible, I have written a script that will convert the standard, short-form &lt;code&gt;Pandoc&lt;/code&gt; command into the long-form &lt;code&gt;Pandoctor&lt;/code&gt; compliant format. This means that all you have to do is copy your command from Terminal and paste it into this field:&lt;/p&gt;
+&lt;p&gt;As the section above described, &lt;code&gt;Pandoctor&lt;/code&gt; requires your template command options to be in a very specific format. However, must &lt;code&gt;Pandoc&lt;/code&gt; users don’t actually type commands into Terminal in this format. In order to make &lt;code&gt;Pandoctor&lt;/code&gt; as simple as possible, I have written a script that will convert the standard, short-form &lt;code&gt;Pandoc&lt;/code&gt; command into the long-form &lt;code&gt;Pandoctor&lt;/code&gt; compliant format. This means that all you have to do is copy your command from Terminal and paste it into this field:&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="New Template Set Command" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_set_cmd.png" /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="New Template Set Command" src="https://raw.githubusercontent.com/smargh/alfred_pandoctor/master/src/help/template_set_cmd.png" /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;As it is currently implemented, there is the possibility of some bugs in the conversion process. This means it is in your best interest to double check the &lt;code&gt;user_templates.json&lt;/code&gt; file in your workflow storage folder (you can open this folder easily using the &lt;code&gt;dr:help&lt;/code&gt; keyword and selecting &lt;code&gt;Storage&lt;/code&gt;). Ensure that the variables are properly used. Also ensure that the all of the short-form options where correctly translated into their long-form version. Remember, you can use the &lt;code&gt;pandoc_templates.json&lt;/code&gt; file as a guide for the template JSON format.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
 &lt;p&gt;I think that &lt;code&gt;Pandoctor&lt;/code&gt; has a lot of power, and I hope it proves useful to you. For example, I wrote this entire README in Markdown and generated an HTML file using &lt;code&gt;Pandoctor&lt;/code&gt;. If you have any problems, please let me know.&lt;/p&gt;
 
@@ -482,33 +475,30 @@ The Hackademic&lt;/p&gt;
     <author>
       <name>Stephen Margheim</name>
     </author>
-    <content type="html">&lt;p&gt;I&amp;rsquo;ve been programming in Python for &lt;a href="#"&gt;a little over a year now&lt;/a&gt;. I really love Python, and I&amp;rsquo;m finally starting to feel comfortable reading other people&amp;rsquo;s code. For me, this was an important plateau. That&amp;rsquo;s some text with a footnote.&lt;sup id="fnref1"&gt;&lt;a href="#fn1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; Being able to read and understand someone else&amp;rsquo;s code, regardless of their style, preferences, structure, or paradigm, means that I now understand enough Python to follow basically any particular code&amp;rsquo;s logic. Once I reached this state, however, I started to think about what the next plateau should be. What&amp;rsquo;s my next goal? I decided to set my sights on clean API design.&lt;/p&gt;
+    <content type="html">&lt;p&gt;I’ve been programming in Python for &lt;a href=""&gt;a little over a year now&lt;/a&gt;. I really love Python, and I’m finally starting to feel comfortable reading other people’s code. For me, this was an important plateau. That’s some text with a footnote.&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; Being able to read and understand someone else’s code, regardless of their style, preferences, structure, or paradigm, means that I now understand enough Python to follow basically any particular code’s logic. Once I reached this state, however, I started to think about what the next plateau should be. What’s my next goal? I decided to set my sights on clean API design.&lt;/p&gt;
 
-&lt;p&gt;Like most programmers, of any level I would assume, I prefer clean, simple APIs. In Python, these APIs typically are our access points to libraries (whether in the &lt;a href="#"&gt;Standard Library&lt;/a&gt; or a 3rd party library). API design centers around how you make the functionality of your code available to other users or programmers. A good API is simple, intuitive, and clean. Simple means it only grants access to the functionality a user needs; intuitive means you can understand and perhaps even predict its semantics; and clean means the underlying code is well-structured, properly decoupled, and tested. I&amp;rsquo;ve written a decent amount of Python over the last year, but I wouldn&amp;rsquo;t call any of it simple, intuitive, or clean.&lt;/p&gt;
+&lt;p&gt;Like most programmers, of any level I would assume, I prefer clean, simple APIs. In Python, these APIs typically are our access points to libraries (whether in the &lt;a href=""&gt;Standard Library&lt;/a&gt; or a 3rd party library). API design centers around how you make the functionality of your code available to other users or programmers. A good API is simple, intuitive, and clean. Simple means it only grants access to the functionality a user needs; intuitive means you can understand and perhaps even predict its semantics; and clean means the underlying code is well-structured, properly decoupled, and tested. I’ve written a decent amount of Python over the last year, but I wouldn’t call any of it simple, intuitive, or clean.&lt;/p&gt;
 
 &lt;p&gt;So, how do I start to learn API design? My first thought was to start a new project from scratch, with a focus on its API. However, I quickly moved away from this approach. Starting totally from scratch means that my API can look like anything, can do anything, can be structured in any way. Clean API design requires structure, which often requires limits. Plus, starting a project from scratch requires so much more work beyond the actual API design itself. I wanted an approach that allowed to focus heavily on the API side of the program. My solution, for better or worse, was to write a Python wrapper for a UNIX program. For my money, this is actually a great way to learn Python API design. In what follows, I will describe how my own project evolved, what I learned, and why I consider it an all-around success.&lt;/p&gt;
 
-&lt;p&gt;As with all programming aimed at learning, I believe its important to find a project/problem that interests you. I had been working with OS X&amp;rsquo;s &lt;code&gt;mdfind&lt;/code&gt; utility for another project and realized that it was powerful, but a pain to use. All of the &lt;a href="#"&gt;Spotlight attribute names&lt;/a&gt; are convoluted, the &lt;a href="#"&gt;query syntax&lt;/a&gt; is convoluted, and it&amp;rsquo;s far too easy to make a small mistake. All these issues aside, however, it&amp;rsquo;s a program with a predefined API that does something helpful. This is a perfect place for me to write my own Python API to open up &lt;code&gt;mdfind&lt;/code&gt;&amp;rsquo;s functionality to Python programmers without the hassle of the Terminal and Spotlight&amp;rsquo;s odd syntax.&lt;/p&gt;
+&lt;p&gt;As with all programming aimed at learning, I believe its important to find a project/problem that interests you. I had been working with OS X’s &lt;code&gt;mdfind&lt;/code&gt; utility for another project and realized that it was powerful, but a pain to use. All of the &lt;a href=""&gt;Spotlight attribute names&lt;/a&gt; are convoluted, the &lt;a href=""&gt;query syntax&lt;/a&gt; is convoluted, and it’s far too easy to make a small mistake. All these issues aside, however, it’s a program with a predefined API that does something helpful. This is a perfect place for me to write my own Python API to open up &lt;code&gt;mdfind&lt;/code&gt;’s functionality to Python programmers without the hassle of the Terminal and Spotlight’s odd syntax.&lt;/p&gt;
 
-&lt;p&gt;In designing the Python wrapper, I wanted to focus on flexibility and simplicity. This meant deconstructing the Spotlight query syntax. As you can read in the &lt;a href="#"&gt;README&lt;/a&gt;, the basic unit of any &lt;code&gt;mdfind&lt;/code&gt; query is a &amp;ldquo;comparison&amp;rdquo;, which is itself always composed of three parts:&lt;/p&gt;
+&lt;p&gt;In designing the Python wrapper, I wanted to focus on flexibility and simplicity. This meant deconstructing the Spotlight query syntax. As you can read in the &lt;a href=""&gt;README&lt;/a&gt;, the basic unit of any &lt;code&gt;mdfind&lt;/code&gt; query is a “comparison”, which is itself always composed of three parts:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;attribute&lt;/li&gt;
-&lt;li&gt;operator&lt;/li&gt;
-&lt;li&gt;predicate&lt;/li&gt;
+  &lt;li&gt;attribute&lt;/li&gt;
+  &lt;li&gt;operator&lt;/li&gt;
+  &lt;li&gt;predicate&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;So, my first question was, &amp;ldquo;How do I construct comparisons in Python?&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;So, my first question was, “How do I construct comparisons in Python?”&lt;/p&gt;
 
 &lt;div class="footnotes"&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-
-&lt;li id="fn1"&gt;
-&lt;p&gt;And that&amp;rsquo;s the footnote.&amp;nbsp;&lt;a href="#fnref1" rev="footnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;/ol&gt;
+  &lt;ol&gt;
+    &lt;li id="fn:1"&gt;
+      &lt;p&gt;And that’s the footnote. &lt;a href="#fnref:1" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
 &lt;/div&gt;
 </content>
   </entry>
@@ -521,7 +511,7 @@ The Hackademic&lt;/p&gt;
     <author>
       <name>Stephen Margheim</name>
     </author>
-    <content type="html">&lt;h1&gt;Welcome to Ghost&lt;/h1&gt;
+    <content type="html">&lt;h1 id="welcome-to-ghost"&gt;Welcome to Ghost&lt;/h1&gt;
 
 &lt;p&gt;You’re live! Nice. We’ve put together a little post to introduce you to
 the Ghost editor and get you started. You can manage your content by
@@ -530,7 +520,7 @@ arrive, you can select this post from a list on the left and see a
 preview of it on the right. Click the little pencil icon at the top of
 the preview to edit this post and read the next section!&lt;/p&gt;
 
-&lt;h2&gt;Getting Started&lt;/h2&gt;
+&lt;h2 id="getting-started"&gt;Getting Started&lt;/h2&gt;
 
 &lt;p&gt;Ghost uses something called Markdown for writing. Essentially, it’s a
 shorthand way to manage your post formatting as you write!&lt;/p&gt;
@@ -540,31 +530,31 @@ simply write as you normally would. Where appropriate, you can use
 &lt;em&gt;shortcuts&lt;/em&gt; to &lt;strong&gt;style&lt;/strong&gt; your content. For example, a list:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;  Item number one&lt;/li&gt;
-&lt;li&gt;  Item number two
-
-&lt;ul&gt;
-&lt;li&gt;  A nested item&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;  A final item&lt;/li&gt;
+  &lt;li&gt;Item number one&lt;/li&gt;
+  &lt;li&gt;Item number two
+    &lt;ul&gt;
+      &lt;li&gt;A nested item&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;A final item&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;or with numbers!&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt; Remember to buy some milk&lt;/li&gt;
-&lt;li&gt; Drink the milk&lt;/li&gt;
-&lt;li&gt; Tweet that I remembered to buy the milk, and drank it&lt;/li&gt;
+  &lt;li&gt;Remember to buy some milk&lt;/li&gt;
+  &lt;li&gt;Drink the milk&lt;/li&gt;
+  &lt;li&gt;Tweet that I remembered to buy the milk, and drank it&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3&gt;Links&lt;/h3&gt;
+&lt;h3 id="links"&gt;Links&lt;/h3&gt;
 
 &lt;p&gt;Want to link to a source? No problem. If you paste in a URL, like
 &lt;a href="http://ghost.org"&gt;http://ghost.org&lt;/a&gt; - it’ll automatically be linked up. But if you want
 to customise your anchor text, you can do that too! Here’s a link to
 &lt;a href="http://ghost.org"&gt;the Ghost website&lt;/a&gt;. Neat.&lt;/p&gt;
 
-&lt;h3&gt;What about Images?&lt;/h3&gt;
+&lt;h3 id="what-about-images"&gt;What about Images?&lt;/h3&gt;
 
 &lt;p&gt;Images work too! Already know the URL of the image you want to include
 in your article? Simply paste it in like this to make it show up:&lt;/p&gt;
@@ -575,7 +565,7 @@ in your article? Simply paste it in like this to make it show up:&lt;/p&gt;
 a descriptive placeholder and keep writing. Come back later and drag and
 drop the image in to upload:&lt;/p&gt;
 
-&lt;h3&gt;Quoting&lt;/h3&gt;
+&lt;h3 id="quoting"&gt;Quoting&lt;/h3&gt;
 
 &lt;p&gt;Sometimes a link isn’t enough, you want to quote someone on what they’ve
 said. It was probably very wisdomous. Is wisdomous a word? Find out in a
@@ -583,14 +573,15 @@ future release when we introduce spellcheck! For now - it’s definitely a
 word.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;Wisdomous - it’s definitely a word.&lt;/p&gt;
+  &lt;p&gt;Wisdomous - it’s definitely a word.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3&gt;Working with Code&lt;/h3&gt;
+&lt;h3 id="working-with-code"&gt;Working with Code&lt;/h3&gt;
 
 &lt;p&gt;Got a streak of geek? We’ve got you covered there, too. You can write
 inline &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; blocks really easily with back ticks. Want to show off
 something more comprehensive? 4 spaces of indentation gets you there.&lt;/p&gt;
+
 &lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
 2
 3
@@ -601,22 +592,23 @@ something more comprehensive? 4 spaces of indentation gets you there.&lt;/p&gt;
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
 
-&lt;h3&gt;Ready for a Break?&lt;/h3&gt;
+&lt;h3 id="ready-for-a-break"&gt;Ready for a Break?&lt;/h3&gt;
 
 &lt;p&gt;Throw 3 or more dashes down on any new line and you’ve got yourself a
 fancy new divider. Aw yeah.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
-&lt;h3&gt;Advanced Usage&lt;/h3&gt;
+&lt;h3 id="advanced-usage"&gt;Advanced Usage&lt;/h3&gt;
 
 &lt;p&gt;There’s one fantastic secret about Markdown. If you want, you can write
 plain old HTML and it’ll still work! Very flexible.&lt;/p&gt;
 
-&lt;p&gt;&lt;input type="text" placeholder="I'm an input field!"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;input type="text" placeholder="I'm an input field!" /&gt;&lt;/p&gt;
 
 &lt;p&gt;That should be enough to get you started. Have fun - and let us know
 what you think :)&lt;/p&gt;
+
 </content>
   </entry>
   <entry>
@@ -624,23 +616,24 @@ what you think :)&lt;/p&gt;
     <link rel="alternate" href="http://blog.url.com/articles/example-article/"/>
     <id>http://blog.url.com/articles/example-article/</id>
     <published>2011-12-31T19:00:00-05:00</published>
-    <updated>2015-05-22T14:07:09-04:00</updated>
+    <updated>2015-05-23T00:03:45-04:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
     <content type="html">&lt;p&gt;This is an example article. You probably want to delete it and write your own articles!&lt;/p&gt;
 
-&lt;p&gt;This is the content of my blog post. That&amp;rsquo;s some text with a footnote.&lt;sup id="fnref1"&gt;&lt;a href="#fn1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;This is the content of my blog post. That’s some text with a footnote.&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;p&gt;{{read more}}&lt;/p&gt;
 
 &lt;p&gt;0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Hello World, I know that I&amp;rsquo;m here&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Hello World, I know that I’m here&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Here I come&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href="smargh.github.io"&gt;link&lt;/a&gt;&lt;/p&gt;
+
 &lt;div class="highlight python"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
 2
 3
@@ -654,22 +647,82 @@ what you think :)&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;This is an example block quote. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus&lt;/p&gt;
+  &lt;p&gt;This is an example block quote. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;img alt="fractal" src="../../images/dragon_curve.png" /&gt;&lt;/p&gt;
 
+&lt;p&gt;The &lt;em&gt;operator&lt;/em&gt; can be any one of the following:&lt;/p&gt;
+
+&lt;table class="tables"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style="text-align: center"&gt;Operator&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: center"&gt;&lt;code&gt;==&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;equal&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: center"&gt;&lt;code&gt;!=&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;not equal&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: center"&gt;&lt;code&gt;&amp;lt;&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;less than (available for numeric values and dates only)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: center"&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;greater than (available for numeric values and dates only)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: center"&gt;&lt;code&gt;&amp;lt;=&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;less than or equal (available for numeric values and dates only)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: center"&gt;&lt;code&gt;&amp;gt;=&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;greater than or equal (available for numeric values and dates only)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: center"&gt;&lt;code&gt;in_range(attribute, min_value, max_value)&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;numeric values within the range of min_value through max_value in the specified attribute&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The &lt;code&gt;==&lt;/code&gt; and &lt;code&gt;!=&lt;/code&gt; operators allow for modification. These modifiers specify how the comparison is made.&lt;/p&gt;
+
+&lt;table class="tables"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Modifier&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;metadata.[object].ignore_case&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;The comparison is case insensitive.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code&gt;metadata.[object].ignore_diacritics&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;The comparison is insensitive to diacritical marks.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Both modifiers are on by default. In order to turn one off, you need to set the property to &lt;code&gt;False&lt;/code&gt;:&lt;/p&gt;
+
 &lt;p&gt;fin.&lt;/p&gt;
-
 &lt;div class="footnotes"&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-
-&lt;li id="fn1"&gt;
-&lt;p&gt;This is a footnote for my &lt;code&gt;Example Article&lt;/code&gt;.&amp;nbsp;&lt;a href="#fnref1" rev="footnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;/ol&gt;
+  &lt;ol&gt;
+    &lt;li id="fn:1"&gt;
+      &lt;p&gt;This is a footnote for my &lt;code&gt;Example Article&lt;/code&gt;. &lt;a href="#fnref:1" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
 &lt;/div&gt;
 </content>
   </entry>

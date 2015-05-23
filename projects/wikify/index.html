@@ -1,25 +1,41 @@
 <!doctype html>
 <html lang="en">
   <head>
+  <!-- Metadata declarations -->
   <meta charset="utf-8" />
   <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Content declarations -->
   <title>Fractaled Mind</title>
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="feed.xml" />
 
+  <!-- External Resources -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script> -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
 
+  <!-- Internal Resources -->
   <link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
   <link href="../../images/favicon.png" rel="icon" type="image/png" />
-  <script src="../../javascripts/jquery.min.js" type="text/javascript"></script>
   <script src="../../javascripts/bigfoot.min.js" type="text/javascript"></script>
 
+  <!-- Bigfoot.js Popover Footnotes -->
   <script type="text/javascript">
-    $.bigfoot(
-      { numberResetSelector: "li.card" }
-    );
+    $(document).ready(function(){
+      $.bigfoot(
+        { numberResetSelector: "li.card" }
+      );
+    });
+  </script>
+
+  <!-- Responsive Tables -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("td").each(function() {
+        var $th = $(this).closest('table').find('th').eq($(this).index());
+        $(this).attr('data-th', $th.text());
+      });
+    });
   </script>
 
 </head>
@@ -102,9 +118,50 @@
 
     <hr class="fractal">
 
-    <h4><a href="https://github.com/smargh/alfred_wikify">GitHub Repo</a></h4>
+    <h4 id="repo"><a href="https://github.com/smargh/alfred_wikify">GitHub Repo</a></h4>
 
-    <div id="description"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique ut quam non fermentum. In a sodales mi. Ut non ullamcorper ante, sit amet sagittis diam. Ut turpis orci, malesuada a lacus eu, fringilla faucibus felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec est at nibh mattis mattis eget sit amet leo. Cras tristique vestibulum nisi. Fusce iaculis venenatis metus, vitae luctus nunc blandit eget. Integer et nunc sed augue varius varius eu et elit. Suspendisse eu nisl venenatis, vehicula mi eu, rhoncus mauris. Integer magna diam, sodales a volutpat vel, cursus posuere nisi.</p>
+    <div id="description"><h4 id="version-26">Version 2.6</h4>
+
+<h4 id="download-on-packalhttpwwwpackalorgworkflowwikify">Download on <a href="http://www.packal.org/workflow/wikify">Packal</a></h4>
+
+<p>This is a workflow in progess, but Version 2.0 adds a tone of super helpful functions for dealing with Evernote for Markdown lovers. This is aimed at making it easier to create a <a href="http://en.wikipedia.org/wiki/Personal_wiki">personal wiki</a> on your computer, using Evernote as the backbone.</p>
+
+<h3 id="current-features">Current Features:</h3>
+
+<p>Version 2.0 adds four features to 1.2's functionality. Meaning these are the new functions:</p>
+
+<ul>
+  <li>Markdown to Evernote (<code>mden</code>)
+    <ul>
+      <li>document-specific text snippets (use <code>^^^snippet^^^</code> syntax)</li>
+      <li>auto-linking to pre-existing Evernote notes (no special syntax)</li>
+      <li>auto-linking to new Evernote notes (use <code>[[double bracket]]</code> syntax)</li>
+    </ul>
+  </li>
+  <li>Evernote to Markdown (<code>enmd</code>)</li>
+  <li>Auto-Link to pre-existing notes for Selected Evernote note(s) (<code>wfy</code>)</li>
+  <li>Auto-Link to new notes for Selected Evernote note(s) (<code>ensel</code>)</li>
+</ul>
+
+<p>See the posts below for more detailed accounts of these features.</p>
+
+<p><strong>NOTE</strong>: In order to use a number of these features, you will need the <a href="http://www.satimage.fr/software/en/downloads_osaxen.html">Satimage OSAX Scripting Addition</a>. I've set it up such that this is remarkably easy to install. Simply use the keyword in Alfred <code>wfy:install</code> and the Satimage installer will boot up and walk you through the process.</p>
+
+<h4 id="markdown-to-evernote">Markdown to Evernote</h4>
+
+<p>The first feature allows you to write in any editor on your Mac in Markdown, and simply and easily send that data to Evernote as formatted HTML. In order to assign Note Title, Notebook, and Tags, you can use simple <a href="http://fletcherpenney.net/multimarkdown/">MultiMarkdown Headers</a>, or simple symbols:</p>
+
+<ul>
+  <li><code>Title:</code> or <code>#</code> for the note's title</li>
+  <li><code>Notebook:</code> or <code>=</code> for the note's notebook destination</li>
+  <li><code>Tags:</code> or <code>@</code> for the note's tags</li>
+</ul>
+
+<p>At import, Wikify comes with a Hotkey or a Keyword to launch this functionality. Simply select your text (<code>ctr + A</code>) and then hit your user-defined hotkey, or pop-up Alfred and type <code>mden</code>, and Wikify will instantly send you Markdown text to Evernote as fully-formatted HTML.</p>
+
+<h4 id="evernote-to-markdown">Evernote to Markdown</h4>
+
+<p>Have you ever wanted to edit your Evernote notes in the plain-text glory of Markdown? If so, this is the feature for you. Using Aaron Swartz's glorious <a href="http://www.aaronsw.com/weblog/000387">html2text Python script</a>, Wikify will convert the currently selected Evernote note to a Markdown plain-text file. Wikify will save the <code>.md</code> file in its storage folder (<code>~/Library/Application Support/Workflow Data/com.hackademic.wikify/</code>). You can create a Markdown file of an Evernote note, edit it, and then send it back using the twin function.</p>
 </div>
 
     <!-- Get all projects for which there are articles -->
@@ -117,7 +174,7 @@
     <aside id="sidebar">
 
   <div id="comic">
-    <img alt="Pair of Ducks" src="../../images/pair-of-ducks.png" />
+    <img alt="Paradox" src="../../images/pair-of-ducks.png" />
     <h5>Paradox</h5>
   </div>
 

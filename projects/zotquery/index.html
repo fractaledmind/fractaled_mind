@@ -1,25 +1,41 @@
 <!doctype html>
 <html lang="en">
   <head>
+  <!-- Metadata declarations -->
   <meta charset="utf-8" />
   <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Content declarations -->
   <title>Fractaled Mind</title>
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="feed.xml" />
 
+  <!-- External Resources -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script> -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
 
+  <!-- Internal Resources -->
   <link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
   <link href="../../images/favicon.png" rel="icon" type="image/png" />
-  <script src="../../javascripts/jquery.min.js" type="text/javascript"></script>
   <script src="../../javascripts/bigfoot.min.js" type="text/javascript"></script>
 
+  <!-- Bigfoot.js Popover Footnotes -->
   <script type="text/javascript">
-    $.bigfoot(
-      { numberResetSelector: "li.card" }
-    );
+    $(document).ready(function(){
+      $.bigfoot(
+        { numberResetSelector: "li.card" }
+      );
+    });
+  </script>
+
+  <!-- Responsive Tables -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("td").each(function() {
+        var $th = $(this).closest('table').find('th').eq($(this).index());
+        $(this).attr('data-th', $th.text());
+      });
+    });
   </script>
 
 </head>
@@ -102,9 +118,47 @@
 
     <hr class="fractal">
 
-    <h4><a href="https://github.com/smargh/alfred_zotquery">GitHub Repo</a></h4>
+    <h4 id="repo"><a href="https://github.com/smargh/alfred_zotquery">GitHub Repo</a></h4>
 
-    <div id="description"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique ut quam non fermentum. In a sodales mi. Ut non ullamcorper ante, sit amet sagittis diam. Ut turpis orci, malesuada a lacus eu, fringilla faucibus felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec est at nibh mattis mattis eget sit amet leo. Cras tristique vestibulum nisi. Fusce iaculis venenatis metus, vitae luctus nunc blandit eget. Integer et nunc sed augue varius varius eu et elit. Suspendisse eu nisl venenatis, vehicula mi eu, rhoncus mauris. Integer magna diam, sodales a volutpat vel, cursus posuere nisi.</p>
+    <div id="description"><h4 id="version-85">Version 8.5</h4>
+
+<h4 id="download-on-packalhttppackalorgworkflowzotquery">Download on <a href="http://packal.org/workflow/zotquery">Packal</a></h4>
+
+<p><strong><code>ZotQuery</code></strong> is an Alfred workflow that grants the user access to the data stored in their <a href="https://www.zotero.org">Zotero</a> application. The Python scripts in this repo form all of the necessary components for this workflow.</p>
+
+<p>In addition, version 6.0 adds new, shorter script filter keywords. I've kept all of the old, longer keywords as well, so everything is backwards compatible, but now, users can simply use:</p>
+
+<ul>
+  <li><code>z</code> = <code>zot</code></li>
+  <li><code>zt</code> = <code>zot:t</code></li>
+  <li><code>za</code> = <code>zot:a</code></li>
+  <li><code>znc</code> = <code>zot:c</code></li>
+  <li><code>znt</code> = <code>zot:tag</code></li>
+  <li><code>zn</code> = <code>zot:n</code></li>
+  <li><code>zat</code> = <code>z:att</code></li>
+  <li><code>ztg</code> = <code>z:tag</code></li>
+  <li><code>zc</code> = <code>z:col</code></li>
+</ul>
+
+<h4 id="exporting">Exporting</h4>
+
+<p><strong><code>ZotQuery</code></strong> now can export in both Markdown and Rich Text. This means all academics on the Mac who use Zotero can take advantage of <strong><code>ZotQuery</code></strong>'s quick access to their citation data. Export individual references or citations in rich text, or export full bibliographies from Collections or Tags in rich text.</p>
+
+<p>You can select out of 5 possible CSL styles for export. Instead of the default Chicago (author-date), you can also choose APA, MLA, BibTeX, or Zotero's own RTF-Scan cite key format. In addition, you will also then choose which format to export in: Markdown or Rich Text. At any point, you can also change these settings using the z:settings command.</p>
+
+<p>Ability to search only items with attachments. This works effectively like an attachments search, since you only need to press return (not shift+return as with the other queries) in order to open the attachment.</p>
+
+<p>The ability now to export in BibTeX or Zotero's RTF-Scan format makes <strong><code>ZotQuery</code></strong> is utility for LaTeX writers as well as scholars who write in standard word processors. You could also easily move from BibTeX or RTF-Scan and take advantage of <strong><code>ZotQuery</code></strong>'s full text exporting in Markdown or Rich Text. Either way, the workflow should be a helpful companion regardless of your writing workflow.</p>
+
+<p>These features are in addition to the standard features of <strong><code>ZotQuery</code></strong>:</p>
+
+<ul>
+  <li>Search your Zotero library with keyword</li>
+  <li>Search by author last name, title, in collection, or in tag</li>
+  <li>Open, export short reference, export full citation, or append citation to temporary bibliography</li>
+  <li>Export full bibliography from collection or tag in alphabetical order</li>
+  <li>Create and keep up-to-date a JSON cache of your Zotero data (helpful for other scripting possibilities)</li>
+</ul>
 </div>
 
     <!-- Get all projects for which there are articles -->
@@ -117,7 +171,7 @@
     <aside id="sidebar">
 
   <div id="comic">
-    <img alt="Pair of Ducks" src="../../images/pair-of-ducks.png" />
+    <img alt="Paradox" src="../../images/pair-of-ducks.png" />
     <h5>Paradox</h5>
   </div>
 

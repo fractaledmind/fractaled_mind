@@ -1,25 +1,41 @@
 <!doctype html>
 <html lang="en">
   <head>
+  <!-- Metadata declarations -->
   <meta charset="utf-8" />
   <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Content declarations -->
   <title>Fractaled Mind</title>
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="feed.xml" />
 
+  <!-- External Resources -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script> -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
 
+  <!-- Internal Resources -->
   <link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
   <link href="../../images/favicon.png" rel="icon" type="image/png" />
-  <script src="../../javascripts/jquery.min.js" type="text/javascript"></script>
   <script src="../../javascripts/bigfoot.min.js" type="text/javascript"></script>
 
+  <!-- Bigfoot.js Popover Footnotes -->
   <script type="text/javascript">
-    $.bigfoot(
-      { numberResetSelector: "li.card" }
-    );
+    $(document).ready(function(){
+      $.bigfoot(
+        { numberResetSelector: "li.card" }
+      );
+    });
+  </script>
+
+  <!-- Responsive Tables -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("td").each(function() {
+        var $th = $(this).closest('table').find('th').eq($(this).index());
+        $(this).attr('data-th', $th.text());
+      });
+    });
   </script>
 
 </head>
@@ -94,14 +110,14 @@
 
     <hr class="fractal">
 
-    <h4><a href="https://github.com/smargh/pandoc-templates">GitHub Repo</a></h4>
+    <h4 id="repo"><a href="https://github.com/smargh/pandoc-templates">GitHub Repo</a></h4>
 
-    <div id="description"><h2>Description</h2>
+    <div id="description"><h2 id="description">Description</h2>
 
 <p>A collection of support files for use with <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a>, and specifically for helping to turn pandoc markdown files
 into nice HTML, LaTeX, PDF, and Microsoft Word Document output. These files go in your <code>~/.pandoc/</code> folder.</p>
 
-<h2>Installation</h2>
+<h2 id="installation">Installation</h2>
 
 <p>To install, simply run this command from your Terminal:</p>
 
@@ -111,23 +127,23 @@ git clone https://github.com/smargh/pandoc-templates.git ~/.pandoc
 
 <p>This will clone this repositorty into the appropriate Pandoc templates directory.</p>
 
-<h2>Notes</h2>
+<h2 id="notes">Notes</h2>
 
-<p>What&#39;s included?</p>
+<p>What's included?</p>
 
 <ul>
-<li>Under <code>templates</code>, some <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a> templates for an article in PDF (via LaTeX) or HTML. These can be be pointed to directly with the <code>--template=</code> switch as appropriate. The <code>html.template</code>, <code>latex.template</code>, and <code>xelatex.template</code> files are all forked from KJ Healy&#39;s <a href="https://github.com/kjhealy/pandoc-templates"><code>pandoc-templates repo</code></a>. The <code>reference.docx</code> file, however, is of my own creation. It can be used via the <code>--reference-docx</code> pandoc option. The <code>.docx</code> template uses <a href="http://www.typography.com/fonts/hoefler-text/overview/">Hoefler Text</a> as its font. It is double spaced, with small caps headers and 1&quot; indented, single-line block quotes. It works well for academic papers. The <code>latex.template</code> and <code>xelatex.template</code> depend on the style files in <a href="http://kjhealy.github.com/latex-custom-kjh/">latex-custom-kjh</a>.</li>
-<li>Under <code>marked</code>, a single CSS file for generating HTML previews of Markdown documents using <a href="http://marked2app.com/">Marked</a>, a very handy HTML live previewer for markdown files. The <code>css</code> file in the <code>marked/</code> folder is meant to be used together with pandoc and <a href="http://markedapp.com/">Marked</a>. To have <a href="http://marked2app.com/">Marked</a> work with <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a>, simply go to Marked &gt; Preferences &gt; Advanced. Then specify the filepath to Pandoc like this (e.g.): <code>/usr/bin/pandoc</code> and the various switches and arguments to pandoc in the &#39;Args&#39; field below it, like this:
-<code>shell
--r markdown -w html -s -S --bibliography=biblio.bib
-</code>
+  <li>Under <code>templates</code>, some <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a> templates for an article in PDF (via LaTeX) or HTML. These can be be pointed to directly with the <code>--template=</code> switch as appropriate. The <code>html.template</code>, <code>latex.template</code>, and <code>xelatex.template</code> files are all forked from KJ Healy's <a href="https://github.com/kjhealy/pandoc-templates"><code>pandoc-templates repo</code></a>. The <code>reference.docx</code> file, however, is of my own creation. It can be used via the <code>--reference-docx</code> pandoc option. The <code>.docx</code> template uses <a href="http://www.typography.com/fonts/hoefler-text/overview/">Hoefler Text</a> as its font. It is double spaced, with small caps headers and 1" indented, single-line block quotes. It works well for academic papers. The <code>latex.template</code> and <code>xelatex.template</code> depend on the style files in <a href="http://kjhealy.github.com/latex-custom-kjh/">latex-custom-kjh</a>.</li>
+  <li>Under <code>marked</code>, a single CSS file for generating HTML previews of Markdown documents using <a href="http://marked2app.com/">Marked</a>, a very handy HTML live previewer for markdown files. The <code>css</code> file in the <code>marked/</code> folder is meant to be used together with pandoc and <a href="http://markedapp.com/">Marked</a>. To have <a href="http://marked2app.com/">Marked</a> work with <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a>, simply go to Marked &gt; Preferences &gt; Advanced. Then specify the filepath to Pandoc like this (e.g.): <code>/usr/bin/pandoc</code> and the various switches and arguments to pandoc in the 'Args' field below it, like this:
+  <code>shell
+  -r markdown -w html -s -S --bibliography=biblio.bib
+ </code>
 Then check the box telling Marked to use this by default. The <code>pandoc</code> CSS file can be added in Marked &gt; Style &gt; Custom CSS. Marked can then use it to format the HTML output such that it looks like the final <code>.docx</code> file will.</li>
-<li>The CSL files in the <code>csl/</code> folder format the bibliography generated by pandoc and citeproc. (For simplicity we avoid dealing with biblatex directly at all.) The <code>chicago-syllabus.csl</code> file makes a tiny change to a standard Chicago Notes CSL file so you can use it to output citation information in the body text of a document. This makes it useful for lists of references in CVs and course syllabuses. The other files are the APA, MLA, and Chicago standard files from the main <a href="https://github.com/citation-style-language/styles">CSL styles repository</a>.</li>
-<li>Under <code>defaults</code>, you will find all of Pandoc&#39;s standard templates for the many of its output formats. These can be helpful in creating your own templates.</li>
-<li>Finally, under <code>examples</code>, you will find one plain text Markdown file, one BibTeX <code>.bib</code> file and a <code>.docx</code> file. These demonstrate how these templates can be used to generate a beautiful Microsoft Word file from Pandoc. To generate the files for youself, use this pandoc command:
-<code>shell
--r markdown -w docx -s -S --bibliography=Thesis.bib --csl=/Users/smargheim/Documents/GitHub/pandoc-templates/csl/chicago-author-date.csl --reference-docx=/Users/smargheim/Documents/GitHub/pandoc-templates/templates/reference.docx academic_test.txt --output=academic_test.docx
-</code></li>
+  <li>The CSL files in the <code>csl/</code> folder format the bibliography generated by pandoc and citeproc. (For simplicity we avoid dealing with biblatex directly at all.) The <code>chicago-syllabus.csl</code> file makes a tiny change to a standard Chicago Notes CSL file so you can use it to output citation information in the body text of a document. This makes it useful for lists of references in CVs and course syllabuses. The other files are the APA, MLA, and Chicago standard files from the main <a href="https://github.com/citation-style-language/styles">CSL styles repository</a>.</li>
+  <li>Under <code>defaults</code>, you will find all of Pandoc's standard templates for the many of its output formats. These can be helpful in creating your own templates.</li>
+  <li>Finally, under <code>examples</code>, you will find one plain text Markdown file, one BibTeX <code>.bib</code> file and a <code>.docx</code> file. These demonstrate how these templates can be used to generate a beautiful Microsoft Word file from Pandoc. To generate the files for youself, use this pandoc command:
+  <code>shell
+  -r markdown -w docx -s -S --bibliography=Thesis.bib --csl=/Users/smargheim/Documents/GitHub/pandoc-templates/csl/chicago-author-date.csl --reference-docx=/Users/smargheim/Documents/GitHub/pandoc-templates/templates/reference.docx academic_test.txt --output=academic_test.docx
+ </code></li>
 </ul>
 </div>
 
@@ -141,7 +157,7 @@ Then check the box telling Marked to use this by default. The <code>pandoc</code
     <aside id="sidebar">
 
   <div id="comic">
-    <img alt="Pair of Ducks" src="../../images/pair-of-ducks.png" />
+    <img alt="Paradox" src="../../images/pair-of-ducks.png" />
     <h5>Paradox</h5>
   </div>
 

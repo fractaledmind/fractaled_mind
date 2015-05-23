@@ -1,25 +1,41 @@
 <!doctype html>
 <html lang="en">
   <head>
+  <!-- Metadata declarations -->
   <meta charset="utf-8" />
   <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Content declarations -->
   <title>Fractaled Mind</title>
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="feed.xml" />
 
+  <!-- External Resources -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script> -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
 
+  <!-- Internal Resources -->
   <link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
   <link href="../../images/favicon.png" rel="icon" type="image/png" />
-  <script src="../../javascripts/jquery.min.js" type="text/javascript"></script>
   <script src="../../javascripts/bigfoot.min.js" type="text/javascript"></script>
 
+  <!-- Bigfoot.js Popover Footnotes -->
   <script type="text/javascript">
-    $.bigfoot(
-      { numberResetSelector: "li.card" }
-    );
+    $(document).ready(function(){
+      $.bigfoot(
+        { numberResetSelector: "li.card" }
+      );
+    });
+  </script>
+
+  <!-- Responsive Tables -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("td").each(function() {
+        var $th = $(this).closest('table').find('th').eq($(this).index());
+        $(this).attr('data-th', $th.text());
+      });
+    });
   </script>
 
 </head>
@@ -101,9 +117,242 @@
 
     <hr class="fractal">
 
-    <h4><a href="https://github.com/smargh/metadata">GitHub Repo</a></h4>
+    <h4 id="repo"><a href="https://github.com/smargh/metadata">GitHub Repo</a></h4>
 
-    <div id="description"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique ut quam non fermentum. In a sodales mi. Ut non ullamcorper ante, sit amet sagittis diam. Ut turpis orci, malesuada a lacus eu, fringilla faucibus felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec est at nibh mattis mattis eget sit amet leo. Cras tristique vestibulum nisi. Fusce iaculis venenatis metus, vitae luctus nunc blandit eget. Integer et nunc sed augue varius varius eu et elit. Suspendisse eu nisl venenatis, vehicula mi eu, rhoncus mauris. Integer magna diam, sodales a volutpat vel, cursus posuere nisi.</p>
+    <div id="description">
+<p>Python wrapper for OS X <code>mdfind</code> and <code>mdls</code></p>
+
+<h3 id="installation">Installation</h3>
+
+<p>Download the <code>.zip</code> file from GitHub.</p>
+
+<p>I'm working on getting the library on <a href="https://pypi.python.org/pypi">PyPi</a> soon.</p>
+
+<h3 id="file-metadata-query-expression-syntax">File Metadata Query Expression Syntax</h3>
+
+<p>I have modeled the Python syntax on <a href="https://developer.apple.com/library/mac/documentation/Carbon/Conceptual/SpotlightQuery/Concepts/QueryFormat.html">Apple's original Spotlight query syntax</a>. File metadata queries are constructed using a simple query language that takes advantage of Python's flexible class construction. The syntax is relatively straightforward, including comparisons, language agnostic options, and time and date variables.</p>
+
+<h4 id="comparison-syntax">Comparison Syntax</h4>
+
+<p>The <code>metadata</code> library implements 3 custom classes (<code>MDAttribute</code>, <code>MDComparison</code>, and <code>MDExpression</code>) to represent the various units of <code>mdfind</code>'s <a href="https://developer.apple.com/library/mac/documentation/Carbon/Conceptual/SpotlightQuery/Concepts/QueryFormat.html">Query Expression Syntax</a>.</p>
+
+<p>Query comparisons have the following basic format:</p>
+
+<p><code>[attribute] [operator] [value]</code></p>
+
+<p>The following sub-sections will describe these 3 elements more fully, but any such comparison will generate a <code>MDComparison</code> object. If you ever want to see what a particular <code>MDComparison</code> object will look like as an query string, you can coerce it into a unicode string using the <code>unicode()</code> operation (or into a string using the <code>str()</code> operation).</p>
+
+<h4 id="attribute">Attribute</h4>
+
+<p>The first element of a query comparison is the <em>attribute</em>, which is a <code>MDAttribute</code> object in <code>metadata</code>. <code>metadata</code> automatically generates <code>MDAttribute</code> objects for every Spotlight attribute on your system. You can view the names of all of these objects via <code>metadata.attributes</code> variable. Attributes have a Pythonic naming scheme, so <code>kMDItemFSName</code> becomes <code>metadata.name</code> and <code>kMDItemContentType</code> becomes <code>metadata.content_type</code>. The <code>MDAttribute</code> class is built on top of the metadata information retrieved from <code>mdimport -A</code>. If you wish to see all of the information for a metadata attributes, you can use the <code>metadata.[attribute].info()</code> function.</p>
+
+<p>As with all of the custom classes, you can coerce a <code>MDAttribute</code> object into a unicode string using the <code>unicode()</code> operation (i.e. <code>unicode(metadata.name)</code> returns <code>u'kMDItemFSName'</code>).</p>
+
+<h4 id="operator">Operator</h4>
+
+<p>The <em>operator</em> can be any one of the following:</p>
+
+<table class="tables">
+  <thead>
+    <tr>
+      <th style="text-align: center">Operator</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code>==</code></td>
+      <td>equal</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>!=</code></td>
+      <td>not equal</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>&lt;</code></td>
+      <td>less than (available for numeric values and dates only)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>&gt;</code></td>
+      <td>greater than (available for numeric values and dates only)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>&lt;=</code></td>
+      <td>less than or equal (available for numeric values and dates only)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>&gt;=</code></td>
+      <td>greater than or equal (available for numeric values and dates only)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>in_range(attribute, min_value, max_value)</code></td>
+      <td>numeric values within the range of min_value through max_value in the specified attribute</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The <code>==</code> and <code>!=</code> operators allow for modification. These modifiers specify how the comparison is made.</p>
+
+<table class="tables">
+  <thead>
+    <tr>
+      <th>Modifier</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>metadata.[object].ignore_case</code></td>
+      <td>The comparison is case insensitive.</td>
+    </tr>
+    <tr>
+      <td><code>metadata.[object].ignore_diacritics</code></td>
+      <td>The comparison is insensitive to diacritical marks.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Both modifiers are on by default. In order to turn one off, you need to set the property to <code>False</code>:</p>
+
+<div class="highlight python"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">metadata</span>
+
+<span class="n">metadata</span><span class="o">.</span><span class="n">content_type</span><span class="o">.</span><span class="n">ignore_case</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">comparison</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">content_type</span> <span class="o">==</span> <span class="s">'com.adobe.pdf'</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<h4 id="value">Value</h4>
+
+<p>The <em>value</em> element of a query comparison can be a string or integer. Strings can use wildcard characters (<code>*</code> and <code>?</code>) to make the search fuzzy. The <code>*</code> character matches multiple characters whereas the <code>?</code> wildcard character matches a single character (<em>Note</em>: Even in the Terminal, I cannot get wildcard searches with <code>?</code> to function properly. I would recommend using <code>*</code> as your ony wildcard character). Here are some examples demonstrating how the wildcards function:</p>
+
+<div class="highlight python"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11</pre></td><td class="code"><pre><span class="c"># Matches attribute values that begin with “paris”. For example, matches “paris”, but not “comparison”.</span>
+<span class="n">metadata</span><span class="o">.</span><span class="n">text_content</span> <span class="o">==</span> <span class="s">"paris*"</span>
+
+<span class="c"># Matches attribute values that end with “paris”.</span>
+<span class="n">metadata</span><span class="o">.</span><span class="n">text_content</span> <span class="o">==</span> <span class="s">"*paris"</span>
+
+<span class="c"># Matches attributes that contain "paris" anywhere within the value. For example, matches “paris” and “comparison”.</span>
+<span class="n">metadata</span><span class="o">.</span><span class="n">text_content</span> <span class="o">==</span> <span class="s">"*paris*"</span>
+
+<span class="c"># Matches attribute values that are exactly equal to “paris”.</span>
+<span class="n">metadata</span><span class="o">.</span><span class="n">text_content</span> <span class="o">==</span> <span class="s">"paris"</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>In order to use any of the greater-than or less-than operators, your value needs either to be an integer (or float) or a date object. In order to make the API as intuitive as possible, <code>metadata</code> allows for human-readable date statements. That is, you do not need to pass <code>datetime</code> objects as the <em>value</em> of a comparison with a date attribute (like <code>metadata.creation_date</code>). <code>metadata</code> uses the <code>parsedatetime</code> library to convert human-readable dates into <code>datetime</code> objects. The following are all acceptable date comparisons:</p>
+
+<div class="highlight python"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre><span class="c"># Created before today</span>
+<span class="n">metadata</span><span class="o">.</span><span class="n">creation_date</span> <span class="o">&lt;</span> <span class="s">'today'</span>
+
+<span class="c"># Created after last month</span>
+<span class="n">metadata</span><span class="o">.</span><span class="n">creation_date</span> <span class="o">&gt;</span> <span class="s">'one month ago'</span>
+</pre></td></tr></tbody></table>
+</div>
+<p>If <code>metadata</code> cannot parse your datetime string, it will raise an <code>Exception</code>. The parsing engine is good, but not perfect and can seem capricious. For example, <code>one month ago</code> is parsable, but <code>a month ago</code> is not. Datetime strings that are parsed are converted into an ISO-8601-STR compliant string.</p>
+
+<h3 id="expression-syntax">Expression syntax</h3>
+
+<p>You can combine <code>MDComparison</code> objects to create a more complex expression, represented by the <code>MDExpression</code> class. Comparison objects can be combined in one of two ways: using a conjuction (<code>&amp;</code>) or using a disjuction (<code>|</code>). Not only can <code>MDComparison</code> objects be combined, but you can nest and combine any combination of <code>MDComparison</code> objects and <code>MDExpression</code> objects. For example:</p>
+
+<div class="highlight python"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13</pre></td><td class="code"><pre><span class="c"># query for audio files authored by “stephen” (ignoring case)</span>
+<span class="n">metadata</span><span class="o">.</span><span class="n">authors</span> <span class="o">==</span> <span class="s">"stephen"</span> <span class="o">&amp;</span> <span class="n">metadata</span><span class="o">.</span><span class="n">content_type</span> <span class="o">==</span> <span class="s">"public.audio"</span>
+
+<span class="c"># query for audio files authored by “stephen” or “daniel”</span>
+<span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">authors</span> <span class="o">==</span> <span class="s">"daniel"</span> <span class="o">|</span> <span class="n">metadata</span><span class="o">.</span><span class="n">authors</span> <span class="o">==</span> <span class="s">"stephen"</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">metadata</span><span class="o">.</span><span class="n">content_type</span> <span class="o">==</span> <span class="s">"public.audio"</span>
+
+<span class="c"># query for audio or video files authored by “stephen” or “daniel”</span>
+<span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">authors</span> <span class="o">==</span> <span class="s">"daniel"</span> <span class="o">|</span> <span class="n">metadata</span><span class="o">.</span><span class="n">authors</span> <span class="o">==</span> <span class="s">"stephen"</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">content_type</span> <span class="o">==</span> <span class="s">"public.audio"</span> <span class="o">|</span> <span class="n">metadata</span><span class="o">.</span><span class="n">content_type</span> <span class="o">==</span> <span class="s">"public.video"</span><span class="p">)</span>
+
+<span class="c"># you could also break the last expression into chunks</span>
+<span class="n">author_exp</span> <span class="o">=</span> <span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">authors</span> <span class="o">==</span> <span class="s">"daniel"</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">authors</span> <span class="o">==</span> <span class="s">"stephen"</span><span class="p">)</span>
+<span class="n">type_exp</span> <span class="o">=</span> <span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">content_type</span> <span class="o">==</span> <span class="s">"public.audio"</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">content_type</span> <span class="o">==</span> <span class="s">"public.video"</span><span class="p">)</span>
+<span class="n">final_exp</span> <span class="o">=</span> <span class="n">author_exp</span> <span class="o">&amp;</span> <span class="n">type_exp</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>Here's a complex expression to find only audio or video files that have been changed in the last week authored by someone named either "Stephen" or "Daniel" (ignoring case and diacritics, so it would match a file authored by "danièl"):</p>
+
+<div class="highlight python"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="n">author_exp</span> <span class="o">=</span> <span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">authors</span> <span class="o">==</span> <span class="s">"daniel"</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">authors</span> <span class="o">==</span> <span class="s">"stephen"</span><span class="p">)</span>
+<span class="n">type_exp</span> <span class="o">=</span> <span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">content_type</span> <span class="o">==</span> <span class="s">"public.audio"</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">content_type</span> <span class="o">==</span> <span class="s">"public.video"</span><span class="p">)</span>
+<span class="n">time_comp</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">content_change_date</span> <span class="o">==</span> <span class="s">'one week ago'</span>
+<span class="n">query_expression</span> <span class="o">=</span> <span class="n">author_exp</span> <span class="o">&amp;</span> <span class="n">type_exp</span> <span class="o">&amp;</span> <span class="n">time_comp</span>
+</pre></td></tr></tbody></table>
+</div>
+<p><em>Note</em>: parentheses are needed for the first two expressions. Without them, you would get a <code>TypeError</code> as Python thinks you are trying to combine the string <code>"daniel"</code> with the <code>MDAttribute</code> object <code>authors</code>, which is an obviously unsupported expression.</p>
+
+<p>Once you have created your query expression (or even a simple comarison), you will pass this to <code>metadata.find()</code> in order to execute the file searching.</p>
+
+<h2 id="functions">Functions</h2>
+
+<h3 id="find"><code>find</code></h3>
+
+<p>The main function is <code>metadata.find()</code>. It takes one required argument, <code>query_expression</code>, which can be either an <code>MDExpression</code> object or an <code>MDComparison</code> object. In addition to this one required argument, <code>metadata.find()</code> also has the optional argument <code>only_in</code> for you to focus the scope of your search to a particular directory tree. This simply needs to be a full (non-relative) path passed as a Unicode string. Other than that, there's nothing else to it. Build you query expression, pass it to <code>find()</code> and get your results as a Python list. Here's an example of building the sample expression above and passing it to <code>metadata.find()</code>:</p>
+
+<div class="highlight python"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">metadata</span>
+
+<span class="n">author_exp</span> <span class="o">=</span> <span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">authors</span> <span class="o">==</span> <span class="s">"daniel"</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">authors</span> <span class="o">==</span> <span class="s">"stephen"</span><span class="p">)</span>
+<span class="n">type_exp</span> <span class="o">=</span> <span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">content_type</span> <span class="o">==</span> <span class="s">"public.audio"</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">content_type</span> <span class="o">==</span> <span class="s">"public.video"</span><span class="p">)</span>
+<span class="n">time_comp</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">content_change_date</span> <span class="o">==</span> <span class="s">'one week ago'</span>
+<span class="n">query_expression</span> <span class="o">=</span> <span class="n">author_exp</span> <span class="o">&amp;</span> <span class="n">type_exp</span> <span class="o">&amp;</span> <span class="n">time_comp</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">query_expression</span><span class="p">)</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<h3 id="list"><code>list</code></h3>
+
+<p>In addition to <code>find()</code>, the <code>metadata</code> module has the <code>list</code> function, which is a wrapper around the <code>mdls</code> command. You simply pass it a file path and it returns a dictionary of metadata attributes and values. Once again, the attribute names (the dictionary keys) are simplified using the algorithm used to convert Spotlight attributes to Pythonic names.</p>
+
+<div class="highlight python"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="kn">import</span> <span class="nn">metadata</span>
+
+<span class="n">file_metadata</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="nb">list</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">file_metadata</span><span class="p">[</span><span class="s">'name'</span><span class="p">])</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<h3 id="write"><code>write</code></h3>
+
+<p>Finally, there is an alpha version of a <code>write()</code> function, which allows you to write metadata to a file. Right now, I have it defaulted to writing to the <code>kMDItemUserTags</code> attribute, but a few others have worked. I need to test it more to make it more general.</p>
 </div>
 
     <!-- Get all projects for which there are articles -->
@@ -116,7 +365,7 @@
     <aside id="sidebar">
 
   <div id="comic">
-    <img alt="Pair of Ducks" src="../../images/pair-of-ducks.png" />
+    <img alt="Paradox" src="../../images/pair-of-ducks.png" />
     <h5>Paradox</h5>
   </div>
 
