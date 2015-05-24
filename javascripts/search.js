@@ -3,7 +3,7 @@
 
   $(function() {
     // URL ends: /search?q=mind
-    var search_term = window.location.search.substr(1).split('=')[1];
+    var search_term = window.location.search.substr(1).split('=')[1].toLowerCase();
     return $.getJSON('/search.json', function(data) {
       var i, j, k, len, len1, result, results, results1, value;
       results = [];
