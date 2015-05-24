@@ -34,7 +34,6 @@
     $(document).ready(function(){
       $("td").each(function() {
         var $th = $(this).closest('table').find('th').eq($(this).index());
-        console.log($th.text());
         $(this).attr('data-th', $th.text());
       });
     });

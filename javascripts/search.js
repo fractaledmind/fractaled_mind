@@ -29,7 +29,7 @@
           results1 = [];
           for (k = 0, len1 = results.length; k < len1; k++) {
             result = results[k];
-            results1.push($('#search_results').append('<li><a class="search-result" href="' + result.url + '">' + result.title + '</a> (' + result.type +')</li>'));
+            results1.push($('#search_results').append('<li><a class="search-result" href="/' + result.url + '">' + result.title + '</a> (' + result.type +')</li>'));
           }
           return results1;
         } else {
