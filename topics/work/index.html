@@ -18,6 +18,7 @@
   <link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
   <link href="../../images/favicon.png" rel="icon" type="image/png" />
   <script src="../../javascripts/bigfoot.min.js" type="text/javascript"></script>
+  <script src="../../javascripts/search.js" type="text/javascript"></script>
 
   <!-- Bigfoot.js Popover Footnotes -->
   <script type="text/javascript">
@@ -43,7 +44,7 @@
   <body>
     <header>
   <div id="site-logo">
-    <img alt="Fractaled Mind" src="../../images/daniel_logo.png" />
+    <img alt="Fractaled Mind" src="../../images/logo.svg" />
   </div>
 
   <ul id="social-networks">
@@ -86,9 +87,9 @@
 
   <div id="search">
     <div class="search-bar">
-      <form role="search">
-        <input type="search" placeholder="Search..." />
-        <button type="submit">
+      <form role="search" action="/search" method="get">
+        <input class="search-term" type="search" placeholder="Search..." name="q" />
+        <button class="search-submit" type="submit">
           <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png" alt="Search Icon">
         </button>
       </form>
@@ -98,7 +99,7 @@
 
     <div id="main" role="main">
       <div class="card" id="topic-page">
-  <h2>Articles tagged <code>'work'</code></h2>
+  <h2>Articles tagged 'work'</h2>
 
 
   <ul class="fa-ul">
