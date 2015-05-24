@@ -34,6 +34,7 @@
     $(document).ready(function(){
       $("td").each(function() {
         var $th = $(this).closest('table').find('th').eq($(this).index());
+        console.log($th.text());
         $(this).attr('data-th', $th.text());
       });
     });
@@ -100,46 +101,6 @@
     <div id="main" role="main">
       
 <ul class="cards">
-    <li class="card">
-      <a class="card-link no-hvr" href="pandoctor/"></a>
-      <ul class="card-tags">
-          <li>
-            <a class="badge no-hvr" href="/topics/alfred/">alfred</a>
-          </li>
-          <li>
-            <a class="badge no-hvr" href="/topics/workflow/">workflow</a>
-          </li>
-      </ul>
-      <div class="card-image">
-        <!-- if article has tags, add filler element -->
-          <div id="tag-filler-space"></div>
-        <!-- if article has header image, add it -->
-      </div>
-      <div class="card-header">
-        <h3 class="card-title">
-          Pandoctor&#58; An Alfred GUI for Pandoc
-        </h3>
-        <h5 class="card-date">
-          15 May 2015
-        </h5>
-      </div>
-      <hr class="fractal">
-      <div class="card-copy">
-        <h3 id="version-102">Version: 1.0.2</h3>
-
-<p>Download from <a href="http://www.packal.org/workflow/pandoctor">Packal</a></p>
-
-<p><strong>Changelog</strong></p>
-
-<ul>
-  <li>version 1.0.5: fixes a small bug in the template variables</li>
-  <li>version 1.0.2: fixes bug with user template commands</li>
-  <li>version 1.0.1: adds pdf as output in <code>dr:out</code> filter</li>
-</ul>
-
-<p><strong>Note:</strong> <a href="https://github.com/jgm/pandoc/releases/tag/1.13.0.1">Pandoc 1.13.0.1</a> is now...</p>
-      </div>
-    </li>
     <li class="card">
       <a class="card-link no-hvr" href="this-is-fractaled-mind/"></a>
       <ul class="card-tags">
@@ -271,10 +232,6 @@ arrive, you can select this...</p>
     <ul class="fa-ul">
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="pandoctor/">Pandoctor&#58; An Alfred GUI for Pandoc</a>
-        </li>
-        <li>
-          <i class="fa-li fa fa-chevron-right"></i>
           <a href="this-is-fractaled-mind/">This is Fractaled Mind</a>
         </li>
         <li>
@@ -311,12 +268,6 @@ arrive, you can select this...</p>
         </li>
         <li>
           <a class="badge no-hvr" href="/topics/play/">play (1)</a>
-        </li>
-        <li>
-          <a class="badge no-hvr" href="/topics/alfred/">alfred (1)</a>
-        </li>
-        <li>
-          <a class="badge no-hvr" href="/topics/workflow/">workflow (1)</a>
         </li>
     </ul>
   </div>

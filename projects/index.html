@@ -34,6 +34,7 @@
     $(document).ready(function(){
       $("td").each(function() {
         var $th = $(this).closest('table').find('th').eq($(this).index());
+        console.log($th.text());
         $(this).attr('data-th', $th.text());
       });
     });
@@ -106,8 +107,7 @@
           <ul class="card-tags">
               <li>
                 <!-- If project-tag is also a blog-tag, link to it -->
-                  <a class="badge no-hvr" href="/topics/alfred/">alfred</a>
-                <!-- If project-tag is unique, show it, but no link -->
+                  <span class="badge" id="alfred">alfred</span>
               </li>
           </ul>
 
@@ -164,8 +164,7 @@
           <ul class="card-tags">
               <li>
                 <!-- If project-tag is also a blog-tag, link to it -->
-                  <a class="badge no-hvr" href="/topics/alfred/">alfred</a>
-                <!-- If project-tag is unique, show it, but no link -->
+                  <span class="badge" id="alfred">alfred</span>
               </li>
           </ul>
 
@@ -246,8 +245,7 @@
           <ul class="card-tags">
               <li>
                 <!-- If project-tag is also a blog-tag, link to it -->
-                  <a class="badge no-hvr" href="/topics/alfred/">alfred</a>
-                <!-- If project-tag is unique, show it, but no link -->
+                  <span class="badge" id="alfred">alfred</span>
               </li>
           </ul>
 
@@ -276,8 +274,7 @@
           <ul class="card-tags">
               <li>
                 <!-- If project-tag is also a blog-tag, link to it -->
-                  <a class="badge no-hvr" href="/topics/alfred/">alfred</a>
-                <!-- If project-tag is unique, show it, but no link -->
+                  <span class="badge" id="alfred">alfred</span>
               </li>
           </ul>
 
@@ -335,8 +332,7 @@
           <ul class="card-tags">
               <li>
                 <!-- If project-tag is also a blog-tag, link to it -->
-                  <a class="badge no-hvr" href="/topics/alfred/">alfred</a>
-                <!-- If project-tag is unique, show it, but no link -->
+                  <span class="badge" id="alfred">alfred</span>
               </li>
           </ul>
 
@@ -365,8 +361,7 @@
           <ul class="card-tags">
               <li>
                 <!-- If project-tag is also a blog-tag, link to it -->
-                  <a class="badge no-hvr" href="/topics/alfred/">alfred</a>
-                <!-- If project-tag is unique, show it, but no link -->
+                  <span class="badge" id="alfred">alfred</span>
               </li>
           </ul>
 
@@ -395,8 +390,7 @@
           <ul class="card-tags">
               <li>
                 <!-- If project-tag is also a blog-tag, link to it -->
-                  <a class="badge no-hvr" href="/topics/alfred/">alfred</a>
-                <!-- If project-tag is unique, show it, but no link -->
+                  <span class="badge" id="alfred">alfred</span>
               </li>
           </ul>
 
@@ -425,8 +419,7 @@
           <ul class="card-tags">
               <li>
                 <!-- If project-tag is also a blog-tag, link to it -->
-                  <a class="badge no-hvr" href="/topics/alfred/">alfred</a>
-                <!-- If project-tag is unique, show it, but no link -->
+                  <span class="badge" id="alfred">alfred</span>
               </li>
           </ul>
 
@@ -455,8 +448,7 @@
           <ul class="card-tags">
               <li>
                 <!-- If project-tag is also a blog-tag, link to it -->
-                  <a class="badge no-hvr" href="/topics/alfred/">alfred</a>
-                <!-- If project-tag is unique, show it, but no link -->
+                  <span class="badge" id="alfred">alfred</span>
               </li>
           </ul>
 
@@ -497,10 +489,6 @@
     <ul class="fa-ul">
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../articles/pandoctor/">Pandoctor&#58; An Alfred GUI for Pandoc</a>
-        </li>
-        <li>
-          <i class="fa-li fa fa-chevron-right"></i>
           <a href="../articles/this-is-fractaled-mind/">This is Fractaled Mind</a>
         </li>
         <li>
@@ -537,12 +525,6 @@
         </li>
         <li>
           <a class="badge no-hvr" href="/topics/play/">play (1)</a>
-        </li>
-        <li>
-          <a class="badge no-hvr" href="/topics/alfred/">alfred (1)</a>
-        </li>
-        <li>
-          <a class="badge no-hvr" href="/topics/workflow/">workflow (1)</a>
         </li>
     </ul>
   </div>
