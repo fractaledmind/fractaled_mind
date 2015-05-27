@@ -24,7 +24,7 @@
   <script type="text/javascript">
     $(document).ready(function(){
       $.bigfoot(
-        { numberResetSelector: "li.card" }
+        { numberResetSelector: ".card" }
       );
     });
   </script>
@@ -76,7 +76,7 @@
   </ul>
 </header>
 
-    <div class="navigation-wrapper">
+    <div class="navigation">
   <nav role="navigation">
     <ul class="navigation-menu">
       <li class="nav-link"><a href="/">home</a></li>
@@ -86,7 +86,7 @@
   </nav>
 
   <div id="search">
-    <div class="search-bar">
+    <div class="searchbar">
       <form role="search" action="/search" method="get">
         <input class="search-term" type="search" placeholder="Search..." name="q" />
         <button class="search-submit" type="submit">
@@ -99,9 +99,17 @@
 
     <div id="main" role="main">
       <article class="card" id="about-page">
-  <h2>About</h2>
+  <h2 id="title">About</h2>
 
-  <p>This is my personal blog.</p>
+  <p>Welcome to my website. I'm honored and gladdened that you've found your way to this small corner of the internet. This site represents me--my mind, my thoughts, my oddities--so it seems appropriate to grant you some sense of who I am and what this is.</p>
+
+  <p>I <em>am</em> simply me. I don't mean to be glib, but it is rather difficult to label who and what I am. Much easier is the task of describing what I do and what I have done. I currently write and program on a freelance basis. Just recently, I completed my Masters in Classical Studies (that's Greek and Latin language, literature, history, culture, philosophy, etc.) at the University of Pennsylvania. As an academic, I focused on Greek philosophy, Roman poetry, and philology in general. As this website should attest, I love words and the ideas they signify--Classics was my first foray into this fascination. Aside from these "professional" pursuits, I also do marriage. I say <em>do</em> marriage as it is very much an active, daily work, but I truly do love every moment of it. Beyond these, I do philosophical cogitating, mathematical tinkering, TV watching, podcast listening, and the occasional sports playing.</p></p>
+
+  <p>In a poor nutshell, this is who I am. This website aims to be an honest portrayal of this complex, many-interests-bearing individual. Thus, the articles, projects, and topics range far and wide. You will find within computer code, philosophical treatises, learning resources, and various small fascinations. And I call this website <strong>Fractaled Mind</strong> precisely because it contains the seemingly chaotic, yet essentially interconnected thoughts and pursuits of my mind.</p>
+
+  <hr>
+
+  <p>For those of interest, this website uses the gorgeous <a href="https://www.behance.net/gallery/17504367/Free-font-family-SkolaSans">SkolaSans</a> font. The logo melds the infinitely fascinating <a href="http://en.wikipedia.org/wiki/Dragon_Curve_fractal">Dragon Curve fractal</a> with the elegance of the <a href="https://www.myfonts.com/fonts/talbot/kelso/">Kelso</a> font. It was designed by <a href="http://www.runningfoxdesigns.com/">Running Fox Designs</a>. This website is built on top of <a href="https://middlemanapp.com/">Middleman</a> and uses <a href="http://bourbon.io/">Bourbon</a>, <a href="http://neat.bourbon.io/">Neat</a>, and <a href="http://refills.bourbon.io/">Refills</a> as its backbone.</p>
 
 </article>
     </div>
@@ -120,11 +128,11 @@
     <ul class="fa-ul">
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../articles/this-is-fractaled-mind/">This is Fractaled Mind</a>
+          <a href="../articles/a-complete-pdf-annotation-workflow/">A Complete PDF Annotation Workflow</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../articles/my-interesting-new-article/">my interesting new article</a>
+          <a href="../articles/evernote-and-the-power-of-hyperlinks/">Evernote and the Power of Hyperlinks</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
@@ -137,25 +145,13 @@
     <h5>Tags</h5>
     <ul>
         <li>
-          <a class="badge no-hvr" href="/topics/example/">example (2)</a>
+          <a class="badge no-hvr" href="/topics/hackademics/">hackademics (2)</a>
         </li>
         <li>
-          <a class="badge no-hvr" href="/topics/hello/">hello (1)</a>
+          <a class="badge no-hvr" href="/topics/evernote/">evernote (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" href="/topics/world/">world (1)</a>
-        </li>
-        <li>
-          <a class="badge no-hvr" href="/topics/goodbye/">goodbye (1)</a>
-        </li>
-        <li>
-          <a class="badge no-hvr" href="/topics/xoxo/">xoxo (1)</a>
-        </li>
-        <li>
-          <a class="badge no-hvr" href="/topics/work/">work (1)</a>
-        </li>
-        <li>
-          <a class="badge no-hvr" href="/topics/play/">play (1)</a>
+          <a class="badge no-hvr" href="/topics/example/">example (1)</a>
         </li>
     </ul>
   </div>

@@ -24,7 +24,7 @@
   <script type="text/javascript">
     $(document).ready(function(){
       $.bigfoot(
-        { numberResetSelector: "li.card" }
+        { numberResetSelector: ".card" }
       );
     });
   </script>
@@ -76,7 +76,7 @@
   </ul>
 </header>
 
-    <div class="navigation-wrapper">
+    <div class="navigation">
   <nav role="navigation">
     <ul class="navigation-menu">
       <li class="nav-link"><a href="/">home</a></li>
@@ -86,7 +86,7 @@
   </nav>
 
   <div id="search">
-    <div class="search-bar">
+    <div class="searchbar">
       <form role="search" action="/search" method="get">
         <input class="search-term" type="search" placeholder="Search..." name="q" />
         <button class="search-submit" type="submit">
@@ -98,7 +98,7 @@
 </div>
 
     <div id="main" role="main">
-      <div class="card" id="project-page">
+      <article class="card" id="project-page">
 
       <ul class="card-tags">
           <li>
@@ -192,7 +192,7 @@
     <!-- Get all projects for which there are articles -->
     <!-- Iterate over these projects -->
         <!-- If the project with articles matches the project passed in to create this template, list the articles -->
-</div>
+</article>
     </div>
 
     <aside id="sidebar">
@@ -209,11 +209,11 @@
     <ul class="fa-ul">
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/this-is-fractaled-mind/">This is Fractaled Mind</a>
+          <a href="../../articles/a-complete-pdf-annotation-workflow/">A Complete PDF Annotation Workflow</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/my-interesting-new-article/">my interesting new article</a>
+          <a href="../../articles/evernote-and-the-power-of-hyperlinks/">Evernote and the Power of Hyperlinks</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
@@ -226,25 +226,13 @@
     <h5>Tags</h5>
     <ul>
         <li>
-          <a class="badge no-hvr" href="/topics/example/">example (2)</a>
+          <a class="badge no-hvr" href="/topics/hackademics/">hackademics (2)</a>
         </li>
         <li>
-          <a class="badge no-hvr" href="/topics/hello/">hello (1)</a>
+          <a class="badge no-hvr" href="/topics/evernote/">evernote (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" href="/topics/world/">world (1)</a>
-        </li>
-        <li>
-          <a class="badge no-hvr" href="/topics/goodbye/">goodbye (1)</a>
-        </li>
-        <li>
-          <a class="badge no-hvr" href="/topics/xoxo/">xoxo (1)</a>
-        </li>
-        <li>
-          <a class="badge no-hvr" href="/topics/work/">work (1)</a>
-        </li>
-        <li>
-          <a class="badge no-hvr" href="/topics/play/">play (1)</a>
+          <a class="badge no-hvr" href="/topics/example/">example (1)</a>
         </li>
     </ul>
   </div>

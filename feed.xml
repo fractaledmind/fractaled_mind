@@ -5,72 +5,338 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2015-05-15T13:25:00-04:00</updated>
+  <updated>2015-05-26T14:36:00-04:00</updated>
   <author>
     <name>Stephen Margheim</name>
   </author>
   <entry>
-    <title>This is Fractaled Mind</title>
-    <link rel="alternate" href="http://blog.url.com/articles/this-is-fractaled-mind/"/>
-    <id>http://blog.url.com/articles/this-is-fractaled-mind/</id>
-    <published>2015-05-15T13:25:00-04:00</published>
-    <updated>2015-05-22T14:00:48-04:00</updated>
+    <title>A Complete PDF Annotation Workflow</title>
+    <link rel="alternate" href="http://blog.url.com/articles/a-complete-pdf-annotation-workflow/"/>
+    <id>http://blog.url.com/articles/a-complete-pdf-annotation-workflow/</id>
+    <published>2015-05-26T14:36:00-04:00</published>
+    <updated>2015-05-26T19:20:56-04:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
-    <content type="html">&lt;p&gt;I’ve been programming in Python for &lt;a href=""&gt;a little over a year now&lt;/a&gt;. I really love Python, and I’m finally starting to feel comfortable reading other people’s code. For me, this was an important plateau. That’s some text with a footnote.&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; Being able to read and understand someone else’s code, regardless of their style, preferences, structure, or paradigm, means that I now understand enough Python to follow basically any particular code’s logic. Once I reached this state, however, I started to think about what the next plateau should be. What’s my next goal? I decided to set my sights on clean API design.&lt;/p&gt;
+    <content type="html">&lt;p&gt;When I was in graduate school, I was inundated with PDFs. PDFs of all kinds, from all kinds of sources, with all kinds of needs. Suffice to say, over a few years my tinkering spirit and the sheer number of PDFs I needed to handle led to a collection of tools organized into a workflow that I believe works well, and is thus well worth sharing. In this post I want to outline how I (1) &lt;a href="#pdf-preparation"&gt;prepare PDFs&lt;/a&gt;, (2) &lt;a href="#pdf-annotation"&gt;annotate PDFs&lt;/a&gt;, and (3) &lt;a href="#pdf-storage"&gt;store PDFs&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Like most programmers, of any level I would assume, I prefer clean, simple APIs. In Python, these APIs typically are our access points to libraries (whether in the &lt;a href=""&gt;Standard Library&lt;/a&gt; or a 3rd party library). API design centers around how you make the functionality of your code available to other users or programmers. A good API is simple, intuitive, and clean. Simple means it only grants access to the functionality a user needs; intuitive means you can understand and perhaps even predict its semantics; and clean means the underlying code is well-structured, properly decoupled, and tested. I’ve written a decent amount of Python over the last year, but I wouldn’t call any of it simple, intuitive, or clean.&lt;/p&gt;
+&lt;p&gt;{{read more}}&lt;/p&gt;
 
-&lt;p&gt;So, how do I start to learn API design? My first thought was to start a new project from scratch, with a focus on its API. However, I quickly moved away from this approach. Starting totally from scratch means that my API can look like anything, can do anything, can be structured in any way. Clean API design requires structure, which often requires limits. Plus, starting a project from scratch requires so much more work beyond the actual API design itself. I wanted an approach that allowed to focus heavily on the API side of the program. My solution, for better or worse, was to write a Python wrapper for a UNIX program. For my money, this is actually a great way to learn Python API design. In what follows, I will describe how my own project evolved, what I learned, and why I consider it an all-around success.&lt;/p&gt;
+&lt;h2 id="pdf-preparation"&gt;PDF Preparation&lt;/h2&gt;
 
-&lt;p&gt;As with all programming aimed at learning, I believe its important to find a project/problem that interests you. I had been working with OS X’s &lt;code&gt;mdfind&lt;/code&gt; utility for another project and realized that it was powerful, but a pain to use. All of the &lt;a href=""&gt;Spotlight attribute names&lt;/a&gt; are convoluted, the &lt;a href=""&gt;query syntax&lt;/a&gt; is convoluted, and it’s far too easy to make a small mistake. All these issues aside, however, it’s a program with a predefined API that does something helpful. This is a perfect place for me to write my own Python API to open up &lt;code&gt;mdfind&lt;/code&gt;’s functionality to Python programmers without the hassle of the Terminal and Spotlight’s odd syntax.&lt;/p&gt;
+&lt;p&gt;When you recieve a high volume of PDFs, you come to realize the many various states in which PDFs can be created–books scanned on a flatbed, books scanned by an iPhone, articles downloaded from the internet, PDFs generated from other sources. PDFs truly do come in all shapes and sizes. I, however, want all of my PDFs in one consistent format. I want every page of content to correspond to one PDF page (in constrast to book scans, where two content pages are often scanned into one landscape PDF). I also want to OCR every PDF to ensure that the text content is machine readable (and thus selectable in any PDF reader). I finally want to keep a consistent naming scheme for all of my PDFs. So, how does one get from point A to point B?&lt;/p&gt;
 
-&lt;p&gt;In designing the Python wrapper, I wanted to focus on flexibility and simplicity. This meant deconstructing the Spotlight query syntax. As you can read in the &lt;a href=""&gt;README&lt;/a&gt;, the basic unit of any &lt;code&gt;mdfind&lt;/code&gt; query is a “comparison”, which is itself always composed of three parts:&lt;/p&gt;
+&lt;p&gt;Let’s begin with normalizing PDF page layout. For anyone who has ever had to manually split scanned PDFs, you know how mind-numbly boring and tedious such work is. Yet, we do it because we must. If there is anything worse than maunally splitting PDF pages, it dealing with double page PDF scans. Well, I abhor tedium, so I set out to remove this particular tedium from my life. My solution, which I will get to below, however, relies on an application that will come up frequently in this post, so it’s worth discussing here now. I use, almost exclusively, the Mac application &lt;a href="http://skim-app.sourceforge.net/"&gt;Skim&lt;/a&gt; for my PDF-related tasks. This is primarily because Skim is &lt;a href="http://sourceforge.net/p/skim-app/wiki/Features/"&gt;incredibly powerful&lt;/a&gt;, but also because it grants access to much of this functionality via &lt;a href="http://sourceforge.net/p/skim-app/wiki/AppleScript/"&gt;robust AppleScript support&lt;/a&gt;. This allows tinkerers like myself to further extend it functionality. Many of the tools described in this post are uniquely built on top of Skim, so if you want to use the tool, you have to use the app. Luckily, the app is free to download, an open source project, and thoroughly stable. However, I understand if you already have your own preferred PDF application, so I will mark all Skim-dependent tools accordingly.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;attribute&lt;/li&gt;
-  &lt;li&gt;operator&lt;/li&gt;
-  &lt;li&gt;predicate&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Back to automagically splitting PDF pages. Using a handful of Skim’s awesome features, I have written an AppleScript which will split two-page scanned PDFs for you. The script itself is a part of my &lt;a href="http://fractaledmind.com/projects/skimmer/"&gt;Skimmer project&lt;/a&gt;, which is one of my many Alfred Workflows. For those who want the simplest access to this functionality, I would recommend getting &lt;a href="http://www.alfredapp.com/"&gt;Alfred&lt;/a&gt; and downloading the workflow. If, however, you simply want the AppleScript itself, you can find it &lt;a href="https://github.com/smargh/alfred_skimmer/blob/master/source/action_pdf-splitter.applescript"&gt;in the GitHub repo&lt;/a&gt;. In short, it asks you to determine the PDF orientation and then in the background splits the entire PDF. If you deal with many scanned PDFs, this will be a major time-saver.&lt;/p&gt;
 
-&lt;p&gt;So, my first question was, “How do I construct comparisons in Python?”&lt;/p&gt;
+&lt;p&gt;When it comes to &lt;a href="http://en.wikipedia.org/wiki/Optical_Character_Recognition"&gt;Optical Character Recognition&lt;/a&gt;, I use the open source &lt;a href="http://en.wikipedia.org/wiki/Tesseract_(software)"&gt;&lt;code&gt;tesseract&lt;/code&gt;&lt;/a&gt; utility. It can be a bit tricky to install, as it requires compilation and has a number of compiled dependencies. Building off of the work of &lt;a href="https://twitter.com/ryanfb"&gt;Ryan Baumann&lt;/a&gt;, I have created &lt;a href="https://gist.github.com/smargh/cd2fc4125bef57bcb3e2"&gt;a Gist&lt;/a&gt; to simplify installing &lt;code&gt;tesseract&lt;/code&gt; on a Mac&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
+
+&lt;div class="highlight shell"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/usr/bin/env bash&lt;/span&gt;
+
+&lt;span class="c"&gt;# Check for Homebrew,&lt;/span&gt;
+&lt;span class="c"&gt;# Install if we don't have it&lt;/span&gt;
+&lt;span class="k"&gt;if &lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt; ! &lt;span class="k"&gt;$(&lt;/span&gt;which brew&lt;span class="k"&gt;)&lt;/span&gt;; &lt;span class="k"&gt;then
+  &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Installing homebrew..."&lt;/span&gt;
+  ruby -e &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;span class="c"&gt;# Ensure `homebrew` is up-to-date and ready&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Updating homebrew..."&lt;/span&gt;
+brew doctor
+
+&lt;span class="c"&gt;# Ensure the Homebrew cache directory exists&lt;/span&gt;
+mkdir ~/Library/Caches/Homebrew
+
+&lt;span class="c"&gt;# Install leptonica with TIFF support (and every other format, just in case)&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Installing leptonica..."&lt;/span&gt;
+brew install --with-libtiff --with-openjpeg --with-giflib leptonica
+
+&lt;span class="c"&gt;# Install Ghostscript&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Installing ghostscript..."&lt;/span&gt;
+brew install gs
+
+&lt;span class="c"&gt;# Install ImageMagick with TIFF and Ghostscript support&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Installing imagemagick..."&lt;/span&gt;
+brew install --with-libtiff --with-ghostscript imagemagick
+
+&lt;span class="c"&gt;# Install Tesseract devel with all languages&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Installing tesseract..."&lt;/span&gt;
+brew install --devel --all-languages tesseract
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Once you have &lt;code&gt;tesseract&lt;/code&gt; installed, it can also be a bit complicated to run it from the Terminal. Again, I have &lt;a href="https://gist.github.com/smargh/0581e6199049ea7c51df"&gt;a Gist&lt;/a&gt; to simplify this process. It is a simple function that accepts a path to a PDF. It will convert the PDF to the appropriate format for &lt;code&gt;tesseract&lt;/code&gt;&lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt;, split the PDF into one file per page, OCR that collection of files, and recombine everything into one OCR’d PDF:&lt;/p&gt;
+
+&lt;div class="highlight shell"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/usr/bin/env bash&lt;/span&gt;
+&lt;span class="c"&gt;# courtesy of : &amp;lt;https://ryanfb.github.io/etc/2014/11/13/command_line_ocr_on_mac_os_x.html&amp;gt;&lt;/span&gt;
+
+ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+  &lt;span class="c"&gt;# get name of input pdf&lt;/span&gt;
+  &lt;span class="nv"&gt;PREFIX&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;basename &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; .pdf&lt;span class="k"&gt;)&lt;/span&gt;
+  &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Prefix is: &lt;/span&gt;&lt;span class="nv"&gt;$PREFIX&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+
+  &lt;span class="c"&gt;# check for any `tesseract` flags&lt;/span&gt;
+  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; ! -z &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$TESSERACT_FLAGS&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then
+    &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Picked up TESSERACT_FLAGS: &lt;/span&gt;&lt;span class="nv"&gt;$TESSERACT_FLAGS&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+  &lt;span class="k"&gt;fi&lt;/span&gt;
+
+  &lt;span class="c"&gt;# use `imagemagick` to convert pdf to individual `.tif` files&lt;/span&gt;
+  &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Converting to TIFF..."&lt;/span&gt;
+  convert -density 300 &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; -type Grayscale -compress lzw -background white +matte -depth 32 &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PREFIX&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;_page_%05d.tif"&lt;/span&gt;
+
+  &lt;span class="c"&gt;# use `tesseract` to OCR those individual `.tif` files&lt;/span&gt;
+  &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Performing OCR..."&lt;/span&gt;
+  &lt;span class="k"&gt;if &lt;/span&gt;&lt;span class="nb"&gt;command&lt;/span&gt; -v parallel &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; &lt;span class="k"&gt;then&lt;/span&gt;
+    &lt;span class="c"&gt;# if you can, parallelize this process using GNU Parallel&lt;/span&gt;
+    parallel --bar &lt;span class="s2"&gt;"tesseract &lt;/span&gt;&lt;span class="nv"&gt;$TESSERACT_FLAGS&lt;/span&gt;&lt;span class="s2"&gt; {} {.} pdf 2&amp;gt;/dev/null"&lt;/span&gt; ::: &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PREFIX&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;_page_&lt;span class="k"&gt;*&lt;/span&gt;.tif
+  &lt;span class="k"&gt;else
+    for &lt;/span&gt;i &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PREFIX&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;_page_&lt;span class="k"&gt;*&lt;/span&gt;.tif; &lt;span class="k"&gt;do
+      &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"OCRing &lt;/span&gt;&lt;span class="nv"&gt;$i&lt;/span&gt;&lt;span class="s2"&gt;..."&lt;/span&gt;
+      tesseract &lt;span class="nv"&gt;$TESSERACT_FLAGS&lt;/span&gt; &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$i&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;basename &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$i&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; .tif&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; pdf 2&amp;gt;/dev/null
+    &lt;span class="k"&gt;done
+  fi&lt;/span&gt;
+
+  &lt;span class="c"&gt;# combine individual OCR'd pdf pages back into a single OCR'd pdf using `ghostscript`&lt;/span&gt;
+  &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Combining output to &lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PREFIX&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;-OCR.pdf..."&lt;/span&gt;
+  gs -q -dNOPAUSE -dBATCH -sDEVICE&lt;span class="o"&gt;=&lt;/span&gt;pdfwrite -sOutputFile&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PREFIX&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;__OCR.pdf"&lt;/span&gt; &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PREFIX&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;_page_&lt;span class="k"&gt;*&lt;/span&gt;.pdf &amp;gt;/dev/null 2&amp;gt;&amp;amp;1
+
+  &lt;span class="c"&gt;# delete all of the individual files (both `.tif` and `.pdf`)&lt;/span&gt;
+  &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Cleaning up..."&lt;/span&gt;
+  rm &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PREFIX&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;_page_&lt;span class="k"&gt;*&lt;/span&gt;.tif &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PREFIX&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;_page_&lt;span class="k"&gt;*&lt;/span&gt;.pdf
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This script makes OCRing a PDF as simple as &lt;code&gt;$ ocr ~/path/to/my.pdf&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Finally, when it comes to naming conventions, I try to be authoritarian and consistent. The real goal is consistency, and however you decide to name your files, be sure to stick with it. I want make any explicit recommendations, as it truly does depend on your particular situation, but I will recommend a few apps and utilities that will make it easier for your to enforce consistency once you have determined your naming schema. The first is &lt;a href="http://www.noodlesoft.com/hazel.php"&gt;Hazel&lt;/a&gt;, which is a Mac app that will watch certain folders for you, waiting for some criteria to be met and then perform certain actions. For example, you have it watch the folder where you stick all your PDFs, and then rename any PDFs which don’t follow your naming convention. &lt;a href="http://www.documentsnap.com/use-hazel-to-magically-process-downloaded-pdfs/"&gt;DocumentSnap&lt;/a&gt; has a good tutorial on one way you can achieve this functionality. Another app/utility is &lt;a href="http://manytricks.com/namemangler/"&gt;Name Mangler&lt;/a&gt;, which provides a number of features to make batch renaming a breeze. Whatever your choice, having a consistently, universally applied naming schema will greatly help you in the long run.&lt;/p&gt;
+
+&lt;h2 id="pdf-annotation"&gt;PDF Annotation&lt;/h2&gt;
+
+&lt;p&gt;PDF annotation has led me down a long and winding path, but in the end I believe I’ve reached something like my own personal PDF nirvana. Grant me your patience for a bit as I (speedily) recall some major points on this personal journey.&lt;/p&gt;
+
+&lt;p&gt;For me, my fascination with PDF annotation started with two versions of an Applescript to extract PDF annotations from &lt;a href="http://skim-app.sourceforge.net/"&gt;Skim&lt;/a&gt;. The original was by John Sidiropolus over at &lt;a href="http://www.organognosi.com/export-skim-notes-according-to-their-highlight-colors/"&gt;OrganoGnosi.com&lt;/a&gt;, and then &lt;a href="http://drosophiliac.com/2012/09/creating-a-custom-url-scheme-via-applescript-and-python.html"&gt;Walton Jones at drosophiliac.com&lt;/a&gt; worked up his own version of the script. Building on their great work, I wrote a script that would export all of your Skim annotations (not just highlights) and could handle a 300+ page book in seconds (the original scripts really lagged on any PDFs with triple-digit page numbers). In &lt;a href="https://gist.github.com/smargh/63d8c8ff251068a275b8"&gt;my latest version of the script&lt;/a&gt;, I had an Applescript application that would extract all of my Skim annotations, format them into beautiful HTML, and create a new Evernote note where I had hyperlinks that would open the PDF in Skim to the exact page referenced. This script has served me well for months.&lt;/p&gt;
+
+&lt;p&gt;This mini-history skips, however, the &lt;em&gt;coolest&lt;/em&gt; feature of this script. In &lt;a href="http://drosophiliac.com/2012/09/creating-a-custom-url-scheme-via-applescript-and-python.html"&gt;a companion piece&lt;/a&gt; to his post on his own export script, Walton Jones describes how he created a custom URL scheme to allow him to generate hyperlinks for his notes. His method relied on a combination of Applescript and Python, as well as his own rigid PDF naming conventions. This is truly amazing in my book. This allows me to engage in information extraction while retaining the ability to return information to its context. When I annotate an OCR’d PDF, I can extract what I believe to be the essential information&lt;sup id="fnref:xx"&gt;&lt;a href="#fn:xx" class="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt;, then view only that information (in an Evernote note in this instance) or view that information in its original context (the PDF) by clicking a link that opens the PDF to the exact page with that content.&lt;/p&gt;
+
+&lt;p&gt;When I got my iPad, however, I immediately came across an annoyance. One of the best features of &lt;a href="https://evernote.com/"&gt;Evernote&lt;/a&gt; is its cross-platform capabilities. So I could read my annotation summaries on my iPad, but the hyperlinks were totally useless. Since they were custom URLs that required a custom handler on the Mac, iOS doesn’t recognize them. I spent some time thinking about how I could have my hyperlinks work on iOS when I came to discover the Wild West of iOS–url schemes. While there are a crazy number of interesting things one can accomplish with URL schemes on iOS,&lt;sup id="fnref:3"&gt;&lt;a href="#fn:3" class="footnote"&gt;4&lt;/a&gt;&lt;/sup&gt; in their simplest form they function just like internet urls; they let you jump directly to a specific location.&lt;/p&gt;
+
+&lt;p&gt;Each iOS app has to register their own URL scheme (if they do at all), which is one of the main reasons I describe this realm as the Wild West of iOS. There is often very little documentation of an app’s URL scheme (since its really primarily a “power user feature”) and there isn’t really any standardization.&lt;sup id="fnref:4"&gt;&lt;a href="#fn:4" class="footnote"&gt;5&lt;/a&gt;&lt;/sup&gt; Well, I jumped into this jungle searching for a PDF app that had a URL scheme that would allow me to jump to a specific PDF and a specific page. This was 4 months ago. Unfortunately, no such PDF application had a robust enough URL scheme. The top tier applications would allow you to open a specific PDF, but none of them would let you specify a page.&lt;sup id="fnref:5"&gt;&lt;a href="#fn:5" class="footnote"&gt;6&lt;/a&gt;&lt;/sup&gt; So, I put in a number of feature requests and waited.&lt;/p&gt;
+
+&lt;p&gt;Finally, the folks at &lt;a href="http://smilesoftware.com/"&gt;Smile Software&lt;/a&gt; upgraded &lt;a href="https://itunes.apple.com/us/app/pdfpen-for-ipad/id490774625?mt=8"&gt;PDFPen for iPad&lt;/a&gt; as well as &lt;a href="https://itunes.apple.com/us/app/pdfpen-for-iphone/id557705455?mt=8"&gt;PDFPen for iPhone&lt;/a&gt; to include a page specific URL scheme. This has finally opened the door to a cross-platform, wiki-style PDF workflow. In order for this workflow to, well, flow, we need two components: (1) a custom URL handler for the Mac and (2) a script to export PDF annotations with this custom URL embedded in the links. Luckily for you :) I have two such things.&lt;/p&gt;
+
+&lt;h3 id="the-url-handler"&gt;The URL Handler&lt;/h3&gt;
+
+&lt;p&gt;The PDFPen for iPad app handles a URL scheme like this: &lt;code&gt;pdfpen:///filename.pdf?pg=2&lt;/code&gt;. There are a few things to note here. First, PDFPen does not currently have any folder system, so you will never have to deal with any other elements besides filename and page number. Second, the identifier (&lt;code&gt;pdfpen&lt;/code&gt;) is followed by a colon and then &lt;strong&gt;three&lt;/strong&gt; backslashes (&lt;code&gt;///&lt;/code&gt;), not two. In order to have these urls function on the Mac, I needed to write an Applescript URL handler. Luckily, Applescript has built into it the &lt;code&gt;on open location&lt;/code&gt; function. This allows you to script responses to clicks of URL types, essentially letting you register your own custom URL schemes with OS X.&lt;/p&gt;
+
+&lt;p&gt;My URL handler for the PDFPen URL scheme faced one major hurdle. Since the PDFPen URL scheme only has the file name, the URL handler on the Mac needs to determine the file path of a PDF from only its filename. My solution relies on&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;saving my PDFs to a cloud folder, like Dropbox&lt;/li&gt;
+  &lt;li&gt;using a shell script to get the file path of every file in that folder&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In short, the URL handler searches my synced folder, where I know the PDF resides and generates a list of all of the files in that folder (including all sub-folders). It then searches that list for the item with the filename, and thus grabs the file path of the PDF on your Mac. This works well for me, but if anyone has another suggestion, drop me a line in the comments.&lt;/p&gt;
+
+&lt;p&gt;If you want to view my URL handler script, visit my GitHub page &lt;a href="https://gist.github.com/smargh/7064788"&gt;here&lt;/a&gt;. If you simply want to download the application, so that the .plist file is correct, and everything &lt;em&gt;just works&lt;/em&gt;, then you can &lt;a href="https://dl.dropboxusercontent.com/u/98731674/PDFPen%20URL%20Handler%20copy.zip"&gt;download it&lt;/a&gt;. Please note, however, that for the application to work “out of the box”, you need to save all of your cross-platform PDFs to your Dropbox folder on the Mac. Otherwise, the handler won’t be able to find the file path of your PDF.&lt;/p&gt;
+
+&lt;h3 id="exporting-skim-annotations-with-the-pdfpen-url-scheme"&gt;Exporting Skim Annotations with the PDFPen URL scheme&lt;/h3&gt;
+
+&lt;p&gt;This is the central script for the workflow. This script extracts and exports all of your Skim annotations directly to Evernote with the proper PDFPen urls embedded in the annotations. This script is all-in-one. It begins by displaying three prompts:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Where you want to save the PDF, you need to ensure that it is saved in the Folder that your url handler scours.&lt;/li&gt;
+  &lt;li&gt;Input a number that relates the printed page number of the PDF to the indexed page number.&lt;sup id="fnref:6"&gt;&lt;a href="#fn:6" class="footnote"&gt;7&lt;/a&gt;&lt;/sup&gt; As the prompt directs, all you need to do is subtract the printed page number from the indexed page number. If this means that you have a negative number, simply use a &lt;code&gt;-&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Whether the current PDF is a primary text or a secondary text. Depending on your answer, the script translates your highlight colors differently.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Once you respond to these prompts, the script generally runs in about 3-5 seconds. Whenever the new Evernote note is created, the script displays a &lt;a href="http://growl.info/"&gt;Growl notification&lt;/a&gt; (if you have Growl installed).&lt;/p&gt;
+
+&lt;p&gt;The script will export all of your Skim annotations to an Evernote notebook entitled “PDF Notes”. If such a notebook doesn’t exist, the script will create it. It will also assign two tags to the note: a “notes” tag and a “pdfpen”, both of which, if they don’t exist, will be created. As always, the script generates beautifully formatted html notes in Evernote, with clear section divisions and key information at the top. I use Skim’s text notes only for section headers, so the script will take all text notes and generate a Table of Contents at the top of the note. It also treats all yellow highlights as Summary text, and puts the Text Summary right after the ToC. All of the other annotations are grouped by type in the rest of the note. Here’s an example of an annotation summary note in Evernote:&lt;/p&gt;
+
+&lt;p&gt;Finally, of course, the script automatically embeds the PDFPen urls into the individual annotations. Since we input the relation of the printed page number to the indexed page number, the actual Evernote note displays the printed page number, while the url will take you to the proper indexed page number.&lt;/p&gt;
+
+&lt;p&gt;If you want to grab this script, head over to my &lt;a href="https://gist.github.com/smargh/7065110"&gt;Gist&lt;/a&gt; and save the script as an application, so you can launch it from &lt;a href="http://www.alfredapp.com/"&gt;Alfred&lt;/a&gt;, &lt;a href="http://obdev.at/products/launchbar/index.html"&gt;LaunchBar&lt;/a&gt;, or &lt;a href="http://www.apptivateapp.com/"&gt;Apptivate&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For those of you who don’t have an iPad or simply prefer to have your PDFs spread about your file system, I have another version of the script that uses my own custom URL scheme which will encode the full path to the PDF&lt;sup id="fnref:zz"&gt;&lt;a href="#fn:zz" class="footnote"&gt;8&lt;/a&gt;&lt;/sup&gt;. This is actually the script that I use in my Alfred Workflow &lt;a href="http://fractaledmind.com/projects/skimmer"&gt;Skimmer&lt;/a&gt;, which is by far the simplest way to use this functionality.&lt;/p&gt;
+
+&lt;h2 id="pdf-storage"&gt;PDF Storage&lt;/h2&gt;
+
+&lt;p&gt;As some of my previous comments will no doubt suggest, I highly recommend that your have a clear plan for where you will store your (consistently named) PDFs. Chaos in any part of your PDF workflow will breed chaos in other places as well. Moreover, both of the versions of the annotation exporting scripts require the PDFs to be sedentary. Again, I won’t recommend where or how to store your PDFs, but I can make some suggestions on tools.&lt;/p&gt;
+
+&lt;p&gt;Once again, &lt;a href="http://www.noodlesoft.com/hazel.php"&gt;Hazel&lt;/a&gt; will prove adept at this sort of task. You can tell it to watch certain folders (like your &lt;code&gt;/Downloads&lt;/code&gt;, &lt;code&gt;/Documents&lt;/code&gt;, and/or &lt;code&gt;/Desktop&lt;/code&gt;) for PDF files, and then have it move any PDFs put there to another location (maybe even changing the file name as it does so). Alternatively, you could opt for the big guns and use &lt;a href="http://www.devontechnologies.com/products/devonthink/overview.html"&gt;DEVONthink&lt;/a&gt;, which offers an entire app dedicated to file management, with AI, sorting, searcing, indexing, and all sorts of whiz-bang features. It’s not a cheap app, but many people&lt;sup id="fnref:yy"&gt;&lt;a href="#fn:yy" class="footnote"&gt;9&lt;/a&gt;&lt;/sup&gt; swear by its power and capabilities.&lt;/p&gt;
+
+&lt;h2 id="conclusion"&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;PDFs can be a pain in the butt, but they are also vitally important in today’s world. So much information is still transferred via PDF. I hope that some of these tools, some of these ideas at least, can help you handle your PDFs better and with less stress.&lt;/p&gt;
+
+&lt;p&gt;As always, if you have thoughts, questions, or suggestions, drop me a line.&lt;/p&gt;
+
+&lt;p&gt;stephen&lt;/p&gt;
 
 &lt;div class="footnotes"&gt;
   &lt;ol&gt;
     &lt;li id="fn:1"&gt;
-      &lt;p&gt;And that’s the footnote. &lt;a href="#fnref:1" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;The installation script has been tested on 10.9 and 10.10. &lt;a href="#fnref:1" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id="fn:2"&gt;
+      &lt;p&gt;&lt;code&gt;tesseract&lt;/code&gt; prefers files in &lt;code&gt;.tif&lt;/code&gt; format. &lt;a href="#fnref:2" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id="fn:xx"&gt;
+      &lt;p&gt;This uses highlight colors as a signal for various types of information. &lt;a href="#fnref:xx" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id="fn:3"&gt;
+      &lt;p&gt;If you’re interested, check out &lt;a href="http://www.macstories.net/tag/url-scheme/"&gt;Frederico Viticci’s work&lt;/a&gt; or &lt;a href="http://www.geekswithjuniors.com/ios-url-schemes/"&gt;Eric Pramona&lt;/a&gt; &lt;a href="#fnref:3" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id="fn:4"&gt;
+      &lt;p&gt;There is beginning to be some standardization thanks to the work of Greg Pierce and Marco Arment’s &lt;a href="http://x-callback-url.com/"&gt;x-callback-url specificiation&lt;/a&gt;. &lt;a href="#fnref:4" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id="fn:5"&gt;
+      &lt;p&gt;&lt;a href="http://www.branchfire.com/iannotate/"&gt;iAnnotate&lt;/a&gt; uses the &lt;code&gt;iannotate://open//&lt;/code&gt; scheme. &lt;a href="https://itunes.apple.com/us/app/goodreader-for-ipad/id363448914?mt=8"&gt;GoodReader&lt;/a&gt; uses the &lt;code&gt;gropen://&lt;/code&gt; scheme. &lt;a href="https://itunes.apple.com/us/app/pdf-expert-fill-forms-annotate/id393316844?mt=8"&gt;PDF Expert&lt;/a&gt; uses the &lt;code&gt;pdfefile:///folder1/filename.pdf?cc=1&lt;/code&gt; scheme. &lt;a href="#fnref:5" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id="fn:6"&gt;
+      &lt;p&gt;John Sidiropolus has a great explanation of the various ways in which printed page numbers can relate to indexed page numbers in &lt;a href="http://www.organognosi.com/latin-page-numbers-arabic-page-numbers-and-the-fifth-skim-note/"&gt;this post&lt;/a&gt;. &lt;a href="#fnref:6" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id="fn:zz"&gt;
+      &lt;p&gt;Naturally, this still requires you to not move the PDF once you export the annotations. Again, having a consistent naming schema and a consistent storage plan will only help you in the long run. &lt;a href="#fnref:zz" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id="fn:yy"&gt;
+      &lt;p&gt;Check out &lt;a href="http://nerdquery.com/search.php?query=devonthink&amp;amp;search=1&amp;amp;category=24&amp;amp;catid=24&amp;amp;type=and&amp;amp;results=50&amp;amp;db=0&amp;amp;prefix=0&amp;amp;media_only=0"&gt;Gabe Weatherhead’s posts&lt;/a&gt; on macdrifter.com as well as his appearance on &lt;a href="http://www.relay.fm/mpu/251"&gt;Mac Power Users&lt;/a&gt; for a clear guide and why and how DEVONthink could work within a larger workflow. &lt;a href="#fnref:yy" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
 </content>
   </entry>
   <entry>
-    <title>my interesting new article</title>
-    <link rel="alternate" href="http://blog.url.com/articles/my-interesting-new-article/"/>
-    <id>http://blog.url.com/articles/my-interesting-new-article/</id>
-    <published>2015-03-30T18:58:00-04:00</published>
-    <updated>2015-05-21T17:56:28-04:00</updated>
+    <title>Evernote and the Power of Hyperlinks</title>
+    <link rel="alternate" href="http://blog.url.com/articles/evernote-and-the-power-of-hyperlinks/"/>
+    <id>http://blog.url.com/articles/evernote-and-the-power-of-hyperlinks/</id>
+    <published>2015-05-26T14:02:00-04:00</published>
+    <updated>2015-05-26T14:35:34-04:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
-    <content type="html">&lt;h1 id="welcome-to-ghost"&gt;Welcome to Ghost&lt;/h1&gt;
+    <content type="html">&lt;p&gt;I am a plain text nerd. I love the simplicity, the durability, the flexability; yet, there is one limitation that disallows me from doing all text-related work in simple plain text–hyperlinks.&lt;/p&gt;
 
-&lt;p&gt;You’re live! Nice. We’ve put together a little post to introduce you to
-the Ghost editor and get you started. You can manage your content by
-signing in to the admin area at &lt;code&gt;&amp;lt;your blog URL&amp;gt;/ghost/&lt;/code&gt;. When you
-arrive, you can select this post from a list on the left and see a
-preview of it on the right. Click the little pencil icon at the top of
-the preview to edit this post and read the next section!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Example Article</title>
+    <link rel="alternate" href="http://blog.url.com/articles/example-article/"/>
+    <id>http://blog.url.com/articles/example-article/</id>
+    <published>2011-12-31T19:00:00-05:00</published>
+    <updated>2015-05-26T23:48:38-04:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;p&gt;This is an example article. It contains a wide range of various content to demonstrate how this blog styles such content. For example, this is some text with a footnote.&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
-&lt;h2 id="getting-started"&gt;Getting Started&lt;/h2&gt;
+&lt;p&gt;{{read more}}&lt;/p&gt;
 
-&lt;p&gt;Ghost uses something called Markdown for writing. Essentially, it’s a
-shorthand way to manage your post formatting as you write!&lt;/p&gt;
+&lt;p&gt;This is a way to determine the number of characters per line in the various layouts:&lt;/p&gt;
 
-&lt;p&gt;Writing in Markdown is really easy. In the left hand panel of Ghost, you
-simply write as you normally would. Where appropriate, you can use
-&lt;em&gt;shortcuts&lt;/em&gt; to &lt;strong&gt;style&lt;/strong&gt; your content. For example, a list:&lt;/p&gt;
+&lt;p&gt;0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789&lt;/p&gt;
+
+&lt;p&gt;This text is &lt;em&gt;italic&lt;/em&gt;, while this is &lt;strong&gt;bold&lt;/strong&gt;, and this is a &lt;a href="smargh.github.io"&gt;link&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For code, you have two types:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;inline code&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class="highlight python"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="n"&gt;list_comp&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This is an example block quote. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id="h1"&gt;H1&lt;/h1&gt;
+
+&lt;h2 id="h2"&gt;H2&lt;/h2&gt;
+
+&lt;h3 id="h3"&gt;H3&lt;/h3&gt;
+
+&lt;h4 id="h4"&gt;H4&lt;/h4&gt;
+
+&lt;h5 id="h5"&gt;H5&lt;/h5&gt;
+
+&lt;p&gt;&lt;img alt="fractal" src="images/dragon_curve.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;For example, a list:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Item number one&lt;/li&gt;
@@ -90,112 +356,9 @@ simply write as you normally would. Where appropriate, you can use
   &lt;li&gt;Tweet that I remembered to buy the milk, and drank it&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id="links"&gt;Links&lt;/h3&gt;
-
-&lt;p&gt;Want to link to a source? No problem. If you paste in a URL, like
-&lt;a href="http://ghost.org"&gt;http://ghost.org&lt;/a&gt; - it’ll automatically be linked up. But if you want
-to customise your anchor text, you can do that too! Here’s a link to
-&lt;a href="http://ghost.org"&gt;the Ghost website&lt;/a&gt;. Neat.&lt;/p&gt;
-
-&lt;h3 id="what-about-images"&gt;What about Images?&lt;/h3&gt;
-
-&lt;p&gt;Images work too! Already know the URL of the image you want to include
-in your article? Simply paste it in like this to make it show up:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="The Ghost Logo" src="https://ghost.org/images/ghost.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Not sure which image you want to use yet? That’s ok too. Leave yourself
-a descriptive placeholder and keep writing. Come back later and drag and
-drop the image in to upload:&lt;/p&gt;
-
-&lt;h3 id="quoting"&gt;Quoting&lt;/h3&gt;
-
-&lt;p&gt;Sometimes a link isn’t enough, you want to quote someone on what they’ve
-said. It was probably very wisdomous. Is wisdomous a word? Find out in a
-future release when we introduce spellcheck! For now - it’s definitely a
-word.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Wisdomous - it’s definitely a word.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id="working-with-code"&gt;Working with Code&lt;/h3&gt;
-
-&lt;p&gt;Got a streak of geek? We’ve got you covered there, too. You can write
-inline &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; blocks really easily with back ticks. Want to show off
-something more comprehensive? 4 spaces of indentation gets you there.&lt;/p&gt;
-
-&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2
-3
-4&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;.awesome-thing {
-    display: block;
-    width: 100%;
-}
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;h3 id="ready-for-a-break"&gt;Ready for a Break?&lt;/h3&gt;
-
-&lt;p&gt;Throw 3 or more dashes down on any new line and you’ve got yourself a
-fancy new divider. Aw yeah.&lt;/p&gt;
-
 &lt;hr /&gt;
 
-&lt;h3 id="advanced-usage"&gt;Advanced Usage&lt;/h3&gt;
-
-&lt;p&gt;There’s one fantastic secret about Markdown. If you want, you can write
-plain old HTML and it’ll still work! Very flexible.&lt;/p&gt;
-
-&lt;p&gt;&lt;input type="text" placeholder="I'm an input field!" /&gt;&lt;/p&gt;
-
-&lt;p&gt;That should be enough to get you started. Have fun - and let us know
-what you think :)&lt;/p&gt;
-
-</content>
-  </entry>
-  <entry>
-    <title>Example Article</title>
-    <link rel="alternate" href="http://blog.url.com/articles/example-article/"/>
-    <id>http://blog.url.com/articles/example-article/</id>
-    <published>2011-12-31T19:00:00-05:00</published>
-    <updated>2015-05-23T21:02:01-04:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;p&gt;This is an example article. You probably want to delete it and write your own articles!&lt;/p&gt;
-
-&lt;p&gt;This is the content of my blog post. That’s some text with a footnote.&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p&gt;{{read more}}&lt;/p&gt;
-
-&lt;p&gt;0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Hello World, I know that I’m here&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Here I come&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="smargh.github.io"&gt;link&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class="highlight python"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2
-3
-4
-5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
-&lt;span class="n"&gt;list_comp&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;This is an example block quote. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img alt="fractal" src="../../images/dragon_curve.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;The &lt;em&gt;operator&lt;/em&gt; can be any one of the following:&lt;/p&gt;
+&lt;p&gt;A sample table:&lt;/p&gt;
 
 &lt;table class="tables"&gt;
   &lt;thead&gt;
@@ -235,29 +398,6 @@ what you think :)&lt;/p&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-
-&lt;p&gt;The &lt;code&gt;==&lt;/code&gt; and &lt;code&gt;!=&lt;/code&gt; operators allow for modification. These modifiers specify how the comparison is made.&lt;/p&gt;
-
-&lt;table class="tables"&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Modifier&lt;/th&gt;
-      &lt;th&gt;Description&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code&gt;metadata.[object].ignore_case&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;The comparison is case insensitive.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code&gt;metadata.[object].ignore_diacritics&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;The comparison is insensitive to diacritical marks.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Both modifiers are on by default. In order to turn one off, you need to set the property to &lt;code&gt;False&lt;/code&gt;:&lt;/p&gt;
 
 &lt;p&gt;fin.&lt;/p&gt;
 &lt;div class="footnotes"&gt;

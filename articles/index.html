@@ -24,7 +24,7 @@
   <script type="text/javascript">
     $(document).ready(function(){
       $.bigfoot(
-        { numberResetSelector: "li.card" }
+        { numberResetSelector: ".card" }
       );
     });
   </script>
@@ -76,7 +76,7 @@
   </ul>
 </header>
 
-    <div class="navigation-wrapper">
+    <div class="navigation">
   <nav role="navigation">
     <ul class="navigation-menu">
       <li class="nav-link"><a href="/">home</a></li>
@@ -86,7 +86,7 @@
   </nav>
 
   <div id="search">
-    <div class="search-bar">
+    <div class="searchbar">
       <form role="search" action="/search" method="get">
         <input class="search-term" type="search" placeholder="Search..." name="q" />
         <button class="search-submit" type="submit">
@@ -101,43 +101,10 @@
       
 <ul class="cards">
     <li class="card">
-      <a class="card-link no-hvr" href="this-is-fractaled-mind/"></a>
-      <ul class="card-tags">
-      </ul>
-      <div class="card-image">
-        <!-- if article has tags, add filler element -->
-        <!-- if article has header image, add it -->
-      </div>
-      <div class="card-header">
-        <h3 class="card-title">
-          This is Fractaled Mind
-        </h3>
-        <h5 class="card-date">
-          15 May 2015
-        </h5>
-      </div>
-      <hr class="fractal">
-      <div class="card-copy">
-        <p>I’ve been programming in Python for <a href="">a little over a year now</a>. I really love Python, and I’m finally starting to feel comfortable reading other people’s code. For me, this was an important plateau. That’s some text with a footnote.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> Being able to read...</p><div class="footnotes">
-  <ol>
-    <li id="fn:1">
-      <p>And that’s the footnote. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
-      </div>
-    </li>
-    <li class="card">
-      <a class="card-link no-hvr" href="my-interesting-new-article/"></a>
+      <a class="card-link no-hvr" href="a-complete-pdf-annotation-workflow/"></a>
       <ul class="card-tags">
           <li>
-            <a class="badge no-hvr" href="/topics/work/">work</a>
-          </li>
-          <li>
-            <a class="badge no-hvr" href="/topics/play/">play</a>
-          </li>
-          <li>
-            <a class="badge no-hvr" href="/topics/example/">example</a>
+            <a class="badge no-hvr" href="/topics/hackademics/">hackademics</a>
           </li>
       </ul>
       <div class="card-image">
@@ -147,20 +114,45 @@
       </div>
       <div class="card-header">
         <h3 class="card-title">
-          my interesting new article
+          A Complete PDF Annotation Workflow
         </h3>
         <h5 class="card-date">
-          30 March 2015
+          26 May 2015
         </h5>
       </div>
       <hr class="fractal">
       <div class="card-copy">
-        <h1 id="welcome-to-ghost">Welcome to Ghost</h1>
+        In this post I want to outline how I (1) prepare PDFs, (2) annotate PDFs, and (3) store PDFs. PDFs can be a pain in the butt, but they are also vitally important in today's world. I hope that some of these tools, some of these ideas at least, can help you handle your PDFs better and with less stress.
+      </div>
+    </li>
+    <li class="card">
+      <a class="card-link no-hvr" href="evernote-and-the-power-of-hyperlinks/"></a>
+      <ul class="card-tags">
+          <li>
+            <a class="badge no-hvr" href="/topics/hackademics/">hackademics</a>
+          </li>
+          <li>
+            <a class="badge no-hvr" href="/topics/evernote/">evernote</a>
+          </li>
+      </ul>
+      <div class="card-image">
+        <!-- if article has tags, add filler element -->
+          <div id="tag-filler-space"></div>
+        <!-- if article has header image, add it -->
+      </div>
+      <div class="card-header">
+        <h3 class="card-title">
+          Evernote and the Power of Hyperlinks
+        </h3>
+        <h5 class="card-date">
+          26 May 2015
+        </h5>
+      </div>
+      <hr class="fractal">
+      <div class="card-copy">
+        <p>I am a plain text nerd. I love the simplicity, the durability, the flexability; yet, there is one limitation that disallows me from doing all text-related work in simple plain text–hyperlinks.</p>
 
-<p>You’re live! Nice. We’ve put together a little post to introduce you to
-the Ghost editor and get you started. You can manage your content by
-signing in to the admin area at <code>&lt;your blog URL&gt;/ghost/</code>. When you
-arrive, you can select this...</p>
+
       </div>
     </li>
     <li class="card">
@@ -168,18 +160,6 @@ arrive, you can select this...</p>
       <ul class="card-tags">
           <li>
             <a class="badge no-hvr" href="/topics/example/">example</a>
-          </li>
-          <li>
-            <a class="badge no-hvr" href="/topics/hello/">hello</a>
-          </li>
-          <li>
-            <a class="badge no-hvr" href="/topics/world/">world</a>
-          </li>
-          <li>
-            <a class="badge no-hvr" href="/topics/goodbye/">goodbye</a>
-          </li>
-          <li>
-            <a class="badge no-hvr" href="/topics/xoxo/">xoxo</a>
           </li>
       </ul>
       <div class="card-image">
@@ -198,9 +178,7 @@ arrive, you can select this...</p>
       </div>
       <hr class="fractal">
       <div class="card-copy">
-        <p>This is an example article. You probably want to delete it and write your own articles!</p>
-
-<p>This is the content of my blog post. That’s some text with a footnote.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+        <p>This is an example article. It contains a wide range of various content to demonstrate how this blog styles such content. For example, this is some text with a footnote.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
 
 <div class="footnotes">
   <ol>
@@ -231,11 +209,11 @@ arrive, you can select this...</p>
     <ul class="fa-ul">
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="this-is-fractaled-mind/">This is Fractaled Mind</a>
+          <a href="a-complete-pdf-annotation-workflow/">A Complete PDF Annotation Workflow</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="my-interesting-new-article/">my interesting new article</a>
+          <a href="evernote-and-the-power-of-hyperlinks/">Evernote and the Power of Hyperlinks</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
@@ -248,25 +226,13 @@ arrive, you can select this...</p>
     <h5>Tags</h5>
     <ul>
         <li>
-          <a class="badge no-hvr" href="/topics/example/">example (2)</a>
+          <a class="badge no-hvr" href="/topics/hackademics/">hackademics (2)</a>
         </li>
         <li>
-          <a class="badge no-hvr" href="/topics/hello/">hello (1)</a>
+          <a class="badge no-hvr" href="/topics/evernote/">evernote (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" href="/topics/world/">world (1)</a>
-        </li>
-        <li>
-          <a class="badge no-hvr" href="/topics/goodbye/">goodbye (1)</a>
-        </li>
-        <li>
-          <a class="badge no-hvr" href="/topics/xoxo/">xoxo (1)</a>
-        </li>
-        <li>
-          <a class="badge no-hvr" href="/topics/work/">work (1)</a>
-        </li>
-        <li>
-          <a class="badge no-hvr" href="/topics/play/">play (1)</a>
+          <a class="badge no-hvr" href="/topics/example/">example (1)</a>
         </li>
     </ul>
   </div>

@@ -24,7 +24,7 @@
   <script type="text/javascript">
     $(document).ready(function(){
       $.bigfoot(
-        { numberResetSelector: "li.card" }
+        { numberResetSelector: ".card" }
       );
     });
   </script>
@@ -76,7 +76,7 @@
   </ul>
 </header>
 
-    <div class="navigation-wrapper">
+    <div class="navigation">
   <nav role="navigation">
     <ul class="navigation-menu">
       <li class="nav-link"><a href="/">home</a></li>
@@ -86,7 +86,7 @@
   </nav>
 
   <div id="search">
-    <div class="search-bar">
+    <div class="searchbar">
       <form role="search" action="/search" method="get">
         <input class="search-term" type="search" placeholder="Search..." name="q" />
         <button class="search-submit" type="submit">
@@ -104,33 +104,23 @@
           <li>
             <a class="badge no-hvr" href="/topics/example/">example</a>
           </li>
-          <li>
-            <a class="badge no-hvr" href="/topics/hello/">hello</a>
-          </li>
-          <li>
-            <a class="badge no-hvr" href="/topics/world/">world</a>
-          </li>
-          <li>
-            <a class="badge no-hvr" href="/topics/goodbye/">goodbye</a>
-          </li>
-          <li>
-            <a class="badge no-hvr" href="/topics/xoxo/">xoxo</a>
-          </li>
     </ul>
 
-    <p>This is an example article. You probably want to delete it and write your own articles!</p>
+    <h2 id="title">Example Article</h2>
 
-<p>This is the content of my blog post. That’s some text with a footnote.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+    <p>This is an example article. It contains a wide range of various content to demonstrate how this blog styles such content. For example, this is some text with a footnote.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
 
 <span id='readmore'></span>
 
+<p>This is a way to determine the number of characters per line in the various layouts:</p>
+
 <p>0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789</p>
 
-<p><em>Hello World, I know that I’m here</em></p>
+<p>This text is <em>italic</em>, while this is <strong>bold</strong>, and this is a <a href="smargh.github.io">link</a>.</p>
 
-<p><strong>Here I come</strong></p>
+<p>For code, you have two types:</p>
 
-<p><a href="smargh.github.io">link</a></p>
+<p><code>inline code</code></p>
 
 <div class="highlight python"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -148,9 +138,41 @@
   <p>This is an example block quote. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
 </blockquote>
 
-<p><img alt="fractal" src="../../images/dragon_curve.png" /></p>
+<h1 id="h1">H1</h1>
 
-<p>The <em>operator</em> can be any one of the following:</p>
+<h2 id="h2">H2</h2>
+
+<h3 id="h3">H3</h3>
+
+<h4 id="h4">H4</h4>
+
+<h5 id="h5">H5</h5>
+
+<p><img alt="fractal" src="images/dragon_curve.png" /></p>
+
+<p>For example, a list:</p>
+
+<ul>
+  <li>Item number one</li>
+  <li>Item number two
+    <ul>
+      <li>A nested item</li>
+    </ul>
+  </li>
+  <li>A final item</li>
+</ul>
+
+<p>or with numbers!</p>
+
+<ol>
+  <li>Remember to buy some milk</li>
+  <li>Drink the milk</li>
+  <li>Tweet that I remembered to buy the milk, and drank it</li>
+</ol>
+
+<hr />
+
+<p>A sample table:</p>
 
 <table class="tables">
   <thead>
@@ -191,29 +213,6 @@
   </tbody>
 </table>
 
-<p>The <code>==</code> and <code>!=</code> operators allow for modification. These modifiers specify how the comparison is made.</p>
-
-<table class="tables">
-  <thead>
-    <tr>
-      <th>Modifier</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>metadata.[object].ignore_case</code></td>
-      <td>The comparison is case insensitive.</td>
-    </tr>
-    <tr>
-      <td><code>metadata.[object].ignore_diacritics</code></td>
-      <td>The comparison is insensitive to diacritical marks.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Both modifiers are on by default. In order to turn one off, you need to set the property to <code>False</code>:</p>
-
 <p>fin.</p>
 <div class="footnotes">
   <ol>
@@ -241,11 +240,11 @@
     <ul class="fa-ul">
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../this-is-fractaled-mind/">This is Fractaled Mind</a>
+          <a href="../a-complete-pdf-annotation-workflow/">A Complete PDF Annotation Workflow</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../my-interesting-new-article/">my interesting new article</a>
+          <a href="../evernote-and-the-power-of-hyperlinks/">Evernote and the Power of Hyperlinks</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
@@ -258,25 +257,13 @@
     <h5>Tags</h5>
     <ul>
         <li>
-          <a class="badge no-hvr" href="/topics/example/">example (2)</a>
+          <a class="badge no-hvr" href="/topics/hackademics/">hackademics (2)</a>
         </li>
         <li>
-          <a class="badge no-hvr" href="/topics/hello/">hello (1)</a>
+          <a class="badge no-hvr" href="/topics/evernote/">evernote (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" href="/topics/world/">world (1)</a>
-        </li>
-        <li>
-          <a class="badge no-hvr" href="/topics/goodbye/">goodbye (1)</a>
-        </li>
-        <li>
-          <a class="badge no-hvr" href="/topics/xoxo/">xoxo (1)</a>
-        </li>
-        <li>
-          <a class="badge no-hvr" href="/topics/work/">work (1)</a>
-        </li>
-        <li>
-          <a class="badge no-hvr" href="/topics/play/">play (1)</a>
+          <a class="badge no-hvr" href="/topics/example/">example (1)</a>
         </li>
     </ul>
   </div>
