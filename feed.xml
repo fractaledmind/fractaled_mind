@@ -334,7 +334,7 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
 
 &lt;h5 id="h5"&gt;H5&lt;/h5&gt;
 
-&lt;p&gt;&amp;lt;%= image_tag ‘dragon_curve.png’, :alt =&amp;gt; “fractal” %&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="fractal" src="images/dragon_curve.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;For example, a list:&lt;/p&gt;
 
