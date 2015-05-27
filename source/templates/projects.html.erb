@@ -1,0 +1,47 @@
+<!-- Grab all projects in a single variable -->
+<ul class="cards">
+  <% data.projects.each do |slug, project| %>
+    <% if !project.blank? %>
+      <li class="card">
+        <%= link_to '', slug, :class => "card-link no-hvr" %>
+
+        <% if project.tags? %>
+          <ul class="card-tags">
+            <% project.tags.each do |tag| %>
+              <li>
+                <!-- If project-tag is also a blog-tag, link to it -->
+                <% if blog.tags.include?(tag) %>
+                  <%= link_to "#{tag}", tag_path(tag),
+                      :class => "badge no-hvr" %>
+                <!-- If project-tag is unique, show it, but no link -->
+                <% else %>
+                  <span class="badge" id="<%= tag %>"><%= tag %></span>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        <% end %>
+
+        <div class="card-image">
+          <% if project.image? %>
+            <%= image_tag project.image %>
+          <% end %>
+        </div>
+
+        <div class="card-header">
+            <h3 class="card-title">
+                <%= project.title %>
+            </h3>
+        </div>
+
+        <hr class="fractal">
+
+        <div class="card-copy">
+            <!-- Render Markdown as HTML -->
+            <%= markdownify project.description %>
+        </div>
+
+      </li>
+    <% end %>
+  <% end %>
+</ul>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <%= partial "partials/meta" %>
+
+  <body>
+    <%= partial "partials/header" %>
+
+    <%= partial "partials/navigation" %>
+
+    <div id="main" role="main">
+      <%= cleanup_readmore(yield) %>
+    </div>
+
+    <%= partial "partials/sidebar" %>
+
+    <%= partial "partials/footer" %>
+
+  </body>
+</html>

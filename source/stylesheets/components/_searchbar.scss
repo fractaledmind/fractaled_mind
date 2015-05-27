@@ -1,47 +1,57 @@
-// Search bar (refills)
+// Search bar (refills, remixed)
 form[role=search] {
-  width: 100%;
   // to keep from getting text and button too cramped
   min-width: 7rem;
   // so that button can be properly positioned
   position: relative;
 
   input[type=search] {
+    /* Prevent Safari from re-styling */
+    -webkit-appearance: none;
     box-sizing: border-box;
     height: 2rem;
-    width: 90%;
-    font-size: 0.9em;
+    min-height: 2rem;
+    // line-height: 2rem;
+    width: 100%;
+    font-size: 0.9rem;
     font-style: italic;
     color: $dark;
     background: $lighterest;
     border-radius: $base-border-radius * 2;
     border: 1px solid $dark;
     padding-right: 1em;
+    padding-left: 0.5em;
+    padding-top: 0.35em;
     margin: 0;
 
-    &::-webkit-search-cancel-button {
-      position:relative;
-      right:15%;
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
     }
 
     &:focus { outline:none; background: white;}
   }
 
   button[type=submit] {
+    width: 24px;
+    height: 24px;
     // position it relative to input's top-right
     position: absolute;
     right: 0;
-    margin-right: 14%;
+    margin-right: 5%;
     top: 0;
     // need media queries to center
     margin-top: 0.25rem;
     padding: 0;
-    width: 24px;
-    height: 24px;
     // to center image
     padding: 4px;
     // override some Bitters styling
     background-color: transparent;
+    // override some brower styles
+    border-style: none;
+    border-radius: 3px;
 
     &:hover,
     &:focus {

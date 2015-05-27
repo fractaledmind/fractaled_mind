@@ -1,0 +1,28 @@
+@include media-exp("<one-column") {
+  #main {
+    // full width
+    @include fill-parent();
+    .card {
+      //decrease margin outside card on sides
+      margin-left: 6.472px;
+      margin-right: 6.472px;
+      //decrease padding inside card all round
+      padding: 1rem;
+    }
+  }
+}
+
+@include media-exp(">=one-column", "<=two-column") {
+  // full width, w/ proper floating (for other elements)
+  #main { @include span-columns(12 of 12); }
+}
+
+@include media-exp(">two-column") {
+  //necessary to put .navigation and #sidebar on top of each other on left
+  @include direction-context(right-to-left) {
+    #main {
+      @include span-columns(8.75 of 12);
+      margin: -17% 0 0;
+    }
+  }
+}

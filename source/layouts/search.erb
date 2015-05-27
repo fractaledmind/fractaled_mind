@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <%= partial "partials/search-meta" %>
+
+  <body>
+    <%= partial "partials/header" %>
+
+    <%= partial "partials/nav" %>
+
+    <div id="main" role="main">
+      <%= yield %>
+    </div>
+
+    <%= partial "partials/sidebar" %>
+
+    <%= partial "partials/footer" %>
+
+  </body>
+</html>

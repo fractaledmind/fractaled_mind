@@ -1,0 +1,16 @@
+article.card {
+    // internal padding around text
+    padding: 1rem 1.5rem;
+    // for tag overflow
+    padding-top: 3rem;
+
+    h2#title {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    @include media-exp(">two-column") {
+        // force sidebar together
+        margin-bottom: 24rem;
+    }
+}

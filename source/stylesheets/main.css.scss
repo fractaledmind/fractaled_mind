@@ -1,35 +1,60 @@
 @charset 'utf-8';
 
-// $visual-grid: true;
-// $visual-grid-color: #a7adba !default;
+// $visual-grid: true !global;
+// $visual-grid-color: #a7adba !global;
+
+// Base variables and mixins
+@import 'base/include-media';
+@import 'base/mixins';
+@import 'base/normalize';
+@import 'base/colors';
+@import 'base/fonts';
 
 // Thoughtbot Toolchain
 @import 'vendors/bourbon/all';
 @import 'vendors/bitters/variables';   // Bitters needs to be imported before Neat
 @import 'vendors/bitters/buttons';
-@import 'vendors/bitters/lists';
 @import 'vendors/neat/all';
-
-@import 'base/colors';
+@import 'vendors/bigfoot/bigfoot-number';
 
 // Thoughtbot Overrides
-@import 'vendors-extensions/grid-settings';
+// @import 'vendors-extensions/grid-settings';
 @import 'vendors-extensions/typography';
 
-// Base color and typography details
-@import 'helpers/mixins';
+@import 'base/typography';
+@import 'helpers/syntax';
+
+@import 'components/minimal-tables';
 @import 'components/hyperlinks';
-@import 'components/hr';
+@import 'components/blockquote';
+@import "components/searchbar";
 @import 'components/tags';
+@import 'components/lists';
+@import 'components/hr';
 @import 'components/cards';
-@import 'layout/sidebar';
+
 @import 'layout/header';
+@import 'layout/navigation';
+@import 'layout/sidebar';
+@import 'layout/main';
 @import 'layout/footer';
 
-@import 'small';
-@import 'medium';
-@import 'large';
+@import 'pages/item';
+@import 'pages/search-results';
+@import 'pages/topic';
+@import 'pages/topics';
+@import 'pages/project';
 
 body {
-	background-color: $lighterest;
+	@include outer-container();
+
+	@include media-exp(">two-column") {
+	  // Ensure no more than ~66 characters per line
+	  max-width: em(1024);
+	}
+
+	@include media-exp(">=one-column", "<=two-column") {
+	  // Ensure no more than ~66 characters per line
+	  max-width: em(768);
+	}
 }

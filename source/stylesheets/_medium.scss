@@ -1,40 +1,5 @@
-@include media($tablet) {
-	/* 8 COLUMN LAYOUT
-    */
-    // body:before {
-    // 	content: 'TABLET :: ' + $grid-columns
-    // }
-    body {
-        max-width: $tablet-size;
-        margin: 0 auto;
-        // background-color: $light;
-        @include outer-container();
-    }
-
-    header {
-        @include span-columns(8 of 8);
-        // margin-bottom: -10%;
-        position: relative;
-
-        #site-logo {
-          @include span-columns(4 of 8);
-          // @include display-element();
-        }
-
-    }
-
-    // aside#sidebar {
-    //     @include span-columns(2);
-    //     // @include display-element();
-
-    //     img {
-    //         width: 100%;
-    //     }
-    // }
-
-    // #main {
-    //     @include span-columns(6);
-    //     @include omega();
-    //     // @include display-element();
-    // }
+@include media-exp(">=one-column", "<=two-column") {
+  // Ensure no more than ~66 characters per line
+  $max-width: rem(768) !global;
+  body { @include outer-container(); }
 }

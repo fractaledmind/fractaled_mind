@@ -1,0 +1,9 @@
+ul,
+ol {
+  margin: 0.5rem 0;
+}
+
+ul.fa-ul {
+    li { margin-bottom:1em; }
+    .fa-li { color: $darkest; }
+}

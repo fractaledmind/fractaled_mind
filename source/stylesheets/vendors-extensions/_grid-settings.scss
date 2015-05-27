@@ -11,10 +11,10 @@ $visual-grid: true;
 $mobile-size: em(320);
 $tablet-size: em(720);
 $desktop-size: em(960);
-// $largedesktop-size: em(1050);
+$largedesktop-size: em(1050);
 
 // Bourbon Neat Breakpoints
-$mobile: new-breakpoint(min-width $mobile-size 4);
+$mobile: new-breakpoint(min-width $mobile-size, 4);
 $tablet: new-breakpoint(min-width $tablet-size, 8);
 $desktop: new-breakpoint(min-width $desktop-size, 12);
-// $largedesktop: new-breakpoint(min-width $largedesktop-size 16);
+$largedesktop: new-breakpoint(min-width $largedesktop-size 16);

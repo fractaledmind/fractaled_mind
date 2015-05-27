@@ -1,20 +1,22 @@
 header {
-  // relative so that site-info can be properly positioned
-  // position: relative;
+  @include span-columns(12 of 12);
+  // allow #social-networks to be positioned
+  position: relative;
 
-  // MAIN SITE LOGO (LEFT SIDE)
   #site-logo {
-    img {
-      padding-top: $golden-ratio*1rem;
-      // padding-left: 1rem;
-    }
+    padding-left: 0.5rem;
+    img { padding-top: 1rem; }
   }
 
   #social-networks {
+    // Force to right side, overlayed on #site-logo
+    position:absolute;
+    right:0;
+    margin-right: 2%;
+    top:0;
+
     text-align: right;
-    padding-right: 1.5rem;
-    //increased because img sits slightly below frame
-    padding-top: $golden-ratio*1.5rem;
+    padding:0;
 
     li {
       display: inline-block;
@@ -23,10 +25,20 @@ header {
 
     a {
       color: $darkest;
-
-      &:hover, &:focus, &:active {
-          color: $red;
-      }
+      &:hover, &:focus, &:active { color: $red; }
     }
+  }
+
+  @include media-exp(">two-column") {
+    #site-logo { @include span-columns(8 of 12); }
+    #social-networks { margin-top: 2%; }
+  }
+  @include media-exp(">=one-column", "<=two-column") {
+    #site-logo { @include span-columns(8.25 of 12); }
+    #social-networks { margin-top: 12%; }
+  }
+  @include media-exp("<one-column") {
+    #site-logo { @include fill-parent(); }
+    #social-networks { margin-top: 40%; }
   }
 }

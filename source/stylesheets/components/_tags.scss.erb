@@ -1,18 +1,19 @@
 $badge-font-size: 0.75em !default;
 
-@mixin badge($color: $red) {
-  /* STYLE */
+@mixin badge() {
+  color: $lighterest;
+  border-radius: $badge-font-size;
+  display: inline-block;
   font-family: map-get($font-stack, primary);
   font-size: $badge-font-size;
-  font-weight: bold;
-  border-radius: $badge-font-size;
+  font-weight: 500;
   line-height: 1;
-  // background-color: $color;
-  color: $lighterest;
-
-  /* POSITION */
   padding: 0.25rem 1rem;
   margin: 0 4px;
+  @include transition-property(transform);
+  // @include transition-duration(0.1s);
+  // @include transition-timing-function(ease-in-out);
+  // @include transition-delay(0s);
 
   &:hover,
   &:focus,
@@ -21,9 +22,11 @@ $badge-font-size: 0.75em !default;
   }
 }
 
+.badge { @include badge(); }
+
 // Give each tag a different color (up to 8 colors, then repeats start)
 <% blog.tags.to_enum.with_index(1).each do |obj, idx| %>
-    .badge[href*="<%= obj[0] %>"] {
+    .badge[href*="<%= obj[0] %>"], .grid-item[href*="<%= obj[0] %>"] {
         $i: <%= idx %>;
         @if $i > length($rainbow-list) {
           // More tags than colors, so start over on colors
@@ -32,4 +35,22 @@ $badge-font-size: 0.75em !default;
         $current-color: nth($rainbow-list, $i);
         background-color: $current-color;
     }
+
+    // Check if any tags in Projects not in Articles
+    <% data.projects.each do |slug, project| %>
+      // If project has any tags
+      <% if project.tags? %>
+        // Iterate over them
+        <% project.tags.each do |tag| %>
+          // If tag not one of the blog-tags
+          <% if !blog.tags.include?(tag) %>
+            // style that tag's class
+            #<%= tag %> {
+                background-color: $dark;
+            }
+          <% end %>
+        <% end %>
+      <% end %>
+
+    <% end %>
 <% end %>

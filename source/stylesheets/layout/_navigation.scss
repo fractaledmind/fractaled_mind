@@ -1,0 +1,101 @@
+// Nav menu
+.navigation {
+  ul {
+    // list resets
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+
+    li {
+      font-family: map-get($font-stack, primary);
+      text-transform: uppercase;
+      color: $red;
+    }
+  }
+
+  a:visited { color: $red; }
+
+  #nav { margin-bottom: 0.5rem; }
+
+  #search { margin-bottom: 0.5rem; }
+}
+
+// any non-desktop view
+@include media-exp("<=two-column") {
+  .navigation {
+    ul {
+      text-align: center;
+      padding-top: 0.33em;
+    }
+    li {
+      display:inline;
+      border-right: 1px solid transparentize($base-font-color, 0.8);
+      padding: 0 1em;
+      padding-top: 0.25rem;
+      &:first-child { padding-left: 0; }
+      &:last-child {
+        padding-right: 0;
+        border-right: 0;
+      }
+    }
+  }
+}
+
+@include media-exp("<one-column") {
+  $nav-item-size: map-get($type-sizes, delta) / map-get($type-scales, mobile);
+  .navigation {
+    @include clearfix();
+    margin-bottom: 1.5rem;
+    // nav and #search on top of one another
+    nav {
+      @include centered-columns(10 of 12);
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      li { font-size: $nav-item-size; line-height: golden-height($nav-item-size);}
+    }
+
+    // center #search
+    #search { @include centered-columns(8 of 12); }
+  }
+}
+
+@include media-exp(">=one-column", "<=two-column") {
+  $nav-item-size: map-get($type-sizes, delta) / map-get($type-scales, tablet);
+  $margin: 4.5%;
+
+  .navigation {
+    @include pushed-columns(9.5 of 12);
+    // overlay nav on header
+    margin-top: -$margin;
+    margin-bottom: 1rem;
+
+    nav { @include span-columns(5.7 of 9); @include omega(); }
+
+    li { font-size: $nav-item-size; line-height: golden-height($nav-item-size);}
+
+    #search { float: left; display: block; }
+  }
+}
+
+@include media-exp(">two-column") {
+  $nav-item-size: map-get($type-sizes, delta) / map-get($type-scales, desktop);
+
+  .navigation {
+    // Same as #sidebar
+    @include span-columns(3.25 of 12, block-collapse);
+    // A little cushion
+    padding: 1.25rem 0 0 1.5rem;
+
+    nav {
+      // nav and #search not inline
+      float:none;
+      width:100%;
+
+      // One line per list-item, with graceful whitespace between
+      ul { text-align:left; margin-bottom:1rem; }
+      li { display:block; width:100%; margin-bottom:1rem; }
+      // Proper text size for viewport
+      li a { font-size: $nav-item-size; }
+    }
+  }
+}

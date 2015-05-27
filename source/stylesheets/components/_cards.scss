@@ -2,7 +2,9 @@
   @include display(flex);
   @include flex-wrap(wrap);
   @include justify-content(space-between);
-  padding: 12.944px;
+  list-style: none;
+  padding: 0;
+  margin:0;
 }
 
 .card {
@@ -13,7 +15,7 @@
   $card-background: white;
 
 
-  @include flex-basis(18em);
+  @include flex-basis(17em);
   @include flex-grow(1);
   @include transition(all 0.25s ease-in-out);
   background-color: $card-background;
@@ -57,7 +59,7 @@
   .card-image {
     overflow: hidden;
     padding-top: 1rem;
-    max-height: 11rem; // padding-top + img height
+    max-height: 12rem; // padding-top + filler-space + img height
 
     img {
       display: block;
@@ -73,14 +75,12 @@
   .card-header {
     background-color: $card-background;
     color: $card-font-color;
-    // padding: ($card-spacing / 3) ($card-spacing / 2);
     text-align:center;
 
     .card-title {
       $font-size: map-get($type-sizes, delta) / map-get($type-scales, desktop);
       display:block;
-      // text-transform:uppercase;
-      font-family: FontinSans;
+      text-transform:uppercase;
       font-size: $font-size;
       font-weight: bold;
       line-height: golden-height($font-size);
@@ -110,6 +110,11 @@
     padding: 0 1em;
     margin: 0 0 ($card-spacing / 2);
 
-    h1, h2, h3, h4, h5, h6 { font-size: 1.1rem; font-weight: bold; }
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 1.1rem;
+      line-height: golden-height(1.1rem);
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
   }
 }

@@ -1,0 +1,30 @@
+<head>
+  <!-- Metadata declarations -->
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Content declarations -->
+  <title>Fractaled Mind<%= ' - ' + current_article.title unless current_article.nil? %></title>
+  <%= feed_tag :atom, "#{blog.options.prefix.to_s}feed.xml", title: "Atom Feed" %>
+
+  <!-- External Resources -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
+
+  <!-- Internal Resources -->
+  <%= stylesheet_link_tag 'main' %>
+  <%= favicon_tag 'favicon.png' %>
+  <%= javascript_include_tag 'search.js'  %>
+
+  <!-- Responsive Tables -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("td").each(function() {
+        var $th = $(this).closest('table').find('th').eq($(this).index());
+        $(this).attr('data-th', $th.text());
+      });
+    });
+  </script>
+
+</head>

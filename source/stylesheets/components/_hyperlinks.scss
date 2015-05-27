@@ -7,10 +7,6 @@
   color: $red;
   line-height:1;
 
-  &:hover {
-    color: $red;
-  }
-
   &:before {
     visibility: hidden;
     content: "";
@@ -20,35 +16,79 @@
     bottom: 0;
     left: 0;
     background-color: $red;
-    transform: scaleX(0);
-    transition: all 0.25s ease-in-out 0s;
+    @include transition(all 0.25s ease-in-out 0s);
+    @include transform(scaleX(0));
   }
+
   &:hover:before {
     visibility: visible;
-    transform: scaleX(1);
+    @include transform(scaleX(1));
+  }
+
+  // &:focus, &:active { border-bottom: 1px solid $red; }
+
+  &:focus:before, &:active:before { visibility: hidden; }
+}
+
+@mixin simple-underline() {
+  position: relative;
+  z-index: 1;
+  line-height:1;
+  color: $red;
+
+  // Unvisited link
+  &:link {
+    text-decoration: none;
+    color: $red;
+  }
+  // Visited links
+  &:visited {
+    text-decoration: none;
+    color: $blue;
+  }
+  // The user mouses over a link
+  &:hover {
+    text-decoration: underline;
+  }
+  // The user clicks on a link
+  &:focus {
+    padding-top: 2px;
+  }
+  // The user has clicked a link
+  &:active {
+    padding-top: 2px;
   }
 }
 
 @mixin no-hover-effect() {
   text-decoration: none;
 
-  &:hover {
+  &:hover, &:focus {
     text-decoration: none;
+  }
+
+  &:active, &:visited {
+    color: $darkest;
   }
 
   &:before {
     visibility: hidden;
     content: "";
+    // Reset to avoid Safari font transitions
+    @include transition-duration(0s);
+    @include transition-timing-function(ease-in);
+    @include transition-delay(0s);
   }
-  &:hover:before {
+  &:hover:before,
+  &:focus:before,
+  &:active:before {
     visibility: hidden;
   }
 }
 
-.no-hvr {
-  @include no-hover-effect();
-}
-
 a {
-  @include underline-from-center();
+  @include simple-underline();
+}
+a.no-hvr {
+  @include no-hover-effect();
 }

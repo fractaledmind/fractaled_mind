@@ -1,0 +1,11 @@
+<div>
+  <h2 id="all-tags">All Tags</h2>
+
+  <div class="grid">
+  <% blog.tags.each do |tag, articles| %>
+      <%= link_to "#{tag} (#{articles.size})", tag_path(tag),
+          :class => "grid-item no-hvr" %>
+  <% end %>
+  </div>
+
+</div>

@@ -1,84 +1,4 @@
-// Custom Fonts
-@font-face {
-  font-family: Born;
-  src: url('../../fonts/Born/Born.otf') format('opentype');
-}
-
-@font-face {
-  font-family: FontinSans;
-  src: url('../../fonts/FontinSans/Fontin_Sans_SC_45b.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'fractal';
-  src: url('./../fonts/fractal/src/fontello.eot'); /* IE9 Compat Modes */
-  src: url('font/fontello.eot?35233069#iefix') format('embedded-opentype'),
-       url('./../fonts/fractal/src/fontello.woff') format('woff'), /* Pretty Modern Browsers */
-       url('./../fonts/fractal/src/fontello.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('./../fonts/fractal/src/fontello.svg') format('svg'); /* Legacy iOS */
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: SkolaSans;
-  src: url('../../fonts/SkolaSansPro/SkolaSans Pro OTF/SkolaSans-Regular.otf') format('opentype');
-}
-
-@font-face {
-  font-family: SkolaSans;
-  font-weight: bold;
-  src: url('../../fonts/SkolaSansPro/SkolaSans Pro OTF/SkolaSans-Bold.otf') format('opentype');
-}
-
-@font-face {
-  font-family: SkolaSans;
-  font-style: italic;
-  src: url('../../fonts/SkolaSansPro/SkolaSans Pro OTF/SkolaSans-Italic.otf') format('opentype');
-}
-
-@font-face {
-  font-family: SkolaSans;
-  font-weight: bold;
-  font-style: italic;
-  src: url('../../fonts/SkolaSansPro/SkolaSans Pro OTF/SkolaSans-BoldItalic.otf') format('opentype');
-}
-
-$font-stack: (
-  primary: #{SkolaSans, 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif},
-  secondary: #{Born, Lato, 'Times New Roman', serif},
-  code: #{Inconsolata, Monaco, Menlo, Consolas, 'Courier New', monospace}
-);
-
-// Bourbon Overrides
-$pi: 3.1416;
-$golden-ratio: 1.618;
-$modular-scale-ratio: $perfect-fourth;
-// scale starts at h1 and will work down
-$modular-scale-base: $pi*1rem;
-
-// Typography
-$base-font-family: map-get($font-stack, primary);
-$heading-font-family: map-get($font-stack, primary);
-
-// Font Sizes
-$base-font-size: 1em;
-
-// Line height
-$base-line-height: $golden-ratio;
-
-// Other Sizes
-$base-border-radius: 3px;
-$base-spacing: $base-line-height * 1em;
-$small-spacing: $base-spacing / 2;
-$base-z-index: 0;
-
-// Font Colors
-$base-background-color: #fff;
-$base-font-color: $darkerest;
-$action-color: $red;
-
-
+/* FUNCTIONS */
 // Fixed vertical typographic scale mixins
 @function num-baselines($input-height) {
   // find number of lines required to contain input height
@@ -92,6 +12,14 @@ $action-color: $red;
   @return $input-height * $base-line-height;
 }
 
+// Bourbon Overrides
+$pi: 3.1416;
+$golden-ratio: 1.618;
+$modular-scale-ratio: $perfect-fourth;
+// scale starts at h1 and will work down
+$modular-scale-base: $pi*1rem;
+
+/* MAPS */
 /*
 Semantic sizes scale down from PI along the Perfect Fourth scale:
   3.1416
@@ -118,14 +46,42 @@ $type-scales: (
   mobile:  pow($minor-third, 2),
 );
 //map-get($type-sizes, alpha) / map-get($type-scales, mobile)
+$font-stack: (
+  body: #{SkolaSans, 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif},
+  title: #{SkolaSansCn, 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif},
+  serif: #{Born, Lato, 'Times New Roman', serif},
+  code: #{Inconsolata, Monaco, Menlo, Consolas, 'Courier New', monospace}
+);
 
+/* VARIABLES */
+// Typography
+$base-font-family: map-get($font-stack, body);
+$heading-font-family: map-get($font-stack, title);
+
+// Font Sizes
+$base-font-size: 1em;
+
+// Line height
+$base-line-height: $golden-ratio;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Font Colors
+$base-background-color: #fff;
+$base-font-color: $darkerest;
+$action-color: $red;
+
+/* STYLES */
 body {
   @include font-feature-settings("kern", "liga", "pnum");
   -webkit-font-smoothing: antialiased;
+  background-color: $lighterest;
   color: $base-font-color;
   font-family: $base-font-family;
-  font-size: $base-font-size;
-  line-height: $base-line-height*1em;
 }
 
 h1,
@@ -140,6 +96,14 @@ h6 {
 
 p {
   margin: 0 0 $small-spacing;
+  margin-bottom: $small-spacing;
+}
+
+code {
+  font-family: map-get($font-stack, code);
+  color: $violet;
+  background-color: $lighterest;
+  border-radius: $base-border-radius;
 }
 
 hr {
@@ -152,6 +116,7 @@ hr {
 
 img,
 picture {
-  margin: 0;
+  display: block;
   max-width: 100%;
+  margin: 0 auto;
 }

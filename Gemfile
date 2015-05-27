@@ -18,6 +18,14 @@ gem 'middleman-gh-pages'
 gem 'middleman-autoprefixer'
 gem 'middleman-livereload'
 gem 'jquery-middleman'
+gem 'middleman-syntax'
+
+# For Markdown processing
+gem 'redcarpet'
+gem "rpeg-multimarkdown"
 
 # For article summary
 gem 'nokogiri'
+
+# For static site searching
+gem "middleman-tapirgo"

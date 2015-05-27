@@ -1,3 +1,36 @@
+# For custom domains on github pages
+page "CNAME", layout: false
+
+def setup_summary_generator(separator = /(READMORE)/i)
+  return Proc.new  do |resource, rendered, length, ellipsis|
+    require 'middleman-blog/truncate_html'
+    # determine which type of summary to use
+    if resource.data.summary?
+      summary = resource.data.summary
+    elsif rendered =~ separator
+      # The separator is found in the text
+      summary = rendered.split(separator).first
+    elsif length
+      summary = TruncateHTML.truncate_html(rendered, length, ellipsis)
+    else
+      summary = rendered
+    end
+    # does the summary text include any footnotes?
+    if summary.include?('</sup>')
+      # find the footnotes div in HTML
+      footnote_section = /<div class="footnotes">(.*?)<\/div>/m.match(rendered)
+      # if no footnotes, emptry string
+      footnotes = if footnote_section.nil? then '' else footnote_section end
+      summary = summary + footnotes.to_s
+    end
+    summary  # return
+  end
+end
+
+# Separator used in Articles to end summary
+@readmore_separator = /(<p>)?{{read more}}(<\/p>)?/i
+
+
 ###
 # Blog settings
 ###
@@ -5,36 +38,73 @@
 # Time.zone = "UTC"
 
 activate :blog do |blog|
-  blog.name = "fractaled mind"
+  blog.name = "Fractaled Mind"
   # This will add a prefix to all links, template references and source paths
   #blog.prefix = ""
-  blog.default_extension = ".markdown"
+  blog.default_extension = ".md"
 
   # Matcher for blog source files (originals have `default_extension`)
-  blog.sources = "article/{title}.html"
+  blog.sources = "articles/{title}.html"
   # Template for article URL slugs
-  blog.permalink = "article/{title}.html"
-  # Template for tag URL slugs
-  blog.taglink = "categories/{tag}.html"
+  blog.permalink = "articles/{title}.html"
   # blog.layout = "layout"
-  blog.summary_separator = /(READMORE)/
-  blog.summary_length = 200
+  blog.summary_separator = /DUMMY SEPARATOR/
+  blog.summary_length = 250
+  blog.summary_generator = setup_summary_generator(@readmore_separator)
   # blog.year_link = "{year}.html"
   # blog.month_link = "{year}/{month}.html"
   # blog.day_link = "{year}/{month}/{day}.html"
 
-  blog.tag_template = "tag.html"
-  blog.calendar_template = "calendar.html"
+  # Tag URL slugs
+  blog.taglink = "/topics/{tag}.html"
+  # Template for Tag pages
+  blog.tag_template = "templates/topic.html"
+  # blog.calendar_template = "calendar.html"
 
   # Enable pagination
   # blog.paginate = true
   # blog.per_page = 10
   # blog.page_link = "page/{num}"
+
+  # Custom Projects collection
+  # blog.custom_collections = {
+  #     project: {
+  #       link: '/projects/{project}.html',
+  #       template: '/project.html'
+  #     }
+  #   }
 end
 
+# Directory Structure configuration
+set :layouts_dir, 'layouts'
+set :partials_dir, 'partials'
+set :css_dir, 'stylesheets'
+set :js_dir, 'javascripts'
+set :images_dir, 'images'
+
+# Layouts
 page "/feed.xml", :layout => false
 # Wrap articles in proper HTML
-page "article/*", :layout => "page"
+page "articles/*", :layout => "page"
+
+# Set the Markdown rendering engine
+#require "lib/multimarkdown_middleman.rb"
+#activate :multimarkdown_middleman
+#set :markdown_engine, :redcarpet
+set :markdown,
+    :fenced_code_blocks => true,
+    :smartypants => true,
+    :footnotes => true,
+    :tables => true,
+    :autolink => true,
+    :with_toc_data => true
+
+# Turn this on for code highlighting (with line numbers)
+activate :syntax, :line_numbers => true
+
+# Turn this on if you want to make your url's prettier, without the .html
+activate :directory_indexes
+
 
 ###
 # Compass
@@ -63,8 +133,19 @@ page "article/*", :layout => "page"
 # end
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
-# proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
-#  which_fake_page: "Rendering a fake page with a local variable" }
+# Root Level Pages
+proxy "search.html", "templates/search.html", :ignore => true
+proxy "articles.html", "templates/articles.html", :ignore => true
+proxy "projects.html", "templates/projects.html", :ignore => true
+proxy "about.html", "templates/about.html", :ignore => true
+proxy "topics.html", "templates/topics.html", :ignore => true
+# Create a Project page for each project listed in `data/projects/`
+# Use `project.html.erb` as the template for this project page
+data.projects.each do |slug, project|
+  proxy "projects/#{slug}.html", "templates/project.html", :locals => { :project => project }, :ignore => true
+end
+
+page "/search.html", :directory_index => false
 
 ###
 # Helpers
@@ -76,20 +157,19 @@ page "article/*", :layout => "page"
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
+  activate :autoprefixer
 end
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def markdownify(content)
+    Tilt['markdown'].new { content }.render
+  end
 
-set :css_dir, 'stylesheets'
-
-set :js_dir, 'javascripts'
-
-set :images_dir, 'images'
+  def cleanup_readmore(html)
+      html.sub(@readmore_separator, "<span id='readmore'></span>")
+  end
+end
 
 # Build-specific configuration
 configure :build do
@@ -98,7 +178,7 @@ configure :build do
   activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
 
   # Enable cache buster
   # activate :asset_hash

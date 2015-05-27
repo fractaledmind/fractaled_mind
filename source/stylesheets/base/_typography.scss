@@ -1,0 +1,56 @@
+@mixin header($size, $scale) {
+    $font-size: map-get($type-sizes, $size) / map-get($type-scales, $scale);
+    font-size: $font-size;
+    line-height: golden-height($font-size);
+    margin-bottom: $font-size / 2;
+}
+
+@include media-exp("<one-column") {
+    body, p {
+        font-size: 0.875rem;
+        line-height: golden-height(0.875rem);
+        word-wrap: break-word
+    }
+
+    h1 { @include header(alpha, mobile); }
+    h2 { @include header(beta, mobile); }
+    h3 { @include header(gamma, mobile); }
+    h4, h5 { @include header(delta, mobile); }
+}
+
+@include media-exp(">=one-column", "<=two-column") {
+    body, p {
+        font-size: 1rem;
+        line-height: golden-height(1rem);
+        word-wrap: break-word
+    }
+
+    h1 { @include header(alpha, tablet); }
+    h2 { @include header(beta, tablet); }
+    h3 { @include header(gamma, tablet); }
+    h4 { @include header(delta, tablet); }
+    h5 {
+        font-size: 1em;
+        line-height: golden-height(1em);
+        margin-bottom: 1em / 2;
+    }
+}
+
+@include media-exp(">two-column") {
+    body, p {
+        font-size: 1rem;
+        line-height: golden-height(1rem);
+        word-wrap: break-word
+    }
+
+    h1 { @include header(alpha, desktop); }
+    h2 { @include header(beta, desktop); }
+    h3 { @include header(gamma, desktop); }
+    h4 { @include header(delta, desktop); }
+    h5 {
+        font-size: 1em;
+        line-height: golden-height(1em);
+        margin-bottom: 1em / 2;
+    }
+}
+

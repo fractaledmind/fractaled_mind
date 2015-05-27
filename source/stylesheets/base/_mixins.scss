@@ -1,0 +1,52 @@
+// PROTOTYPING HELPERS
+@mixin show-baseline-grid() {
+  @include background-image(linear-gradient(top, #fff 95%, #000 100%));
+  // background-size: 100% $base-line-height*1rem;
+  background-size: 100% 26px;
+}
+
+@mixin display-element($element: 0) {
+  // generate three random color codes
+  $red: random(256)-1;
+  $green: random(256)-1;
+  $blue: random(256)-1;
+
+  // If no element is given, simply add background
+  @if $element == 0 {
+    // set the background to a semi-transparent color
+    background: rgba($red, $green, $blue, 0.5);
+  // If element is given, apply background to it
+  } @else {
+    #{$element} {
+      background: rgba($red, $green, $blue, 0.5);
+    }
+  }
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin rotate($deg) {
+    transform: rotate(#{$deg} deg);
+}
+
+// NEAT MIXINS
+
+@mixin centered-columns($span: $columns of $container-columns) {
+  $columns: nth($span, 1);
+  $container-columns: nth($span, 3);
+  $shift-size: ($container-columns - $columns) / 2;
+  @include span-columns($columns of $container-columns);
+  @include shift($shift-size);
+}
+
+@mixin pushed-columns($span: $columns of $container-columns) {
+  $columns: nth($span, 1);
+  $container-columns: nth($span, 3);
+  $shift-size: ($container-columns - $columns);
+  @include span-columns($columns of $container-columns);
+  @include shift($shift-size);
+}

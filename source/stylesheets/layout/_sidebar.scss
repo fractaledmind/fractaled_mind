@@ -1,55 +1,47 @@
 #sidebar {
-  // padding-left: 1rem;
-
-  h5 {
-    $font-size: map-get($type-sizes, delta) / map-get($type-scales, tablet);
-    font-size:$font-size;
-    font-weight: bold;
-    line-height: golden-height($font-size);
-  }
-
-  #nav {
-    margin-bottom: 1rem;
-
-    li {
-      $font-size: map-get($type-sizes, delta) / map-get($type-scales, desktop);
-      font-family: map-get($font-stack, primary);
-      font-size: $font-size;
-      line-height: golden-height($font-size);
-    }
-  }
-
-  #search {
-    @import "../components/searchbar";
-    margin-bottom: 1rem;
-  }
+  h5 { margin-bottom: 0; }
 
   #comic {
+    max-width: 20rem;
     text-align: center;
+    margin:0 auto;
   }
 
-  hr.fractal {
-    @include fractal-divider();
-  }
+  hr.fractal { @include fractal-divider(); }
 
   #recent-articles {
-    li {
-      margin-bottom:10px;
-      font-size: 0.8rem;
-    }
-    .fa-li {
-      top: .4em;
-      color: $red;
-    }
+    li { font-size: 0.8rem; }
+    .fa-li { top: .4em; }
   }
 
   #all-tags {
+    ul { padding-left: 1rem; }
     li { display: inline-block; }
 
     .badge {
-      @include badge($blue);
-      display: inline-block;
+      @include badge();
       margin-bottom: 0.25rem;
     }
+  }
+
+  @include media-exp(">two-column") {
+    // Force #sidebar to left-hand side
+    @include direction-context(right-to-left) {
+      // `collapse` display adds gutter width to total width
+      @include span-columns(3.25 of 12, block-collapse);
+      // move sidebar down below navigation
+      margin-top: 1rem;
+      // A little cushion
+      padding-left: 1.5rem;
+    }
+  }
+
+  @include media-exp(">=one-column", "<=two-column") {
+    // #sidebar on bottom, not full-width
+    @include centered-columns(9 of 12);
+  }
+
+  @include media-exp("<one-column") {
+    @include centered-columns(10.5 of 12);
   }
 }
