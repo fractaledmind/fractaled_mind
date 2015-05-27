@@ -124,41 +124,328 @@
 
 <h4 id="download-on-packalhttppackalorgworkflowzotquery">Download on <a href="http://packal.org/workflow/zotquery">Packal</a></h4>
 
-<p><strong><code>ZotQuery</code></strong> is an Alfred workflow that grants the user access to the data stored in their <a href="https://www.zotero.org">Zotero</a> application. The Python scripts in this repo form all of the necessary components for this workflow.</p>
+<p><strong><code>ZotQuery</code></strong> is an Alfred workflow that grants the user access to the data stored in their <a href="https://www.zotero.org">Zotero</a> application.</p>
 
-<p>In addition, version 6.0 adds new, shorter script filter keywords. I've kept all of the old, longer keywords as well, so everything is backwards compatible, but now, users can simply use:</p>
+<hr />
 
-<ul>
-  <li><code>z</code> = <code>zot</code></li>
-  <li><code>zt</code> = <code>zot:t</code></li>
-  <li><code>za</code> = <code>zot:a</code></li>
-  <li><code>znc</code> = <code>zot:c</code></li>
-  <li><code>znt</code> = <code>zot:tag</code></li>
-  <li><code>zn</code> = <code>zot:n</code></li>
-  <li><code>zat</code> = <code>z:att</code></li>
-  <li><code>ztg</code> = <code>z:tag</code></li>
-  <li><code>zc</code> = <code>z:col</code></li>
-</ul>
+<h3 id="requirements">REQUIREMENTS</h3>
 
-<h4 id="exporting">Exporting</h4>
+<p>To date, it has only been tested on a Mac with both Zotero Firefox and Standalone installed. <strong><code>ZotQuery</code></strong> should work with only Zotero Firefox or Standalone installed, but that is currently untested. If you are using the workflow successfully with either one only installed, please let me know. It has also only been tested on Alfred 2.1+. Finally, it was tested on the standard Python distribution for Mac OS X Mavericks (10.9), which is 2.7.6, and not on Python 3. Once again, if anyone is using the workflow successfully on another distribution of Python, please let me know.</p>
 
-<p><strong><code>ZotQuery</code></strong> now can export in both Markdown and Rich Text. This means all academics on the Mac who use Zotero can take advantage of <strong><code>ZotQuery</code></strong>'s quick access to their citation data. Export individual references or citations in rich text, or export full bibliographies from Collections or Tags in rich text.</p>
+<hr />
 
-<p>You can select out of 5 possible CSL styles for export. Instead of the default Chicago (author-date), you can also choose APA, MLA, BibTeX, or Zotero's own RTF-Scan cite key format. In addition, you will also then choose which format to export in: Markdown or Rich Text. At any point, you can also change these settings using the z:settings command.</p>
+<h3 id="configuration">CONFIGURATION</h3>
 
-<p>Ability to search only items with attachments. This works effectively like an attachments search, since you only need to press return (not shift+return as with the other queries) in order to open the attachment.</p>
+<p>When you first download the workflow, you will need to run <code>z:config</code> first to configure the necessary settings before you attempt any queries. In fact, <strong><code>ZotQuery</code></strong> will kick you to the <code>z:config</code> command if you try any of the queries without having first configured your settings.</p>
 
-<p>The ability now to export in BibTeX or Zotero's RTF-Scan format makes <strong><code>ZotQuery</code></strong> is utility for LaTeX writers as well as scholars who write in standard word processors. You could also easily move from BibTeX or RTF-Scan and take advantage of <strong><code>ZotQuery</code></strong>'s full text exporting in Markdown or Rich Text. Either way, the workflow should be a helpful companion regardless of your writing workflow.</p>
+<p><img alt="configuration" src="../../images/projects/zotquery/zq_config_init.png" /></p>
 
-<p>These features are in addition to the standard features of <strong><code>ZotQuery</code></strong>:</p>
+<p>On first run, the configurator will begin by searching for, and creating if necessary, <strong><code>ZotQuery</code></strong>’s workflow data folder, which can always be found at <code>/Users/$USER/Library/Application Support/Alfred 2/Workflow Data/com.hackademic.zotquery/</code>.</p>
+
+<p>Now, in version 5.5 and on, <strong><code>ZotQuery</code></strong> <strong>no longer needs to install any Python dependencies.</strong> The workflow ships with all necessary components baked in. This has already removed a vast majority of the support issues.</p>
+
+<p>The configurator next moves on to find all the necessary Zotero paths. <strong><code>ZotQuery</code></strong> requires the full path to 3 things:</p>
 
 <ul>
-  <li>Search your Zotero library with keyword</li>
-  <li>Search by author last name, title, in collection, or in tag</li>
-  <li>Open, export short reference, export full citation, or append citation to temporary bibliography</li>
-  <li>Export full bibliography from collection or tag in alphabetical order</li>
-  <li>Create and keep up-to-date a JSON cache of your Zotero data (helpful for other scripting possibilities)</li>
+  <li>your Zotero sqlite database</li>
+  <li>your Zotero storage folder</li>
+  <li>the folder that holds your linked attachments</li>
 </ul>
+
+<p>The configurator attempts to find all necessary paths automatically, but if it fails, it will ask you to select one manually. The title of the dialog box will alert you to what path the configurator requires:</p>
+
+<p><img alt="choosing the Zotero folder where linked attachments reside" src="../../images/projects/zotquery/zq_config_choose-folder.png" /></p>
+
+<p>Once all paths are stored, the configurator moves on to set up your <a href="http://www.zotero.org/support/dev/server_api/v2/start">Zotero API</a> information. This workflow utilizes the Zotero API to export citations of chosen items. In order for the user to utilize these functions, they must have and set up a Zotero private key. Step one requires your Zotero User ID:</p>
+
+<p><img alt="entering Zotero user ID" src="../../images/projects/zotquery/zq_config_userid.png" /></p>
+
+<p>If you do not have or do not know your Zotero User ID, click the <code>Where do I find my User ID?</code> button. This will open Zotero’s "Feeds/API” tab, where you may need to login. Once logged in, you will see a page similar to this:</p>
+
+<p><img alt="creatingnew Zotero private key" src="../../images/projects/zotquery/Zotero___Settings___Feeds_API-2.png" /></p>
+
+<p>This shows a user who has two API keys set up, one for personal use and one for the iOS app <a title="PaperShip - Manage, Annotate, and Share your Papers On The Go ..." href="http://www.papershipapp.com/">PaperShip</a>. If you do not have a Personal API key, you can easily set one up by clicking the "Create new private key" link. Your User ID will be a number, probably less than 8 digits. Insert it into the text field and click <code>Set User ID</code> (<strong>Note</strong>: Applescript text input dialog boxes do not respond, typically, to the keyboard shortcut for paste, so you will likely need to right-click and manually paste in the ID).</p>
+
+<p>Second, you will need to input your API Key:</p>
+
+<p><img alt="entering Zotero API key" src="../../images/projects/zotquery/zq_config_apikey-2.png" /></p>
+
+<p>Since <strong><code>ZotQuery</code></strong> reads this <code>settings.json</code> file whenever it attempts to connect to the Zotero API, if you don’t insert the proper data here, the "Export Citation" and "Export Reference” (see below) functions <strong>will not work</strong>.</p>
+
+<p>Finally, <strong><code>ZotQuery</code></strong> (now in version 4.0) will also allow you to set your export style and format. Once you have entered your API information, the configurator will move to setting your export preferences:</p>
+
+<p><img alt="choosing export style and format" src="../../images/projects/zotquery/zq_prefs1.png" /></p>
+
+<p>First, you will select the <a href="http://citationstyles.org/">CSL Style</a> that you wish to use. Currently <strong><code>ZotQuery</code></strong> can export data in 5 different styles: Chicago (author-date), APA, MLA, Zotero’s own RTF-Scan format, and BibTeX. Now, in <strong>version 6.2</strong>, <strong><code>ZotQuery</code></strong> will also allow users to export in the <a href="http://zotero-odf-scan.github.io/zotero-odf-scan/">ODT-RTF Scannable Cites format</a> (option not shown in image below). This will determine the format of exported citations and references.</p>
+
+<p><img alt="choosing CSL style" src="../../images/projects/zotquery/zq_prefs2-4.png" /></p>
+
+<p>Next, you will select the text formatting for exported data. <strong><code>ZotQuery</code></strong> (in version 4.0) can export in either <a href="http://daringfireball.net/projects/markdown/basics">Markdown</a> or <a href="http://en.wikipedia.org/wiki/Rich_Text_Format">Rich Text</a>.</p>
+
+<p><img alt="choosing export text format" src="../../images/projects/zotquery/zq_prefs3.png" /></p>
+
+<p>All exported text is put in your clipboard, so you can use it anywhere in any text editor. You can also alter your export preferences at any point, using the <code>z:settings</code> command.</p>
+
+<p><img alt="z:settings command" src="../../images/projects/zotquery/zq_export_settings.png" /></p>
+
+<p>Finally, you will need to select which Zotero client you use, either <a href="https://www.zotero.org/download/">Zotero Standalone</a> or <a href="https://www.zotero.org/download/">Zotero for Firefox</a>. This will determine which app will open any items that you select.</p>
+
+<p><img alt="choosing Zotero client" src="../../images/projects/zotquery/zq_client.png" /></p>
+
+<p>Once all settings and preferences are set, the configurator will finally build the JSON cache of your Zotero data. <strong><code>ZotQuery</code></strong> will clone your Zotero database and also generate a JSON file with all pertinent information. Once cached, <strong><code>ZotQuery</code></strong> is configured.</p>
+
+<hr />
+
+<h3 id="functions">FUNCTIONS</h3>
+
+<p><strong><code>ZotQuery</code></strong> has 5 main functions:</p>
+
+<ol>
+  <li>Search</li>
+  <li>Cite</li>
+  <li>Open</li>
+  <li>Cache</li>
+  <li>and Add</li>
+</ol>
+
+<p>In general, the order of operations would be: cache, search, open/cite. This means, in order to search, you need to have an up-to-date cache, and in order to cite or open an item, you will first need to search and select it.</p>
+
+<p>Under <code>Search</code> there are 8 options:</p>
+
+<ol>
+  <li>General search</li>
+  <li>Title-specific search</li>
+  <li>Author-specific search</li>
+  <li>Tag-specific search</li>
+  <li>Collection-specific search</li>
+  <li>Attachment-specific search</li>
+  <li>Notes-specific search</li>
+  <li>New items only</li>
+</ol>
+
+<p>Note that all searches coerce both the query and the data into lowercase, so you can search using lowercase queries and still get matches.</p>
+
+<p>The <strong>General</strong> search is launched by the keyword <code>zot</code> or the short version <code>z</code>.</p>
+
+<p><img alt="zot general search command" src="../../images/projects/zotquery/zq_gen_init-3.png" /></p>
+
+<p>This will search your entire Zotero database for any use of the query provided. The search script is “loose,” that is, it searches for matches of the query “in” the data not matches that “equal” the data. This means you can search half words, words in the middle of titles, etc.</p>
+
+<p><strong><code>ZotQuery</code></strong> will not begin searching until you have entered at least 3 characters. This ensures faster, smarter results. Until you have typed at least 3 characters, you will see this result:</p>
+
+<p><img alt="zot general search with too short query" src="../../images/projects/zotquery/Screen_Shot_2014-01-18_at_6_10_23_PM-4.png" /></p>
+
+<p>Once you complete your query, and the script catches up with you, you will see a list of all of your Zotero items that match the query. If your query doesn’t have any matches, <strong><code>ZotQuery</code></strong> returns an error:</p>
+
+<p><img alt="zot general search no results" src="../../images/projects/zotquery/zq_error_res-2.png" /></p>
+
+<p>If, however, you have results, <strong><code>ZotQuery</code></strong> presents them in a ranked order:</p>
+
+<p><img alt="zot general search ranked results" src="../../images/projects/zotquery/zq_gen_search-3.png" /></p>
+
+<p>For ease of use, the workflow provides unique icons for the various item types:</p>
+
+<ul>
+  <li>article   <img alt="article icon" src="../../images/projects/zotquery/n_article.png" /></li>
+  <li>book      <img alt="book icon" src="../../images/projects/zotquery/n_book.png" /></li>
+  <li>chapter   <img alt="chapter icon" src="../../images/projects/zotquery/n_book.png" /></li>
+  <li>conference paper <img alt="conference icon" src="../../images/projects/zotquery/n_conference.png" /></li>
+  <li>other <img alt="other icon" src="../../images/projects/zotquery/n_written.png" /></li>
+</ul>
+
+<p>If your item has an attachment, the icon changes to signal the addition as will the subtitle field. The subtitle field will include <code>Attachments: n</code>, where n is the number of attachments:</p>
+
+<p><img alt="item with attachments" src="../../images/projects/zotquery/zq_attachments-4.png" /></p>
+
+<p>The altered icons each have a small plus sign in the top-right corner:</p>
+
+<ul>
+  <li>article + attachment  <img alt="article icon with attachment" src="../../images/projects/zotquery/att_article.png" /></li>
+  <li>book + attachment     <img alt="book icon with attachment" src="../../images/projects/zotquery/att_book.png" /></li>
+  <li>chapter + attachment  <img alt="chapter icon with attachment" src="../../images/projects/zotquery/att_chapter.png" /></li>
+  <li>conference paper + attachment   <img alt="conference icon with attachment" src="../../images/projects/zotquery/att_conference.png" /></li>
+  <li>other + attachment    <img alt="other icon with attachment" src="../../images/projects/zotquery/att_written.png" /></li>
+</ul>
+
+<p>The <strong>Author</strong> search is launched by <code>zot:a</code> or the short version <code>za</code>.</p>
+
+<p><img alt="zot:a author search command" src="../../images/projects/zotquery/zq_a_init-4.png" /></p>
+
+<p>This search only queries the last names of the authors of your Zotero data. For example: <code>zot:a thomas</code> will return all the items that have an author (or editor, translator, etc.) with the last name “Thomas”.</p>
+
+<p><img alt="zot:a author search results" src="../../images/projects/zotquery/zq_a_search-3.png" /></p>
+
+<p>The <strong>Title</strong> search is launched by <code>zot:t</code> or the short version <code>zt</code>.</p>
+
+<p><img alt="zot:t title search command" src="../../images/projects/zotquery/zq_t_init-3.png" /></p>
+
+<p>This search only queries the title fields of your Zotero data. For example: <code>zot:t virgil</code> will return all of the items whose title contains the word “Virgil”.</p>
+
+<p><img alt="zot:t title search results" src="../../images/projects/zotquery/zq_t_search.png" /></p>
+
+<p>The final two searches (Tag and Collection) are two-step searches. In step-one, you search <em>for</em> a particular Tag or Collection; in step-two you search <em>within</em> that particular Tag or Collection for your query.</p>
+
+<p>The <strong>Tag</strong> search is launched by <code>z:tag</code> or the short version <code>ztg</code>.</p>
+
+<p><img alt="z:tag tags search command" src="../../images/projects/zotquery/zq_tag_init.png" /></p>
+
+<p>This allows you to search through all of your Zotero tags.</p>
+
+<p><img alt="z:tag tags search results" src="../../images/projects/zotquery/zq_tag_search.png" /></p>
+
+<p>Once you select a tag, Alfred will automatically initiate the <code>zot:tag</code> search, which will search within that tag for your query. The <code>zot:tag</code> (or <code>znt</code>) query functions just like the general <code>zot</code> query, except that it is limited to those items with the previously chosen tag.</p>
+
+<p><img alt="zot:tag in-tag search results" src="../../images/projects/zotquery/zq_intag_seach.png" /></p>
+
+<p>The <strong>Collection</strong> search is similar. It is launched by <code>z:col</code>, or by <code>zc</code>, which begins a search for all of your Zotero collections.</p>
+
+<p><img alt="z:col collections search command" src="../../images/projects/zotquery/zq_col_init.png" /></p>
+
+<p>As you type, it will filter any collections that contain the query.</p>
+
+<p><img alt="z:col collections search results" src="../../images/projects/zotquery/zq_col_search-3.png" /></p>
+
+<p>Once you choose a particular collection, Alfred will initiate the <code>zot:c</code> search (also <code>znc</code>), which will search within that particular collection.</p>
+
+<p><img alt="zot:c in-collection search results" src="../../images/projects/zotquery/zq_incol_search.png" /></p>
+
+<p>As above, the <code>zot:c</code> search functions just like the simple <code>zot</code> search.</p>
+
+<p>Finally, you can now (after version 4.1) search only items with attachments using the <code>z:att</code> query (short version = <code>zat</code>). This query allows you to quickly find pdfs or epubs in your Zotero library and open them in your default application. As of now, <code>z:att</code> only allows for you to open the attached files.</p>
+
+<p><img alt="z:att attachments search results" src="../../images/projects/zotquery/zq_attachment_search.png" /></p>
+
+<p>Similarly, you can use <code>zot:n</code> (or <code>zn</code>) to search through the notes for any items. This can prove very helpful for people who use Zotero as their notes repository for all of their secondary sources.</p>
+
+<p>Finally, the <code>z:new</code> search will bring all of the items added to Zotero since the last cache update. This feature is there to make it easier to find items if you do one long research run, adding lots of items to Zotero before re-using <strong><code>ZotQuery</code></strong>. Using <code>z:new</code> you can double check exactly what’s been added.</p>
+
+<p>Together these 8 search options provide you with various ways to find the exact item you need. Once you find that item, you have a few options with what you can do next.</p>
+
+<hr />
+
+<p>Once you select an item (in all the searches except <code>z:att</code>), there are 5 options:</p>
+
+<ol>
+  <li>Open Zotero to that item.</li>
+  <li>Export a short reference to that item.</li>
+  <li>Export a citation of that item.</li>
+  <li>Open the item’s attachment (if it has any).</li>
+  <li>Append a citation of the item to a temporary bibliography</li>
+</ol>
+
+<p>If you merely hit <code>return</code> on your chosen item, option 1 will occur and Zotero will open to that item.</p>
+
+<p>If you hit <code>option+return</code> when you choose your item, you will export a short reference to that item.</p>
+
+<p><img alt="export reference" src="../../images/projects/zotquery/zq_gen_ref.png" /></p>
+
+<p>Depending on your style and format settings, your reference will be of various types.</p>
+
+<p>If you hit <code>control+return</code>, you will export a full citation of the item in your chosen format.</p>
+
+<p><img alt="export markdown citation" src="../../images/projects/zotquery/zq_gen_cite.png" /></p>
+
+<p>Next, if you hit <code>shift+return</code>, you will open the attachment of that item.</p>
+
+<p><img alt="open attachment" src="../../images/projects/zotquery/zq_gen_open.png" /></p>
+
+<p>Finally, if you hit <code>fn+return</code>, you will append a citation of the item to a temporary bibliography file.</p>
+
+<p><img alt="append markdown citation to bibliography" src="../../images/zq_gen_append.png" /></p>
+
+<p>This bibliography file is stored in the workflow’s cache folder. You can add as many citations to it as you wish. This function allows you to dynamically build a Bibliography/Works Cited page. When you have put all the needed citations in the temporary file, you need only run the <code>z:bib</code> command to export them.</p>
+
+<p><img alt="z:bib export command" src="../../images/projects/zotquery/zq_bib_init-5.png" /></p>
+
+<p>This will take all of the citations in the temporary bibliography file, organize them in alphabetical order, and copy the result to the clipboard. A result in Markdown format will resemble this:</p>
+
+<p><img alt="exported markdown citations example" src="../../images/projects/zotquery/WORKS_CITED-2.png" /></p>
+
+<p>The temporary bibliography file is not the only way, however, to automatically generate a full Bibliography/Works Cited page. Since many Zotero users, myself included, use either Tags or Collections to organize their library into writing projects, <strong><code>ZotQuery</code></strong> also allows the user to export a full formatted bibliography (in alphabetical order) for any Tag or Collection.</p>
+
+<p>When you are searching for a Tag or a Collection with <code>z:tag</code> or <code>z:col</code>, you can use <code>control+return</code> to export a bibliography of that Tag or Collection, instead of simply searching within that Tag or Collection by hitting <code>return</code>.</p>
+
+<p><img alt="export bibliography of collection" src="../../images/projects/zotquery/zq_col_bib.png" /></p>
+
+<p>Thus, if you organize the citations for particular project within a certain Collection or under a certain Tag, you can create full, formatted Works Cited pages on the fly from <strong><code>ZotQuery</code></strong>!</p>
+
+<p>Taken together, these export options make <strong><code>ZotQuery</code></strong> an academic’s best friend in the writing process. You can insert in-text references, full citations, or generate entire Works Cited all from <strong><code>ZotQuery</code></strong>. These citations, references, and bibliographies can also now be Rich Text in addition to Markdown. This allows users who write in <a href="http://office.microsoft.com/en-us/word/">Microsoft Word</a>, <a href="http://www.apple.com/mac/pages/">Pages</a>, or <a href="http://literatureandlatte.com/scrivener.php">Scrivener</a> to utilize <strong><code>ZotQuery</code></strong>. You can also open Zotero directly to an item (for quick meta-data editing) or even open an item’s attachment to double check a quote.</p>
+
+<p>There are, however, a few caveats and possible configurations. First, these final options (export reference, export citations, append citation, and generate works cited) all use Zotero’s web API, and so they require an internet connection. If you are not connected to the internet, all will fail (gracefully). Second, the workflow defaults to Chicago (author-date) style both for short references and full citations (examples above). If you wish to use another of Zotero’s CSL styles, you will need to change the style via the <code>z:settings</code> command. Since <strong><code>ZotQuery</code></strong> now exports BibTeX and RTF-Scan cite keys, even users who prefer to write in [MultiMarkdown](http://fletcherpenney.net/multimarkdown/ "MultiMarkdown - fletcherpenney.net”) and convert to [LaTeX](http://www.latex-project.org/ "LaTeX – A document preparation system”) can utilize <strong><code>ZotQuery</code></strong>.</p>
+
+<p><strong>Note</strong>: These features will also require that you have the proper Zotero API data in the <code>settings.json</code> file. For instructions on setting this up, see above.</p>
+
+<hr />
+
+<p>There is also the Caching function. All of the query scripts are querying a JSON cache of your Zotero database. This file is created and then updated with the keyword <code>z:cache</code>.</p>
+
+<p><img alt="z:cache caching command" src="../../images/projects/zotquery/zq_cache_init-3.png" /></p>
+
+<p>This function will find your Zotero sqlite database, read its contents, and create a JSON cache of the pertinent information.</p>
+
+<p>When you first download the workflow, the configurator will run this command in order to create the cache that all of the query scripts will read. You will always be able to update the cache with this command as well, although the workflow is configured to auto-update the cache after every query execution; that is, after you do any action on an item (open, reference, citation, append). This means that after you perform an action on an item, the workflow will check if the cache needs updating and if so, the workflow will update it in the background.</p>
+
+<p>Note, however, that if you have altered your Zotero data and are about to use <strong><code>ZotQuery</code></strong>, you will need to force an update using <code>z:cache</code> before any of the queries have access to the new information. As a general rule of thumb, I will force update the cache each time I sit down to a lot of work with <strong><code>ZotQuery</code></strong>, but will let it auto-update most of the time.</p>
+
+<hr />
+
+<h3 id="additional-features">ADDITIONAL FEATURES</h3>
+
+<p>Aside from the core features, <strong><code>ZotQuery</code></strong> comes with some additional features. First, <strong><code>ZotQuery</code></strong> comes with the ability to set up a keyboard shortcut to launch the title-specific search. I use <code>command+shift+Z</code> as my hotkey. If you setup the hotkey, you can launch immediately into the title search (with a snazzy interface):</p>
+
+<p><img alt="auto title search" src="../../images/projects/zotquery/zq_hotkey_search-2.png" /></p>
+
+<p>You can also change this hotkey to launch whichever query you like.</p>
+
+<p><strong><code>ZotQuery</code></strong> also has the ability to be an option in your Alfred fallback searches. In order to setup <strong><code>ZotQuery</code></strong> as a fallback search option, open Alfred’s preferences and go to the <code>Features</code> tab. Near the bottom of the page you will see a button to <code>Setup fallback results</code>:</p>
+
+<p><img alt="add fallback search in preferences pt. 1" src="../../images/projects/zotquery/zq_fallback_setup-2.png" /></p>
+
+<p>When you click that button a panel will slide out of top:</p>
+
+<p><img alt="add fallback search in preferences pt. 2" src="../../images/projects/zotquery/zq_fallback-3.png" /></p>
+
+<p>Click the <code>+</code> button and select <strong><code>ZotQuery</code></strong> from the <code>Workflow Trigger</code> list. You can even re-order the fallback searches, and put <strong><code>ZotQuery</code></strong> near the top. When setup, this will allow you to search in Alfred like this:</p>
+
+<p><img alt="add fallback search in preferences pt. 3" src="../../images/projects/zotquery/zq_fallback_search-2.png" /></p>
+
+<p>And have it immediately become a <strong><code>ZotQuery</code></strong> search.</p>
+
+<p>It’s also possible to manually determine what <strong><code>ZotQuery</code></strong> will use to search for the various query types. <strong>NOTE:</strong> This is probably a <em>power-user</em> feature and not for those who don’t know their way around JSON.</p>
+
+<p>In order to alter the search scope for any query type, you will need to find and open the <code>zot_filters.json</code> file in <strong><code>ZotQuery</code></strong>’s storage folder (<code>z:bug</code> -&gt; <code>Storage</code> to open that folder). If you edit this file, it changes what <strong><code>ZotQuery</code></strong> looks at for the various filters. The file is (obviously) in JSON format. The keys are the various types of filters (<code>general</code>, <code>titles</code>, <code>in-collection</code>, etc). For each key, there is a list of items that it will search. This items are themselves lists with two items (except for <code>notes</code>, which is only one item). To remove an item, be sure to remove its entirety:</p>
+
+<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre>[
+"data",
+"title"
+],
+</pre></td></tr></tbody></table>
+</div>
+
+<p>You could also use a scripting language to read the JSON, manipulate the dictionary, then overwrite the file with new JSON.</p>
+
+<p>Another “power-user” feature allows users to limit the overall scope of <strong><code>ZotQuery</code></strong> to only their personal library. Since <strong><code>ZotQuery</code></strong> now indexes and caches any Group Libraries that you may be a part of, these items are searchable from <strong><code>ZotQuery</code></strong>. However, it is occasionally the case that user’s don’t want to search these items, but only their own personal items. In order to restrict <strong><code>ZotQuery</code></strong>’s scope to <em>only</em> your personal library, you only need to change a few things.</p>
+
+<p>If you open Alfred and <strong><code>ZotQuery</code></strong>, and you open the Run Script action connected to <code>z:cache</code> you will find this:</p>
+
+<p><code>python zotquery.py --cache True False</code></p>
+
+<p>These three arguments tell zotquery to use the caching object (<code>--cache</code>), to force a cache update (<code>True</code>) and to not limit the scope to only the user's personal library (<code>False</code>). As detailed in the description at the top of <code>zotquery.py</code>, the last argument is a Boolean value for whether or not to limit the scope of the cache to the user's personal library. By default, it is set to <code>False</code>, which means that group libraries are included in <strong><code>ZotQuery</code></strong>'s cache. If you change this to <code>True</code>, <strong><code>ZotQuery</code></strong> will only cache your personal library, and thus will only search your personal library.</p>
+
+<p><strong><code>ZotQuery</code></strong> also has a cache updater that runs each time you perform an action. This is the Run Script action beneath the "Citation Copied!" notification for each filter type. If you open this Run Script action you will see:</p>
+
+<p><code>python zotquery.py --cache False False</code>.</p>
+
+<p>This will check to see if the cache needs updating (thus the <code>False</code> force argument), and will include all libraries. To exclude group libraries, change each of these Run Script actions to:</p>
+
+<p><code>python zotquery.py --cache False True</code>.</p>
+
+<hr />
+
+<p>So that’s how you use <strong><code>ZotQuery</code></strong>. It’s a powerful tool. I hope you like it.</p>
 </div>
 
     <!-- Get all projects for which there are articles -->

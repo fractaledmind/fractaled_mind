@@ -120,27 +120,30 @@
 
     <h4 id="repo"><a href="https://github.com/smargh/alfred_skimmer">GitHub Repo</a></h4>
 
-    <div id="description"><h4 id="version-221">Version: 2.2.1</h4>
+    <div id="description"><h3 id="version-221">Version: 2.2.1</h3>
 
-<h4 id="download-at-packalhttpwwwpackalorgworkflowskimmer">Download at <a href="http://www.packal.org/workflow/skimmer">Packal</a></h4>
+<h3 id="download-at-packalhttpwwwpackalorgworkflowskimmer">Download at <a href="http://www.packal.org/workflow/skimmer">Packal</a></h3>
 
-<h3 id="description">Description</h3>
+<h2 id="description">Description</h2>
 
-<p>This is a fairly simple workflow that works with the free Mac PDF app <a href="http://skim-app.sourceforge.net/">Skim</a>. Skim is a fantastic app with great Applescript support. This workflow provides quick, easy access to a few custom Applescripts that I've written to deal with certain pesky problems I come across when dealing with PDFs. There are currently only 3 actions:</p>
+<p>This workflow <strong>only</strong> works with the free Mac PDF app <a href="http://skim-app.sourceforge.net/">Skim</a>. Skim is a fantastic app with great Applescript support (and its <em>free!</em>). This workflow provides quick, easy access to a few custom Applescripts that I've written to deal with certain pesky problems I've come across when dealing with PDFs. There are currently four actions:</p>
 
 <ul>
   <li>Crop and Split PDF</li>
   <li>Extract Data and Search Google Scholar</li>
+  <li>Export Annotations</li>
   <li>Search your PDFs</li>
 </ul>
 
-<h3 id="cropping-and-splitting">Cropping and Splitting</h3>
+<p>In this description I will explain how each of these works, and why you might want to use it.</p>
 
-<p>First, Skimmer allows you to properly format those darned scanned PDFs. You know the ones I'm talking about, 2 books pages scanned into one, landscape-oriented PDF page. I want all of my PDFs in pretty, proper format with one PDF page corresponding to one portrait-oriented book/article page. In the past, it was quite the ordeal to crop the PDF so that the right- and left-hand margins were equal, and then to split each individual page and finally reconstruct the entire PDF. Skimmer makes this whole process as simple as π. You can use either a Hotkey (set in the workflow) or the Keyword <code>split</code> to activate this feature.</p>
+<h3 id="crop-and-split-pdf">Crop and Split PDF</h3>
 
-<p><img alt="skimmer_split.png" src="https://www.evernote.com/shard/s41/sh/83197405-2d1a-469e-a3ca-64cc4a481807/36b73f97006ac7fd5b650e22fb122769/deep/0/skimmer_split.png" /></p>
+<p>First, <strong><code>Skimmer</code></strong> allows you to properly format those darned scanned PDFs. You know the ones I'm talking about, 2 books pages scanned into one, landscape-oriented PDF page. I want all of my PDFs in pretty, proper format with one PDF page corresponding to one portrait-oriented book/article page. In the past, it was quite the ordeal to crop the PDF so that the right- and left-hand margins were equal, and then to split each individual page and finally reconstruct the entire PDF. <strong><code>Skimmer</code></strong> makes this whole process as simple as π. You can use either a Hotkey or the Keyword <code>split</code> to activate this feature.</p>
 
-<p>Skimmer then does 3 things:</p>
+<p><img alt="split" src="https://www.evernote.com/shard/s41/sh/83197405-2d1a-469e-a3ca-64cc4a481807/36b73f97006ac7fd5b650e22fb122769/deep/0/skimmer_split.png" /></p>
+
+<p><strong><code>Skimmer</code></strong> then does 3 things:</p>
 
 <ul>
   <li>Crop the PDF using a user-inserted Line Annotation (if necessary) (see image below)</li>
@@ -148,45 +151,94 @@
   <li>Re-assemble everything and clean up</li>
 </ul>
 
-<p>Let me walk you thru the process. To begin, you will need to ensure that the two scanned book pages have equal margins. Skimmer will split the PDF page right down the middle, so we want the middle of the PDF to be the middle of the two pages. If the margins are unequal, you only need to use Skim's Line Annotation to create a border for Skimmer. Here's an example:</p>
+<p>Let me walk you thru the process. To begin, you will need to <em>ensure that the two scanned book pages have equal margins</em>. <strong><code>Skimmer</code></strong> will split the PDF page right down the middle, so we want the middle of the PDF to be the middle of the two pages. If the margins are unequal, you only need to use Skim's Line Annotation to create a border for <strong><code>Skimmer</code></strong>. Here's an example:</p>
 
-<p><img alt="skimmer_original.png" src="https://www.evernote.com/shard/s41/sh/d34511a1-b571-4df0-a6df-5c7b370704a6/0759f2d2f21a614c9a39d72f8eab0d42/deep/0/skimmer_original.png" /></p>
+<p><img alt="cropping" src="https://www.evernote.com/shard/s41/sh/d34511a1-b571-4df0-a6df-5c7b370704a6/0759f2d2f21a614c9a39d72f8eab0d42/deep/0/skimmer_original.png" /></p>
 
-<p>Note the small, vertical line at the bottom of the page. Skimmer will crop off everything to the left of this line. You could put the line anywhere on the page. If you the right-hand margin were too big, you could put it to the right, and Skimmer would automatically crop the excess stuff to the right of that line. If both margins are too big, you can put two lines on each side and Skimmer will take care of the rest. <strong>Note</strong>, Skimmer will crop <em>every page</em> at this point, so find the farthest extremity on any page and use that as your guide. Skimmer can tell what page you are looking at, so it'll make things work (note that in the image above, this is one of the middle pages being used as the cropping template). Skimmer does not crop Top or Bottom Margins, so you will need to manually crop PDFs with wacky top and/or bottom margins.</p>
+<p>Note the small, vertical line at the bottom of the page. <strong><code>Skimmer</code></strong> will crop off everything to the left of this line. You could put the line anywhere on the page. If you the right-hand margin were too big, you could put it to the right, and <strong><code>Skimmer</code></strong> would automatically crop the excess stuff to the right of that line. If both margins are too big, you can put two lines on each side and <strong><code>Skimmer</code></strong> will take care of the rest.</p>
 
-<p>Once Skimmer has cropped the PDF, it will go thru and split each page into two separate pages. Depending on the length of the PDF, this can take a bit (appr. 0.67 seconds per original PDF page). This is all done invisibly though, so that's a bonus. In order to ensure that Skimer splits the PDF properly, regardless of orientation, the script will split the first page and ask you what portion of the page you are seeing (left-hand, right-hand, top-half, or bottom-half). Your choice will ensure that Skimmer does the splitting just so.</p>
+<p><strong>Note:</strong> <strong><code>Skimmer</code></strong> will crop <em>every page</em> at this point, so find the farthest extremity on any page and use that as your guide. <strong><code>Skimmer</code></strong> can tell what page you are looking at, so it'll make things work (note that in the image above, this is one of the middle pages being used as the cropping template). <strong><code>Skimmer</code></strong> does not crop Top or Bottom Margins, so you will need to manually crop PDFs with wacky top and/or bottom margins.</p>
 
-<p>After it splits all the pages, Skimmer will save a copy of your original PDF and then close it as it opens the new, split PDF. This new PDF will be properly formatted and saved in the same folder as the original PDF. Here's an example of the PDF above after it was automatically cropped and split:</p>
+<p>Once <strong><code>Skimmer</code></strong> has cropped the PDF, it will go thru and split each page into two separate pages. Depending on the length of the PDF, this can take a bit (approximately 0.67 seconds per original PDF page). This is all done invisibly tho, so that's a bonus.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> In order to ensure that <code>Skimer</code> splits the PDF properly, regardless of orientation, the script will split the first page and ask you what portion of the page you are seeing (left-hand, right-hand, top-half, or bottom-half). Your choice will ensure that <strong><code>Skimmer</code></strong> does the splitting properly.</p>
 
-<p><img alt="skimmer_final.png" src="https://www.evernote.com/shard/s41/sh/ac701fb0-3e1b-4ac6-ab6d-04dfdddae2f7/0cfdc3db448db7e430613b018a30f31e/deep/0/skimmer_final.png" /></p>
+<p>After it splits all the pages, <strong><code>Skimmer</code></strong> will save a copy of your original PDF and then close it as it opens the new, split PDF. This new PDF will be properly formatted and saved in the same folder as the original PDF. Here's an example of the PDF above after it was automatically cropped and split:</p>
+
+<p><img alt="completed" src="https://www.evernote.com/shard/s41/sh/ac701fb0-3e1b-4ac6-ab6d-04dfdddae2f7/0cfdc3db448db7e430613b018a30f31e/deep/0/skimmer_final.png" /></p>
 
 <p>For anyone who deals with lots of scanned PDFs, I can promise you, this is a godsend.</p>
 
-<h3 id="extracting-data">Extracting Data</h3>
+<h3 id="extract-data-and-search-google-scholar">Extract Data and Search Google Scholar</h3>
 
-<p>The second feature will take OCR'd PDFs and try to extract relevant search information and then search Google Scholar (which will make it easy to then add citation information to your citation manager of choice. Users of <a href="http://fractaledmind.com/projects/zotquery/">ZotQuery</a> will immediately see where I'm going with this…). This feature can be activated by a user-assigned Hotkey or by the Keyword <code>extract</code> when the desired PDF is open in Skim.</p>
+<p>The second feature will take <a href="http://en.wikipedia.org/wiki/Optical_character_recognition">OCR'd</a> PDFs and try to extract relevant search information and then search <a href="http://scholar.google.com/">Google Scholar</a> (which will make it easy to then add citation information to your citation manager of choice. Users of <a href="http://fractaledmind/projects/zotquery">ZotQuery</a> will immediately see where I'm going with this…). This feature can be activated by a user-assigned Hotkey or by the Keyword <code>extract</code> when the desired PDF is open in Skim.</p>
 
-<p><img alt="skimmer_extract.png" src="https://www.evernote.com/shard/s41/sh/5bf09958-9d77-4a54-aaa2-b5fff51ef70a/7edaae34fc339aa9230a700703de218e/deep/0/skimmer_extract.png" /></p>
+<p><img alt="extract" src="https://www.evernote.com/shard/s41/sh/5bf09958-9d77-4a54-aaa2-b5fff51ef70a/7edaae34fc339aa9230a700703de218e/deep/0/skimmer_extract.png" /></p>
 
-<p>This feature will look for three possible things in the currently viewed page:</p>
+<p>This feature will look for three possible things <em>in the currently viewed page</em>:</p>
 
 <ul>
-  <li>a DOI (<a href="http://www.doi.org/">Digital Object Identifier</a>)</li>
+  <li>a <a href="http://www.doi.org/">DOI</a> (Digital Object Identifier)</li>
   <li>an ISBN (for books)</li>
   <li>JSTOR title page</li>
 </ul>
 
-<p>If it cannot find any of these things, it will present the user with a list of Capitalized Words from the currently viewed page. You then select whichever words you want to be the Google Scholar query. Once the query is chosen (whether automatically as one of the 3 types above, or user-chosen keywords), Skimmer will automatically launch your default browser to Google Scholar using the query. What you do from there is up to you.</p>
+<p>If it cannot find any of these things, it will present the user with a list of Capitalized Words from the currently viewed page. You then select whichever words you want to be the Google Scholar query. Once the query is chosen (whether automatically as one of the 3 types above, or user-chosen keywords), <strong><code>Skimmer</code></strong> will automatically launch your default browser to Google Scholar using the query. What you do from there is up to you.</p>
 
-<h3 id="searching-pdfs">Searching PDFs</h3>
+<h3 id="export-annotations">Export Annotations</h3>
+
+<p>In short, this feature allows you to export all of your PDF annotations from your Skim PDF to <a href="https://www.evernote.com/">Evernote</a> (or the clipboard) while giving you <strong>live hyperlinks</strong> back to the exact PDF page for the annotation!! You heard me, your Evernote note will have all of your PDF annotations, and each annotation will have a hyperlink that will open up that PDF to the exact page where that annotation is. Trust me, it's super cool, amazingly helpful, and downright near magical.</p>
+
+<p>Compatible annotations include Text notes, Anchor notes, Underlined text, Strike-Thru text, and Highlighted text. <strong><code>Skimmer</code></strong> will take all of your annotations, format them into some pretty HTML and send that to Evernote. I have been working on this code for quite some time, so it is FAST! It can handle and 100+ page book in a jiffy. But, since we all work slightly differently, I've also worked hard to make it FLEXIBLE. In order to use this function, simply use the <code>export</code> keyword. Alternatively, you can assign a keyboard shortcut to the command as well (I use <em>cmd + shift + -</em> myself).</p>
+
+<p>Let me outline how you can make Annotation Export work exactly as you'd like.</p>
+
+<p>First and foremost, I've added the ability for you to assign your own custom palette of Highlight Colors. One of the nicer touches to this feature is the ability to translate certain highlight colors into text headers. This can come in quite handy for really breaking down your text and your thoughts about the text into certain groupings. Now, I have a default set of 6 colors and their 6 corresponding text values, but you can change both the colors and the text to fit exactly your needs. But how, you might ask? Well, version 2.0 comes with a new Help PDF. Simply use the <code>sk:help</code> keyword and select <code>Open PDF</code> to view this document. On the second page, you will see these annotations:</p>
+
+<p><img alt="helper pdf" src="https://www.evernote.com/shard/s41/sh/0e33ffc1-d931-4932-9949-a668c1554a0f/cb6e0abe1897462a15e5708cfffc4043/deep/0/skimmer_config1.pdf-(page-2-of-4).png" /></p>
+
+<p>The text of the PDF will lay this all out for you, but basically, you simply change the highlight colors and change the corresponding text to what ever you like. There are an (nearly) infinite number of possibilities. The only things to remember are <strong>don't mess with the actual highlights, merely change their colors</strong> and <strong>don't delete prefixed numbers in the text notes, only the text</strong>. Otherwise, you can fiddle to your hearts content. Just so you can get a feel for how the process will work, here's what the Evernote note would look like if you ran the Annotation Export script on the Help PDF (well, this is only the highlights section; run the script to see how text notes are handled):</p>
+
+<p><img alt="exported note" src="https://www.evernote.com/shard/s41/sh/4fadbe0b-e763-4d0c-b100-d82048ad378a/6b115224808df230224e325e710abeb0/deep/0/skimmer_config.pdf---Evernote-Premium.png" /></p>
+
+<p><strong>NOTE:</strong> If you change the highlight colors and/or the text meanings, you will have to run <code>sk:help</code> -&gt; <code>Set Highlights</code> before <strong><code>Skimmer</code></strong> will apply your changes. So, to change the Highlights:</p>
+
+<ul>
+  <li>Open the Help PDF (<code>sk:help</code> -&gt; <code>Open PDF</code>) and alter the highlights and text on the second page.</li>
+  <li>Run <code>sk:help</code> -&gt; <code>Set Highlights</code> to save your changes.</li>
+  <li>Then, you can use <code>export</code> to actually send your Skim annotations to Evernote.</li>
+</ul>
+
+<p>Now, the ability to alter your highlights palette goes a long way in making this script personalizable (is that even a word?), but I went a step further. You can also tweak the HTML formatting used to create the Evernote note. Unfortunately, however, this will require opening up some Applescript and doing some code tweaking.<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> But I've tried to make it not so scary. Essentially, each annotation type has a general formatting template used to create the HTML. I've abstracted this format and placed each variable element under your control. You can find all of the templates and some basic examples in the Help PDF (page 3), but here is one example, for the Highlight Notes:</p>
+
+<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre>--The alterable variables are wrapped in {curlies}, while the fixed elements are in &lt;carets&gt;.
+{pre}{wrap}&lt;title&gt;{/wrap} {wrap}&lt;note text&gt;{/wrap} {wrap}&lt;link&gt;{p.} &lt;#&gt;{/wrap}
+</pre></td></tr></tbody></table>
+</div>
+
+<p>So, you can prefix anything you'd like to the front of a note type: a dash, a tab, a few tabs, a word, etc. You can then wrap the title of the highlight (this is the text given for whatever color that highlighted annotation was) in anything at all: make it bold, italics, wrap it in [brackets], whatever. You can also wrap the actual text highlighted: in "quotes", make it italics, etc. Finally, you have what you wrap the hyperlink in: it could be (parentheses) or {braces}, etc. And you can specify what page abbreviation you want: p., page, #. Now, the script defaults to settings that I think work pretty well, and you can use those to get a feel for what's possible. Just remember, <em>it needs to be valid HTML</em>. All of these properties are near the top of the <code>action_export-notes.scpt</code> found in the workflow directory (you can use <code>sk:bug</code> -&gt; <code>Root</code> to open this folder easily). Feel free to ask me if you have something you'd like to format but can't quite figure it out.</p>
+
+<p>Since I've added the PDF hyperlinking functionality, I've also added the ability to copy a PDF pages custom URL to the clipboard, if you want to hyperlink to that PDF page in any other context. Simply use the <code>sk:copy</code> keyword. This whole URL hyperlinking works because I have written a custom URL handler which is bundled with the workflow that interprets the custom URLs that I've written to open PDFs in Skim to the appropriate page. It's pretty cool, but <em>the URL uses the path to the PDF, so if you move the PDF the URL will <strong>break</strong> until you alter all the old URLs to use your new path</em>.</p>
+
+<h3 id="search-your-pdfs">Search your PDFs</h3>
 
 <p>Finally, you can also search through all of your PDFs and open any one of them right in Skim. Use either the keyword <code>skimmer</code> or the shorter <code>sk</code> to begin the query. Then enter your query term. The results will update as you type. You can hit <code>return</code> to open any item directly in Skim, or you can <code>right-arrow</code> to enter Alfred's file browser for that item.</p>
 
-<p>This search functionality will search through all PDFs on your machine, regardless of where they are saved (provided they have been indexed by <code>mdfind</code>).</p>
+<h2 id="conclusion">Conclusion</h2>
 
-<hr />
+<p>As I hope you can see, if you're someone who deals with PDFs frequently, this workflow could be of help. Whether it's splitting PDFs, searching through your PDF library, or exporting annotations, <strong><code>Skimmer</code></strong> can help you out.</p>
 
-<p>I, for one, use at least one of these tools once a week.</p>
+<p>Plus, it's fairly simple to add functionality by simply adding more Applescripts, so if you have a great script for working with Skim, let me know in the comments.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>My original script would have to pop up each individual page for a split second. It was almost stroke inducing. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>Reader DrLulz has given a great example of this by tweaking the workflow to work best for PDFs of outline-based powerpoints. His comment and link can be found <a href="http://www.alfredforum.com/topic/4052-skimmer-pdf-actions-for-skim/?p=27270">here</a>. <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 </div>
 
     <!-- Get all projects for which there are articles -->

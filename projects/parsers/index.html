@@ -124,25 +124,52 @@
 
 <h4 id="download-at-packalhttpwwwpackalorgworkflowparsers">Download at <a href="http://www.packal.org/workflow/parsers">Packal</a></h4>
 
-<p>This is a somewhat specialized workflow, but for those who read Greek and Latin, it will likely prove beneficial. This workflow uses the <a href="http://www.alfredforum.com/topic/4336-parsers-greek-and-latin-parser-for-alfred/perseus.tufts.edu/hopper/morph">Perseus</a> parsing backend to allow full parsing of both Greek and Latin terms. Simply use the keyword <code>parse</code> followed by the unknown Greek or Latin word. Parsers will automatically fetch all of the parsing data from Perseus, munch it up, and offer you all of the possible parsings via Alfred's elegant UI.</p>
+<h3 id="introduction">Introduction</h3>
+
+<p><strong><code>Parsers</code></strong> is a relatively simple workflow for <a href="http://www.alfredapp.com/">Alfred</a>. It allows you to quickly and easily look up parsing information for Greek <em>or</em> Latin words. It gets its parsing information from the powerful <a href="http://www.perseus.tufts.edu/">Perseus project</a>, but presents the results in the clean user-interface of Alfred. To use <strong><code>Parsers</code></strong>, simply open Alfred and type the keyword <code>parse</code>. Follow the keyword with the Latin or Greek word you want to look up:</p>
 
 <p><img alt="alfred_parser" src="https://www.evernote.com/shard/s41/sh/2c444d67-b4ca-40b3-b914-c20dc5ebbfb6/9d54f19c489deda365c65f1e6b5232e6/deep/0/alfred_parser.png" /></p>
 
-<p>If you would like a bit more information, Parsers adds two actions for any selected parsing. Using <code>cmd+return</code>, you can view a HUD of the parsing data chosen, pretty printed, and have that data copied to the clipboard.</p>
+<p><strong><code>Parsers</code></strong> will display the results for you as quickly as possible.</p>
 
-<p><strong style="display:block;margin:0 auto;text-align:center;">Greek</strong>
-<img alt="greek_parse.png" src="https://www.evernote.com/shard/s41/sh/043fd393-5c5b-49e8-b658-246a44f2cba5/ecbdef8fbd41bc51d455dbfaaaa63c2a/deep/0/greek_parse.png" /></p>
+<p>As you can see, <strong><code>Parsers</code></strong> displays the parsing information in the main title field for each item. Below that, in the sub-title field, it displays the lemma and a short definition separated by <code>::</code>.</p>
 
-<p><strong style="display:block;margin:0 auto;text-align:center;">Latin</strong>
-<img alt="latin_parse.png" src="https://www.evernote.com/shard/s41/sh/1d21824c-5f6e-4f75-9652-af3455089d2a/302529257ecafa448e1ad4fd7e5e402b/deep/0/latin_parse.png" /></p>
+<p>Let's say you are reading some Greek or Latin, however, and don't want to have to open Alfred, type <code>parse</code>, then type the word you're interested in. Well, <strong><code>Parsers</code></strong> has thought of that. From within Alfred's Preferences, you can set up a keyboard shortcut to pass the currently selected text on your Mac to <strong><code>Parsers</code></strong>. I have mine set up as <code>cmd+fn+-&gt;</code>. This makes using <strong><code>Parsers</code></strong> even easier.</p>
 
-<p>Alternatively, you can use <code>shift+return</code> to view a HUD of the lexicon entry for that parsing term, and this lexicon data will also be copied to the clipboard (<em>NOTE</em>: Parsers will attempt to display the lexicon entry from the most concise lexicon available for the chosen term).</p>
+<p>Once you have found the parsing information that you believe is correct in your reading context, <strong><code>Parsers</code></strong> can do 2 things for you:</p>
 
-<p><strong style="display:block;margin:0 auto;text-align:center;">Greek</strong>
-<img alt="greek_lexicon.png" src="https://www.evernote.com/shard/s41/sh/9af6a591-228f-4558-b15d-3d782f06733c/49485fa38cf717590298d690a2fcbcab/deep/0/greek_lexicon.png" /></p>
+<ul>
+  <li>copy the parsing information to the clipboard in a nicely formatted way (<code>cmd+return</code>)</li>
+  <li>copy the dictionary entry for that lemma to the clipboard (<code>shift+return</code>)</li>
+</ul>
 
-<p><strong style="display:block;margin:0 auto;text-align:center;">Latin</strong>
-<img alt="latin_lexicon.png" src="https://www.evernote.com/shard/s41/sh/e0161d67-6346-46ce-a717-b6e52a2e2f5a/c1690a24c88f127a553d0ae4973fd419/deep/0/latin_lexicon.png" /></p>
+<p>If, for instance, you were to choose the Nominative Singular Feminine form of <code>aura</code> (with <code>cmd+return</code>), <strong><code>Parsers</code></strong> would copy this to the clipboard:</p>
+
+<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11</pre></td><td class="code"><pre>Type: noun
+Number: sg
+Gender: fem
+Case: voc
+
+Definition: the air (in motion), a breeze, breath of air, wind, blast:
+Lemma:  aura
+
+Lexicon Links:
+  + [Lewis &amp; Short](http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0059%3Aentry%3Daura)
+  + [Elem. Lewis](http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0060%3Aentry%3Daura)
+</pre></td></tr></tbody></table>
+</div>
+
+<p>Alternatively, you can use <code>shift+return</code> to view a HUD of the lexicon entry for that parsing term, and this lexicon data will also be copied to the clipboard (<em>NOTE</em>: Parsers will attempt to display the lexicon entry from the most concise lexicon available for the chosen term or allow you to choose out of the available dictionaries).</p>
 
 <p>All you should need to read your Greek and/or Latin with ease.</p>
 </div>

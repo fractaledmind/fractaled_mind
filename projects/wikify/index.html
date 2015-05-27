@@ -124,32 +124,24 @@
 
 <h4 id="download-on-packalhttpwwwpackalorgworkflowwikify">Download on <a href="http://www.packal.org/workflow/wikify">Packal</a></h4>
 
-<p>This is a workflow in progess, but Version 2.0 adds a tone of super helpful functions for dealing with Evernote for Markdown lovers. This is aimed at making it easier to create a <a href="http://en.wikipedia.org/wiki/Personal_wiki">personal wiki</a> on your computer, using Evernote as the backbone.</p>
+<p><strong><code>Wikify</code></strong> is a workflow to add some great <a href="http://daringfireball.net/projects/markdown/">Markdown</a> and wiki goodness to <a href="https://www.evernote.com/">Evernote</a>. In this post, I want to lay out all of the functionality and how to take advantage of it.</p>
 
-<h3 id="current-features">Current Features:</h3>
+<h3 id="markdown-functionality">Markdown Functionality</h3>
 
-<p>Version 2.0 adds four features to 1.2's functionality. Meaning these are the new functions:</p>
+<p>One half of <strong><code>Wikify</code></strong>'s functionality concerns integrating Markdown and Evernote. Essentially, this means being able to send Markdown text to Evernote as HTML <em>and</em> being able to export an Evernote note to a Markdown text file.</p>
+
+<p>In order to export an Evernote note to a Markdown text file, you can use the <code>enmd</code> keyword from Alfred. <code>enmd</code> stands for "Evernote to Markdown", and this command will take your currently selected Evernote note and create a Markdown formatted text file which will immediately be opened in your default text editor. In addition, <code>enmd</code> will fill in the note's title, notebook, and tags as metadata at the top of the file (this will make it a snap to edit the note and send it back to Evernote using the <code>mden</code> command, which I will talk about next). The workflow also comes with the ability to bind a keyboard shortcut to this function (I use <code>cmd + shift + 9</code>). No fuss, no hassle, no wait. Export your Evernote note into Markdown in a flash.</p>
+
+<p>But what about getting data <em>into</em> Evernote? <strong><code>Wikify</code></strong> will also allow you to write notes in Markdown in your text editor of choice and then send that text to Evernote, where it will be formatted and displayed in proper HTML. Now, this function has a bit of quirks to it, so let me elaborate. You can launch this function in one of two ways:</p>
 
 <ul>
-  <li>Markdown to Evernote (<code>mden</code>)
-    <ul>
-      <li>document-specific text snippets (use <code>^^^snippet^^^</code> syntax)</li>
-      <li>auto-linking to pre-existing Evernote notes (no special syntax)</li>
-      <li>auto-linking to new Evernote notes (use <code>[[double bracket]]</code> syntax)</li>
-    </ul>
-  </li>
-  <li>Evernote to Markdown (<code>enmd</code>)</li>
-  <li>Auto-Link to pre-existing notes for Selected Evernote note(s) (<code>wfy</code>)</li>
-  <li>Auto-Link to new notes for Selected Evernote note(s) (<code>ensel</code>)</li>
+  <li>the <code>mden</code> keyword in Alfred</li>
+  <li>setup a keyboard shortcut</li>
 </ul>
 
-<p>See the posts below for more detailed accounts of these features.</p>
+<p>The keyboard shortcut will actually allow you simply to select your text (<code>cmd + a</code> for "Select All") and then press the shortcut to run the script. Alternatively, you can select the text, <em>copy it to the clipboard</em>, and then pop up Alfred and use the <code>mden</code> command (this is, obviously, short for "Markdown to Evernote"). It is important to note that if you use the <code>mden</code> command from Alfred, your Markdown text <em>must</em> be in the clipboard.</p>
 
-<p><strong>NOTE</strong>: In order to use a number of these features, you will need the <a href="http://www.satimage.fr/software/en/downloads_osaxen.html">Satimage OSAX Scripting Addition</a>. I've set it up such that this is remarkably easy to install. Simply use the keyword in Alfred <code>wfy:install</code> and the Satimage installer will boot up and walk you through the process.</p>
-
-<h4 id="markdown-to-evernote">Markdown to Evernote</h4>
-
-<p>The first feature allows you to write in any editor on your Mac in Markdown, and simply and easily send that data to Evernote as formatted HTML. In order to assign Note Title, Notebook, and Tags, you can use simple <a href="http://fletcherpenney.net/multimarkdown/">MultiMarkdown Headers</a>, or simple symbols:</p>
+<p>Now, how do you tell <code>mden</code> <em>where</em> to send your note, or what tags it should have, or what it's title is? In order to assign Note Title, Notebook, and Tags, you can use simple <a href="http://fletcherpenney.net/multimarkdown/">MultiMarkdown Headers</a>, or simple symbols which are placed at the top of the document:</p>
 
 <ul>
   <li><code>Title:</code> or <code>#</code> for the note's title</li>
@@ -157,11 +149,123 @@
   <li><code>Tags:</code> or <code>@</code> for the note's tags</li>
 </ul>
 
-<p>At import, Wikify comes with a Hotkey or a Keyword to launch this functionality. Simply select your text (<code>ctr + A</code>) and then hit your user-defined hotkey, or pop-up Alfred and type <code>mden</code>, and Wikify will instantly send you Markdown text to Evernote as fully-formatted HTML.</p>
+<p>So, the top of your Markdown text note might look something like this:</p>
 
-<h4 id="evernote-to-markdown">Evernote to Markdown</h4>
+<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre># Text Note Title
+= My Default Notebook
+@ tag1, tag2, tag3
+</pre></td></tr></tbody></table>
+</div>
 
-<p>Have you ever wanted to edit your Evernote notes in the plain-text glory of Markdown? If so, this is the feature for you. Using Aaron Swartz's glorious <a href="http://www.aaronsw.com/weblog/000387">html2text Python script</a>, Wikify will convert the currently selected Evernote note to a Markdown plain-text file. Wikify will save the <code>.md</code> file in its storage folder (<code>~/Library/Application Support/Workflow Data/com.hackademic.wikify/</code>). You can create a Markdown file of an Evernote note, edit it, and then send it back using the twin function.</p>
+<p>But, that's not all that <code>mden</code> can do. I've added a few extras to its capabilities. In addition to converting Markdown to text to HTML and sending that to Evernote, <code>mden</code> has three other pretty cool features:</p>
+
+<ul>
+  <li>document-specific text snippets (use <code>^^^snippet^^^</code> syntax)</li>
+  <li>auto-linking to pre-existing Evernote notes (no special syntax)</li>
+  <li>auto-linking to new Evernote notes (use <code>[[double bracket]]</code> syntax)</li>
+</ul>
+
+<p>First, let me explain document-specific text snippets. This feature was inspired recently as I was taking notes in class. In-class note-taking is a bit unique, since you won't exactly know what words will be used repeatedly before the class begins. I'm all about <a href="http://smilesoftware.com/TextExpander/">TextExpander</a>, but I can't set up snippets if I don't know what will be the key words for that class. Plus, I don't want to clutter my TextExpander library with these one-off snippets. So, document-specific text snippets was born. The idea is to use snippets in your notes as you type, and then define the <code>snippet:expanded text</code> relationship before you use <strong><code>Wikify</code></strong> to send the notes to Evernote. The syntax is dead-simple. Simply wrap your "snippet dictionary" in triple carets (<code>^^^snippet:expanded text^^^</code>). You can have one-off "dictionaries" or you can make one long dictionary at the end of your document. The only things you need to remember are:</p>
+
+<ul>
+  <li>ALWAYS use ,, as your in-text prefix (you <em>can</em> change this in the code)</li>
+  <li>if its a one-off (only one snippet), the "dictionary" needs to exist on its own line</li>
+  <li>if its a multi-snippet "dictionary", use the triple carets like fenced code blocks</li>
+</ul>
+
+<p>To ensure these few easy syntax rules makes sense, here's an example:</p>
+
+<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9</pre></td><td class="code"><pre>,,p are separated by a blank line.
+^^^p:Paragraphs^^^
+New text.
+2nd paragraph. *,,i*, **,,b**, `,,m`.
+^^^
+i:Italics
+b:BOLD
+m:monospace
+^^^
+</pre></td></tr></tbody></table>
+</div>
+
+<p>Thats all there is to it. Note how each snippet is prefixed by <code>,,</code>. This ensures that both you and the processor know what text needs to be expanded, and you don't need to have the commas in the snippet dictionary. You can mix and match single-line snippet dictionaries with multi-snippet dictionaries in the same document. You can even use non-ASCII characters in your snippets or in your expanded text. For me, this is a killer feature. I hope someone else finds it useful.</p>
+
+<p>Next, auto-linking to pre-existing Evernote notes. This is really the feature at the heart of <strong><code>Wikify</code></strong>, because this is what allows you to "wikify" your Evernote library. The idea is really quite simple: write your note as you normally would (in this case in Markdown, but I'll discuss later how this can work within Evernote itself), and <strong><code>Wikify</code></strong> will ensure that anytime you reference <em>any other Evernote note</em> by title, your note will have a hyperlink to that other note. Let me offer a simple example. Say I began a new note like so:</p>
+
+<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre># Note Title
+= Notebook
+@ tag1, tag2
+
+This is the first line of my new note on Alfred App!
+</pre></td></tr></tbody></table>
+</div>
+
+<p>Now, if I had a note in my Evernote account entitled "Alfred App", when I process this note to send it to Evernote, <strong><code>Wikify</code></strong> will now catch that and hyperlink to that pre-existing note, so this new note would have the phrase "Alfred App" linked directly to that other Evernote note. No fuss, no hassle, no funky syntax. And (this is what was holding me back on this feature for while), this is SUPER-FAST!</p>
+
+<p>The final feature that "wikifies" Evernote when you are sending Markdown text to Evernote is smoothly creating new spaces to fill with data later, while simultaneously creating the inter-linking between notes. <strong><code>Wikify</code></strong> has you covered here as well. Let's say as you're typing up a new Evernote note, you realize that you are discussing an idea, topic, or person that you want to research further, but at some later date. What to do? Well, you can use the standard wiki-syntax of the <code>[[double brackets]]</code> to mark that idea, topic, or person as something you want to create a new note for, while also linking to that new note from within your current note. To return to our sample note above, let's say you added this:</p>
+
+<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre># Note Title
+= Notebook
+@ tag1, tag2
+This is the first line of my new note on Alfred App!
+I want to talk more about [[AppleScript]].
+</pre></td></tr></tbody></table>
+</div>
+
+<p>Whenever you have <strong><code>Wikify</code></strong> process this Markdown text and send it to Evernote, it will first create a new note (in the same notebook as the one specified in the meta-data) entitled "AppleScript", then embed the Evernote hyperlink to that new note within this current note. This means that your new Evernote note will have 2 links: one to the pre-existing note "Alfred App" and one to the newly created, blank note "AppleScript". All of this without you having to do anything but type!</p>
+
+<p>For anyone who prefers to write in Markdown, but loves the always-there accessibility of Evernote, this can be a powerful addition to your workflow. But obviously, not everyone writes their Evernote notes in Markdown first. Most people just write their notes directly in Evernote. But what if you wanted to still "wikify" your Evernote library, to easily create these interlinked notes? Well, I've tried to solve that problem too.</p>
+
+<h3 id="wiki-functionality">Wiki Functionality</h3>
+
+<p>While I've already discussed some of the wiki functionality that's inherent in the <code>mden</code> function, that isn't the only way to ensure that all of your Evernote data is intelligently interlinked. I have versions of both the link to pre-existing note and link to new note capabilities detailed above that work purely within Evernote. Here's how they work.</p>
+
+<p>In order to interlink any of your current Evernote notes with <em>pre-existing</em> notes, you can use the <code>wfy</code> command from Alfred. Simply open up Evernote and select the notes you want to "wikify" (the workflow does accept multiple selections, but you shouldn't over tax it). Once your notes are selected, pull up Alfred and use the <code>wfy</code> (short for "wikify") keyword. The workflow will then process each of your notes individually, auto-linking to any pre-existing other notes which it references by name. <strong>NOTE:</strong> In order to use this feature, you will need the <a href="http://www.satimage.fr/software/en/downloads_osaxen.html">Satimage OSAX Scripting Addition</a>. I've set it up such that this is remarkably easy to install. Simply use the keyword in Alfred <code>wfy:install</code> and the Satimage installer will boot up and walk you through the process. It really is as simple as that. The script will search your note's content for any references to other notes' titles. If any are found, that text will be replaced with a hyperlink to that note. Here’s a gif that shows the process in action:</p>
+
+<p><img alt="wfy command" src="../../images/projects/wikify/wfy.gif" /></p>
+
+<p>Next, let's say that you are in Evernote and see a phrase or term in one of your notes that you want to research more, while creating the wiki-environment that <strong><code>Wikify</code></strong> is all about. I've added a companion feature which will:</p>
+
+<ul>
+  <li>take the currently selected text in the open Evernote note</li>
+  <li>create a new note in that notebook whose title is the selected text</li>
+  <li>embed a hyperlink back to the original note as the first line of this new note</li>
+  <li>and replace the selected text with a hyperlink to that newly created note</li>
+</ul>
+
+<p>This means that you have two-way hyperlinking (which is impossible in the <code>mden</code> version of this functionality) between your current note and your new note. Creating spaces for new thought, while retaining context and wiki-style hyperlinking has never been easier. To use this feature, you can either use a user-specified keyboard shortcut, or copy the selected text to the clipboard and run <code>ensel</code>. Here’s another gif to illustrate:</p>
+
+<p><img alt="ensel command" src="../../images/projects/wikify/ensel.gif" /></p>
+
+<hr />
+
+<p>To sum up, <strong><code>Wikify</code></strong> has 4 main commands:</p>
+
+<ul>
+  <li><code>mden</code> to send Markdown text to Evernote</li>
+  <li><code>enmd</code> to export an Evernote note to Markdown</li>
+  <li><code>wfy</code> to “wikify” the selected Evernote note</li>
+  <li><code>ensel</code> to create and wikify a new Evernote note from selection</li>
+</ul>
+
+<p>With these features, and all of the “sub-features” elaborated above, I truly believe that <strong><code>Wikify</code></strong> could be a great help to those others out there who love Evernote, Markdown, and Wiki goodness.</p>
 </div>
 
     <!-- Get all projects for which there are articles -->

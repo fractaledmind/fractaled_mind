@@ -125,6 +125,20 @@
 
 <h4 id="download-from-packalhttpwwwpackalorgworkflowpandoctor">Download from <a href="http://www.packal.org/workflow/pandoctor">Packal</a></h4>
 
+<h2 id="changelog">Changelog</h2>
+
+<ul>
+  <li>version 1.0.5: fixes a small bug in the template variables</li>
+  <li>version 1.0.2: fixes bug with user template commands</li>
+  <li>version 1.0.1: adds pdf as output in <code>dr:out</code> filter</li>
+</ul>
+
+<p><strong>Note:</strong> <a href="https://github.com/jgm/pandoc/releases/tag/1.13.0.1">Pandoc 1.13.0.1</a> is now out. This is a major upgrade, which includes the <code>.docx</code> files as input files. This means you can convert Word files to Markdown files! Anyways, once you update pandoc, you will need to run <code>dr:config</code> again for <code>Pandoctor</code> to update its internals for the new version of pandoc. This will then show <code>.docx</code> in the inputs window, and will properly interface with Pandoc 1.13.</p>
+
+<p>So, enjoy the newest versions of Pandoc and Pandoctor!</p>
+
+<hr />
+
 <h3 id="introduction">Introduction</h3>
 
 <p><strong><code>Pandoctor</code></strong> is a relatively simple, easy-to-use way to bring the high-powered functionality of <a href="http://johnmacfarlane.net/pandoc/"><code>pandoc</code></a> to you. For those new to <code>pandoc</code>, <code>pandoc</code> is "the universal document converter". It is an amazingly powerful utility that allows you to convert structured text from a ton of possible input formats to an even larger number of output formats.</p>
