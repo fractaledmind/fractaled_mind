@@ -290,7 +290,7 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
     <link rel="alternate" href="http://blog.url.com/articles/example-article/"/>
     <id>http://blog.url.com/articles/example-article/</id>
     <published>2011-12-31T19:00:00-05:00</published>
-    <updated>2015-05-27T00:42:33-04:00</updated>
+    <updated>2015-05-27T00:45:54-04:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -334,7 +334,7 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
 
 &lt;h5 id="h5"&gt;H5&lt;/h5&gt;
 
-&lt;p&gt;&lt;img alt="fractal" src="images/dragon_curve.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;%= image_tag ‘dragon_curve.png’, :alt =&amp;gt; “fractal” %&amp;gt;&lt;/p&gt;
 
 &lt;p&gt;For example, a list:&lt;/p&gt;
 
