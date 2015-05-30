@@ -1,0 +1,87 @@
+---
+build/images/comic.png: 2015-05-30 10:27:28.000000000 -04:00
+build/images/daniel_logo.png: 2015-05-30 10:33:41.000000000 -04:00
+build/images/dragon_curve.png: 2015-05-30 10:26:41.000000000 -04:00
+build/images/favicon.png: 2015-05-30 10:26:41.000000000 -04:00
+build/images/mobile-logo.png: 2015-05-30 10:41:14.000000000 -04:00
+build/images/pair-of-ducks.png: 2015-05-30 10:28:57.000000000 -04:00
+build/images/projects/alfred-workflows.png: 2015-05-24 13:54:18.000000000 -04:00
+build/images/projects/bibquery.png: 2015-05-30 10:27:47.000000000 -04:00
+build/images/projects/dots.png: 2015-05-30 10:27:54.000000000 -04:00
+build/images/projects/libgen.png: 2015-05-24 13:54:18.000000000 -04:00
+build/images/projects/metadata.png: 2015-05-24 13:54:18.000000000 -04:00
+build/images/projects/pandoc-templates.png: 2015-05-24 13:54:18.000000000 -04:00
+build/images/projects/pandoctor.png: 2015-05-24 13:54:18.000000000 -04:00
+build/images/projects/parsers.png: 2015-05-30 10:28:13.000000000 -04:00
+build/images/projects/skimmer.png: 2015-05-30 10:28:15.000000000 -04:00
+build/images/projects/snippets.png: 2015-05-24 13:54:18.000000000 -04:00
+build/images/projects/spritzr.png: 2015-05-24 13:54:18.000000000 -04:00
+build/images/projects/wikify/ensel.gif: 2015-05-30 10:28:23.000000000 -04:00
+build/images/projects/wikify/wfy.gif: 2015-05-30 10:28:28.000000000 -04:00
+build/images/projects/wikify.png: 2015-05-30 10:28:30.000000000 -04:00
+build/images/projects/zotquery/att_article.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/att_book.png: 2015-05-30 10:28:31.000000000 -04:00
+build/images/projects/zotquery/att_chapter.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/att_conference.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/att_written.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/n_article.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/n_book.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/n_chapter.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/n_conference.png: 2015-05-30 10:28:32.000000000 -04:00
+build/images/projects/zotquery/n_written.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/Screen_Shot_2014-01-18_at_6_10_23_PM-4.png: 2015-05-27
+  15:21:21.000000000 -04:00
+build/images/projects/zotquery/WORKS_CITED-2.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/Zotero___Settings___Feeds_API-2.png: 2015-05-27 15:21:21.000000000
+  -04:00
+build/images/projects/zotquery/zq_a_init-4.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/zq_a_search-3.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/zq_attachment_search.png: 2015-05-27 15:21:21.000000000
+  -04:00
+build/images/projects/zotquery/zq_attachments-4.png: 2015-05-27 15:21:21.000000000
+  -04:00
+build/images/projects/zotquery/zq_bib_init-5.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/zq_cache_init-3.png: 2015-05-27 15:21:21.000000000
+  -04:00
+build/images/projects/zotquery/zq_client.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/zq_col_bib.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/zq_col_init.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/zq_col_search-3.png: 2015-05-27 15:21:21.000000000
+  -04:00
+build/images/projects/zotquery/zq_config_apikey-2.png: 2015-05-27 15:21:21.000000000
+  -04:00
+build/images/projects/zotquery/zq_config_choose-folder.png: 2015-05-27 15:21:21.000000000
+  -04:00
+build/images/projects/zotquery/zq_config_init.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/zq_config_userid.png: 2015-05-27 15:21:21.000000000
+  -04:00
+build/images/projects/zotquery/zq_error_res-2.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/zq_export_settings.png: 2015-05-27 15:21:21.000000000
+  -04:00
+build/images/projects/zotquery/zq_fallback-3.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/zq_fallback_res-2.png: 2015-05-27 15:21:21.000000000
+  -04:00
+build/images/projects/zotquery/zq_fallback_search-2.png: 2015-05-27 15:21:21.000000000
+  -04:00
+build/images/projects/zotquery/zq_fallback_setup-2.png: 2015-05-27 15:21:21.000000000
+  -04:00
+build/images/projects/zotquery/zq_gen_append.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/zq_gen_cite.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/zq_gen_init-3.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/zq_gen_open.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/zq_gen_ref.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/zq_gen_search-3.png: 2015-05-27 15:21:21.000000000
+  -04:00
+build/images/projects/zotquery/zq_hotkey_search-2.png: 2015-05-27 15:21:21.000000000
+  -04:00
+build/images/projects/zotquery/zq_incol_search.png: 2015-05-27 15:21:21.000000000
+  -04:00
+build/images/projects/zotquery/zq_intag_seach.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/zq_prefs1.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/zq_prefs2-4.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/zq_prefs3.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/zq_t_init-3.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/zq_t_search.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/zq_tag_init.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery/zq_tag_search.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/projects/zotquery.png: 2015-05-30 10:34:32.000000000 -04:00
