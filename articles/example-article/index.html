@@ -39,6 +39,26 @@
     });
   </script>
 
+  <!-- Scroll-Fix sidebar -->
+  <script type="text/javascript">
+    $(window).on("scroll", function(e) {
+      var scroll = $(this).scrollTop();
+      var logo_height = $('#site-logo').height();
+      var nav_height = $('.navigation').height() + 16;
+
+      if (scroll > logo_height) {
+        $('.navigation').css({'position': 'fixed'});
+         $('#sidebar').css({
+           'position': 'fixed',
+           'top': nav_height
+         });
+      } else {
+        $('.navigation').css({'position': 'inherit'});
+        $('#sidebar').css({'position': 'inherit'});
+      }
+    });
+  </script>
+
 </head>
 
   <body>
@@ -266,6 +286,10 @@
     <ul class="fa-ul">
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../a-failed-graduate-student/">A Failed Graduate Student</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
           <a href="../a-complete-pdf-annotation-workflow/">A Complete PDF Annotation Workflow</a>
         </li>
         <li>
@@ -281,6 +305,9 @@
       <!-- Add all Article tags -->
         <li>
           <a class="badge no-hvr" id="hackademics" href="/topics/hackademics/">hackademics (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="life" href="/topics/life/">life (1)</a>
         </li>
         <li>
           <a class="badge no-hvr" id="example" href="/topics/example/">example (1)</a>

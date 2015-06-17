@@ -39,6 +39,26 @@
     });
   </script>
 
+  <!-- Scroll-Fix sidebar -->
+  <script type="text/javascript">
+    $(window).on("scroll", function(e) {
+      var scroll = $(this).scrollTop();
+      var logo_height = $('#site-logo').height();
+      var nav_height = $('.navigation').height() + 16;
+
+      if (scroll > logo_height) {
+        $('.navigation').css({'position': 'fixed'});
+         $('#sidebar').css({
+           'position': 'fixed',
+           'top': nav_height
+         });
+      } else {
+        $('.navigation').css({'position': 'inherit'});
+        $('#sidebar').css({'position': 'inherit'});
+      }
+    });
+  </script>
+
 </head>
 
   <body>
@@ -100,6 +120,31 @@
     <div id="main" role="main">
       
 <ul class="cards">
+    <li class="card">
+      <a class="card-link no-hvr" href="articles/a-failed-graduate-student/"></a>
+      <ul class="card-tags">
+          <li>
+            <a class="badge no-hvr" id="life" href="/topics/life/">life</a>
+          </li>
+      </ul>
+      <div class="card-image">
+        <!-- if article has tags, add filler element -->
+          <div id="tag-filler-space"></div>
+        <!-- if article has header image, add it -->
+      </div>
+      <div class="card-header">
+        <h3 class="card-title">
+          A Failed Graduate Student
+        </h3>
+        <h5 class="card-date">
+          17 June 2015
+        </h5>
+      </div>
+      <hr class="fractal">
+      <div class="card-copy">
+        <p>I’m no longer a graduate student. I’ve graduated; I’m out. It’s a somewhat odd feeling, made even odder because I haven’t felt like a graduate for the last year. I was in graduate school for 3 years and got my Masters, but for the final year I was...</p>
+      </div>
+    </li>
     <li class="card">
       <a class="card-link no-hvr" href="articles/a-complete-pdf-annotation-workflow/"></a>
       <ul class="card-tags">
@@ -177,6 +222,10 @@
     <ul class="fa-ul">
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
+          <a href="articles/a-failed-graduate-student/">A Failed Graduate Student</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
           <a href="articles/a-complete-pdf-annotation-workflow/">A Complete PDF Annotation Workflow</a>
         </li>
         <li>
@@ -192,6 +241,9 @@
       <!-- Add all Article tags -->
         <li>
           <a class="badge no-hvr" id="hackademics" href="/topics/hackademics/">hackademics (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="life" href="/topics/life/">life (1)</a>
         </li>
         <li>
           <a class="badge no-hvr" id="example" href="/topics/example/">example (1)</a>
