@@ -1,6 +1,6 @@
 ---
 title: A Depressed Graduate Student
-date: 2015-06-17 17:38 UTC
+date: 2015-06-18 17:38 UTC
 tags: grad-school
 ---
 
