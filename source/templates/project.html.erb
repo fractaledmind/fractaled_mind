@@ -1,4 +1,4 @@
-<article class="card" id="project-page">
+<div class="card" id="project-page">
 
     <% if project.tags? %>
       <ul class="card-tags">
@@ -8,9 +8,10 @@
             <% if blog.tags.include?(tag) %>
               <%= link_to "#{tag}", tag_path(tag),
                   :class => "badge no-hvr" %>
-            <!-- If project-tag is unique, show it, but no link -->
+            <!-- If only project-tag link to that -->
             <% else %>
-              <span class="badge <%= tag %>"><%= tag %></span>
+              <%= link_to "#{tag}", '/topics/' + "#{tag}",
+                  :class => "badge no-hvr", :id => "#{tag}" %>
             <% end %>
           </li>
         <% end %>
@@ -52,4 +53,4 @@
             <% end %>
         <% end %>
     <% end %>
-</article>
+</div>

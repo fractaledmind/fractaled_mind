@@ -19,6 +19,9 @@ gem 'middleman-autoprefixer'
 gem 'middleman-livereload'
 gem 'jquery-middleman'
 gem 'middleman-syntax'
+gem "middleman-disqus"
+gem 'middleman-imageoptim'
+gem 'middleman-meta-tags'
 
 # For Markdown processing
 gem 'redcarpet'
@@ -29,3 +32,6 @@ gem 'nokogiri'
 
 # For static site searching
 gem "middleman-tapirgo"
+
+# For post-build HTML beautification
+gem "htmlbeautifier"

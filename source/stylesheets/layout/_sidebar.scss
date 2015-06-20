@@ -5,6 +5,7 @@
     max-width: 20rem;
     text-align: center;
     margin:0 auto;
+    img { margin-bottom: 0.5rem; }
   }
 
   hr.fractal { @include fractal-divider(); }

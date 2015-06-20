@@ -5,7 +5,8 @@
         <% current_article.tags.each do |tag| %>
           <li>
             <%= link_to "#{tag}", tag_path(tag),
-                :class => "badge no-hvr" %>
+                :class => "badge no-hvr",
+                :id => "#{tag}" %>
           </li>
         <% end %>
     </ul>
@@ -14,4 +15,7 @@
 
     <%= yield %>
   </article>
+
+  <%= disqus %>
+  <%= disqus_count %>
 <% end %>

@@ -4,7 +4,7 @@ per_page: 12
 ---
 
 <div class="card" id="topic-page">
-  <h2 id="title">Articles tagged '<%= tagname %>'</h2>
+  <h2 id="title">Projects tagged '<%= tag %>'</h2>
 
   <% if paginate && num_pages > 1 %>
     <p>Page <%= page_number %> of <%= num_pages %></p>
@@ -15,10 +15,10 @@ per_page: 12
   <% end %>
 
   <ul class="fa-ul">
-    <% page_articles.each do |article| %>
+    <% projects.each do |project| %>
       <li>
         <i class="fa-li fa fa-chevron-right"></i>
-        <%= link_to article.title, article %> <span>(<%= article.date.strftime('%b %e') %>)</span>
+        <%= link_to project.title, '/projects/' + project.slug %>
       </li>
     <% end %>
   </ul>

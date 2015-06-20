@@ -75,6 +75,42 @@ activate :blog do |blog|
   #   }
 end
 
+# Methods defined in the helpers block are available in templates
+helpers do
+  def markdownify(content)
+    Tilt['markdown'].new { content }.render
+  end
+
+  def cleanup_readmore(html)
+      html.sub(@readmore_separator, "<span id='readmore'></span>")
+  end
+
+  def project_tags()
+    project_tags = Hash.new []
+    data.projects.each do |slug, project|
+      if project.tags?
+        project.tags.each do |tag|
+          project['slug'] = slug
+          project_tags[tag] += [project]
+        end
+      end
+    end
+    return project_tags
+  end
+
+  def newest_comic_post()
+    blog.articles.group_by {|a| a.date.day }.each do |day, articles|
+      articles.each do |article|
+        if article.tags.include?('pair-of-ducks')
+          return article
+        end
+      end
+    end
+    return nil
+  end
+
+end
+
 # Directory Structure configuration
 set :layouts_dir, 'layouts'
 set :partials_dir, 'partials'
@@ -88,9 +124,6 @@ page "/feed.xml", :layout => false
 page "articles/*", :layout => "page"
 
 # Set the Markdown rendering engine
-#require "lib/multimarkdown_middleman.rb"
-#activate :multimarkdown_middleman
-#set :markdown_engine, :redcarpet
 set :markdown,
     :fenced_code_blocks => true,
     :smartypants => true,
@@ -101,9 +134,6 @@ set :markdown,
 
 # Turn this on for code highlighting (with line numbers)
 activate :syntax, :line_numbers => true
-
-# Turn this on if you want to make your url's prettier, without the .html
-activate :directory_indexes
 
 
 ###
@@ -145,6 +175,10 @@ data.projects.each do |slug, project|
   proxy "projects/#{slug}.html", "templates/project.html", :locals => { :project => project }, :ignore => true
 end
 
+project_tags().each do |tag, projects|
+  proxy "topics/#{tag}.html", "templates/project_topic.html", :locals => { :tag => tag, :projects => projects }, :ignore => true
+end
+
 page "/search.html", :directory_index => false
 
 ###
@@ -157,18 +191,6 @@ page "/search.html", :directory_index => false
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
-  activate :autoprefixer
-end
-
-# Methods defined in the helpers block are available in templates
-helpers do
-  def markdownify(content)
-    Tilt['markdown'].new { content }.render
-  end
-
-  def cleanup_readmore(html)
-      html.sub(@readmore_separator, "<span id='readmore'></span>")
-  end
 end
 
 # Build-specific configuration
@@ -186,6 +208,22 @@ configure :build do
   # Use relative URLs
   activate :relative_assets
   set :relative_links, true
+
+  # Turn this on if you want to make your url's prettier, without the .html
+  activate :directory_indexes
+
+  # Optimize images on build
+  activate :imageoptim
+
+  # Add Disqus comments
+  activate :disqus do |disqus|
+    disqus.shortname = 'fractaledmind'
+  end
+
+  # Prettify HTML on build
+  after_build do
+    system('htmlbeautifier build/*/*.html')
+  end
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"

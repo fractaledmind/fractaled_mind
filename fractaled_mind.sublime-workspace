@@ -4,32 +4,128 @@
 		"selected_items":
 		[
 			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"padd",
+				"padding-left"
+			],
+			[
 				"margin",
 				"margin-bottom"
+			],
+			[
+				"l",
+				"left"
+			],
+			[
+				"in",
+				"inline"
+			],
+			[
+				"sear",
+				"search_substr"
+			],
+			[
+				"ser",
+				"search"
+			],
+			[
+				"search",
+				"search_term"
+			],
+			[
+				"boder",
+				"border"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"foot",
+				"footnote_content"
+			],
+			[
+				"po",
+				"position"
+			],
+			[
+				"max-",
+				"max-width"
 			],
 			[
 				"font",
 				"font-family"
 			],
 			[
-				"text",
-				"text-transform"
+				"zotq",
+				"zotquery"
 			],
 			[
-				"font-",
-				"font-style"
+				"list-s",
+				"list-style"
 			],
 			[
 				"fon",
-				"font-family"
+				"font-size"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"border-r",
+				"border-radius"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"bor",
+				"border-bottom"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"paddin",
+				"padding-top"
+			],
+			[
+				"font-",
+				"font-size"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"base-fon",
+				"base-font-family"
+			],
+			[
+				"font-st",
+				"font-stack"
+			],
+			[
+				"border-c",
+				"border-color"
+			],
+			[
+				"ba",
+				"background-color"
 			],
 			[
 				"i",
 				"italic"
-			],
-			[
-				"padding",
-				"padding-bottom"
 			],
 			[
 				"inline",
@@ -40,24 +136,12 @@
 				"text-align"
 			],
 			[
-				"ba",
-				"background"
-			],
-			[
-				"padd",
-				"padding-right"
-			],
-			[
 				"tex",
 				"text-align"
 			],
 			[
 				"wid",
 				"width"
-			],
-			[
-				"bor",
-				"border-radius"
 			],
 			[
 				"back",
@@ -412,10 +496,6 @@
 				"fetchall	function"
 			],
 			[
-				"ser",
-				"serialised_data"
-			],
-			[
 				"pro",
 				"property	New Property"
 			],
@@ -434,169 +514,64 @@
 			[
 				"frm",
 				"format	function"
-			],
-			[
-				"str",
-				"str_dump"
-			],
-			[
-				"to",
-				"tokenizer"
-			],
-			[
-				"FTS",
-				"FTSDatabase	class"
-			],
-			[
-				"po",
-				"property	New Property"
-			],
-			[
-				"un",
-				"_unquote"
-			],
-			[
-				"book",
-				"books_data	function"
-			],
-			[
-				"max",
-				"max_results	param"
-			],
-			[
-				"sl",
-				"sql_query"
-			],
-			[
-				"MAT",
-				"MATCH_ATOM	statement"
-			],
-			[
-				"fuzz",
-				"fuzzy_phrase	statement"
-			],
-			[
-				"match",
-				"match_on	param"
-			],
-			[
-				"items",
-				"items_hash	statement"
-			],
-			[
-				"dta",
-				"database	param"
-			],
-			[
-				"dat",
-				"database	function"
-			],
-			[
-				"mak",
-				"make_sql_query	function"
-			],
-			[
-				"cur",
-				"cursor	function"
-			],
-			[
-				"sera",
-				"search_sql	function"
-			],
-			[
-				"sear",
-				"search_sql	function"
-			],
-			[
-				"uni",
-				"unicode	class"
-			],
-			[
-				"all",
-				"all_keys	statement"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "source/stylesheets/all.css.scss",
+			"file": "config.rb",
 			"settings":
 			{
-				"buffer_size": 516,
-				"line_ending": "Unix",
-				"name": "@charset \"utf-8\";"
-			}
-		},
-		{
-			"file": "source/stylesheets/layout/_layout.scss",
-			"settings":
-			{
-				"buffer_size": 1133,
+				"buffer_size": 6504,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "source/stylesheets/partials/_nav.scss",
+			"file": "source/stylesheets/main.css.scss",
 			"settings":
 			{
-				"buffer_size": 2062,
+				"buffer_size": 1439,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "source/stylesheets/layout/foundation/_mixins.scss",
+			"file": "source/partials/_meta.erb",
 			"settings":
 			{
-				"buffer_size": 379,
+				"buffer_size": 1910,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "source/stylesheets/partials/_footer.scss",
+			"file": "source/partials/_sidebar.erb",
 			"settings":
 			{
-				"buffer_size": 150,
+				"buffer_size": 1163,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "source/stylesheets/partials/_header.scss",
+			"file": "source/templates/projects.html.erb",
 			"settings":
 			{
-				"buffer_size": 1996,
+				"buffer_size": 1261,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "source/stylesheets/layout/_default.scss",
+			"file": "source/stylesheets/layout/_sidebar.scss",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 1046,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "source/layout.erb",
+			"file": "source/stylesheets/layout/_navigation.scss",
 			"settings":
 			{
-				"buffer_size": 1309,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/index.html.erb",
-			"settings":
-			{
-				"buffer_size": 676,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "source/partials/_nav.erb",
-			"settings":
-			{
-				"buffer_size": 1035,
+				"buffer_size": 2376,
 				"line_ending": "Unix"
 			}
 		}
@@ -608,21 +583,73 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 400.0,
-		"last_filter": "spa",
+		"height": 305.0,
+		"last_filter": "java",
 		"selected_items":
 		[
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"prett",
+				"HTMLPrettify"
+			],
 			[
 				"spa",
 				"Indentation: Convert to Spaces"
 			],
 			[
-				"search",
-				"File: Search Files"
+				"scss",
+				"Set Syntax: SCSS"
+			],
+			[
+				"space",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"cssc",
+				"Run CSScomb"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"tra",
+				"Trailing Spaces: Delete Trailing Spaces"
 			],
 			[
 				"html",
 				"HTMLPrettify"
+			],
+			[
+				"spac",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"t",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"trail",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"sideb",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"search",
+				"File: Search Files"
 			],
 			[
 				"instal",
@@ -641,16 +668,8 @@
 				"LiveReload: Enable/disable plug-ins"
 			],
 			[
-				"install",
-				"Package Control: Install Package"
-			],
-			[
 				"sort",
 				"Sort Lines"
-			],
-			[
-				"spac",
-				"Indentation: Convert to Spaces"
 			],
 			[
 				"spaces",
@@ -705,7 +724,7 @@
 				"Anaconda: Show error list"
 			]
 		],
-		"width": 573.0
+		"width": 574.0
 	},
 	"console":
 	{
@@ -729,115 +748,134 @@
 	},
 	"file_history":
 	[
-		"/Users/smargh/Code/fractaled_mind/source/stylesheets/typography/_rhythm.scss",
-		"/Users/smargh/Code/fractaled_mind/source/stylesheets/typography/_typography.scss",
-		"/Users/smargh/Code/fractaled_mind/source/stylesheets/variables/_colors.scss",
-		"/Users/smargh/Code/fractaled_mind/source/fonts/fractal/fontello.css",
-		"/Users/smargh/Code/fractaled_mind/source/stylesheets/layout/_rhythm.scss",
-		"/Users/smargh/Code/fractaled_mind/source/stylesheets/layout/_typography.scss",
-		"/Users/smargh/Code/fractaled_mind/source/fonts/fractal/style.css",
-		"/Users/smargh/Code/fractaled_mind/source/stylesheets/partials/_nav.scss",
-		"/Users/smargh/Code/fractaled_mind/source/index.html.erb",
-		"/Users/smargh/Code/fractaled_mind/source/2012-01-01-example-article.html.markdown",
-		"/Users/smargh/Code/fractaled_mind/source/partials/_footer.erb",
-		"/Users/smargh/Code/fractaled_mind/source/2015-03-30-my-interesting-new-article.html.markdown",
-		"/Users/smargh/Code/fractaled_mind/source/stylesheets/partials/style.css",
-		"/Users/smargh/Code/fractaled_mind/source/stylesheets/partials/_fractal-font.scss",
-		"/Users/smargh/Documents/fractaled_thought/fractal.svg",
-		"/Users/smargh/Documents/fractaled_thought/Fractaled Mind-a.svg",
-		"/Users/smargh/Code/fractaled_mind/source/stylesheets/partials/_colors.scss",
-		"/Users/smargh/Code/fractaled_mind/source/stylesheets/partials/_rhythm.scss",
-		"/Users/smargh/Code/fractaled_mind/source/stylesheets/partials/_layout.scss",
-		"/Users/smargh/Code/fractaled_mind/source/partials/_nav.erb",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/components/_tags.scss.erb",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/components/_searchbar.scss",
 		"/Users/smargh/Code/fractaled_mind/Gemfile",
+		"/Library/Ruby/Gems/2.0.0/gems/image_optim-0.20.2/lib/image_optim.rb",
+		"/Users/smargh/Code/fractaled_mind/source/templates/topics.html.erb",
+		"/Users/smargh/Code/fractaled_mind/source/partials/_sidebar.erb",
+		"/Users/smargh/Code/fractaled_mind/source/index.html.erb",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/layout/_main.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/pages/_item.scss",
+		"/Users/smargh/Code/fractaled_mind/source/templates/about.html.erb",
+		"/Users/smargh/Code/fractaled_mind/source/templates/topic.html.erb",
+		"/Users/smargh/Code/fractaled_mind/source/templates/search.html.erb",
+		"/Users/smargh/Code/fractaled_mind/source/templates/project.html.erb",
+		"/Users/smargh/Code/fractaled_mind/source/templates/project_topic.html.erb",
+		"/Users/smargh/Code/fractaled_mind/source/layouts/page.erb",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/pages/_search-results.scss",
+		"/Users/smargh/Code/fractaled_mind/source/javascripts/search.js",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/layout/_header.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/components/_lists.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/layout/_navigation.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/pages/_topics.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/components/_hyperlinks.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/layout/_sidebar.scss",
+		"/Users/smargh/Code/fractaled_mind/source/partials/_header.erb",
+		"/Users/smargh/Code/fractaled_mind/source/search.json.erb",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/_large.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/_medium.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/_small.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/vendors/bitters/_lists.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/pages/_topic.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/pages/_project.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/pages/_index.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/pages/_article.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/components/_cards.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/components/_badges.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/components/_hr.scss",
+		"/Users/smargh/Code/fractaled_mind/source/partials/_meta.erb",
+		"/Users/smargh/Code/fractaled_mind/source/layouts/search.erb",
+		"/Users/smargh/Code/fractaled_mind/source/partials/_navigation.erb",
 		"/Users/smargh/Code/fractaled_mind/source/stylesheets/base/_typography.scss",
-		"/Users/smargh/Code/fractaled_mind/source/stylesheets/base/_variables.scss",
-		"/Users/smargh/Code/fractaled_mind/source/stylesheets/base/_rhythm.scss",
-		"/Users/smargh/Code/fractaled_mind/source/stylesheets/base/variables/_colors.scss",
-		"/Users/smargh/Code/fractaled_mind/source/stylesheets/base/variables/_typography.scss",
-		"/Users/smargh/Code/fractaled_mind/source/stylesheets/partials/_normalize.scss",
-		"/Users/smargh/Code/fractaled_mind/source/stylesheets/partials/_footer.scss",
-		"/Users/smargh/Code/fractaled_mind/source/stylesheets/base/_grid-settings.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/vendors-extensions/_typography.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/vendors/bitters/_typography.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/base/_fonts.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/vendors-extensions/_typography.scss.erb",
+		"/Users/smargh/Code/fractaled_mind/source/layouts/layout.erb",
+		"/Users/smargh/Code/fractaled_mind/source/partials/_main.scss",
+		"/Users/smargh/Code/fractaled_mind/source/partials/_nav.erb",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/helpers/_mixins.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/layout/_article.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/components/_nav.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/vendors/neat/grid/_shift.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/vendors/neat/grid/_span-columns.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/vendors/neat/_all.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/vendors/neat/functions/_new-breakpoint.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/vendors/neat/_neat-helpers.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/vendors/neat/grid/_fill-parent.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/components/_search-results.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/base/_colors.scss",
+		"/Users/smargh/Code/fractaled_mind/source/search.html.erb",
+		"/Users/smargh/Code/fractaled_mind/source/partials/_search-meta.erb",
+		"/Users/smargh/Code/fractaled_mind/source/tapir.json",
+		"/Users/smargh/Code/fractaled_mind/source/javascripts/jquery-tapir.min.js",
+		"/Users/smargh/Code/fractaled_mind/source/templates/projects.html.erb",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/vendors-extensions/_grid-settings.scss",
+		"/Users/smargh/Code/fractaled_mind/source/javascripts/search.coffee",
+		"/Users/smargh/Code/fractaled_mind/source/javascripts/search.min.js",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/helpers/_syntax.scss.erb",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/helpers/_include-media.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/components/_minimal-tables.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/components/_blockquote.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/main.css.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/pages/_tag.scss",
+		"/Users/smargh/Code/fractaled_mind/source/projects.html.erb",
+		"/Users/smargh/Code/fractaled_mind/source/project.html.erb",
+		"/Users/smargh/Code/fractaled_mind/data/serials.yaml",
+		"/Users/smargh/Code/fractaled_mind/data/work.yaml",
+		"/Users/smargh/Code/fractaled_mind/data/projects/classical-studies-resources.yamls",
+		"/Users/smargh/Code/fractaled_mind/data/pandoc-templates.yaml",
+		"/Users/smargh/Code/fractaled_mind/data/metadata.yaml",
+		"/Users/smargh/Code/fractaled_mind/data/reboot.yaml",
+		"/Users/smargh/Code/fractaled_mind/data/bibquery.yaml",
+		"/Users/smargh/Code/fractaled_mind/data/projects/parsers.yaml",
+		"/Users/smargh/Code/fractaled_mind/data/projects/libgen.yaml",
+		"/Users/smargh/Code/fractaled_mind/data/projects/spritzr.yaml",
+		"/Users/smargh/Code/fractaled_mind/data/snippets.yaml",
+		"/Users/smargh/Code/fractaled_mind/data/projects/wikify.yaml",
+		"/Users/smargh/Code/fractaled_mind/data/projects/zotquery.yaml",
+		"/Users/smargh/Code/fractaled_mind/data/projects/skimmer.yaml",
+		"/Users/smargh/Code/fractaled_mind/data/projects/pandoctor.yaml",
+		"/Users/smargh/Code/fractaled_mind/data/zotquery.yaml",
+		"/Users/smargh/Code/fractaled_mind/source/tag.html.erb",
+		"/Users/smargh/Code/fractaled_mind/source/layout.erb",
+		"/Users/smargh/Code/fractaled_mind/source/about.html.erb",
+		"/Users/smargh/Code/fractaled_mind/source/tags.html.erb",
+		"/Users/smargh/Code/fractaled_mind/data/projects.yaml",
+		"/Users/smargh/Code/fractaled_mind/source/projects/alfred-workflows.html",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/vendors-extensions/_lists.scss",
+		"/Users/smargh/Code/fractaled_mind/source/layouts/tag.erb",
 		"/Users/smargh/Code/fractaled_mind/config.rb",
-		"/Users/smargh/Code/fractaled_mind/source/stylesheets/base/_base.scss",
+		"/Library/Ruby/Gems/2.0.0/gems/rouge-1.9.0/lib/rouge/themes/base16.rb",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/helpers/_syntax.css.erb",
+		"/Users/smargh/Code/fractaled_mind/source/feed.xml.builder",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/vendors/neat/grid/_media.scss",
+		"/Users/smargh/Code/fractaled_mind/build/stylesheets/main.css",
 		"/Users/smargh/Code/fractaled_mind/Rakefile",
-		"/Users/smargh/Desktop/413 Unit 3.txt",
-		"/Users/smargh/Envs/test/web.py",
-		"/Users/smargh/Envs/test/nlp.sublime-project",
-		"/Users/smargh/Envs/sqlite/lib/python2.7/site-packages/pwiz.py",
-		"/Users/smargh/Envs/sqlite/lib/python2.7/site-packages/playhouse/reflection.py",
-		"/Users/smargh/Envs/sqlite/lib/python2.7/site-packages/peewee.py",
-		"/Users/smargh/Code/zoterolib/src/zotero/app.py",
-		"/Users/smargh/Code/zoterolib/src/peewee.py",
-		"/Users/smargh/Dropbox/Alfred.alfredpreferences/workflows/com_hackademic_zotquery2/zotquery/backend.py",
-		"/Users/smargh/Code/zoterolib/src/zotero.json",
-		"/Users/smargh/Code/zoterolib/src/zotero/dev.py",
-		"/Users/smargh/Dropbox/Alfred.alfredpreferences/workflows/com_hackademic_zotquery2/zotquery/search.py",
-		"/Users/smargh/Code/zoterolib/src/zotero/generic.py",
-		"/Users/smargh/Code/zoterolib/src/zotero/__init__.py",
-		"/Users/smargh/Code/zoterolib/src/map.py",
-		"/Users/smargh/Code/zoterolib/src/backend.py",
-		"/Users/smargh/Code/zoterolib/src/sqlite.py",
-		"/Users/smargh/Code/zoterolib/src/zoterolib.sublime-project",
-		"/Users/smargh/Code/zoterolib/src/zotero/db_to_dict.py",
-		"/Users/smargh/Code/zoterolib/src/zotero.py",
-		"/Users/smargh/Code/alfred-index-demo/src/serializer.py",
-		"/Users/smargh/Code/alfred-index-demo/src/dev.py",
-		"/Users/smargh/Code/alfred-index-demo/src/indexer.py",
-		"/Users/smargh/Envs/sqlite/index.py",
-		"/Users/smargh/Code/zoterolib/src/zotero/tree.py",
-		"/Users/smargh/Dropbox/Alfred.alfredpreferences/workflows/user.workflow.F2B45D82-DF62-4517-8A59-2EE4248CD890/zot_actioner.py",
-		"/Users/smargh/Code/metadata/dev.py",
-		"/Users/smargh/Code/alfred-index-demo/src/books.py",
-		"/Users/smargh/Code/alfred-index-demo/src/indexed_dataset.py",
-		"/Users/smargh/Code/alfred-index-demo/src/fts2.py",
-		"/Users/smargh/Code/alfred-index-demo/src/api.md",
-		"/Users/smargh/Code/alfred-index-demo/src/search.py",
-		"/Users/smargh/Code/alfred-index-demo/src/sqldict.py",
-		"/Users/smargh/Code/alfred-index-demo/src/fts.py",
-		"/Users/smargh/Code/alfred-index-demo/src/wf.py",
-		"/Users/smargh/Dropbox/Alfred.alfredpreferences/workflows/user.workflow.7AEB713F-96C5-4636-85A8-2E004B80F094/libgen.py",
-		"/Users/smargh/Code/alfred-index-demo/src/api.py",
-		"/Users/smargh/Code/alfred-index-demo/src/workflow.py",
-		"/Users/smargh/Code/alfred-index-demo/src/workflow/workflow.py",
-		"/Users/smargh/Library/Application Support/Sublime Text 3/Packages/Terminal/Terminal.sublime-settings",
-		"/Users/smargh/Library/Application Support/Sublime Text 3/Packages/Terminal/Default (OSX).sublime-keymap",
-		"/Users/smargh/Code/alfred-index-demo/src/index.py",
-		"/Users/smargh/Code/alfred_zotquery/source/workflow/workflow.py",
-		"/Users/smargh/Code/alfred-index-demo/src/test_converter.py",
-		"/Users/smargh/Code/alfred-index-demo/src/workflow/__init__.py",
-		"/Users/smargh/Code/alfred-index-demo/src/filter.py",
-		"/Users/smargh/Code/alfred_zotquery/source/zotquery/search.py",
-		"/Users/smargh/Code/alfred_zotquery/source/zotquery/backend.py",
-		"/Users/smargh/Code/alfred-index-demo/src/ascii_replacements.py",
-		"/Users/smargh/Code/alfred-index-demo/src/config.py",
-		"/Users/smargh/Code/metadata/metadata/classes.py",
-		"/Users/smargh/Code/new_zotquery/zq.sublime-project",
-		"/Users/smargh/Code/new_zotquery/zotquery/classes.py",
-		"/Users/smargh/Code/new_zotquery/zotquery/wf.py",
-		"/Users/smargh/Copy/Documents/SCHOOL/Student Papers/GRADES",
-		"/Users/smargh/Copy/Documents/SCHOOL/Student Papers/untitled",
-		"/usr/local/lib/dots/grades.txt",
-		"/usr/local/lib/dots/install.sh",
-		"/usr/local/lib/dots/os/osx/defaults.sh",
-		"/usr/local/lib/dots/os/osx/profile.sh",
-		"/opt/homebrew-cask/Caskroom/sublime-text3/Build 3065/Sublime Text.app/Contents/Info.plist",
-		"/Users/smargh/Dropbox/Alfred.alfredpreferences/workflows/com.hackademic.zotquery/info.plist",
-		"/usr/local/lib/dots/os/osx/binaries.sh",
-		"/usr/local/lib/dots/os/osx/apps.sh",
-		"/usr/local/lib/dots/dots.sh",
-		"/Users/smargh/Dropbox/Mackup/Library/Preferences/net.sourceforge.skim-app.skim.plist",
-		"/Users/smargh/Library/Preferences/com.apple.dock.plist",
-		"/Users/smargh/Downloads/spacegrey.terminal",
-		"/Users/smargh/Copy/CODE/update_alfred_workflow.py",
-		"/Users/smargh/Library/Application Support/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
-		"/Users/smargh/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/Users/smargh/Copy/CODE/utils/utils.py",
-		"/usr/local/lib/dots/os/osx/setup.sh",
-		"/usr/local/lib/dots/notes.txt",
-		"/usr/local/lib/dots/os/osx/mackup.sh",
-		"/usr/local/lib/dots/os/osx/index.sh",
-		"/usr/local/lib/dots/dots_run.txt"
+		"/Users/smargh/Code/fractaled_mind/source/article/pandoctor.markdown",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/layout/_footer.scss",
+		"/Users/smargh/Code/fractaled_mind/source/partials/_footer.erb",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/components/_tags.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/layout/_banner.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/vendors/neat/settings/_grid.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/vendors/bitters/_variables.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/base/_normalize.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/vendors/neat/grid/_omega.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/vendors/neat/settings/_visual-grid.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/vendors/neat/functions/_private.scss",
+		"/Users/smargh/Code/fractaled_mind/source/fonts/fractal/fractal.css",
+		"/Users/smargh/Code/fractaled_mind/source/layouts/index.erb",
+		"/Users/smargh/Code/fractaled_mind/source/article/example-article.html.markdown",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/vendors/bitters/_all.scss",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/layout/_layout.scss",
+		"/Users/smargh/Code/fractaled_mind/source/partials/_meta.html",
+		"/Users/smargh/Code/fractaled_mind/source/partials/_banner.erb",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/components/_div.scss",
+		"/Users/smargh/Code/fractaled_mind/source/tags.json",
+		"/Users/smargh/Code/fractaled_mind/Gemfile.lock",
+		"/Users/smargh/Code/fractaled_mind/source/notes.txt",
+		"/Users/smargh/Code/fractaled_mind/source/stylesheets/base/_grid-settings.scss"
 	],
 	"find":
 	{
@@ -845,9 +883,12 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 106.0,
 		"where_history":
 		[
+			"/Users/smargh/Code/fractaled_mind/source",
+			"/Users/smargh/Code/fractaled_mind/source/stylesheets",
+			""
 		]
 	},
 	"find_state":
@@ -855,134 +896,134 @@
 		"case_sensitive": true,
 		"find_history":
 		[
-			"90",
-			"#477dca",
-			"button",
-			".style-eight",
-			"45",
-			".style-eight",
-			"?-oby1g1",
-			"\"",
-			"hr.style-eight",
-			"large-screen",
-			"16px",
-			"24px",
-			"horizontal-bar-mode",
-			"navigation-active-link-color",
-			"navigation-color",
-			"base-accent-color",
-			"base-border-color",
-			"navigation-search-border",
-			"navigation-search-background",
-			"navigation-background",
+			"project_tags",
+			"activate",
+			"project_tags()",
+			"article",
+			"<% ",
+			"red",
+			"div",
+			"resource",
+			"footnote_content",
+			"# return",
+			"primary",
+			"9.5",
+			".navigation-wrapper",
+			"$font-size",
+			"omega",
+			"@include",
+			"line-height",
+			"div",
+			"article",
+			"e.",
+			".search-results",
+			"6.333",
+			"visibility",
+			"#video-over",
+			"type=\"text/javascript\" charset=\"utf-8\"></script>",
+			"<script src=\"/js/",
+			"1px solid #ddd;",
+			", :relative => true",
+			"false",
+			"120px",
+			"tag",
+			"&nbsp;",
+			"work",
+			"slug",
+			"calendar",
+			"parsers",
+			"snippets",
+			"pandoctor",
+			"zotquery",
+			"category",
+			"@include header",
+			"tablet",
+			"desktop",
+			"padding-top: 2px;",
+			"a:",
+			"src",
+			"article",
+			"cal",
+			"device",
+			"media",
+			"input[type='search']",
+			"search",
+			" - ",
+			"}.fa",
+			"<br>",
+			"$footer-link-color",
+			"$action-color",
+			"$base-background-color",
+			"fa-fw",
+			"</a>",
+			"<a",
+			"div",
+			"base-line-height",
+			"to-golden(1em)*1rem",
+			"pre-height",
+			"to-golden",
+			"http://www.brainpickings.org",
+			"card-hover-background",
+			"fontello",
+			"fonts",
+			"header_image",
+			"font-size",
+			"h3",
+			"dispaly-elemen",
+			"site-description",
+			"ol",
+			"section",
+			"ol",
+			"dark",
+			"$pi",
+			"3.1416em",
+			"$perfect-fourth",
+			"card-border",
+			"card-border-color",
+			"base-font-color",
+			"base-spacing",
+			"$card-background-color",
+			"card-background-color",
+			"$card-background-color",
+			"base-background-color",
+			"$base-border-radius",
+			"border-radius",
+			"card-header-background",
+			"card-background",
+			"card-border-color",
+			"base-font-color",
 			"dark-gray",
-			"navigation-search-border",
-			"navigation-search-background",
-			"navigation-nav-button-background:",
-			"navigation-height",
-			"navigation-color-hover",
+			"base-link-color",
+			"action-color",
+			"base-spacing",
+			"base-background-color",
+			"base-border-radius",
+			"card-border",
+			"card-border-color",
+			"base-border-color",
+			"z-index",
+			"card-border-color",
+			"base-border-color",
+			"alpha",
+			"modular-scale",
+			"line-height: lh(mobile)*2.25,\n      margin-top: lh(mobile)*0,\n      margin-bottom: lh(mobile)*0.5",
+			"modular-scale(0, 3.1416em, $perfect-fourth)",
+			"line-height: lh(mobile)*2.25,",
+			"\"",
+			"-square",
+			"fa-2x",
 			"navigation-color",
-			"navigation-background",
 			"navigation-padding",
 			"large-screen",
 			"dark-gray",
-			"base-accent-color",
+			"action-color",
+			"navigation-nav-button-background",
+			"action-color",
 			"base-border-radius",
 			"base-border-color",
-			"#searchbox ",
-			"@",
-			"^        <",
-			"^      <",
-			"course_url",
-			"FOREIGN KEY",
-			"tables",
-			"keys",
-			"'(.*?ID)'",
-			"ZoteroItemAttribute",
-			"__dict__",
-			"ZoteroItemContainer",
-			"self._data",
-			"self.data",
-			"data",
-			"itemID",
-			"_e",
-			": ",
-			"@returns_clone",
-			"fetch_iter",
-			"fetchall",
-			"fetchone",
-			"res = ",
-			"fetchall",
-			"fetchone",
-			"_params",
-			"print(",
-			"and",
-			"fetch",
-			"unicode_type",
-			"_node_type",
-			"~",
-			"@returns_clone",
-			"@orm.database.atomic()",
-			" @orm.database.atomic()",
-			"self.",
-			"library_id",
-			"\"",
-			"ItemTags",
-			"CollectionItems",
-			"info",
-			"CreatorData",
-			"creatordataid",
-			"creatortypeid",
-			"orm.Items.key",
-			"self.key",
-			"key",
-			"print(",
-			"itemtypeid",
-			"Tags",
-			"Groups",
-			"collectionname",
-			"Collections",
-			"Translatorcache",
-			"Transactionsets",
-			"Transactionlog",
-			"Syncedsettings",
-			"Syncdeletelog",
-			"Syncobjecttypes",
-			"Storagedeletelog",
-			"Savedsearchconditions",
-			"Savedsearches",
-			"  # TIMESTAMP",
-			"Proxyhosts",
-			"ItemTypescombined",
-			"ItemtypeFieldscombined",
-			"Items",
-			"Itemtypefields",
-			"Items",
-			"Itemtypecreatortypes",
-			"Itemtags",
-			"  # TIMESTAMP",
-			"Itemseealso",
-			"Itemnotes",
-			"Items",
-			"Itemdatavalues",
-			"Items",
-			"Itemcreators",
-			"Items",
-			"Groupitems",
-			"Fulltextitems",
-			"Fulltextitemwords",
-			"Fulltextwords",
-			"Filetypemimetypes",
-			"Filetypes",
-			"Fieldscombined",
-			"Deleteditems",
-			"Items",
-			"Customitemtypefields",
-			"Items",
-			"Custombasefieldmappings",
-			"Customitemtypes",
-			"Customfields",
-			"  # TIMESTAMP"
+			"header",
+			"base-background-color",
+			"button"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1000,111 +1041,99 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "source/stylesheets/all.css.scss",
+					"file": "config.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 516,
+						"buffer_size": 6504,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								98,
-								148
+								5873,
+								5873
 							]
 						],
 						"settings":
 						{
 							"WordCountShouldRun": true,
-							"WordCountSyntax": "plain text",
-							"auto_name": "@charset \"utf-8\";",
+							"WordCountSyntax": "ruby",
 							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark.tmTheme",
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3450.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "source/stylesheets/layout/_layout.scss",
+					"file": "source/stylesheets/main.css.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1133,
+						"buffer_size": 1439,
 						"regions":
 						{
-							"gutter_color_2560":
+							"gutter_color_39":
 							{
 								"flags": 144,
-								"icon": "Cache/GutterColor/#333.png",
+								"icon": "Cache/GutterColor/#a7adba.png",
 								"regions":
 								[
 									[
-										543,
-										581
+										243,
+										243
 									]
 								],
 								"scope": "gutter_color"
 							},
-							"gutter_color_2592":
+							"gutter_color_42":
 							{
 								"flags": 144,
-								"icon": "Cache/GutterColor/#333.png",
+								"icon": "Cache/GutterColor/#a7adba.png",
 								"regions":
 								[
 									[
-										582,
-										604
+										243,
+										243
 									]
 								],
 								"scope": "gutter_color"
 							},
-							"gutter_color_2795":
+							"gutter_color_47":
 							{
 								"flags": 144,
-								"icon": "Cache/GutterColor/#333.png",
+								"icon": "Cache/GutterColor/#a7adba.png",
 								"regions":
 								[
 									[
-										1133,
-										1133
+										50,
+										89
 									]
 								],
 								"scope": "gutter_color"
 							},
-							"gutter_color_2797":
+							"gutter_color_50":
 							{
 								"flags": 144,
-								"icon": "Cache/GutterColor/#333.png",
+								"icon": "Cache/GutterColor/#a7adba.png",
 								"regions":
 								[
 									[
-										934,
-										934
-									]
-								],
-								"scope": "gutter_color"
-							},
-							"gutter_color_2833":
-							{
-								"flags": 144,
-								"icon": "Cache/GutterColor/#333.png",
-								"regions":
-								[
-									[
-										934,
-										934
+										50,
+										89
 									]
 								],
 								"scope": "gutter_color"
@@ -1113,240 +1142,88 @@
 						"selection":
 						[
 							[
-								934,
-								934
+								90,
+								90
 							]
 						],
 						"settings":
 						{
 							"WordCountShouldRun": true,
 							"WordCountSyntax": "scss",
-							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark.tmTheme",
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "source/stylesheets/partials/_nav.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2062,
-						"regions":
-						{
-							"gutter_color_1613":
-							{
-								"flags": 144,
-								"icon": "Cache/GutterColor/#000.png",
-								"regions":
-								[
-									[
-										1674,
-										1694
-									]
-								],
-								"scope": "gutter_color"
-							},
-							"gutter_color_1658":
-							{
-								"flags": 144,
-								"icon": "Cache/GutterColor/#fff.png",
-								"regions":
-								[
-									[
-										1719,
-										1739
-									]
-								],
-								"scope": "gutter_color"
-							},
-							"gutter_color_971":
-							{
-								"flags": 144,
-								"icon": "Cache/GutterColor/#4f5b66.png",
-								"regions":
-								[
-									[
-										1032,
-										1053
-									]
-								],
-								"scope": "gutter_color"
-							}
-						},
-						"selection":
-						[
-							[
-								61,
-								61
-							]
-						],
-						"settings":
-						{
-							"WordCountShouldRun": true,
-							"WordCountSyntax": "scss",
-							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark.tmTheme",
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "source/stylesheets/layout/foundation/_mixins.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 379,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								232,
-								232
-							],
-							[
-								269,
-								269
-							],
-							[
-								305,
-								305
-							],
-							[
-								340,
-								340
-							],
-							[
-								372,
-								372
-							]
-						],
-						"settings":
-						{
-							"WordCountShouldRun": true,
-							"WordCountSyntax": "plain text",
 							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark.tmTheme",
 							"syntax": "Packages/SCSS/SCSS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "source/stylesheets/partials/_footer.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 150,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								150,
-								150
-							]
-						],
-						"settings":
-						{
-							"WordCountShouldRun": true,
-							"WordCountSyntax": "scss",
-							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark.tmTheme",
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 275.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "source/stylesheets/partials/_header.scss",
+					"buffer": 2,
+					"file": "source/partials/_meta.erb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1996,
+						"buffer_size": 1910,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1896,
-								1896
+								1336,
+								1336
 							]
 						],
 						"settings":
 						{
 							"WordCountShouldRun": true,
-							"WordCountSyntax": "plain text",
+							"WordCountSyntax": "html (rails)",
 							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark.tmTheme",
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 275.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "source/stylesheets/layout/_default.scss",
+					"buffer": 3,
+					"file": "source/partials/_sidebar.erb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 1163,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								155,
+								210
 							]
 						],
 						"settings":
 						{
 							"WordCountShouldRun": true,
-							"WordCountSyntax": "plain text",
+							"WordCountSyntax": "html (rails)",
 							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark.tmTheme",
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -1356,53 +1233,20 @@
 			"sheets":
 			[
 				{
-					"buffer": 7,
-					"file": "source/layout.erb",
+					"buffer": 4,
+					"file": "source/templates/projects.html.erb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1309,
+						"buffer_size": 1261,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								632,
-								632
-							]
-						],
-						"settings":
-						{
-							"WordCountShouldRun": true,
-							"WordCountSyntax": "html (rails)",
-							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark.tmTheme",
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "source/index.html.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 676,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								514,
-								514
+								500,
+								500
 							]
 						],
 						"settings":
@@ -1415,43 +1259,76 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 41.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
-					"file": "source/partials/_nav.erb",
+					"buffer": 5,
+					"file": "source/stylesheets/layout/_sidebar.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1035,
+						"buffer_size": 1046,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								553,
-								553
+								327,
+								327
 							]
 						],
 						"settings":
 						{
 							"WordCountShouldRun": true,
-							"WordCountSyntax": "html (rails)",
+							"WordCountSyntax": "scss",
 							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark.tmTheme",
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 4,
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 59.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "source/stylesheets/layout/_navigation.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2376,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1916,
+								1966
+							]
+						],
+						"settings":
+						{
+							"WordCountShouldRun": true,
+							"WordCountSyntax": "scss",
+							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark.tmTheme",
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1013.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1537,14 +1414,14 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},
 	"show_minimap": false,
-	"show_open_files": false,
+	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 150.0,
 	"status_bar_visible": true,
 	"template_settings":

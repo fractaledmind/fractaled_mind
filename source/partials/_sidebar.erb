@@ -1,8 +1,13 @@
 <aside id="sidebar">
 
   <div id="comic">
-    <%= image_tag 'pair-of-ducks.png', :alt => "Paradox" %>
-    <h5>Paradox</h5>
+  <% comic_post = newest_comic_post() %>
+  <% if !comic_post.nil? %>
+    <% link_to comic_post['url'] do %>
+      <%= image_tag 'pair-of-ducks.png', :alt => "Paradox" %>
+    <% end %>
+    <h5>The Pair of Ducks Paradox</h5>
+  <% end %>
   </div>
 
   <hr class="fractal">
@@ -22,11 +27,18 @@
   <div id="all-tags">
     <h5>Tags</h5>
     <ul>
+      <!-- Add all Article tags -->
       <% blog.tags.each do |tag, articles| %>
         <li>
           <%= link_to "#{tag} (#{articles.size})", tag_path(tag),
-              :class => "badge no-hvr" %>
+              :class => "badge no-hvr", :id => "#{tag}" %>
         </li>
+      <% end %>
+
+      <!-- Add all Project tags -->
+      <% project_tags().each do |tag, articles| %>
+        <%= link_to "#{tag} (#{articles.size})", '/topics/' + tag,
+              :class => "badge no-hvr", :id => "#{tag}" %>
       <% end %>
     </ul>
   </div>

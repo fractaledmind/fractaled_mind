@@ -25,32 +25,33 @@ $badge-font-size: 0.75em !default;
 .badge { @include badge(); }
 
 // Give each tag a different color (up to 8 colors, then repeats start)
-<% blog.tags.to_enum.with_index(1).each do |obj, idx| %>
-    .badge[href*="<%= obj[0] %>"], .grid-item[href*="<%= obj[0] %>"] {
-        $i: <%= idx %>;
-        @if $i > length($rainbow-list) {
-          // More tags than colors, so start over on colors
-          $i: $i - length($rainbow-list);
-        }
-        $current-color: nth($rainbow-list, $i);
+$i: 1;
+<% blog.tags.each do |obj| %>
+  #<%= obj[0] %> {
+    @if $i > length($rainbow-list) {
+      // More tags than colors, so start over on colors
+      $i: $i - length($rainbow-list);
+    }
+    $current-color: nth($rainbow-list, $i);
+    background-color: $current-color;
+  }
+  $i: $i + 1;
+<% end %>
+
+// Check if any tags in Projects not in Articles
+$i: $i + 1;
+<% project_tags().each do |tag, articles| %>
+  // If tag not one of the blog-tags
+  <% if !blog.tags.include?(tag) %>
+    @if $i > length($rainbow-list) {
+      // More tags than colors, so start over on colors
+      $i: $i - length($rainbow-list);
+    }
+    $current-color: nth($rainbow-list, $i);
+    // style that tag's class
+    #<%= tag %> {
         background-color: $current-color;
     }
-
-    // Check if any tags in Projects not in Articles
-    <% data.projects.each do |slug, project| %>
-      // If project has any tags
-      <% if project.tags? %>
-        // Iterate over them
-        <% project.tags.each do |tag| %>
-          // If tag not one of the blog-tags
-          <% if !blog.tags.include?(tag) %>
-            // style that tag's class
-            #<%= tag %> {
-                background-color: $dark;
-            }
-          <% end %>
-        <% end %>
-      <% end %>
-
-    <% end %>
+  <% end %>
+  $i: $i + 1;
 <% end %>
