@@ -1,5 +1,5 @@
 title: Pandoc Templates
-image: projects/pandoc-templates.png
+image: projects/pandoc-templates.svg
 github: https://github.com/smargh/pandoc-templates
 description: A collection of support files for use with Pandoc, and specifically for helping to turn pandoc markdown files into nice HTML, LaTeX, PDF, and Microsoft Word Document output.
 readme: |
