@@ -1,8 +1,8 @@
 # For custom domains on github pages
-page "CNAME", layout: false
+page 'CNAME', layout: false
 
 def setup_summary_generator(separator = /(READMORE)/i)
-  return Proc.new  do |resource, rendered, length, ellipsis|
+  Proc.new  do |resource, rendered, length, ellipsis|
     require 'middleman-blog/truncate_html'
     # determine which type of summary to use
     if resource.data.summary?
@@ -18,18 +18,17 @@ def setup_summary_generator(separator = /(READMORE)/i)
     # does the summary text include any footnotes?
     if summary.include?('</sup>')
       # find the footnotes div in HTML
-      footnote_section = /<div class="footnotes">(.*?)<\/div>/m.match(rendered)
+      footnote_div = %r{<div class="footnotes">(.*?)<\/div>}m.match(rendered)
       # if no footnotes, emptry string
-      footnotes = if footnote_section.nil? then '' else footnote_section end
-      summary = summary + footnotes.to_s
+      footnotes = footnote_div.nil? ? '' : footnote_div
+      summary += footnotes.to_s
     end
     summary  # return
   end
 end
 
 # Separator used in Articles to end summary
-@readmore_separator = /(<p>)?{{read more}}(<\/p>)?/i
-
+@readmore_separator = %r{(<p>)?{{read more}}(<\/p>)?}i
 
 ###
 # Blog settings
@@ -38,15 +37,15 @@ end
 # Time.zone = "UTC"
 
 activate :blog do |blog|
-  blog.name = "Fractaled Mind"
+  blog.name = 'Fractaled Mind'
   # This will add a prefix to all links, template references and source paths
-  #blog.prefix = ""
-  blog.default_extension = ".md"
+  # blog.prefix = ""
+  blog.default_extension = '.md'
 
   # Matcher for blog source files (originals have `default_extension`)
-  blog.sources = "articles/{title}.html"
+  blog.sources = 'articles/{title}.html'
   # Template for article URL slugs
-  blog.permalink = "articles/{title}.html"
+  blog.permalink = 'articles/{title}.html'
   # blog.layout = "layout"
   blog.summary_separator = /DUMMY SEPARATOR/
   blog.summary_length = 250
@@ -56,9 +55,9 @@ activate :blog do |blog|
   # blog.day_link = "{year}/{month}/{day}.html"
 
   # Tag URL slugs
-  blog.taglink = "/topics/{tag}.html"
+  blog.taglink = '/topics/{tag}.html'
   # Template for Tag pages
-  blog.tag_template = "templates/topic.html"
+  blog.tag_template = 'templates/topic.html'
   # blog.calendar_template = "calendar.html"
 
   # Enable pagination
@@ -82,10 +81,10 @@ helpers do
   end
 
   def cleanup_readmore(html)
-      html.sub(@readmore_separator, "<span id='readmore'></span>")
+    html.sub(@readmore_separator, "<span id='readmore'></span>")
   end
 
-  def project_tags()
+  def project_tags
     project_tags = Hash.new []
     data.projects.each do |slug, project|
       if project.tags?
@@ -95,46 +94,42 @@ helpers do
         end
       end
     end
-    return project_tags
+    project_tags
   end
 
-  def newest_comic_post()
-    blog.articles.group_by {|a| a.date.day }.each do |day, articles|
+  def newest_comic_post
+    blog.articles.group_by { |a| a.date.day }.each do |_, articles|
       articles.each do |article|
-        if article.tags.include?('pair-of-ducks')
-          return article
-        end
+        article if article.tags.include?('pair-of-ducks')
       end
     end
-    return nil
+    nil
   end
-
 end
 
 # Directory Structure configuration
-set :layouts_dir, 'layouts'
+set :layouts_dir,  'layouts'
 set :partials_dir, 'partials'
-set :css_dir, 'stylesheets'
-set :js_dir, 'javascripts'
-set :images_dir, 'images'
+set :css_dir,      'stylesheets'
+set :js_dir,       'javascripts'
+set :images_dir,   'images'
 
 # Layouts
-page "/feed.xml", :layout => false
+page '/feed.xml', layout: false
 # Wrap articles in proper HTML
-page "articles/*", :layout => "page"
+page 'articles/*', layout: 'page'
 
 # Set the Markdown rendering engine
 set :markdown,
-    :fenced_code_blocks => true,
-    :smartypants => true,
-    :footnotes => true,
-    :tables => true,
-    :autolink => true,
-    :with_toc_data => true
+    fenced_code_blocks: true,
+    smartypants: true,
+    footnotes: true,
+    tables: true,
+    autolink: true,
+    with_toc_data: true
 
 # Turn this on for code highlighting (with line numbers)
-activate :syntax, :line_numbers => true
-
+activate :syntax, line_numbers: true
 
 ###
 # Compass
@@ -164,29 +159,31 @@ activate :syntax, :line_numbers => true
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # Root Level Pages
-proxy "search.html", "templates/search.html", :ignore => true
-proxy "articles.html", "templates/articles.html", :ignore => true
-proxy "projects.html", "templates/projects.html", :ignore => true
-proxy "about.html", "templates/about.html", :ignore => true
-proxy "topics.html", "templates/topics.html", :ignore => true
+proxy 'search.html',   'templates/search.html',   ignore: true
+proxy 'articles.html', 'templates/articles.html', ignore: true
+proxy 'projects.html', 'templates/projects.html', ignore: true
+proxy 'about.html',    'templates/about.html',    ignore: true
+proxy 'topics.html',   'templates/topics.html',   ignore: true
 # Create a Project page for each project listed in `data/projects/`
 # Use `project.html.erb` as the template for this project page
 data.projects.each do |slug, project|
-  proxy "projects/#{slug}.html", "templates/project.html", :locals => { :project => project }, :ignore => true
+  proxy "projects/#{slug}.html", 'templates/project.html',
+        locals: { project: project }, ignore: true
 end
 
-project_tags().each do |tag, projects|
-  proxy "topics/#{tag}.html", "templates/project_topic.html", :locals => { :tag => tag, :projects => projects }, :ignore => true
+project_tags.each do |tag, projects|
+  proxy 'topics/#{tag}.html', 'templates/project_topic.html',
+        locals: { tag: tag, projects: projects }, ignore: true
 end
 
-page "/search.html", :directory_index => false
+page '/search.html', directory_index: false
 
 ###
 # Helpers
 ###
 
 # Automatic image dimensions on image_tag helper
-#activate :automatic_image_sizes
+# activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
 configure :development do
@@ -234,6 +231,9 @@ activate :deploy do |deploy|
   # Optional Settings
   # deploy.remote   = 'custom-remote' # remote name or git url, default: origin
   # deploy.branch   = 'custom-branch' # default: gh-pages
-  # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
-  # deploy.commit_message = 'custom-message'      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
+  # commit strategy: can be :force_push or :submodule, default: :force_push
+  # deploy.strategy = :submodule
+  # commit message (can be empty), default: Automated commit at `timestamp`
+  # by middleman-deploy `version`
+  # deploy.commit_message = 'custom-message'
 end

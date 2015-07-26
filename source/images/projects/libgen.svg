@@ -1,17 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="334px" height="274px" viewBox="0 0 334 274" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
-    <title>libgen</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Group" sketch:type="MSLayerGroup" transform="translate(2.000000, 2.000000)">
-            <path d="M59.194,179.469 L59.194,265.197 L78.302,252.287 L95.861,271.396 L95.861,187.732 L59.194,179.469 Z" id="Shape" fill="#96B5B4" sketch:type="MSShapeGroup"></path>
-            <g transform="translate(0.000000, 104.000000)" id="Shape" stroke="#FFFFFF" stroke-width="3" fill="#4F5B66" sketch:type="MSShapeGroup">
-                <path d="M99.427,99.036 L99.427,114.818 L132.012,121.432 L330.328,81.537 L330.328,66.818 L129.688,105.55 L99.427,99.036 Z"></path>
-                <path d="M133.899,26.664 L71.901,11.429 L0.319,24.985 L0.319,94.706 L55.629,105.93 L55.629,89.608 L18.137,81.537 L18.912,42.028 L129.688,69.142 L330.328,32.733 L330.328,18.014 L259.55,0.101 L133.899,26.664 Z"></path>
-            </g>
-            <path d="M0.319,39.254 L0.319,108.974 L132.012,135.699 L330.328,95.804 L330.328,81.085 L129.688,119.819 L18.137,95.804 L18.912,56.296 L129.688,83.409 L330.328,47 L330.328,32.281 L204.831,0.521 L0.319,39.254 Z" id="Shape" stroke="#FFFFFF" stroke-width="3" fill="#4F5B66" sketch:type="MSShapeGroup"></path>
-        </g>
-    </g>
-</svg>
+<svg width="334" height="274" viewBox="0 0 334 274" xmlns="http://www.w3.org/2000/svg"><title>libgen</title><g fill="none" fill-rule="evenodd"><path d="M61.2 181.5v85.7l19-13L98 273.5v-83.7L61 181.5z" id="Shape" fill="#96B5B4"/><g id="Shape" stroke="#FFF" stroke-width="3" fill="#4F5B66"><path d="M101.4 205v15.8l32.6 6.6 198.3-40V173l-200.6 38.7-30.3-6.5zM136 132.7l-62-15.3L2.2 131v69.7L57.6 212v-16.4l-37.5-8 1-39.6 110.7 27 200.6-36.3V124l-70.8-18L136 132.8z"/></g><path d="M2.3 41.3V111L134 137.7l198.3-40V83.2L131.7 122 20 97.8l1-39.5 110.7 27L332.3 49V34.3L206.8 2.5 2.3 41.3z" stroke="#FFF" stroke-width="3" fill="#4F5B66"/></g></svg>

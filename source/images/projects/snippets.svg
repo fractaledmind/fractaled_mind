@@ -1,12 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="130px" height="98px" viewBox="0 0 130 98" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
-    <title>snippets copy</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <path d="M1.5,49 L17.5,17 L32.4997559,17 L17.5,49 L32.4997559,81 L17.5,81 L1.5,49 Z" id="lb" stroke="#A7ADBA" fill="#4F5B66" sketch:type="MSShapeGroup"></path>
-        <path d="M98,49 L114,17 L128.999756,17 L114,49 L128.999756,81 L114,81 L98,49 Z" id="rb" stroke="#A7ADBA" fill="#4F5B66" sketch:type="MSShapeGroup" transform="translate(113.499878, 49.000000) scale(-1, 1) translate(-113.499878, -49.000000) "></path>
-        <path d="M71.3856536,61.6468874 L87.5,26 L63.9923614,26 L75.5,1 L60.5,1 L42,36 L67,36 L56.3968791,61.5438822 L39.9274081,61.4307014 L55.7901372,97.0589743 L87.1412273,61.7551622 L71.3856536,61.6468874 L71.3856536,61.6468874 Z" id="Triangle-1-Copy-2" stroke="#A7ADBA" fill="#4F5B66" sketch:type="MSShapeGroup"></path>
-    </g>
-</svg>
+<svg width="130" height="98" viewBox="0 0 130 98" xmlns="http://www.w3.org/2000/svg"><title>snippets copy</title><g fill="#4F5B66" fill-rule="evenodd" stroke="#A7ADBA"><path d="M1.5 49l16-32h15l-15 32 15 32h-15l-16-32zM129 49l-16-32H98l15 32-15 32h15l16-32zM71.4 61.65L87.5 26H64L75.5 1h-15L42 36h25L56.4 61.54l-16.47-.1L55.8 97.05l31.34-35.3-15.75-.1z"/></g></svg>

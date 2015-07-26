@@ -1,11 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="107px" height="107px" viewBox="0 0 107 107" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
-    <title>parsers</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <path d="M53.5,106 C82.4949494,106 106,82.4949494 106,53.5 C106,24.5050506 82.4949494,1 53.5,1 C24.5050506,1 1,24.5050506 1,53.5 C1,82.4949494 24.5050506,106 53.5,106 L53.5,106 Z M54,101 C79.9573832,101 101,79.9573832 101,54 C101,28.0426168 79.9573832,7 54,7 C28.0426168,7 7,28.0426168 7,54 C7,79.9573832 28.0426168,101 54,101 L54,101 Z" id="Oval-1" stroke="#A7ADBA" fill="#4F5B66" sketch:type="MSShapeGroup"></path>
-        <path d="M37.39,57.32 L30,57.32 L30,64.32 L37.39,64.32 L37.39,87.32 L45.13,87.32 L45.13,64.46 L57.73,64.46 C68.08,64.46 76.63,54.65 76.63,42.32 C76.63,29.81 68.17,20 57.73,20 L37.39,20 L37.39,57.32 L37.39,57.32 Z M57.1,27.02 C63.67,27.02 68.98,33.68 68.98,42.32 C68.98,50.69 63.67,57.53 57.1,57.53 L45.13,57.53 L45.13,27.02 L57.1,27.02 L57.1,27.02 Z" id="Rectangle-1" stroke="#A7ADBA" fill="#4F5B66" sketch:type="MSShapeGroup"></path>
-    </g>
-</svg>
+<svg width="107" height="107" viewBox="0 0 107 107" xmlns="http://www.w3.org/2000/svg"><title>parsers</title><g fill="#4F5B66" fill-rule="evenodd" stroke="#A7ADBA"><path d="M53.5 106c29 0 52.5-23.5 52.5-52.5S82.5 1 53.5 1 1 24.5 1 53.5 24.5 106 53.5 106zm.5-5c26 0 47-21 47-47S80 7 54 7 7 28 7 54s21 47 47 47z"/><path d="M37.4 57.3H30v7h7.4v23H45V64.5h12.7c10.4 0 19-10 19-22.2 0-12.5-8.5-22.3-19-22.3H37.4v37.3zM57 27c6.7 0 12 6.7 12 15.3 0 8.4-5.3 15.2-12 15.2H45V27h12z"/></g></svg>
