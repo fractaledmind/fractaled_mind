@@ -10,7 +10,7 @@ readme: |
 
   #### Download on [GitHub](https://github.com/smargh/git-do)
 
-  **`git-do`**is a [Git](https://git-scm.com/) extension that adds a new perspective to the standard Git workflow. I conceive of it as a promises-based workflow.
+  **`git-do`** is a [Git](https://git-scm.com/) extension that adds a new perspective to the standard Git workflow. I conceive of it as a promises-based workflow.
 
   To better explain, let me begin by laying out the default Git workflow:
 
