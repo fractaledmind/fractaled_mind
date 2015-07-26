@@ -147,9 +147,9 @@
 
     <div id="description"><h4 id="version-01">Version 0.1</h4>
 
-<h4 id="download-on-github">Download on <a href="">GitHub</a></h4>
+<h4 id="download-on-githubhttpsgithubcomsmarghgit-do">Download on <a href="https://github.com/smargh/git-do">GitHub</a></h4>
 
-<p><strong><code>git-do</code></strong> is a <a href="">Git</a> extension that adds a new perspective to the standard Git workflow. I conceive of it as a promises-based workflow.</p>
+<p><strong><code>git-do</code></strong>is a <a href="https://git-scm.com/">Git</a> extension that adds a new perspective to the standard Git workflow. I conceive of it as a promises-based workflow.</p>
 
 <p>To better explain, let me begin by laying out the default Git workflow:</p>
 
@@ -189,7 +189,7 @@
 
 <hr />
 
-<p>The actual api for <strong><code>git-do</code></strong>* is utterly simple. Before you start your next task (by "task" here I mean whatever you conceive of as your smallest unit of work), you run <code>git do "&lt;message&gt;"</code>. As soon as you have completed your task, you run <code>git done</code>. That's it!</p>
+<p>The actual api for <strong><code>git-do</code></strong> is utterly simple. Before you start your next task (by "task" here I mean whatever you conceive of as your smallest unit of work), you run <code>git do "&lt;message&gt;"</code>. As soon as you have completed your task, you run <code>git done</code>. That's it!</p>
 
 <p>Under the hood <strong><code>git-do</code></strong> is doing a few things. First, it will save your commit message to a temporary file (in a created <code>.git/.git-do/</code> directory) as well as the name of whatever branch you are on when you run the <code>git do</code> command. It will then create and checkout a new branch (using the naming schema <code>do/&lt;slugify(message)&gt;</code>). <strong><code>git-do</code></strong> checkouts out a new branch so that you have a safe "sand-box" to do your work, allowing you to leave if something urgent comes up (e.g. you need to create a hotfix branch from master and solve a critical problem). This branch, however, will be deleted as soon as you run <code>git done</code>, so you should always think of it and treat it as a temporary branch.</p>
 
@@ -197,7 +197,17 @@
 
 <p>After merging your commit into the original parent branch, <code>git done</code> will delete the <code>do/</code> branch. So, if you have a terminal prompt that doesn't specify the current branch, you would never know the <code>do/</code> branch ever existed. Your commit history would look exactly as it would had you done the work and written the commit message at the end.</p>
 
-<hr />
+<p>Below is a (contrived) example to demonstrate how simple and short I believe the workflow ought to be:</p>
+
+<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="gp">$ </span>git <span class="k">do</span> <span class="s2">"Demonstrate how git-do works for my project page"</span>
+<span class="gp">$ </span>touch demonstration.txt
+<span class="gp">$ </span>vi demonstration.txt
+<span class="gp">$ </span>git <span class="k">done</span>
+</pre></td></tr></tbody></table>
+</div>
 </div>
 
     <!-- Get all projects for which there are articles -->
