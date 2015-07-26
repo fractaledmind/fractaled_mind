@@ -6,19 +6,8 @@ build/images/favicon.png: 2015-05-30 10:26:41.000000000 -04:00
 build/images/mobile-logo.png: 2015-06-19 23:36:27.000000000 -04:00
 build/images/pair-of-ducks.png: 2015-06-19 23:26:00.000000000 -04:00
 build/images/projects/alfred-workflows.png: 2015-05-24 13:54:18.000000000 -04:00
-build/images/projects/bibquery.png: 2015-05-30 10:27:47.000000000 -04:00
-build/images/projects/dots.png: 2015-05-30 10:27:54.000000000 -04:00
-build/images/projects/libgen.png: 2015-06-01 22:58:31.000000000 -04:00
-build/images/projects/metadata.png: 2015-05-24 13:54:18.000000000 -04:00
-build/images/projects/pandoc-templates.png: 2015-05-24 13:54:18.000000000 -04:00
-build/images/projects/pandoctor.png: 2015-07-25 20:04:25.000000000 -04:00
-build/images/projects/parsers.png: 2015-05-30 10:28:13.000000000 -04:00
-build/images/projects/skimmer.png: 2015-05-30 10:28:15.000000000 -04:00
-build/images/projects/snippets.png: 2015-05-24 13:54:18.000000000 -04:00
-build/images/projects/spritzr.png: 2015-05-24 13:54:18.000000000 -04:00
 build/images/projects/wikify/ensel.gif: 2015-05-30 10:28:23.000000000 -04:00
 build/images/projects/wikify/wfy.gif: 2015-05-30 10:28:28.000000000 -04:00
-build/images/projects/wikify.png: 2015-05-30 10:28:30.000000000 -04:00
 build/images/projects/zotquery/att_article.png: 2015-05-27 15:21:21.000000000 -04:00
 build/images/projects/zotquery/att_book.png: 2015-05-30 10:28:31.000000000 -04:00
 build/images/projects/zotquery/att_chapter.png: 2015-05-27 15:21:21.000000000 -04:00
@@ -84,4 +73,3 @@ build/images/projects/zotquery/zq_t_init-3.png: 2015-05-27 15:21:21.000000000 -0
 build/images/projects/zotquery/zq_t_search.png: 2015-05-27 15:21:21.000000000 -04:00
 build/images/projects/zotquery/zq_tag_init.png: 2015-05-27 15:21:21.000000000 -04:00
 build/images/projects/zotquery/zq_tag_search.png: 2015-05-27 15:21:21.000000000 -04:00
-build/images/projects/zotquery.png: 2015-05-30 10:34:32.000000000 -04:00
