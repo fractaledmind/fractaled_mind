@@ -25,7 +25,7 @@ gem 'middleman-meta-tags'
 
 # For Markdown processing
 gem 'redcarpet'
-gem "rpeg-multimarkdown"
+# gem "rpeg-multimarkdown"
 
 # For article summary
 gem 'nokogiri'
