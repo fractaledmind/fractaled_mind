@@ -164,6 +164,7 @@ proxy 'articles.html', 'templates/articles.html', ignore: true
 proxy 'projects.html', 'templates/projects.html', ignore: true
 proxy 'about.html',    'templates/about.html',    ignore: true
 proxy 'topics.html',   'templates/topics.html',   ignore: true
+proxy 'jots.html',     'templates/jots.html',     ignore: true
 # Create a Project page for each project listed in `data/projects/`
 # Use `project.html.erb` as the template for this project page
 data.projects.each do |slug, project|

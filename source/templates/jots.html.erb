@@ -1,0 +1,15 @@
+---
+pageable: false
+---
+
+<ul class="cards jots">
+  <% data.jots.each do |slug, jot| %>
+    <li class="card jot">
+      <div class="card-copy">
+        <time datetime="<%= DateTime.strptime(slug, '%Y%m%d%H%M').iso8601 %>">
+          <%= markdownify jot.content %>
+        </time>
+      </div>
+    </li>
+  <% end %>
+</ul>
