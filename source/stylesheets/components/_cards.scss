@@ -7,6 +7,11 @@
   margin:0;
 }
 
+.cards.jots {
+  @include flex-direction(column-reverse);
+  margin-left: 1rem;
+}
+
 .card {
   $card-border-radius: 3px !default;
   $card-spacing: 1.5em !default;
@@ -116,5 +121,17 @@
       font-weight: bold;
       margin-bottom: 0.5rem;
     }
+  }
+}
+
+.card.jot {
+  @include flex-basis(100%);
+  margin: 2px;
+
+  .card-copy {
+    padding: 0.5rem;
+    margin: 0;
+
+    p { margin-bottom: 0; }
   }
 }
