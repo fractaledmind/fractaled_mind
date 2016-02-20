@@ -172,7 +172,7 @@ data.projects.each do |slug, project|
 end
 
 project_tags.each do |tag, projects|
-  proxy 'topics/#{tag}.html', 'templates/project_topic.html',
+  proxy "topics/#{tag}.html", 'templates/project_topic.html',
         locals: { tag: tag, projects: projects }, ignore: true
 end
 
