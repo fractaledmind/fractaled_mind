@@ -1,5 +1,8 @@
 {
 	"folders": [
-		"~/Code/fractaledmind/source"
+		{
+      "path": "~/Copy/CODE/fractaled_mind/source/",
+      "folder_exclude_patterns": [".git"],
+      "file_exclude_patterns": ["CNAME"]}
 	]
 }
