@@ -120,69 +120,17 @@
 
 
     <div id="main" role="main">
-      <div class="card" id="project-page">
+      <div class="card" id="topic-page">
+  <h2 id="title">Articles tagged 'epistemology'</h2>
 
-      <ul class="card-tags">
-          <li>
-            <!-- If project-tag is also a blog-tag, link to it -->
-              <a class="badge no-hvr" id="bash" href="/topics/bash">bash</a>
-          </li>
-      </ul>
 
-    <div class="card-image">
-      <!-- if project has tags, add filler element -->
-        <div id="tag-filler-space"></div>
-      <!-- if project has header image, add it -->
-        <img src="../../images/projects/reboot.svg" />
-    </div>
+  <ul class="fa-ul">
+      <li>
+        <i class="fa-li fa fa-chevron-right"></i>
+        <a href="../../articles/conjunctive-binarism/">Conjunctive Binarism</a> <span>(Feb 21)</span>
+      </li>
+  </ul>
 
-    <h2 id="title">Reboot</h2>
-
-    <hr class="fractal">
-
-    <h4 id="repo"><a href="https://github.com/smargh/reboot">GitHub Repo</a></h4>
-
-    <div id="description"><p>This is my personal fork of <a href="https://github.com/MatthewMueller/dots">Matthew Mueller's <code>dots</code> repo</a>.</p>
-
-<h2 id="installation">Installation</h2>
-
-<p>One-liner:</p>
-
-<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="o">(</span>mkdir -p /tmp/dots <span class="o">&amp;&amp;</span> <span class="nb">cd</span> /tmp/dots <span class="o">&amp;&amp;</span> curl -L https://github.com/smargh/reboot/archive/master.tar.gz | tar zx --strip 1 <span class="o">&amp;&amp;</span> sh ./install.sh<span class="o">)</span>
-</pre></td></tr></tbody></table>
-</div>
-
-<h3 id="design">Design</h3>
-
-<p>The goal of reboot is to automate the process of getting your operating system from a stock build to a fully functional machine.</p>
-
-<p>Reboot should be the first thing you download and run to get your computer set up.</p>
-
-<p>This library tries to be organized like a <code>node</code> application, while working within the constraints of <code>bash</code>.</p>
-
-<h4 id="mac-os-x">Mac OS X</h4>
-
-<p>The OS X build does the following:</p>
-
-<ul>
-  <li>install <code>homebrew</code></li>
-  <li>installs binaries (<code>graphicsmagick</code>, <code>python</code>, <code>sshfs</code>, <code>ack</code>, <code>git</code>, etc.)</li>
-  <li>sets OS X defaults</li>
-  <li>installs applications via <code>homebrew-cask</code> (one-password, sublime-text, virtualbox, nv-alt, iterm2, etc.)</li>
-  <li>sets up the <code>~/.bash_profile</code></li>
-  <li>handle custom icons for applications</li>
-</ul>
-
-<h4 id="credits">Credits</h4>
-
-<ul>
-  <li>Original project by <a href="https://github.com/MatthewMueller/">Matthew Mueller</a></li>
-</ul>
-</div>
-
-    <!-- Get all projects for which there are articles -->
-    <!-- Iterate over these projects -->
-        <!-- If the project with articles matches the project passed in to create this template, list the articles -->
 </div>
     </div>
 

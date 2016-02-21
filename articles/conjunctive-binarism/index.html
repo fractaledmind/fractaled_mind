@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <!-- Metadata declarations -->
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Content declarations -->
+  <title>Fractaled Mind - Conjunctive Binarism</title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="feed.xml" />
+
+  <!-- External Resources -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
+
+  <!-- Internal Resources -->
+  <link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
+  <link href="../../images/favicon.png" rel="icon" type="image/png" />
+  <script src="../../javascripts/bigfoot.min.js" type="text/javascript"></script>
+  <script src="../../javascripts/search.js" type="text/javascript"></script>
+
+  <!-- Bigfoot.js Popover Footnotes -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $.bigfoot(
+        { numberResetSelector: ".card" }
+      );
+    });
+  </script>
+
+  <!-- Responsive Tables -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("td").each(function() {
+        var $th = $(this).closest('table').find('th').eq($(this).index());
+        $(this).attr('data-th', $th.text());
+      });
+    });
+  </script>
+
+  <!-- Scroll-Fix sidebar
+  <script type="text/javascript">
+    $(window).on("scroll", function(e) {
+      var scroll = $(this).scrollTop();
+      var logo_height = $('#site-logo').height();
+      var nav_height = $('.navigation').height() + 16;
+
+      if (scroll > logo_height) {
+        $('.navigation').css({'position': 'fixed'});
+         $('#sidebar').css({
+           'position': 'fixed',
+           'top': nav_height
+         });
+      } else {
+        $('.navigation').css({'position': 'inherit'});
+        $('#sidebar').css({'position': 'inherit'});
+      }
+    });
+  </script>
+  -->
+
+</head>
+
+  <body>
+    <header>
+  <div id="site-logo">
+    <img alt="Fractaled Mind" src="../../images/logo.svg" />
+  </div>
+
+  <ul id="social-networks">
+    <li>
+      <a href="https://facebook.com/fractaledmind" class="no-hvr">
+        <i class="fa fa-facebook fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://twitter.com/fractaledmind" class="no-hvr">
+        <i class="fa fa-twitter fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/smargh" class="no-hvr">
+        <i class="fa fa-github fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="mailto:stephen@fractaledmind.com" class="no-hvr">
+        <i class="fa fa-envelope fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="/feed.xml" class="no-hvr">
+        <i class="fa fa-rss fa-lg"></i>
+      </a>
+    </li>
+  </ul>
+</header>
+
+    <div class="navigation">
+  <nav role="navigation">
+    <ul class="navigation-menu">
+      <li class="nav-link"><a href="/">home</a></li>
+      <li class="nav-link"><a href="/jots">jots</a></li>
+      <li class="nav-link"><a href="/projects">projects</a></li>
+    </ul>
+  </nav>
+
+  <div id="search">
+    <div class="searchbar">
+      <form role="search" action="/search" method="get">
+        <input class="search-term" type="search" placeholder="Search..." name="q" />
+        <button class="search-submit" type="submit">
+          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png" alt="Search Icon">
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+    <div id="main" role="main">
+        <article class="card">
+    <!-- Article shows tags in top right -->
+    <ul class="card-tags">
+          <li>
+            <a class="badge no-hvr" id="logic" href="/topics/logic/">logic</a>
+          </li>
+          <li>
+            <a class="badge no-hvr" id="epistemology" href="/topics/epistemology/">epistemology</a>
+          </li>
+    </ul>
+
+    <h2 id="title">Conjunctive Binarism</h2>
+
+    <p>Epistemology has fascinated me far longer than I have known what that word means. Built upon the Greek words for “knowledge” (ἐπιστήμη) and “study” (λόγος), epistemology means the study of knowledge. This can (and does) encompass a wide variety of specific ideas: the nature of knowledge, the acquisition of knowledge, the difference between knowledge and opinion, etc. It is a field of inquiry that aims to help us answer questions like “How do I know something?”, “What does it mean to know something?”, “Are some things unknowable?”, etc. Now, before we go too far down this (admittedly intriguing) rabbit-hole, I had said that I wanted to consider alethiology, not epistemology. While epistemology is the study of knowledge, alethiology is the study of truth. The two inquiries are cousins; indeed, one can barely call alethiology a field of inquiry <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> and is often considered a sub-field of epistemology. The standard definition of knowledge holds that knowledge equals justified true belief <sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>. In debating the finer points of that definition, academics must then define their terms. What does it mean for a belief to be justified? What does it mean for a belief to be true? What is truth? This context is, I believe, important as it helps to situate the kinds of questions I am interested in pursuing within their general philosophical context. I want to probe around the edges of the question “What is truth?”, which, as we see, has strong implications on the nature of knowledge.</p>
+
+<h2 id="a-primer-on-propositional-logic">A Primer on Propositional Logic</h2>
+
+<p>When considering the nature of truth, it is common to think about <a href="http://www.iep.utm.edu/prop-log/#H1">propositions</a>. Propositions are simply declarative sentences; they are statements. In most high school English courses we learn that sentences that end with a period (<code>.</code>) are declarative sentences (<code>?</code> = interrogatives, <code>!</code> = interjections). So, that previous sentence was a declarative sentence. So was that one! Ah, now we have an interjection. Well, I could play this game all night (really, I’m easily amused), but the point ought to be clear: propositions == statements == declarative sentences. They are forms of communication that say something is the case. A key characteristic of propositions is that they are either true or false. When I state that something is the case, it either is the case or it isn’t. Either most high school English classes <em>do</em> teach that sentences ending in a period are declarative sentences, or they don’t. Either that previous sentence is a declarative sentence, or it isn’t. Now, one important thing to note immediately is that we need not be able to determine whether a proposition is true or false; this has no bearing on its “propositionness”. The statement “God exists” is a proposition, it is either true or false; however, we have no way of determining whether it is true or false (regardless of what anyone has ever told you). So, propositions are statements that something is the case that are either true or false, but we need not determine whether they are actually true or actually false for them to be propositions.</p>
+
+<p>In academic logic, propositions are generally referred to using the symbolic shorthand <code>P</code>. This is the generic proposition, the Ur-proposition, in computer programming terms we might say it is the proposition type. Like algebraic variables, we can use any uppercase letter to designate other propositions. So, for example, if I needed to talk about three propositions, I could use <code>P</code>, <code>Q</code>, and <code>R</code> (these are the common letters used in academic circles, for whatever the reasons). Now, when dealing with multiple propositions there are two key operators that we will use<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>: <code>&amp;</code> and <code>v</code>. Perhaps these symbols seem a bit foreign, but I promise that their concepts are utterly simple. <code>&amp;</code> is the “and” operator; it combines two propositions to make one new proposition, called the “conjunction” of the two propositions. <code>v</code> is the “or” operator; it also combines two propositions to make one new proposition, called the “disjunction” of the two propositions. In high school English we would say that “and” and “or” are conjunctions, and just like in English class we can take two declarative sentences and combine them with a conjunction to make a new sentence. Ah, that sentence was a perfect example (almost as if I planned it ;)). So, symbolically we could write <code>P &amp; Q =&gt; R</code> and <code>P v Q =&gt; S</code>.</p>
+
+<p>Ok, so propositions can be combined to make new propositions in two different ways, but what precisely is the difference? Well, I’m interested in truth, so you might have already guessed the difference. The difference between <code>R</code> and <code>S</code> from above is what is required for them to be true. When using the <code>&amp;</code> operator to combine <code>P</code> and <code>Q</code>, the conjunction <code>R</code> is only true when <strong>both</strong> <code>P</code> and <code>Q</code> are themselves true. If either <code>P</code> or <code>Q</code> is false, then <code>R</code> is also false. When using the <code>v</code> operator, the disjunction <code>S</code> is true if either <code>P</code> or <code>Q</code> is true. These relationships are most often considered using a “truth table”. Consider the following, which lays out all of the possible scenarios for the <code>&amp;</code> operator:</p>
+
+<table class="tables">
+  <thead>
+    <tr>
+      <th style="text-align: center"><code>P</code></th>
+      <th style="text-align: center"><code>Q</code></th>
+      <th style="text-align: center"><code>(P &amp; Q)</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">T</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">F</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">F</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">F</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Here we can clearly see that the expression <code>(P &amp; Q)</code> is only true whenever both the proposition <code>P</code> and the proposition <code>Q</code> are true. This is contrasted with the <code>v</code> operator:</p>
+
+<table class="tables">
+  <thead>
+    <tr>
+      <th style="text-align: center"><code>P</code></th>
+      <th style="text-align: center"><code>Q</code></th>
+      <th style="text-align: center"><code>(P v Q)</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">T</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">T</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">T</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">F</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Here the relationship is almost the exact opposite. The expression <code>(P v Q)</code> is only <em>false</em> whenever both the proposition <code>P</code> and the proposition <code>Q</code> are false. In every other instance the expression <code>(P v Q)</code> is true, as one of the two constituent propositions is true.</p>
+
+<p>These two operators handle how the truth values relate when combining two or more propositions, but there is one last operator we need to discuss, which is used on single propositions. The “negation” operator <code>¬</code> is used, you guessed it, to negate propositions. The truth table for this operator is pretty straight forward:</p>
+
+<table class="tables">
+  <thead>
+    <tr>
+      <th style="text-align: center"><code>P</code></th>
+      <th style="text-align: center"><code>¬P</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">F</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">T</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The negation operator basically just “flips” the truth value of the proposition.</p>
+
+<p>With all of that now settled, we can finally turn to the heart of this excursion.</p>
+
+<h2 id="p--p"><code>P &amp; ¬P</code></h2>
+
+<p>Now, I will readily admit that “conjunctive binarism” is a phrase that I totally made up [^4], but I was trying to find a phrase that accurately captured the idea I had in my head, which I was initially conceiving of in purely symbolic terms: <code>P &amp; ¬P</code>. In many ways I find the symbolic phrase far clearly than the English phrase “conjunctive binarism”, but hopefully my English phrase at least accurately describes precisely what I’m interested in.</p>
+
+<p>I said at the beginning that I was interested in the question “What is truth?”, yet now that we have a firmer grasp on what precisely “conjunctive binarism” means, I’m sure that you, my reader, are a bit worried. And, I would say, rightfully so. Here is the truth table for the conjunctive binary:</p>
+
+<table class="tables">
+  <thead>
+    <tr>
+      <th style="text-align: center"><code>P</code></th>
+      <th style="text-align: center"><code>¬P</code></th>
+      <th style="text-align: center"><code>(P &amp; ¬P)</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">F</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">F</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">F</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Well there you have it, the conjunctive binary <code>(P &amp; ¬P)</code> <em>can never be true</em>. [^ disjunctive binary is always true] In many ways the the simplest, most intuitive answer to the question of “What is truth?” is “I don’t know, but it certainly isn’t <code>(P &amp; ¬P)</code>”. In fact, Aristotle himself states this directly in his <em>Metaphysics</em>[^5]:</p>
+
+<blockquote>
+  <p>“The most certain of all basic principles is that contradictory propositions are not true simultaneously.” (1011b13-14)</p>
+</blockquote>
+
+<p>This idea, that a proposition (<code>P</code>) and its contradiction (<code>¬P</code>) cannot both be true in the same sense at the same time, is so fundamental to human logical thought that it is a <em>law</em>, the Law of Non-Contradiction.</p>
+
+<p>Now, I am not quite so bold as to suggest that the Law of Non-Contradiction is wrong; however, I would like to press it a bit. The caveats in the definition of the LNC are clearly important. I’m sure we can all think of examples where a proposition (<code>P</code>) and its contradiction (<code>¬P</code>) are both true, just in different senses. As one contrived examples, the proposition “Citi is a bank” and its contradiction “Citi is not a bank” would both be true if “bank” in the first case meant “a financial institution” and “bank” in the second case meant “the side of a river”. Likewise, if time is not an issue, we can certainly conceive of an example where some proposition is true and then later its contradiction is true. Taking the same contrived example, right now the proposition “Citi is a bank” is true, but if in the future they were to go out of business, the contradiction “Citi is not a bank” would then be true.</p>
+
+<p>What I would like to suggest is that while the Law of Non-Contradiction is strictly true, it is not practically all that helpful when confronting the question “What is truth?”. Specifically, I would argue (and hopefully I will at some point soon) that <em>in the everyday world</em> one of those two caveats is very likely to be true. That is to say, I contend and my definition of Conjunctive Binarism states that a proposition (<code>P</code>) and its contradiction (<code>¬P</code>) are likely both true either in different senses or at different times. More simply, I argue that <strong><code>(P &amp; ¬P)</code> will likely be true <em>in some way</em></strong>.</p>
+
+<p>If I could create my own logical symbol, I would create the “fuzzy” symbol <code>~</code>, which would denote the existence of one or more of these caveats. In my logical lexicon the “fuzzy” symbol <code>~</code> generally maps to the English word “kinda”. So, in strictest form Conjunctive Binarism would be expressed symbolically as <code>~(P &amp; ¬P)</code>, or even more strictly as <code>(~P ~&amp; ~¬P)</code>. In plain English we might say “the proposition <code>P</code> and its contradiction <code>¬P</code> are kinda both true”.</p>
+
+<h2 id="fin">Fin</h2>
+
+<p>I plan, in later posts, to explore this thesis from various angles, to consider some of its consequences, and to argue for its correctness. For now, however, I leave it at this: my answer to the question “What is truth?” would be, in a more rigorous and philosophic way than this sounds, “Kinda everything”.</p>
+
+<table class="tables">
+  <thead>
+    <tr>
+      <th style="text-align: center">Sign</th>
+      <th style="text-align: center">Operator</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code>&amp;</code></td>
+      <td style="text-align: center">“and”</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>v</code></td>
+      <td style="text-align: center">“or”</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>→</code></td>
+      <td style="text-align: center">“if… then…”</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>↔</code></td>
+      <td style="text-align: center">“if and only if”</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>¬</code></td>
+      <td style="text-align: center">“not”</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>See <a href="http://www.iep.utm.edu/prop-log/#SH3a">here</a> for a more in-depth analysis of them all.
+[^4]: A Google search for the exact phrase “conjunctive binarism” returns <a href="https://www.google.com/search?q=%22conjunctive+binarism%22">no results</a>.
+[^5]: <a href="http://plato.stanford.edu/entries/aristotle-noncontradiction/">This article</a> from the Stanford Encyclopedia of Philosophy provides a rich analysis of Aristotle on the Law of Non-Contradiction.</p>
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>The term “alethiology” is fairly rare in academia; for example, the ten-volume <a href="https://en.wikipedia.org/wiki/Routledge_Encyclopedia_of_Philosophy">Routledge Encyclopedia of Philosophy</a> mentions it only once. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>For those readers of a more academic bent, <a href="http://plato.stanford.edu/entries/knowledge-analysis/#KnoJusTruBel">this article</a> from the Stanford Encyclopedia of Philosophy provides a robust explanation of this analysis of knowledge, and indeed of knowledge in general. <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>There are, in fact, many other logical operators beside these two: <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </article>
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+//<![CDATA[
+                  var disqus_shortname = 'fractaledmind';
+          
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+//]]>
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  <script type="text/javascript">
+//<![CDATA[
+    var disqus_shortname = 'fractaledmind';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+//]]>
+</script>
+
+
+    </div>
+
+    <aside id="sidebar">
+
+  <div id="comic">
+  </div>
+
+  <hr class="fractal">
+
+  <div id="recent-articles">
+    <h5>Recent Articles</h5>
+    <ul class="fa-ul">
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="./">Conjunctive Binarism</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../on-lent-and-marriage/">On Lent and Marriage</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../a-depressed-graduate-student/">A Depressed Graduate Student</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../a-failed-graduate-student/">A Failed Graduate Student</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../a-complete-pdf-annotation-workflow/">A Complete PDF Annotation Workflow</a>
+        </li>
+    </ul>
+  </div>
+
+  <div id="all-tags">
+    <h5>Tags</h5>
+    <ul>
+      <!-- Add all Article tags -->
+        <li>
+          <a class="badge no-hvr" id="hackademics" href="/topics/hackademics/">hackademics (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="grad-school" href="/topics/grad-school/">grad-school (2)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="logic" href="/topics/logic/">logic (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="epistemology" href="/topics/epistemology/">epistemology (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="example" href="/topics/example/">example (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="christianity" href="/topics/christianity/">christianity (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="love" href="/topics/love/">love (1)</a>
+        </li>
+
+      <!-- Add all Project tags -->
+        <a class="badge no-hvr" id="alfred" href="/topics/alfred">alfred (9)</a>
+        <a class="badge no-hvr" id="git" href="/topics/git">git (1)</a>
+        <a class="badge no-hvr" id="bash" href="/topics/bash">bash (2)</a>
+        <a class="badge no-hvr" id="python" href="/topics/python">python (1)</a>
+    </ul>
+  </div>
+
+</aside>
+
+
+    <footer role="contentinfo">
+  <div class="footer-info">
+    <p>&copy; Copyright 2015 by Stephen Margheim</p>
+    <p>Powered by <a href="https://middlemanapp.com">Middleman</a>.</p>
+  </div>
+</footer>
+
+
+  </body>
+</html>

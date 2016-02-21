@@ -5,10 +5,217 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2016-02-10T22:16:00-05:00</updated>
+  <updated>2016-02-20T19:00:00-05:00</updated>
   <author>
     <name>Stephen Margheim</name>
   </author>
+  <entry>
+    <title>Conjunctive Binarism</title>
+    <link rel="alternate" href="http://blog.url.com/articles/conjunctive-binarism/"/>
+    <id>http://blog.url.com/articles/conjunctive-binarism/</id>
+    <published>2016-02-20T19:00:00-05:00</published>
+    <updated>2016-02-21T18:47:42-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;p&gt;Epistemology has fascinated me far longer than I have known what that word means. Built upon the Greek words for “knowledge” (ἐπιστήμη) and “study” (λόγος), epistemology means the study of knowledge. This can (and does) encompass a wide variety of specific ideas: the nature of knowledge, the acquisition of knowledge, the difference between knowledge and opinion, etc. It is a field of inquiry that aims to help us answer questions like “How do I know something?”, “What does it mean to know something?”, “Are some things unknowable?”, etc. Now, before we go too far down this (admittedly intriguing) rabbit-hole, I had said that I wanted to consider alethiology, not epistemology. While epistemology is the study of knowledge, alethiology is the study of truth. The two inquiries are cousins; indeed, one can barely call alethiology a field of inquiry &lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; and is often considered a sub-field of epistemology. The standard definition of knowledge holds that knowledge equals justified true belief &lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt;. In debating the finer points of that definition, academics must then define their terms. What does it mean for a belief to be justified? What does it mean for a belief to be true? What is truth? This context is, I believe, important as it helps to situate the kinds of questions I am interested in pursuing within their general philosophical context. I want to probe around the edges of the question “What is truth?”, which, as we see, has strong implications on the nature of knowledge.&lt;/p&gt;
+
+&lt;h2 id="a-primer-on-propositional-logic"&gt;A Primer on Propositional Logic&lt;/h2&gt;
+
+&lt;p&gt;When considering the nature of truth, it is common to think about &lt;a href="http://www.iep.utm.edu/prop-log/#H1"&gt;propositions&lt;/a&gt;. Propositions are simply declarative sentences; they are statements. In most high school English courses we learn that sentences that end with a period (&lt;code&gt;.&lt;/code&gt;) are declarative sentences (&lt;code&gt;?&lt;/code&gt; = interrogatives, &lt;code&gt;!&lt;/code&gt; = interjections). So, that previous sentence was a declarative sentence. So was that one! Ah, now we have an interjection. Well, I could play this game all night (really, I’m easily amused), but the point ought to be clear: propositions == statements == declarative sentences. They are forms of communication that say something is the case. A key characteristic of propositions is that they are either true or false. When I state that something is the case, it either is the case or it isn’t. Either most high school English classes &lt;em&gt;do&lt;/em&gt; teach that sentences ending in a period are declarative sentences, or they don’t. Either that previous sentence is a declarative sentence, or it isn’t. Now, one important thing to note immediately is that we need not be able to determine whether a proposition is true or false; this has no bearing on its “propositionness”. The statement “God exists” is a proposition, it is either true or false; however, we have no way of determining whether it is true or false (regardless of what anyone has ever told you). So, propositions are statements that something is the case that are either true or false, but we need not determine whether they are actually true or actually false for them to be propositions.&lt;/p&gt;
+
+&lt;p&gt;In academic logic, propositions are generally referred to using the symbolic shorthand &lt;code&gt;P&lt;/code&gt;. This is the generic proposition, the Ur-proposition, in computer programming terms we might say it is the proposition type. Like algebraic variables, we can use any uppercase letter to designate other propositions. So, for example, if I needed to talk about three propositions, I could use &lt;code&gt;P&lt;/code&gt;, &lt;code&gt;Q&lt;/code&gt;, and &lt;code&gt;R&lt;/code&gt; (these are the common letters used in academic circles, for whatever the reasons). Now, when dealing with multiple propositions there are two key operators that we will use&lt;sup id="fnref:3"&gt;&lt;a href="#fn:3" class="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt;: &lt;code&gt;&amp;amp;&lt;/code&gt; and &lt;code&gt;v&lt;/code&gt;. Perhaps these symbols seem a bit foreign, but I promise that their concepts are utterly simple. &lt;code&gt;&amp;amp;&lt;/code&gt; is the “and” operator; it combines two propositions to make one new proposition, called the “conjunction” of the two propositions. &lt;code&gt;v&lt;/code&gt; is the “or” operator; it also combines two propositions to make one new proposition, called the “disjunction” of the two propositions. In high school English we would say that “and” and “or” are conjunctions, and just like in English class we can take two declarative sentences and combine them with a conjunction to make a new sentence. Ah, that sentence was a perfect example (almost as if I planned it ;)). So, symbolically we could write &lt;code&gt;P &amp;amp; Q =&amp;gt; R&lt;/code&gt; and &lt;code&gt;P v Q =&amp;gt; S&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ok, so propositions can be combined to make new propositions in two different ways, but what precisely is the difference? Well, I’m interested in truth, so you might have already guessed the difference. The difference between &lt;code&gt;R&lt;/code&gt; and &lt;code&gt;S&lt;/code&gt; from above is what is required for them to be true. When using the &lt;code&gt;&amp;amp;&lt;/code&gt; operator to combine &lt;code&gt;P&lt;/code&gt; and &lt;code&gt;Q&lt;/code&gt;, the conjunction &lt;code&gt;R&lt;/code&gt; is only true when &lt;strong&gt;both&lt;/strong&gt; &lt;code&gt;P&lt;/code&gt; and &lt;code&gt;Q&lt;/code&gt; are themselves true. If either &lt;code&gt;P&lt;/code&gt; or &lt;code&gt;Q&lt;/code&gt; is false, then &lt;code&gt;R&lt;/code&gt; is also false. When using the &lt;code&gt;v&lt;/code&gt; operator, the disjunction &lt;code&gt;S&lt;/code&gt; is true if either &lt;code&gt;P&lt;/code&gt; or &lt;code&gt;Q&lt;/code&gt; is true. These relationships are most often considered using a “truth table”. Consider the following, which lays out all of the possible scenarios for the &lt;code&gt;&amp;amp;&lt;/code&gt; operator:&lt;/p&gt;
+
+&lt;table class="tables"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style="text-align: center"&gt;&lt;code&gt;P&lt;/code&gt;&lt;/th&gt;
+      &lt;th style="text-align: center"&gt;&lt;code&gt;Q&lt;/code&gt;&lt;/th&gt;
+      &lt;th style="text-align: center"&gt;&lt;code&gt;(P &amp;amp; Q)&lt;/code&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: center"&gt;T&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;T&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;T&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: center"&gt;T&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;F&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;F&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: center"&gt;F&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;T&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;F&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: center"&gt;F&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;F&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;F&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Here we can clearly see that the expression &lt;code&gt;(P &amp;amp; Q)&lt;/code&gt; is only true whenever both the proposition &lt;code&gt;P&lt;/code&gt; and the proposition &lt;code&gt;Q&lt;/code&gt; are true. This is contrasted with the &lt;code&gt;v&lt;/code&gt; operator:&lt;/p&gt;
+
+&lt;table class="tables"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style="text-align: center"&gt;&lt;code&gt;P&lt;/code&gt;&lt;/th&gt;
+      &lt;th style="text-align: center"&gt;&lt;code&gt;Q&lt;/code&gt;&lt;/th&gt;
+      &lt;th style="text-align: center"&gt;&lt;code&gt;(P v Q)&lt;/code&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: center"&gt;T&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;T&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;T&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: center"&gt;T&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;F&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;T&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: center"&gt;F&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;T&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;T&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: center"&gt;F&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;F&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;F&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Here the relationship is almost the exact opposite. The expression &lt;code&gt;(P v Q)&lt;/code&gt; is only &lt;em&gt;false&lt;/em&gt; whenever both the proposition &lt;code&gt;P&lt;/code&gt; and the proposition &lt;code&gt;Q&lt;/code&gt; are false. In every other instance the expression &lt;code&gt;(P v Q)&lt;/code&gt; is true, as one of the two constituent propositions is true.&lt;/p&gt;
+
+&lt;p&gt;These two operators handle how the truth values relate when combining two or more propositions, but there is one last operator we need to discuss, which is used on single propositions. The “negation” operator &lt;code&gt;¬&lt;/code&gt; is used, you guessed it, to negate propositions. The truth table for this operator is pretty straight forward:&lt;/p&gt;
+
+&lt;table class="tables"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style="text-align: center"&gt;&lt;code&gt;P&lt;/code&gt;&lt;/th&gt;
+      &lt;th style="text-align: center"&gt;&lt;code&gt;¬P&lt;/code&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: center"&gt;T&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;F&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: center"&gt;F&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;T&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The negation operator basically just “flips” the truth value of the proposition.&lt;/p&gt;
+
+&lt;p&gt;With all of that now settled, we can finally turn to the heart of this excursion.&lt;/p&gt;
+
+&lt;h2 id="p--p"&gt;&lt;code&gt;P &amp;amp; ¬P&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;Now, I will readily admit that “conjunctive binarism” is a phrase that I totally made up [^4], but I was trying to find a phrase that accurately captured the idea I had in my head, which I was initially conceiving of in purely symbolic terms: &lt;code&gt;P &amp;amp; ¬P&lt;/code&gt;. In many ways I find the symbolic phrase far clearly than the English phrase “conjunctive binarism”, but hopefully my English phrase at least accurately describes precisely what I’m interested in.&lt;/p&gt;
+
+&lt;p&gt;I said at the beginning that I was interested in the question “What is truth?”, yet now that we have a firmer grasp on what precisely “conjunctive binarism” means, I’m sure that you, my reader, are a bit worried. And, I would say, rightfully so. Here is the truth table for the conjunctive binary:&lt;/p&gt;
+
+&lt;table class="tables"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style="text-align: center"&gt;&lt;code&gt;P&lt;/code&gt;&lt;/th&gt;
+      &lt;th style="text-align: center"&gt;&lt;code&gt;¬P&lt;/code&gt;&lt;/th&gt;
+      &lt;th style="text-align: center"&gt;&lt;code&gt;(P &amp;amp; ¬P)&lt;/code&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: center"&gt;T&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;F&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;F&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: center"&gt;F&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;T&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;F&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Well there you have it, the conjunctive binary &lt;code&gt;(P &amp;amp; ¬P)&lt;/code&gt; &lt;em&gt;can never be true&lt;/em&gt;. [^ disjunctive binary is always true] In many ways the the simplest, most intuitive answer to the question of “What is truth?” is “I don’t know, but it certainly isn’t &lt;code&gt;(P &amp;amp; ¬P)&lt;/code&gt;”. In fact, Aristotle himself states this directly in his &lt;em&gt;Metaphysics&lt;/em&gt;[^5]:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“The most certain of all basic principles is that contradictory propositions are not true simultaneously.” (1011b13-14)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This idea, that a proposition (&lt;code&gt;P&lt;/code&gt;) and its contradiction (&lt;code&gt;¬P&lt;/code&gt;) cannot both be true in the same sense at the same time, is so fundamental to human logical thought that it is a &lt;em&gt;law&lt;/em&gt;, the Law of Non-Contradiction.&lt;/p&gt;
+
+&lt;p&gt;Now, I am not quite so bold as to suggest that the Law of Non-Contradiction is wrong; however, I would like to press it a bit. The caveats in the definition of the LNC are clearly important. I’m sure we can all think of examples where a proposition (&lt;code&gt;P&lt;/code&gt;) and its contradiction (&lt;code&gt;¬P&lt;/code&gt;) are both true, just in different senses. As one contrived examples, the proposition “Citi is a bank” and its contradiction “Citi is not a bank” would both be true if “bank” in the first case meant “a financial institution” and “bank” in the second case meant “the side of a river”. Likewise, if time is not an issue, we can certainly conceive of an example where some proposition is true and then later its contradiction is true. Taking the same contrived example, right now the proposition “Citi is a bank” is true, but if in the future they were to go out of business, the contradiction “Citi is not a bank” would then be true.&lt;/p&gt;
+
+&lt;p&gt;What I would like to suggest is that while the Law of Non-Contradiction is strictly true, it is not practically all that helpful when confronting the question “What is truth?”. Specifically, I would argue (and hopefully I will at some point soon) that &lt;em&gt;in the everyday world&lt;/em&gt; one of those two caveats is very likely to be true. That is to say, I contend and my definition of Conjunctive Binarism states that a proposition (&lt;code&gt;P&lt;/code&gt;) and its contradiction (&lt;code&gt;¬P&lt;/code&gt;) are likely both true either in different senses or at different times. More simply, I argue that &lt;strong&gt;&lt;code&gt;(P &amp;amp; ¬P)&lt;/code&gt; will likely be true &lt;em&gt;in some way&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;If I could create my own logical symbol, I would create the “fuzzy” symbol &lt;code&gt;~&lt;/code&gt;, which would denote the existence of one or more of these caveats. In my logical lexicon the “fuzzy” symbol &lt;code&gt;~&lt;/code&gt; generally maps to the English word “kinda”. So, in strictest form Conjunctive Binarism would be expressed symbolically as &lt;code&gt;~(P &amp;amp; ¬P)&lt;/code&gt;, or even more strictly as &lt;code&gt;(~P ~&amp;amp; ~¬P)&lt;/code&gt;. In plain English we might say “the proposition &lt;code&gt;P&lt;/code&gt; and its contradiction &lt;code&gt;¬P&lt;/code&gt; are kinda both true”.&lt;/p&gt;
+
+&lt;h2 id="fin"&gt;Fin&lt;/h2&gt;
+
+&lt;p&gt;I plan, in later posts, to explore this thesis from various angles, to consider some of its consequences, and to argue for its correctness. For now, however, I leave it at this: my answer to the question “What is truth?” would be, in a more rigorous and philosophic way than this sounds, “Kinda everything”.&lt;/p&gt;
+
+&lt;table class="tables"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style="text-align: center"&gt;Sign&lt;/th&gt;
+      &lt;th style="text-align: center"&gt;Operator&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: center"&gt;&lt;code&gt;&amp;amp;&lt;/code&gt;&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;“and”&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: center"&gt;&lt;code&gt;v&lt;/code&gt;&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;“or”&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: center"&gt;&lt;code&gt;→&lt;/code&gt;&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;“if… then…”&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: center"&gt;&lt;code&gt;↔&lt;/code&gt;&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;“if and only if”&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style="text-align: center"&gt;&lt;code&gt;¬&lt;/code&gt;&lt;/td&gt;
+      &lt;td style="text-align: center"&gt;“not”&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;See &lt;a href="http://www.iep.utm.edu/prop-log/#SH3a"&gt;here&lt;/a&gt; for a more in-depth analysis of them all.
+[^4]: A Google search for the exact phrase “conjunctive binarism” returns &lt;a href="https://www.google.com/search?q=%22conjunctive+binarism%22"&gt;no results&lt;/a&gt;.
+[^5]: &lt;a href="http://plato.stanford.edu/entries/aristotle-noncontradiction/"&gt;This article&lt;/a&gt; from the Stanford Encyclopedia of Philosophy provides a rich analysis of Aristotle on the Law of Non-Contradiction.&lt;/p&gt;
+&lt;div class="footnotes"&gt;
+  &lt;ol&gt;
+    &lt;li id="fn:1"&gt;
+      &lt;p&gt;The term “alethiology” is fairly rare in academia; for example, the ten-volume &lt;a href="https://en.wikipedia.org/wiki/Routledge_Encyclopedia_of_Philosophy"&gt;Routledge Encyclopedia of Philosophy&lt;/a&gt; mentions it only once. &lt;a href="#fnref:1" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id="fn:2"&gt;
+      &lt;p&gt;For those readers of a more academic bent, &lt;a href="http://plato.stanford.edu/entries/knowledge-analysis/#KnoJusTruBel"&gt;this article&lt;/a&gt; from the Stanford Encyclopedia of Philosophy provides a robust explanation of this analysis of knowledge, and indeed of knowledge in general. &lt;a href="#fnref:2" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id="fn:3"&gt;
+      &lt;p&gt;There are, in fact, many other logical operators beside these two: &lt;a href="#fnref:3" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</content>
+  </entry>
   <entry>
     <title>On Lent and Marriage</title>
     <link rel="alternate" href="http://blog.url.com/articles/on-lent-and-marriage/"/>
