@@ -26,32 +26,24 @@ $badge-font-size: 0.75em !default;
 
 // Give each tag a different color (up to 8 colors, then repeats start)
 $i: 1;
-<% blog.tags.each do |obj| %>
+<% blog.tags.each_with_index do |obj, i| %>
+  <% i = i > 7 ? i - 7 : i + 1 %>
   #<%= obj[0] %> {
-    @if $i > length($rainbow-list) {
-      // More tags than colors, so start over on colors
-      $i: $i - length($rainbow-list);
-    }
-    $current-color: nth($rainbow-list, $i);
+    $current-color: nth($rainbow-list, <%= i %>);
     background-color: $current-color;
   }
-  $i: $i + 1;
 <% end %>
 
 // Check if any tags in Projects not in Articles
 $i: $i + 1;
-<% project_tags().each do |tag, articles| %>
+<% project_tags().each_with_index do |obj, i| %>
   // If tag not one of the blog-tags
-  <% if !blog.tags.include?(tag) %>
-    @if $i > length($rainbow-list) {
-      // More tags than colors, so start over on colors
-      $i: $i - length($rainbow-list);
-    }
-    $current-color: nth($rainbow-list, $i);
+  <% if !blog.tags.include?(obj[0]) %>
+    <% i = i > 7 ? i - 7 : i + 1 %>
+    $current-color: nth($rainbow-list, <%= i %>);
     // style that tag's class
-    #<%= tag %> {
-        background-color: $current-color;
+    #<%= obj[0] %> {
+      background-color: $current-color;
     }
   <% end %>
-  $i: $i + 1;
 <% end %>
