@@ -23,7 +23,7 @@ def setup_summary_generator(separator = /(READMORE)/i)
       footnotes = footnote_div.nil? ? '' : footnote_div
       summary += footnotes.to_s
     end
-    summary  # return
+    summary # return
   end
 end
 
@@ -130,6 +130,9 @@ set :markdown,
 
 # Turn this on for code highlighting (with line numbers)
 activate :syntax, line_numbers: true
+
+# Turn on draft plugin
+activate :drafts
 
 ###
 # Compass

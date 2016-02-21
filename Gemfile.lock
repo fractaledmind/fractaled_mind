@@ -93,6 +93,9 @@ GEM
       addressable (~> 2.3.5)
       middleman-core (~> 3.2)
       tzinfo (>= 0.3.0)
+    middleman-blog-drafts (0.3.3)
+      middleman-blog (~> 3.5)
+      middleman-core (~> 3.2)
     middleman-core (3.3.12)
       activesupport (~> 4.1.0)
       bundler (~> 1.1)
@@ -191,6 +194,7 @@ DEPENDENCIES
   middleman (~> 3.3.10)
   middleman-autoprefixer
   middleman-blog (~> 3.5.3)
+  middleman-blog-drafts
   middleman-disqus
   middleman-gh-pages
   middleman-imageoptim
@@ -203,4 +207,4 @@ DEPENDENCIES
   redcarpet
 
 BUNDLED WITH
-   1.10.5
+   1.11.2
