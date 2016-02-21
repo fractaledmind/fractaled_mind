@@ -4,9 +4,6 @@
 :date: 2016-02-21
 :summary: What is truth? I'm not sure, but I'm starting to think its `~(P & ¬P)`. This post introduces what those symbols mean and how they represent my growing idea of Conjunctive Binarism, which is my theory of what truth is.
 ---
-# Conjunctive Binarism
-
-## Foreplay
 
 Epistemology has fascinated me far longer than I have known what that word means. Built upon the Greek words for "knowledge" and "study", epistemology means the study of knowledge. This can (and does) encompass a wide variety of specific ideas: the nature of knowledge, the acquisition of knowledge, the difference between knowledge and opinion, etc. It is a field of inquiry that aims to help us answer questions like "How do I know something?", "What does it mean to know something?", "Are some things unknowable?", etc. Now, before we go too far down this (admittedly intriguing) rabbit-hole, I had said that I wanted to consider alethiology, not epistemology. While epistemology is the study of knowledge, alethiology is the study of truth. The two inquiries are cousins; indeed, one can barely call alethiology a field of inquiry [^] and is often considered a sub-field of epistemology. The standard definition of knowledge holds that knowledge equals justified true belief [^]. In debating the finer points of that definition, academics must then define their terms. What does it mean for a belief to be justified? What does it mean for a belief to be true? What is truth?This context is, I believe, important as it helps to situate the kinds of questions I am interested in pursuing in their general philosophical context. I want to probe around the edges of the question "What is truth?", which, as we see, has strong implications on the nature of knowledge.
 
@@ -18,6 +15,7 @@ In academic logic, propositions are generally referred to using the symbolic sho
 
 Ok, so propositions can be combined to make new propositions in two different ways, but what precisely is the difference? Well, I'm interested in truth, so you might have already guessed the difference. The difference between `R` and `S` from above is what is required for them to be true. When using the `&` operator to combine `P` and `Q`, the conjunction `R` is only true when **both** `P` and `Q` are themselves true. If either `P` or `Q` is false, then `R` is also false. When using the `v` operator, the disjunction `S` is true if either `P` or `Q` is true. These relationships are most often considered using a "truth table". Consider the following, which lays out all of the possible scenarios for the `&` operator:
 
+{:.tables}
 | `P` | `Q` | `(P & Q)` |
 |:---:|:---:|:---------:|
 | T   | T   | T         |
@@ -27,6 +25,7 @@ Ok, so propositions can be combined to make new propositions in two different wa
 
 Here we can clearly see that the expression `(P & Q)` is only true whenever both the proposition `P` and the proposition `Q` are true. This is contrasted with the `v` operator:
 
+{:.tables}
 | `P` | `Q` | `(P v Q)` |
 |:---:|:---:|:---------:|
 | T   | T   | T         |
@@ -38,6 +37,7 @@ Here the relationship is almost the exact opposite. The expression `(P v Q)` is 
 
 These two operators handle how the truth values relate when combining two or more propositions, but there is one last operator we need to discuss, which is used on single propositions. The "negation" operator `¬` is used, you guessed it, to negate propositions. The truth table for this operator is pretty straight forward:
 
+{:.tables}
 | `P`   | `¬P`  |
 | :---: | :---: |
 | T     | F     |
@@ -53,6 +53,7 @@ Now, I will readily admit that "conjunctive binarism" is a phrase that I totally
 
 I said at the beginning that I was interested in the question "What is truth?", yet now that we have a firmer grasp on what precisely "conjunctive binarism" means, I'm sure that you, my reader, are a bit worried. And, I would say, rightfully so. Here is the truth table for the conjunctive binary:
 
+{:.tables}
 | `P`   | `¬P`  | `(P & ¬P)`  |
 | :---: | :---: | :---------: |
 | T     | F     | F           |
