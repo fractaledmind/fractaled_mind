@@ -3,7 +3,7 @@ pageable: false
 ---
 
 <ul class="cards jots">
-  <% data.jots.each do |slug, jot| %>
+  <% data.jots.sort.reverse.to_h.each do |slug, jot| %>
     <li class="card jot">
       <div class="card-copy">
         <time datetime="<%= DateTime.strptime(slug, '%Y%m%d%H%M').iso8601 %>">
