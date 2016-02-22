@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Content declarations -->
-  <title>Fractaled Mind</title>
+  <title>Fractaled Mind - You, Made and Unmade</title>
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="feed.xml" />
 
   <!-- External Resources -->
@@ -120,86 +120,49 @@
 
 
     <div id="main" role="main">
-      <div class="card" id="project-page">
+        <article class="card">
+    <!-- Article shows tags in top right -->
+    <ul class="card-tags">
+    </ul>
 
-      <ul class="card-tags">
-          <li>
-            <!-- If project-tag is also a blog-tag, link to it -->
-              <a class="badge no-hvr" id="alfred" href="/topics/alfred">alfred</a>
-          </li>
-      </ul>
+    <h2 id="title">You, Made and Unmade</h2>
 
-    <div class="card-image">
-      <!-- if project has tags, add filler element -->
-        <div id="tag-filler-space"></div>
-      <!-- if project has header image, add it -->
-        <img src="../../images/projects/parsers.svg" />
-    </div>
+    <p>What is time? Time is commonly dissected into three parts: past, present, and future. The past is done, it is set; the future is yet to be done, it is possibility. But what of the present? The present is, in simplest form, the future being made the past. Yet if the present is nothing more than the future being made the past, why is it “the present”, this thing on the same level as the past and future? Well, I think the answer is masked by the passive voice, “being made” by whom? By you. The present is the future being made the past by you.</p>
 
-    <h2 id="title">Parsers</h2>
+<p>How do you convert the future into the past? What is involved? Again, in simple form, there is you and there are outside stimuli, outside signals. There is you and not-you, which is outside of you. But the two spheres are not totally separate, as you receive many of these external signs and signals; you, via your five senses, have some connection to the not-you. And, in response to those outside signs and signals, you either act or don’t act, you think, you respond. You convert the future into the past by reacting to signals from the not-you.</p>
 
-    <hr class="fractal">
+<p>So, what is time? Time is the combination of the not-you things you have done, the not-you things you have yet to do, and the not-you things you are doing. Time is not-you, made and unmade, and you, making. But what is not-you without you? Nothing. Time is you, becoming; time is you, made and unmade.</p>
 
-    <h4 id="repo"><a href="https://github.com/smargh/alfred_parsers">GitHub Repo</a></h4>
+  </article>
 
-    <div id="description"><h4 id="version-20">Version: 2.0</h4>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+//<![CDATA[
+                  var disqus_shortname = 'fractaledmind';
+          
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+//]]>
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
-<h4 id="download-at-packalhttpwwwpackalorgworkflowparsers">Download at <a href="http://www.packal.org/workflow/parsers">Packal</a></h4>
+  <script type="text/javascript">
+//<![CDATA[
+    var disqus_shortname = 'fractaledmind';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+//]]>
+</script>
 
-<h3 id="introduction">Introduction</h3>
 
-<p><strong><code>Parsers</code></strong> is a relatively simple workflow for <a href="http://www.alfredapp.com/">Alfred</a>. It allows you to quickly and easily look up parsing information for Greek <em>or</em> Latin words. It gets its parsing information from the powerful <a href="http://www.perseus.tufts.edu/">Perseus project</a>, but presents the results in the clean user-interface of Alfred. To use <strong><code>Parsers</code></strong>, simply open Alfred and type the keyword <code>parse</code>. Follow the keyword with the Latin or Greek word you want to look up:</p>
-
-<p><img alt="alfred_parser" src="https://www.evernote.com/shard/s41/sh/2c444d67-b4ca-40b3-b914-c20dc5ebbfb6/9d54f19c489deda365c65f1e6b5232e6/deep/0/alfred_parser.png" /></p>
-
-<p><strong><code>Parsers</code></strong> will display the results for you as quickly as possible.</p>
-
-<p>As you can see, <strong><code>Parsers</code></strong> displays the parsing information in the main title field for each item. Below that, in the sub-title field, it displays the lemma and a short definition separated by <code>::</code>.</p>
-
-<p>Let's say you are reading some Greek or Latin, however, and don't want to have to open Alfred, type <code>parse</code>, then type the word you're interested in. Well, <strong><code>Parsers</code></strong> has thought of that. From within Alfred's Preferences, you can set up a keyboard shortcut to pass the currently selected text on your Mac to <strong><code>Parsers</code></strong>. I have mine set up as <code>cmd+fn+-&gt;</code>. This makes using <strong><code>Parsers</code></strong> even easier.</p>
-
-<p>Once you have found the parsing information that you believe is correct in your reading context, <strong><code>Parsers</code></strong> can do 2 things for you:</p>
-
-<ul>
-  <li>copy the parsing information to the clipboard in a nicely formatted way (<code>cmd+return</code>)</li>
-  <li>copy the dictionary entry for that lemma to the clipboard (<code>shift+return</code>)</li>
-</ul>
-
-<p>If, for instance, you were to choose the Nominative Singular Feminine form of <code>aura</code> (with <code>cmd+return</code>), <strong><code>Parsers</code></strong> would copy this to the clipboard:</p>
-
-<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11</pre></td><td class="code"><pre>Type: noun
-Number: sg
-Gender: fem
-Case: voc
-
-Definition: the air (in motion), a breeze, breath of air, wind, blast:
-Lemma:  aura
-
-Lexicon Links:
-  + [Lewis &amp; Short](http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0059%3Aentry%3Daura)
-  + [Elem. Lewis](http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0060%3Aentry%3Daura)
-</pre></td></tr></tbody></table>
-</div>
-
-<p>Alternatively, you can use <code>shift+return</code> to view a HUD of the lexicon entry for that parsing term, and this lexicon data will also be copied to the clipboard (<em>NOTE</em>: Parsers will attempt to display the lexicon entry from the most concise lexicon available for the chosen term or allow you to choose out of the available dictionaries).</p>
-
-<p>All you should need to read your Greek and/or Latin with ease.</p>
-</div>
-
-    <!-- Get all projects for which there are articles -->
-    <!-- Iterate over these projects -->
-        <!-- If the project with articles matches the project passed in to create this template, list the articles -->
-</div>
     </div>
 
     <aside id="sidebar">
@@ -214,23 +177,23 @@ Lexicon Links:
     <ul class="fa-ul">
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/you-made-and-unmade/">You, Made and Unmade</a>
+          <a href="./">You, Made and Unmade</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/conjunctive-binarism/">Conjunctive Binarism</a>
+          <a href="../conjunctive-binarism/">Conjunctive Binarism</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/on-lent-and-marriage/">On Lent and Marriage</a>
+          <a href="../on-lent-and-marriage/">On Lent and Marriage</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/a-depressed-graduate-student/">A Depressed Graduate Student</a>
+          <a href="../a-depressed-graduate-student/">A Depressed Graduate Student</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/a-failed-graduate-student/">A Failed Graduate Student</a>
+          <a href="../a-failed-graduate-student/">A Failed Graduate Student</a>
         </li>
     </ul>
   </div>
