@@ -49,7 +49,7 @@ With all of that now settled, we can finally turn to the heart of this excursion
 
 ## `P & ¬P`
 
-Now, I will readily admit that "conjunctive binarism" is a phrase that I totally made up [^4], but I was trying to find a phrase that accurately captured the idea I had in my head, which I was initially conceiving of in purely symbolic terms: `P & ¬P`. In many ways I find the symbolic phrase far clearly than the English phrase "conjunctive binarism", but hopefully my English phrase at least accurately describes precisely what I'm interested in.
+Now, I will readily admit that "conjunctive binarism" is a phrase that I totally made up [^4], but I was trying to find a phrase that accurately captured the idea I had in my head, which I was initially conceiving of in purely symbolic terms: `P & ¬P` [^BB]. In many ways I find the symbolic phrase far clearly than the English phrase "conjunctive binarism", but hopefully my English phrase at least accurately describes precisely what I'm interested in.
 
 I said at the beginning that I was interested in the question "What is truth?", yet now that we have a firmer grasp on what precisely "conjunctive binarism" means, I'm sure that you, my reader, are a bit worried. And, I would say, rightfully so. Here is the truth table for the conjunctive binary:
 
@@ -59,9 +59,9 @@ I said at the beginning that I was interested in the question "What is truth?", 
 | T     | F     | F           |
 | F     | T     | F           |
 
-Well there you have it, the conjunctive binary `(P & ¬P)` _can never be true_. [^ disjunctive binary is always true] In many ways the the simplest, most intuitive answer to the question of "What is truth?" is "I don't know, but it certainly isn't `(P & ¬P)`". In fact, Aristotle himself states this directly in his _Metaphysics_[^5]:
+Well there you have it, the conjunctive binary `(P & ¬P)` _can never be true_ [^AA]. In many ways the the simplest, most intuitive answer to the question of "What is truth?" is "I don't know, but it certainly isn't `(P & ¬P)`". In fact, Aristotle himself states this directly in his _Metaphysics_[^5]:
 
->"The most certain of all basic principles is that contradictory propositions are not true simultaneously." (1011b13-14)
+>The most certain of all basic principles is that contradictory propositions are not true simultaneously. (1011b13-14)
 
 This idea, that a proposition (`P`) and its contradiction (`¬P`) cannot both be true in the same sense at the same time, is so fundamental to human logical thought that it is a _law_, the Law of Non-Contradiction.
 
@@ -77,17 +77,31 @@ I plan, in later posts, to explore this thesis from various angles, to consider 
 
 [^1]: The term "alethiology" is fairly rare in academia; for example, the ten-volume [Routledge Encyclopedia of Philosophy](https://en.wikipedia.org/wiki/Routledge_Encyclopedia_of_Philosophy) mentions it only once.
 [^2]: For those readers of a more academic bent, [this article](http://plato.stanford.edu/entries/knowledge-analysis/#KnoJusTruBel) from the Stanford Encyclopedia of Philosophy provides a robust explanation of this analysis of knowledge, and indeed of knowledge in general.
-[^3]: There are, in fact, many other logical operators beside these two:
+[^3]:
+    There are, in fact, many other logical operators beside these two:
 
-{:.tables}
-| Sign  | Operator         |
-| :---: | :---:            |
-| `&`   | "and"            |
-| `v`   | "or"             |
-| `→`   | "if... then..."  |
-| `↔`   | "if and only if" |
-| `¬`   | "not"            |
+    {:.tables}
+    | Sign  | Operator         |
+    | :---: | :---:            |
+    | `&`   | "and"            |
+    | `v`   | "or"             |
+    | `→`   | "if... then..."  |
+    | `↔`   | "if and only if" |
+    | `¬`   | "not"            |
 
-See [here](http://www.iep.utm.edu/prop-log/#SH3a) for a more in-depth analysis of them all.
+    See [here](http://www.iep.utm.edu/prop-log/#SH3a) for a more in-depth analysis of them all.
+
 [^4]: A Google search for the exact phrase "conjunctive binarism" returns [no results](https://www.google.com/search?q=%22conjunctive+binarism%22).
 [^5]: [This article](http://plato.stanford.edu/entries/aristotle-noncontradiction/) from the Stanford Encyclopedia of Philosophy provides a rich analysis of Aristotle on the Law of Non-Contradiction.
+[^AA]:
+    This is in direct contrast with the disjunctive binary, which is always true.
+
+    {:.tables}
+    | `P`   | `¬P`  | `(P v ¬P)`  |
+    | :---: | :---: | :---------: |
+    | T     | F     | T           |
+    | F     | T     | T           |
+
+    In fact, the disjunctive binary, by definition, includes _all possible states_, as any state would either be `P` or `¬P`. Since `¬P` is simply the negation of `P`, the disjunction offers a logically exhaustive set of states.
+
+[^BB]: This construction of the constructive binarism marks it as a close kin of [dialetheism](http://plato.stanford.edu/entries/dialetheism/), a newer philosophical position that holds that dialetheias do in fact exist, and a dialetheia is simply a sentence, `A`, such that both it and its negation, `¬A`, are true; that is, `A & ¬A`.
