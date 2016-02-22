@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://blog.url.com/articles/conjunctive-binarism/"/>
     <id>http://blog.url.com/articles/conjunctive-binarism/</id>
     <published>2016-02-20T19:00:00-05:00</published>
-    <updated>2016-02-21T18:51:35-05:00</updated>
+    <updated>2016-02-21T19:01:29-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -167,16 +167,6 @@
 
 &lt;p&gt;I plan, in later posts, to explore this thesis from various angles, to consider some of its consequences, and to argue for its correctness. For now, however, I leave it at this: my answer to the question “What is truth?” would be, in a more rigorous and philosophic way than this sounds, “Kinda everything”.&lt;/p&gt;
 
-&lt;p&gt;| Sign  | Operator         |
-| :—: | :—:            |
-| &lt;code&gt;&amp;amp;&lt;/code&gt;   | “and”            |
-| &lt;code&gt;v&lt;/code&gt;   | “or”             |
-| &lt;code&gt;→&lt;/code&gt;   | “if… then…”  |
-| &lt;code&gt;↔&lt;/code&gt;   | “if and only if” |
-| &lt;code&gt;¬&lt;/code&gt;   | “not”            |
-See &lt;a href="http://www.iep.utm.edu/prop-log/#SH3a"&gt;here&lt;/a&gt; for a more in-depth analysis of them all.
-[^4]: A Google search for the exact phrase “conjunctive binarism” returns &lt;a href="https://www.google.com/search?q=%22conjunctive+binarism%22"&gt;no results&lt;/a&gt;.
-[^5]: &lt;a href="http://plato.stanford.edu/entries/aristotle-noncontradiction/"&gt;This article&lt;/a&gt; from the Stanford Encyclopedia of Philosophy provides a rich analysis of Aristotle on the Law of Non-Contradiction.&lt;/p&gt;
 &lt;div class="footnotes"&gt;
   &lt;ol&gt;
     &lt;li id="fn:1"&gt;
@@ -186,7 +176,43 @@ See &lt;a href="http://www.iep.utm.edu/prop-log/#SH3a"&gt;here&lt;/a&gt; for a m
       &lt;p&gt;For those readers of a more academic bent, &lt;a href="http://plato.stanford.edu/entries/knowledge-analysis/#KnoJusTruBel"&gt;this article&lt;/a&gt; from the Stanford Encyclopedia of Philosophy provides a robust explanation of this analysis of knowledge, and indeed of knowledge in general. &lt;a href="#fnref:2" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id="fn:3"&gt;
-      &lt;p&gt;There are, in fact, many other logical operators beside these two: &lt;a href="#fnref:3" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+
+      &lt;p&gt;There are, in fact, many other logical operators beside these two:&lt;/p&gt;
+
+      &lt;table class="tables"&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th style="text-align: center"&gt;Sign&lt;/th&gt;
+            &lt;th style="text-align: center"&gt;Operator&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          &lt;tr&gt;
+            &lt;td style="text-align: center"&gt;&lt;code&gt;&amp;amp;&lt;/code&gt;&lt;/td&gt;
+            &lt;td style="text-align: center"&gt;“and”&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style="text-align: center"&gt;&lt;code&gt;v&lt;/code&gt;&lt;/td&gt;
+            &lt;td style="text-align: center"&gt;“or”&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style="text-align: center"&gt;&lt;code&gt;→&lt;/code&gt;&lt;/td&gt;
+            &lt;td style="text-align: center"&gt;“if… then…”&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style="text-align: center"&gt;&lt;code&gt;↔&lt;/code&gt;&lt;/td&gt;
+            &lt;td style="text-align: center"&gt;“if and only if”&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style="text-align: center"&gt;&lt;code&gt;¬&lt;/code&gt;&lt;/td&gt;
+            &lt;td style="text-align: center"&gt;“not”&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+
+      &lt;p&gt;See &lt;a href="http://www.iep.utm.edu/prop-log/#SH3a"&gt;here&lt;/a&gt; for a more in-depth analysis of them all.
+[^4]: A Google search for the exact phrase “conjunctive binarism” returns &lt;a href="https://www.google.com/search?q=%22conjunctive+binarism%22"&gt;no results&lt;/a&gt;.
+[^5]: &lt;a href="http://plato.stanford.edu/entries/aristotle-noncontradiction/"&gt;This article&lt;/a&gt; from the Stanford Encyclopedia of Philosophy provides a rich analysis of Aristotle on the Law of Non-Contradiction. &lt;a href="#fnref:3" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
