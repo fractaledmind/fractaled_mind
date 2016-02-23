@@ -3,19 +3,19 @@
 // $visual-grid: true !global;
 // $visual-grid-color: #a7adba !global;
 
-// Base variables and mixins
-@import 'base/include-media';
-@import 'base/mixins';
-@import 'base/normalize';
-@import 'base/colors';
-@import 'base/fonts';
-
 // Thoughtbot Toolchain
 @import 'vendors/bourbon/all';
 @import 'vendors/bitters/variables';   // Bitters needs to be imported before Neat
 @import 'vendors/bitters/buttons';
 @import 'vendors/neat/all';
 @import 'vendors/bigfoot/bigfoot-number';
+
+// Base variables and mixins
+@import 'base/include-media';
+@import 'base/mixins';
+@import 'base/normalize';
+@import 'base/colors';
+@import 'base/fonts';
 
 // Thoughtbot Overrides
 // @import 'vendors-extensions/grid-settings';
