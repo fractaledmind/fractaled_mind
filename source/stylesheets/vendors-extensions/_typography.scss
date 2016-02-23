@@ -101,6 +101,7 @@ p {
 
 code {
   font-family: map-get($font-stack, code);
+  font-weight: 600;
   color: $violet;
   background-color: $lighterest;
   border-radius: $base-border-radius;
