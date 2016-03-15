@@ -160,7 +160,13 @@ done</span>
 
 <p>You may also find yourself needing to remove remote branches that have also already been merged to <code>master</code>.</p>
 
-<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>git branch -r --merged origin/master | grep -E -v <span class="s1">'&gt;|master|prod'</span> | cut -d<span class="s2">"/"</span> -f2- | xargs git push origin --delete
+<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre>git branch -r --merged origin/master
+| grep -E -v <span class="s1">'&gt;|master|prod'</span>
+| cut -d<span class="s2">"/"</span> -f2-
+| xargs git push origin --delete
 </pre></td></tr></tbody></table>
 </div>
 

@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://blog.url.com/articles/cleaning-up-git-repos/"/>
     <id>http://blog.url.com/articles/cleaning-up-git-repos/</id>
     <published>2016-03-14T20:00:00-04:00</published>
-    <updated>2016-03-14T23:15:06-04:00</updated>
+    <updated>2016-03-14T23:17:31-04:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -48,7 +48,13 @@ done&lt;/span&gt;
 
 &lt;p&gt;You may also find yourself needing to remove remote branches that have also already been merged to &lt;code&gt;master&lt;/code&gt;.&lt;/p&gt;
 
-&lt;div class="highlight shell"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;git branch -r --merged origin/master | grep -E -v &lt;span class="s1"&gt;'&amp;gt;|master|prod'&lt;/span&gt; | cut -d&lt;span class="s2"&gt;"/"&lt;/span&gt; -f2- | xargs git push origin --delete
+&lt;div class="highlight shell"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;git branch -r --merged origin/master
+| grep -E -v &lt;span class="s1"&gt;'&amp;gt;|master|prod'&lt;/span&gt;
+| cut -d&lt;span class="s2"&gt;"/"&lt;/span&gt; -f2-
+| xargs git push origin --delete
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
 &lt;/div&gt;
 
