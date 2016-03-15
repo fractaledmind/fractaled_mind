@@ -14,19 +14,23 @@
     <link rel="alternate" href="http://blog.url.com/articles/deleting-old-git-branches/"/>
     <id>http://blog.url.com/articles/deleting-old-git-branches/</id>
     <published>2016-03-14T20:00:00-04:00</published>
-    <updated>2016-03-14T22:07:11-04:00</updated>
+    <updated>2016-03-14T22:11:27-04:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
     <content type="html">&lt;p&gt;If you have a repository that’s been around for long enough, you probably have a fair number of “stray branches”: deadends, false starts, orphans, etc. Let’s clean up all of the remote branches that haven’t been touched in the last 6 months:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;bash
-for k in $(git branch -r | grep -E -v '&amp;gt;|master|prod'); do
-  if [ -z "$(git log -1 --since='6 months ago' -s $k)" ]; then
-    git push origin --delete $(cut -d"/" -f2- &amp;lt;&amp;lt;&amp;lt; "$k");
-  fi
-done
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight shell"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="k"&gt;for &lt;/span&gt;k &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="k"&gt;$(&lt;/span&gt;git branch -r | grep -E -v &lt;span class="s1"&gt;'&amp;gt;|master|prod'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;; &lt;span class="k"&gt;do
+  if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -z &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;git log -1 --since&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'6 months ago'&lt;/span&gt; -s &lt;span class="nv"&gt;$k&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then
+    &lt;/span&gt;git push origin --delete &lt;span class="k"&gt;$(&lt;/span&gt;cut -d&lt;span class="s2"&gt;"/"&lt;/span&gt; -f2- &lt;span class="o"&gt;&amp;lt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$k&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;;
+  &lt;span class="k"&gt;fi
+done&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Walking through the various steps:&lt;/p&gt;
 

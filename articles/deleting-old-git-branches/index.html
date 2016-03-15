@@ -132,13 +132,17 @@
 
     <p>If you have a repository that’s been around for long enough, you probably have a fair number of “stray branches”: deadends, false starts, orphans, etc. Let’s clean up all of the remote branches that haven’t been touched in the last 6 months:</p>
 
-<p><code>bash
-for k in $(git branch -r | grep -E -v '&gt;|master|prod'); do
-  if [ -z "$(git log -1 --since='6 months ago' -s $k)" ]; then
-    git push origin --delete $(cut -d"/" -f2- &lt;&lt;&lt; "$k");
-  fi
-done
-</code></p>
+<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre><span class="k">for </span>k <span class="k">in</span> <span class="k">$(</span>git branch -r | grep -E -v <span class="s1">'&gt;|master|prod'</span><span class="k">)</span>; <span class="k">do
+  if</span> <span class="o">[</span> -z <span class="s2">"</span><span class="k">$(</span>git log -1 --since<span class="o">=</span><span class="s1">'6 months ago'</span> -s <span class="nv">$k</span><span class="k">)</span><span class="s2">"</span> <span class="o">]</span>; <span class="k">then
+    </span>git push origin --delete <span class="k">$(</span>cut -d<span class="s2">"/"</span> -f2- <span class="o">&lt;&lt;&lt;</span> <span class="s2">"</span><span class="nv">$k</span><span class="s2">"</span><span class="k">)</span>;
+  <span class="k">fi
+done</span>
+</pre></td></tr></tbody></table>
+</div>
 
 <p>Walking through the various steps:</p>
 
