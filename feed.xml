@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://blog.url.com/articles/deleting-old-git-branches/"/>
     <id>http://blog.url.com/articles/deleting-old-git-branches/</id>
     <published>2016-03-14T20:00:00-04:00</published>
-    <updated>2016-03-14T22:11:27-04:00</updated>
+    <updated>2016-03-14T22:15:51-04:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -42,6 +42,7 @@ done&lt;/span&gt;
   &lt;li&gt;Finally &lt;code&gt;git push origin --delete $(...)&lt;/code&gt; removes that branch from the remote repository.&lt;/li&gt;
 &lt;/ol&gt;
 
+&lt;p&gt;A word of warning though: have local copies of these branches somewhere, just in case you delete an old branch you want back at some point ;)&lt;/p&gt;
 </content>
   </entry>
   <entry>
