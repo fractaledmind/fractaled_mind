@@ -5,10 +5,41 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2016-02-21T19:00:00-05:00</updated>
+  <updated>2016-03-14T20:00:00-04:00</updated>
   <author>
     <name>Stephen Margheim</name>
   </author>
+  <entry>
+    <title>Deleting old Git branches</title>
+    <link rel="alternate" href="http://blog.url.com/articles/deleting-old-git-branches/"/>
+    <id>http://blog.url.com/articles/deleting-old-git-branches/</id>
+    <published>2016-03-14T20:00:00-04:00</published>
+    <updated>2016-03-14T22:07:11-04:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;p&gt;If you have a repository that’s been around for long enough, you probably have a fair number of “stray branches”: deadends, false starts, orphans, etc. Let’s clean up all of the remote branches that haven’t been touched in the last 6 months:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;bash
+for k in $(git branch -r | grep -E -v '&amp;gt;|master|prod'); do
+  if [ -z "$(git log -1 --since='6 months ago' -s $k)" ]; then
+    git push origin --delete $(cut -d"/" -f2- &amp;lt;&amp;lt;&amp;lt; "$k");
+  fi
+done
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Walking through the various steps:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code&gt;git branch -r&lt;/code&gt; lists all remote branches&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;grep -E -v '&amp;gt;|master|prod'&lt;/code&gt; filters that list of branches, removing any that have &lt;code&gt;&amp;gt;&lt;/code&gt; (e.g. &lt;code&gt;origin/HEAD -&amp;gt; origin/master&lt;/code&gt;), &lt;code&gt;master&lt;/code&gt; (e.g. &lt;code&gt;origin/master&lt;/code&gt;), or &lt;code&gt;prod&lt;/code&gt; (e.g. &lt;code&gt;origin/prod&lt;/code&gt;) in their names.&lt;/li&gt;
+  &lt;li&gt;Iterating over each of these branches (as &lt;code&gt;$k&lt;/code&gt;), &lt;code&gt;git log -1 --since='6 months ago' -s $k&lt;/code&gt; checks if the branch has been commited to in the last 6 months (you could obviously set the timeframe to whatever suited your needs).&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;cut -d"/" -f2- &amp;lt;&amp;lt;&amp;lt; "$k")&lt;/code&gt; trims a branch string like &lt;code&gt;origin/feature/some_branch&lt;/code&gt; to a string like &lt;code&gt;feature/some_branch&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Finally &lt;code&gt;git push origin --delete $(...)&lt;/code&gt; removes that branch from the remote repository.&lt;/li&gt;
+&lt;/ol&gt;
+
+</content>
+  </entry>
   <entry>
     <title>You, Made and Unmade</title>
     <link rel="alternate" href="http://blog.url.com/articles/you-made-and-unmade/"/>

@@ -120,64 +120,17 @@
 
 
     <div id="main" role="main">
-      <div class="card" id="project-page">
+      <div class="card" id="topic-page">
+  <h2 id="title">Articles tagged 'til'</h2>
 
-      <ul class="card-tags">
-          <li>
-            <!-- If project-tag is also a blog-tag, link to it -->
-              <a class="badge no-hvr" id="alfred" href="/topics/alfred">alfred</a>
-          </li>
-      </ul>
 
-    <div class="card-image">
-      <!-- if project has tags, add filler element -->
-        <div id="tag-filler-space"></div>
-      <!-- if project has header image, add it -->
-        <img src="../../images/projects/snippets.svg" />
-    </div>
+  <ul class="fa-ul">
+      <li>
+        <i class="fa-li fa fa-chevron-right"></i>
+        <a href="../../articles/deleting-old-git-branches/">Deleting old Git branches</a> <span>(Mar 15)</span>
+      </li>
+  </ul>
 
-    <h2 id="title">Snippets</h2>
-
-    <hr class="fractal">
-
-    <h4 id="repo"><a href="https://github.com/smargh/alfred_snippets">GitHub Repo</a></h4>
-
-    <div id="description"><h4 id="version-12">Version: 1.2</h4>
-
-<h4 id="download-on-packalhttpwwwpackalorgworkflowsnippets">Download on <a href="http://www.packal.org/workflow/snippets">Packal</a></h4>
-
-<p>Have you ever been taking notes and realized that certain terms or phrases were going to be used repeatedly? You don't have the time or really the desire to create all new TextExpander snippets for these terms or phrases, but you'd also really like to shorten your typing. That's where <strong><code>Snippets</code></strong> comes in. <strong><code>Snippets</code></strong> is a dead simple Alfred workflow that allows you to use simple snippet syntax while writing, and then seamlessly convert your text to its full glory.</p>
-
-<p>The set-up is simple. As you're typing, and you realize you want to make a snippet, simply prepend your snippet with <code>,,</code> (comma comma). Then, when you get a free moment, create a "snippet dictionary" to tell Snippets what that snippet means. To create the dictionary, simply wrap it in <code>^^^</code> (triple carets). Here's an example:</p>
-
-<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6</pre></td><td class="code"><pre>This is an example of ,,sn. ,,sn is a fantastic workflow for ,,a!
-
-^^^
-sn: **`Snippets`**
-a: Alfred
-^^^
-</pre></td></tr></tbody></table>
-</div>
-
-<p>That's all there is to it. Once your dictionary is complete and you have finished typing, either copy the text to the clipboard and use the keyword <code>snip</code>, or assign a keyboard shortcut for even quicker results. When you activate <strong><code>Snippets</code></strong>, the text above will instantly become:</p>
-
-<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>This is an example of **`Snippets`**. **`Snippets`** is a fantastic workflow for Alfred!
-</pre></td></tr></tbody></table>
-</div>
-
-<p>It's so simple. Double-comma before the snippet; dictionary wrapped in triple-carets with snippet: expanded. Nothing more, nothing less.</p>
-
-<p><img alt="demo" src="https://raw.githubusercontent.com/smargh/alfred_snippets/master/snippets.gif" /></p>
-</div>
-
-    <!-- Get all projects for which there are articles -->
-    <!-- Iterate over these projects -->
-        <!-- If the project with articles matches the project passed in to create this template, list the articles -->
 </div>
     </div>
 
