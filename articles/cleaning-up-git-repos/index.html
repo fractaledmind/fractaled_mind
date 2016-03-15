@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Content declarations -->
-  <title>Fractaled Mind - Deleting old Git branches</title>
+  <title>Fractaled Mind - Cleaning up Git repos</title>
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="feed.xml" />
 
   <!-- External Resources -->
@@ -128,9 +128,11 @@
           </li>
     </ul>
 
-    <h2 id="title">Deleting old Git branches</h2>
+    <h2 id="title">Cleaning up Git repos</h2>
 
-    <p>If you have a repository that’s been around for long enough, you probably have a fair number of “stray branches”: deadends, false starts, orphans, etc. Let’s clean up all of the remote branches that haven’t been touched in the last 6 months:</p>
+    <h3 id="deleting-old-remote-branches">Deleting old remote branches</h3>
+
+<p>If you have a repository that’s been around for long enough, you probably have a fair number of “stray branches”: deadends, false starts, orphans, etc. Let’s clean up all of the remote branches that haven’t been touched in the last 6 months:</p>
 
 <div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -154,7 +156,25 @@ done</span>
   <li>Finally <code>git push origin --delete $(...)</code> removes that branch from the remote repository.</li>
 </ol>
 
-<p>A word of warning though: have local copies of these branches somewhere, just in case you delete an old branch you want back at some point ;)</p>
+<h3 id="deleting-already-merged-remote-branches">Deleting already-merged remote branches</h3>
+
+<p>You may also find yourself needing to remove remote branches that have also already been merged to <code>master</code>.</p>
+
+<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>git branch -r --merged origin/master | grep -E -v <span class="s1">'&gt;|master|prod'</span> | cut -d<span class="s2">"/"</span> -f2- | xargs git push origin --delete
+</pre></td></tr></tbody></table>
+</div>
+
+<p>Here we see many of the same basic sub-commands we used before. There is, however, one note-worthy difference. We specify the specific branch we want to check whether the remote branches have been merged into by specifying <code>origin/master</code>. This ensures that only remote branches that have been merged into remote <code>master</code> are passed to the next sub-command.</p>
+
+<h3 id="deleting-already-merged-local-branches">Deleting already-merged local branches</h3>
+
+<p>Finally, if you need to clean up your local repository, you can prune the local branches that have already been merged into <code>master</code> in a similar way:</p>
+
+<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>git branch -d <span class="k">$(</span>git branch --merged master | grep -E -v <span class="s1">'\*|master|prod'</span><span class="k">)</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>A word of warning though: have local copies of these branches somewhere, just in case you delete a branch you want back at some point ;)</p>
 
   </article>
 
@@ -200,7 +220,7 @@ done</span>
     <ul class="fa-ul">
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="./">Deleting old Git branches</a>
+          <a href="./">Cleaning up Git repos</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
@@ -232,13 +252,13 @@ done</span>
           <a class="badge no-hvr" id="grad-school" href="/topics/grad-school/">grad-school (2)</a>
         </li>
         <li>
+          <a class="badge no-hvr" id="til" href="/topics/til/">til (1)</a>
+        </li>
+        <li>
           <a class="badge no-hvr" id="logic" href="/topics/logic/">logic (1)</a>
         </li>
         <li>
           <a class="badge no-hvr" id="epistemology" href="/topics/epistemology/">epistemology (1)</a>
-        </li>
-        <li>
-          <a class="badge no-hvr" id="til" href="/topics/til/">til (1)</a>
         </li>
         <li>
           <a class="badge no-hvr" id="example" href="/topics/example/">example (1)</a>

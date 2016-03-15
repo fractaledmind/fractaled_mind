@@ -10,15 +10,17 @@
     <name>Stephen Margheim</name>
   </author>
   <entry>
-    <title>Deleting old Git branches</title>
-    <link rel="alternate" href="http://blog.url.com/articles/deleting-old-git-branches/"/>
-    <id>http://blog.url.com/articles/deleting-old-git-branches/</id>
+    <title>Cleaning up Git repos</title>
+    <link rel="alternate" href="http://blog.url.com/articles/cleaning-up-git-repos/"/>
+    <id>http://blog.url.com/articles/cleaning-up-git-repos/</id>
     <published>2016-03-14T20:00:00-04:00</published>
-    <updated>2016-03-14T22:15:51-04:00</updated>
+    <updated>2016-03-14T23:15:06-04:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
-    <content type="html">&lt;p&gt;If you have a repository that’s been around for long enough, you probably have a fair number of “stray branches”: deadends, false starts, orphans, etc. Let’s clean up all of the remote branches that haven’t been touched in the last 6 months:&lt;/p&gt;
+    <content type="html">&lt;h3 id="deleting-old-remote-branches"&gt;Deleting old remote branches&lt;/h3&gt;
+
+&lt;p&gt;If you have a repository that’s been around for long enough, you probably have a fair number of “stray branches”: deadends, false starts, orphans, etc. Let’s clean up all of the remote branches that haven’t been touched in the last 6 months:&lt;/p&gt;
 
 &lt;div class="highlight shell"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
 2
@@ -42,7 +44,25 @@ done&lt;/span&gt;
   &lt;li&gt;Finally &lt;code&gt;git push origin --delete $(...)&lt;/code&gt; removes that branch from the remote repository.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;A word of warning though: have local copies of these branches somewhere, just in case you delete an old branch you want back at some point ;)&lt;/p&gt;
+&lt;h3 id="deleting-already-merged-remote-branches"&gt;Deleting already-merged remote branches&lt;/h3&gt;
+
+&lt;p&gt;You may also find yourself needing to remove remote branches that have also already been merged to &lt;code&gt;master&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class="highlight shell"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;git branch -r --merged origin/master | grep -E -v &lt;span class="s1"&gt;'&amp;gt;|master|prod'&lt;/span&gt; | cut -d&lt;span class="s2"&gt;"/"&lt;/span&gt; -f2- | xargs git push origin --delete
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Here we see many of the same basic sub-commands we used before. There is, however, one note-worthy difference. We specify the specific branch we want to check whether the remote branches have been merged into by specifying &lt;code&gt;origin/master&lt;/code&gt;. This ensures that only remote branches that have been merged into remote &lt;code&gt;master&lt;/code&gt; are passed to the next sub-command.&lt;/p&gt;
+
+&lt;h3 id="deleting-already-merged-local-branches"&gt;Deleting already-merged local branches&lt;/h3&gt;
+
+&lt;p&gt;Finally, if you need to clean up your local repository, you can prune the local branches that have already been merged into &lt;code&gt;master&lt;/code&gt; in a similar way:&lt;/p&gt;
+
+&lt;div class="highlight shell"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;git branch -d &lt;span class="k"&gt;$(&lt;/span&gt;git branch --merged master | grep -E -v &lt;span class="s1"&gt;'\*|master|prod'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A word of warning though: have local copies of these branches somewhere, just in case you delete a branch you want back at some point ;)&lt;/p&gt;
 </content>
   </entry>
   <entry>
