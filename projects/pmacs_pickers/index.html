@@ -1,0 +1,809 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <!-- Metadata declarations -->
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Content declarations -->
+  <title>Fractaled Mind</title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="feed.xml" />
+
+  <!-- External Resources -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
+
+  <!-- Internal Resources -->
+  <link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
+  <link href="../../images/favicon.png" rel="icon" type="image/png" />
+  <script src="../../javascripts/bigfoot.min.js" type="text/javascript"></script>
+  <script src="../../javascripts/search.js" type="text/javascript"></script>
+
+  <!-- Bigfoot.js Popover Footnotes -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $.bigfoot(
+        { numberResetSelector: ".card" }
+      );
+    });
+  </script>
+
+  <!-- Responsive Tables -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("td").each(function() {
+        var $th = $(this).closest('table').find('th').eq($(this).index());
+        $(this).attr('data-th', $th.text());
+      });
+    });
+  </script>
+
+  <!-- Scroll-Fix sidebar
+  <script type="text/javascript">
+    $(window).on("scroll", function(e) {
+      var scroll = $(this).scrollTop();
+      var logo_height = $('#site-logo').height();
+      var nav_height = $('.navigation').height() + 16;
+
+      if (scroll > logo_height) {
+        $('.navigation').css({'position': 'fixed'});
+         $('#sidebar').css({
+           'position': 'fixed',
+           'top': nav_height
+         });
+      } else {
+        $('.navigation').css({'position': 'inherit'});
+        $('#sidebar').css({'position': 'inherit'});
+      }
+    });
+  </script>
+  -->
+
+</head>
+
+  <body>
+    <header>
+  <div id="site-logo">
+    <img alt="Fractaled Mind" src="../../images/logo.svg" />
+  </div>
+
+  <ul id="social-networks">
+    <li>
+      <a href="https://facebook.com/fractaledmind" class="no-hvr">
+        <i class="fa fa-facebook fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://twitter.com/fractaledmind" class="no-hvr">
+        <i class="fa fa-twitter fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/smargh" class="no-hvr">
+        <i class="fa fa-github fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="mailto:stephen@fractaledmind.com" class="no-hvr">
+        <i class="fa fa-envelope fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="/feed.xml" class="no-hvr">
+        <i class="fa fa-rss fa-lg"></i>
+      </a>
+    </li>
+  </ul>
+</header>
+
+    <div class="navigation">
+  <nav role="navigation">
+    <ul class="navigation-menu">
+      <li class="nav-link"><a href="/">home</a></li>
+      <li class="nav-link"><a href="/jots">jots</a></li>
+      <li class="nav-link"><a href="/projects">projects</a></li>
+    </ul>
+  </nav>
+
+  <div id="search">
+    <div class="searchbar">
+      <form role="search" action="/search" method="get">
+        <input class="search-term" type="search" placeholder="Search..." name="q" />
+        <button class="search-submit" type="submit">
+          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png" alt="Search Icon">
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+    <div id="main" role="main">
+      <div class="card" id="project-page">
+
+      <ul class="card-tags">
+          <li>
+            <!-- If project-tag is also a blog-tag, link to it -->
+              <a class="badge no-hvr" id="pmacs" href="/topics/pmacs">pmacs</a>
+          </li>
+          <li>
+            <!-- If project-tag is also a blog-tag, link to it -->
+              <a class="badge no-hvr" id="test" href="/topics/test">test</a>
+          </li>
+      </ul>
+
+    <div class="card-image">
+      <!-- if project has tags, add filler element -->
+        <div id="tag-filler-space"></div>
+      <!-- if project has header image, add it -->
+    </div>
+
+    <h2 id="title">PMACS Pickers</h2>
+
+    <hr class="fractal">
+
+    <h4 id="repo"><a href="https://gitlab.med.upenn.edu/framework/pmacs_pickers">GitHub Repo</a></h4>
+
+    <div id="description">
+<ul>
+  <li><a href="#requirements">Test</a></li>
+  <li><a href="#configuration">Another</a></li>
+</ul>
+
+<hr />
+
+<p>This gem provides the assets needed to add autocompleters (or "pickers") to your application. These assets include Rails FormBuilder custom inputs, jQuery plugins, model and controller methods, and CSS. Currently, pickers for Penn people and for Penn account numbers are pre-built in the gem.</p>
+
+<h2 id="upgrading-from-version-1x">Upgrading from version 1.x</h2>
+
+<p>This is a breaking change version of this gem. In order to update your app from a 1.x version of <code>pmacs_person_picker</code>, you need to ensure you do <em>at least</em> these things:</p>
+
+<ol>
+  <li>Change your Gemfile to use <code>pmacs_pickers</code></li>
+  <li>Change <code>include User::PmacsPersonPicker</code> in your User model to <code>include PmacsPickers::Model::UserMethods</code></li>
+  <li>Change <code>include PmacsPersonPicker::ControllerMethods</code> in your UsersController to <code>include PmacsPickers::Controller::UserMethods</code></li>
+  <li>Change <code>//= require pmacs_person_picker</code> in application.js to <code>//= require pmacs_pickers</code></li>
+  <li>Change <code>*= require pmacs_person_picker</code> in application.css to <code>*= require pmacs_pickers</code>
+    <ul>
+      <li><em>Note:</em> If you are using SASS in your project instead, use <code>@import 'pmacs_pickers';</code></li>
+    </ul>
+  </li>
+  <li>Change <code>config.person_picker_base_url</code> to <code>config.pickers_base_url</code> in your environment files and in application.rb.</li>
+  <li>Change the value of <code>config.pickers_base_url</code> to remove the affixed <code>/users</code> path.
+    <ul>
+      <li>e.g. <code>config.person_picker_base_url = '/users'</code> becomes <code>config.pickers_base_url = '/'</code></li>
+    </ul>
+  </li>
+</ol>
+
+<p>You may need to selectively update some other gems due to this update as well. If <code>bundle install</code> fails after updating due to out-of-sync gem versions, use <code>bundle update {gemname}</code> to update whatever gem Bundler is complaining about. <strong>Do not</strong>, however, run a generic <code>bundle update</code>, as this will update any and all gems that it can in your Gemfile. Be selective!</p>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<h3 id="ceal-engine">CEAL engine</h3>
+
+<p>If you want to back a picker with a local (to the application) data source that is hitting Penn Community, you'll need to be using a version of the <code>ceal</code> gem that does not include the <code>Person</code> model (any 2.x version or higher will do).</p>
+
+<h3 id="elastic">elastic</h3>
+
+<p>If you want to back the pickers in development with the <code>elastic</code> application, you must have that application cloned to your webdev2 account and available at "https://webdev2.med.upenn.edu/#{pennkey}/elastic".</p>
+
+<h2 id="setting-up-your-app-to-use-the-pickers">Setting up your app to use the pickers</h2>
+
+<p>Set a config value in the appropriate environments to tell the picker what URL to use as the base for picker data. Some examples:</p>
+
+<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td class="code"><pre><span class="c"># Use the elastic app</span>
+config.pickers_base_url <span class="o">=</span> <span class="s2">"https://#{ENV['HOSTNAME']}/#{ENV['USER']}/elastic/api"</span>
+
+<span class="c"># Let your app on webdev2 supply picker information with the local User model</span>
+config.pickers_base_url <span class="o">=</span> <span class="s2">"https://#{ENV['HOSTNAME']}#{ENV['RAILS_RELATIVE_URL_ROOT']}"</span>
+
+<span class="c"># Let your app on your local machine supply picker information</span>
+config.pickers_base_url <span class="o">=</span> <span class="s1">'/'</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>Note that in production, the <code>ENV[HOSTNAME]</code> parameter will evaluate to be the machine name (i.e: <code>jenkins</code>) unless you have overridden this in your <code>.htaccess</code>, and this is almost always not what you actually want to use.</p>
+
+<p>Unless you're running on your local machine, it's also best to force the app to use SSL within Rails to avoid cross-origin problems:</p>
+
+<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>config.force_ssl = true
+</pre></td></tr></tbody></table>
+</div>
+
+<p>The picker will take the <code>pickers_base_url</code> and append to it to create two routes for the two types of pickers:</p>
+
+<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre>#{pickers_base_url}/users/autocomplete
+#{pickers_base_url}/accounts/autocomplete
+</pre></td></tr></tbody></table>
+</div>
+
+<p>By default, the person picker will use the one-and-only route specified in your configuration file when making its Ajax requests for people and accounts. If you like, however, you can pass a <code>:source</code> attribute in your form tag helper to set each picker to a different end-point.</p>
+
+<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre>&lt;%= f.person_picker :unique_field_name, source: '/your_controller/pick' %&gt;
+&lt;%= person_picker_tag :unique_field_name, '', source: 'http://www.externalresource.com/autocomplete' %&gt;
+</pre></td></tr></tbody></table>
+</div>
+
+<p>As in the examples above, <code>your_controller</code> would need to provide the <code>your_controller/pick</code> route, which would handle the params being passed from the gem. That route must also skip both authentication and authorization, which means that any CEAL restrictions you have applied when defining the related model must allow for <code>:ANONYMOUS</code> to <code>:read</code>. Or, the "externalresource" site, whether under your control or not, would need to handle the passed params and return JSON.</p>
+
+<h2 id="adding-a-picker-to-a-view">Adding a picker to a view</h2>
+
+<p>With stock Rails FormBuilder:</p>
+
+<div class="highlight erb"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="cp">&lt;%=</span> <span class="n">form_for</span> <span class="vi">@my_object</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="cp">%&gt;</span>
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">person_picker</span> <span class="ss">:unique_field_name</span> <span class="cp">%&gt;</span>
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">account_picker</span> <span class="ss">:unique_field_name</span> <span class="cp">%&gt;</span>
+<span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>With a stock Rails tag helper:</p>
+
+<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre>&lt;%= person_picker_tag :unique_name, nil, class: 'custom-class' %&gt;
+&lt;%= account_picker_tag :unique_name %&gt;
+</pre></td></tr></tbody></table>
+</div>
+
+<p><strong>Tip:</strong> you must pass a value attribute (the second argument) to any Rails <code>[field type]_tag</code>  helper if you plan to pass additional options into it. If you don't do this for a picker, you will get a browser console warning a moment after page load, but the picker will work as expected when used.</p>
+
+<p><strong>Tip 2:</strong> the JavaScript that makes the picker work requires every picker on the page to have a unique ID and name, so please make sure you subsititute <code>:unique_field_name</code> in the code above for a field name that really is unique for your page.</p>
+
+<h3 id="helpers-api">Helpers API</h3>
+
+<p>While you can use the simple <code>#{type}_picker</code> or <code>#{type}_picker_tag</code> helper methods to generate a stock picker, this gem does offer a robust API for more fine-grained control.</p>
+
+<p>Any picker is made up of three parts:</p>
+
+<ol>
+  <li>the container</li>
+  <li>the input(s)</li>
+  <li>the dropdown</li>
+</ol>
+
+<p>The container is the parent wrapper of the input(s) and the dropdown. The input(s) are where the user actually types to search for a person or an account. The dropdown is the <code>ul</code> where the search results are added. You can pass an options hash to any of these entities by nesting that hash under the appropriate key in the global options hash.</p>
+
+<p>This is a spurious example, but it does demonstrate the flexibility provided:</p>
+
+<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14</pre></td><td class="code"><pre>&lt;%= person_picker_tag :unique_name, nil,
+      {
+        container: {
+          id: 'sample-container',
+          style: 'border:1px solid green;',
+        },
+        input: {
+          class: ['hello', 'world']
+        },
+        dropdown: {
+          class: 'what-in-the-world'
+        }
+      }
+%&gt;
+</pre></td></tr></tbody></table>
+</div>
+
+<p>One key point to note is the difference between a person picker and an account picker. An account picker is a multi-input picker; thus, instead of an <code>input</code> key, you use the <code>inputs</code> key, e.g.</p>
+
+<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14</pre></td><td class="code"><pre>&lt;%= account_picker_tag :unique_name, nil,
+    {
+      container: {
+        id: 'sample-container',
+        style: 'border:1px solid red;',
+      },
+      inputs: {
+        class: ['hello', 'world']
+      },
+      dropdown: {
+        class: 'what-in-the-world'
+      }
+    }
+%&gt;
+</pre></td></tr></tbody></table>
+</div>
+
+<p>As a multi-input picker, the account picker comes with extra flexibility. All Penn accounts are represented by a 26-digit account number, which can be parsed into 7 sections: CNAC, Organization, Budgetary Control, Fund, Object, Program, and CREF. By default, an account picker will produce 7 inputs matched to those 7 sections with an all-caps placeholder for each input. To have control over any of these inputs, you pass a second hash after the options hash using these possible keys: <code>cnac</code>, <code>org</code>, <code>bc</code>, <code>fund</code>, <code>obj</code>, <code>prog</code>, <code>cref</code>. Any hash nested under such a key will be applied to that specific input, e.g.</p>
+
+<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>&lt;%= account_picker_tag :unique_name, nil, {}, {'prog': {placeholder: 'prog', style: 'border:1px dashed blue;'}} %&gt;
+</pre></td></tr></tbody></table>
+</div>
+
+<p>This will put a blue dashed border around the Program input while also changing its placeholder text. If you want to use an account picker with only a subsection of the 7 possible account sections, you can <code>hide</code> a section:</p>
+
+<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11</pre></td><td class="code"><pre>&lt;%= account_picker_tag :unique_name, nil, {},
+    {
+      'cnac': {hide: true},
+      'bc': {hide: true},
+      'obj': {hide: true},
+      'org': {placeholder: 'org'},
+      'fund': {placeholder: 'fund'},
+      'prog': {placeholder: 'prog', style: 'border:1px dashed blue;'},
+      'cref': {placeholder: 'cref', maxlength: 1}
+    }
+%&gt;
+</pre></td></tr></tbody></table>
+</div>
+
+<p>This will generate an account picker with 4 inputs (Organization, Fund, Program, and CREF). Each input will have the lowercased placeholder provided in the nested hash, and <code>prog</code> will have a blue dashed border. Of note, however, is the <code>maxlength</code> attribute passed to <code>cref</code>. While you can pass a nested options hash to any of the input sections, two attributes <strong>cannot be overriden</strong>: <code>maxlength</code> and <code>id</code>. Since the format of the 26-digit account number is fixed, the <code>maxlength</code> of each input is also fixed, and the fixed <code>id</code> makes fine-toothed selectors consistent. Finally, every part of the picker comes with default classes that you cannot override, but you can add your own classes to the element class list by passing the standard <code>class</code> key to any of the nested hashes.</p>
+
+<h2 id="initializing-the-pickers-via-javascript">Initializing the pickers via Javascript</h2>
+
+<p>In order to have the pickers <em>actually function</em>, you need to initialize them via Javascript. You can either use the jQuery plugin provided by the gem to intialize your pickers, or (if you don't want to use jQuery) you could use plain-ol' Javascript.</p>
+
+<p>First, you need to require the JS assets in your <code>application.js</code> file by adding <code>//= require pmacs_pickers</code> to your list of requires. If you use the jQuery plugin, this syntax is simple:</p>
+
+<p><code>javascript
+$(document).on('ready page:change', function() {
+  $('.pmacs-person-picker').personPicker();
+  $('.pmacs-account-picker').accountPicker();
+});
+</code></p>
+
+<p>The <code>pmacs-person-picker</code> and <code>pmacs-account-picker</code> classes are given to all containers of person pickers and account pickers respectively, so this selector would initialize all pickers on the page.</p>
+
+<p>If you want to initialize all pickers without the jQuery plugin, you can use the appropriate module provided by the gem:</p>
+
+<p><code>javascript
+$(document).on('ready page:change', function() {
+  PersonPicker.init(document.getElementsByClassName('pmacs-person-picker'));
+  AccountPicker.init(document.getElementsByClassName('pmacs-account-picker'));
+});
+</code></p>
+
+<p>These pickers are built on top of the open-source <a href="https://leaverou.github.io/awesomplete/">Awesomplete</a> library to handle the autocompletion. Read the documentation there to see what options are available to pass on instantiation.</p>
+
+<h3 id="the-javascript-api">The JavaScript API</h3>
+
+<p>Although build on top of <code>Awesomplete</code>, the library used here has numerous changes and advancements to the API. When you are initializing your pickers, you have a great amount of flexibility and power.</p>
+
+<p>All settings discussed in this section are settable via either a <code>data-</code> attribute on the <code>&lt;input&gt;</code> element or a JS property on the second argument of the <code>Awesomplete</code> constructor.</p>
+
+<p>You can of course combine both HTML attributes and JS properties. <strong>In case of conflict</strong> (e.g. you’ve specified both a <code>data-minchars</code> on the text field and a <code>minChars</code> JS property, <strong>the HTML attribute wins</strong>. You can also use the JS properties to change a parameter <strong>after</strong> the object has been created, in which case the change will apply even if there is a conflicting HTML attribute.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>JS property</th>
+      <th>HTML attribute</th>
+      <th>Description</th>
+      <th>Value</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>container</code></td>
+      <td><code>data-container</code></td>
+      <td>The element that wraps the autocomplete `input` and the dropdown `ul`.</td>
+      <td><ul>
+        <li>HTML element</li>
+        <li>CSS selector (no groups, i.e. no commas)</li>
+        <li>JS object with `subject` key</li>
+      </ul></td>
+      <td><code>&lt;div class="awesomplete-container"&gt;&lt;div&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code>dropdown</code></td>
+      <td><code>data-dropdown</code></td>
+      <td>The element that contains the list of suggestion items.</td>
+      <td><ul>
+        <li>HTML element</li>
+        <li>CSS selector (no groups, i.e. no commas)</li>
+        <li>JS object with `subject` key</li>
+      </ul></td>
+      <td><code>&lt;ul hidden&gt;&lt;ul&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code>list</code></td>
+      <td><code>data-list</code></td>
+      <td>The full list of possible pickable items.</td>
+      <td><ul>
+        <li>Array of strings</li>
+        <li>HTML element</li>
+        <li>CSS selector (no groups, i.e. no commas)</li>
+        <li>String containing a comma-separated list of items</li>
+      </ul></td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td><code>minChars</code></td>
+      <td><code>data-minchars</code></td>
+      <td>Minimum characters the user has to type before the autocomplete popup shows up.</td>
+      <td>Number</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td><code>maxItems</code></td>
+      <td><code>data-maxitems</code></td>
+      <td>Maximum number of suggestions to display.</td>
+      <td>Number</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td><code>autoFirst</code></td>
+      <td><code>data-autofirst</code></td>
+      <td>Should the first element be automatically selected? Demo: <input class="awesomplete" data-autofirst="" data-list="Ada, Java, JavaScript, Brainfuck, LOLCODE, Node.js, Ruby on Rails" xautofocus="" /></td>
+      <td>Boolean</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td><code>showHint</code></td>
+      <td><code>data-showhint</code></td>
+      <td>Should the autocomplete input show Google-style hints as you navigate through the suggestion items? Demo: <input class="awesomplete" data-autofirst="" data-showhint="" data-list="Ada, Java, JavaScript, Brainfuck, LOLCODE, Node.js, Ruby on Rails" xautofocus="" /></td>
+      <td>Boolean</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The following JS properties do not have equivalent HTML attributes, because their values are functions. They allow you to completely change the way Awesomplete works:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+      <th>Value</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>filter</code></td>
+      <td>Controls how entries get matched. By default, the input can match anywhere in the string and it’s a case insensitive match.</td>
+      <td>Function that takes two parameters, the first one being the current suggestion text that’s being tested and the second a string with the user’s input it’s matched against. Returns <code>true</code> if the match is successful and <code>false</code> if it is not. For example, to only match strings that <strong>start with the user’s input</strong>, <strong>case sensitive</strong>, we can do this:
+<pre class="language-javascript"><code>filter: function (text, input) {
+  return text.indexOf(input) === 0;
+}</code></pre>
+      </td>
+      <td><code class="language-javascript">Awesomplete.FILTER_STARTSWITH</code>: Text must match at start of string, but case <strong>in</strong>sensitive.</td>
+    </tr>
+    <tr>
+      <td><code>sort</code></td>
+      <td>Controls how list items are ordered.</td>
+      <td>Sort function (will be passed directly to <code>Array.prototype.sort()</code>) to sort the items after they have been filtered and before they are truncated and converted to HTML elements.</td>
+      <td>Sorted by length first, order second.
+<pre class="language-javascript"><code>function (a, b) {
+  if (a.length !== b.length) {
+    return a.length - b.length;
+  }
+  return a &lt; b? -1 : 1;
+}</code></pre></td>
+    </tr>
+    <tr>
+      <td><code>item</code></td>
+      <td>Controls how list items are generated.</td>
+      <td>Function that takes two parameters, the first one being the suggestion text and the second one the user’s input and returns a list item.</td>
+      <td>Generates list items with the user’s input highlighted via <code>&lt;mark&gt;</code>.
+<pre class="language-javascript"><code>function (text, input) {
+  var html =
+    input === '' ?
+    text :
+    text.replace(
+      RegExp(_.regExpEscape(input.trim()), "gi"),
+      "&lt;mark&gt;$&amp;&lt;/mark&gt;");
+  return Bliss.create("li", {
+    innerHTML: html,
+    "aria-selected": "false"
+  });
+}</code></pre></td>
+    </tr>
+    <tr>
+      <td><code>replace</code></td>
+      <td>Controls how the user’s selection replaces the user’s input. For example, this is useful if you want the selection to only partially replace the user’s input.</td>
+      <td>Function that takes one parameter, the text of the selected option, and is responsible for replacing the current input value with it.
+      </td>
+      <td><pre class="language-javascript"><code>function (item) {
+  this.input.value = item.textContent;
+}</code></pre></td>
+    </tr>
+    <tr>
+      <td><code>data</code></td>
+      <td>Controls suggestions' <code>label</code> and <code>value</code>. This is useful if you have list items in custom format, or want to change list items based on user's input.</td>
+      <td>Function that takes two parameters, the first one being the original list item and the second a string with the user’s input and returns a list item in one of supported by default formats:
+<ul>
+<li><code>"JavaScript"</code></li>
+<li><code>{ label: "JavaScript", value: "JS" }</code></li>
+<li><code>[ "JavaScript", "JS" ]</code></li>
+</ul>
+To <strong>use objects without <code>label</code> or <code>value</code> properties</strong>, e.g. <code>name</code> and <code>id</code> instead, you can do this:
+<pre class="language-javascript"><code>data: function (item, input) {
+  return { label: item.name, value: item.id };
+}</code></pre>
+You can <strong>use any object for <code>label</code> and <code>value</code></strong> and it will be converted to String where necessary:
+<pre class="language-javascript"><code>list: [ new Date("2015-01-01"), ... ] </code></pre>
+Original list items as Date objects will be accessible in <code>filter</code>, <code>sort</code>, <code>item</code> and <code>replace</code> functions, but by default we'll just see Date objects converted to strings in autocompleter and the same value will be inserted to the input.</td>
+      <td><code class="language-javascript">Awesomplete.DATA</code>: Identity function which just returns the original list item.</td>
+    </tr>
+    <tr>
+      <td><code>source</code></td>
+      <td>Allows you to handle the suggestion generation however you like (without using <code>filter</code> on the <code>list</code>).</td>
+      <td>Function that takes one parameter, a string with the user’s input, and returns either an array of suggestion items (to be passed directly to <code>item</code> for rendering) or an object with a <code>url</code> key to be used with server-side filtering. If returning an object, any other keys will directly to the xhr fetch method.
+      </td>
+      <td><code>null</code> (Awesomplete presumes you will use the static <code>list</code> with <code>filter</code>ing, instead of this dynamic <code>source</code>)</td>
+    </tr>
+    <tr>
+      <td><code>hint</code></td>
+      <td>Controls how the user’s selection shows a hint in the user’s input. (requires <code>showHint</code> to be true)</td>
+      <td>Function that takes one parameter, the current selected option, and is responsible for returning the hint text value.</td>
+      <td><pre class="language-javascript"><code>function (item) {
+  return item.textContent;
+}</code></pre></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="custom-examples">Custom Examples</h3>
+
+<p>The power of this JavaScript API allows you to the <code>pmacs_pickers</code> gem to build autocomplete pickers for things other than Penn people or accounts. Below I offer one contrived example to demonstrate how simple adding robust custom pickers to your application can be.</p>
+
+<p>Let's say that you have a form with a state selector in it. Let us make that a state autocomplete picker with input hinting. For the sake of simplicity let's assume that the collection of 50 states is a <code>datalist</code> element with the 50 <code>option</code>s, and that element has the id <code>#states-list</code>. Given that, what we need to make our picker is an input.</p>
+
+<p><code>html
+&lt;input type="text"&gt;
+</code></p>
+
+<p>If we want that input to be <em>automatically instantiated</em>, we can simply give it the <code>awesomplete</code> class:</p>
+
+<p><code>html
+&lt;input type="text" class="awesomplete"&gt;
+</code></p>
+
+<p>In order to use that static list of states as the <code>list</code> property of the Awesomplete instance, we add the <code>data-list</code> attribute:</p>
+
+<p><code>html
+&lt;input type="text" class="awesomplete" data-list="#states-list"&gt;
+</code></p>
+
+<p>We want filtering to be as lightening quick as possible, so let's set the <code>minChars</code> property to <code>1</code> and the <code>autoFirst</code> property to <code>true</code>:</p>
+
+<p><code>html
+&lt;input type="text" class="awesomplete" data-list="#states-list" data-minchars="1" data-autofirst&gt;
+</code></p>
+
+<p>We also want the input to do suggestion hinting, so let's set the <code>showHint</code> property to <code>true</code> as well:</p>
+
+<p><code>html
+&lt;input type="text" class="awesomplete" data-list="#states-list" data-minchars="1" data-autofirst data-showhint&gt;
+</code></p>
+
+<p>As it stands, this would work amazingly well, and <em>we didn't even write a line of JavaScript!</em> One small issue, however, with this picker as it is built right now is that the default <code>filter</code> method is case <strong>in</strong>sensitive, so with suggestion hinting turned on, we could get some odd looking results in the input, like a lowercase <code>ma</code> hinting <code>Maine</code> where the initial <code>m</code> and <code>M</code> overlap. To ensure that our hinting perfectly matches the input, let try building this same autocomplete picker, but with the JavaScript intializiation instead of the HTML-only approach.</p>
+
+<p>Let's give our input a clear id:</p>
+
+<p><code>html
+&lt;input type="text" id="state-picker"&gt;
+</code></p>
+
+<p>Now, let's initialize this picker, setting up all of the same properties as before:</p>
+
+<p><code>javascript
+var input = document.getElementById("state-picker");
+new Awesomplete(input, {
+  list: "#states-list",
+  minChars: 1,
+  autoFirst: true,
+  showHint: true
+});
+</code></p>
+
+<p>That JavaScript is functionally <em>precisely the same</em> as the HTML-only approach we used before. But, we want to use a case-senstive <code>filter</code> method, so let's add that:</p>
+
+<p><code>javascript
+var input = document.getElementById("state-picker");
+new Awesomplete(input, {
+  list: "#states-list",
+  minChars: 1,
+  autoFirst: true,
+  showHint: true,
+  filter: function(item, input) {
+    return RegExp("^" + Awesomplete.regExpEscape(input.trim())).test(item);
+  }
+});
+</code></p>
+
+<p>Here we use a regular expression to test for whether or not the suggestion item starts with the input text. We make use of the <code>Awesomplete.regExpEscape</code> helper function to do so. But it is that simple. With a few lines of JavaScript we are using the <code>pmacs_pickers</code> gem to create robust, functional state picker.</p>
+
+<p>While this particular example may be slightly contrived, it hopefully demonstrates the range of possibilities available to your application when using the <code>pmacs_pickers</code> gem. You really can build nearly any kind of picker.</p>
+
+<h2 id="having-your-application-back-pmacs-pickers">Having your application back PMACS pickers</h2>
+
+<p>If you want to have your local application supply picker responses, you'll need to make sure your <code>User</code> model and/or <code>Account</code> model implement the appropriate methods and that your <code>UsersController</code> and/or <code>AccountsController</code> implement the <code>autocomplete</code> action. The 'pmacs_pickers' gem helpfully includes a couple of modules that will define these methods for you.</p>
+
+<h3 id="modifying-your-model">Modifying your model</h3>
+
+<p>This gem provides a module that you can include in your <code>User</code> model:</p>
+
+<p><code>ruby
+class User &lt; ActiveRecord::Base
+  include PmacsPickers::Model::UserMethods
+end
+</code></p>
+
+<p>Or your <code>Account</code> model:</p>
+
+<p><code>ruby
+class Account &lt; ActiveRecord::Base
+  include PmacsPickers::Model::AccountMethods
+end
+</code></p>
+
+<p>This module adds a <code>pick</code> class method to your model that can accept the appropriate query parameters sent to the controller by the picker JavaScript.</p>
+
+<h3 id="modifying-your-controller">Modifying your controller</h3>
+
+<p><code>ruby
+class UsersController &lt; ApplicationController
+  include PmacsPickers::Controller::UserMethods
+end
+</code></p>
+
+<p><code>ruby
+class AccountsController &lt; ApplicationController
+  include PmacsPickers::Controller::AccountMethods
+  skip_before_filter :authenticate_user!, only: [:autocomplete]
+end
+</code></p>
+
+<p>These modules do a few things:</p>
+
+<ol>
+  <li>Adds an <code>autocomplete</code> route to the controller</li>
+  <li>Prevents exceptions from being thrown by routes on this controller that are not secured by CanCanCan</li>
+</ol>
+
+<p>To use the picker with a class other than <code>User</code> or <code>Account</code>, override the  private <code>picker_class</code> method in your controller, e.g.</p>
+
+<p><code>ruby
+def picker_class
+  Mentor
+end
+</code></p>
+</div>
+
+    <!-- Get all projects for which there are articles -->
+    <!-- Iterate over these projects -->
+        <!-- If the project with articles matches the project passed in to create this template, list the articles -->
+</div>
+    </div>
+
+    <aside id="sidebar">
+
+  <div id="comic">
+  </div>
+
+  <hr class="fractal">
+
+  <div id="recent-articles">
+    <h5>Recent Articles</h5>
+    <ul class="fa-ul">
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../../articles/portrait-of-pain-two/">Portrait of Pain, Two</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../../articles/elevator/">Elevator</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../../articles/cleaning-up-git-repos/">Cleaning up Git repos</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../../articles/you-made-and-unmade/">You, Made and Unmade</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../../articles/conjunctive-binarism/">Conjunctive Binarism</a>
+        </li>
+    </ul>
+  </div>
+
+  <div id="all-tags">
+    <h5>Tags</h5>
+    <ul>
+      <!-- Add all Article tags -->
+        <li>
+          <a class="badge no-hvr" id="hackademics" href="/topics/hackademics/">hackademics (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="grad-school" href="/topics/grad-school/">grad-school (2)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="til" href="/topics/til/">til (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="logic" href="/topics/logic/">logic (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="epistemology" href="/topics/epistemology/">epistemology (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="poetry" href="/topics/poetry/">poetry (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="example" href="/topics/example/">example (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="christianity" href="/topics/christianity/">christianity (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="love" href="/topics/love/">love (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="prose" href="/topics/prose/">prose (2)</a>
+        </li>
+
+      <!-- Add all Project tags -->
+        <a class="badge no-hvr" id="alfred" href="/topics/alfred">alfred (9)</a>
+        <a class="badge no-hvr" id="git" href="/topics/git">git (1)</a>
+        <a class="badge no-hvr" id="bash" href="/topics/bash">bash (2)</a>
+        <a class="badge no-hvr" id="python" href="/topics/python">python (1)</a>
+        <a class="badge no-hvr" id="pmacs" href="/topics/pmacs">pmacs (1)</a>
+        <a class="badge no-hvr" id="test" href="/topics/test">test (1)</a>
+    </ul>
+  </div>
+
+</aside>
+
+
+    <footer role="contentinfo">
+  <div class="footer-info">
+    <p>&copy; Copyright 2015 by Stephen Margheim</p>
+    <p>Powered by <a href="https://middlemanapp.com">Middleman</a>.</p>
+  </div>
+</footer>
+
+
+  </body>
+</html>

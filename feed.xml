@@ -5,10 +5,68 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2016-03-14T20:00:00-04:00</updated>
+  <updated>2016-08-18T20:00:00-04:00</updated>
   <author>
     <name>Stephen Margheim</name>
   </author>
+  <entry>
+    <title>Portrait of Pain, Two</title>
+    <link rel="alternate" href="http://blog.url.com/articles/portrait-of-pain-two/"/>
+    <id>http://blog.url.com/articles/portrait-of-pain-two/</id>
+    <published>2016-08-18T20:00:00-04:00</published>
+    <updated>2016-08-18T22:57:47-04:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;p&gt;She swipes from right to left, the red square appearing and then disappearing, along with the words. Five minutes later, caught initially in my peripheral vision, the red square again.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Why did you delete those message tonight?”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“What do you mean?”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“You got a couple messages, and after reading them, you deleted the thread. I’m just curious why.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“I don’t know what you’re talking about.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“I wasn’t paying close attention, but I swear I saw the read delete and you delete the thread.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“It must have been something else. I didn’t delete any message threads.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This is the first time she lies to my face and I know it. I learn she lies frequently. Past, present, and future are littered. But today is the one time I know she is lying. It’s confusing more than painful. The pain comes later.&lt;/p&gt;
+
+&lt;p&gt;It’s a double-sided pain. First, the sting; she … lies … to me. Subject, verb, object. She’s an active force, I’m an object. And I feel like an object. Do I not warrant the truth? Am I not person enough that she can look into my eyes and tell me the lie? I am less then–I am inanimate, I am the object of her verb. After the sting comes the ache. A second pain and a different pain. Here I am the subject. I believed. Not this one time, but every other time. And even this one time, I almost believed. She doesn’t lie; people don’t lie. Not to your face, not to your eyes. Do eyes lie? Did the red square lie? The pain of foolishness, of naivete. It is a deep, aching pain. It hurts so deeply because it ought not to be true. I want to be that fool; I want the world to allow it. Look me in the eye and tell me the truth. Let me believe you; let me see you.&lt;/p&gt;
+
+&lt;p&gt;She lies. Then the sting. Now the ache.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Elevator</title>
+    <link rel="alternate" href="http://blog.url.com/articles/elevator/"/>
+    <id>http://blog.url.com/articles/elevator/</id>
+    <published>2016-04-03T20:00:00-04:00</published>
+    <updated>2016-08-18T22:46:41-04:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;p&gt;You step forward, press the button, and begin to wait. Dingy carpet in a worn-down lobby, a space almost asking you to leave it. Elevator crawls down the walls; is it fighting back? Even so, button pressed, future sealed.&lt;/p&gt;
+
+&lt;p&gt;Ding. It arrives. Future becomes present. Doors open. Gold and chrome and shining things. You enter. Perhaps slow at first, perhaps not. Doors close. Buttons arrayed in simple lines belie the complexity of choice. Each button a world. Present becomes future. You hesitate; or do you? Button pressed, future sealed. The elevator flies–a new floor, a better world.&lt;/p&gt;
+
+&lt;p&gt;Ding. Doors open. Clean carpet and soft lights, inviting. You step out. Elevator closes and returns, it’s task complete.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Cleaning up Git repos</title>
     <link rel="alternate" href="http://blog.url.com/articles/cleaning-up-git-repos/"/>
@@ -76,7 +134,7 @@ done&lt;/span&gt;
     <link rel="alternate" href="http://blog.url.com/articles/you-made-and-unmade/"/>
     <id>http://blog.url.com/articles/you-made-and-unmade/</id>
     <published>2016-02-21T19:00:00-05:00</published>
-    <updated>2016-02-21T22:01:56-05:00</updated>
+    <updated>2016-08-18T22:42:53-04:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
