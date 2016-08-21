@@ -49,7 +49,7 @@ With all of that now settled, we can finally turn to the heart of this excursion
 
 ## `P & ¬P`
 
-Now, I will readily admit that "conjunctive binarism" is a phrase that I totally made up [^4], but I was trying to find a phrase that accurately captured the idea I had in my head, which I was initially conceiving of in purely symbolic terms: `P & ¬P` [^BB]. In many ways I find the symbolic phrase far clearly than the English phrase "conjunctive binarism", but hopefully my English phrase at least accurately describes precisely what I'm interested in.
+Now, I will readily admit that "conjunctive binarism" is a phrase that I totally made up [^4], but I was trying to find a phrase that accurately captured the idea I had in my head, which I was initially conceiving of in purely symbolic terms: `P & ¬P` [^BB]. In many ways I find the symbolic phrase far clearer than the English phrase "conjunctive binarism", but hopefully my English phrase at least accurately describes precisely what I'm interested in.
 
 I said at the beginning that I was interested in the question "What is truth?", yet now that we have a firmer grasp on what precisely "conjunctive binarism" means, I'm sure that you, my reader, are a bit worried. And, I would say, rightfully so. Here is the truth table for the conjunctive binary:
 
