@@ -1,6 +1,6 @@
 ---
 :title: You, Made and Unmade
-:tags: 
+:tags: prose
 :summary: A short meditation on time, becoming, and you.
 :date: 2016-02-22
 ---
