@@ -8,7 +8,7 @@
 @import 'vendors/bitters/variables';   // Bitters needs to be imported before Neat
 @import 'vendors/bitters/buttons';
 @import 'vendors/neat/all';
-@import 'vendors/bigfoot/bigfoot-number';
+
 
 // Base variables and mixins
 @import 'base/include-media';
@@ -32,6 +32,10 @@
 @import 'components/lists';
 @import 'components/hr';
 @import 'components/cards';
+
+// Custom added vendors
+@import 'vendors/bigfoot/bigfoot-number';
+@import 'vendors/codyhouse/vertical-timeline';
 
 @import 'layout/header';
 @import 'layout/navigation';
