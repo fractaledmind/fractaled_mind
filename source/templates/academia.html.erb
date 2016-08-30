@@ -1,0 +1,22 @@
+<section class="timeline">
+  <% data.academia.each do |slug, project| %>
+    <div class="timeline-instance">
+      <div class="timeline-point"></div>
+      <div class="card timeline-card">
+        <%= link_to '', slug, :class => "card-link no-hvr" %>
+        <div class="card-header">
+          <h3 class="card-title">
+            <%= project.title %>
+          </h3>
+          <h5 class="card-date">
+            <%= Date.today.strftime('%d %B %Y') %>
+          </h5>
+        </div>
+        <hr class="fractal">
+        <div class="card-copy">
+          <%= markdownify project.description %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</section>
