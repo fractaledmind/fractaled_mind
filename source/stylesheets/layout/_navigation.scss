@@ -30,7 +30,8 @@
     li {
       display:inline;
       border-right: 1px solid transparentize($base-font-color, 0.8);
-      padding: 0 1em;
+      padding-right: 0.5em;
+      padding-left: 0.25em;
       padding-top: 0.25rem;
       &:first-child { padding-left: 0; }
       &:last-child {
