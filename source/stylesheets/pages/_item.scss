@@ -1,4 +1,4 @@
-article.card, div.card {
+#main > .card {
     // internal padding around text
     padding: 1rem 1.5rem;
     // for tag overflow
@@ -10,9 +10,3 @@ article.card, div.card {
     }
 }
 
-div.card {
-    @include media-exp(">two-column") {
-        // force sidebar together
-        margin-bottom: 24rem;
-    }
-}
