@@ -16,6 +16,6 @@
     <%= yield %>
   </article>
 
-  <%= disqus %>
-  <%= disqus_count %>
+  <%= disqus if defined?(disqus) %>
+  <%= disqus_count if defined?(disqus_count) %>
 <% end %>
