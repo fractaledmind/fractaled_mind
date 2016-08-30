@@ -1,0 +1,102 @@
+@import 'bourbon'; // http://bourbon.io/
+// @import 'partials/variables'; // colors, fonts etc...
+// @import 'partials/mixins'; // custom mixins
+
+/* --------------------------------
+Main components
+-------------------------------- */
+$timeline_thickness: 8px;
+
+.timeline {
+  position: relative;
+  padding: 2em 0;
+
+  /* the vertical timeline */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: $timeline_thickness;
+    background: $lightest;
+    left: 50%;
+    margin-left: ($timeline_thickness / 2) * -1;
+    border-top-right-radius: ($timeline_thickness / 2);
+    border-top-left-radius: ($timeline_thickness / 2);
+  }
+}
+
+.timeline-instance {
+  position: relative;
+  margin: 2em 0;
+  @include clearfix;
+
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.timeline-card {
+  position: relative;
+  background: white;
+  width: 48%;
+  margin: 0;
+  @include clearfix;
+
+  .card-date {
+    position: absolute;
+    top: 0.9rem;
+    width: 100%;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 1rem;
+    width: 0;
+    border: 7px solid transparent;
+  }
+
+  .timeline-instance:nth-of-type(odd) & {
+    &::before {
+      left: 100%;
+      border-color: transparent;
+      border-left-color: white;
+    }
+    .card-date {
+      right: auto;
+      left: 108%;
+      text-align: left;
+    }
+  }
+
+  .timeline-instance:nth-child(even) & {
+    float: right;
+
+    &::before {
+      left: auto;
+      right: 100%;
+      border-color: transparent;
+      border-right-color: white;
+    }
+
+    .card-date {
+      left: auto;
+      right: 108%;
+      text-align: right;
+    }
+  }
+}
+
+.timeline-point {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  width: 1rem;
+  height: 1rem;
+  margin-left: -0.5rem;
+  border-radius: 50%;
+  background-color: $light;
+}
