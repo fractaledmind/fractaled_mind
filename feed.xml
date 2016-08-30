@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://blog.url.com/articles/portrait-of-pain/"/>
     <id>http://blog.url.com/articles/portrait-of-pain/</id>
     <published>2016-08-18T20:00:00-04:00</published>
-    <updated>2016-08-18T23:05:07-04:00</updated>
+    <updated>2016-08-18T23:06:16-04:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -150,7 +150,7 @@ done&lt;/span&gt;
     <link rel="alternate" href="http://blog.url.com/articles/conjunctive-binarism/"/>
     <id>http://blog.url.com/articles/conjunctive-binarism/</id>
     <published>2016-02-20T19:00:00-05:00</published>
-    <updated>2016-02-21T19:23:02-05:00</updated>
+    <updated>2016-08-18T23:10:58-04:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -259,7 +259,7 @@ done&lt;/span&gt;
 
 &lt;h2 id="p--p"&gt;&lt;code&gt;P &amp;amp; ¬P&lt;/code&gt;&lt;/h2&gt;
 
-&lt;p&gt;Now, I will readily admit that “conjunctive binarism” is a phrase that I totally made up &lt;sup id="fnref:4"&gt;&lt;a href="#fn:4" class="footnote"&gt;4&lt;/a&gt;&lt;/sup&gt;, but I was trying to find a phrase that accurately captured the idea I had in my head, which I was initially conceiving of in purely symbolic terms: &lt;code&gt;P &amp;amp; ¬P&lt;/code&gt; &lt;sup id="fnref:BB"&gt;&lt;a href="#fn:BB" class="footnote"&gt;5&lt;/a&gt;&lt;/sup&gt;. In many ways I find the symbolic phrase far clearly than the English phrase “conjunctive binarism”, but hopefully my English phrase at least accurately describes precisely what I’m interested in.&lt;/p&gt;
+&lt;p&gt;Now, I will readily admit that “conjunctive binarism” is a phrase that I totally made up &lt;sup id="fnref:4"&gt;&lt;a href="#fn:4" class="footnote"&gt;4&lt;/a&gt;&lt;/sup&gt;, but I was trying to find a phrase that accurately captured the idea I had in my head, which I was initially conceiving of in purely symbolic terms: &lt;code&gt;P &amp;amp; ¬P&lt;/code&gt; &lt;sup id="fnref:BB"&gt;&lt;a href="#fn:BB" class="footnote"&gt;5&lt;/a&gt;&lt;/sup&gt;. In many ways I find the symbolic phrase far clearer than the English phrase “conjunctive binarism”, but hopefully my English phrase at least accurately describes precisely what I’m interested in.&lt;/p&gt;
 
 &lt;p&gt;I said at the beginning that I was interested in the question “What is truth?”, yet now that we have a firmer grasp on what precisely “conjunctive binarism” means, I’m sure that you, my reader, are a bit worried. And, I would say, rightfully so. Here is the truth table for the conjunctive binary:&lt;/p&gt;
 
@@ -751,7 +751,7 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
     <link rel="alternate" href="http://blog.url.com/articles/example-article/"/>
     <id>http://blog.url.com/articles/example-article/</id>
     <published>2011-12-31T19:00:00-05:00</published>
-    <updated>2015-07-16T09:56:02-04:00</updated>
+    <updated>2016-08-29T20:51:17-04:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -762,6 +762,8 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
 &lt;p&gt;This is a way to determine the number of characters per line in the various layouts:&lt;/p&gt;
 
 &lt;p&gt;0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789&lt;/p&gt;
+
+&lt;script type="math/tex; mode=display"&gt;\sum_{n=1}^{\infty} \frac{1}{n}&lt;/script&gt;
 
 &lt;p&gt;This text is &lt;em&gt;italic&lt;/em&gt;, while this is &lt;strong&gt;bold&lt;/strong&gt;, and this is a &lt;a href="smargh.github.io"&gt;link&lt;/a&gt;.&lt;/p&gt;
 
