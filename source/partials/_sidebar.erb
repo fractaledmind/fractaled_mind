@@ -1,15 +1,5 @@
 <aside id="sidebar">
 
-  <div id="comic">
-  <% comic_post = newest_comic_post() %>
-  <% if !comic_post.nil? %>
-    <% link_to comic_post['url'] do %>
-      <%= image_tag 'pair-of-ducks.png', :alt => "Paradox" %>
-    <% end %>
-    <h5>The Pair of Ducks Paradox</h5>
-  <% end %>
-  </div>
-
   <hr class="fractal">
 
   <div id="recent-articles">
