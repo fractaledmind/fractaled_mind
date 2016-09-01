@@ -18,15 +18,25 @@
   <!-- Internal Resources -->
   <link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
   <link href="../../images/favicon.png" rel="icon" type="image/png" />
-  <script src="../../javascripts/bigfoot.min.js" type="text/javascript"></script>
+  <script src="../../javascripts/bigfoot.js" type="text/javascript"></script>
   <script src="../../javascripts/search.js" type="text/javascript"></script>
 
   <!-- Bigfoot.js Popover Footnotes -->
   <script type="text/javascript">
     $(document).ready(function(){
-      $.bigfoot(
-        { numberResetSelector: ".card" }
-      );
+      $.bigfoot({
+        numberResetSelector: ".card",
+        activateCallback: function($popover, $button) {
+          if (MathJax && !$button.data('mathjax-processed')) {
+            var content_wrapper = $popover.find('.bigfoot-footnote__content')[0];
+            MathJax.Hub.Queue(['Typeset', MathJax.Hub, content_wrapper]);
+            MathJax.Hub.Queue(function () {
+              $button.attr('data-bigfoot-footnote', content_wrapper.innerHTML);
+              $button.data('mathjax-processed', true);
+            });
+          }
+        }
+      });
     });
   </script>
 
@@ -176,17 +186,17 @@ k <span class="o">=</span> 1
 
 <p>Now, this proof may perhaps feel a bit fishy to you; you may think that we are mathematically cheating somewhere, but I can promise you that every single step is totally valid. And if every step is totally valid, then the conclusion is valid. But how can this be and what does this mean?</p>
 
-<p>This “problem”, this seeming incongruity, arises because we have a hard time grappling with infinity. To put it another way, we underestimate the weight of that ellipsis. So let’s dig into that ellipsis a bit. What does <code>0.9999...</code> really mean, really represent? Well, we all remember from elementary school that decimals can also be represented by fractions, so let’s try to represent this decimal by a fraction. Unfortunately, there is no simple fraction to represent this number (like <code>0.3333...</code> being representable by \(\frac{1}{3}\) ). However, we can break this decimal down. We know that <code>0.9</code> is simply \(\frac{9}{10}\) , and <code>0.09</code> is \(\frac{9}{100}\) , and <code>0.009</code> is \(\frac{9}{1000}\)  and so on. We also know that <code>0.9 + 0.09 + 0.009 = 0.999</code>. So, we could represent <code>0.9999...</code> fractionally as:</p>
+<p>This “problem”, this seeming incongruity, arises because we have a hard time grappling with infinity. To put it another way, we underestimate the weight of that ellipsis. So let’s dig into that ellipsis a bit. What does <code>0.9999...</code> really mean, really represent? Well, we all remember from elementary school that decimals can also be represented by fractions, so let’s try to represent this decimal by a fraction. Unfortunately, there is no simple fraction to represent this number (like <code>0.3333...</code> being representable by \(\frac{1}{3}\)). However, we can break this decimal down. We know that <code>0.9</code> is simply \(\frac{9}{10}\), and <code>0.09</code> is \(\frac{9}{100}\), and <code>0.009</code> is \(\frac{9}{1000}\) and so on. We also know that <code>0.9 + 0.09 + 0.009 = 0.999</code>. So, we could represent <code>0.9999...</code> fractionally as:</p>
 
 <script type="math/tex; mode=display">\frac{9}{10} + \frac{9}{100} + \frac{9}{1000} + \frac{9}{10000} + \ldots</script>
 
-<p>In mathematics, this is called an <em>infinite sum</em> or an <em>infinite series</em>; we are adding terms together to infinity. If you recall from your high school math class, you can represent an infinite sum with what is called <strong>sigma notation</strong>, and our infinite sum above can be represented as:</p>
+<p>In mathematics, this is called an <em>infinite sum</em> or an <em>infinite series</em>; we are adding terms together to infinity. If you recall from your high school math class, you can represent an infinite sum with what is called <strong><a href="https://en.wikipedia.org/wiki/Summation#Capital-sigma_notation">sigma notation</a></strong>, and our infinite sum above can be represented as:</p>
 
 <script type="math/tex; mode=display">\sum_{n=1}^{\infty} \frac{9}{10^n}</script>
 
 <p>This is simply a more concise way of writing the larger sum of the fractions above.</p>
 
-<p>Infinite sums are truly fascinating, and I hope to write more about them in the future, but for now I want to focus on one characteristic in particular. All infinite sums fit into one of two categories: <em>convergent</em> or <em>divergent</em>. Now, these are math-jargon terms that mean relatively simple things. An infinite sum is <em>convergent</em> if it converges on a finite number. The language you might remember from your calculus class is that the <em>limit</em> of the infinite sum <em>approaches</em> a finite number. So, a <em>convergent infinite sum</em> is an infinity that touches the finite. In contrast, a <em>divergent infinite sum</em> is one that has no limit, one that grows to infinity. A stock example is</p>
+<p>Infinite sums are truly fascinating, and I hope to write more about them in the future, but for now I want to focus on one characteristic in particular. All infinite sums fit into one of two categories: <em>convergent</em> or <em>divergent</em>. Now, these are math-jargon terms that mean relatively simple things. An infinite sum is <em>convergent</em> if it converges on a finite number. The language you might remember from your calculus class is that the <em>limit</em> of the infinite sum <em>approaches</em> a finite number. So, a <em>convergent infinite sum</em> is an infinity that touches the finite. In contrast, a <em>divergent infinite sum</em> is one that has no limit, one that grows to infinity.<sup id="fnref:2"><a href="#fn:2" class="footnote">1</a></sup> A stock example is</p>
 
 <script type="math/tex; mode=display">\sum_{n=1}^{\infty} \frac{1}{n}</script>
 
@@ -209,15 +219,21 @@ k <span class="o">=</span> 1
 </blockquote>
 
 <blockquote>
-  <p>An antinomy is composed of a proposition (<code>P</code>) and its negation (<code>not-P</code>) such that there are no conditions for <code>P</code> or <code>not-P</code> and the conjunction “<code>P</code> and <code>not-P</code>” is true.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+  <p>An antinomy is composed of a proposition (<code>P</code>) and its negation (<code>not-P</code>) such that there are no conditions for <code>P</code> or <code>not-P</code> and the conjunction “<code>P</code> and <code>not-P</code>” is true.<sup id="fnref:1"><a href="#fn:1" class="footnote">2</a></sup></p>
 </blockquote>
 
 <p>I believe that paradoxes run deep in our world. I have written earlier on my neologism <a href="http://fractaledmind.com/articles/conjunctive-binarism">“conjunctive binarism”</a>, a view that truth is probably most closely articulated as “the proposition <code>P</code> and its contradiction <code>¬P</code> are <em>kinda</em> both true”. After exploring a convergent infinite sums, I feel that this definition of paradoxes more properly expresses my view of what this “kinda” maps to. So, <code>1 = 0.9999... and 1 != 0.9999...</code> is a “conjunctive binary”. If we express it in the form of the paradox explained above, we would express that proposition as “if equality means referential indentiy, then 1 = 0.9999… and if equality means categorical identity, then 1 != 0.9999…”. Going one step further, I would now define a conjunctive binary as a compound proposition of that form (“if <code>conditions for P</code>, then <code>P</code> and if <code>conditions for not-P</code>, then <code>not-P</code>”).</p>
 
-<p>This has been fun. :)</p>
-
+<ol>
+  <li>The series 1 − 1 + 1 − 1 + ⋯ has no sum.</li>
+  <li>Its sum should be \(\frac{1}{2}\).
+I find this infinite series fascinating, and may very well write it about at some point as well.</li>
+</ol>
 <div class="footnotes">
   <ol>
+    <li id="fn:2">
+      <p>Well, that is not properly technically true, as there are some divergent series that do not tend to infinity, but are also clearly not convergent. Take <code>1 − 1 + 1 − 1 + ⋯</code>. This is the so-called <a href="https://en.wikipedia.org/wiki/Grandi%27s_series">Grandi’s series</a>, and if you attempt to resolve it using partial sums, you will quickly see that the value ocillates between <code>1</code> (when the number of terms in the partial sum is odd) and <code>0</code> (when the number of terms in the partial sum is even). However, modern mathematics defines its sum as \(\frac{1}{2}\), which is a finite term (thus it would appear to “converge” on \(\frac{1}{2}\)). Thus, this series would appear to have two conclusions: <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
     <li id="fn:1">
       <p>There is a branch of epistemology that believes such conjections do exist and calls them “dialetheias”. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
