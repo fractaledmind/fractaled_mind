@@ -4,7 +4,7 @@ date: 2015-06-18 17:38 UTC
 tags: grad-school
 ---
 
-In my [previous post](fractaledmind.com/a-failed-graduate-student) on my time in graduate school, I discussed how I learned to handle failures better. Today, I'm going to talk about how I failed to handle the depression that these mounting failures produced.
+In my [previous post](http://fractaledmind.com/articles/a-failed-graduate-student) on my time in graduate school, I discussed how I learned to handle failures better. Today, I'm going to talk about how I failed to handle the depression that these mounting failures produced.
 
 Let's start where some people find it difficult to start: I have struggled with depression, and odds are that I will stuggle with depression again in my future. This isn't a sign of weakness; this isn't something shameful. This is just a fact of my life. I'm a self-critical perfectionist who tends toward absolutist perceptions of reality; of course I'm going to struggle with depression. Unfortunately, when I entered graduate school, I was generally unaware of this likelihood. As with Imposter's Syndrome, I thought I knew what depression was and I thought I could spot it fairly early on. And, as with Imposter's Syndrome, it snuck up on me slowly but fiercely.
 
