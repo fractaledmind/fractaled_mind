@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://blog.url.com/articles/1-0-9999/"/>
     <id>http://blog.url.com/articles/1-0-9999/</id>
     <published>2016-08-31T20:32:00-04:00</published>
-    <updated>2016-08-31T21:19:34-04:00</updated>
+    <updated>2016-09-01T00:12:18-04:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -94,15 +94,18 @@ k &lt;span class="o"&gt;=&lt;/span&gt; 1
 
 &lt;p&gt;I believe that paradoxes run deep in our world. I have written earlier on my neologism &lt;a href="http://fractaledmind.com/articles/conjunctive-binarism"&gt;“conjunctive binarism”&lt;/a&gt;, a view that truth is probably most closely articulated as “the proposition &lt;code&gt;P&lt;/code&gt; and its contradiction &lt;code&gt;¬P&lt;/code&gt; are &lt;em&gt;kinda&lt;/em&gt; both true”. After exploring a convergent infinite sums, I feel that this definition of paradoxes more properly expresses my view of what this “kinda” maps to. So, &lt;code&gt;1 = 0.9999... and 1 != 0.9999...&lt;/code&gt; is a “conjunctive binary”. If we express it in the form of the paradox explained above, we would express that proposition as “if equality means referential indentiy, then 1 = 0.9999… and if equality means categorical identity, then 1 != 0.9999…”. Going one step further, I would now define a conjunctive binary as a compound proposition of that form (“if &lt;code&gt;conditions for P&lt;/code&gt;, then &lt;code&gt;P&lt;/code&gt; and if &lt;code&gt;conditions for not-P&lt;/code&gt;, then &lt;code&gt;not-P&lt;/code&gt;”).&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;The series 1 − 1 + 1 − 1 + ⋯ has no sum.&lt;/li&gt;
-  &lt;li&gt;Its sum should be \(\frac{1}{2}\).
-I find this infinite series fascinating, and may very well write it about at some point as well.&lt;/li&gt;
-&lt;/ol&gt;
 &lt;div class="footnotes"&gt;
   &lt;ol&gt;
     &lt;li id="fn:2"&gt;
-      &lt;p&gt;Well, that is not properly technically true, as there are some divergent series that do not tend to infinity, but are also clearly not convergent. Take &lt;code&gt;1 − 1 + 1 − 1 + ⋯&lt;/code&gt;. This is the so-called &lt;a href="https://en.wikipedia.org/wiki/Grandi%27s_series"&gt;Grandi’s series&lt;/a&gt;, and if you attempt to resolve it using partial sums, you will quickly see that the value ocillates between &lt;code&gt;1&lt;/code&gt; (when the number of terms in the partial sum is odd) and &lt;code&gt;0&lt;/code&gt; (when the number of terms in the partial sum is even). However, modern mathematics defines its sum as \(\frac{1}{2}\), which is a finite term (thus it would appear to “converge” on \(\frac{1}{2}\)). Thus, this series would appear to have two conclusions: &lt;a href="#fnref:2" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+
+      &lt;p&gt;Well, that is not properly technically true, as there are some divergent series that do not tend to infinity, but are also clearly not convergent. Take &lt;code&gt;1 − 1 + 1 − 1 + ⋯&lt;/code&gt;. This is the so-called &lt;a href="https://en.wikipedia.org/wiki/Grandi%27s_series"&gt;Grandi’s series&lt;/a&gt;, and if you attempt to resolve it using partial sums, you will quickly see that the value ocillates between &lt;code&gt;1&lt;/code&gt; (when the number of terms in the partial sum is odd) and &lt;code&gt;0&lt;/code&gt; (when the number of terms in the partial sum is even). However, modern mathematics defines its sum as \(\frac{1}{2}\), which is a finite term (thus it would appear to “converge” on \(\frac{1}{2}\)). Thus, this series would appear to have two conclusions:&lt;/p&gt;
+
+      &lt;ol&gt;
+        &lt;li&gt;The series 1 − 1 + 1 − 1 + ⋯ has no sum.&lt;/li&gt;
+        &lt;li&gt;Its sum should be \(\frac{1}{2}\).&lt;/li&gt;
+      &lt;/ol&gt;
+
+      &lt;p&gt;I find this infinite series fascinating, and may very well write it about at some point as well. &lt;a href="#fnref:2" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id="fn:1"&gt;
       &lt;p&gt;There is a branch of epistemology that believes such conjections do exist and calls them “dialetheias”. &lt;a href="#fnref:1" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
