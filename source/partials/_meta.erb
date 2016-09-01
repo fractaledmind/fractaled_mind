@@ -16,15 +16,25 @@
   <!-- Internal Resources -->
   <%= stylesheet_link_tag 'main' %>
   <%= favicon_tag 'favicon.png' %>
-  <%= javascript_include_tag 'bigfoot.min.js' %>
+  <%= javascript_include_tag 'bigfoot.js' %>
   <%= javascript_include_tag 'search.js'  %>
 
   <!-- Bigfoot.js Popover Footnotes -->
   <script type="text/javascript">
     $(document).ready(function(){
-      $.bigfoot(
-        { numberResetSelector: ".card" }
-      );
+      $.bigfoot({
+        numberResetSelector: ".card",
+        activateCallback: function($popover, $button) {
+          if (MathJax && !$button.data('mathjax-processed')) {
+            var content_wrapper = $popover.find('.bigfoot-footnote__content')[0];
+            MathJax.Hub.Queue(['Typeset', MathJax.Hub, content_wrapper]);
+            MathJax.Hub.Queue(function () {
+              $button.attr('data-bigfoot-footnote', content_wrapper.innerHTML);
+              $button.data('mathjax-processed', true);
+            });
+          }
+        }
+      });
     });
   </script>
 
