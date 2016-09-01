@@ -5,10 +5,106 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2016-08-18T20:00:00-04:00</updated>
+  <updated>2016-08-31T20:32:00-04:00</updated>
   <author>
     <name>Stephen Margheim</name>
   </author>
+  <entry>
+    <title>1 = 0.9999...</title>
+    <link rel="alternate" href="http://blog.url.com/articles/1-0-9999/"/>
+    <id>http://blog.url.com/articles/1-0-9999/</id>
+    <published>2016-08-31T20:32:00-04:00</published>
+    <updated>2016-08-31T20:49:51-04:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;p&gt;I saw a wonderful video recently on an odd fact in mathematics:&lt;/p&gt;
+
+&lt;p&gt;&lt;a title="9.999... really is equal to 10" href="http://www.youtube.com/watch?v=SDtFBSjNmm0"&gt;&lt;img alt="9.999... really is equal to 10 -- Mathologer" src="http://img.youtube.com/vi/SDtFBSjNmm0/0.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;In the video (from a channel I would heartily recommend), the presenter offers a proof that &lt;code&gt;10 = 9.9999...&lt;/code&gt;. Here the ellipsis is quite important, as it communicates that the &lt;code&gt;9&lt;/code&gt;s continue on &lt;em&gt;forever&lt;/em&gt;, that is, to infinity. So, &lt;code&gt;9.9&lt;/code&gt; followed by an infinite number of &lt;code&gt;9&lt;/code&gt;s fully and simply equals &lt;code&gt;10&lt;/code&gt;. I want to explore the proof for this fact and then move on to explore how this example of an infinity touching the finite might elucidate our understanding of paradoxes.&lt;/p&gt;
+
+&lt;p&gt;So, the video is concerned with &lt;code&gt;10 = 9.9999...&lt;/code&gt;, but I want to take it down a notch and think about &lt;code&gt;1 = 0.9999...&lt;/code&gt;. Borrowing the proof from the video, we can show that this identity statement is true relatively simply:&lt;/p&gt;
+
+&lt;div class="highlight shell"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Define the infinitely-repeating decimal as a variable&lt;/span&gt;
+k &lt;span class="o"&gt;=&lt;/span&gt; 0.9999...
+&lt;span class="c"&gt;# Multiply both sides of the equation by 10&lt;/span&gt;
+10k &lt;span class="o"&gt;=&lt;/span&gt; 9.9999...
+&lt;span class="c"&gt;# Subtract the larger portions by the smaller portions&lt;/span&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;10k - k&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;9.9999... - 0.9999...&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="c"&gt;# Since the infinitely-repeating decimals are both infinitely long,&lt;/span&gt;
+&lt;span class="c"&gt;# subtraction cancels them out&lt;/span&gt;
+9k &lt;span class="o"&gt;=&lt;/span&gt; 9
+&lt;span class="c"&gt;# Divide both sides of the equation by 9&lt;/span&gt;
+k &lt;span class="o"&gt;=&lt;/span&gt; 1
+&lt;span class="c"&gt;# Replace k with our original identity&lt;/span&gt;
+1 &lt;span class="o"&gt;=&lt;/span&gt; 0.9999...
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now, this proof may perhaps feel a bit fishy to you; you may think that we are mathematically cheating somewhere, but I can promise you that every single step is totally valid. And if every step is totally valid, then the conclusion is valid. But how can this be and what does this mean?&lt;/p&gt;
+
+&lt;p&gt;This “problem”, this seeming incongruity, arises because we have a hard time grappling with infinity. To put it another way, we underestimate the weight of that ellipsis. So let’s dig into that ellipsis a bit. What does &lt;code&gt;0.9999...&lt;/code&gt; really mean, really represent? Well, we all remember from elementary school that decimals can also be represented by fractions, so let’s try to represent this decimal by a fraction. Unfortunately, there is no simple fraction to represent this number (like &lt;code&gt;0.3333...&lt;/code&gt; being representable by \(\frac{1}{3}\) ). However, we can break this decimal down. We know that &lt;code&gt;0.9&lt;/code&gt; is simply \(\frac{9}{10}\) , and &lt;code&gt;0.09&lt;/code&gt; is \(\frac{9}{100}\) , and &lt;code&gt;0.009&lt;/code&gt; is \(\frac{9}{1000}\)  and so on. We also know that &lt;code&gt;0.9 + 0.09 + 0.009 = 0.999&lt;/code&gt;. So, we could represent &lt;code&gt;0.9999...&lt;/code&gt; fractionally as:&lt;/p&gt;
+
+&lt;script type="math/tex; mode=display"&gt;\frac{9}{10} + \frac{9}{100} + \frac{9}{1000} + \frac{9}{10000} + \ldots&lt;/script&gt;
+
+&lt;p&gt;In mathematics, this is called an &lt;em&gt;infinite sum&lt;/em&gt; or an &lt;em&gt;infinite series&lt;/em&gt;; we are adding terms together to infinity. If you recall from your high school math class, you can represent an infinite sum with what is called &lt;strong&gt;sigma notation&lt;/strong&gt;, and our infinite sum above can be represented as:&lt;/p&gt;
+
+&lt;script type="math/tex; mode=display"&gt;\sum_{n=1}^{\infty} \frac{9}{10^n}&lt;/script&gt;
+
+&lt;p&gt;This is simply a more concise way of writing the larger sum of the fractions above.&lt;/p&gt;
+
+&lt;p&gt;Infinite sums are truly fascinating, and I hope to write more about them in the future, but for now I want to focus on one characteristic in particular. All infinite sums fit into one of two categories: &lt;em&gt;convergent&lt;/em&gt; or &lt;em&gt;divergent&lt;/em&gt;. Now, these are math-jargon terms that mean relatively simple things. An infinite sum is &lt;em&gt;convergent&lt;/em&gt; if it converges on a finite number. The language you might remember from your calculus class is that the &lt;em&gt;limit&lt;/em&gt; of the infinite sum &lt;em&gt;approaches&lt;/em&gt; a finite number. So, a &lt;em&gt;convergent infinite sum&lt;/em&gt; is an infinity that touches the finite. In contrast, a &lt;em&gt;divergent infinite sum&lt;/em&gt; is one that has no limit, one that grows to infinity. A stock example is&lt;/p&gt;
+
+&lt;script type="math/tex; mode=display"&gt;\sum_{n=1}^{\infty} \frac{1}{n}&lt;/script&gt;
+
+&lt;p&gt;or&lt;/p&gt;
+
+&lt;script type="math/tex; mode=display"&gt;1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \ldots&lt;/script&gt;
+
+&lt;p&gt;This is an infinite sum that approaches infinity, that is, it &lt;em&gt;diverges&lt;/em&gt;, it does not have a finite limit, it is unbounded.&lt;/p&gt;
+
+&lt;p&gt;Returning to our infinite sum, we have enough context now to see that saying &lt;code&gt;1 = 0.9999...&lt;/code&gt; is really just one way of saying that the summation of \(\frac{9}{10^n}\) as &lt;code&gt;n&lt;/code&gt; goes from 1 to infinity is a convergent infinite sum that converges on 1.&lt;/p&gt;
+
+&lt;p&gt;Ok, so that was a fun romp through one fascinating branch of mathematics, but all we really did was gain enough context to state the “odd fact” in more precise mathematical language. What’s the point? I stated at the beginning that I was fascinated by some of the general ramifications of infinity touching the finite. What we have with convergent infinite sums are well-studied mathematical examples of precisely this phenomenon. And I find them so fascinating because they offer glimpses at some of the issues we face when thinking about infinity. However, they also show us that we &lt;em&gt;can&lt;/em&gt; think well about infinity.&lt;/p&gt;
+
+&lt;p&gt;The implication I’d like to explore a bit now is that paradoxes abound when the infinite colliding with the finite. On the one hand, it is quite clear that &lt;code&gt;1&lt;/code&gt; &lt;em&gt;does not equal&lt;/em&gt; &lt;code&gt;0.9999...&lt;/code&gt; for the simple reason that &lt;code&gt;1&lt;/code&gt; is a finite integer and &lt;code&gt;0.9999...&lt;/code&gt; is an infinite series. If &lt;em&gt;equality&lt;/em&gt; is &lt;em&gt;categorical identity&lt;/em&gt;, then &lt;code&gt;1&lt;/code&gt; and &lt;code&gt;0.9999...&lt;/code&gt; are not equal. On the other hand, this whole post has shown that &lt;code&gt;1&lt;/code&gt; &lt;em&gt;does equal&lt;/em&gt; &lt;code&gt;0.9999...&lt;/code&gt;. If &lt;em&gt;equality&lt;/em&gt; is &lt;em&gt;referrential identity&lt;/em&gt;, then &lt;code&gt;1&lt;/code&gt; and &lt;code&gt;0.9999...&lt;/code&gt; are equal. Now, note that I call this a paradox and not an antinomy. I want to define these two terms clearly and distinguish them. In my parlance, a &lt;strong&gt;paradox&lt;/strong&gt; is a &lt;em&gt;seeming&lt;/em&gt; contradiction, while an &lt;strong&gt;antinomy&lt;/strong&gt; is an &lt;em&gt;actual&lt;/em&gt; contradiction; that is, a paradox is resolvable and an antinomy is not.&lt;/p&gt;
+
+&lt;p&gt;It is important, however, to note that resolving a paradox &lt;em&gt;does not&lt;/em&gt; mean that one side “wins” and the other “loses”, that one proposition is “right” and the other is “wrong”; instead, it means that we can rationally make sense of the difference between the two propositions. This is why I used the if-then statements above. It is not that one of the propositions is “right” or “wrong”, it is that we can enumerate the conditions under which each one would be “right” and the other “wrong”. An antinomy does not submit itself to such enumeration; we cannot articulate the conditions under which one side is “right” and the other is “wrong”. So, if I were to abstract out my definitions of &lt;em&gt;paradoxes&lt;/em&gt; and &lt;em&gt;antinomies&lt;/em&gt;, I would describe them thusly:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A paradox is composed of a proposition (&lt;code&gt;P&lt;/code&gt;) and its negation (&lt;code&gt;not-P&lt;/code&gt;) such that the conditionals “if &lt;code&gt;conditions for P&lt;/code&gt;, then &lt;code&gt;P&lt;/code&gt;” and “if &lt;code&gt;conditions for not-P&lt;/code&gt;, then &lt;code&gt;not-P&lt;/code&gt;” are both true, and thus the conjunction “if &lt;code&gt;conditions for P&lt;/code&gt;, then &lt;code&gt;P&lt;/code&gt; and if &lt;code&gt;conditions for not-P&lt;/code&gt;, then &lt;code&gt;not-P&lt;/code&gt;” is also true.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;An antinomy is composed of a proposition (&lt;code&gt;P&lt;/code&gt;) and its negation (&lt;code&gt;not-P&lt;/code&gt;) such that there are no conditions for &lt;code&gt;P&lt;/code&gt; or &lt;code&gt;not-P&lt;/code&gt; and the conjunction “&lt;code&gt;P&lt;/code&gt; and &lt;code&gt;not-P&lt;/code&gt;” is true.&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I believe that paradoxes run deep in our world. I have written earlier on my neologism &lt;a href="http://fractaledmind.com/articles/conjunctive-binarism"&gt;“conjunctive binarism”&lt;/a&gt;, a view that truth is probably most closely articulated as “the proposition &lt;code&gt;P&lt;/code&gt; and its contradiction &lt;code&gt;¬P&lt;/code&gt; are &lt;em&gt;kinda&lt;/em&gt; both true”. After exploring a convergent infinite sums, I feel that this definition of paradoxes more properly expresses my view of what this “kinda” maps to. So, &lt;code&gt;1 = 0.9999... and 1 != 0.9999...&lt;/code&gt; is a “conjunctive binary”. If we express it in the form of the paradox explained above, we would express that proposition as “if equality means referential indentiy, then 1 = 0.9999… and if equality means categorical identity, then 1 != 0.9999…”. Going one step further, I would now define a conjunctive binary as a compound proposition of that form (“if &lt;code&gt;conditions for P&lt;/code&gt;, then &lt;code&gt;P&lt;/code&gt; and if &lt;code&gt;conditions for not-P&lt;/code&gt;, then &lt;code&gt;not-P&lt;/code&gt;”).&lt;/p&gt;
+
+&lt;p&gt;This has been fun. :)&lt;/p&gt;
+
+&lt;div class="footnotes"&gt;
+  &lt;ol&gt;
+    &lt;li id="fn:1"&gt;
+      &lt;p&gt;There is a branch of epistemology that believes such conjections do exist and calls them “dialetheias”. &lt;a href="#fnref:1" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</content>
+  </entry>
   <entry>
     <title>Portrait of Pain</title>
     <link rel="alternate" href="http://blog.url.com/articles/portrait-of-pain/"/>
@@ -428,11 +524,11 @@ done&lt;/span&gt;
     <link rel="alternate" href="http://blog.url.com/articles/a-depressed-graduate-student/"/>
     <id>http://blog.url.com/articles/a-depressed-graduate-student/</id>
     <published>2015-06-18T13:38:00-04:00</published>
-    <updated>2015-06-19T23:38:16-04:00</updated>
+    <updated>2016-08-31T20:46:19-04:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
-    <content type="html">&lt;p&gt;In my &lt;a href="fractaledmind.com/a-failed-graduate-student"&gt;previous post&lt;/a&gt; on my time in graduate school, I discussed how I learned to handle failures better. Today, I’m going to talk about how I failed to handle the depression that these mounting failures produced.&lt;/p&gt;
+    <content type="html">&lt;p&gt;In my &lt;a href="http://fractaledmind.com/articles/a-failed-graduate-student"&gt;previous post&lt;/a&gt; on my time in graduate school, I discussed how I learned to handle failures better. Today, I’m going to talk about how I failed to handle the depression that these mounting failures produced.&lt;/p&gt;
 
 &lt;p&gt;Let’s start where some people find it difficult to start: I have struggled with depression, and odds are that I will stuggle with depression again in my future. This isn’t a sign of weakness; this isn’t something shameful. This is just a fact of my life. I’m a self-critical perfectionist who tends toward absolutist perceptions of reality; of course I’m going to struggle with depression. Unfortunately, when I entered graduate school, I was generally unaware of this likelihood. As with Imposter’s Syndrome, I thought I knew what depression was and I thought I could spot it fairly early on. And, as with Imposter’s Syndrome, it snuck up on me slowly but fiercely.&lt;/p&gt;
 

@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <!-- Metadata declarations -->
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Content declarations -->
+  <title>Fractaled Mind - 1 = 0.9999...</title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="feed.xml" />
+
+  <!-- External Resources -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+  <!-- Internal Resources -->
+  <link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
+  <link href="../../images/favicon.png" rel="icon" type="image/png" />
+  <script src="../../javascripts/bigfoot.min.js" type="text/javascript"></script>
+  <script src="../../javascripts/search.js" type="text/javascript"></script>
+
+  <!-- Bigfoot.js Popover Footnotes -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $.bigfoot(
+        { numberResetSelector: ".card" }
+      );
+    });
+  </script>
+
+  <!-- Responsive Tables -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("td").each(function() {
+        var $th = $(this).closest('table').find('th').eq($(this).index());
+        $(this).attr('data-th', $th.text());
+      });
+    });
+  </script>
+
+  <!-- Scroll-Fix sidebar
+  <script type="text/javascript">
+    $(window).on("scroll", function(e) {
+      var scroll = $(this).scrollTop();
+      var logo_height = $('#site-logo').height();
+      var nav_height = $('.navigation').height() + 16;
+
+      if (scroll > logo_height) {
+        $('.navigation').css({'position': 'fixed'});
+         $('#sidebar').css({
+           'position': 'fixed',
+           'top': nav_height
+         });
+      } else {
+        $('.navigation').css({'position': 'inherit'});
+        $('#sidebar').css({'position': 'inherit'});
+      }
+    });
+  </script>
+  -->
+
+</head>
+
+
+  <body>
+    <header>
+  <div id="site-logo">
+    <img alt="Fractaled Mind" src="../../images/logo.svg" />
+  </div>
+
+  <ul id="social-networks">
+    <li>
+      <a href="https://facebook.com/fractaledmind" class="no-hvr">
+        <i class="fa fa-facebook fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://twitter.com/fractaledmind" class="no-hvr">
+        <i class="fa fa-twitter fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/smargh" class="no-hvr">
+        <i class="fa fa-github fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="mailto:stephen@fractaledmind.com" class="no-hvr">
+        <i class="fa fa-envelope fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="/feed.xml" class="no-hvr">
+        <i class="fa fa-rss fa-lg"></i>
+      </a>
+    </li>
+  </ul>
+</header>
+
+    <div class="navigation">
+  <nav role="navigation">
+    <ul class="navigation-menu">
+      <li class="nav-link"><a href="/">home</a></li>
+      <li class="nav-link"><a href="/jots">jots</a></li>
+      <li class="nav-link"><a href="/projects">projects</a></li>
+    </ul>
+  </nav>
+
+  <div id="search">
+    <div class="searchbar">
+      <form role="search" action="/search" method="get">
+        <input class="search-term" type="search" placeholder="Search..." name="q" />
+        <button class="search-submit" type="submit">
+          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png" alt="Search Icon">
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+    <div id="main" role="main">
+        <article class="card">
+    <!-- Article shows tags in top right -->
+    <ul class="card-tags">
+          <li>
+            <a class="badge no-hvr" id="math" href="/topics/math/">math</a>
+          </li>
+          <li>
+            <a class="badge no-hvr" id="logic" href="/topics/logic/">logic</a>
+          </li>
+          <li>
+            <a class="badge no-hvr" id="epistemology" href="/topics/epistemology/">epistemology</a>
+          </li>
+    </ul>
+
+    <h2 id="title">1 = 0.9999...</h2>
+
+    <p>I saw a wonderful video recently on an odd fact in mathematics:</p>
+
+<p><a title="9.999... really is equal to 10" href="http://www.youtube.com/watch?v=SDtFBSjNmm0"><img alt="9.999... really is equal to 10 -- Mathologer" src="http://img.youtube.com/vi/SDtFBSjNmm0/0.jpg" /></a></p>
+
+<p>In the video (from a channel I would heartily recommend), the presenter offers a proof that <code>10 = 9.9999...</code>. Here the ellipsis is quite important, as it communicates that the <code>9</code>s continue on <em>forever</em>, that is, to infinity. So, <code>9.9</code> followed by an infinite number of <code>9</code>s fully and simply equals <code>10</code>. I want to explore the proof for this fact and then move on to explore how this example of an infinity touching the finite might elucidate our understanding of paradoxes.</p>
+
+<p>So, the video is concerned with <code>10 = 9.9999...</code>, but I want to take it down a notch and think about <code>1 = 0.9999...</code>. Borrowing the proof from the video, we can show that this identity statement is true relatively simply:</p>
+
+<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13</pre></td><td class="code"><pre><span class="c"># Define the infinitely-repeating decimal as a variable</span>
+k <span class="o">=</span> 0.9999...
+<span class="c"># Multiply both sides of the equation by 10</span>
+10k <span class="o">=</span> 9.9999...
+<span class="c"># Subtract the larger portions by the smaller portions</span>
+<span class="o">(</span>10k - k<span class="o">)</span> <span class="o">=</span> <span class="o">(</span>9.9999... - 0.9999...<span class="o">)</span>
+<span class="c"># Since the infinitely-repeating decimals are both infinitely long,</span>
+<span class="c"># subtraction cancels them out</span>
+9k <span class="o">=</span> 9
+<span class="c"># Divide both sides of the equation by 9</span>
+k <span class="o">=</span> 1
+<span class="c"># Replace k with our original identity</span>
+1 <span class="o">=</span> 0.9999...
+</pre></td></tr></tbody></table>
+</div>
+
+<p>Now, this proof may perhaps feel a bit fishy to you; you may think that we are mathematically cheating somewhere, but I can promise you that every single step is totally valid. And if every step is totally valid, then the conclusion is valid. But how can this be and what does this mean?</p>
+
+<p>This “problem”, this seeming incongruity, arises because we have a hard time grappling with infinity. To put it another way, we underestimate the weight of that ellipsis. So let’s dig into that ellipsis a bit. What does <code>0.9999...</code> really mean, really represent? Well, we all remember from elementary school that decimals can also be represented by fractions, so let’s try to represent this decimal by a fraction. Unfortunately, there is no simple fraction to represent this number (like <code>0.3333...</code> being representable by \(\frac{1}{3}\) ). However, we can break this decimal down. We know that <code>0.9</code> is simply \(\frac{9}{10}\) , and <code>0.09</code> is \(\frac{9}{100}\) , and <code>0.009</code> is \(\frac{9}{1000}\)  and so on. We also know that <code>0.9 + 0.09 + 0.009 = 0.999</code>. So, we could represent <code>0.9999...</code> fractionally as:</p>
+
+<script type="math/tex; mode=display">\frac{9}{10} + \frac{9}{100} + \frac{9}{1000} + \frac{9}{10000} + \ldots</script>
+
+<p>In mathematics, this is called an <em>infinite sum</em> or an <em>infinite series</em>; we are adding terms together to infinity. If you recall from your high school math class, you can represent an infinite sum with what is called <strong>sigma notation</strong>, and our infinite sum above can be represented as:</p>
+
+<script type="math/tex; mode=display">\sum_{n=1}^{\infty} \frac{9}{10^n}</script>
+
+<p>This is simply a more concise way of writing the larger sum of the fractions above.</p>
+
+<p>Infinite sums are truly fascinating, and I hope to write more about them in the future, but for now I want to focus on one characteristic in particular. All infinite sums fit into one of two categories: <em>convergent</em> or <em>divergent</em>. Now, these are math-jargon terms that mean relatively simple things. An infinite sum is <em>convergent</em> if it converges on a finite number. The language you might remember from your calculus class is that the <em>limit</em> of the infinite sum <em>approaches</em> a finite number. So, a <em>convergent infinite sum</em> is an infinity that touches the finite. In contrast, a <em>divergent infinite sum</em> is one that has no limit, one that grows to infinity. A stock example is</p>
+
+<script type="math/tex; mode=display">\sum_{n=1}^{\infty} \frac{1}{n}</script>
+
+<p>or</p>
+
+<script type="math/tex; mode=display">1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \ldots</script>
+
+<p>This is an infinite sum that approaches infinity, that is, it <em>diverges</em>, it does not have a finite limit, it is unbounded.</p>
+
+<p>Returning to our infinite sum, we have enough context now to see that saying <code>1 = 0.9999...</code> is really just one way of saying that the summation of \(\frac{9}{10^n}\) as <code>n</code> goes from 1 to infinity is a convergent infinite sum that converges on 1.</p>
+
+<p>Ok, so that was a fun romp through one fascinating branch of mathematics, but all we really did was gain enough context to state the “odd fact” in more precise mathematical language. What’s the point? I stated at the beginning that I was fascinated by some of the general ramifications of infinity touching the finite. What we have with convergent infinite sums are well-studied mathematical examples of precisely this phenomenon. And I find them so fascinating because they offer glimpses at some of the issues we face when thinking about infinity. However, they also show us that we <em>can</em> think well about infinity.</p>
+
+<p>The implication I’d like to explore a bit now is that paradoxes abound when the infinite colliding with the finite. On the one hand, it is quite clear that <code>1</code> <em>does not equal</em> <code>0.9999...</code> for the simple reason that <code>1</code> is a finite integer and <code>0.9999...</code> is an infinite series. If <em>equality</em> is <em>categorical identity</em>, then <code>1</code> and <code>0.9999...</code> are not equal. On the other hand, this whole post has shown that <code>1</code> <em>does equal</em> <code>0.9999...</code>. If <em>equality</em> is <em>referrential identity</em>, then <code>1</code> and <code>0.9999...</code> are equal. Now, note that I call this a paradox and not an antinomy. I want to define these two terms clearly and distinguish them. In my parlance, a <strong>paradox</strong> is a <em>seeming</em> contradiction, while an <strong>antinomy</strong> is an <em>actual</em> contradiction; that is, a paradox is resolvable and an antinomy is not.</p>
+
+<p>It is important, however, to note that resolving a paradox <em>does not</em> mean that one side “wins” and the other “loses”, that one proposition is “right” and the other is “wrong”; instead, it means that we can rationally make sense of the difference between the two propositions. This is why I used the if-then statements above. It is not that one of the propositions is “right” or “wrong”, it is that we can enumerate the conditions under which each one would be “right” and the other “wrong”. An antinomy does not submit itself to such enumeration; we cannot articulate the conditions under which one side is “right” and the other is “wrong”. So, if I were to abstract out my definitions of <em>paradoxes</em> and <em>antinomies</em>, I would describe them thusly:</p>
+
+<blockquote>
+  <p>A paradox is composed of a proposition (<code>P</code>) and its negation (<code>not-P</code>) such that the conditionals “if <code>conditions for P</code>, then <code>P</code>” and “if <code>conditions for not-P</code>, then <code>not-P</code>” are both true, and thus the conjunction “if <code>conditions for P</code>, then <code>P</code> and if <code>conditions for not-P</code>, then <code>not-P</code>” is also true.</p>
+</blockquote>
+
+<blockquote>
+  <p>An antinomy is composed of a proposition (<code>P</code>) and its negation (<code>not-P</code>) such that there are no conditions for <code>P</code> or <code>not-P</code> and the conjunction “<code>P</code> and <code>not-P</code>” is true.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+</blockquote>
+
+<p>I believe that paradoxes run deep in our world. I have written earlier on my neologism <a href="http://fractaledmind.com/articles/conjunctive-binarism">“conjunctive binarism”</a>, a view that truth is probably most closely articulated as “the proposition <code>P</code> and its contradiction <code>¬P</code> are <em>kinda</em> both true”. After exploring a convergent infinite sums, I feel that this definition of paradoxes more properly expresses my view of what this “kinda” maps to. So, <code>1 = 0.9999... and 1 != 0.9999...</code> is a “conjunctive binary”. If we express it in the form of the paradox explained above, we would express that proposition as “if equality means referential indentiy, then 1 = 0.9999… and if equality means categorical identity, then 1 != 0.9999…”. Going one step further, I would now define a conjunctive binary as a compound proposition of that form (“if <code>conditions for P</code>, then <code>P</code> and if <code>conditions for not-P</code>, then <code>not-P</code>”).</p>
+
+<p>This has been fun. :)</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>There is a branch of epistemology that believes such conjections do exist and calls them “dialetheias”. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </article>
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+//<![CDATA[
+                  var disqus_shortname = 'fractaledmind';
+          
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+//]]>
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  <script type="text/javascript">
+//<![CDATA[
+    var disqus_shortname = 'fractaledmind';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+//]]>
+</script>
+
+
+    </div>
+
+    <aside id="sidebar">
+
+  <hr class="fractal">
+
+  <div id="recent-articles">
+    <h5>Recent Articles</h5>
+    <ul class="fa-ul">
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="./">1 = 0.9999...</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../portrait-of-pain/">Portrait of Pain</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../elevator/">Elevator</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../cleaning-up-git-repos/">Cleaning up Git repos</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../you-made-and-unmade/">You, Made and Unmade</a>
+        </li>
+    </ul>
+  </div>
+
+  <div id="all-tags">
+    <h5>Tags</h5>
+    <ul>
+      <!-- Add all Article tags -->
+        <li>
+          <a class="badge no-hvr" id="math" href="/topics/math/">math (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="logic" href="/topics/logic/">logic (2)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="epistemology" href="/topics/epistemology/">epistemology (2)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="hackademics" href="/topics/hackademics/">hackademics (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="grad-school" href="/topics/grad-school/">grad-school (2)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="til" href="/topics/til/">til (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="poetry" href="/topics/poetry/">poetry (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="example" href="/topics/example/">example (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="christianity" href="/topics/christianity/">christianity (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="love" href="/topics/love/">love (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="prose" href="/topics/prose/">prose (2)</a>
+        </li>
+
+      <!-- Add all Project tags -->
+        <a class="badge no-hvr" id="alfred" href="/topics/alfred">alfred (9)</a>
+        <a class="badge no-hvr" id="git" href="/topics/git">git (1)</a>
+        <a class="badge no-hvr" id="bash" href="/topics/bash">bash (2)</a>
+        <a class="badge no-hvr" id="python" href="/topics/python">python (1)</a>
+    </ul>
+  </div>
+
+</aside>
+
+
+    <footer role="contentinfo">
+  <div class="footer-info">
+    <p>&copy; Copyright 2015 by Stephen Margheim</p>
+    <p>Powered by <a href="https://middlemanapp.com">Middleman</a>.</p>
+  </div>
+</footer>
+
+
+  </body>
+</html>

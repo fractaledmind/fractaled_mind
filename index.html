@@ -13,7 +13,7 @@
   <!-- External Resources -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
-  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
 
   <!-- Internal Resources -->
   <link href="stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -124,6 +124,38 @@
     <div id="main" role="main">
       
 <ul class="cards">
+    <li class="card">
+      <a class="card-link no-hvr" href="articles/1-0-9999/"></a>
+      <ul class="card-tags">
+          <li>
+            <a class="badge no-hvr" id="math" href="/topics/math/">math</a>
+          </li>
+          <li>
+            <a class="badge no-hvr" id="logic" href="/topics/logic/">logic</a>
+          </li>
+          <li>
+            <a class="badge no-hvr" id="epistemology" href="/topics/epistemology/">epistemology</a>
+          </li>
+      </ul>
+      <div class="card-image">
+        <!-- if article has tags, add filler element -->
+          <div id="tag-filler-space"></div>
+        <!-- if article has header image, add it -->
+      </div>
+      <div class="card-header">
+        <h3 class="card-title">
+          1 = 0.9999...
+        </h3>
+        <h5 class="card-date">
+          01 September 2016
+        </h5>
+      </div>
+      <hr class="fractal">
+      <div class="card-copy">
+        <p>In mathematics it is proven that <code>1 = 0.9999...</code>. How is this so? But more importantly, in understanding how and why this is true, what can we glean about the nature of paradoxes? Let's explore.</p>
+
+      </div>
+    </li>
     <li class="card">
       <a class="card-link no-hvr" href="articles/portrait-of-pain/"></a>
       <ul class="card-tags">
@@ -312,7 +344,7 @@
       </div>
       <hr class="fractal">
       <div class="card-copy">
-        <p>In my <a href="fractaledmind.com/a-failed-graduate-student">previous post</a> on my time in graduate school, I discussed how I learned to handle failures better. Today, I’m going to talk about how I failed to handle the depression that these mounting failures produced.</p>
+        <p>In my <a href="http://fractaledmind.com/articles/a-failed-graduate-student">previous post</a> on my time in graduate school, I discussed how I learned to handle failures better. Today, I’m going to talk about how I failed to handle the depression that these mounting failures produced.</p>
 
 <p>Let’s start where some people find...</p>
 
@@ -370,41 +402,6 @@
 
       </div>
     </li>
-    <li class="card">
-      <a class="card-link no-hvr" href="articles/example-article/"></a>
-      <ul class="card-tags">
-          <li>
-            <a class="badge no-hvr" id="example" href="/topics/example/">example</a>
-          </li>
-      </ul>
-      <div class="card-image">
-        <!-- if article has tags, add filler element -->
-          <div id="tag-filler-space"></div>
-        <!-- if article has header image, add it -->
-          <img src="images/mobile-logo.png" />
-      </div>
-      <div class="card-header">
-        <h3 class="card-title">
-          Example Article
-        </h3>
-        <h5 class="card-date">
-          01 January 2012
-        </h5>
-      </div>
-      <hr class="fractal">
-      <div class="card-copy">
-        <p>This is an example article. It contains a wide range of various content to demonstrate how this blog styles such content. For example, this is some text with a footnote.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
-
-<div class="footnotes">
-  <ol>
-    <li id="fn:1">
-      <p>This is a footnote for my <code>Example Article</code>. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
-
-      </div>
-    </li>
 </ul>
 
 
@@ -413,14 +410,15 @@
 
     <aside id="sidebar">
 
-  <div id="comic">
-  </div>
-
   <hr class="fractal">
 
   <div id="recent-articles">
     <h5>Recent Articles</h5>
     <ul class="fa-ul">
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="articles/1-0-9999/">1 = 0.9999...</a>
+        </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
           <a href="articles/portrait-of-pain/">Portrait of Pain</a>
@@ -437,10 +435,6 @@
           <i class="fa-li fa fa-chevron-right"></i>
           <a href="articles/you-made-and-unmade/">You, Made and Unmade</a>
         </li>
-        <li>
-          <i class="fa-li fa fa-chevron-right"></i>
-          <a href="articles/conjunctive-binarism/">Conjunctive Binarism</a>
-        </li>
     </ul>
   </div>
 
@@ -449,6 +443,15 @@
     <ul>
       <!-- Add all Article tags -->
         <li>
+          <a class="badge no-hvr" id="math" href="/topics/math/">math (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="logic" href="/topics/logic/">logic (2)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr" id="epistemology" href="/topics/epistemology/">epistemology (2)</a>
+        </li>
+        <li>
           <a class="badge no-hvr" id="hackademics" href="/topics/hackademics/">hackademics (1)</a>
         </li>
         <li>
@@ -456,12 +459,6 @@
         </li>
         <li>
           <a class="badge no-hvr" id="til" href="/topics/til/">til (1)</a>
-        </li>
-        <li>
-          <a class="badge no-hvr" id="logic" href="/topics/logic/">logic (1)</a>
-        </li>
-        <li>
-          <a class="badge no-hvr" id="epistemology" href="/topics/epistemology/">epistemology (1)</a>
         </li>
         <li>
           <a class="badge no-hvr" id="poetry" href="/topics/poetry/">poetry (1)</a>
