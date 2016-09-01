@@ -159,11 +159,16 @@ proxy 'projects.html', 'templates/projects.html', ignore: true
 proxy 'about.html',    'templates/about.html',    ignore: true
 proxy 'topics.html',   'templates/topics.html',   ignore: true
 proxy 'jots.html',     'templates/jots.html',     ignore: true
+proxy 'academia.html', 'templates/academia.html', ignore: true
 # Create a Project page for each project listed in `data/projects/`
 # Use `project.html.erb` as the template for this project page
 data.projects.each do |slug, project|
   proxy "projects/#{slug}.html", 'templates/project.html',
         locals: { project: project }, ignore: true
+end
+data.academia.each do |slug, essay|
+  proxy "academia/#{slug}.html", 'templates/project.html',
+        locals: { project: essay }, ignore: true
 end
 
 project_tags.each do |tag, projects|
