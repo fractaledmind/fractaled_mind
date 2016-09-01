@@ -67,11 +67,11 @@ activate :blog do |blog|
 
   # Custom Projects collection
   # blog.custom_collections = {
-  #     project: {
-  #       link: '/projects/{project}.html',
-  #       template: '/project.html'
-  #     }
+  #   project: {
+  #     link: '/projects/{project}.html',
+  #     template: '/project.html'
   #   }
+  # }
 end
 
 # Methods defined in the helpers block are available in templates
@@ -95,15 +95,6 @@ helpers do
       end
     end
     project_tags
-  end
-
-  def newest_comic_post
-    blog.articles.group_by { |a| a.date.day }.each do |_, articles|
-      articles.each do |article|
-        article if article.tags.include?('pair-of-ducks')
-      end
-    end
-    nil
   end
 end
 
