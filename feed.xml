@@ -5,10 +5,233 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2016-08-31T20:32:00-04:00</updated>
+  <updated>2016-09-19T20:00:00-04:00</updated>
   <author>
     <name>Stephen Margheim</name>
   </author>
+  <entry>
+    <title>Ruminations on a Credal Logic</title>
+    <link rel="alternate" href="http://blog.url.com/articles/ruminations-on-a-credal-logic/"/>
+    <id>http://blog.url.com/articles/ruminations-on-a-credal-logic/</id>
+    <published>2016-09-19T20:00:00-04:00</published>
+    <updated>2016-09-20T16:57:59-04:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;p&gt;How do we understand our faith? More precisely, how do we reason deeply and precisely as faith-adherents? Or, perhaps most precisely, how might our faith shape our reason? Do we have a faith seeking the light of understanding, or a faith seeking out understanding with its light?&lt;/p&gt;
+
+&lt;h2 id="a-logical-primer"&gt;0: A Logical Primer&lt;/h2&gt;
+
+&lt;h3 id="on-the-law-of-non-contradiction"&gt;0.1: On the Law of Non-Contradiction&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The most certain of all basic principles is that contradictory propositions are not true simultaneously. (Aristotle, &lt;em&gt;Metaphysics&lt;/em&gt; 1011b13-14)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;One of the bedrocks of modern rationality, of contemporary logic, is the so-called &lt;a href="https://en.wikipedia.org/wiki/Law_of_noncontradiction"&gt;Law of Non-Contradiction&lt;/a&gt; (LNC), quoted above. A contradiction, expressed symbolically, is simply &lt;code&gt;P &amp;amp; ~P&lt;/code&gt;; or, expressed logically, “the proposition &lt;code&gt;P&lt;/code&gt; and its contradiction &lt;code&gt;not-P&lt;/code&gt;”. This law of rationality states that no such contradictions can or do exist; that is, symbolically, &lt;code&gt;~(P &amp;amp; ~P)&lt;/code&gt;, or logically, “it is not the case that both the proposition &lt;code&gt;P&lt;/code&gt; and its contradiction &lt;code&gt;not-P&lt;/code&gt; are both true (at the same time in the same way)”. The reason that this proposition &lt;em&gt;must be&lt;/em&gt; true, for the system of logic, is that &lt;em&gt;any&lt;/em&gt; contradiction allows for &lt;em&gt;any&lt;/em&gt; proposition to be logically deduced. Let’s quickly run through a logical argument that begins from a contradiction:&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;1. All X is Y and not all X is Y            (P &amp;amp; ~P)
+2. All X is Y                               (P)
+    [by Conjunctive Elimination]
+3. Not all X is Y                           (~P)
+    [by Conjunctive Elimination]
+4. All X is Y or {something impossible}     (P v Q)
+    [by Disjunctive Introduction]
+5. {something impossible}                   (Q)
+    [by Disjunctive Syllogism]
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Given the logical rules for conjunctions (“and”/&lt;code&gt;&amp;amp;&lt;/code&gt;) and disjunctions (“or”/&lt;code&gt;v&lt;/code&gt;), any proposition (&lt;code&gt;Q&lt;/code&gt;) can be logically deduced from a contradiction (&lt;code&gt;P &amp;amp; ~P&lt;/code&gt;). This is the so-called “&lt;a href="https://en.wikipedia.org/wiki/Principle_of_explosion"&gt;Principle of Explosion&lt;/a&gt;” (or “ECQ”, from its early Latin form &lt;em&gt;ex contradictione (sequitur) quodlibet&lt;/em&gt;).&lt;/p&gt;
+
+&lt;h3 id="on-the-law-of-the-excluded-middle"&gt;0.2: On the Law of the Excluded Middle&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;It is necessary for the affirmation or the negation to be true or false. (Aristotle, &lt;em&gt;On Interpretation&lt;/em&gt;, 9.18a28-29)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A corollary to the Law of Non-Contradiction is the so-called &lt;a href="https://en.wikipedia.org/wiki/Law_of_excluded_middle"&gt;Law of the Excluded Middle&lt;/a&gt; (LEM). Symbolically, it is represented as the disjunction &lt;code&gt;P v ~P&lt;/code&gt;, logically, we could express it as “it is the case that either the proposition &lt;code&gt;P&lt;/code&gt; is true or &lt;code&gt;not-P&lt;/code&gt; is true”. I call it a corollary of the LNC because we can actually deduce its truth from the LNC. Consider: if it is true that &lt;code&gt;P&lt;/code&gt; and &lt;code&gt;not-P&lt;/code&gt; cannot both be true, then it is false that both &lt;code&gt;P&lt;/code&gt; and &lt;code&gt;not-P&lt;/code&gt; are both true. In order for a conjunction to be false, one of its conjucts must be false. Thus, either &lt;code&gt;P&lt;/code&gt; or &lt;code&gt;not-P&lt;/code&gt; must be false. Moreover, if &lt;code&gt;P&lt;/code&gt; is false, then &lt;code&gt;not-P&lt;/code&gt; is true; and, if &lt;code&gt;not-P&lt;/code&gt; is false, then &lt;code&gt;P&lt;/code&gt; is true. Thus, either &lt;code&gt;P&lt;/code&gt; or &lt;code&gt;not-P&lt;/code&gt; must be true. Symbolically, we might express that deduction as:&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;1. ~(P &amp;amp; ~P) =&amp;gt; true
+2. P &amp;amp; ~P =&amp;gt; false
+3. (P =&amp;gt; false) v (~P =&amp;gt; false)
+4. (~P =&amp;gt; true) v (P =&amp;gt; true)
+5. P v ~P
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This principle of rational thought is called the “excluded middle” because it means that there is no middle ground between truth and falsity.&lt;/p&gt;
+
+&lt;h3 id="on-definite-descriptions"&gt;0.3: On Definite Descriptions&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Denoting phrases never have any meaning in themselves, but every proposition in whose verbal expression they occur has a meaning. (Russell, “On Denoting”)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The LNC and the LEM are two of the three so-called “&lt;a href="https://en.wikipedia.org/wiki/Law_of_thought"&gt;Laws of Thought&lt;/a&gt;” (the third (first really) is the &lt;a href="https://en.wikipedia.org/wiki/Law_of_identity"&gt;Law of Identity&lt;/a&gt; (&lt;code&gt;A = A&lt;/code&gt;)). Whether we know it or not, whether we think about it or not, these principles undergird all of our thought. Yet even these foundational principles of rational thought are not without complications. The LEM, for example, was often criticized for failing to properly or fully handle propositions about non-existent subjects. Consider the proposition “All unicorns have horns”. The LEM compels us to state that either “All unicorns have horns” is true &lt;em&gt;or&lt;/em&gt; “All unicorns do not have horns” is true; yet, to state that either of these propositions is true would seem to imply that “unicorns” exist. One of the most famous and influential solutions to this problem is Bertrand Russell’s theory of &lt;a href="https://en.wikipedia.org/wiki/Definite_description"&gt;Definite Descriptions&lt;/a&gt; (“On Denoting”, 1905). In simplified form, Russell suggests that propositions of this sort (e.g. denoting propositions) should be considered logically as containing an implicit existential proposition. We might restate our proposition as “There exists at least one thing such that it is called ‘unicorn’ and it has a horn”. This is what we are really logically implying, in Russell’s view, when we assert that “All unicorns have horns”; that is, we assume the existence of our subject and then define it by describing it.&lt;/p&gt;
+
+&lt;h2 id="credal-propositions"&gt;1: Credal Propositions&lt;/h2&gt;
+
+&lt;h3 id="faith-reason-and-truth-defined"&gt;1.1: Faith, Reason, and Truth Defined&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;What does Jerusalem have to do with Athens, the Church with the Academy, the Christian with the heretic? Our principles come from the Porch of Solomon. (Tertullian, &lt;em&gt;Prescriptions against Heretics&lt;/em&gt; 7)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The question “What does Jerusalem have to do with Athens” is often abstracted to the form “What does &lt;em&gt;faith&lt;/em&gt; have to do with &lt;em&gt;reason&lt;/em&gt;”? But what do we mean by these terms? I believe that for many reason concerns itself with the realm of justified (or justifiable) belief and faith that of non-justified (or non-justifiable) belief. Both are, however, concerned primarily with &lt;em&gt;belief&lt;/em&gt;, and thus with propositions. Moreover, for many, truth equates to &lt;a href="https://en.wikipedia.org/wiki/Justified_true_belief"&gt;justified true belief&lt;/a&gt;. However, insofar as truth is defined as justified true belief, faith is excluded from truth. And yet it is a foundational proposition of our faith that God is the source of all truth, is Truth itself. This is the first gap between a common understanding of faith, reason, and truth.&lt;/p&gt;
+
+&lt;h3 id="on-paradoxical-propositions-of-our-faith"&gt;1.2: On Paradoxical Propositions of our Faith&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;No sooner do I conceive of the One than I am illumined by the splendour of the Three; no sooner do I distinguish Three than I am carried back into the One. When I think of any of the Three, I think of Him as the Whole, and my eyes are filled, and the greater part of what I am thinking escapes me. I cannot grasp the greatness of that One so as to attribute a greater greatness to the rest. When I contemplate the Three together, I see but one torch, and cannot divide or measure out the undivided light (Gregory of Nazianzus, &lt;em&gt;Orations&lt;/em&gt; 40.41)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;One of the central propositions of our Christian faith is the Trinity; God is three and God is one. A central proposition concerning the nature of Jesus Christ is the Incarnation; Jesus is God and Jesus is man. These two foundations of the Christian faith are, in simplest form, paradoxes. Note, I call them “paradoxes” and not “contradictions”, for, where they “contradictions”, they would conflict with the LNC and stand in opposition to the foundations of human rationality. Indeed, there has been much effort of the thousands of years of Christian thought to show with clarity and adroitness that these and all articles of Christian faith are indeed rational. We need look no further than the work of the &lt;a href="https://en.wikipedia.org/wiki/Cappadocian_Fathers"&gt;Cappadocian Fathers&lt;/a&gt; in articulating the Trinity with respect to “substance” (&lt;em&gt;ousia&lt;/em&gt;) and “persons” (&lt;em&gt;hypostaseis&lt;/em&gt;). Propositions of the Christian faith of this sort may &lt;em&gt;appear&lt;/em&gt; to be contradictions, but they are not; they are merely paradoxes, mysteries of the faith (&lt;em&gt;mysteria fidei&lt;/em&gt;).&lt;/p&gt;
+
+&lt;h3 id="a-cartesian-re-assessment"&gt;1.3: A Cartesian Re-Assessment&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Faith seeking understanding (St. Anselm)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In René Descartes’ &lt;em&gt;Meditations on First Philosophy&lt;/em&gt;, the philosopher begins by discarding all beliefs, all propositions, that he does not know for certain, and then attempts to build back up a system of beliefs by working systematically from what he can know for certain (&lt;em&gt;cogito ergo sum&lt;/em&gt;). One consequence of this methodical skepticism is that it immediately highlights the hierarchy of our beliefs. It separates the axioms from the theorems.&lt;/p&gt;
+
+&lt;p&gt;It seems to me that with respect to articles of the Christian faith, the principles of reason are treated as axiomatic. We take pains to demonstrate how the mysteries of our faith adhere to the LNC, we struggle to articulate our terms and clarify our meaning, we shine the light of logic on these dark mysteries. And indeed, why should we not? The system of logic reflects the ordered, rational nature of God, does it not? Our minds are made in the image of God, are they not? Our faith should seek understanding in the light of logic, should it not?&lt;/p&gt;
+
+&lt;h2 id="a-christian-aetiology-of-epistemology"&gt;2: A Christian Aetiology of Epistemology&lt;/h2&gt;
+
+&lt;h3 id="on-the-tree-of-the-knowledge-of-good-and-evil"&gt;2.1: On the Tree of the Knowledge of Good and Evil&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Behold, the man has become like one of us in knowing good and evil. Now, lest he reach out his hand and take also of the tree of life and eat, and live forever. (&lt;em&gt;Genesis&lt;/em&gt; 3:22)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Epistemology is at the center of the biblical narrative of the Fall. At the heart of Eden lie two trees: the Tree of Life and the Tree of the Knowledge of Good and Evil (Gen. 2:9). The first command God gives his human creation is “You may surely eat of every tree of the garden, but of the tree of the knowledge of good and evil you shall not eat, for in the day that you eat of it you shall surely die” (Gen. 2:16b-17). And it is, of course, this Tree of the Knowledge of Good and Evil that Eve and Adam eat from, and “[their] eyes were both opened” (Gen. 3:7a).&lt;/p&gt;
+
+&lt;p&gt;Now, the story of the Fall is rich with meaning, and there is much to be said and learned from it; however, I fear that the epistemic implications of this narrative are too often underconsidered. Whatever “knowledge of good and evil” might mean–experiential knowledge, a merism for knowledge generically, moral knowledge, etc–it is epistemic definitionally. Before the Fall the nature of knowledge, of reason, was in one state; and, after the Fall, it was in another. I believe this simply must be true, even if the delta is as simple as pre-Fall humanity did not have propositional knowledge of the concepts “good” and “evil”, and post-Fall they did. The Fall, among its many consequences, represents a state change in human knowing.&lt;/p&gt;
+
+&lt;p&gt;Though we cannot know with any confidence what the epistemic state change was, I offer the following as my interpretation.&lt;/p&gt;
+
+&lt;h3 id="on-binary-thinking"&gt;2.2: On Binary Thinking&lt;/h3&gt;
+
+&lt;p&gt;I have always been fascinated by the fact that two of the most foundational axioms of logic concern contradictions. While the LNC and the LEM certainly strike the mind as intuitive, it is difficult to articulate a reason why these two propositions &lt;em&gt;must be&lt;/em&gt; foundational for thought. What is it about contradictions that proves so intuitively foundational to us? Well, for one, contradictions are logically-exhaustive binaries. If we think in terms of sets, &lt;code&gt;S&lt;/code&gt; and &lt;code&gt;not-S&lt;/code&gt;, regardless of the definition of &lt;code&gt;S&lt;/code&gt;, would account for any and all &lt;code&gt;x&lt;/code&gt;. Building a logical system atop logically-exhaustive entities must be more effective and efficient than the alternative (behold! another logically-exhaustive binary). In addition, contradictions make use of nothing but negation, a primitive logical operator in basically all propositional logical systems. Few movements of the mind would appear to come as naturally to the human person as negation. Yet again, however, we might ask, why? Why is negation a movement of the mind at all? Why is it so basic? Why are we seemingly drawn to the contradictions negation so easily creates?&lt;/p&gt;
+
+&lt;p&gt;Well, I’m inclined to think that some part of the answer lies in the Genesis account of the Fall. To have eaten of the Tree of the Knowledge of Good and Evil was to ground “knowledge” upon binaries, of the sort “good and evil”. To have eaten of the Tree of the Knowledge of Good and Evil was to have introduced analytical thinking (in the etymological sense, “thinking that separates”). To have eaten of the Tree of the Knowledge of Good and Evil was to have made negation a primitive logical operation (“good and evil” logically equaling “good and not-good”).&lt;/p&gt;
+
+&lt;h2 id="a-credal-logic"&gt;3: A Credal Logic&lt;/h2&gt;
+
+&lt;p&gt;Now, none of this is to suggest that analytical thinking, negation, or binaries are “bad” or “wrong” or even “inferior” to anything. They are a necessary aspect of epistemology, of logic. However, this particular aetiology of epistemology, for me at least, opens up another gap between faith and reason. Faith is built on top of propositions of the (simplified) sort: &lt;code&gt;3 = 1&lt;/code&gt; or &lt;code&gt;100 + 100 = 100&lt;/code&gt;; reason is built on top of propositions of the sort: &lt;code&gt;(3 = 3)&lt;/code&gt;, and &lt;code&gt;(1 = 1)&lt;/code&gt;, and &lt;code&gt;(3 ~= 1)&lt;/code&gt;. No matter what we do, there will always between tension between faith and reason; certain credal propositions of faith will always &lt;em&gt;at best&lt;/em&gt; be paradoxes in the light of reason. The question, to my mind, then becomes: in which direction is that tension resolved? Put another way, what does it mean for faith to seek understanding? Do we seek to understand our faith in the light of logical reason, or do we seek to understand our logical reason in light of our faith? I believe there is great value to be found in the latter, but what does that even look like?&lt;/p&gt;
+
+&lt;p&gt;First, let our credal logic begin from paradox and end in paradox. Instead of looking to resolve the paradoxes in the mysteries of our faith, to find refuge by demonstrating the ways, means, and degrees to which they are not contradictions, let us instead look to explore the paradoxes, their shape, nature, and edges.&lt;/p&gt;
+
+&lt;h3 id="and-the-trinity"&gt;3.1: 1 = 0.9999… and the Trinity&lt;/h3&gt;
+
+&lt;p&gt;In an overly-simplified mathematical form, we might represent the propositional content of the Trinity as the paradoxical &lt;code&gt;3 = 1&lt;/code&gt;. This is a paradox of identity. In looking to explore this paradox, we might turn to a particular mathematical paradox of identity: &lt;code&gt;1 = 0.9999...&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h4 id="section"&gt;3.1.1: 1 = 0.9999…&lt;/h4&gt;
+
+&lt;p&gt;To begin, let me prove this identity statement:&lt;/p&gt;
+
+&lt;div class="highlight shell"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="c"&gt;# Define the infinitely-repeating decimal as a variable&lt;/span&gt;
+k &lt;span class="o"&gt;=&lt;/span&gt; 0.9999...
+&lt;span class="c"&gt;# Multiply both sides of the equation by 10&lt;/span&gt;
+10k &lt;span class="o"&gt;=&lt;/span&gt; 9.9999...
+&lt;span class="c"&gt;# Subtract the larger portions by the smaller portions&lt;/span&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;10k - k&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;9.9999... - 0.9999...&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="c"&gt;# Since the infinitely-repeating decimals are both infinitely long,&lt;/span&gt;
+&lt;span class="c"&gt;# subtraction cancels them out&lt;/span&gt;
+9k &lt;span class="o"&gt;=&lt;/span&gt; 9
+&lt;span class="c"&gt;# Divide both sides of the equation by 9&lt;/span&gt;
+k &lt;span class="o"&gt;=&lt;/span&gt; 1
+&lt;span class="c"&gt;# Replace k with our original identity&lt;/span&gt;
+1 &lt;span class="o"&gt;=&lt;/span&gt; 0.9999...
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now, this proof may perhaps feel a bit fishy to you; you may think that we are mathematically cheating somewhere, but I can promise you that every single step is totally valid. And if every step is totally valid, then the conclusion is valid. But how can this be and what does this mean?&lt;/p&gt;
+
+&lt;p&gt;This “problem”, this seeming incongruity, arises because we have a hard time grappling with infinity. To put it another way, we underestimate the weight of that ellipsis. So let’s dig into that ellipsis a bit. What does &lt;code&gt;0.9999...&lt;/code&gt; really mean, really represent? Well, we all remember from elementary school that decimals can also be represented by fractions, so let’s try to represent this decimal by a fraction. Unfortunately, there is no simple fraction to represent this number (like &lt;code&gt;0.3333...&lt;/code&gt; being representable by \(\frac{1}{3}\)). However, we can break this decimal down. We know that &lt;code&gt;0.9&lt;/code&gt; is simply \(\frac{9}{10}\), and &lt;code&gt;0.09&lt;/code&gt; is \(\frac{9}{100}\), and &lt;code&gt;0.009&lt;/code&gt; is \(\frac{9}{1000}\) and so on. We also know that &lt;code&gt;0.9 + 0.09 + 0.009 = 0.999&lt;/code&gt;. So, we could represent &lt;code&gt;0.9999...&lt;/code&gt; fractionally as:&lt;/p&gt;
+
+&lt;script type="math/tex; mode=display"&gt;\frac{9}{10} + \frac{9}{100} + \frac{9}{1000} + \frac{9}{10000} + \ldots&lt;/script&gt;
+
+&lt;p&gt;In mathematics, this is called an &lt;a href="http://www.waldron-math.com/BCCalculus/ClassNotes/Ch9/9.1_Infinite%20Series.pdf"&gt;&lt;em&gt;infinite sum&lt;/em&gt;&lt;/a&gt; or an &lt;em&gt;infinite series&lt;/em&gt;; we are adding terms together to infinity. If you recall from your high school math class, you can represent an infinite sum with what is called &lt;strong&gt;&lt;a href="https://en.wikipedia.org/wiki/Summation#Capital-sigma_notation"&gt;sigma notation&lt;/a&gt;&lt;/strong&gt;, and our infinite sum above can be represented as:&lt;/p&gt;
+
+&lt;script type="math/tex; mode=display"&gt;\sum_{n=1}^{\infty} \frac{9}{10^n}&lt;/script&gt;
+
+&lt;p&gt;This is simply a more concise way of writing the larger sum of the fractions above.&lt;/p&gt;
+
+&lt;p&gt;Infinite sums are truly fascinating, and I hope to write more about them in the future, but for now I want to focus on one characteristic in particular. All infinite sums fit into one of two categories: &lt;em&gt;convergent&lt;/em&gt; or &lt;em&gt;divergent&lt;/em&gt;. Now, these are math-jargon terms that mean relatively simple things. An infinite sum is &lt;em&gt;convergent&lt;/em&gt; if it converges on a finite number. The language you might remember from your calculus class is that the &lt;em&gt;limit&lt;/em&gt; of the infinite sum &lt;em&gt;approaches&lt;/em&gt; a finite number. So, a &lt;em&gt;convergent infinite sum&lt;/em&gt; is an infinity that touches the finite. In contrast, a &lt;em&gt;divergent infinite sum&lt;/em&gt; is one that has no limit, one that grows to infinity. A stock example is&lt;/p&gt;
+
+&lt;script type="math/tex; mode=display"&gt;\sum_{n=1}^{\infty} \frac{1}{n}&lt;/script&gt;
+
+&lt;p&gt;or&lt;/p&gt;
+
+&lt;script type="math/tex; mode=display"&gt;1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \ldots&lt;/script&gt;
+
+&lt;p&gt;This is an infinite sum that approaches infinity, that is, it &lt;em&gt;diverges&lt;/em&gt;, it does not have a finite limit, it is unbounded.&lt;/p&gt;
+
+&lt;p&gt;Returning to our infinite sum, we have enough context now to see that saying &lt;code&gt;1 = 0.9999...&lt;/code&gt; is really just one way of saying that the summation of \(\frac{9}{10^n}\) as &lt;code&gt;n&lt;/code&gt; goes from 1 to infinity is a convergent infinite sum that converges on 1.&lt;/p&gt;
+
+&lt;h4 id="on-infinity-touching-the-finite"&gt;3.1.2: On Infinity touching the Finite&lt;/h4&gt;
+
+&lt;p&gt;Paradoxes abound when the infinite collides with the finite. On the one hand, it is quite clear that &lt;code&gt;1&lt;/code&gt; &lt;em&gt;does not equal&lt;/em&gt; &lt;code&gt;0.9999...&lt;/code&gt; for the simple reason that &lt;code&gt;1&lt;/code&gt; is a finite integer and &lt;code&gt;0.9999...&lt;/code&gt; is an infinite series. If &lt;em&gt;equality&lt;/em&gt; is &lt;em&gt;categorical identity&lt;/em&gt;, then &lt;code&gt;1&lt;/code&gt; and &lt;code&gt;0.9999...&lt;/code&gt; are not equal. On the other hand, this whole post has shown that &lt;code&gt;1&lt;/code&gt; &lt;em&gt;does equal&lt;/em&gt; &lt;code&gt;0.9999...&lt;/code&gt;. If &lt;em&gt;equality&lt;/em&gt; is &lt;em&gt;referrential identity&lt;/em&gt;, then &lt;code&gt;1&lt;/code&gt; and &lt;code&gt;0.9999...&lt;/code&gt; are equal. Now, note that I call this a paradox and not an antinomy. I want to define these two terms clearly and distinguish them.&lt;/p&gt;
+
+&lt;p&gt;In my parlance, a &lt;strong&gt;paradox&lt;/strong&gt; is a &lt;em&gt;seeming&lt;/em&gt; contradiction, while an &lt;strong&gt;antinomy&lt;/strong&gt; is an &lt;em&gt;actual&lt;/em&gt; contradiction; that is, a paradox is resolvable and an antinomy is not. It is important, however, to note that resolving a paradox &lt;em&gt;does not&lt;/em&gt; mean that one side “wins” and the other “loses”, that one proposition is “right” and the other is “wrong”; instead, it means that we can rationally make sense of the difference between the two propositions. This is why I used the if-then statements above. It is not that one of the propositions is “right” or “wrong”, it is that we can enumerate the conditions under which each one would be “right” and the other “wrong”. An antinomy does not submit itself to such enumeration; we cannot articulate the conditions under which one side is “right” and the other is “wrong”. So, if I were to abstract out my definitions of &lt;em&gt;paradoxes&lt;/em&gt; and &lt;em&gt;antinomies&lt;/em&gt;, I would describe them thusly:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A paradox is composed of a proposition (&lt;code&gt;P&lt;/code&gt;) and its negation (&lt;code&gt;not-P&lt;/code&gt;) such that the conditionals “if &lt;code&gt;conditions for P&lt;/code&gt;, then &lt;code&gt;P&lt;/code&gt;” and “if &lt;code&gt;conditions for not-P&lt;/code&gt;, then &lt;code&gt;not-P&lt;/code&gt;” are both true, and thus the conjunction “if &lt;code&gt;conditions for P&lt;/code&gt;, then &lt;code&gt;P&lt;/code&gt; and if &lt;code&gt;conditions for not-P&lt;/code&gt;, then &lt;code&gt;not-P&lt;/code&gt;” is also true.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;An antinomy is composed of a proposition (&lt;code&gt;P&lt;/code&gt;) and its negation (&lt;code&gt;not-P&lt;/code&gt;) such that there are no conditions for &lt;code&gt;P&lt;/code&gt; or &lt;code&gt;not-P&lt;/code&gt; and the conjunction “&lt;code&gt;P&lt;/code&gt; and &lt;code&gt;not-P&lt;/code&gt;” is true.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;After exploring a convergent infinite sums, we have a clearer understanding of identity paradoxes like &lt;code&gt;1 = 0.9999... and 1 != 0.9999...&lt;/code&gt;. If we express that proposition in the form of the paradox explained above, we would express that proposition as “if equality means referential indentiy, then 1 = 0.9999… and if equality means categorical identity, then 1 != 0.9999…”.&lt;/p&gt;
+
+&lt;h4 id="section-1"&gt;3.1.3: 3 = 1&lt;/h4&gt;
+
+&lt;p&gt;We could now return to the Trinity and see that the orthodox articulation of this article of faith maps well onto this understanding of the shape of an identity paradox. We might recast the Cappadocian Fathers’ articulation of the Trinity as a proposition in the form: “if identity is defined by essence, then God is one and if identity is defined by person, then God is three”.&lt;/p&gt;
+
+&lt;h4 id="on-denotation"&gt;3.1.4: On Denotation&lt;/h4&gt;
+
+&lt;p&gt;One consequence of this approach to paradoxical identity statements is an analytical approach similar to Russell’s definite descriptions. Where definite descriptions analyze the subject of a proposition into an existential proposition, this method analyzes the verb of a proposition into a meaning-centric conditional.&lt;/p&gt;
+
+&lt;h3 id="wave-particle-duality-and-the-incarnation"&gt;3.2: Wave-Particle Duality and the Incarnation&lt;/h3&gt;
+
+&lt;p&gt;For now, how about we leave this as an exercise for the reader? ;)&lt;/p&gt;
+
+&lt;h2 id="ruminating"&gt;4: Ruminating&lt;/h2&gt;
+
+&lt;p&gt;I cannot help but to feel that there is a value in pursuing a “credal logic”, in exploring the myriad ways that the propositions undergirding our faith illuminate ways of thinking that deepen “standard logic”. Moreover, it seems to me to be the case that these ways of thinking found in and through credal propositions align profoundly with various “secular” rationalities. All truth is indeed God’s truth. Finally, I am convinced that pushing against the boundaries of binary thinking is healthy, not only for the Christian, but for the human.&lt;/p&gt;
+
+&lt;p&gt;However, I believe that in one respect the Christian has an opportunity the non-Christian does not. The non-Christian, it seems to me, can never move beyond the boundaries of binary thinking and retain “rational” thinking; they can push but never break. The Christian, however, may very well be able to be “rational” without binary thinking. Or, to put it more concretely, it might simply be the case that God is three and one, that God is a contradiction, that Christ is a contradiction. It might be the case that when the infinity that is the divine intersects the finite that is this reality, contradictions arise (and not mere paradoxes). And, it might be the case that through faith, through revelation, we have the ability to think “rationally” with a credal logic grounded on contradictions. It might be the case…&lt;/p&gt;
+
+</content>
+  </entry>
   <entry>
     <title>1 = 0.9999...</title>
     <link rel="alternate" href="http://blog.url.com/articles/1-0-9999/"/>
