@@ -1,23 +1,18 @@
+---
+pageable: true
+per_page: 10
+---
+
 <% posts_date_sorted = posts.sort_by { |a| a.date }.reverse %>
-<section class="timeline">
-  <% posts_date_sorted.each do |essay| %>
-    <div class="timeline-instance">
-      <div class="timeline-point"></div>
-      <div class="card timeline-card">
-        <%= link_to '', essay.slug, class: "card-link no-hvr" %>
-        <div class="card-header">
-          <h3 class="card-title">
-            <%= essay.title %>
-          </h3>
-          <h5 class="card-date">
-            <%= essay.date.strftime('%d %B %Y') %>
-          </h5>
-        </div>
-        <hr class="fractal">
-        <div class="card-copy">
-          <%= markdownify essay.summary %>
-        </div>
-      </div>
-    </div>
+<ul class="cards">
+  <% posts_for_page(posts_date_sorted, page_number, per_page).each do |essay| %>
+    <%= partial "partials/card_vertical_li",
+                locals: { item: essay } %>
   <% end %>
-</section>
+</ul>
+
+<% if paginate && posts.count > per_page %>
+  <div class="pagination">
+    <%= pagination_links(posts.count, per_page) %>
+  </div>
+<% end %>

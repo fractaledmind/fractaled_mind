@@ -1,8 +1,8 @@
 <div class="card" id="project-page">
 
-    <% if page.tags.any? %>
+    <% if post.tags.any? %>
       <ul class="card-tags">
-        <% page.tags.each do |tag| %>
+        <% post.tags.each do |tag| %>
           <li>
             <%= link_to "#{tag}", tag_path(tag),
                 class: "badge no-hvr", id: "#{tag}" %>
@@ -11,39 +11,9 @@
       </ul>
     <% end %>
 
-    <div class="card-image">
-      <!-- if page has tags, add filler element -->
-      <% if page.tags.any? %>
-        <div id="tag-filler-space"></div>
-      <% end %>
-      <!-- if page has header image, add it -->
-      <% if page.data['image'] %>
-        <%= image_tag page.data['image'] %>
-      <% end %>
-    </div>
-
-    <h2 id="title"><%= markdownify page.title %></h2>
+    <h2 id="title"><%= markdownify post.title %></h2>
 
     <hr class="fractal">
 
-    <h4 id="repo"><a href="<%= page.data['github'] %>">GitHub Repo</a></h4>
-
-    <div id="description"><%=  page.body %></div>
-
-    <!-- Get all pages for which there are pages -->
-    <% pages = blog.articles.group_by {|a| a.metadata[:page]['page'] } %>
-    <!-- Iterate over these pages -->
-    <% pages.each do |this_page, pages| %>
-        <!-- If the page with pages matches the page passed in to create this template, list the pages -->
-        <% if page.title == this_page %>
-            <hr>
-            <h3 id="page-pages">Related pages</h3>
-            <!-- Iterate over the pages within this page -->
-            <% pages.each do |pagex| %>
-                <ul>
-                    <li><%= link_to pagex.title, pagex %></li>
-                </ul>
-            <% end %>
-        <% end %>
-    <% end %>
+    <div id="description"><%= post.body %></div>
 </div>
