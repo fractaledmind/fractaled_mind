@@ -2,14 +2,7 @@
 title: Classical Studies Resources
 date: 2015-05-23
 github: https://github.com/smargh/Classical-Studies-Resources
-summary: |
-  This is a work-in-progress collection of structured data and scripts for Classical Studies/Classics.
-
-  The data has been compiled and organized from various online resources including:
-  + the [Perseus Project](http://www.perseus.tufts.edu/)
-  + [Dickenson College Commentaries](http://dcc.dickinson.edu/)
-  + [The Diccionario Griego-Español Project](http://dge.cchs.csic.es/index.en)
-  + [L'Année philologique](http://www.annee-philologique.com/)
+summary: This is a work-in-progress collection of structured data and scripts for Classical Studies/Classics.
 ---
 
 This is a work-in-progress collection of structured data and scripts for Classical Studies/Classics.
