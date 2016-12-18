@@ -2,14 +2,21 @@
 pageable: false
 ---
 
-<ul class="cards jots">
-  <% data.jots.sort.reverse.to_h.each do |slug, jot| %>
-    <li class="card jot">
-      <div class="card-copy">
-        <time datetime="<%= DateTime.strptime(slug, '%Y%m%d%H%M').iso8601 %>">
-          <%= markdownify jot.content %>
-        </time>
+<% posts_date_sorted = posts.sort_by { |a| a.date }.reverse %>
+<section class="timeline">
+  <% posts_date_sorted.each do |essay| %>
+    <div class="timeline-instance">
+      <div class="timeline-point"></div>
+      <div class="card timeline-card">
+        <div class="card-header">
+          <h5 class="card-date">
+            <%= essay.date.strftime('%d %B %Y') %>
+          </h5>
+        </div>
+        <div class="card-copy">
+          <%= markdownify essay.title %>
+        </div>
       </div>
-    </li>
+    </div>
   <% end %>
-</ul>
+</section>
