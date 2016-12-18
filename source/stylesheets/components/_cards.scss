@@ -13,6 +13,7 @@
   .card {
     @include display(flex);
     @include flex-wrap(wrap);
+    @include flex-basis(0);
 
     .card-image {
       @include span-columns(4);
