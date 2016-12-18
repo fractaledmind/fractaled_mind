@@ -1,5 +1,16 @@
+# Directory Structure configuration
+set :layouts_dir,  'layouts'
+set :partials_dir, 'partials'
+set :css_dir,      'stylesheets'
+set :js_dir,       'javascripts'
+set :images_dir,   'images'
+
+# Layouts
 # For custom domains on github pages
 page 'CNAME', layout: false
+page '/feed.xml', layout: false
+# Wrap articles in proper HTML
+page 'posts/*',   layout: 'page'
 
 def setup_summary_generator(separator = /(READMORE)/i)
   Proc.new  do |resource, rendered, length, ellipsis|
@@ -33,26 +44,19 @@ end
 ###
 # Blog settings
 ###
-
 # Time.zone = "UTC"
-
 activate :blog do |blog|
   blog.name = 'Fractaled Mind'
-  # This will add a prefix to all links, template references and source paths
-  # blog.prefix = ""
   blog.default_extension = '.md'
 
   # Matcher for blog source files (originals have `default_extension`)
-  blog.sources = 'articles/{title}.html'
+  blog.sources = 'posts/{title}.html'
   # Template for article URL slugs
-  blog.permalink = 'articles/{title}.html'
+  blog.permalink = '{title}.html'
   # blog.layout = "layout"
   blog.summary_separator = /DUMMY SEPARATOR/
   blog.summary_length = 250
   blog.summary_generator = setup_summary_generator(@readmore_separator)
-  # blog.year_link = "{year}.html"
-  # blog.month_link = "{year}/{month}.html"
-  # blog.day_link = "{year}/{month}/{day}.html"
 
   # Tag URL slugs
   blog.taglink = '/topics/{tag}.html'
@@ -61,17 +65,21 @@ activate :blog do |blog|
   # blog.calendar_template = "calendar.html"
 
   # Enable pagination
-  # blog.paginate = true
+  blog.paginate = true
   # blog.per_page = 10
   # blog.page_link = "page/{num}"
+end
 
-  # Custom Projects collection
-  # blog.custom_collections = {
-  #   project: {
-  #     link: '/projects/{project}.html',
-  #     template: '/project.html'
-  #   }
-  # }
+ready do
+  sitemap_nested_resources.group_by { |r| r.slug.split('/').first }
+                          .each do |category, posts|
+    proxy "#{category}.html", "templates/#{category}.html",
+          locals: { posts: posts }, ignore: true
+    posts.each do |post|
+      proxy "#{post.slug}.html", "templates/#{category.singularize}.html",
+            locals: { post: post }, ignore: true
+    end
+  end
 end
 
 # Methods defined in the helpers block are available in templates
@@ -84,31 +92,37 @@ helpers do
     html.sub(@readmore_separator, "<span id='readmore'></span>")
   end
 
+  def locals_for(page, key)
+    page && page.metadata[:locals][key]
+  end
+
+  def sitemap_nested_resources
+    sitemap.resources
+           .select { |r| r.respond_to?(:slug) && r.slug.include?('/') }
+  end
+
+  def site_sections
+    sitemap_nested_resources.map { |r| r.slug.split('/').first }.uniq
+  end
+
+  def slug_section(slug)
+    slug.split('/').first
+  end
+
   def project_tags
-    project_tags = Hash.new []
-    data.projects.each do |slug, project|
-      if project.tags?
-        project.tags.each do |tag|
-          project['slug'] = slug
-          project_tags[tag] += [project]
-        end
-      end
-    end
-    project_tags
+    # project_tags = Hash.new []
+    # data.projects.each do |slug, project|
+    #   if project.tags?
+    #     project.tags.each do |tag|
+    #       project['slug'] = slug
+    #       project_tags[tag] += [project]
+    #     end
+    #   end
+    # end
+    # project_tags
+    []
   end
 end
-
-# Directory Structure configuration
-set :layouts_dir,  'layouts'
-set :partials_dir, 'partials'
-set :css_dir,      'stylesheets'
-set :js_dir,       'javascripts'
-set :images_dir,   'images'
-
-# Layouts
-page '/feed.xml', layout: false
-# Wrap articles in proper HTML
-page 'articles/*', layout: 'page'
 
 # Set the Markdown rendering engine
 set :markdown,
@@ -124,15 +138,6 @@ activate :syntax, line_numbers: true
 
 # Turn on draft plugin
 activate :drafts
-
-###
-# Compass
-###
-
-# Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
 
 ###
 # Page options, layouts, aliases and proxies
@@ -154,27 +159,9 @@ activate :drafts
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # Root Level Pages
 proxy 'search.html',   'templates/search.html',   ignore: true
-proxy 'articles.html', 'templates/articles.html', ignore: true
-proxy 'projects.html', 'templates/projects.html', ignore: true
 proxy 'about.html',    'templates/about.html',    ignore: true
 proxy 'topics.html',   'templates/topics.html',   ignore: true
 proxy 'jots.html',     'templates/jots.html',     ignore: true
-proxy 'academia.html', 'templates/academia.html', ignore: true
-# Create a Project page for each project listed in `data/projects/`
-# Use `project.html.erb` as the template for this project page
-data.projects.each do |slug, project|
-  proxy "projects/#{slug}.html", 'templates/project.html',
-        locals: { project: project }, ignore: true
-end
-data.academia.each do |slug, essay|
-  proxy "academia/#{slug}.html", 'templates/project.html',
-        locals: { project: essay }, ignore: true
-end
-
-project_tags.each do |tag, projects|
-  proxy "topics/#{tag}.html", 'templates/project_topic.html',
-        locals: { tag: tag, projects: projects }, ignore: true
-end
 
 page '/search.html', directory_index: false
 
