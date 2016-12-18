@@ -2,19 +2,19 @@
 entries = []
 blog.articles.each do |article|
   entry = {
-    :title => article.title,
-    :url => article.url,
-    :content => article.body,
-    :type => 'article'
+    title: article.title,
+    url: article.url,
+    content: article.body,
+    type: 'article'
   }
   entries << entry
 end
 data.projects.each do |slug, project|
   entry = {
-    :title => project.title,
-    :url => 'projects/' + slug,
-    :content => markdownify(project.readme),
-    :type => 'project'
+    title: project.title,
+    url: 'projects/' + slug,
+    content: markdownify(project.readme),
+    type: 'project'
   }
   entries << entry
 end

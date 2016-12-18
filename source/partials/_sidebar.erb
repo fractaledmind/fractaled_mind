@@ -21,14 +21,14 @@
       <% blog.tags.each do |tag, articles| %>
         <li>
           <%= link_to "#{tag} (#{articles.size})", tag_path(tag),
-              :class => "badge no-hvr", :id => "#{tag}" %>
+              class: "badge no-hvr", id: "#{tag}" %>
         </li>
       <% end %>
 
       <!-- Add all Project tags -->
       <% project_tags().each do |tag, articles| %>
         <%= link_to "#{tag} (#{articles.size})", '/topics/' + tag,
-              :class => "badge no-hvr", :id => "#{tag}" %>
+              class: "badge no-hvr", id: "#{tag}" %>
       <% end %>
     </ul>
   </div>
