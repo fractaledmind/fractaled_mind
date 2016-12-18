@@ -185,6 +185,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport
   bitters
   bourbon
   builder (~> 3.0)
@@ -206,4 +207,4 @@ DEPENDENCIES
   redcarpet
 
 BUNDLED WITH
-   1.11.2
+   1.13.2

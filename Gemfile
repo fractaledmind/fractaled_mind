@@ -36,3 +36,5 @@ gem 'middleman-tapirgo'
 
 # For post-build HTML beautification
 gem 'htmlbeautifier'
+
+gem 'activesupport'
