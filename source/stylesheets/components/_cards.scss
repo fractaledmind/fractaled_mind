@@ -164,14 +164,15 @@
   }
 }
 
-.card.jot {
-  @include flex-basis(100%);
-  margin: 2px;
-
+.card.timeline-card {
   .card-copy {
-    padding: 0.5rem;
-    margin: 0;
+    margin: 0.5em;
+  }
+}
 
-    p { margin-bottom: 0; }
+#project-page {
+  .card-image {
+    margin: 2rem auto;
+    margin-top: 0;
   }
 }

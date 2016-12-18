@@ -10,6 +10,7 @@ $timeline_thickness: 8px;
 .timeline {
   position: relative;
   padding: 2em 0;
+  margin: 0 1rem;
 
   /* the vertical timeline */
   &::before {
