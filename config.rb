@@ -108,20 +108,6 @@ helpers do
   def slug_section(slug)
     slug.split('/').first
   end
-
-  def project_tags
-    # project_tags = Hash.new []
-    # data.projects.each do |slug, project|
-    #   if project.tags?
-    #     project.tags.each do |tag|
-    #       project['slug'] = slug
-    #       project_tags[tag] += [project]
-    #     end
-    #   end
-    # end
-    # project_tags
-    []
-  end
 end
 
 # Set the Markdown rendering engine
@@ -161,7 +147,6 @@ activate :drafts
 proxy 'search.html',   'templates/search.html',   ignore: true
 proxy 'about.html',    'templates/about.html',    ignore: true
 proxy 'topics.html',   'templates/topics.html',   ignore: true
-proxy 'jots.html',     'templates/jots.html',     ignore: true
 
 page '/search.html', directory_index: false
 
