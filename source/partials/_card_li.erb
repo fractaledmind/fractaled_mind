@@ -1,0 +1,46 @@
+<li class="card">
+  <!-- Card-covering hyperlink -->
+  <%= link_to '', item.path, class: "card-link no-hvr" %>
+
+  <!-- item Tags (if any) -->
+  <% if item.tags.any? %>
+    <ul class="card-tags">
+      <% item.tags.each do |tag| %>
+        <li>
+          <%= link_to "#{tag}", tag_path(tag),
+              class: "badge no-hvr #{tag}" %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <!-- item Image (if one) -->
+  <div class="card-image">
+    <!-- if item has tags, add filler element -->
+    <% if item.tags.any? %>
+      <div id="tag-filler-space"></div>
+    <% end %>
+    <!-- if item has header image, add it -->
+    <% if item.data['image'] %>
+      <%= image_tag item.data['image'] %>
+    <% end %>
+  </div>
+
+  <!-- item Title -->
+  <div class="card-header">
+    <h3 class="card-title">
+      <%= item.title %>
+    </h3>
+    <h5 class="card-date">
+      <%= item.date.strftime('%d %B %Y') %>
+    </h5>
+  </div>
+
+  <!-- Fractal Divider -->
+  <hr class="fractal">
+
+  <!-- item Summary -->
+  <div class="card-copy">
+    <%= markdownify item.summary %>
+  </div>
+</li>
