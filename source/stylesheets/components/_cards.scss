@@ -6,6 +6,42 @@
   padding: 0;
   margin:0;
 }
+.cards.horizontal {
+  @include flex-wrap(nowrap);
+  @include flex-direction(column);
+
+  .card {
+    @include display(flex);
+    @include flex-wrap(wrap);
+
+    .card-image {
+      @include span-columns(4);
+      @include align-self(center);
+      padding: 1rem;
+      margin-right: 0;
+    }
+
+    hr.fractal {
+      width: 1rem;
+      height: 15rem;
+      align-self: center;
+      margin: 0;
+      border-right: thin solid #65737e;
+      border-top: none;
+      margin-right: 1rem;
+
+      &::after {
+        padding: 0 0.5em;
+        top: 50%;
+        right: 5px;
+      }
+    }
+
+    .card-right {
+      @include flex(1);
+    }
+  }
+}
 
 .cards.jots {
   margin-left: 1rem;
@@ -64,6 +100,7 @@
     overflow: hidden;
     padding-top: 1rem;
     max-height: 12rem; // padding-top + filler-space + img height
+    max-width: 12rem;
 
     img {
       display: block;
@@ -99,6 +136,10 @@
       font-size: $font-size;
       line-height: golden-height($font-size);
       color: $light;
+    }
+
+    .card.horizontal & {
+      @include span-columns(8);
     }
   }
 

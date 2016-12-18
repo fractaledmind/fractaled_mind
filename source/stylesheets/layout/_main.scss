@@ -23,6 +23,7 @@
     #main {
       @include span-columns(8.75 of 12);
       margin: -17% 0 0;
+      min-height: 100vh;
     }
   }
 }

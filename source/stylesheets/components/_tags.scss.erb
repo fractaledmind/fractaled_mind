@@ -28,22 +28,8 @@ $badge-font-size: 0.75em !default;
 $i: 1;
 <% blog.tags.each_with_index do |obj, i| %>
   <% i = i > 7 ? i - 7 : i + 1 %>
-  #<%= obj[0] %> {
+  .<%= obj[0] %> {
     $current-color: nth($rainbow-list, <%= i %>);
     background-color: $current-color;
   }
-<% end %>
-
-// Check if any tags in Projects not in Articles
-$i: $i + 1;
-<% project_tags().each_with_index do |obj, i| %>
-  // If tag not one of the blog-tags
-  <% if !blog.tags.include?(obj[0]) %>
-    <% i = i > 7 ? i - 7 : i + 1 %>
-    $current-color: nth($rainbow-list, <%= i %>);
-    // style that tag's class
-    #<%= obj[0] %> {
-      background-color: $current-color;
-    }
-  <% end %>
 <% end %>

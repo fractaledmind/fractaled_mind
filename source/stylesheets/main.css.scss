@@ -9,7 +9,6 @@
 @import 'vendors/bitters/buttons';
 @import 'vendors/neat/all';
 
-
 // Base variables and mixins
 @import 'base/include-media';
 @import 'base/mixins';
@@ -32,6 +31,7 @@
 @import 'components/lists';
 @import 'components/hr';
 @import 'components/cards';
+@import 'components/pagination';
 
 // Custom added vendors
 @import 'vendors/bigfoot/bigfoot-number';

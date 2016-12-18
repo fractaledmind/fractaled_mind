@@ -1,3 +1,8 @@
+$items: 6;
+$item_width: percentage(((100 - ($items * 2)) / $items) / 100);
+$item_n: $items * 2 - 1;
+
+
 h2#all-tags {
 	padding-top: 1rem;
 	text-align: center;
@@ -23,18 +28,17 @@ h2#all-tags {
 
 a.grid-item {
   // display:block;
-  width: 31.333%;
-  padding-bottom: 15.6665%;
-  padding-top: 15.6665%;
-  overflow: hidden;
+  width: $item_width;
+  padding-bottom: ($item_width / 2);
+  padding-top: ($item_width / 2);
   float: left;
-  background: #BBB;
   border-radius: 50%;
   margin: 1%;
-  margin-top: -4%;
-  line-height:31.333%;
-  text-align:center;
-  color:$lighterest;
+  // margin-top: -4%;
+  line-height: $item_width;
+  text-align: center;
+  color: $lighterest;
+  display:table;
 
   // Unvisited link
   &:link, &:visited {
@@ -44,26 +48,38 @@ a.grid-item {
   // The user mouses over a link
   &:hover, &:focus, &:active {
     text-decoration: none;
-    padding-top: 15.6665%;
+    padding-top: ($item_width / 2);
+  }
+
+  .n {
+    position: absolute;
+    background: #a9aaab;
+    width: 25%;
+    padding-bottom: 12.5%;
+    padding-top: 12.5%;
+    border-radius: 50%;
+    top: 0;
+    right: 1%;
   }
 }
 
-.grid-item:nth-child(1),
-.grid-item:nth-child(2),
-.grid-item:nth-child(3) {
-  margin-top: 1%;
+@for $i from 1 through $items {
+  .grid-item:nth-child(#{$i}) {
+    margin-top: 1%;
+  }
 }
 
-.grid-item:nth-child(5n+4) {
-  margin-left: 17.66667%;
+
+.grid-item:nth-child(#{$item_n}n+#{$items + 1}) {
+  margin-left: (($item_width / 2) * 1.1);
 }
 
-.grid-item:nth-child(5n+6) {
+.grid-item:nth-child(#{$item_n}n+#{$items * 2}) {
   clear:left;
 }
 
-.grid-item:nth-child(5n+6):last-of-type {
-  margin-left: 34.334%;
+.grid-item:nth-child(#{$item_n}n+#{$items * 2}):last-of-type {
+  margin-left: ($item_width * 1.1);
 }
 
 .grid-item:hover {
