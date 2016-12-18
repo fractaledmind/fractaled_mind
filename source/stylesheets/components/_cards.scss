@@ -99,7 +99,6 @@
 
   .card-image {
     overflow: hidden;
-    padding-top: 1rem;
     max-height: 12rem; // padding-top + filler-space + img height
     max-width: 12rem;
 
@@ -129,6 +128,12 @@
       color: $card-font-color;
       margin: 0 0.5rem;
       margin-top: 0.5rem;
+
+      p {
+        font-size: inherit;
+        line-height: inherit;
+        margin: 0;
+      }
     }
 
     .card-date {
