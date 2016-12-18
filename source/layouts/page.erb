@@ -5,8 +5,7 @@
         <% current_article.tags.each do |tag| %>
           <li>
             <%= link_to "#{tag}", tag_path(tag),
-                :class => "badge no-hvr",
-                :id => "#{tag}" %>
+                class: "badge no-hvr #{tag}" %>
           </li>
         <% end %>
     </ul>
