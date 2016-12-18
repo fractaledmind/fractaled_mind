@@ -1,46 +1,61 @@
-<ul class="cards">
-  <!-- Generate project cards -->
-  <% data.projects.each do |slug, project| %>
-    <% if !project.blank? %>
-      <li class="card">
-        <!-- Card-covering hyperlink -->
-        <%= link_to '', slug, :class => "card-link no-hvr" %>
+---
+pageable: true
+per_page: 10
+---
 
-        <!-- Project Tags (if any) -->
-        <% if project.tags? %>
-          <ul class="card-tags">
-            <% project.tags.each do |tag| %>
-              <li>
-                <%= link_to "#{tag}", '/topics/' + "#{tag}",
-                    :class => "badge no-hvr", :id => "#{tag}" %>
-              </li>
-            <% end %>
-          </ul>
-        <% end %>
+<% posts_date_sorted = posts.sort_by { |a| a.date }.reverse %>
+<ul class="cards horizontal">
+  <% posts_for_page(posts_date_sorted, page_number, per_page).each do |item| %>
 
-        <!-- Project Image (if one) -->
-        <div class="card-image">
-          <% if project.image? %>
-            <%= image_tag project.image %>
+    <li class="card">
+      <!-- Card-covering hyperlink -->
+      <%= link_to '', item.path, class: "card-link no-hvr" %>
+
+      <!-- item Tags (if any) -->
+      <% if item.tags.any? %>
+        <ul class="card-tags">
+          <% item.tags.each do |tag| %>
+            <li>
+              <%= link_to "#{tag}", tag_path(tag),
+                  class: "badge no-hvr #{tag}" %>
+            </li>
           <% end %>
-        </div>
+        </ul>
+      <% end %>
 
-        <!-- Project Title -->
+      <!-- item Image (if one) -->
+      <div class="card-image">
+        <!-- if item has header image, add it -->
+        <% if item.data['image'] %>
+          <%= image_tag item.data['image'] %>
+        <% end %>
+      </div>
+
+      <!-- Fractal Divider -->
+      <hr class="fractal">
+
+      <!-- item Title -->
+      <div class="card-right">
         <div class="card-header">
           <h3 class="card-title">
-              <%= project.title %>
+            <%= item.title %>
           </h3>
+          <h5 class="card-date">
+            <%= item.date.strftime('%d %B %Y') %>
+          </h5>
         </div>
 
-        <!-- Fractal Divider -->
-        <hr class="fractal">
-
-        <!-- Project Summary -->
+        <!-- item Summary -->
         <div class="card-copy">
-            <!-- Render Markdown as HTML -->
-            <%= markdownify project.description %>
+          <%= markdownify item.summary %>
         </div>
-      </li>
-    <% end %>
+      </div>
+    </li>
   <% end %>
 </ul>
+
+<% if paginate && posts.count > per_page %>
+  <div class="pagination">
+    <%= pagination_links(posts.count, per_page) %>
+  </div>
+<% end %>

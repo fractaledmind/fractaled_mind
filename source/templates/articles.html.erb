@@ -2,55 +2,17 @@
 pageable: true
 per_page: 10
 ---
-<% if paginate && num_pages > 1 %>
-  <p>Page <%= page_number %> of <%= num_pages %></p>
 
-  <% if prev_page %>
-    <p><%= link_to 'Previous page', prev_page %></p>
-  <% end %>
-<% end %>
-
+<% posts_date_sorted = posts.sort_by { |a| a.date }.reverse %>
 <ul class="cards">
-  <% page_articles.each_with_index do |article, i| %>
-    <li class="card">
-      <%= link_to '', article, :class => "card-link no-hvr" %>
-      <ul class="card-tags">
-        <% article.tags.each do |tag| %>
-          <li>
-            <%= link_to "#{tag}", tag_path(tag),
-                :class => "badge no-hvr" %>
-          </li>
-        <% end %>
-      </ul>
-      <div class="card-image">
-        <!-- if article has tags, add filler element -->
-        <% if !article.tags.empty? %>
-          <div id="tag-filler-space"></div>
-        <% end %>
-        <!-- if article has header image, add it -->
-        <% if !article.data['header-image'].nil? && article.data['header-image'] != "" %>
-          <%= image_tag article.data['header-image'] %>
-        <% end %>
-      </div>
-      <div class="card-header">
-        <h3 class="card-title">
-          <%= article.title %>
-        </h3>
-        <h5 class="card-date">
-          <%= article.date.strftime('%d %B %Y') %>
-        </h5>
-      </div>
-      <hr class="fractal">
-      <div class="card-copy">
-        <%= markdownify article.summary %>
-      </div>
-    </li>
+  <% posts_for_page(posts_date_sorted, page_number, per_page).each do |article| %>
+    <%= partial "partials/card_li",
+                locals: { item: article } %>
   <% end %>
 </ul>
 
-
-<% if paginate %>
-  <% if next_page %>
-    <p><%= link_to 'Next page', next_page %></p>
-  <% end %>
+<% if paginate && posts.count > per_page %>
+  <div class="pagination">
+    <%= pagination_links(posts.count, per_page) %>
+  </div>
 <% end %>

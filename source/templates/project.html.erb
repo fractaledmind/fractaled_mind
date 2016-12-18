@@ -1,56 +1,32 @@
 <div class="card" id="project-page">
 
-    <% if project.tags? %>
+    <% if post.tags.any? %>
       <ul class="card-tags">
-        <% project.tags.each do |tag| %>
+        <% post.tags.each do |tag| %>
           <li>
-            <!-- If project-tag is also a blog-tag, link to it -->
-            <% if blog.tags.include?(tag) %>
-              <%= link_to "#{tag}", tag_path(tag),
-                  :class => "badge no-hvr" %>
-            <!-- If only project-tag link to that -->
-            <% else %>
-              <%= link_to "#{tag}", '/topics/' + "#{tag}",
-                  :class => "badge no-hvr", :id => "#{tag}" %>
-            <% end %>
+            <%= link_to "#{tag}", tag_path(tag),
+                class: "badge no-hvr #{tag}" %>
           </li>
         <% end %>
       </ul>
     <% end %>
 
     <div class="card-image">
-      <!-- if project has tags, add filler element -->
-      <% if project.tags? %>
+      <!-- if post has tags, add filler element -->
+      <% if post.tags.any? %>
         <div id="tag-filler-space"></div>
       <% end %>
-      <!-- if project has header image, add it -->
-      <% if project.image? %>
-        <%= image_tag project['image'] %>
+      <!-- if post has header image, add it -->
+      <% if post.data['image'] %>
+        <%= image_tag post.data['image'] %>
       <% end %>
     </div>
 
-    <h2 id="title"><%= project['title'] %></h2>
+    <h2 id="title"><%= markdownify post.title %></h2>
 
     <hr class="fractal">
 
-    <h4 id="repo"><a href="<%= project['github'] %>">GitHub Repo</a></h4>
+    <h4 id="repo"><a href="<%= post.data['github'] %>">GitHub Repo</a></h4>
 
-    <div id="description"><%= markdownify project['readme'] %></div>
-
-    <!-- Get all projects for which there are articles -->
-    <% projects = blog.articles.group_by {|a| a.metadata[:page]['project'] } %>
-    <!-- Iterate over these projects -->
-    <% projects.each do |this_project, articles| %>
-        <!-- If the project with articles matches the project passed in to create this template, list the articles -->
-        <% if project['title'] == this_project %>
-            <hr>
-            <h3 id="project-articles">Related Articles</h3>
-            <!-- Iterate over the articles within this project -->
-            <% articles.each do |article| %>
-                <ul>
-                    <li><%= link_to article.title, article %></li>
-                </ul>
-            <% end %>
-        <% end %>
-    <% end %>
+    <div id="description"><%=  post.body %></div>
 </div>

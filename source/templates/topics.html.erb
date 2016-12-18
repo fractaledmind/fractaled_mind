@@ -1,18 +1,14 @@
 <div>
-  <h2 id="all-tags">All Tags</h2>
+  <h2 id="all-tags">All Topics</h2>
 
   <div class="grid">
-    <!-- Add all Article tags -->
     <% blog.tags.each do |tag, articles| %>
-        <%= link_to "#{tag} (#{articles.size})", tag_path(tag),
-            :class => "grid-item no-hvr", :id => "#{tag}" %>
-    <% end %>
-    <!-- Generate list of Project tags with associated projects -->
-
-    <!-- Add all Project tags -->
-    <% project_tags().each do |tag, articles| %>
-      <%= link_to "#{tag} (#{articles.size})", '/topics/' + tag,
-            :class => "grid-item no-hvr", :id => "#{tag}" %>
+      <% link_to tag_path(tag), class: "grid-item no-hvr #{tag}" do %>
+        <div>
+          <span><%= tag %></span>
+          <span class='n'><%= articles.size %></span>
+        </div>
+      <% end %>
     <% end %>
   </div>
 
