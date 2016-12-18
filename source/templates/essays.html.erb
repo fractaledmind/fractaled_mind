@@ -1,20 +1,21 @@
+<% posts_date_sorted = posts.sort_by { |a| a.date }.reverse %>
 <section class="timeline">
-  <% data.academia.each do |slug, project| %>
+  <% posts_date_sorted.each do |essay| %>
     <div class="timeline-instance">
       <div class="timeline-point"></div>
       <div class="card timeline-card">
-        <%= link_to '', slug, :class => "card-link no-hvr" %>
+        <%= link_to '', essay.slug, class: "card-link no-hvr" %>
         <div class="card-header">
           <h3 class="card-title">
-            <%= project.title %>
+            <%= essay.title %>
           </h3>
           <h5 class="card-date">
-            <%= Date.today.strftime('%d %B %Y') %>
+            <%= essay.date.strftime('%d %B %Y') %>
           </h5>
         </div>
         <hr class="fractal">
         <div class="card-copy">
-          <%= markdownify project.description %>
+          <%= markdownify essay.summary %>
         </div>
       </div>
     </div>
