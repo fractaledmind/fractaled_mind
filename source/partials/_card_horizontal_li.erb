@@ -1,6 +1,6 @@
 <li class="card">
   <!-- Card-covering hyperlink -->
-  <%= link_to '', item.path, class: "card-link no-hvr" %>
+  <%= link_to '', "/#{item.path}", class: "card-link no-hvr" %>
 
   <!-- item Tags (if any) -->
   <% if item.tags.any? %>
