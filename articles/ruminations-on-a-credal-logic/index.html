@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Content declarations -->
-  <title>Fractaled Mind - Ruminations on a Credal Logic</title>
+  <title>Fractaled Mind</title>
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="feed.xml" />
 
   <!-- External Resources -->
@@ -109,12 +109,13 @@
   </ul>
 </header>
 
+
     <div class="navigation">
   <nav role="navigation">
     <ul class="navigation-menu">
       <li class="nav-link"><a href="/">home</a></li>
-      <li class="nav-link"><a href="/jots">jots</a></li>
-      <li class="nav-link"><a href="/projects">projects</a></li>
+      <li class="nav-link"><a href="/jots/">jots</a></li>
+      <li class="nav-link"><a href="/projects/">projects</a></li>
     </ul>
   </nav>
 
@@ -132,23 +133,32 @@
 
 
     <div id="main" role="main">
-        <article class="card">
-    <!-- Article shows tags in top right -->
-    <ul class="card-tags">
-          <li>
-            <a class="badge no-hvr" id="faith" href="/topics/faith/">faith</a>
-          </li>
-          <li>
-            <a class="badge no-hvr" id="logic" href="/topics/logic/">logic</a>
-          </li>
-          <li>
-            <a class="badge no-hvr" id="epistemology" href="/topics/epistemology/">epistemology</a>
-          </li>
-    </ul>
+      <div class="card" id="project-page">
 
-    <h2 id="title">Ruminations on a Credal Logic</h2>
+      <ul class="card-tags">
+          <li>
+            <a class="badge no-hvr faith" href="/topics/faith/">faith</a>
+          </li>
+          <li>
+            <a class="badge no-hvr logic" href="/topics/logic/">logic</a>
+          </li>
+          <li>
+            <a class="badge no-hvr epistemology" href="/topics/epistemology/">epistemology</a>
+          </li>
+      </ul>
 
-    <p>How do we understand our faith? More precisely, how do we reason deeply and precisely as faith-adherents? Or, perhaps most precisely, how might our faith shape our reason? Do we have a faith seeking the light of understanding, or a faith seeking out understanding with its light?</p>
+    <div class="card-image">
+      <!-- if post has tags, add filler element -->
+        <div id="tag-filler-space"></div>
+      <!-- if post has header image, add it -->
+    </div>
+
+    <h2 id="title"><p>Ruminations on a Credal Logic</p>
+</h2>
+
+    <hr class="fractal">
+
+    <div id="description"><p>How do we understand our faith? More precisely, how do we reason deeply and precisely as faith-adherents? Or, perhaps most precisely, how might our faith shape our reason? Do we have a faith seeking the light of understanding, or a faith seeking out understanding with its light?</p>
 
 <h2 id="a-logical-primer">0: A Logical Primer</h2>
 
@@ -360,36 +370,8 @@ k <span class="o">=</span> 1
 
 <p>However, I believe that in one respect the Christian has an opportunity the non-Christian does not. The non-Christian, it seems to me, can never move beyond the boundaries of binary thinking and retain “rational” thinking; they can push but never break. The Christian, however, may very well be able to be “rational” without binary thinking. Or, to put it more concretely, it might simply be the case that God is three and one, that God is a contradiction, that Christ is a contradiction. It might be the case that when the infinity that is the divine intersects the finite that is this reality, contradictions arise (and not mere paradoxes). And, it might be the case that through faith, through revelation, we have the ability to think “rationally” with a credal logic grounded on contradictions. It might be the case…</p>
 
-
-  </article>
-
-  <div id="disqus_thread"></div>
-<script type="text/javascript">
-//<![CDATA[
-                  var disqus_shortname = 'fractaledmind';
-          
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-//]]>
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-  <script type="text/javascript">
-//<![CDATA[
-    var disqus_shortname = 'fractaledmind';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-//]]>
-</script>
-
+</div>
+</div>
 
     </div>
 
@@ -402,23 +384,23 @@ k <span class="o">=</span> 1
     <ul class="fa-ul">
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="./">Ruminations on a Credal Logic</a>
+          <a href="/articles/ruminations-on-a-credal-logic/">Ruminations on a Credal Logic</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../1-0-9999/">1 = 0.9999...</a>
+          <a href="/articles/1-0-9999/">1 = 0.9999...</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../portrait-of-pain/">Portrait of Pain</a>
+          <a href="/articles/portrait-of-pain/">Portrait of Pain</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../elevator/">Elevator</a>
+          <a href="/jots/201604051529/">"Oft evil will shall evil mar" - J.R.R. Tolkien (via Theoden)</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../cleaning-up-git-repos/">Cleaning up Git repos</a>
+          <a href="/articles/elevator/">Elevator</a>
         </li>
     </ul>
   </div>
@@ -428,47 +410,53 @@ k <span class="o">=</span> 1
     <ul>
       <!-- Add all Article tags -->
         <li>
-          <a class="badge no-hvr" id="math" href="/topics/math/">math (1)</a>
+          <a class="badge no-hvr math" href="/topics/math/">math (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="logic" href="/topics/logic/">logic (3)</a>
+          <a class="badge no-hvr logic" href="/topics/logic/">logic (3)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="epistemology" href="/topics/epistemology/">epistemology (3)</a>
+          <a class="badge no-hvr epistemology" href="/topics/epistemology/">epistemology (3)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="hackademics" href="/topics/hackademics/">hackademics (1)</a>
+          <a class="badge no-hvr hackademics" href="/topics/hackademics/">hackademics (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="grad-school" href="/topics/grad-school/">grad-school (2)</a>
+          <a class="badge no-hvr grad-school" href="/topics/grad-school/">grad-school (2)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="til" href="/topics/til/">til (1)</a>
+          <a class="badge no-hvr til" href="/topics/til/">til (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="poetry" href="/topics/poetry/">poetry (1)</a>
+          <a class="badge no-hvr poetry" href="/topics/poetry/">poetry (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="example" href="/topics/example/">example (1)</a>
+          <a class="badge no-hvr christianity" href="/topics/christianity/">christianity (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="christianity" href="/topics/christianity/">christianity (1)</a>
+          <a class="badge no-hvr love" href="/topics/love/">love (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="love" href="/topics/love/">love (1)</a>
+          <a class="badge no-hvr prose" href="/topics/prose/">prose (2)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="prose" href="/topics/prose/">prose (2)</a>
+          <a class="badge no-hvr faith" href="/topics/faith/">faith (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="faith" href="/topics/faith/">faith (1)</a>
+          <a class="badge no-hvr example" href="/topics/example/">example (1)</a>
         </li>
-
-      <!-- Add all Project tags -->
-        <a class="badge no-hvr" id="alfred" href="/topics/alfred">alfred (9)</a>
-        <a class="badge no-hvr" id="git" href="/topics/git">git (1)</a>
-        <a class="badge no-hvr" id="bash" href="/topics/bash">bash (2)</a>
-        <a class="badge no-hvr" id="python" href="/topics/python">python (1)</a>
+        <li>
+          <a class="badge no-hvr alfred" href="/topics/alfred/">alfred (9)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr git" href="/topics/git/">git (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr bash" href="/topics/bash/">bash (2)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr python" href="/topics/python/">python (1)</a>
+        </li>
     </ul>
   </div>
 

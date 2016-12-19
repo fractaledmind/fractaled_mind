@@ -102,8 +102,8 @@
       <nav role="navigation">
         <ul class="navigation-menu">
           <li class="nav-link"><a href="/">home</a></li>
-          <li class="nav-link"><a href="/jots">jots</a></li>
-          <li class="nav-link"><a href="/projects">projects</a></li>
+          <li class="nav-link"><a href="/jots/">jots</a></li>
+          <li class="nav-link"><a href="/projects/">projects</a></li>
         </ul>
       </nav>
       <div id="search">
@@ -118,384 +118,336 @@
       </div>
     </div>
     <div id="main" role="main">
-      <ul class="cards">
-        <!-- Generate project cards -->
+      <ul class="cards horizontal">
         <li class="card">
           <!-- Card-covering hyperlink -->
-          <a class="card-link no-hvr" href="bibquery"></a>
-          <!-- Project Tags (if any) -->
+          <a class="card-link no-hvr" href="/projects/git-do/"></a>
+          <!-- item Tags (if any) -->
           <ul class="card-tags">
             <li>
-              <a class="badge no-hvr" id="alfred" href="/topics/alfred">alfred</a>
-            </li>
-          </ul>
-          <!-- Project Image (if one) -->
-          <div class="card-image">
-            <img src="../images/projects/bibquery.svg" />
-          </div>
-          <!-- Project Title -->
-          <div class="card-header">
-            <h3 class="card-title">
-              BibQuery
-          </h3>
-          </div>
-          <!-- Fractal Divider -->
-          <hr class="fractal">
-          <!-- Project Summary -->
-          <div class="card-copy">
-            <!-- Render Markdown as HTML -->
-            <p>Access your <a href="http://bibdesk.sourceforge.net/">BibDesk</a> citation information from within <a href="http://www.alfredapp.com/">Alfred</a>.</p>
-          </div>
-        </li>
-        <li class="card">
-          <!-- Card-covering hyperlink -->
-          <a class="card-link no-hvr" href="classical-studies-resources"></a>
-          <!-- Project Tags (if any) -->
-          <!-- Project Image (if one) -->
-          <div class="card-image">
-          </div>
-          <!-- Project Title -->
-          <div class="card-header">
-            <h3 class="card-title">
-              Classical Studies Resources
-          </h3>
-          </div>
-          <!-- Fractal Divider -->
-          <hr class="fractal">
-          <!-- Project Summary -->
-          <div class="card-copy">
-            <!-- Render Markdown as HTML -->
-            <p>This is a work-in-progress collection of structured data and scripts for Classical Studies/Classics.</p>
-            <p>The data has been compiled and organized from various online resources including:
-+ the <a href="http://www.perseus.tufts.edu/">Perseus Project</a>
-              + <a href="http://dcc.dickinson.edu/">Dickenson College Commentaries</a>
-              + <a href="http://dge.cchs.csic.es/index.en">The Diccionario Griego-Español Project</a>
-              + <a href="http://www.annee-philologique.com/">L'Année philologique</a></p>
-          </div>
-        </li>
-        <li class="card">
-          <!-- Card-covering hyperlink -->
-          <a class="card-link no-hvr" href="git-do"></a>
-          <!-- Project Tags (if any) -->
-          <ul class="card-tags">
-            <li>
-              <a class="badge no-hvr" id="git" href="/topics/git">git</a>
+              <a class="badge no-hvr git" href="/topics/git/">git</a>
             </li>
             <li>
-              <a class="badge no-hvr" id="bash" href="/topics/bash">bash</a>
+              <a class="badge no-hvr bash" href="/topics/bash/">bash</a>
             </li>
           </ul>
-          <!-- Project Image (if one) -->
+          <!-- item Image (if one) -->
           <div class="card-image">
+            <!-- if item has header image, add it -->
             <img src="../images/projects/git-do.svg" />
           </div>
-          <!-- Project Title -->
-          <div class="card-header">
-            <h3 class="card-title">
-              git-do
-          </h3>
-          </div>
           <!-- Fractal Divider -->
           <hr class="fractal">
-          <!-- Project Summary -->
-          <div class="card-copy">
-            <!-- Render Markdown as HTML -->
-            <p>Pre-emptive git commit messages.</p>
+          <!-- item Title -->
+          <div class="card-right">
+            <div class="card-header">
+              <h3 class="card-title">
+                <p>git-do</p>
+              </h3>
+              <h5 class="card-date">
+                25 July 2015
+      </h5>
+            </div>
+            <!-- item Summary -->
+            <div class="card-copy">
+              <p>Pre-emptive git commit messages.</p>
+            </div>
           </div>
         </li>
         <li class="card">
           <!-- Card-covering hyperlink -->
-          <a class="card-link no-hvr" href="libgen"></a>
-          <!-- Project Tags (if any) -->
+          <a class="card-link no-hvr" href="/projects/wikify/"></a>
+          <!-- item Tags (if any) -->
           <ul class="card-tags">
             <li>
-              <a class="badge no-hvr" id="alfred" href="/topics/alfred">alfred</a>
+              <a class="badge no-hvr alfred" href="/topics/alfred/">alfred</a>
             </li>
           </ul>
-          <!-- Project Image (if one) -->
+          <!-- item Image (if one) -->
           <div class="card-image">
-            <img src="../images/projects/libgen.svg" />
-          </div>
-          <!-- Project Title -->
-          <div class="card-header">
-            <h3 class="card-title">
-              LibGen
-          </h3>
-          </div>
-          <!-- Fractal Divider -->
-          <hr class="fractal">
-          <!-- Project Summary -->
-          <div class="card-copy">
-            <!-- Render Markdown as HTML -->
-            <p>Seach the <a href="http://libgen.in/">Library Genesis</a> project's catalogue of books and download right from your keyboard, without ever launching a browser.</p>
-          </div>
-        </li>
-        <li class="card">
-          <!-- Card-covering hyperlink -->
-          <a class="card-link no-hvr" href="metadata"></a>
-          <!-- Project Tags (if any) -->
-          <ul class="card-tags">
-            <li>
-              <a class="badge no-hvr" id="python" href="/topics/python">python</a>
-            </li>
-          </ul>
-          <!-- Project Image (if one) -->
-          <div class="card-image">
-            <img src="../images/projects/metadata.svg" />
-          </div>
-          <!-- Project Title -->
-          <div class="card-header">
-            <h3 class="card-title">
-              Metadata
-          </h3>
-          </div>
-          <!-- Fractal Divider -->
-          <hr class="fractal">
-          <!-- Project Summary -->
-          <div class="card-copy">
-            <!-- Render Markdown as HTML -->
-            <p>A Python module for searching your local files using metadata queries.</p>
-          </div>
-        </li>
-        <li class="card">
-          <!-- Card-covering hyperlink -->
-          <a class="card-link no-hvr" href="pandoc-templates"></a>
-          <!-- Project Tags (if any) -->
-          <!-- Project Image (if one) -->
-          <div class="card-image">
-            <img src="../images/projects/pandoc-templates.svg" />
-          </div>
-          <!-- Project Title -->
-          <div class="card-header">
-            <h3 class="card-title">
-              Pandoc Templates
-          </h3>
-          </div>
-          <!-- Fractal Divider -->
-          <hr class="fractal">
-          <!-- Project Summary -->
-          <div class="card-copy">
-            <!-- Render Markdown as HTML -->
-            <p>A collection of support files for use with Pandoc, and specifically for helping to turn pandoc markdown files into nice HTML, LaTeX, PDF, and Microsoft Word Document output.</p>
-          </div>
-        </li>
-        <li class="card">
-          <!-- Card-covering hyperlink -->
-          <a class="card-link no-hvr" href="pandoctor"></a>
-          <!-- Project Tags (if any) -->
-          <ul class="card-tags">
-            <li>
-              <a class="badge no-hvr" id="alfred" href="/topics/alfred">alfred</a>
-            </li>
-          </ul>
-          <!-- Project Image (if one) -->
-          <div class="card-image">
-            <img src="../images/projects/pandoctor.svg" />
-          </div>
-          <!-- Project Title -->
-          <div class="card-header">
-            <h3 class="card-title">
-              Pandoctor
-          </h3>
-          </div>
-          <!-- Fractal Divider -->
-          <hr class="fractal">
-          <!-- Project Summary -->
-          <div class="card-copy">
-            <!-- Render Markdown as HTML -->
-            <p>Provides an intuitive GUI for the <a href="http://pandoc.org/"><code>pandoc</code></a> document converter utility.</p>
-          </div>
-        </li>
-        <li class="card">
-          <!-- Card-covering hyperlink -->
-          <a class="card-link no-hvr" href="parsers"></a>
-          <!-- Project Tags (if any) -->
-          <ul class="card-tags">
-            <li>
-              <a class="badge no-hvr" id="alfred" href="/topics/alfred">alfred</a>
-            </li>
-          </ul>
-          <!-- Project Image (if one) -->
-          <div class="card-image">
-            <img src="../images/projects/parsers.svg" />
-          </div>
-          <!-- Project Title -->
-          <div class="card-header">
-            <h3 class="card-title">
-              Parsers
-          </h3>
-          </div>
-          <!-- Fractal Divider -->
-          <hr class="fractal">
-          <!-- Project Summary -->
-          <div class="card-copy">
-            <!-- Render Markdown as HTML -->
-            <p>Parse any Greek or Latin word lightening quick. This workflow uses the <a href="">Perseus Digital Library</a> backend to provide parsing info on input text.</p>
-          </div>
-        </li>
-        <li class="card">
-          <!-- Card-covering hyperlink -->
-          <a class="card-link no-hvr" href="reboot"></a>
-          <!-- Project Tags (if any) -->
-          <ul class="card-tags">
-            <li>
-              <a class="badge no-hvr" id="bash" href="/topics/bash">bash</a>
-            </li>
-          </ul>
-          <!-- Project Image (if one) -->
-          <div class="card-image">
-            <img src="../images/projects/reboot.svg" />
-          </div>
-          <!-- Project Title -->
-          <div class="card-header">
-            <h3 class="card-title">
-              Reboot
-          </h3>
-          </div>
-          <!-- Fractal Divider -->
-          <hr class="fractal">
-          <!-- Project Summary -->
-          <div class="card-copy">
-            <!-- Render Markdown as HTML -->
-            <p>WIP bootstrapping library for OS X.</p>
-          </div>
-        </li>
-        <li class="card">
-          <!-- Card-covering hyperlink -->
-          <a class="card-link no-hvr" href="skimmer"></a>
-          <!-- Project Tags (if any) -->
-          <ul class="card-tags">
-            <li>
-              <a class="badge no-hvr" id="alfred" href="/topics/alfred">alfred</a>
-            </li>
-          </ul>
-          <!-- Project Image (if one) -->
-          <div class="card-image">
-            <img src="../images/projects/skimmer.svg" />
-          </div>
-          <!-- Project Title -->
-          <div class="card-header">
-            <h3 class="card-title">
-              Skimmer
-          </h3>
-          </div>
-          <!-- Fractal Divider -->
-          <hr class="fractal">
-          <!-- Project Summary -->
-          <div class="card-copy">
-            <!-- Render Markdown as HTML -->
-            <p>Extensions for the PDF application <a href="http://skim-app.sourceforge.net/">Skim</a> that allow users to split scanned PDF pages, export annotations, or search all your PDFs across your system.</p>
-          </div>
-        </li>
-        <li class="card">
-          <!-- Card-covering hyperlink -->
-          <a class="card-link no-hvr" href="snippets"></a>
-          <!-- Project Tags (if any) -->
-          <ul class="card-tags">
-            <li>
-              <a class="badge no-hvr" id="alfred" href="/topics/alfred">alfred</a>
-            </li>
-          </ul>
-          <!-- Project Image (if one) -->
-          <div class="card-image">
-            <img src="../images/projects/snippets.svg" />
-          </div>
-          <!-- Project Title -->
-          <div class="card-header">
-            <h3 class="card-title">
-              Snippets
-          </h3>
-          </div>
-          <!-- Fractal Divider -->
-          <hr class="fractal">
-          <!-- Project Summary -->
-          <div class="card-copy">
-            <!-- Render Markdown as HTML -->
-            <p>Create on-the-fly text expansion snippets which <code>Snippets</code> will expand when you are finished writing.</p>
-          </div>
-        </li>
-        <li class="card">
-          <!-- Card-covering hyperlink -->
-          <a class="card-link no-hvr" href="spritzr"></a>
-          <!-- Project Tags (if any) -->
-          <ul class="card-tags">
-            <li>
-              <a class="badge no-hvr" id="alfred" href="/topics/alfred">alfred</a>
-            </li>
-          </ul>
-          <!-- Project Image (if one) -->
-          <div class="card-image">
-            <img src="../images/projects/spritzr.svg" />
-          </div>
-          <!-- Project Title -->
-          <div class="card-header">
-            <h3 class="card-title">
-              Spritzr
-          </h3>
-          </div>
-          <!-- Fractal Divider -->
-          <hr class="fractal">
-          <!-- Project Summary -->
-          <div class="card-copy">
-            <!-- Render Markdown as HTML -->
-            <p>Bring speed-reading to the desktop. Using the <a href="">Spritz</a> technique, this workflow allows you to speed-read any text files on your Mac.</p>
-          </div>
-        </li>
-        <li class="card">
-          <!-- Card-covering hyperlink -->
-          <a class="card-link no-hvr" href="wikify"></a>
-          <!-- Project Tags (if any) -->
-          <ul class="card-tags">
-            <li>
-              <a class="badge no-hvr" id="alfred" href="/topics/alfred">alfred</a>
-            </li>
-          </ul>
-          <!-- Project Image (if one) -->
-          <div class="card-image">
+            <!-- if item has header image, add it -->
             <img src="../images/projects/wikify.svg" />
           </div>
-          <!-- Project Title -->
-          <div class="card-header">
-            <h3 class="card-title">
-              Wikify
-          </h3>
-          </div>
           <!-- Fractal Divider -->
           <hr class="fractal">
-          <!-- Project Summary -->
-          <div class="card-copy">
-            <!-- Render Markdown as HTML -->
-            <p>Add the power of a personal wiki and Markdown to <a href="https://evernote.com/">Evernote</a>. Link pre-existing notes to new notes or old notes; write new notes and have references to pre-existing notes automatically linked; convert any Evernote note to Markdown, or write a new note in Markdown and have it converted into an Evernote note.</p>
+          <!-- item Title -->
+          <div class="card-right">
+            <div class="card-header">
+              <h3 class="card-title">
+                <p>Wikify</p>
+              </h3>
+              <h5 class="card-date">
+                27 May 2015
+      </h5>
+            </div>
+            <!-- item Summary -->
+            <div class="card-copy">
+              <p>Add the power of a personal wiki and Markdown to <a href="https://evernote.com/">Evernote</a>. Link pre-existing notes to new notes or old notes; write new notes and have references to pre-existing notes automatically linked; convert any Evernote note to Markdown, or write a new note in Markdown and have it converted into an Evernote note.</p>
+            </div>
           </div>
         </li>
         <li class="card">
           <!-- Card-covering hyperlink -->
-          <a class="card-link no-hvr" href="zotquery"></a>
-          <!-- Project Tags (if any) -->
+          <a class="card-link no-hvr" href="/projects/snippets/"></a>
+          <!-- item Tags (if any) -->
           <ul class="card-tags">
             <li>
-              <a class="badge no-hvr" id="alfred" href="/topics/alfred">alfred</a>
+              <a class="badge no-hvr alfred" href="/topics/alfred/">alfred</a>
             </li>
           </ul>
-          <!-- Project Image (if one) -->
+          <!-- item Image (if one) -->
           <div class="card-image">
-            <img src="../images/projects/zotquery.svg" />
-          </div>
-          <!-- Project Title -->
-          <div class="card-header">
-            <h3 class="card-title">
-              ZotQuery
-          </h3>
+            <!-- if item has header image, add it -->
+            <img src="../images/projects/snippets.svg" />
           </div>
           <!-- Fractal Divider -->
           <hr class="fractal">
-          <!-- Project Summary -->
-          <div class="card-copy">
-            <!-- Render Markdown as HTML -->
-            <p>Provides lightening fast access to a user's <a href="https://www.zotero.org">Zotero</a> citation data.</p>
+          <!-- item Title -->
+          <div class="card-right">
+            <div class="card-header">
+              <h3 class="card-title">
+                <p>Snippets</p>
+              </h3>
+              <h5 class="card-date">
+                27 May 2015
+      </h5>
+            </div>
+            <!-- item Summary -->
+            <div class="card-copy">
+              <p>Create on-the-fly text expansion snippets which <code>Snippets</code> will expand when you are finished writing.</p>
+            </div>
+          </div>
+        </li>
+        <li class="card">
+          <!-- Card-covering hyperlink -->
+          <a class="card-link no-hvr" href="/projects/skimmer/"></a>
+          <!-- item Tags (if any) -->
+          <ul class="card-tags">
+            <li>
+              <a class="badge no-hvr alfred" href="/topics/alfred/">alfred</a>
+            </li>
+          </ul>
+          <!-- item Image (if one) -->
+          <div class="card-image">
+            <!-- if item has header image, add it -->
+            <img src="../images/projects/skimmer.svg" />
+          </div>
+          <!-- Fractal Divider -->
+          <hr class="fractal">
+          <!-- item Title -->
+          <div class="card-right">
+            <div class="card-header">
+              <h3 class="card-title">
+                <p>Skimmer</p>
+              </h3>
+              <h5 class="card-date">
+                27 May 2015
+      </h5>
+            </div>
+            <!-- item Summary -->
+            <div class="card-copy">
+              <p>Extensions for the PDF application <a href="http://skim-app.sourceforge.net/">Skim</a> that allow users to split scanned PDF pages, export annotations, or search all your PDFs across your system.</p>
+            </div>
+          </div>
+        </li>
+        <li class="card">
+          <!-- Card-covering hyperlink -->
+          <a class="card-link no-hvr" href="/projects/parsers/"></a>
+          <!-- item Tags (if any) -->
+          <ul class="card-tags">
+            <li>
+              <a class="badge no-hvr alfred" href="/topics/alfred/">alfred</a>
+            </li>
+          </ul>
+          <!-- item Image (if one) -->
+          <div class="card-image">
+            <!-- if item has header image, add it -->
+            <img src="../images/projects/parsers.svg" />
+          </div>
+          <!-- Fractal Divider -->
+          <hr class="fractal">
+          <!-- item Title -->
+          <div class="card-right">
+            <div class="card-header">
+              <h3 class="card-title">
+                <p>Parsers</p>
+              </h3>
+              <h5 class="card-date">
+                27 May 2015
+      </h5>
+            </div>
+            <!-- item Summary -->
+            <div class="card-copy">
+              <p>Parse any Greek or Latin word lightening quick. This workflow uses the <a href="">Perseus Digital Library</a> backend to provide parsing info on input text.</p>
+            </div>
+          </div>
+        </li>
+        <li class="card">
+          <!-- Card-covering hyperlink -->
+          <a class="card-link no-hvr" href="/projects/pandoctor/"></a>
+          <!-- item Tags (if any) -->
+          <ul class="card-tags">
+            <li>
+              <a class="badge no-hvr alfred" href="/topics/alfred/">alfred</a>
+            </li>
+          </ul>
+          <!-- item Image (if one) -->
+          <div class="card-image">
+            <!-- if item has header image, add it -->
+            <img src="../images/projects/pandoctor.svg" />
+          </div>
+          <!-- Fractal Divider -->
+          <hr class="fractal">
+          <!-- item Title -->
+          <div class="card-right">
+            <div class="card-header">
+              <h3 class="card-title">
+                <p>Pandoctor</p>
+              </h3>
+              <h5 class="card-date">
+                27 May 2015
+      </h5>
+            </div>
+            <!-- item Summary -->
+            <div class="card-copy">
+              <p>Provides an intuitive GUI for the <a href="http://pandoc.org/"><code>pandoc</code></a> document converter utility.</p>
+            </div>
+          </div>
+        </li>
+        <li class="card">
+          <!-- Card-covering hyperlink -->
+          <a class="card-link no-hvr" href="/projects/zotquery/"></a>
+          <!-- item Tags (if any) -->
+          <ul class="card-tags">
+            <li>
+              <a class="badge no-hvr alfred" href="/topics/alfred/">alfred</a>
+            </li>
+          </ul>
+          <!-- item Image (if one) -->
+          <div class="card-image">
+            <!-- if item has header image, add it -->
+            <img src="../images/projects/zotquery.svg" />
+          </div>
+          <!-- Fractal Divider -->
+          <hr class="fractal">
+          <!-- item Title -->
+          <div class="card-right">
+            <div class="card-header">
+              <h3 class="card-title">
+                <p>ZotQuery</p>
+              </h3>
+              <h5 class="card-date">
+                27 May 2015
+      </h5>
+            </div>
+            <!-- item Summary -->
+            <div class="card-copy">
+              <p>Provides lightening fast access to a user's <a href="https://www.zotero.org">Zotero</a> citation data.</p>
+            </div>
+          </div>
+        </li>
+        <li class="card">
+          <!-- Card-covering hyperlink -->
+          <a class="card-link no-hvr" href="/projects/metadata/"></a>
+          <!-- item Tags (if any) -->
+          <ul class="card-tags">
+            <li>
+              <a class="badge no-hvr python" href="/topics/python/">python</a>
+            </li>
+          </ul>
+          <!-- item Image (if one) -->
+          <div class="card-image">
+            <!-- if item has header image, add it -->
+            <img src="../images/projects/metadata.svg" />
+          </div>
+          <!-- Fractal Divider -->
+          <hr class="fractal">
+          <!-- item Title -->
+          <div class="card-right">
+            <div class="card-header">
+              <h3 class="card-title">
+                <p>Metadata</p>
+              </h3>
+              <h5 class="card-date">
+                23 May 2015
+      </h5>
+            </div>
+            <!-- item Summary -->
+            <div class="card-copy">
+              <p>A Python module for searching your local files using metadata queries.</p>
+            </div>
+          </div>
+        </li>
+        <li class="card">
+          <!-- Card-covering hyperlink -->
+          <a class="card-link no-hvr" href="/projects/classical-studies-resources/"></a>
+          <!-- item Tags (if any) -->
+          <!-- item Image (if one) -->
+          <div class="card-image">
+            <!-- if item has header image, add it -->
+          </div>
+          <!-- Fractal Divider -->
+          <hr class="fractal">
+          <!-- item Title -->
+          <div class="card-right">
+            <div class="card-header">
+              <h3 class="card-title">
+                <p>Classical Studies Resources</p>
+              </h3>
+              <h5 class="card-date">
+                23 May 2015
+      </h5>
+            </div>
+            <!-- item Summary -->
+            <div class="card-copy">
+              <p>This is a work-in-progress collection of structured data and scripts for Classical Studies/Classics.</p>
+            </div>
+          </div>
+        </li>
+        <li class="card">
+          <!-- Card-covering hyperlink -->
+          <a class="card-link no-hvr" href="/projects/spritzr/"></a>
+          <!-- item Tags (if any) -->
+          <ul class="card-tags">
+            <li>
+              <a class="badge no-hvr alfred" href="/topics/alfred/">alfred</a>
+            </li>
+          </ul>
+          <!-- item Image (if one) -->
+          <div class="card-image">
+            <!-- if item has header image, add it -->
+            <img src="../images/projects/spritzr.svg" />
+          </div>
+          <!-- Fractal Divider -->
+          <hr class="fractal">
+          <!-- item Title -->
+          <div class="card-right">
+            <div class="card-header">
+              <h3 class="card-title">
+                <p>Spritzr</p>
+              </h3>
+              <h5 class="card-date">
+                23 May 2015
+      </h5>
+            </div>
+            <!-- item Summary -->
+            <div class="card-copy">
+              <p>Bring speed-reading to the desktop. Using the <a href="">Spritz</a> technique, this workflow allows you to speed-read any text files on your Mac.</p>
+            </div>
           </div>
         </li>
       </ul>
+      <div class="pagination">
+        <ul>
+          <li class="disabled"><span>« Prev</span></li>
+          <li class="active"><span>1</span></li>
+          <li><a href="/projects/page/2/">2</a></li>
+          <li><a href="/projects/page/3/">3</a></li>
+          <li><a href="/projects/page/4/">4</a></li>
+          <li><a href="/projects/page/5/">5</a></li>
+          <li><a href="/projects/page/2/">Next »</a></li>
+        </ul>
+      </div>
     </div>
     <aside id="sidebar">
       <hr class="fractal">
@@ -504,23 +456,23 @@
         <ul class="fa-ul">
           <li>
             <i class="fa-li fa fa-chevron-right"></i>
-            <a href="../articles/ruminations-on-a-credal-logic/">Ruminations on a Credal Logic</a>
+            <a href="/articles/ruminations-on-a-credal-logic/">Ruminations on a Credal Logic</a>
           </li>
           <li>
             <i class="fa-li fa fa-chevron-right"></i>
-            <a href="../articles/1-0-9999/">1 = 0.9999...</a>
+            <a href="/articles/1-0-9999/">1 = 0.9999...</a>
           </li>
           <li>
             <i class="fa-li fa fa-chevron-right"></i>
-            <a href="../articles/portrait-of-pain/">Portrait of Pain</a>
+            <a href="/articles/portrait-of-pain/">Portrait of Pain</a>
           </li>
           <li>
             <i class="fa-li fa fa-chevron-right"></i>
-            <a href="../articles/elevator/">Elevator</a>
+            <a href="/jots/201604051529/">"Oft evil will shall evil mar" - J.R.R. Tolkien (via Theoden)</a>
           </li>
           <li>
             <i class="fa-li fa fa-chevron-right"></i>
-            <a href="../articles/cleaning-up-git-repos/">Cleaning up Git repos</a>
+            <a href="/articles/elevator/">Elevator</a>
           </li>
         </ul>
       </div>
@@ -529,46 +481,53 @@
         <ul>
           <!-- Add all Article tags -->
           <li>
-            <a class="badge no-hvr" id="math" href="/topics/math/">math (1)</a>
+            <a class="badge no-hvr math" href="/topics/math/">math (1)</a>
           </li>
           <li>
-            <a class="badge no-hvr" id="logic" href="/topics/logic/">logic (3)</a>
+            <a class="badge no-hvr logic" href="/topics/logic/">logic (3)</a>
           </li>
           <li>
-            <a class="badge no-hvr" id="epistemology" href="/topics/epistemology/">epistemology (3)</a>
+            <a class="badge no-hvr epistemology" href="/topics/epistemology/">epistemology (3)</a>
           </li>
           <li>
-            <a class="badge no-hvr" id="hackademics" href="/topics/hackademics/">hackademics (1)</a>
+            <a class="badge no-hvr hackademics" href="/topics/hackademics/">hackademics (1)</a>
           </li>
           <li>
-            <a class="badge no-hvr" id="grad-school" href="/topics/grad-school/">grad-school (2)</a>
+            <a class="badge no-hvr grad-school" href="/topics/grad-school/">grad-school (2)</a>
           </li>
           <li>
-            <a class="badge no-hvr" id="til" href="/topics/til/">til (1)</a>
+            <a class="badge no-hvr til" href="/topics/til/">til (1)</a>
           </li>
           <li>
-            <a class="badge no-hvr" id="poetry" href="/topics/poetry/">poetry (1)</a>
+            <a class="badge no-hvr poetry" href="/topics/poetry/">poetry (1)</a>
           </li>
           <li>
-            <a class="badge no-hvr" id="example" href="/topics/example/">example (1)</a>
+            <a class="badge no-hvr christianity" href="/topics/christianity/">christianity (1)</a>
           </li>
           <li>
-            <a class="badge no-hvr" id="christianity" href="/topics/christianity/">christianity (1)</a>
+            <a class="badge no-hvr love" href="/topics/love/">love (1)</a>
           </li>
           <li>
-            <a class="badge no-hvr" id="love" href="/topics/love/">love (1)</a>
+            <a class="badge no-hvr prose" href="/topics/prose/">prose (2)</a>
           </li>
           <li>
-            <a class="badge no-hvr" id="prose" href="/topics/prose/">prose (2)</a>
+            <a class="badge no-hvr faith" href="/topics/faith/">faith (1)</a>
           </li>
           <li>
-            <a class="badge no-hvr" id="faith" href="/topics/faith/">faith (1)</a>
+            <a class="badge no-hvr example" href="/topics/example/">example (1)</a>
           </li>
-          <!-- Add all Project tags -->
-          <a class="badge no-hvr" id="alfred" href="/topics/alfred">alfred (9)</a>
-          <a class="badge no-hvr" id="git" href="/topics/git">git (1)</a>
-          <a class="badge no-hvr" id="bash" href="/topics/bash">bash (2)</a>
-          <a class="badge no-hvr" id="python" href="/topics/python">python (1)</a>
+          <li>
+            <a class="badge no-hvr alfred" href="/topics/alfred/">alfred (9)</a>
+          </li>
+          <li>
+            <a class="badge no-hvr git" href="/topics/git/">git (1)</a>
+          </li>
+          <li>
+            <a class="badge no-hvr bash" href="/topics/bash/">bash (2)</a>
+          </li>
+          <li>
+            <a class="badge no-hvr python" href="/topics/python/">python (1)</a>
+          </li>
         </ul>
       </div>
     </aside>

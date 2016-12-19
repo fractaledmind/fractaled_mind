@@ -109,12 +109,13 @@
   </ul>
 </header>
 
+
     <div class="navigation">
   <nav role="navigation">
     <ul class="navigation-menu">
       <li class="nav-link"><a href="/">home</a></li>
-      <li class="nav-link"><a href="/jots">jots</a></li>
-      <li class="nav-link"><a href="/projects">projects</a></li>
+      <li class="nav-link"><a href="/jots/">jots</a></li>
+      <li class="nav-link"><a href="/projects/">projects</a></li>
     </ul>
   </nav>
 
@@ -136,11 +137,12 @@
 
 
     <div class="card-image">
-      <!-- if project has tags, add filler element -->
-      <!-- if project has header image, add it -->
+      <!-- if post has tags, add filler element -->
+      <!-- if post has header image, add it -->
     </div>
 
-    <h2 id="title">Classical Studies Resources</h2>
+    <h2 id="title"><p>Classical Studies Resources</p>
+</h2>
 
     <hr class="fractal">
 
@@ -154,10 +156,10 @@
   <li>the <a href="http://www.perseus.tufts.edu/">Perseus Project</a></li>
   <li><a href="http://dcc.dickinson.edu/">Dickenson College Commentaries</a></li>
   <li><a href="http://dge.cchs.csic.es/index.en">The Diccionario Griego-Español Project</a></li>
-  <li><a href="http://www.annee-philologique.com/">L'Année philologique</a></li>
+  <li><a href="http://www.annee-philologique.com/">L’Année philologique</a></li>
 </ul>
 
-<p>This is a work-in-progress collection of structured data and scripts for Classical Studies/Classics. The data has been compiled and organized from various online resources including the Perseus Project, Dickenson College Commentaries, The Diccionario Griego-Español Project, and L'Année philologique.</p>
+<p>This is a work-in-progress collection of structured data and scripts for Classical Studies/Classics. The data has been compiled and organized from various online resources including the Perseus Project, Dickenson College Commentaries, The Diccionario Griego-Español Project, and L’Année philologique.</p>
 
 <p>Currently, these are the JSON structured files:</p>
 
@@ -167,7 +169,7 @@
   <li>Greek Authors</li>
   <li>Greek Texts</li>
   <li>Latin Texts</li>
-  <li>L'Année philologique Journal Abbreviations (in two forms)</li>
+  <li>L’Année philologique Journal Abbreviations (in two forms)</li>
 </ul>
 
 <p>There are also plain text files:</p>
@@ -175,18 +177,15 @@
 <ul>
   <li>DGE Authors and Works</li>
   <li>DGE Dictionary Abbreviations</li>
-  <li>Index to Smyth's Greek Grammar</li>
+  <li>Index to Smyth’s Greek Grammar</li>
 </ul>
 
 <p>Finally, there is a random collection of scripts (mostly compiled Applescripts) that I have made at various points for various uses. This section requires much cleaning up, refactoring, and organization at this stage. But I am putting them here for now nonetheless.</p>
 
 <p>Hopefully, these will find some use for others.</p>
 </div>
-
-    <!-- Get all projects for which there are articles -->
-    <!-- Iterate over these projects -->
-        <!-- If the project with articles matches the project passed in to create this template, list the articles -->
 </div>
+
     </div>
 
     <aside id="sidebar">
@@ -198,23 +197,23 @@
     <ul class="fa-ul">
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/ruminations-on-a-credal-logic/">Ruminations on a Credal Logic</a>
+          <a href="/articles/ruminations-on-a-credal-logic/">Ruminations on a Credal Logic</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/1-0-9999/">1 = 0.9999...</a>
+          <a href="/articles/1-0-9999/">1 = 0.9999...</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/portrait-of-pain/">Portrait of Pain</a>
+          <a href="/articles/portrait-of-pain/">Portrait of Pain</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/elevator/">Elevator</a>
+          <a href="/jots/201604051529/">"Oft evil will shall evil mar" - J.R.R. Tolkien (via Theoden)</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/cleaning-up-git-repos/">Cleaning up Git repos</a>
+          <a href="/articles/elevator/">Elevator</a>
         </li>
     </ul>
   </div>
@@ -224,47 +223,53 @@
     <ul>
       <!-- Add all Article tags -->
         <li>
-          <a class="badge no-hvr" id="math" href="/topics/math/">math (1)</a>
+          <a class="badge no-hvr math" href="/topics/math/">math (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="logic" href="/topics/logic/">logic (3)</a>
+          <a class="badge no-hvr logic" href="/topics/logic/">logic (3)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="epistemology" href="/topics/epistemology/">epistemology (3)</a>
+          <a class="badge no-hvr epistemology" href="/topics/epistemology/">epistemology (3)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="hackademics" href="/topics/hackademics/">hackademics (1)</a>
+          <a class="badge no-hvr hackademics" href="/topics/hackademics/">hackademics (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="grad-school" href="/topics/grad-school/">grad-school (2)</a>
+          <a class="badge no-hvr grad-school" href="/topics/grad-school/">grad-school (2)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="til" href="/topics/til/">til (1)</a>
+          <a class="badge no-hvr til" href="/topics/til/">til (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="poetry" href="/topics/poetry/">poetry (1)</a>
+          <a class="badge no-hvr poetry" href="/topics/poetry/">poetry (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="example" href="/topics/example/">example (1)</a>
+          <a class="badge no-hvr christianity" href="/topics/christianity/">christianity (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="christianity" href="/topics/christianity/">christianity (1)</a>
+          <a class="badge no-hvr love" href="/topics/love/">love (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="love" href="/topics/love/">love (1)</a>
+          <a class="badge no-hvr prose" href="/topics/prose/">prose (2)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="prose" href="/topics/prose/">prose (2)</a>
+          <a class="badge no-hvr faith" href="/topics/faith/">faith (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="faith" href="/topics/faith/">faith (1)</a>
+          <a class="badge no-hvr example" href="/topics/example/">example (1)</a>
         </li>
-
-      <!-- Add all Project tags -->
-        <a class="badge no-hvr" id="alfred" href="/topics/alfred">alfred (9)</a>
-        <a class="badge no-hvr" id="git" href="/topics/git">git (1)</a>
-        <a class="badge no-hvr" id="bash" href="/topics/bash">bash (2)</a>
-        <a class="badge no-hvr" id="python" href="/topics/python">python (1)</a>
+        <li>
+          <a class="badge no-hvr alfred" href="/topics/alfred/">alfred (9)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr git" href="/topics/git/">git (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr bash" href="/topics/bash/">bash (2)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr python" href="/topics/python/">python (1)</a>
+        </li>
     </ul>
   </div>
 

@@ -109,12 +109,13 @@
   </ul>
 </header>
 
+
     <div class="navigation">
   <nav role="navigation">
     <ul class="navigation-menu">
       <li class="nav-link"><a href="/">home</a></li>
-      <li class="nav-link"><a href="/jots">jots</a></li>
-      <li class="nav-link"><a href="/projects">projects</a></li>
+      <li class="nav-link"><a href="/jots/">jots</a></li>
+      <li class="nav-link"><a href="/projects/">projects</a></li>
     </ul>
   </nav>
 
@@ -136,19 +137,19 @@
 
       <ul class="card-tags">
           <li>
-            <!-- If project-tag is also a blog-tag, link to it -->
-              <a class="badge no-hvr" id="alfred" href="/topics/alfred">alfred</a>
+            <a class="badge no-hvr alfred" href="/topics/alfred/">alfred</a>
           </li>
       </ul>
 
     <div class="card-image">
-      <!-- if project has tags, add filler element -->
+      <!-- if post has tags, add filler element -->
         <div id="tag-filler-space"></div>
-      <!-- if project has header image, add it -->
+      <!-- if post has header image, add it -->
         <img src="../../images/projects/zotquery.svg" />
     </div>
 
-    <h2 id="title">ZotQuery</h2>
+    <h2 id="title"><p>ZotQuery</p>
+</h2>
 
     <hr class="fractal">
 
@@ -194,17 +195,17 @@
 
 <p><img alt="entering Zotero user ID" src="../../images/projects/zotquery/zq_config_userid.png" /></p>
 
-<p>If you do not have or do not know your Zotero User ID, click the <code>Where do I find my User ID?</code> button. This will open Zotero’s "Feeds/API” tab, where you may need to login. Once logged in, you will see a page similar to this:</p>
+<p>If you do not have or do not know your Zotero User ID, click the <code>Where do I find my User ID?</code> button. This will open Zotero’s “Feeds/API” tab, where you may need to login. Once logged in, you will see a page similar to this:</p>
 
 <p><img alt="creatingnew Zotero private key" src="../../images/projects/zotquery/Zotero___Settings___Feeds_API-2.png" /></p>
 
-<p>This shows a user who has two API keys set up, one for personal use and one for the iOS app <a title="PaperShip - Manage, Annotate, and Share your Papers On The Go ..." href="http://www.papershipapp.com/">PaperShip</a>. If you do not have a Personal API key, you can easily set one up by clicking the "Create new private key" link. Your User ID will be a number, probably less than 8 digits. Insert it into the text field and click <code>Set User ID</code> (<strong>Note</strong>: Applescript text input dialog boxes do not respond, typically, to the keyboard shortcut for paste, so you will likely need to right-click and manually paste in the ID).</p>
+<p>This shows a user who has two API keys set up, one for personal use and one for the iOS app <a title="PaperShip - Manage, Annotate, and Share your Papers On The Go ..." href="http://www.papershipapp.com/">PaperShip</a>. If you do not have a Personal API key, you can easily set one up by clicking the “Create new private key” link. Your User ID will be a number, probably less than 8 digits. Insert it into the text field and click <code>Set User ID</code> (<strong>Note</strong>: Applescript text input dialog boxes do not respond, typically, to the keyboard shortcut for paste, so you will likely need to right-click and manually paste in the ID).</p>
 
 <p>Second, you will need to input your API Key:</p>
 
 <p><img alt="entering Zotero API key" src="../../images/projects/zotquery/zq_config_apikey-2.png" /></p>
 
-<p>Since <strong><code>ZotQuery</code></strong> reads this <code>settings.json</code> file whenever it attempts to connect to the Zotero API, if you don’t insert the proper data here, the "Export Citation" and "Export Reference” (see below) functions <strong>will not work</strong>.</p>
+<p>Since <strong><code>ZotQuery</code></strong> reads this <code>settings.json</code> file whenever it attempts to connect to the Zotero API, if you don’t insert the proper data here, the “Export Citation” and “Export Reference” (see below) functions <strong>will not work</strong>.</p>
 
 <p>Finally, <strong><code>ZotQuery</code></strong> (now in version 4.0) will also allow you to set your export style and format. Once you have entered your API information, the configurator will move to setting your export preferences:</p>
 
@@ -405,7 +406,7 @@
 
 <p>Taken together, these export options make <strong><code>ZotQuery</code></strong> an academic’s best friend in the writing process. You can insert in-text references, full citations, or generate entire Works Cited all from <strong><code>ZotQuery</code></strong>. These citations, references, and bibliographies can also now be Rich Text in addition to Markdown. This allows users who write in <a href="http://office.microsoft.com/en-us/word/">Microsoft Word</a>, <a href="http://www.apple.com/mac/pages/">Pages</a>, or <a href="http://literatureandlatte.com/scrivener.php">Scrivener</a> to utilize <strong><code>ZotQuery</code></strong>. You can also open Zotero directly to an item (for quick meta-data editing) or even open an item’s attachment to double check a quote.</p>
 
-<p>There are, however, a few caveats and possible configurations. First, these final options (export reference, export citations, append citation, and generate works cited) all use Zotero’s web API, and so they require an internet connection. If you are not connected to the internet, all will fail (gracefully). Second, the workflow defaults to Chicago (author-date) style both for short references and full citations (examples above). If you wish to use another of Zotero’s CSL styles, you will need to change the style via the <code>z:settings</code> command. Since <strong><code>ZotQuery</code></strong> now exports BibTeX and RTF-Scan cite keys, even users who prefer to write in [MultiMarkdown](http://fletcherpenney.net/multimarkdown/ "MultiMarkdown - fletcherpenney.net”) and convert to [LaTeX](http://www.latex-project.org/ "LaTeX – A document preparation system”) can utilize <strong><code>ZotQuery</code></strong>.</p>
+<p>There are, however, a few caveats and possible configurations. First, these final options (export reference, export citations, append citation, and generate works cited) all use Zotero’s web API, and so they require an internet connection. If you are not connected to the internet, all will fail (gracefully). Second, the workflow defaults to Chicago (author-date) style both for short references and full citations (examples above). If you wish to use another of Zotero’s CSL styles, you will need to change the style via the <code>z:settings</code> command. Since <strong><code>ZotQuery</code></strong> now exports BibTeX and RTF-Scan cite keys, even users who prefer to write in [MultiMarkdown](http://fletcherpenney.net/multimarkdown/ “MultiMarkdown - fletcherpenney.net”) and convert to [LaTeX](http://www.latex-project.org/ “LaTeX – A document preparation system”) can utilize <strong><code>ZotQuery</code></strong>.</p>
 
 <p><strong>Note</strong>: These features will also require that you have the proper Zotero API data in the <code>settings.json</code> file. For instructions on setting this up, see above.</p>
 
@@ -467,9 +468,9 @@
 
 <p><code>python zotquery.py --cache True False</code></p>
 
-<p>These three arguments tell zotquery to use the caching object (<code>--cache</code>), to force a cache update (<code>True</code>) and to not limit the scope to only the user's personal library (<code>False</code>). As detailed in the description at the top of <code>zotquery.py</code>, the last argument is a Boolean value for whether or not to limit the scope of the cache to the user's personal library. By default, it is set to <code>False</code>, which means that group libraries are included in <strong><code>ZotQuery</code></strong>'s cache. If you change this to <code>True</code>, <strong><code>ZotQuery</code></strong> will only cache your personal library, and thus will only search your personal library.</p>
+<p>These three arguments tell zotquery to use the caching object (<code>--cache</code>), to force a cache update (<code>True</code>) and to not limit the scope to only the user’s personal library (<code>False</code>). As detailed in the description at the top of <code>zotquery.py</code>, the last argument is a Boolean value for whether or not to limit the scope of the cache to the user’s personal library. By default, it is set to <code>False</code>, which means that group libraries are included in <strong><code>ZotQuery</code></strong>’s cache. If you change this to <code>True</code>, <strong><code>ZotQuery</code></strong> will only cache your personal library, and thus will only search your personal library.</p>
 
-<p><strong><code>ZotQuery</code></strong> also has a cache updater that runs each time you perform an action. This is the Run Script action beneath the "Citation Copied!" notification for each filter type. If you open this Run Script action you will see:</p>
+<p><strong><code>ZotQuery</code></strong> also has a cache updater that runs each time you perform an action. This is the Run Script action beneath the “Citation Copied!” notification for each filter type. If you open this Run Script action you will see:</p>
 
 <p><code>python zotquery.py --cache False False</code>.</p>
 
@@ -481,11 +482,8 @@
 
 <p>So that’s how you use <strong><code>ZotQuery</code></strong>. It’s a powerful tool. I hope you like it.</p>
 </div>
-
-    <!-- Get all projects for which there are articles -->
-    <!-- Iterate over these projects -->
-        <!-- If the project with articles matches the project passed in to create this template, list the articles -->
 </div>
+
     </div>
 
     <aside id="sidebar">
@@ -497,23 +495,23 @@
     <ul class="fa-ul">
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/ruminations-on-a-credal-logic/">Ruminations on a Credal Logic</a>
+          <a href="/articles/ruminations-on-a-credal-logic/">Ruminations on a Credal Logic</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/1-0-9999/">1 = 0.9999...</a>
+          <a href="/articles/1-0-9999/">1 = 0.9999...</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/portrait-of-pain/">Portrait of Pain</a>
+          <a href="/articles/portrait-of-pain/">Portrait of Pain</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/elevator/">Elevator</a>
+          <a href="/jots/201604051529/">"Oft evil will shall evil mar" - J.R.R. Tolkien (via Theoden)</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/cleaning-up-git-repos/">Cleaning up Git repos</a>
+          <a href="/articles/elevator/">Elevator</a>
         </li>
     </ul>
   </div>
@@ -523,47 +521,53 @@
     <ul>
       <!-- Add all Article tags -->
         <li>
-          <a class="badge no-hvr" id="math" href="/topics/math/">math (1)</a>
+          <a class="badge no-hvr math" href="/topics/math/">math (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="logic" href="/topics/logic/">logic (3)</a>
+          <a class="badge no-hvr logic" href="/topics/logic/">logic (3)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="epistemology" href="/topics/epistemology/">epistemology (3)</a>
+          <a class="badge no-hvr epistemology" href="/topics/epistemology/">epistemology (3)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="hackademics" href="/topics/hackademics/">hackademics (1)</a>
+          <a class="badge no-hvr hackademics" href="/topics/hackademics/">hackademics (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="grad-school" href="/topics/grad-school/">grad-school (2)</a>
+          <a class="badge no-hvr grad-school" href="/topics/grad-school/">grad-school (2)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="til" href="/topics/til/">til (1)</a>
+          <a class="badge no-hvr til" href="/topics/til/">til (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="poetry" href="/topics/poetry/">poetry (1)</a>
+          <a class="badge no-hvr poetry" href="/topics/poetry/">poetry (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="example" href="/topics/example/">example (1)</a>
+          <a class="badge no-hvr christianity" href="/topics/christianity/">christianity (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="christianity" href="/topics/christianity/">christianity (1)</a>
+          <a class="badge no-hvr love" href="/topics/love/">love (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="love" href="/topics/love/">love (1)</a>
+          <a class="badge no-hvr prose" href="/topics/prose/">prose (2)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="prose" href="/topics/prose/">prose (2)</a>
+          <a class="badge no-hvr faith" href="/topics/faith/">faith (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="faith" href="/topics/faith/">faith (1)</a>
+          <a class="badge no-hvr example" href="/topics/example/">example (1)</a>
         </li>
-
-      <!-- Add all Project tags -->
-        <a class="badge no-hvr" id="alfred" href="/topics/alfred">alfred (9)</a>
-        <a class="badge no-hvr" id="git" href="/topics/git">git (1)</a>
-        <a class="badge no-hvr" id="bash" href="/topics/bash">bash (2)</a>
-        <a class="badge no-hvr" id="python" href="/topics/python">python (1)</a>
+        <li>
+          <a class="badge no-hvr alfred" href="/topics/alfred/">alfred (9)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr git" href="/topics/git/">git (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr bash" href="/topics/bash/">bash (2)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr python" href="/topics/python/">python (1)</a>
+        </li>
     </ul>
   </div>
 

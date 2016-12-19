@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <!-- Metadata declarations -->
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Content declarations -->
+  <title>Fractaled Mind</title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="feed.xml" />
+
+  <!-- External Resources -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+  <!-- Internal Resources -->
+  <link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
+  <link href="../../images/favicon.png" rel="icon" type="image/png" />
+  <script src="../../javascripts/bigfoot.js" type="text/javascript"></script>
+  <script src="../../javascripts/search.js" type="text/javascript"></script>
+
+  <!-- Bigfoot.js Popover Footnotes -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $.bigfoot({
+        numberResetSelector: ".card",
+        activateCallback: function($popover, $button) {
+          if (MathJax && !$button.data('mathjax-processed')) {
+            var content_wrapper = $popover.find('.bigfoot-footnote__content')[0];
+            MathJax.Hub.Queue(['Typeset', MathJax.Hub, content_wrapper]);
+            MathJax.Hub.Queue(function () {
+              $button.attr('data-bigfoot-footnote', content_wrapper.innerHTML);
+              $button.data('mathjax-processed', true);
+            });
+          }
+        }
+      });
+    });
+  </script>
+
+  <!-- Responsive Tables -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("td").each(function() {
+        var $th = $(this).closest('table').find('th').eq($(this).index());
+        $(this).attr('data-th', $th.text());
+      });
+    });
+  </script>
+
+  <!-- Scroll-Fix sidebar
+  <script type="text/javascript">
+    $(window).on("scroll", function(e) {
+      var scroll = $(this).scrollTop();
+      var logo_height = $('#site-logo').height();
+      var nav_height = $('.navigation').height() + 16;
+
+      if (scroll > logo_height) {
+        $('.navigation').css({'position': 'fixed'});
+         $('#sidebar').css({
+           'position': 'fixed',
+           'top': nav_height
+         });
+      } else {
+        $('.navigation').css({'position': 'inherit'});
+        $('#sidebar').css({'position': 'inherit'});
+      }
+    });
+  </script>
+  -->
+
+</head>
+
+
+  <body>
+    <header>
+  <div id="site-logo">
+    <img alt="Fractaled Mind" src="../../images/logo.svg" />
+  </div>
+
+  <ul id="social-networks">
+    <li>
+      <a href="https://facebook.com/fractaledmind" class="no-hvr">
+        <i class="fa fa-facebook fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://twitter.com/fractaledmind" class="no-hvr">
+        <i class="fa fa-twitter fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/smargh" class="no-hvr">
+        <i class="fa fa-github fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="mailto:stephen@fractaledmind.com" class="no-hvr">
+        <i class="fa fa-envelope fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="/feed.xml" class="no-hvr">
+        <i class="fa fa-rss fa-lg"></i>
+      </a>
+    </li>
+  </ul>
+</header>
+
+
+    <div class="navigation">
+  <nav role="navigation">
+    <ul class="navigation-menu">
+      <li class="nav-link"><a href="/">home</a></li>
+      <li class="nav-link"><a href="/jots/">jots</a></li>
+      <li class="nav-link"><a href="/projects/">projects</a></li>
+    </ul>
+  </nav>
+
+  <div id="search">
+    <div class="searchbar">
+      <form role="search" action="/search" method="get">
+        <input class="search-term" type="search" placeholder="Search..." name="q" />
+        <button class="search-submit" type="submit">
+          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png" alt="Search Icon">
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+    <div id="main" role="main">
+      <div class="card" id="essay-page">
+
+
+    <h2 id="title"><p>Consolation and Commemoration in Horace <em>Odes</em> 1.24 and 4.12</p>
+</h2>
+
+    <hr class="fractal">
+
+    <div id="description"><blockquote>
+  <p>For it shall be my dirge and chant me down<br />
+Over the mournful flood to the dim shore,<br />
+Where I shall find Quintilius and our tears.<br />
+Yes, farewell, Horace! Unto you I leave<br />
+The laurel and the letters that we loved;<br />
+Till we shall meet again. I cannot hold<br />
+Your light yet heavy Epicurean creed;<br />
+Your lays <em>“shall outlive brass and pyramid”</em>,<br />
+But he that made them shall outlive the lays,<br />
+Though how or where we know not.</p>
+</blockquote>
+
+<p>– 328-37, from <em>The Death of Virgil, A Dramatic Narrative</em> (1907) by Sir
+Thomas H. Warren</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Horace confronts grief and death directly in <em>Odes</em> 1.24 and 4.12, both of which address the poet Vergil.[^57.53] In 1.24, Vergil receives frank criticism for his excessive mourning following the death of their mutual friend Quintilius Varus.<sup id="fnref:3406"><a href="#fn:3406" class="footnote">1</a></sup> In 4.12, Vergil is invited to join Horace at a symposium, although the poem was published six years after Vergil’s death in 19 BC. Taken together, these two post-mortem poems to Vergil form an odd pair.[^18.38] While in 1.24 Horace consoles the aggrieved Vergil, in 4.12 Horace finds himself in Vergil’s position– grieving the death of a friend. Both also end with generalizing <em>sententia</em>, yet their import would appear contradictory. On the one hand, <em>Odes</em> 1.24 recommends the consolatory power of patience:</p>
+
+<blockquote style="text-indent: 0;">
+Durum; sed levius fit patientia<br />
+&nbsp;&nbsp;quicquid corrigere est nefas<br />
+<span style="float:right;">--*Odes* 1.24.19-20</span><br />
+It is hard; but whatever is forbidden to correct becomes easier to bear with patience.[^31.11]
+</blockquote>
+
+<p>On the other hand, <em>Odes</em> 4.12 turns to the sweetness of folly:</p>
+
+<blockquote>
+  <p>misce stultitiam consiliis brevem:
+  dulce est desipere in loco.
+–<em>Odes</em> 4.12.25-28</p>
+</blockquote>
+
+<blockquote>
+  <p>Mix brief folly into your plans: it is sweet to act the fool in the proper place.</p>
+</blockquote>
+
+<p>How ought one to understand <em>Odes</em> 4.12 given its relation to 1.24?</p>
+
+<h2 id="methodology">Methodology</h2>
+
+<p>In order to make sense of this enigmatic ode, one must read it against <em>Odes</em> 1.24. Taken together, these two post-mortem poems addressed to Vergil form a diptych of sorts, offering insight into how Horace believes one ought to or can mourn. In <em>Odes</em> 1.24 Horace, in the persona of a philosophical teacher, advises that one <em>ought</em> to mourn moderately and patiently. In 4.12 Horace the convivial poet suggests that the foolishness of mourning has its proper place.</p>
+
+<p>This paper begins with brief but thorough readings of the two odes, paying particular attention to their consolatory elements. Having considered each ode individually, I consider how the sentiments of 4.12 modify those of 1.24. This leads me to my final argument, that the “proper place” for foolish mourning is the poetic symposium as Horace constructs it in <em>Odes</em> 4.12. I contend that the symposium of 4.12 represents a poetic memorial of Horace and Vergil’s friendship.</p>
+
+<h2 id="odes-124">Odes 1.24</h2>
+
+<h3 id="overview">Overview</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Odes 1.24 was published in 23 B.C. as a part of the first book of Horace’s <em>Carmina</em>.[^11.41] Horace likely wrote the poem in the mid-20s B.C., after the death of Quintilius Varus of Cremona, a friend to Vergil and Horace alike.{»@spm</td>
+      <td>Add citation?«} As Michael Putnam points out, the ode conflates the genres of <em>epicedium</em> and <em>consolatio</em>, simultaneously a lamentation for Quintilius and condolence for Vergil.[^09.21] These two genres roughly divide the poem in half–the first half is dirge, the second is consolation.[^09.57] Aside from generic elements, the poem has an “almost critical tone,” which Philip Thibodeau argues Epicurean <em>parrhesia</em>, or frank criticism, underpins.[^10.37] In <em>Odes</em> 1.24, Horace conflates eulogy, consolation, and therapy. As a result, Vergil occupies three roles: he is the addressee in a dirge, the recipient of consolation, and the patient undergoing therapy.[^11.01] It is this middle role that I wish to focus upon.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="emotional-therapy">Emotional Therapy</h3>
+
+<p>Thibodeau argues convincingly that the poem functions as Epicurean emotional therapy. The central stanza is sufficient to demonstrate the manner and content of Horace’s criticism of Vergil’s mourning:</p>
+
+<blockquote>
+  <p>Multis ille bonis flebilis occidit, /
+nulli flebilior quam tibi, Vergili. /
+Tu frustra pius, heu, non ita creditum /
+poscis Quintilium deos.
+–<em>Odes</em> 1.24.9-12</p>
+</blockquote>
+
+<blockquote>
+  <p>He died mourned by many good men, but mourned by none more than by you, Vergil. You, uselessly pious, ask the gods for Quintilius, alas! not entrusted on those terms.</p>
+</blockquote>
+
+<p>Horace is curt. The shift from <em>flebilis</em> to <em>flebior</em> points directly to the issue. The Epicureans taught <em>metriopatheia</em>, emotional moderation,[^49.21] yet Vergil is pictured as the emotional outlier, the single friend mourning excessively. The folly of this excessive grief is immediately felt when Horace describes Vergil as “uselessly pious” (11). Of course, the deep resonances of <em>pius</em> in Vergil’s own corpus speak for themselves and only ratchet up the force of the phrase. Vergil may be attempting to act correctly in his mourning, but his actions are useless and therefor not pious. Horace does not shy away for the central problem. Beyond merely grieving Quintilius, Vergil is apparently asking the gods to return him to life (11-2). The whole poem is focused on reminding Vergil of the foolishness of such thoughts and desires.</p>
+
+<p>Horace begins with the euphemistic description of Quintilius’ death: he is “eternally asleep” (<em>perpetuus sopor</em>, 1.24.5). Near the middle of the poem, Horace becomes more explicit, reminding Vergil that blood, and therefore life, will not “return to the empty shade” (<em>vanae redeat sanguis imagini</em>, 15). Finally, to close the poem Horace declares that such desires are more than merely useless, they are utterly forbidden (<em>durum; sed levius fit patentia / quicquid corrigere est nefas</em>, 19-20). The poem as a whole answers the opening question, “What shame or limit should there be to the longing for one so loved?” (<em>Quis desiderio sit pudor aut modus / tam cari capitis?</em>, 1-2). Death provides the limit; it is a threshold beyond which none can pass. These reminders, while tonally in line with the Epicurean practice of <em>parrhesia</em>, also follow doctrinal Epicurean metaphysics and ethics.</p>
+
+<h3 id="epicureanism">Epicureanism</h3>
+
+<p>One finds the foundation for all Epicurean thought on death and the proper response to it in <em>Key Doctrines</em> 2: “death is nothing to us” (ὁ θάνατος οὐδὲν πρὸς ἡμᾶς). This simple statement produces two conclusions. First, it functions as an admonition to Epicureans not to fear death while alive.[^15.01] On the one hand, the dictum is thus a normative reminder of Epicurean ethics. On the other hand, however, the statement that “death is nothing to us” summarizes the argument behind this ethical position. In the <em>Letter to Menoeceus</em>, Epicurus reminds his friend that death is annihilation:</p>
+
+<blockquote>
+  <p>συνέθιζε δὲ ἐν τῷ νομίζειν μηδὲν πρὸς ἡμᾶς εἶναι τὸν θάνατον ἐπεὶ πᾶν ἀγαθὸν καὶ κακὸν ἐν αἰσθήσει· στέρησις δέ ἐστιν αἰσθήσεως ὁ θάνατος.
+–<em>LM</em> 124</p>
+</blockquote>
+
+<blockquote>
+  <p>Accustom yourself to hold that death is nothing to us, since all good and evil consist in sensation, and death is the privation of sensation.</p>
+</blockquote>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Death is thus nothing to us because as soon as we die, no “us” remains. This argument takes aim at the fear of death. For Epicurus, the fear of death was one of the largest impediments to <em>ataraxia</em>, the state of tranquility all Epicureans seek.{»@spm</td>
+      <td>Citation?«} If death is annihilation of the self, one cannot experience his or her own death; if one cannot experience one’s own death, one cannot feel any pain when dead. Thus, one ought not to fear death.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Horace, throughout this poem, reminds Vergil of the latter point: death is annihilation. This is why Vergil’s supposed “piety” is useless; this is why the blood will not return to the shade. Yet the parrhesiatic therapy is only half completed by these philosophical reminders and sentiments. In order for the poem to be truly consolatory, Horace must not only tell Vergil what to turn away from (excessive and foolish grief) but also what to turn towards. The therapy states, “Quintilius is dead, nothing can change that”, but the consolation adds, “There is still much to live for and love here”. More specifically, the consolatory element of the ode attempts to demonstrate to Vergil that Horace himself is a friend of Quintilian caliber.</p>
+
+<h3 id="consolation-of-friendship">Consolation of Friendship</h3>
+
+<p>If the therapy of the poem answer the opening question, the consolation answers stanza two’s question:</p>
+
+<blockquote>
+  <p>Ergo Quintilium perpetuus sopor /
+urget, cui Pudor et Iustitiae soror /
+incorrupta Fides nudaque Veritas /
+quando ullum inveniet parem?
+–<em>Odes</em> 1.24.5-8</p>
+</blockquote>
+
+<blockquote>
+  <p>So, everlasting slumber oppresses Quintilius. When will Shame and uncorrupted Faith, the sister of Justice, and naked Truth find anyone equal to him?</p>
+</blockquote>
+
+<p>If frankness is the quintessential quality of Epicurean friendships,[^19.53] then Quintilius himself is the quintessential friend. For proof, one need not look beyond Horace’s corpus. First, the phrase <em>nuda Veritas</em> (7) captures the meaning of the Greek term <em>parrhesia</em>, as both terms denote blunt honesty.[^23.12] Along with shame, faith, and justice, frankness is one of Quintilius’ primary virtues. Second, Horace references Quintilius’ oft-used imperative <em>corrigere</em> (“correct it!”) to conclude 1.24, reminding Vergil of Quintilius’ literary frankness.[^24.34] In his <em>Ars Poetica</em>, Horace recalls how Quintilius would reduce lines of poetry to rubble with this single word, always willing to offer his critical, but desired opinion. Finally, at <em>Sat</em>. 1.5.40-42, Quintilius, Vergil, and Plotius are described as <em>candidiores</em>, which emphasizes their charm and frankness. By practicing the very art that defined so much of Quintilius’ character, Horace deftly reminds Vergil of the friend that still remains. In <em>Odes</em> 1.24, Horace represents his bond with Vergil in its truest form: one friend openly correcting another in a spirit of good will.</p>
+
+<h3 id="conclusionsummary">Conclusion/Summary</h3>
+
+<p>This correction is summed up in the closing <em>sententia</em> of the poem:</p>
+
+<blockquote>
+  <p>Durum; sed levius fit patientia /
+quicquid corrigere est nefas
+–<em>Odes</em> 1.24.19-20</p>
+</blockquote>
+
+<blockquote>
+  <p>It is hard; but whatever is forbidden to correct becomes easier to bear with patience.</p>
+</blockquote>
+
+<p>These two lines summarize the three essential points of the ode:</p>
+
+<ul>
+  <li>Death is annihilation.</li>
+  <li>Mourning that borders on desire for resurrection is useless.</li>
+  <li>But good friends remain.</li>
+</ul>
+
+<p>We cannot “correct” death, as death is final annihilation. Desire for the laws of nature to be reversed is <em>nefas</em>. Yet patience and good friends can ease the burden. These sentiments follow the trends of the consolatory tradition,[^59.46] as well as doctrinal Epicureanism, which makes <em>Odes</em> 4.12 all the more odd.</p>
+
+<h2 id="odes-412">Odes 4.12</h2>
+
+<h3 id="introduction-1">Introduction</h3>
+
+<p><em>Odes</em> 4.12 is a perplexing poem. Scholars question its addressee, its genre, and its communicative purpose.[^06.56] Recent work by Richard Thomas and Jenny Strauss-Clay, however, has begun to make sense of this enigmatic ode.[^20.47] Thomas’ erudite commentary solidifies the scholarly opinion that the addressee must be Vergil the poet while also offering clear analysis of the ode’s rich intertextual relationships. On the interpretive side, Strauss-Clay has demonstrated that the post-mortem publication date is not a minor detail to be explained away, but rather an integral facet of Horace’s poetic purpose. Strauss-Clay discerns in the ode a grieving Horace seeking imaginative self-consolation. Regrettably, her analysis does not take into account the incongruities generated if <em>Odes</em> 4.12 is indeed to read as a self-consolation, given the explicit consolatory advise offered in <em>Odes</em> 1.24. Having enumerated how Horace tells Vergil one <em>ought</em> to grieve in 1.24, I now turn to illuminate how Horace pictures himself <em>actually grieving</em> in 4.12.</p>
+
+<h3 id="a-poetic-evocation">A Poetic Evocation</h3>
+
+<p>The spring strophes initiate the evocation and the invitation strophes describe a literary convivium in which poets meet and share their poetic wares.[^45.25]  Each spring stanza prepares the reader for Vergil’s presence at the ode’s heart. The first stanza situates Odes 4.12 within Horace’s lyric triptych. The second stanza alludes to Vergil’s Procne myth. Finally, the third stanza explicitly recalls Vergil’s pastoral locale.</p>
+
+<p><em>Odes</em> 4.12 opens with a natural scene that sets the stage for the overarching themes of friendship and death. The first three words, <em>Iam veris comites</em>, indicate both the ode’s springtime setting and its friendship-centered tone. First, the introduction references Catullus’s spring poem: <em>iam ver egelidos refert tepores</em> (“Already spring brings tepid warmth,” 46.1), in which Catullus bids farewell to actual companions. Second, <em>comites</em> may recall Horace’s companions on the road to Brundisium, of which Vergil was a member.[^48.02] Horace’s “comrades of spring” thus initially appear human.[^48.38] Horace elaborates on the “comrades of spring,” however, placing the Thracian winds in apposition:</p>
+
+<blockquote>
+  <p>Iam veris comites, quae mare temperant,
+impellunt animae lintea Thraciae,
+iam nec prata regent nec fluvii strepunt
+hiberna nive turgidi.
+–<em>Odes</em> 4.12.1-4</p>
+</blockquote>
+
+<blockquote>
+  <p>Already the comrades of spring, who soothe the sea, the Thracian winds, drive the sails. Already neither are fields stiff nor do streams groan, swollen with winter snow.</p>
+</blockquote>
+
+<p>The use of <em>anima</em> for <em>ventus</em> is unique in Horace, and its uniqueness suggests its importance.[^49.37] This Greek cognate usage of <em>anima</em>, following <em>comites</em> so closely, may echo <em>Odes</em> 1.3’s famous <em>animae dimidium meae</em>. Furthermore, <em>animae</em> could also recall Vergil, Plotius and Varius, described as <em>animae candidiores</em> at <em>Satires</em> 1.5.41.[^50.21] These two possible referents suggest the depth of Horace’s allusive engagement with Vergil and their friendship. In addition, the two verbs governed by “the Thracian winds,” <em>temperant</em> and <em>impellunt</em>, recall the nautical setting of <em>Odes</em> 1.3. Finally, the adjective <em>Thraciae</em> recalls Orpheus in <em>Odes</em> 1.24 (<em>Threicio blandius Orpheo</em>, 13). This reference adumbrates the theme of death and recalls Horace’s previous Vergil odes. This first stanza is a tour de force of self-reference, placing the ode squarely within the tapestry of the Vergil odes as a whole.</p>
+
+<p>The second stanza offers an extended allusion to the myth of Procne and Tereus. On the literal level, instinct drives a bird to prepare her nest; on the metaphorical level, however, Horace sees in this act resonances of Procne’s tale of death and revenge:</p>
+
+<blockquote>
+  <p>Nidum ponit Ityn flebiliter gemens
+infelix avis et Cecropiae domus
+aeternum opprobrium, quod male barbaras
+regum est ulta libidines.
+–<em>Odes</em> 4.12.5-8</p>
+</blockquote>
+
+<blockquote>
+  <p>The unlucky bird builds her nest, moaning mournfully for Itys. She is an eternal disgrace to the house of Cecrops because she took foul revenge on the barbarous lusts of kings.</p>
+</blockquote>
+
+<p>The central image of the second stanza points directly to Vergil. The <em>infelix avis</em> is unparalleled in Horace’s corpus, though it recalls Vergil’s two abbreviated descriptions of the myth. First, consider the image of Philomela, Procne’s sister, in the sixth book of the <em>Eclogues</em>:</p>
+
+<blockquote>
+  <p>aut ut mutatos Terei narraverit artus,
+quas illi Philomela dapes, quae dona pararit,
+quo cursu deserta petiverit et quibus ante
+infelix sua tecta super volitaverit alis?
+–<em>Eclogues</em> 6.78-81</p>
+</blockquote>
+
+<blockquote>
+  <p>Or how he detailed Tereus’ morphed limbs, what banquets and what gifts Philomela prepared for him, by what route she sought the desert, and on what wings the unlucky woman earlier flitted about her rooftops?</p>
+</blockquote>
+
+<p>The image is likewise influenced by Vergil’s description of Orpheus’ lament in the <em>Georgics</em>:</p>
+
+<blockquote>
+  <p>qualis populea maerens philomela sub umbra
+amissos queritur fetus, quos durus arator
+observans nido implumes detraxit; at illa
+flet noctem ramoque sedens miserabile carmen
+integrat et maestis late loca questibus implet.
+–<em>Geo.</em> 4.511-15</p>
+</blockquote>
+
+<blockquote>
+  <p>As Philomela, grieving beneath the poplar’s shade, laments her lost children, whom a rough ploughman snatched as she watched, featherless, from the nest; but she weeps all night and repeats her sad song perched on a branch and fills the place around with mournful cries.</p>
+</blockquote>
+
+<p>In this <em>Georgics</em> section, Vergil describes Orpheus’ grief following the death of his wife, foreshadowing Horace’s foolish apostrophe in the fourth stanza.[^53.48] In both language and theme, Horace echoes Vergil’s treatments of this tragic tale.</p>
+
+<p>Strophe three engages Vergil’s pastoral <em>Eclogues</em>. Moving from the mournful songs of the animal world, Horace now imagines man’s music in the form of shepherds’ singing:</p>
+
+<blockquote>
+  <p>Dicunt in tenero gramine pinguium
+custodes ovium carmina fistula
+delectantque deum, cui pecus et nigri
+colles Arcadiae placent.
+–<em>Odes</em> 4.12.9-12</p>
+</blockquote>
+
+<blockquote>
+  <p>The custodians of fattened sheep sing songs in the soft grass with the pipe, and they delight the god whom the herd and black hills of Arcadia please.</p>
+</blockquote>
+
+<p>Horace’s reference to Vergil’s pastoral text is layered. First, the <em>fistula</em> pipe is the primary instrument used throughout the <em>Eclogues</em>. Second, the <em>deus Arcadiae</em> Pan appears at the climax of Vergil’s final eclogue.[^54.40] Finally, the reader senses Vergil’s pastoral presence most vividly in Horace’s only reference to the mythical land of Arcadia. Once again, Horace hints at Vergil’s poetic presence before his name actually appears.</p>
+
+<h3 id="a-poetic-embrace">A Poetic Embrace</h3>
+
+<p>This allusive evocation of Vergil’s poetic persona initiates a poetic embrace. Alden Smith defines poetic embrace as the conversation between poets through allusion and intertextuality.[^57.07] Poets can revivify their predecessors and peers by perpetuating their poetic voice in and through their own text. If this understanding of allusion’s immortalizing potency appears anachronistic, one need not look beyond two excerpts from Augustan-age poets. One finds the first in Ovid:</p>
+
+<blockquote>
+  <p>sed carmina maior imago /
+sunt mea, quae mando qualiacumque legas.
+–<em>Tristia</em> 1.7.11-12</p>
+</blockquote>
+
+<blockquote>
+  <p>But my poetry is a better image, and whatever the quality, I entrust it to you so that you may read it.</p>
+</blockquote>
+
+<p>The second comes from Horace’s fourth book of <em>Odes</em>:</p>
+
+<blockquote>
+  <p>Vixere fortes ante Agamemnona /
+multi; sed omnes inlacrimabiles /
+urgentur ignotique longa /
+nocte, carent quia uate sacro.
+–<em>Odes</em> 4.9.25-28</p>
+</blockquote>
+
+<blockquote>
+  <p>Many brave men lived before Agamemnon, but all are unwept and unknown, pressed by the long night, because they lacked a sacred poet.</p>
+</blockquote>
+
+<p>Augustan-age poets recognized that poetry created a persona of the poet as well as anyone else the poet brings into the realm of the poem. These personae are eternal insofar as readers continue to read of them. As readers themselves, poets can knowingly sustain a predecessor or peer’s literary persona. As writers, they can also “revivify” another poet by incorporating some aspect of the predecessor’s poetry into his own text. The poem can thus function as a medium in which poets, dead or alive, forever interact. In <em>Odes</em> 4.12, Horace cements this aspect of poetry’s power in the image of a symposium.</p>
+
+<p>Horace creates a wine-for-poetry analogy to suggest the literary aspect of the symposium. Wine and nard are to poetry as a drinking party is to intertextuality. Throughout Horace’s lyric poetry, wine functions as a metonym for poetry itself. In this ode, Horace’s wine “reflects the Dionysiac power of the symposium to renew all life.”[^01.35] Steele Commager details the multivalent function of wine in Horace’s Carmina, particularly with reference to temporality and poetry:</p>
+
+<blockquote>
+  <p>“Immortality is the dimension of an eternal present. Wine represents a seizing of the present, a freedom from contingencies of past and future alike. Bacchus adumbrates the poet’s hold upon an eternal moment, and his apotheosis into the ultimate freedom of immortality.”[^00.42]</p>
+</blockquote>
+
+<p>Inviting the now dead Vergil to a symposium mediated by a fine wine, Horace attempts to create “an eternal present” via poetic <em>convivium</em>. As he begins to drink <em>Liber</em>, Horace ingests Bacchus’ liberating power. It is to this liberating eternal present that Horace calls Vergil to hasten.</p>
+
+<p>Vergil’s swift arrival does not suffice, however. He must also brink a small jar of unguent (<em>nardi parvus onyx</em>, 4.12.17). Horace insists that without Vergil’s gift, there can be no party.[^02.24] If wine serves as metonymy for poetry, what might Vergil’s required nard represent? In the Greek sympotic tradition, spikenard (νάρδος) occasionally flavors wine (ναρδίτης).[^02.49] Horace proposes a <em>quid pro quo</em>: Vergil’s nard for Horace’s poetry. Vergil’s unguent likely functions on the same metonymic level as Horace’s wine. Timothy Johnson suggests that the nard represents poetry: “The metaphor, gift equals poetry, transforms Vergil’s nard into a poem that he must bring to share at the symposion.”[^03.19] The unguent is not merely aromatic; it compliments the wine. Vergil must hurry and bring his poetry to this literary symposium in order to flavor Horace’s poetic wares. Vergil’s nard represents his poetry, just as wine is a metonym for Horace’s poetry. Literal unguent-mixed wine does not soak Horace’s proposed <em>convivium</em>, but literary wine—a simulacrum of poetry.</p>
+
+<p>Inviting a deceased Vergil to a poetic symposium appears no less guilty of the poetic <em>nefas</em> that doomed Vergil’s mourning in <em>Odes</em> 1.24. There Horace reminds Vergil of the Epicurean dictum that “death is nothing” and asserts that it is <em>nefas</em> (1.24.20) to attempt the poetic resurrection of a dead friend, which Vergil supposedly did. Yet here in <em>Odes</em> 4.12 Horace seems to seek a similar resurrection. Scholars’ metonymic reading of the symposium fails to resolve Horace’s seemingly disparate attitudes toward death and mourning in these two odes. Furthermore, Horace suggests that he is aware of his paradoxical position. At the ode’s conclusion, Horace states sententiously: “to be foolish in the proper place is sweet” (<em>dulce est desipere in loco</em>, 28). Under the metaphorical reading of the symposium, the “proper place” resides within the realm of poetry. Poetry functions unencumbered by death because poets’ personae can meet in the intertextual space created by allusion to one another. Nonetheless, Horace ignores standard Epicurean doctrine on death and addresses a poem to a deceased friend, seemingly contradicting his own advice to Vergil in <em>Odes</em> 1.24.[^04.28] This is his acknowledged foolishness, yet does Horace’s response to the death of a friend truly fall victim to his own previous criticism?
+No, because Horace does not seek to resurrect Vergil, but to memorialize and immortalize a friend and a friendship. That Horace avoids 1.24’s <em>nefas</em> may be seen in the ode’s climax.</p>
+
+<p>There Horace advised Vergil to allow this Epicurean principle to limit his grief; now, in <em>Odes</em> 4.12 Horace finds himself in a similar position as Vergil in 1.24—grieving the death of a friend.[^05.12] Just as it was forbidden for Vergil to return the dead Quintilius, it is utter foolishness for Horace to ask a dead Vergil to join a symposium. Horace must face the hard reality that Vergil had forgotten in 1.24: <em>non ita creditum</em>, that there is nothing and no one to invite post-mortem.[^06.12] Yet Horace is either unable or unwilling to let Vergil’s death enter the realm of the poem. The pathos is striking as Horace invites him to come and drink, though Vergil can never arrive nor enjoy Horace’s wares. He treats the affair euphemistically, exhorting Vergil to “come quickly with your wares” (<em>cum tua / velox merce veni</em>, 4.1221-2), yet knowing that no amount of haste can return Vergil, that there is no “Vergil” to be returned. Nonetheless, Horace addresses his deceased friend and invites him to the small symposium. Under the Epicurean philosophy that informed his criticism in <em>Odes</em> 1.24, Horace’s post mortem apostrophe is folly in the deepest sense—it knowingly ignores reality.</p>
+
+<p>Yet Horace does not fully endorse such foolish responses to death; he adds a caveat. It may be sweet to indulge in grief-induced folly, but only if practiced in the proper place. Where is this folly’s fit abode? I argue that Horace believes one may only ignore the reality of death within the realm of a poem. True to his craft, Horace fashions an image, rather than presents an argument to make this point. Horace does not invite an actual Vergilius to a drinking party; he invokes Vergil’s literary persona to share in a poetic dialogue.</p>
+
+<p>As Jenny Strauss-Clay points out, when these two poet’s textual personae meet at this literary symposium, “the dialogue of these two poet-friends, which informed their lives and  their work, is momentarily re-animated – through the imagination, through poetry.”[^06.45]</p>
+
+<p>Returning to the ode’s sententious conclusion, Horace mixes the somber tenor of the ode with levity. From desired haste, Horace quickly pivots to thoughts of wine’s effects. The imperative <em>misce</em> leads the reader to expect an image of cutting pure wine with water. Instead, Horace urges Vergil to mix “folly with your plans” (<em>stultitiam consiliis</em>, 27). This reversal of the expected wine motif flows into the ode’s conclusion—folly is sweet in the proper place. This conclusion recalls the likewise sententious clause that closes <em>Odes</em> 1.24:</p>
+
+<blockquote>
+  <p>Durum; sed levius fit patientia
+  quicquid corrigere est nefas
+–Odes 1.24.19-20</p>
+</blockquote>
+
+<blockquote>
+  <p>It is hard; but whatever is forbidden to correct becomes easier to bear with patience.</p>
+</blockquote>
+
+<p>The reference is structural. The two conclusions share a common metrical position for their infinitives; both <em>desipere</em> and <em>corrigere</em> are found after the initial trochee of the final line. While patience eases the pain of some forbidden desire, Horace reminds that such patience need not be an emotional coldness; rather, it may be best to face the necessity of death with a little foolishness. Perhaps also the conclusion of <em>Odes</em> 4.12 also refers to the practice of Epicurean commemoration:</p>
+
+<blockquote>
+  <p>ἡδὺ ἡ φίλου μνήμη τεθνηκότος.
+–Fragment 213</p>
+</blockquote>
+
+<blockquote>
+  <p>“The memory of a deceased friend is sweet.”</p>
+</blockquote>
+
+<p>Horace’s <em>dulce</em> translates ἡδὺ. Within Epicurus’ Garden, members would gather for feasts to remember esteemed members now deceased. The most important of these commemorative symposia was for Epicurus himself. The practice likely derives its legitimacy from this dictum, which curiously parallels Horace’s conclusion in <em>Odes</em> 4.12. If the ode evokes Vergil’s poetic persona, it remembers the renowned poet. Horace therefore memorializes Vergil by remembering his poetry and their friendship. The imagined <em>convivium</em> playing out an Epicurean practice aimed at commemoration.</p>
+
+<h2 id="footnotes">Footnotes</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[^59.46]:  {»@spm</td>
+      <td>Add footnote citation«}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>one finds this opinion stated as early as the fifth century in the commentary of pseudo-Acro: “[Horace] writes to a Vergil who was a wholesale dealer” (<em>ad Vergilium negotiatorem scribit</em>). In the tenth century, two manuscripts (Paris MSS 7974 and 7971) provide similar readings: “[an ode written] to a certain Vergil who was an ointments dealer” (<em>ad Vergilium quendam unguentarium</em>). Even in modern scholarship, many notable scholars—-Fraenkel 1981 and Putnam 2006: 205-6 chief among them—-follow this line of reasoning. They argue that Horace’s language in this poem (<em>iuuenum nobilium cliens</em>, 15, and <em>studium lucri</em>, 25) clashes with an invitation to a dead friend, especially one of such stature as Vergil. Fraenkel (1957: 418) goes so far as to describe Horace as “a monster of callousness” for his language.
+Pro Vergil, scholars point to the ode’s Vergilian language and themes.  Belmont 1980: 1-20 imagines a Roman reader attentive to the poem’s intertextuality and contends that this reader could not but identify the addressee as the poet Vergil. The thought experiment persuades many, and today the <em>opinio communis</em> asserts the identification (See Quinn 1963: 11, Bowra 1928: 165-7, Putnam 2006: 93, Belmont 1980: 1-20, Moritz 1969: 174-93, Porter 1973: 71-87, and Strauss-Clay 2002: 129-45). Whatever incongruities in tone scholars sense, it is difficult to imagine an early reader finishing the ode and not thinking of Rome’s recently deceased national poet. In the most recent commentary on <em>Odes</em> 4, Richard Thomas (2011: 227) summarizes the argument: “The addressee is indeed the poet [because] <em>C</em>. 4.12 is replete with Vergilian diction, style, and rhetorical devices, and it seems perverse to take the addressee as being anyone but the poet Vergil, the Vergilius to whom H[orace] refers by the same name on nine other occasions.”</p>
+
+<p>[^57.07]:  Smith <em>__</em>: passim. He defines “textual embrace” as “a relationship … in a synchronic continuum between reader and author” (20). Smith examines how Ovid reads, revivifies, and so immortalizes Vergil by alluding to Vergil.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:3406">
+      <p>For readings of <em>Odes</em> 1.24, see Commager 1995: 287-90, Khan 1999, Nisbet and Hubbard 1970: 279-89, Lowrie 1994: 377-394, Putnam 1993, and West 1995: 112-15. For the Epicurean, and specifically Philodeman, influence on the ode, see Thibodeau 2003: 243-56 and Armstrong 2008: 97-99. <a href="#fnref:3406" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+</div>
+</div>
+
+    </div>
+
+    <aside id="sidebar">
+
+  <hr class="fractal">
+
+  <div id="recent-articles">
+    <h5>Recent Articles</h5>
+    <ul class="fa-ul">
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="/articles/ruminations-on-a-credal-logic/">Ruminations on a Credal Logic</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="/articles/1-0-9999/">1 = 0.9999...</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="/articles/portrait-of-pain/">Portrait of Pain</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="/jots/201604051529/">"Oft evil will shall evil mar" - J.R.R. Tolkien (via Theoden)</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="/articles/elevator/">Elevator</a>
+        </li>
+    </ul>
+  </div>
+
+  <div id="all-tags">
+    <h5>Tags</h5>
+    <ul>
+      <!-- Add all Article tags -->
+        <li>
+          <a class="badge no-hvr math" href="/topics/math/">math (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr logic" href="/topics/logic/">logic (3)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr epistemology" href="/topics/epistemology/">epistemology (3)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr hackademics" href="/topics/hackademics/">hackademics (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr grad-school" href="/topics/grad-school/">grad-school (2)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr til" href="/topics/til/">til (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr poetry" href="/topics/poetry/">poetry (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr christianity" href="/topics/christianity/">christianity (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr love" href="/topics/love/">love (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr prose" href="/topics/prose/">prose (2)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr faith" href="/topics/faith/">faith (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr example" href="/topics/example/">example (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr alfred" href="/topics/alfred/">alfred (9)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr git" href="/topics/git/">git (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr bash" href="/topics/bash/">bash (2)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr python" href="/topics/python/">python (1)</a>
+        </li>
+    </ul>
+  </div>
+
+</aside>
+
+
+    <footer role="contentinfo">
+  <div class="footer-info">
+    <p>&copy; Copyright 2015 by Stephen Margheim</p>
+    <p>Powered by <a href="https://middlemanapp.com">Middleman</a>.</p>
+  </div>
+</footer>
+
+
+  </body>
+</html>

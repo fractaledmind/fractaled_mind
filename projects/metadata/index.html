@@ -109,12 +109,13 @@
   </ul>
 </header>
 
+
     <div class="navigation">
   <nav role="navigation">
     <ul class="navigation-menu">
       <li class="nav-link"><a href="/">home</a></li>
-      <li class="nav-link"><a href="/jots">jots</a></li>
-      <li class="nav-link"><a href="/projects">projects</a></li>
+      <li class="nav-link"><a href="/jots/">jots</a></li>
+      <li class="nav-link"><a href="/projects/">projects</a></li>
     </ul>
   </nav>
 
@@ -136,40 +137,39 @@
 
       <ul class="card-tags">
           <li>
-            <!-- If project-tag is also a blog-tag, link to it -->
-              <a class="badge no-hvr" id="python" href="/topics/python">python</a>
+            <a class="badge no-hvr python" href="/topics/python/">python</a>
           </li>
       </ul>
 
     <div class="card-image">
-      <!-- if project has tags, add filler element -->
+      <!-- if post has tags, add filler element -->
         <div id="tag-filler-space"></div>
-      <!-- if project has header image, add it -->
+      <!-- if post has header image, add it -->
         <img src="../../images/projects/metadata.svg" />
     </div>
 
-    <h2 id="title">Metadata</h2>
+    <h2 id="title"><p>Metadata</p>
+</h2>
 
     <hr class="fractal">
 
     <h4 id="repo"><a href="https://github.com/smargh/metadata">GitHub Repo</a></h4>
 
-    <div id="description">
-<p>Python wrapper for OS X <code>mdfind</code> and <code>mdls</code></p>
+    <div id="description"><p>Python wrapper for OS X <code>mdfind</code> and <code>mdls</code></p>
 
 <h3 id="installation">Installation</h3>
 
 <p>Download the <code>.zip</code> file from GitHub.</p>
 
-<p>I'm working on getting the library on <a href="https://pypi.python.org/pypi">PyPi</a> soon.</p>
+<p>I’m working on getting the library on <a href="https://pypi.python.org/pypi">PyPi</a> soon.</p>
 
 <h3 id="file-metadata-query-expression-syntax">File Metadata Query Expression Syntax</h3>
 
-<p>I have modeled the Python syntax on <a href="https://developer.apple.com/library/mac/documentation/Carbon/Conceptual/SpotlightQuery/Concepts/QueryFormat.html">Apple's original Spotlight query syntax</a>. File metadata queries are constructed using a simple query language that takes advantage of Python's flexible class construction. The syntax is relatively straightforward, including comparisons, language agnostic options, and time and date variables.</p>
+<p>I have modeled the Python syntax on <a href="https://developer.apple.com/library/mac/documentation/Carbon/Conceptual/SpotlightQuery/Concepts/QueryFormat.html">Apple’s original Spotlight query syntax</a>. File metadata queries are constructed using a simple query language that takes advantage of Python’s flexible class construction. The syntax is relatively straightforward, including comparisons, language agnostic options, and time and date variables.</p>
 
 <h4 id="comparison-syntax">Comparison Syntax</h4>
 
-<p>The <code>metadata</code> library implements 3 custom classes (<code>MDAttribute</code>, <code>MDComparison</code>, and <code>MDExpression</code>) to represent the various units of <code>mdfind</code>'s <a href="https://developer.apple.com/library/mac/documentation/Carbon/Conceptual/SpotlightQuery/Concepts/QueryFormat.html">Query Expression Syntax</a>.</p>
+<p>The <code>metadata</code> library implements 3 custom classes (<code>MDAttribute</code>, <code>MDComparison</code>, and <code>MDExpression</code>) to represent the various units of <code>mdfind</code>’s <a href="https://developer.apple.com/library/mac/documentation/Carbon/Conceptual/SpotlightQuery/Concepts/QueryFormat.html">Query Expression Syntax</a>.</p>
 
 <p>Query comparisons have the following basic format:</p>
 
@@ -334,7 +334,7 @@
 </pre></td></tr></tbody></table>
 </div>
 
-<p>Here's a complex expression to find only audio or video files that have been changed in the last week authored by someone named either "Stephen" or "Daniel" (ignoring case and diacritics, so it would match a file authored by "danièl"):</p>
+<p>Here’s a complex expression to find only audio or video files that have been changed in the last week authored by someone named either “Stephen” or “Daniel” (ignoring case and diacritics, so it would match a file authored by “danièl”):</p>
 
 <div class="highlight python"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -353,7 +353,7 @@
 
 <h3 id="find"><code>find</code></h3>
 
-<p>The main function is <code>metadata.find()</code>. It takes one required argument, <code>query_expression</code>, which can be either an <code>MDExpression</code> object or an <code>MDComparison</code> object. In addition to this one required argument, <code>metadata.find()</code> also has the optional argument <code>only_in</code> for you to focus the scope of your search to a particular directory tree. This simply needs to be a full (non-relative) path passed as a Unicode string. Other than that, there's nothing else to it. Build you query expression, pass it to <code>find()</code> and get your results as a Python list. Here's an example of building the sample expression above and passing it to <code>metadata.find()</code>:</p>
+<p>The main function is <code>metadata.find()</code>. It takes one required argument, <code>query_expression</code>, which can be either an <code>MDExpression</code> object or an <code>MDComparison</code> object. In addition to this one required argument, <code>metadata.find()</code> also has the optional argument <code>only_in</code> for you to focus the scope of your search to a particular directory tree. This simply needs to be a full (non-relative) path passed as a Unicode string. Other than that, there’s nothing else to it. Build you query expression, pass it to <code>find()</code> and get your results as a Python list. Here’s an example of building the sample expression above and passing it to <code>metadata.find()</code>:</p>
 
 <div class="highlight python"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -389,11 +389,8 @@
 
 <p>Finally, there is an alpha version of a <code>write()</code> function, which allows you to write metadata to a file. Right now, I have it defaulted to writing to the <code>kMDItemUserTags</code> attribute, but a few others have worked. I need to test it more to make it more general.</p>
 </div>
-
-    <!-- Get all projects for which there are articles -->
-    <!-- Iterate over these projects -->
-        <!-- If the project with articles matches the project passed in to create this template, list the articles -->
 </div>
+
     </div>
 
     <aside id="sidebar">
@@ -405,23 +402,23 @@
     <ul class="fa-ul">
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/ruminations-on-a-credal-logic/">Ruminations on a Credal Logic</a>
+          <a href="/articles/ruminations-on-a-credal-logic/">Ruminations on a Credal Logic</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/1-0-9999/">1 = 0.9999...</a>
+          <a href="/articles/1-0-9999/">1 = 0.9999...</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/portrait-of-pain/">Portrait of Pain</a>
+          <a href="/articles/portrait-of-pain/">Portrait of Pain</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/elevator/">Elevator</a>
+          <a href="/jots/201604051529/">"Oft evil will shall evil mar" - J.R.R. Tolkien (via Theoden)</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/cleaning-up-git-repos/">Cleaning up Git repos</a>
+          <a href="/articles/elevator/">Elevator</a>
         </li>
     </ul>
   </div>
@@ -431,47 +428,53 @@
     <ul>
       <!-- Add all Article tags -->
         <li>
-          <a class="badge no-hvr" id="math" href="/topics/math/">math (1)</a>
+          <a class="badge no-hvr math" href="/topics/math/">math (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="logic" href="/topics/logic/">logic (3)</a>
+          <a class="badge no-hvr logic" href="/topics/logic/">logic (3)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="epistemology" href="/topics/epistemology/">epistemology (3)</a>
+          <a class="badge no-hvr epistemology" href="/topics/epistemology/">epistemology (3)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="hackademics" href="/topics/hackademics/">hackademics (1)</a>
+          <a class="badge no-hvr hackademics" href="/topics/hackademics/">hackademics (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="grad-school" href="/topics/grad-school/">grad-school (2)</a>
+          <a class="badge no-hvr grad-school" href="/topics/grad-school/">grad-school (2)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="til" href="/topics/til/">til (1)</a>
+          <a class="badge no-hvr til" href="/topics/til/">til (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="poetry" href="/topics/poetry/">poetry (1)</a>
+          <a class="badge no-hvr poetry" href="/topics/poetry/">poetry (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="example" href="/topics/example/">example (1)</a>
+          <a class="badge no-hvr christianity" href="/topics/christianity/">christianity (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="christianity" href="/topics/christianity/">christianity (1)</a>
+          <a class="badge no-hvr love" href="/topics/love/">love (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="love" href="/topics/love/">love (1)</a>
+          <a class="badge no-hvr prose" href="/topics/prose/">prose (2)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="prose" href="/topics/prose/">prose (2)</a>
+          <a class="badge no-hvr faith" href="/topics/faith/">faith (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="faith" href="/topics/faith/">faith (1)</a>
+          <a class="badge no-hvr example" href="/topics/example/">example (1)</a>
         </li>
-
-      <!-- Add all Project tags -->
-        <a class="badge no-hvr" id="alfred" href="/topics/alfred">alfred (9)</a>
-        <a class="badge no-hvr" id="git" href="/topics/git">git (1)</a>
-        <a class="badge no-hvr" id="bash" href="/topics/bash">bash (2)</a>
-        <a class="badge no-hvr" id="python" href="/topics/python">python (1)</a>
+        <li>
+          <a class="badge no-hvr alfred" href="/topics/alfred/">alfred (9)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr git" href="/topics/git/">git (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr bash" href="/topics/bash/">bash (2)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr python" href="/topics/python/">python (1)</a>
+        </li>
     </ul>
   </div>
 

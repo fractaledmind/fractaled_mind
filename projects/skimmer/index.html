@@ -109,12 +109,13 @@
   </ul>
 </header>
 
+
     <div class="navigation">
   <nav role="navigation">
     <ul class="navigation-menu">
       <li class="nav-link"><a href="/">home</a></li>
-      <li class="nav-link"><a href="/jots">jots</a></li>
-      <li class="nav-link"><a href="/projects">projects</a></li>
+      <li class="nav-link"><a href="/jots/">jots</a></li>
+      <li class="nav-link"><a href="/projects/">projects</a></li>
     </ul>
   </nav>
 
@@ -136,19 +137,19 @@
 
       <ul class="card-tags">
           <li>
-            <!-- If project-tag is also a blog-tag, link to it -->
-              <a class="badge no-hvr" id="alfred" href="/topics/alfred">alfred</a>
+            <a class="badge no-hvr alfred" href="/topics/alfred/">alfred</a>
           </li>
       </ul>
 
     <div class="card-image">
-      <!-- if project has tags, add filler element -->
+      <!-- if post has tags, add filler element -->
         <div id="tag-filler-space"></div>
-      <!-- if project has header image, add it -->
+      <!-- if post has header image, add it -->
         <img src="../../images/projects/skimmer.svg" />
     </div>
 
-    <h2 id="title">Skimmer</h2>
+    <h2 id="title"><p>Skimmer</p>
+</h2>
 
     <hr class="fractal">
 
@@ -160,7 +161,7 @@
 
 <h2 id="description">Description</h2>
 
-<p>This workflow <strong>only</strong> works with the free Mac PDF app <a href="http://skim-app.sourceforge.net/">Skim</a>. Skim is a fantastic app with great Applescript support (and its <em>free!</em>). This workflow provides quick, easy access to a few custom Applescripts that I've written to deal with certain pesky problems I've come across when dealing with PDFs. There are currently four actions:</p>
+<p>This workflow <strong>only</strong> works with the free Mac PDF app <a href="http://skim-app.sourceforge.net/">Skim</a>. Skim is a fantastic app with great Applescript support (and its <em>free!</em>). This workflow provides quick, easy access to a few custom Applescripts that I’ve written to deal with certain pesky problems I’ve come across when dealing with PDFs. There are currently four actions:</p>
 
 <ul>
   <li>Crop and Split PDF</li>
@@ -173,7 +174,7 @@
 
 <h3 id="crop-and-split-pdf">Crop and Split PDF</h3>
 
-<p>First, <strong><code>Skimmer</code></strong> allows you to properly format those darned scanned PDFs. You know the ones I'm talking about, 2 books pages scanned into one, landscape-oriented PDF page. I want all of my PDFs in pretty, proper format with one PDF page corresponding to one portrait-oriented book/article page. In the past, it was quite the ordeal to crop the PDF so that the right- and left-hand margins were equal, and then to split each individual page and finally reconstruct the entire PDF. <strong><code>Skimmer</code></strong> makes this whole process as simple as π. You can use either a Hotkey or the Keyword <code>split</code> to activate this feature.</p>
+<p>First, <strong><code>Skimmer</code></strong> allows you to properly format those darned scanned PDFs. You know the ones I’m talking about, 2 books pages scanned into one, landscape-oriented PDF page. I want all of my PDFs in pretty, proper format with one PDF page corresponding to one portrait-oriented book/article page. In the past, it was quite the ordeal to crop the PDF so that the right- and left-hand margins were equal, and then to split each individual page and finally reconstruct the entire PDF. <strong><code>Skimmer</code></strong> makes this whole process as simple as π. You can use either a Hotkey or the Keyword <code>split</code> to activate this feature.</p>
 
 <p><img alt="split" src="https://www.evernote.com/shard/s41/sh/83197405-2d1a-469e-a3ca-64cc4a481807/36b73f97006ac7fd5b650e22fb122769/deep/0/skimmer_split.png" /></p>
 
@@ -185,17 +186,17 @@
   <li>Re-assemble everything and clean up</li>
 </ul>
 
-<p>Let me walk you thru the process. To begin, you will need to <em>ensure that the two scanned book pages have equal margins</em>. <strong><code>Skimmer</code></strong> will split the PDF page right down the middle, so we want the middle of the PDF to be the middle of the two pages. If the margins are unequal, you only need to use Skim's Line Annotation to create a border for <strong><code>Skimmer</code></strong>. Here's an example:</p>
+<p>Let me walk you thru the process. To begin, you will need to <em>ensure that the two scanned book pages have equal margins</em>. <strong><code>Skimmer</code></strong> will split the PDF page right down the middle, so we want the middle of the PDF to be the middle of the two pages. If the margins are unequal, you only need to use Skim’s Line Annotation to create a border for <strong><code>Skimmer</code></strong>. Here’s an example:</p>
 
 <p><img alt="cropping" src="https://www.evernote.com/shard/s41/sh/d34511a1-b571-4df0-a6df-5c7b370704a6/0759f2d2f21a614c9a39d72f8eab0d42/deep/0/skimmer_original.png" /></p>
 
 <p>Note the small, vertical line at the bottom of the page. <strong><code>Skimmer</code></strong> will crop off everything to the left of this line. You could put the line anywhere on the page. If you the right-hand margin were too big, you could put it to the right, and <strong><code>Skimmer</code></strong> would automatically crop the excess stuff to the right of that line. If both margins are too big, you can put two lines on each side and <strong><code>Skimmer</code></strong> will take care of the rest.</p>
 
-<p><strong>Note:</strong> <strong><code>Skimmer</code></strong> will crop <em>every page</em> at this point, so find the farthest extremity on any page and use that as your guide. <strong><code>Skimmer</code></strong> can tell what page you are looking at, so it'll make things work (note that in the image above, this is one of the middle pages being used as the cropping template). <strong><code>Skimmer</code></strong> does not crop Top or Bottom Margins, so you will need to manually crop PDFs with wacky top and/or bottom margins.</p>
+<p><strong>Note:</strong> <strong><code>Skimmer</code></strong> will crop <em>every page</em> at this point, so find the farthest extremity on any page and use that as your guide. <strong><code>Skimmer</code></strong> can tell what page you are looking at, so it’ll make things work (note that in the image above, this is one of the middle pages being used as the cropping template). <strong><code>Skimmer</code></strong> does not crop Top or Bottom Margins, so you will need to manually crop PDFs with wacky top and/or bottom margins.</p>
 
-<p>Once <strong><code>Skimmer</code></strong> has cropped the PDF, it will go thru and split each page into two separate pages. Depending on the length of the PDF, this can take a bit (approximately 0.67 seconds per original PDF page). This is all done invisibly tho, so that's a bonus.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> In order to ensure that <code>Skimer</code> splits the PDF properly, regardless of orientation, the script will split the first page and ask you what portion of the page you are seeing (left-hand, right-hand, top-half, or bottom-half). Your choice will ensure that <strong><code>Skimmer</code></strong> does the splitting properly.</p>
+<p>Once <strong><code>Skimmer</code></strong> has cropped the PDF, it will go thru and split each page into two separate pages. Depending on the length of the PDF, this can take a bit (approximately 0.67 seconds per original PDF page). This is all done invisibly tho, so that’s a bonus.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> In order to ensure that <code>Skimer</code> splits the PDF properly, regardless of orientation, the script will split the first page and ask you what portion of the page you are seeing (left-hand, right-hand, top-half, or bottom-half). Your choice will ensure that <strong><code>Skimmer</code></strong> does the splitting properly.</p>
 
-<p>After it splits all the pages, <strong><code>Skimmer</code></strong> will save a copy of your original PDF and then close it as it opens the new, split PDF. This new PDF will be properly formatted and saved in the same folder as the original PDF. Here's an example of the PDF above after it was automatically cropped and split:</p>
+<p>After it splits all the pages, <strong><code>Skimmer</code></strong> will save a copy of your original PDF and then close it as it opens the new, split PDF. This new PDF will be properly formatted and saved in the same folder as the original PDF. Here’s an example of the PDF above after it was automatically cropped and split:</p>
 
 <p><img alt="completed" src="https://www.evernote.com/shard/s41/sh/ac701fb0-3e1b-4ac6-ab6d-04dfdddae2f7/0cfdc3db448db7e430613b018a30f31e/deep/0/skimmer_final.png" /></p>
 
@@ -203,7 +204,7 @@
 
 <h3 id="extract-data-and-search-google-scholar">Extract Data and Search Google Scholar</h3>
 
-<p>The second feature will take <a href="http://en.wikipedia.org/wiki/Optical_character_recognition">OCR'd</a> PDFs and try to extract relevant search information and then search <a href="http://scholar.google.com/">Google Scholar</a> (which will make it easy to then add citation information to your citation manager of choice. Users of <a href="http://fractaledmind/projects/zotquery">ZotQuery</a> will immediately see where I'm going with this…). This feature can be activated by a user-assigned Hotkey or by the Keyword <code>extract</code> when the desired PDF is open in Skim.</p>
+<p>The second feature will take <a href="http://en.wikipedia.org/wiki/Optical_character_recognition">OCR’d</a> PDFs and try to extract relevant search information and then search <a href="http://scholar.google.com/">Google Scholar</a> (which will make it easy to then add citation information to your citation manager of choice. Users of <a href="http://fractaledmind/projects/zotquery">ZotQuery</a> will immediately see where I’m going with this…). This feature can be activated by a user-assigned Hotkey or by the Keyword <code>extract</code> when the desired PDF is open in Skim.</p>
 
 <p><img alt="extract" src="https://www.evernote.com/shard/s41/sh/5bf09958-9d77-4a54-aaa2-b5fff51ef70a/7edaae34fc339aa9230a700703de218e/deep/0/skimmer_extract.png" /></p>
 
@@ -219,17 +220,17 @@
 
 <h3 id="export-annotations">Export Annotations</h3>
 
-<p>In short, this feature allows you to export all of your PDF annotations from your Skim PDF to <a href="https://www.evernote.com/">Evernote</a> (or the clipboard) while giving you <strong>live hyperlinks</strong> back to the exact PDF page for the annotation!! You heard me, your Evernote note will have all of your PDF annotations, and each annotation will have a hyperlink that will open up that PDF to the exact page where that annotation is. Trust me, it's super cool, amazingly helpful, and downright near magical.</p>
+<p>In short, this feature allows you to export all of your PDF annotations from your Skim PDF to <a href="https://www.evernote.com/">Evernote</a> (or the clipboard) while giving you <strong>live hyperlinks</strong> back to the exact PDF page for the annotation!! You heard me, your Evernote note will have all of your PDF annotations, and each annotation will have a hyperlink that will open up that PDF to the exact page where that annotation is. Trust me, it’s super cool, amazingly helpful, and downright near magical.</p>
 
-<p>Compatible annotations include Text notes, Anchor notes, Underlined text, Strike-Thru text, and Highlighted text. <strong><code>Skimmer</code></strong> will take all of your annotations, format them into some pretty HTML and send that to Evernote. I have been working on this code for quite some time, so it is FAST! It can handle and 100+ page book in a jiffy. But, since we all work slightly differently, I've also worked hard to make it FLEXIBLE. In order to use this function, simply use the <code>export</code> keyword. Alternatively, you can assign a keyboard shortcut to the command as well (I use <em>cmd + shift + -</em> myself).</p>
+<p>Compatible annotations include Text notes, Anchor notes, Underlined text, Strike-Thru text, and Highlighted text. <strong><code>Skimmer</code></strong> will take all of your annotations, format them into some pretty HTML and send that to Evernote. I have been working on this code for quite some time, so it is FAST! It can handle and 100+ page book in a jiffy. But, since we all work slightly differently, I’ve also worked hard to make it FLEXIBLE. In order to use this function, simply use the <code>export</code> keyword. Alternatively, you can assign a keyboard shortcut to the command as well (I use <em>cmd + shift + -</em> myself).</p>
 
-<p>Let me outline how you can make Annotation Export work exactly as you'd like.</p>
+<p>Let me outline how you can make Annotation Export work exactly as you’d like.</p>
 
-<p>First and foremost, I've added the ability for you to assign your own custom palette of Highlight Colors. One of the nicer touches to this feature is the ability to translate certain highlight colors into text headers. This can come in quite handy for really breaking down your text and your thoughts about the text into certain groupings. Now, I have a default set of 6 colors and their 6 corresponding text values, but you can change both the colors and the text to fit exactly your needs. But how, you might ask? Well, version 2.0 comes with a new Help PDF. Simply use the <code>sk:help</code> keyword and select <code>Open PDF</code> to view this document. On the second page, you will see these annotations:</p>
+<p>First and foremost, I’ve added the ability for you to assign your own custom palette of Highlight Colors. One of the nicer touches to this feature is the ability to translate certain highlight colors into text headers. This can come in quite handy for really breaking down your text and your thoughts about the text into certain groupings. Now, I have a default set of 6 colors and their 6 corresponding text values, but you can change both the colors and the text to fit exactly your needs. But how, you might ask? Well, version 2.0 comes with a new Help PDF. Simply use the <code>sk:help</code> keyword and select <code>Open PDF</code> to view this document. On the second page, you will see these annotations:</p>
 
 <p><img alt="helper pdf" src="https://www.evernote.com/shard/s41/sh/0e33ffc1-d931-4932-9949-a668c1554a0f/cb6e0abe1897462a15e5708cfffc4043/deep/0/skimmer_config1.pdf-(page-2-of-4).png" /></p>
 
-<p>The text of the PDF will lay this all out for you, but basically, you simply change the highlight colors and change the corresponding text to what ever you like. There are an (nearly) infinite number of possibilities. The only things to remember are <strong>don't mess with the actual highlights, merely change their colors</strong> and <strong>don't delete prefixed numbers in the text notes, only the text</strong>. Otherwise, you can fiddle to your hearts content. Just so you can get a feel for how the process will work, here's what the Evernote note would look like if you ran the Annotation Export script on the Help PDF (well, this is only the highlights section; run the script to see how text notes are handled):</p>
+<p>The text of the PDF will lay this all out for you, but basically, you simply change the highlight colors and change the corresponding text to what ever you like. There are an (nearly) infinite number of possibilities. The only things to remember are <strong>don’t mess with the actual highlights, merely change their colors</strong> and <strong>don’t delete prefixed numbers in the text notes, only the text</strong>. Otherwise, you can fiddle to your hearts content. Just so you can get a feel for how the process will work, here’s what the Evernote note would look like if you ran the Annotation Export script on the Help PDF (well, this is only the highlights section; run the script to see how text notes are handled):</p>
 
 <p><img alt="exported note" src="https://www.evernote.com/shard/s41/sh/4fadbe0b-e763-4d0c-b100-d82048ad378a/6b115224808df230224e325e710abeb0/deep/0/skimmer_config.pdf---Evernote-Premium.png" /></p>
 
@@ -241,7 +242,7 @@
   <li>Then, you can use <code>export</code> to actually send your Skim annotations to Evernote.</li>
 </ul>
 
-<p>Now, the ability to alter your highlights palette goes a long way in making this script personalizable (is that even a word?), but I went a step further. You can also tweak the HTML formatting used to create the Evernote note. Unfortunately, however, this will require opening up some Applescript and doing some code tweaking.<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> But I've tried to make it not so scary. Essentially, each annotation type has a general formatting template used to create the HTML. I've abstracted this format and placed each variable element under your control. You can find all of the templates and some basic examples in the Help PDF (page 3), but here is one example, for the Highlight Notes:</p>
+<p>Now, the ability to alter your highlights palette goes a long way in making this script personalizable (is that even a word?), but I went a step further. You can also tweak the HTML formatting used to create the Evernote note. Unfortunately, however, this will require opening up some Applescript and doing some code tweaking.<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> But I’ve tried to make it not so scary. Essentially, each annotation type has a general formatting template used to create the HTML. I’ve abstracted this format and placed each variable element under your control. You can find all of the templates and some basic examples in the Help PDF (page 3), but here is one example, for the Highlight Notes:</p>
 
 <div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2</pre></td><td class="code"><pre>--The alterable variables are wrapped in {curlies}, while the fixed elements are in &lt;carets&gt;.
@@ -249,19 +250,19 @@
 </pre></td></tr></tbody></table>
 </div>
 
-<p>So, you can prefix anything you'd like to the front of a note type: a dash, a tab, a few tabs, a word, etc. You can then wrap the title of the highlight (this is the text given for whatever color that highlighted annotation was) in anything at all: make it bold, italics, wrap it in [brackets], whatever. You can also wrap the actual text highlighted: in "quotes", make it italics, etc. Finally, you have what you wrap the hyperlink in: it could be (parentheses) or {braces}, etc. And you can specify what page abbreviation you want: p., page, #. Now, the script defaults to settings that I think work pretty well, and you can use those to get a feel for what's possible. Just remember, <em>it needs to be valid HTML</em>. All of these properties are near the top of the <code>action_export-notes.scpt</code> found in the workflow directory (you can use <code>sk:bug</code> -&gt; <code>Root</code> to open this folder easily). Feel free to ask me if you have something you'd like to format but can't quite figure it out.</p>
+<p>So, you can prefix anything you’d like to the front of a note type: a dash, a tab, a few tabs, a word, etc. You can then wrap the title of the highlight (this is the text given for whatever color that highlighted annotation was) in anything at all: make it bold, italics, wrap it in [brackets], whatever. You can also wrap the actual text highlighted: in “quotes”, make it italics, etc. Finally, you have what you wrap the hyperlink in: it could be (parentheses) or {braces}, etc. And you can specify what page abbreviation you want: p., page, #. Now, the script defaults to settings that I think work pretty well, and you can use those to get a feel for what’s possible. Just remember, <em>it needs to be valid HTML</em>. All of these properties are near the top of the <code>action_export-notes.scpt</code> found in the workflow directory (you can use <code>sk:bug</code> -&gt; <code>Root</code> to open this folder easily). Feel free to ask me if you have something you’d like to format but can’t quite figure it out.</p>
 
-<p>Since I've added the PDF hyperlinking functionality, I've also added the ability to copy a PDF pages custom URL to the clipboard, if you want to hyperlink to that PDF page in any other context. Simply use the <code>sk:copy</code> keyword. This whole URL hyperlinking works because I have written a custom URL handler which is bundled with the workflow that interprets the custom URLs that I've written to open PDFs in Skim to the appropriate page. It's pretty cool, but <em>the URL uses the path to the PDF, so if you move the PDF the URL will <strong>break</strong> until you alter all the old URLs to use your new path</em>.</p>
+<p>Since I’ve added the PDF hyperlinking functionality, I’ve also added the ability to copy a PDF pages custom URL to the clipboard, if you want to hyperlink to that PDF page in any other context. Simply use the <code>sk:copy</code> keyword. This whole URL hyperlinking works because I have written a custom URL handler which is bundled with the workflow that interprets the custom URLs that I’ve written to open PDFs in Skim to the appropriate page. It’s pretty cool, but <em>the URL uses the path to the PDF, so if you move the PDF the URL will <strong>break</strong> until you alter all the old URLs to use your new path</em>.</p>
 
 <h3 id="search-your-pdfs">Search your PDFs</h3>
 
-<p>Finally, you can also search through all of your PDFs and open any one of them right in Skim. Use either the keyword <code>skimmer</code> or the shorter <code>sk</code> to begin the query. Then enter your query term. The results will update as you type. You can hit <code>return</code> to open any item directly in Skim, or you can <code>right-arrow</code> to enter Alfred's file browser for that item.</p>
+<p>Finally, you can also search through all of your PDFs and open any one of them right in Skim. Use either the keyword <code>skimmer</code> or the shorter <code>sk</code> to begin the query. Then enter your query term. The results will update as you type. You can hit <code>return</code> to open any item directly in Skim, or you can <code>right-arrow</code> to enter Alfred’s file browser for that item.</p>
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>As I hope you can see, if you're someone who deals with PDFs frequently, this workflow could be of help. Whether it's splitting PDFs, searching through your PDF library, or exporting annotations, <strong><code>Skimmer</code></strong> can help you out.</p>
+<p>As I hope you can see, if you’re someone who deals with PDFs frequently, this workflow could be of help. Whether it’s splitting PDFs, searching through your PDF library, or exporting annotations, <strong><code>Skimmer</code></strong> can help you out.</p>
 
-<p>Plus, it's fairly simple to add functionality by simply adding more Applescripts, so if you have a great script for working with Skim, let me know in the comments.</p>
+<p>Plus, it’s fairly simple to add functionality by simply adding more Applescripts, so if you have a great script for working with Skim, let me know in the comments.</p>
 
 <div class="footnotes">
   <ol>
@@ -274,11 +275,8 @@
   </ol>
 </div>
 </div>
-
-    <!-- Get all projects for which there are articles -->
-    <!-- Iterate over these projects -->
-        <!-- If the project with articles matches the project passed in to create this template, list the articles -->
 </div>
+
     </div>
 
     <aside id="sidebar">
@@ -290,23 +288,23 @@
     <ul class="fa-ul">
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/ruminations-on-a-credal-logic/">Ruminations on a Credal Logic</a>
+          <a href="/articles/ruminations-on-a-credal-logic/">Ruminations on a Credal Logic</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/1-0-9999/">1 = 0.9999...</a>
+          <a href="/articles/1-0-9999/">1 = 0.9999...</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/portrait-of-pain/">Portrait of Pain</a>
+          <a href="/articles/portrait-of-pain/">Portrait of Pain</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/elevator/">Elevator</a>
+          <a href="/jots/201604051529/">"Oft evil will shall evil mar" - J.R.R. Tolkien (via Theoden)</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/cleaning-up-git-repos/">Cleaning up Git repos</a>
+          <a href="/articles/elevator/">Elevator</a>
         </li>
     </ul>
   </div>
@@ -316,47 +314,53 @@
     <ul>
       <!-- Add all Article tags -->
         <li>
-          <a class="badge no-hvr" id="math" href="/topics/math/">math (1)</a>
+          <a class="badge no-hvr math" href="/topics/math/">math (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="logic" href="/topics/logic/">logic (3)</a>
+          <a class="badge no-hvr logic" href="/topics/logic/">logic (3)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="epistemology" href="/topics/epistemology/">epistemology (3)</a>
+          <a class="badge no-hvr epistemology" href="/topics/epistemology/">epistemology (3)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="hackademics" href="/topics/hackademics/">hackademics (1)</a>
+          <a class="badge no-hvr hackademics" href="/topics/hackademics/">hackademics (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="grad-school" href="/topics/grad-school/">grad-school (2)</a>
+          <a class="badge no-hvr grad-school" href="/topics/grad-school/">grad-school (2)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="til" href="/topics/til/">til (1)</a>
+          <a class="badge no-hvr til" href="/topics/til/">til (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="poetry" href="/topics/poetry/">poetry (1)</a>
+          <a class="badge no-hvr poetry" href="/topics/poetry/">poetry (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="example" href="/topics/example/">example (1)</a>
+          <a class="badge no-hvr christianity" href="/topics/christianity/">christianity (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="christianity" href="/topics/christianity/">christianity (1)</a>
+          <a class="badge no-hvr love" href="/topics/love/">love (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="love" href="/topics/love/">love (1)</a>
+          <a class="badge no-hvr prose" href="/topics/prose/">prose (2)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="prose" href="/topics/prose/">prose (2)</a>
+          <a class="badge no-hvr faith" href="/topics/faith/">faith (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="faith" href="/topics/faith/">faith (1)</a>
+          <a class="badge no-hvr example" href="/topics/example/">example (1)</a>
         </li>
-
-      <!-- Add all Project tags -->
-        <a class="badge no-hvr" id="alfred" href="/topics/alfred">alfred (9)</a>
-        <a class="badge no-hvr" id="git" href="/topics/git">git (1)</a>
-        <a class="badge no-hvr" id="bash" href="/topics/bash">bash (2)</a>
-        <a class="badge no-hvr" id="python" href="/topics/python">python (1)</a>
+        <li>
+          <a class="badge no-hvr alfred" href="/topics/alfred/">alfred (9)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr git" href="/topics/git/">git (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr bash" href="/topics/bash/">bash (2)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr python" href="/topics/python/">python (1)</a>
+        </li>
     </ul>
   </div>
 

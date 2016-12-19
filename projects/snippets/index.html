@@ -109,12 +109,13 @@
   </ul>
 </header>
 
+
     <div class="navigation">
   <nav role="navigation">
     <ul class="navigation-menu">
       <li class="nav-link"><a href="/">home</a></li>
-      <li class="nav-link"><a href="/jots">jots</a></li>
-      <li class="nav-link"><a href="/projects">projects</a></li>
+      <li class="nav-link"><a href="/jots/">jots</a></li>
+      <li class="nav-link"><a href="/projects/">projects</a></li>
     </ul>
   </nav>
 
@@ -136,19 +137,19 @@
 
       <ul class="card-tags">
           <li>
-            <!-- If project-tag is also a blog-tag, link to it -->
-              <a class="badge no-hvr" id="alfred" href="/topics/alfred">alfred</a>
+            <a class="badge no-hvr alfred" href="/topics/alfred/">alfred</a>
           </li>
       </ul>
 
     <div class="card-image">
-      <!-- if project has tags, add filler element -->
+      <!-- if post has tags, add filler element -->
         <div id="tag-filler-space"></div>
-      <!-- if project has header image, add it -->
+      <!-- if post has header image, add it -->
         <img src="../../images/projects/snippets.svg" />
     </div>
 
-    <h2 id="title">Snippets</h2>
+    <h2 id="title"><p>Snippets</p>
+</h2>
 
     <hr class="fractal">
 
@@ -158,9 +159,9 @@
 
 <h4 id="download-on-packalhttpwwwpackalorgworkflowsnippets">Download on <a href="http://www.packal.org/workflow/snippets">Packal</a></h4>
 
-<p>Have you ever been taking notes and realized that certain terms or phrases were going to be used repeatedly? You don't have the time or really the desire to create all new TextExpander snippets for these terms or phrases, but you'd also really like to shorten your typing. That's where <strong><code>Snippets</code></strong> comes in. <strong><code>Snippets</code></strong> is a dead simple Alfred workflow that allows you to use simple snippet syntax while writing, and then seamlessly convert your text to its full glory.</p>
+<p>Have you ever been taking notes and realized that certain terms or phrases were going to be used repeatedly? You don’t have the time or really the desire to create all new TextExpander snippets for these terms or phrases, but you’d also really like to shorten your typing. That’s where <strong><code>Snippets</code></strong> comes in. <strong><code>Snippets</code></strong> is a dead simple Alfred workflow that allows you to use simple snippet syntax while writing, and then seamlessly convert your text to its full glory.</p>
 
-<p>The set-up is simple. As you're typing, and you realize you want to make a snippet, simply prepend your snippet with <code>,,</code> (comma comma). Then, when you get a free moment, create a "snippet dictionary" to tell Snippets what that snippet means. To create the dictionary, simply wrap it in <code>^^^</code> (triple carets). Here's an example:</p>
+<p>The set-up is simple. As you’re typing, and you realize you want to make a snippet, simply prepend your snippet with <code>,,</code> (comma comma). Then, when you get a free moment, create a “snippet dictionary” to tell Snippets what that snippet means. To create the dictionary, simply wrap it in <code>^^^</code> (triple carets). Here’s an example:</p>
 
 <div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -176,21 +177,18 @@ a: Alfred
 </pre></td></tr></tbody></table>
 </div>
 
-<p>That's all there is to it. Once your dictionary is complete and you have finished typing, either copy the text to the clipboard and use the keyword <code>snip</code>, or assign a keyboard shortcut for even quicker results. When you activate <strong><code>Snippets</code></strong>, the text above will instantly become:</p>
+<p>That’s all there is to it. Once your dictionary is complete and you have finished typing, either copy the text to the clipboard and use the keyword <code>snip</code>, or assign a keyboard shortcut for even quicker results. When you activate <strong><code>Snippets</code></strong>, the text above will instantly become:</p>
 
 <div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>This is an example of **`Snippets`**. **`Snippets`** is a fantastic workflow for Alfred!
 </pre></td></tr></tbody></table>
 </div>
 
-<p>It's so simple. Double-comma before the snippet; dictionary wrapped in triple-carets with snippet: expanded. Nothing more, nothing less.</p>
+<p>It’s so simple. Double-comma before the snippet; dictionary wrapped in triple-carets with snippet: expanded. Nothing more, nothing less.</p>
 
 <p><img alt="demo" src="https://raw.githubusercontent.com/smargh/alfred_snippets/master/snippets.gif" /></p>
 </div>
-
-    <!-- Get all projects for which there are articles -->
-    <!-- Iterate over these projects -->
-        <!-- If the project with articles matches the project passed in to create this template, list the articles -->
 </div>
+
     </div>
 
     <aside id="sidebar">
@@ -202,23 +200,23 @@ a: Alfred
     <ul class="fa-ul">
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/ruminations-on-a-credal-logic/">Ruminations on a Credal Logic</a>
+          <a href="/articles/ruminations-on-a-credal-logic/">Ruminations on a Credal Logic</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/1-0-9999/">1 = 0.9999...</a>
+          <a href="/articles/1-0-9999/">1 = 0.9999...</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/portrait-of-pain/">Portrait of Pain</a>
+          <a href="/articles/portrait-of-pain/">Portrait of Pain</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/elevator/">Elevator</a>
+          <a href="/jots/201604051529/">"Oft evil will shall evil mar" - J.R.R. Tolkien (via Theoden)</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/cleaning-up-git-repos/">Cleaning up Git repos</a>
+          <a href="/articles/elevator/">Elevator</a>
         </li>
     </ul>
   </div>
@@ -228,47 +226,53 @@ a: Alfred
     <ul>
       <!-- Add all Article tags -->
         <li>
-          <a class="badge no-hvr" id="math" href="/topics/math/">math (1)</a>
+          <a class="badge no-hvr math" href="/topics/math/">math (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="logic" href="/topics/logic/">logic (3)</a>
+          <a class="badge no-hvr logic" href="/topics/logic/">logic (3)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="epistemology" href="/topics/epistemology/">epistemology (3)</a>
+          <a class="badge no-hvr epistemology" href="/topics/epistemology/">epistemology (3)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="hackademics" href="/topics/hackademics/">hackademics (1)</a>
+          <a class="badge no-hvr hackademics" href="/topics/hackademics/">hackademics (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="grad-school" href="/topics/grad-school/">grad-school (2)</a>
+          <a class="badge no-hvr grad-school" href="/topics/grad-school/">grad-school (2)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="til" href="/topics/til/">til (1)</a>
+          <a class="badge no-hvr til" href="/topics/til/">til (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="poetry" href="/topics/poetry/">poetry (1)</a>
+          <a class="badge no-hvr poetry" href="/topics/poetry/">poetry (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="example" href="/topics/example/">example (1)</a>
+          <a class="badge no-hvr christianity" href="/topics/christianity/">christianity (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="christianity" href="/topics/christianity/">christianity (1)</a>
+          <a class="badge no-hvr love" href="/topics/love/">love (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="love" href="/topics/love/">love (1)</a>
+          <a class="badge no-hvr prose" href="/topics/prose/">prose (2)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="prose" href="/topics/prose/">prose (2)</a>
+          <a class="badge no-hvr faith" href="/topics/faith/">faith (1)</a>
         </li>
         <li>
-          <a class="badge no-hvr" id="faith" href="/topics/faith/">faith (1)</a>
+          <a class="badge no-hvr example" href="/topics/example/">example (1)</a>
         </li>
-
-      <!-- Add all Project tags -->
-        <a class="badge no-hvr" id="alfred" href="/topics/alfred">alfred (9)</a>
-        <a class="badge no-hvr" id="git" href="/topics/git">git (1)</a>
-        <a class="badge no-hvr" id="bash" href="/topics/bash">bash (2)</a>
-        <a class="badge no-hvr" id="python" href="/topics/python">python (1)</a>
+        <li>
+          <a class="badge no-hvr alfred" href="/topics/alfred/">alfred (9)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr git" href="/topics/git/">git (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr bash" href="/topics/bash/">bash (2)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr python" href="/topics/python/">python (1)</a>
+        </li>
     </ul>
   </div>
 
