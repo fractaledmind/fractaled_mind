@@ -9,13 +9,4 @@ blog.articles.each do |article|
   }
   entries << entry
 end
-data.projects.each do |slug, project|
-  entry = {
-    title: project.title,
-    url: 'projects/' + slug,
-    content: markdownify(project.readme),
-    type: 'project'
-  }
-  entries << entry
-end
 %><%=entries.to_json %>
