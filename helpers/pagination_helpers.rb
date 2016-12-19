@@ -19,7 +19,7 @@ module PaginationHelpers
     # # Add all subsequent pages
     page = current_page
     while page = next_page_for(page)
-      items << pagination_item_for(page)
+      items << pagination_item_for(page) if page
     end
 
     # Combine the items with the prev/next links
@@ -61,7 +61,7 @@ module PaginationHelpers
   end
 
   def page_number(page_link)
-    /(\d)\.html/.match(page_link)&.captures&.first&.to_i
+    /(\d)(\.html|\/)/.match(page_link)&.captures&.first&.to_i
   end
 
   def locals_for(page, key)
