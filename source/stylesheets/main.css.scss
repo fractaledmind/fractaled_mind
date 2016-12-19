@@ -32,6 +32,7 @@
 @import 'components/hr';
 @import 'components/cards';
 @import 'components/pagination';
+@import 'components/styled_header';
 
 // Custom added vendors
 @import 'vendors/bigfoot/bigfoot-number';
@@ -48,6 +49,7 @@
 @import 'pages/topic';
 @import 'pages/topics';
 @import 'pages/project';
+@import 'pages/essay';
 
 body {
 	@include outer-container();

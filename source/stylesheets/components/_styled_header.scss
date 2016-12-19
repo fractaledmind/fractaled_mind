@@ -1,0 +1,67 @@
+.hover-tile-container {
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+  margin: 1rem;
+  display: block;
+  color: inherit;
+  margin-bottom: 3rem;
+
+  &:visited, &:link {
+    color: initial;
+  }
+
+  .hover-tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &:hover > .hover-tile {
+    &.hover-tile-hidden { opacity: 1 }
+    &.hover-tile-visible { h1 { opacity: 0 } }
+  }
+
+  .hover-tile-hidden {
+    background: transparentize(#a7adba, 0.5);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+}
+
+$padding: 2rem;
+$spacing: ($padding / 1.5);
+
+.neato-header {
+  min-width: 50%;
+  padding: $padding;
+  text-align: center;
+  border: 3px solid;
+  border-radius: 4px;
+  position: relative;
+  background-color: white;
+
+  h1, h4 { letter-spacing: 0.05em; margin: 0; }
+
+  h1 {
+    text-transform: uppercase;
+  }
+  h4 {
+    background: white;
+    font-style: italic;
+    padding: ($spacing / 3) $spacing;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -$spacing;
+    z-index: 2;
+    border-radius: 4px;
+    line-height: inherit;
+  }
+}
+
