@@ -3,12 +3,12 @@
   <hr class="fractal">
 
   <div id="recent-articles">
-    <h5>Recent Articles</h5>
+    <h5>Recent Posts</h5>
     <ul class="fa-ul">
-      <% blog.articles[0...5].each do |article| %>
+      <% blog.articles.reject { |r| r.respond_to?(:slug) && r.slug.include?('jots') }[0...5].each do |post| %>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <%= link_to article.title, article %>
+          <%= link_to post.title, post %>
         </li>
       <% end %>
     </ul>
@@ -26,5 +26,4 @@
       <% end %>
     </ul>
   </div>
-
 </aside>
