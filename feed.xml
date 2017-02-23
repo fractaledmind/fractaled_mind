@@ -5,10 +5,50 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2016-09-19T20:00:00-04:00</updated>
+  <updated>2017-02-20T19:00:00-05:00</updated>
   <author>
     <name>Stephen Margheim</name>
   </author>
+  <entry>
+    <title>Communication is Hard</title>
+    <link rel="alternate" href="http://blog.url.com/articles/communication-is-hard/"/>
+    <id>http://blog.url.com/articles/communication-is-hard/</id>
+    <published>2017-02-20T19:00:00-05:00</published>
+    <updated>2017-02-20T21:38:21-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;p&gt;Communication is hard. I have found myself contemplating this truth a lot lately. At work it has become a kind of mantra on my team. Have you ever taken the proverbial step back to consider what all is involved in communicating with another human being? We have these thoughts, often messy, squishy, and loosely formed, which we attempt to shuttle from our mind into someone else’s mind (let alone a group of other minds). In order to get these nearly amorphous ideas out of our heads and into another, we package them up in words. We quiver these small muscles in our throats or we engage our wrists and fingers to hammer out some collection of runes or we sometimes even drag our hands across tree pulp scrawling out an even cruder form of these same symbols. There is no inherent connection between the etherial thoughts in our minds and these vibrations in the air or scribbles on a surface; there is nothing that guarantees this representation, whatever physical form it takes, properly encodes our thoughts. In fact, it is impossible for me to imagine that words could ever &lt;em&gt;fully&lt;/em&gt; encode thought. But that is only half of it.&lt;/p&gt;
+
+&lt;p&gt;After we squeeze these atomless, formless ideas into some physical form, we send them out on a hope and a prayer toward the other mind, the other person. And they fly on what must be a hope and prayer as we no longer have any control over them; it is the chick out of the nest, the child off to college. Our words, these gangly bodies for our pure thoughts, now belong to that other person. He or she receives them, whether by ear or eye, takes them in, and must now begin the delicate, intricate task of decoding them. Their mind, like ours, has little use for mere words; it requires ideas in idea-form. So it attempts to perfectly trace our steps in reverse, to decode what we encoded. And can we really ever blame them for failing to achieve perfection? Perfect listening is a fool’s errand; perfect reading is hopeless. And yet, in the face of this impossible task, against these staggering odds, each and every day, billions of people in thousands of languages meaningfully communicate. To my mind, it is one of the most mesmerizing miracles this side of eternity.&lt;/p&gt;
+
+&lt;p&gt;It saddens me, however, that so many people so often add to the burden, make the task that much more difficult, by shirking from communicating openly and honestly. Whether from shame or awkwardness, a twisted sense of propriety or an overly-tuned care for perfection, people consistently mince words, avoid topics, stop at smalltalk, or simply avoid the impossibly delicate dance of true and deep communication altogether. And, on the other side, how many people lazily and sloppily unpack the carefully considered package of meaning sent their way by a caring friend? Communication is hard, so why make it harder with slovenly listening or cheap talk? I would much rather slow down, consider well, package my thoughts carefully, listen empathetically, and dance the intricacies of meaningful communication.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Thoughts on a Birthday</title>
+    <link rel="alternate" href="http://blog.url.com/articles/thoughts-on-a-birthday/"/>
+    <id>http://blog.url.com/articles/thoughts-on-a-birthday/</id>
+    <published>2017-01-18T19:00:00-05:00</published>
+    <updated>2017-02-20T21:41:54-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;p&gt;I am 26 and as this, my 26th year, comes to a close I see that I have learned a lot.&lt;/p&gt;
+
+&lt;p&gt;I have learned how to truly cry–to give a thought, image, or emotion the space to breathe and grow and bubble up into my chest, and then to let that physical sensation extend and deepen as it struggles to find physical release in the form of tears, whether a slow sole tear or a mighty torrent.&lt;/p&gt;
+
+&lt;p&gt;I have learned the dedication needed for consistent mental and emotional health–that health, true health, requires asking for help, leaning on others, recognizing and accepting fault and responsibility, and living and communicating openly and honestly.&lt;/p&gt;
+
+&lt;p&gt;I have also learned that I can and do struggle with depression, with the ennui that seems to settle into your bones. Blessedly, however, I have also learned that there is a beauty within depression–that seeing, accepting, and being affected by the true brokenness of the world and the people in it is a signal of a depth of spirit that is a blessing.&lt;/p&gt;
+
+&lt;p&gt;I have learned that not all stories play out like the stories our culture or our minds tell us; some stories end abruptly, in some stories the “bad guy” “wins”, and some barely look like stories at all.&lt;/p&gt;
+
+&lt;p&gt;I have seen and felt the deep human desire to be truly seen and truly accepted, and I have seen and experienced the near-universal drive to receive this without ever giving it to others first or ever.&lt;/p&gt;
+
+&lt;p&gt;Suffice it to say, it has been quite the year.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Ruminations on a Credal Logic</title>
     <link rel="alternate" href="http://blog.url.com/articles/ruminations-on-a-credal-logic/"/>
@@ -396,15 +436,25 @@ k &lt;span class="o"&gt;=&lt;/span&gt; 1
     <link rel="alternate" href="http://blog.url.com/articles/elevator/"/>
     <id>http://blog.url.com/articles/elevator/</id>
     <published>2016-04-03T20:00:00-04:00</published>
-    <updated>2016-08-18T22:46:41-04:00</updated>
+    <updated>2017-02-20T21:44:25-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
-    <content type="html">&lt;p&gt;You step forward, press the button, and begin to wait. Dingy carpet in a worn-down lobby, a space almost asking you to leave it. Elevator crawls down the walls; is it fighting back? Even so, button pressed, future sealed.&lt;/p&gt;
+    <content type="html">&lt;p&gt;You step forward, press the button, and begin to wait.&lt;br /&gt;
+Dingy carpet in a worn-down lobby, a space almost asking you to leave it.&lt;br /&gt;
+Elevator crawls down the walls; is it fighting back?&lt;br /&gt;
+Even so, button pressed, future sealed.&lt;/p&gt;
 
-&lt;p&gt;Ding. It arrives. Future becomes present. Doors open. Gold and chrome and shining things. You enter. Perhaps slow at first, perhaps not. Doors close. Buttons arrayed in simple lines belie the complexity of choice. Each button a world. Present becomes future. You hesitate; or do you? Button pressed, future sealed. The elevator flies–a new floor, a better world.&lt;/p&gt;
+&lt;p&gt;Ding. It arrives. Future becomes present. Doors open.&lt;br /&gt;
+Gold and chrome and shining things. You enter.&lt;br /&gt;
+Perhaps slow at first, perhaps not. Doors close.&lt;br /&gt;
+Buttons arrayed in simple lines belie the complexity of choice. Each button a world. Present becomes future.&lt;br /&gt;
+You hesitate; or do you? Button pressed, future sealed.&lt;br /&gt;
+The elevator flies–a new floor, a better world.&lt;/p&gt;
 
-&lt;p&gt;Ding. Doors open. Clean carpet and soft lights, inviting. You step out. Elevator closes and returns, it’s task complete.&lt;/p&gt;
+&lt;p&gt;Ding. Doors open.&lt;br /&gt;
+Clean carpet and soft lights, inviting. You step out.&lt;br /&gt;
+Elevator closes and returns, it’s task complete.&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -1054,32 +1104,6 @@ done&lt;/span&gt;
 </content>
   </entry>
   <entry>
-    <title>A Depressed Graduate Student</title>
-    <link rel="alternate" href="http://blog.url.com/articles/a-depressed-graduate-student/"/>
-    <id>http://blog.url.com/articles/a-depressed-graduate-student/</id>
-    <published>2015-06-18T13:38:00-04:00</published>
-    <updated>2016-08-31T20:46:19-04:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;p&gt;In my &lt;a href="http://fractaledmind.com/articles/a-failed-graduate-student"&gt;previous post&lt;/a&gt; on my time in graduate school, I discussed how I learned to handle failures better. Today, I’m going to talk about how I failed to handle the depression that these mounting failures produced.&lt;/p&gt;
-
-&lt;p&gt;Let’s start where some people find it difficult to start: I have struggled with depression, and odds are that I will stuggle with depression again in my future. This isn’t a sign of weakness; this isn’t something shameful. This is just a fact of my life. I’m a self-critical perfectionist who tends toward absolutist perceptions of reality; of course I’m going to struggle with depression. Unfortunately, when I entered graduate school, I was generally unaware of this likelihood. As with Imposter’s Syndrome, I thought I knew what depression was and I thought I could spot it fairly early on. And, as with Imposter’s Syndrome, it snuck up on me slowly but fiercely.&lt;/p&gt;
-
-&lt;p&gt;When you feel like you are failing frequently and regularly, when those failures build up on top of one another, it can start to have odd effects. The more I thought I failed, the more I wanted to succeed in my next task. Yet, the more I thought I failed, the less energy I had to put into that next task. “I’ve failed at these things; I’ll probably fail at this. Why even try so hard?” This is the internal thought-process I assume my mind had. I say “assume” because I never consciously thought anything like this. My conscious mind wanted to succeed, to return to my old form. My unconscious mind seems to have grown more and more weary, more and more gun-shy.&lt;/p&gt;
-
-&lt;p&gt;For me, depression felt like I was loosing control of my intention. What my conscious mind wanted seemed to have very little effect over what I actually ended up doing. This is the vicious cycle that Imposter’s Syndrome and Depression can generate. The more I thought I was failing, the less energy I could muster to tackle the next task. Putting less energy in, I was more likely to see the result (whatever it might actually be) as a failure, a failure to perform with enough vim and vigor. Failure -&amp;gt; Waning energy -&amp;gt; Failure … on and on.&lt;/p&gt;
-
-&lt;p&gt;I got caught in this cycle for probably two years without really noticing what was happening. This is one of the shittiest things about depression–once you’re in it, it is &lt;em&gt;so much harder&lt;/em&gt; to get out on your own. It’s like trying to run in mud: the more you try, the dirtier and more tired you get, without actually getting as far as you think you should.&lt;/p&gt;
-
-&lt;p&gt;Depression is a spiraling-in on oneself. You are the center of gravity, so &lt;em&gt;you&lt;/em&gt; cannot generate the outside force to propel yourself out. However, others can. I wish I didn’t take so long to actually talk to someone about how I felt. I was so ashamed of my failures, so oblivious to my depression, so insecure in my position, that I kept everything hidden, consciously. There can be a quiet cloud that lingers over graduate school which says that weakness is death, progress is paramount. In many departments, this isn’t probably actually true, but the shadow remains, and a shadow can be enough. I lived in that shadow for far too long.&lt;/p&gt;
-
-&lt;p&gt;But, after finally getting to a point where I simply was unable to keep moving forward with all of the stress internalized, I went and got help. I started going to a therapist. This was a wise decision. No practical effects came of it–I didn’t get any diagnoses, no prescriptions–but I did get better. Talking with someone, being honest about my feelings, emotions, fears, got those things outside of my head, put them in front of me, and thus allowed me to see them for the puny things they were. Fear and depression grow in the shadow; in the light, they shrink to their actual sizes.&lt;/p&gt;
-
-&lt;p&gt;So, I’ve been depressed, I’ve been (and continue to go) to therapy. For anyone out there in anything at all similar to my situation, know that understood weakness is the foundation of wisdom, progress without wisdom is folly, and getting help really will help.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>Consolation and Commemoration in Horace *Odes* 1.24 and 4.12</title>
     <link rel="alternate" href="http://blog.url.com/essays/consolation/"/>
     <id>http://blog.url.com/essays/consolation/</id>
@@ -1421,6 +1445,32 @@ Pro Vergil, scholars point to the ode’s Vergilian language and themes.  Belmon
 </content>
   </entry>
   <entry>
+    <title>A Depressed Graduate Student</title>
+    <link rel="alternate" href="http://blog.url.com/articles/a-depressed-graduate-student/"/>
+    <id>http://blog.url.com/articles/a-depressed-graduate-student/</id>
+    <published>2015-06-18T13:38:00-04:00</published>
+    <updated>2016-08-31T20:46:19-04:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;p&gt;In my &lt;a href="http://fractaledmind.com/articles/a-failed-graduate-student"&gt;previous post&lt;/a&gt; on my time in graduate school, I discussed how I learned to handle failures better. Today, I’m going to talk about how I failed to handle the depression that these mounting failures produced.&lt;/p&gt;
+
+&lt;p&gt;Let’s start where some people find it difficult to start: I have struggled with depression, and odds are that I will stuggle with depression again in my future. This isn’t a sign of weakness; this isn’t something shameful. This is just a fact of my life. I’m a self-critical perfectionist who tends toward absolutist perceptions of reality; of course I’m going to struggle with depression. Unfortunately, when I entered graduate school, I was generally unaware of this likelihood. As with Imposter’s Syndrome, I thought I knew what depression was and I thought I could spot it fairly early on. And, as with Imposter’s Syndrome, it snuck up on me slowly but fiercely.&lt;/p&gt;
+
+&lt;p&gt;When you feel like you are failing frequently and regularly, when those failures build up on top of one another, it can start to have odd effects. The more I thought I failed, the more I wanted to succeed in my next task. Yet, the more I thought I failed, the less energy I had to put into that next task. “I’ve failed at these things; I’ll probably fail at this. Why even try so hard?” This is the internal thought-process I assume my mind had. I say “assume” because I never consciously thought anything like this. My conscious mind wanted to succeed, to return to my old form. My unconscious mind seems to have grown more and more weary, more and more gun-shy.&lt;/p&gt;
+
+&lt;p&gt;For me, depression felt like I was loosing control of my intention. What my conscious mind wanted seemed to have very little effect over what I actually ended up doing. This is the vicious cycle that Imposter’s Syndrome and Depression can generate. The more I thought I was failing, the less energy I could muster to tackle the next task. Putting less energy in, I was more likely to see the result (whatever it might actually be) as a failure, a failure to perform with enough vim and vigor. Failure -&amp;gt; Waning energy -&amp;gt; Failure … on and on.&lt;/p&gt;
+
+&lt;p&gt;I got caught in this cycle for probably two years without really noticing what was happening. This is one of the shittiest things about depression–once you’re in it, it is &lt;em&gt;so much harder&lt;/em&gt; to get out on your own. It’s like trying to run in mud: the more you try, the dirtier and more tired you get, without actually getting as far as you think you should.&lt;/p&gt;
+
+&lt;p&gt;Depression is a spiraling-in on oneself. You are the center of gravity, so &lt;em&gt;you&lt;/em&gt; cannot generate the outside force to propel yourself out. However, others can. I wish I didn’t take so long to actually talk to someone about how I felt. I was so ashamed of my failures, so oblivious to my depression, so insecure in my position, that I kept everything hidden, consciously. There can be a quiet cloud that lingers over graduate school which says that weakness is death, progress is paramount. In many departments, this isn’t probably actually true, but the shadow remains, and a shadow can be enough. I lived in that shadow for far too long.&lt;/p&gt;
+
+&lt;p&gt;But, after finally getting to a point where I simply was unable to keep moving forward with all of the stress internalized, I went and got help. I started going to a therapist. This was a wise decision. No practical effects came of it–I didn’t get any diagnoses, no prescriptions–but I did get better. Talking with someone, being honest about my feelings, emotions, fears, got those things outside of my head, put them in front of me, and thus allowed me to see them for the puny things they were. Fear and depression grow in the shadow; in the light, they shrink to their actual sizes.&lt;/p&gt;
+
+&lt;p&gt;So, I’ve been depressed, I’ve been (and continue to go) to therapy. For anyone out there in anything at all similar to my situation, know that understood weakness is the foundation of wisdom, progress without wisdom is folly, and getting help really will help.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>A Failed Graduate Student</title>
     <link rel="alternate" href="http://blog.url.com/articles/a-failed-graduate-student/"/>
     <id>http://blog.url.com/articles/a-failed-graduate-student/</id>
@@ -1452,205 +1502,6 @@ Pro Vergil, scholars point to the ode’s Vergilian language and themes.  Belmon
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Snippets</title>
-    <link rel="alternate" href="http://blog.url.com/projects/snippets/"/>
-    <id>http://blog.url.com/projects/snippets/</id>
-    <published>2015-05-26T20:00:00-04:00</published>
-    <updated>2016-12-02T22:18:59-05:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;h4 id="version-12"&gt;Version: 1.2&lt;/h4&gt;
-
-&lt;h4 id="download-on-packalhttpwwwpackalorgworkflowsnippets"&gt;Download on &lt;a href="http://www.packal.org/workflow/snippets"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
-
-&lt;p&gt;Have you ever been taking notes and realized that certain terms or phrases were going to be used repeatedly? You don’t have the time or really the desire to create all new TextExpander snippets for these terms or phrases, but you’d also really like to shorten your typing. That’s where &lt;strong&gt;&lt;code&gt;Snippets&lt;/code&gt;&lt;/strong&gt; comes in. &lt;strong&gt;&lt;code&gt;Snippets&lt;/code&gt;&lt;/strong&gt; is a dead simple Alfred workflow that allows you to use simple snippet syntax while writing, and then seamlessly convert your text to its full glory.&lt;/p&gt;
-
-&lt;p&gt;The set-up is simple. As you’re typing, and you realize you want to make a snippet, simply prepend your snippet with &lt;code&gt;,,&lt;/code&gt; (comma comma). Then, when you get a free moment, create a “snippet dictionary” to tell Snippets what that snippet means. To create the dictionary, simply wrap it in &lt;code&gt;^^^&lt;/code&gt; (triple carets). Here’s an example:&lt;/p&gt;
-
-&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2
-3
-4
-5
-6&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;This is an example of ,,sn. ,,sn is a fantastic workflow for ,,a!
-
-^^^
-sn: **`Snippets`**
-a: Alfred
-^^^
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;That’s all there is to it. Once your dictionary is complete and you have finished typing, either copy the text to the clipboard and use the keyword &lt;code&gt;snip&lt;/code&gt;, or assign a keyboard shortcut for even quicker results. When you activate &lt;strong&gt;&lt;code&gt;Snippets&lt;/code&gt;&lt;/strong&gt;, the text above will instantly become:&lt;/p&gt;
-
-&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;This is an example of **`Snippets`**. **`Snippets`** is a fantastic workflow for Alfred!
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;It’s so simple. Double-comma before the snippet; dictionary wrapped in triple-carets with snippet: expanded. Nothing more, nothing less.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="demo" src="https://raw.githubusercontent.com/smargh/alfred_snippets/master/snippets.gif" /&gt;&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Wikify</title>
-    <link rel="alternate" href="http://blog.url.com/projects/wikify/"/>
-    <id>http://blog.url.com/projects/wikify/</id>
-    <published>2015-05-26T20:00:00-04:00</published>
-    <updated>2016-12-02T22:19:06-05:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;h4 id="version-26"&gt;Version 2.6&lt;/h4&gt;
-
-&lt;h4 id="download-on-packalhttpwwwpackalorgworkflowwikify"&gt;Download on &lt;a href="http://www.packal.org/workflow/wikify"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; is a workflow to add some great &lt;a href="http://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; and wiki goodness to &lt;a href="https://www.evernote.com/"&gt;Evernote&lt;/a&gt;. In this post, I want to lay out all of the functionality and how to take advantage of it.&lt;/p&gt;
-
-&lt;h3 id="markdown-functionality"&gt;Markdown Functionality&lt;/h3&gt;
-
-&lt;p&gt;One half of &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt;’s functionality concerns integrating Markdown and Evernote. Essentially, this means being able to send Markdown text to Evernote as HTML &lt;em&gt;and&lt;/em&gt; being able to export an Evernote note to a Markdown text file.&lt;/p&gt;
-
-&lt;p&gt;In order to export an Evernote note to a Markdown text file, you can use the &lt;code&gt;enmd&lt;/code&gt; keyword from Alfred. &lt;code&gt;enmd&lt;/code&gt; stands for “Evernote to Markdown”, and this command will take your currently selected Evernote note and create a Markdown formatted text file which will immediately be opened in your default text editor. In addition, &lt;code&gt;enmd&lt;/code&gt; will fill in the note’s title, notebook, and tags as metadata at the top of the file (this will make it a snap to edit the note and send it back to Evernote using the &lt;code&gt;mden&lt;/code&gt; command, which I will talk about next). The workflow also comes with the ability to bind a keyboard shortcut to this function (I use &lt;code&gt;cmd + shift + 9&lt;/code&gt;). No fuss, no hassle, no wait. Export your Evernote note into Markdown in a flash.&lt;/p&gt;
-
-&lt;p&gt;But what about getting data &lt;em&gt;into&lt;/em&gt; Evernote? &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; will also allow you to write notes in Markdown in your text editor of choice and then send that text to Evernote, where it will be formatted and displayed in proper HTML. Now, this function has a bit of quirks to it, so let me elaborate. You can launch this function in one of two ways:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;the &lt;code&gt;mden&lt;/code&gt; keyword in Alfred&lt;/li&gt;
-  &lt;li&gt;setup a keyboard shortcut&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The keyboard shortcut will actually allow you simply to select your text (&lt;code&gt;cmd + a&lt;/code&gt; for “Select All”) and then press the shortcut to run the script. Alternatively, you can select the text, &lt;em&gt;copy it to the clipboard&lt;/em&gt;, and then pop up Alfred and use the &lt;code&gt;mden&lt;/code&gt; command (this is, obviously, short for “Markdown to Evernote”). It is important to note that if you use the &lt;code&gt;mden&lt;/code&gt; command from Alfred, your Markdown text &lt;em&gt;must&lt;/em&gt; be in the clipboard.&lt;/p&gt;
-
-&lt;p&gt;Now, how do you tell &lt;code&gt;mden&lt;/code&gt; &lt;em&gt;where&lt;/em&gt; to send your note, or what tags it should have, or what it’s title is? In order to assign Note Title, Notebook, and Tags, you can use simple &lt;a href="http://fletcherpenney.net/multimarkdown/"&gt;MultiMarkdown Headers&lt;/a&gt;, or simple symbols which are placed at the top of the document:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;Title:&lt;/code&gt; or &lt;code&gt;#&lt;/code&gt; for the note’s title&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;Notebook:&lt;/code&gt; or &lt;code&gt;=&lt;/code&gt; for the note’s notebook destination&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;Tags:&lt;/code&gt; or &lt;code&gt;@&lt;/code&gt; for the note’s tags&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;So, the top of your Markdown text note might look something like this:&lt;/p&gt;
-
-&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2
-3&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;# Text Note Title
-= My Default Notebook
-@ tag1, tag2, tag3
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;But, that’s not all that &lt;code&gt;mden&lt;/code&gt; can do. I’ve added a few extras to its capabilities. In addition to converting Markdown to text to HTML and sending that to Evernote, &lt;code&gt;mden&lt;/code&gt; has three other pretty cool features:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;document-specific text snippets (use &lt;code&gt;^^^snippet^^^&lt;/code&gt; syntax)&lt;/li&gt;
-  &lt;li&gt;auto-linking to pre-existing Evernote notes (no special syntax)&lt;/li&gt;
-  &lt;li&gt;auto-linking to new Evernote notes (use &lt;code&gt;[[double bracket]]&lt;/code&gt; syntax)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;First, let me explain document-specific text snippets. This feature was inspired recently as I was taking notes in class. In-class note-taking is a bit unique, since you won’t exactly know what words will be used repeatedly before the class begins. I’m all about &lt;a href="http://smilesoftware.com/TextExpander/"&gt;TextExpander&lt;/a&gt;, but I can’t set up snippets if I don’t know what will be the key words for that class. Plus, I don’t want to clutter my TextExpander library with these one-off snippets. So, document-specific text snippets was born. The idea is to use snippets in your notes as you type, and then define the &lt;code&gt;snippet:expanded text&lt;/code&gt; relationship before you use &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; to send the notes to Evernote. The syntax is dead-simple. Simply wrap your “snippet dictionary” in triple carets (&lt;code&gt;^^^snippet:expanded text^^^&lt;/code&gt;). You can have one-off “dictionaries” or you can make one long dictionary at the end of your document. The only things you need to remember are:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;ALWAYS use ,, as your in-text prefix (you &lt;em&gt;can&lt;/em&gt; change this in the code)&lt;/li&gt;
-  &lt;li&gt;if its a one-off (only one snippet), the “dictionary” needs to exist on its own line&lt;/li&gt;
-  &lt;li&gt;if its a multi-snippet “dictionary”, use the triple carets like fenced code blocks&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;To ensure these few easy syntax rules makes sense, here’s an example:&lt;/p&gt;
-
-&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2
-3
-4
-5
-6
-7
-8
-9&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;,,p are separated by a blank line.
-^^^p:Paragraphs^^^
-New text.
-2nd paragraph. *,,i*, **,,b**, `,,m`.
-^^^
-i:Italics
-b:BOLD
-m:monospace
-^^^
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Thats all there is to it. Note how each snippet is prefixed by &lt;code&gt;,,&lt;/code&gt;. This ensures that both you and the processor know what text needs to be expanded, and you don’t need to have the commas in the snippet dictionary. You can mix and match single-line snippet dictionaries with multi-snippet dictionaries in the same document. You can even use non-ASCII characters in your snippets or in your expanded text. For me, this is a killer feature. I hope someone else finds it useful.&lt;/p&gt;
-
-&lt;p&gt;Next, auto-linking to pre-existing Evernote notes. This is really the feature at the heart of &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt;, because this is what allows you to “wikify” your Evernote library. The idea is really quite simple: write your note as you normally would (in this case in Markdown, but I’ll discuss later how this can work within Evernote itself), and &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; will ensure that anytime you reference &lt;em&gt;any other Evernote note&lt;/em&gt; by title, your note will have a hyperlink to that other note. Let me offer a simple example. Say I began a new note like so:&lt;/p&gt;
-
-&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2
-3
-4
-5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;# Note Title
-= Notebook
-@ tag1, tag2
-
-This is the first line of my new note on Alfred App!
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Now, if I had a note in my Evernote account entitled “Alfred App”, when I process this note to send it to Evernote, &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; will now catch that and hyperlink to that pre-existing note, so this new note would have the phrase “Alfred App” linked directly to that other Evernote note. No fuss, no hassle, no funky syntax. And (this is what was holding me back on this feature for while), this is SUPER-FAST!&lt;/p&gt;
-
-&lt;p&gt;The final feature that “wikifies” Evernote when you are sending Markdown text to Evernote is smoothly creating new spaces to fill with data later, while simultaneously creating the inter-linking between notes. &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; has you covered here as well. Let’s say as you’re typing up a new Evernote note, you realize that you are discussing an idea, topic, or person that you want to research further, but at some later date. What to do? Well, you can use the standard wiki-syntax of the &lt;code&gt;[[double brackets]]&lt;/code&gt; to mark that idea, topic, or person as something you want to create a new note for, while also linking to that new note from within your current note. To return to our sample note above, let’s say you added this:&lt;/p&gt;
-
-&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2
-3
-4
-5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;# Note Title
-= Notebook
-@ tag1, tag2
-This is the first line of my new note on Alfred App!
-I want to talk more about [[AppleScript]].
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Whenever you have &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; process this Markdown text and send it to Evernote, it will first create a new note (in the same notebook as the one specified in the meta-data) entitled “AppleScript”, then embed the Evernote hyperlink to that new note within this current note. This means that your new Evernote note will have 2 links: one to the pre-existing note “Alfred App” and one to the newly created, blank note “AppleScript”. All of this without you having to do anything but type!&lt;/p&gt;
-
-&lt;p&gt;For anyone who prefers to write in Markdown, but loves the always-there accessibility of Evernote, this can be a powerful addition to your workflow. But obviously, not everyone writes their Evernote notes in Markdown first. Most people just write their notes directly in Evernote. But what if you wanted to still “wikify” your Evernote library, to easily create these interlinked notes? Well, I’ve tried to solve that problem too.&lt;/p&gt;
-
-&lt;h3 id="wiki-functionality"&gt;Wiki Functionality&lt;/h3&gt;
-
-&lt;p&gt;While I’ve already discussed some of the wiki functionality that’s inherent in the &lt;code&gt;mden&lt;/code&gt; function, that isn’t the only way to ensure that all of your Evernote data is intelligently interlinked. I have versions of both the link to pre-existing note and link to new note capabilities detailed above that work purely within Evernote. Here’s how they work.&lt;/p&gt;
-
-&lt;p&gt;In order to interlink any of your current Evernote notes with &lt;em&gt;pre-existing&lt;/em&gt; notes, you can use the &lt;code&gt;wfy&lt;/code&gt; command from Alfred. Simply open up Evernote and select the notes you want to “wikify” (the workflow does accept multiple selections, but you shouldn’t over tax it). Once your notes are selected, pull up Alfred and use the &lt;code&gt;wfy&lt;/code&gt; (short for “wikify”) keyword. The workflow will then process each of your notes individually, auto-linking to any pre-existing other notes which it references by name. &lt;strong&gt;NOTE:&lt;/strong&gt; In order to use this feature, you will need the &lt;a href="http://www.satimage.fr/software/en/downloads_osaxen.html"&gt;Satimage OSAX Scripting Addition&lt;/a&gt;. I’ve set it up such that this is remarkably easy to install. Simply use the keyword in Alfred &lt;code&gt;wfy:install&lt;/code&gt; and the Satimage installer will boot up and walk you through the process. It really is as simple as that. The script will search your note’s content for any references to other notes’ titles. If any are found, that text will be replaced with a hyperlink to that note. Here’s a gif that shows the process in action:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="wfy command" src="../../images/projects/wikify/wfy.gif" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Next, let’s say that you are in Evernote and see a phrase or term in one of your notes that you want to research more, while creating the wiki-environment that &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; is all about. I’ve added a companion feature which will:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;take the currently selected text in the open Evernote note&lt;/li&gt;
-  &lt;li&gt;create a new note in that notebook whose title is the selected text&lt;/li&gt;
-  &lt;li&gt;embed a hyperlink back to the original note as the first line of this new note&lt;/li&gt;
-  &lt;li&gt;and replace the selected text with a hyperlink to that newly created note&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This means that you have two-way hyperlinking (which is impossible in the &lt;code&gt;mden&lt;/code&gt; version of this functionality) between your current note and your new note. Creating spaces for new thought, while retaining context and wiki-style hyperlinking has never been easier. To use this feature, you can either use a user-specified keyboard shortcut, or copy the selected text to the clipboard and run &lt;code&gt;ensel&lt;/code&gt;. Here’s another gif to illustrate:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="ensel command" src="../../images/projects/wikify/ensel.gif" /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;To sum up, &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; has 4 main commands:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;mden&lt;/code&gt; to send Markdown text to Evernote&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;enmd&lt;/code&gt; to export an Evernote note to Markdown&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;wfy&lt;/code&gt; to “wikify” the selected Evernote note&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;ensel&lt;/code&gt; to create and wikify a new Evernote note from selection&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;With these features, and all of the “sub-features” elaborated above, I truly believe that &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; could be a great help to those others out there who love Evernote, Markdown, and Wiki goodness.&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -1988,6 +1839,205 @@ I want to talk more about [[AppleScript]].
 &lt;hr /&gt;
 
 &lt;p&gt;So that’s how you use &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;. It’s a powerful tool. I hope you like it.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Wikify</title>
+    <link rel="alternate" href="http://blog.url.com/projects/wikify/"/>
+    <id>http://blog.url.com/projects/wikify/</id>
+    <published>2015-05-26T20:00:00-04:00</published>
+    <updated>2016-12-02T22:19:06-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;h4 id="version-26"&gt;Version 2.6&lt;/h4&gt;
+
+&lt;h4 id="download-on-packalhttpwwwpackalorgworkflowwikify"&gt;Download on &lt;a href="http://www.packal.org/workflow/wikify"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; is a workflow to add some great &lt;a href="http://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; and wiki goodness to &lt;a href="https://www.evernote.com/"&gt;Evernote&lt;/a&gt;. In this post, I want to lay out all of the functionality and how to take advantage of it.&lt;/p&gt;
+
+&lt;h3 id="markdown-functionality"&gt;Markdown Functionality&lt;/h3&gt;
+
+&lt;p&gt;One half of &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt;’s functionality concerns integrating Markdown and Evernote. Essentially, this means being able to send Markdown text to Evernote as HTML &lt;em&gt;and&lt;/em&gt; being able to export an Evernote note to a Markdown text file.&lt;/p&gt;
+
+&lt;p&gt;In order to export an Evernote note to a Markdown text file, you can use the &lt;code&gt;enmd&lt;/code&gt; keyword from Alfred. &lt;code&gt;enmd&lt;/code&gt; stands for “Evernote to Markdown”, and this command will take your currently selected Evernote note and create a Markdown formatted text file which will immediately be opened in your default text editor. In addition, &lt;code&gt;enmd&lt;/code&gt; will fill in the note’s title, notebook, and tags as metadata at the top of the file (this will make it a snap to edit the note and send it back to Evernote using the &lt;code&gt;mden&lt;/code&gt; command, which I will talk about next). The workflow also comes with the ability to bind a keyboard shortcut to this function (I use &lt;code&gt;cmd + shift + 9&lt;/code&gt;). No fuss, no hassle, no wait. Export your Evernote note into Markdown in a flash.&lt;/p&gt;
+
+&lt;p&gt;But what about getting data &lt;em&gt;into&lt;/em&gt; Evernote? &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; will also allow you to write notes in Markdown in your text editor of choice and then send that text to Evernote, where it will be formatted and displayed in proper HTML. Now, this function has a bit of quirks to it, so let me elaborate. You can launch this function in one of two ways:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the &lt;code&gt;mden&lt;/code&gt; keyword in Alfred&lt;/li&gt;
+  &lt;li&gt;setup a keyboard shortcut&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The keyboard shortcut will actually allow you simply to select your text (&lt;code&gt;cmd + a&lt;/code&gt; for “Select All”) and then press the shortcut to run the script. Alternatively, you can select the text, &lt;em&gt;copy it to the clipboard&lt;/em&gt;, and then pop up Alfred and use the &lt;code&gt;mden&lt;/code&gt; command (this is, obviously, short for “Markdown to Evernote”). It is important to note that if you use the &lt;code&gt;mden&lt;/code&gt; command from Alfred, your Markdown text &lt;em&gt;must&lt;/em&gt; be in the clipboard.&lt;/p&gt;
+
+&lt;p&gt;Now, how do you tell &lt;code&gt;mden&lt;/code&gt; &lt;em&gt;where&lt;/em&gt; to send your note, or what tags it should have, or what it’s title is? In order to assign Note Title, Notebook, and Tags, you can use simple &lt;a href="http://fletcherpenney.net/multimarkdown/"&gt;MultiMarkdown Headers&lt;/a&gt;, or simple symbols which are placed at the top of the document:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;Title:&lt;/code&gt; or &lt;code&gt;#&lt;/code&gt; for the note’s title&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;Notebook:&lt;/code&gt; or &lt;code&gt;=&lt;/code&gt; for the note’s notebook destination&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;Tags:&lt;/code&gt; or &lt;code&gt;@&lt;/code&gt; for the note’s tags&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So, the top of your Markdown text note might look something like this:&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;# Text Note Title
+= My Default Notebook
+@ tag1, tag2, tag3
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;But, that’s not all that &lt;code&gt;mden&lt;/code&gt; can do. I’ve added a few extras to its capabilities. In addition to converting Markdown to text to HTML and sending that to Evernote, &lt;code&gt;mden&lt;/code&gt; has three other pretty cool features:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;document-specific text snippets (use &lt;code&gt;^^^snippet^^^&lt;/code&gt; syntax)&lt;/li&gt;
+  &lt;li&gt;auto-linking to pre-existing Evernote notes (no special syntax)&lt;/li&gt;
+  &lt;li&gt;auto-linking to new Evernote notes (use &lt;code&gt;[[double bracket]]&lt;/code&gt; syntax)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;First, let me explain document-specific text snippets. This feature was inspired recently as I was taking notes in class. In-class note-taking is a bit unique, since you won’t exactly know what words will be used repeatedly before the class begins. I’m all about &lt;a href="http://smilesoftware.com/TextExpander/"&gt;TextExpander&lt;/a&gt;, but I can’t set up snippets if I don’t know what will be the key words for that class. Plus, I don’t want to clutter my TextExpander library with these one-off snippets. So, document-specific text snippets was born. The idea is to use snippets in your notes as you type, and then define the &lt;code&gt;snippet:expanded text&lt;/code&gt; relationship before you use &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; to send the notes to Evernote. The syntax is dead-simple. Simply wrap your “snippet dictionary” in triple carets (&lt;code&gt;^^^snippet:expanded text^^^&lt;/code&gt;). You can have one-off “dictionaries” or you can make one long dictionary at the end of your document. The only things you need to remember are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ALWAYS use ,, as your in-text prefix (you &lt;em&gt;can&lt;/em&gt; change this in the code)&lt;/li&gt;
+  &lt;li&gt;if its a one-off (only one snippet), the “dictionary” needs to exist on its own line&lt;/li&gt;
+  &lt;li&gt;if its a multi-snippet “dictionary”, use the triple carets like fenced code blocks&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To ensure these few easy syntax rules makes sense, here’s an example:&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;,,p are separated by a blank line.
+^^^p:Paragraphs^^^
+New text.
+2nd paragraph. *,,i*, **,,b**, `,,m`.
+^^^
+i:Italics
+b:BOLD
+m:monospace
+^^^
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Thats all there is to it. Note how each snippet is prefixed by &lt;code&gt;,,&lt;/code&gt;. This ensures that both you and the processor know what text needs to be expanded, and you don’t need to have the commas in the snippet dictionary. You can mix and match single-line snippet dictionaries with multi-snippet dictionaries in the same document. You can even use non-ASCII characters in your snippets or in your expanded text. For me, this is a killer feature. I hope someone else finds it useful.&lt;/p&gt;
+
+&lt;p&gt;Next, auto-linking to pre-existing Evernote notes. This is really the feature at the heart of &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt;, because this is what allows you to “wikify” your Evernote library. The idea is really quite simple: write your note as you normally would (in this case in Markdown, but I’ll discuss later how this can work within Evernote itself), and &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; will ensure that anytime you reference &lt;em&gt;any other Evernote note&lt;/em&gt; by title, your note will have a hyperlink to that other note. Let me offer a simple example. Say I began a new note like so:&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;# Note Title
+= Notebook
+@ tag1, tag2
+
+This is the first line of my new note on Alfred App!
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now, if I had a note in my Evernote account entitled “Alfred App”, when I process this note to send it to Evernote, &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; will now catch that and hyperlink to that pre-existing note, so this new note would have the phrase “Alfred App” linked directly to that other Evernote note. No fuss, no hassle, no funky syntax. And (this is what was holding me back on this feature for while), this is SUPER-FAST!&lt;/p&gt;
+
+&lt;p&gt;The final feature that “wikifies” Evernote when you are sending Markdown text to Evernote is smoothly creating new spaces to fill with data later, while simultaneously creating the inter-linking between notes. &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; has you covered here as well. Let’s say as you’re typing up a new Evernote note, you realize that you are discussing an idea, topic, or person that you want to research further, but at some later date. What to do? Well, you can use the standard wiki-syntax of the &lt;code&gt;[[double brackets]]&lt;/code&gt; to mark that idea, topic, or person as something you want to create a new note for, while also linking to that new note from within your current note. To return to our sample note above, let’s say you added this:&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;# Note Title
+= Notebook
+@ tag1, tag2
+This is the first line of my new note on Alfred App!
+I want to talk more about [[AppleScript]].
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Whenever you have &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; process this Markdown text and send it to Evernote, it will first create a new note (in the same notebook as the one specified in the meta-data) entitled “AppleScript”, then embed the Evernote hyperlink to that new note within this current note. This means that your new Evernote note will have 2 links: one to the pre-existing note “Alfred App” and one to the newly created, blank note “AppleScript”. All of this without you having to do anything but type!&lt;/p&gt;
+
+&lt;p&gt;For anyone who prefers to write in Markdown, but loves the always-there accessibility of Evernote, this can be a powerful addition to your workflow. But obviously, not everyone writes their Evernote notes in Markdown first. Most people just write their notes directly in Evernote. But what if you wanted to still “wikify” your Evernote library, to easily create these interlinked notes? Well, I’ve tried to solve that problem too.&lt;/p&gt;
+
+&lt;h3 id="wiki-functionality"&gt;Wiki Functionality&lt;/h3&gt;
+
+&lt;p&gt;While I’ve already discussed some of the wiki functionality that’s inherent in the &lt;code&gt;mden&lt;/code&gt; function, that isn’t the only way to ensure that all of your Evernote data is intelligently interlinked. I have versions of both the link to pre-existing note and link to new note capabilities detailed above that work purely within Evernote. Here’s how they work.&lt;/p&gt;
+
+&lt;p&gt;In order to interlink any of your current Evernote notes with &lt;em&gt;pre-existing&lt;/em&gt; notes, you can use the &lt;code&gt;wfy&lt;/code&gt; command from Alfred. Simply open up Evernote and select the notes you want to “wikify” (the workflow does accept multiple selections, but you shouldn’t over tax it). Once your notes are selected, pull up Alfred and use the &lt;code&gt;wfy&lt;/code&gt; (short for “wikify”) keyword. The workflow will then process each of your notes individually, auto-linking to any pre-existing other notes which it references by name. &lt;strong&gt;NOTE:&lt;/strong&gt; In order to use this feature, you will need the &lt;a href="http://www.satimage.fr/software/en/downloads_osaxen.html"&gt;Satimage OSAX Scripting Addition&lt;/a&gt;. I’ve set it up such that this is remarkably easy to install. Simply use the keyword in Alfred &lt;code&gt;wfy:install&lt;/code&gt; and the Satimage installer will boot up and walk you through the process. It really is as simple as that. The script will search your note’s content for any references to other notes’ titles. If any are found, that text will be replaced with a hyperlink to that note. Here’s a gif that shows the process in action:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="wfy command" src="../../images/projects/wikify/wfy.gif" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Next, let’s say that you are in Evernote and see a phrase or term in one of your notes that you want to research more, while creating the wiki-environment that &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; is all about. I’ve added a companion feature which will:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;take the currently selected text in the open Evernote note&lt;/li&gt;
+  &lt;li&gt;create a new note in that notebook whose title is the selected text&lt;/li&gt;
+  &lt;li&gt;embed a hyperlink back to the original note as the first line of this new note&lt;/li&gt;
+  &lt;li&gt;and replace the selected text with a hyperlink to that newly created note&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This means that you have two-way hyperlinking (which is impossible in the &lt;code&gt;mden&lt;/code&gt; version of this functionality) between your current note and your new note. Creating spaces for new thought, while retaining context and wiki-style hyperlinking has never been easier. To use this feature, you can either use a user-specified keyboard shortcut, or copy the selected text to the clipboard and run &lt;code&gt;ensel&lt;/code&gt;. Here’s another gif to illustrate:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="ensel command" src="../../images/projects/wikify/ensel.gif" /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;To sum up, &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; has 4 main commands:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;mden&lt;/code&gt; to send Markdown text to Evernote&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;enmd&lt;/code&gt; to export an Evernote note to Markdown&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;wfy&lt;/code&gt; to “wikify” the selected Evernote note&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;ensel&lt;/code&gt; to create and wikify a new Evernote note from selection&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With these features, and all of the “sub-features” elaborated above, I truly believe that &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; could be a great help to those others out there who love Evernote, Markdown, and Wiki goodness.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Snippets</title>
+    <link rel="alternate" href="http://blog.url.com/projects/snippets/"/>
+    <id>http://blog.url.com/projects/snippets/</id>
+    <published>2015-05-26T20:00:00-04:00</published>
+    <updated>2016-12-02T22:18:59-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;h4 id="version-12"&gt;Version: 1.2&lt;/h4&gt;
+
+&lt;h4 id="download-on-packalhttpwwwpackalorgworkflowsnippets"&gt;Download on &lt;a href="http://www.packal.org/workflow/snippets"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;Have you ever been taking notes and realized that certain terms or phrases were going to be used repeatedly? You don’t have the time or really the desire to create all new TextExpander snippets for these terms or phrases, but you’d also really like to shorten your typing. That’s where &lt;strong&gt;&lt;code&gt;Snippets&lt;/code&gt;&lt;/strong&gt; comes in. &lt;strong&gt;&lt;code&gt;Snippets&lt;/code&gt;&lt;/strong&gt; is a dead simple Alfred workflow that allows you to use simple snippet syntax while writing, and then seamlessly convert your text to its full glory.&lt;/p&gt;
+
+&lt;p&gt;The set-up is simple. As you’re typing, and you realize you want to make a snippet, simply prepend your snippet with &lt;code&gt;,,&lt;/code&gt; (comma comma). Then, when you get a free moment, create a “snippet dictionary” to tell Snippets what that snippet means. To create the dictionary, simply wrap it in &lt;code&gt;^^^&lt;/code&gt; (triple carets). Here’s an example:&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;This is an example of ,,sn. ,,sn is a fantastic workflow for ,,a!
+
+^^^
+sn: **`Snippets`**
+a: Alfred
+^^^
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;That’s all there is to it. Once your dictionary is complete and you have finished typing, either copy the text to the clipboard and use the keyword &lt;code&gt;snip&lt;/code&gt;, or assign a keyboard shortcut for even quicker results. When you activate &lt;strong&gt;&lt;code&gt;Snippets&lt;/code&gt;&lt;/strong&gt;, the text above will instantly become:&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;This is an example of **`Snippets`**. **`Snippets`** is a fantastic workflow for Alfred!
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;It’s so simple. Double-comma before the snippet; dictionary wrapped in triple-carets with snippet: expanded. Nothing more, nothing less.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="demo" src="https://raw.githubusercontent.com/smargh/alfred_snippets/master/snippets.gif" /&gt;&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -2405,6 +2455,69 @@ I want to talk more about [[AppleScript]].
 </content>
   </entry>
   <entry>
+    <title>Parsers</title>
+    <link rel="alternate" href="http://blog.url.com/projects/parsers/"/>
+    <id>http://blog.url.com/projects/parsers/</id>
+    <published>2015-05-26T20:00:00-04:00</published>
+    <updated>2016-12-02T22:18:46-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;h4 id="version-20"&gt;Version: 2.0&lt;/h4&gt;
+
+&lt;h4 id="download-at-packalhttpwwwpackalorgworkflowparsers"&gt;Download at &lt;a href="http://www.packal.org/workflow/parsers"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
+
+&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; is a relatively simple workflow for &lt;a href="http://www.alfredapp.com/"&gt;Alfred&lt;/a&gt;. It allows you to quickly and easily look up parsing information for Greek &lt;em&gt;or&lt;/em&gt; Latin words. It gets its parsing information from the powerful &lt;a href="http://www.perseus.tufts.edu/"&gt;Perseus project&lt;/a&gt;, but presents the results in the clean user-interface of Alfred. To use &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt;, simply open Alfred and type the keyword &lt;code&gt;parse&lt;/code&gt;. Follow the keyword with the Latin or Greek word you want to look up:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="alfred_parser" src="https://www.evernote.com/shard/s41/sh/2c444d67-b4ca-40b3-b914-c20dc5ebbfb6/9d54f19c489deda365c65f1e6b5232e6/deep/0/alfred_parser.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; will display the results for you as quickly as possible.&lt;/p&gt;
+
+&lt;p&gt;As you can see, &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; displays the parsing information in the main title field for each item. Below that, in the sub-title field, it displays the lemma and a short definition separated by &lt;code&gt;::&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Let’s say you are reading some Greek or Latin, however, and don’t want to have to open Alfred, type &lt;code&gt;parse&lt;/code&gt;, then type the word you’re interested in. Well, &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; has thought of that. From within Alfred’s Preferences, you can set up a keyboard shortcut to pass the currently selected text on your Mac to &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt;. I have mine set up as &lt;code&gt;cmd+fn+-&amp;gt;&lt;/code&gt;. This makes using &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; even easier.&lt;/p&gt;
+
+&lt;p&gt;Once you have found the parsing information that you believe is correct in your reading context, &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; can do 2 things for you:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;copy the parsing information to the clipboard in a nicely formatted way (&lt;code&gt;cmd+return&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;copy the dictionary entry for that lemma to the clipboard (&lt;code&gt;shift+return&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If, for instance, you were to choose the Nominative Singular Feminine form of &lt;code&gt;aura&lt;/code&gt; (with &lt;code&gt;cmd+return&lt;/code&gt;), &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; would copy this to the clipboard:&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;Type: noun
+Number: sg
+Gender: fem
+Case: voc
+
+Definition: the air (in motion), a breeze, breath of air, wind, blast:
+Lemma:  aura
+
+Lexicon Links:
+  + [Lewis &amp;amp; Short](http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0059%3Aentry%3Daura)
+  + [Elem. Lewis](http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0060%3Aentry%3Daura)
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Alternatively, you can use &lt;code&gt;shift+return&lt;/code&gt; to view a HUD of the lexicon entry for that parsing term, and this lexicon data will also be copied to the clipboard (&lt;em&gt;NOTE&lt;/em&gt;: Parsers will attempt to display the lexicon entry from the most concise lexicon available for the chosen term or allow you to choose out of the available dictionaries).&lt;/p&gt;
+
+&lt;p&gt;All you should need to read your Greek and/or Latin with ease.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Skimmer</title>
     <link rel="alternate" href="http://blog.url.com/projects/skimmer/"/>
     <id>http://blog.url.com/projects/skimmer/</id>
@@ -2532,69 +2645,6 @@ I want to talk more about [[AppleScript]].
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Parsers</title>
-    <link rel="alternate" href="http://blog.url.com/projects/parsers/"/>
-    <id>http://blog.url.com/projects/parsers/</id>
-    <published>2015-05-26T20:00:00-04:00</published>
-    <updated>2016-12-02T22:18:46-05:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;h4 id="version-20"&gt;Version: 2.0&lt;/h4&gt;
-
-&lt;h4 id="download-at-packalhttpwwwpackalorgworkflowparsers"&gt;Download at &lt;a href="http://www.packal.org/workflow/parsers"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
-
-&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; is a relatively simple workflow for &lt;a href="http://www.alfredapp.com/"&gt;Alfred&lt;/a&gt;. It allows you to quickly and easily look up parsing information for Greek &lt;em&gt;or&lt;/em&gt; Latin words. It gets its parsing information from the powerful &lt;a href="http://www.perseus.tufts.edu/"&gt;Perseus project&lt;/a&gt;, but presents the results in the clean user-interface of Alfred. To use &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt;, simply open Alfred and type the keyword &lt;code&gt;parse&lt;/code&gt;. Follow the keyword with the Latin or Greek word you want to look up:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="alfred_parser" src="https://www.evernote.com/shard/s41/sh/2c444d67-b4ca-40b3-b914-c20dc5ebbfb6/9d54f19c489deda365c65f1e6b5232e6/deep/0/alfred_parser.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; will display the results for you as quickly as possible.&lt;/p&gt;
-
-&lt;p&gt;As you can see, &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; displays the parsing information in the main title field for each item. Below that, in the sub-title field, it displays the lemma and a short definition separated by &lt;code&gt;::&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Let’s say you are reading some Greek or Latin, however, and don’t want to have to open Alfred, type &lt;code&gt;parse&lt;/code&gt;, then type the word you’re interested in. Well, &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; has thought of that. From within Alfred’s Preferences, you can set up a keyboard shortcut to pass the currently selected text on your Mac to &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt;. I have mine set up as &lt;code&gt;cmd+fn+-&amp;gt;&lt;/code&gt;. This makes using &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; even easier.&lt;/p&gt;
-
-&lt;p&gt;Once you have found the parsing information that you believe is correct in your reading context, &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; can do 2 things for you:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;copy the parsing information to the clipboard in a nicely formatted way (&lt;code&gt;cmd+return&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;copy the dictionary entry for that lemma to the clipboard (&lt;code&gt;shift+return&lt;/code&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;If, for instance, you were to choose the Nominative Singular Feminine form of &lt;code&gt;aura&lt;/code&gt; (with &lt;code&gt;cmd+return&lt;/code&gt;), &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; would copy this to the clipboard:&lt;/p&gt;
-
-&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;Type: noun
-Number: sg
-Gender: fem
-Case: voc
-
-Definition: the air (in motion), a breeze, breath of air, wind, blast:
-Lemma:  aura
-
-Lexicon Links:
-  + [Lewis &amp;amp; Short](http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0059%3Aentry%3Daura)
-  + [Elem. Lewis](http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0060%3Aentry%3Daura)
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Alternatively, you can use &lt;code&gt;shift+return&lt;/code&gt; to view a HUD of the lexicon entry for that parsing term, and this lexicon data will also be copied to the clipboard (&lt;em&gt;NOTE&lt;/em&gt;: Parsers will attempt to display the lexicon entry from the most concise lexicon available for the chosen term or allow you to choose out of the available dictionaries).&lt;/p&gt;
-
-&lt;p&gt;All you should need to read your Greek and/or Latin with ease.&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -2861,43 +2911,49 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
 </content>
   </entry>
   <entry>
-    <title>BibQuery</title>
-    <link rel="alternate" href="http://blog.url.com/projects/bibquery/"/>
-    <id>http://blog.url.com/projects/bibquery/</id>
+    <title>Classical Studies Resources</title>
+    <link rel="alternate" href="http://blog.url.com/projects/classical-studies-resources/"/>
+    <id>http://blog.url.com/projects/classical-studies-resources/</id>
     <published>2015-05-22T20:00:00-04:00</published>
-    <updated>2016-12-02T22:17:26-05:00</updated>
+    <updated>2016-12-17T23:13:04-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
-    <content type="html">&lt;h4 id="version-101"&gt;Version: 1.0.1&lt;/h4&gt;
+    <content type="html">&lt;p&gt;This is a work-in-progress collection of structured data and scripts for Classical Studies/Classics.&lt;/p&gt;
 
-&lt;h4 id="download-from-packalhttpwwwpackalorgworkflowbibquery"&gt;Download from &lt;a href="http://www.packal.org/workflow/bibquery"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
-
-&lt;p&gt;BibQuery is essentially a visual clone of &lt;a href="http://fractaledmind.com/projects/zotquery/"&gt;ZotQuery&lt;/a&gt; for the Mac app &lt;a href="http://bibdesk.sourceforge.net/"&gt;BibDesk&lt;/a&gt;, which is a citation manager for &lt;a href="http://www.bibtex.org/"&gt;BibTeX&lt;/a&gt;. Users of BibDesk can now enjoy the clean search interface found in ZotQuery, with clear icons for publication type and clean presentation of publication data.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="bibquery.png" src="https://www.evernote.com/shard/s41/sh/e354f593-a127-47e9-8ec3-212124341231/39f92d48e93282af26881d5cc0e95e97/deep/0/bibquery.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Users can also search their &lt;code&gt;.bib&lt;/code&gt; databases with the same variety of queries:&lt;/p&gt;
+&lt;p&gt;The data has been compiled and organized from various online resources including:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;general (keywords: &lt;code&gt;bib&lt;/code&gt; or &lt;code&gt;b&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;titles (keywords: &lt;code&gt;bib:t&lt;/code&gt; or &lt;code&gt;bt&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;creators (keywords: &lt;code&gt;bib:a&lt;/code&gt; or &lt;code&gt;ba&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;in-keyword (keywords: &lt;code&gt;bib:nk&lt;/code&gt; or &lt;code&gt;bnk&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;in-group (keywords: &lt;code&gt;bib:ng&lt;/code&gt; or &lt;code&gt;bng&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;for keyword (keywords: &lt;code&gt;bib:k&lt;/code&gt; or &lt;code&gt;bk&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;for group (keywords: &lt;code&gt;bib:g&lt;/code&gt; or &lt;code&gt;bg&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;the &lt;a href="http://www.perseus.tufts.edu/"&gt;Perseus Project&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://dcc.dickinson.edu/"&gt;Dickenson College Commentaries&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://dge.cchs.csic.es/index.en"&gt;The Diccionario Griego-Español Project&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://www.annee-philologique.com/"&gt;L’Année philologique&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Also of note, BibQuery works &lt;em&gt;without&lt;/em&gt; BibDesk being open and even functions if you have multiple &lt;code&gt;.bib&lt;/code&gt; databases that BibDesk manages. In short, BibQuery brings all of your citations to you.&lt;/p&gt;
+&lt;p&gt;This is a work-in-progress collection of structured data and scripts for Classical Studies/Classics. The data has been compiled and organized from various online resources including the Perseus Project, Dickenson College Commentaries, The Diccionario Griego-Español Project, and L’Année philologique.&lt;/p&gt;
 
-&lt;p&gt;Once you find the item you’re looking for, BibQuery currently has 3 possible actions:&lt;/p&gt;
+&lt;p&gt;Currently, these are the JSON structured files:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;you can open up BibDesk to that item (simply press &lt;code&gt;return&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;you can copy a LaTeX cite command for that item (simply press &lt;code&gt;control+return&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;you can open that item’s PDF attachment, if it has one (simply press &lt;code&gt;shift+return&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;DCC Greek Core Vocabulary&lt;/li&gt;
+  &lt;li&gt;DCC Latin Core Vocabulary&lt;/li&gt;
+  &lt;li&gt;Greek Authors&lt;/li&gt;
+  &lt;li&gt;Greek Texts&lt;/li&gt;
+  &lt;li&gt;Latin Texts&lt;/li&gt;
+  &lt;li&gt;L’Année philologique Journal Abbreviations (in two forms)&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;There are also plain text files:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;DGE Authors and Works&lt;/li&gt;
+  &lt;li&gt;DGE Dictionary Abbreviations&lt;/li&gt;
+  &lt;li&gt;Index to Smyth’s Greek Grammar&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Finally, there is a random collection of scripts (mostly compiled Applescripts) that I have made at various points for various uses. This section requires much cleaning up, refactoring, and organization at this stage. But I am putting them here for now nonetheless.&lt;/p&gt;
+
+&lt;p&gt;Hopefully, these will find some use for others.&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -3261,49 +3317,43 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
 </content>
   </entry>
   <entry>
-    <title>Classical Studies Resources</title>
-    <link rel="alternate" href="http://blog.url.com/projects/classical-studies-resources/"/>
-    <id>http://blog.url.com/projects/classical-studies-resources/</id>
+    <title>BibQuery</title>
+    <link rel="alternate" href="http://blog.url.com/projects/bibquery/"/>
+    <id>http://blog.url.com/projects/bibquery/</id>
     <published>2015-05-22T20:00:00-04:00</published>
-    <updated>2016-12-17T23:13:04-05:00</updated>
+    <updated>2016-12-02T22:17:26-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
-    <content type="html">&lt;p&gt;This is a work-in-progress collection of structured data and scripts for Classical Studies/Classics.&lt;/p&gt;
+    <content type="html">&lt;h4 id="version-101"&gt;Version: 1.0.1&lt;/h4&gt;
 
-&lt;p&gt;The data has been compiled and organized from various online resources including:&lt;/p&gt;
+&lt;h4 id="download-from-packalhttpwwwpackalorgworkflowbibquery"&gt;Download from &lt;a href="http://www.packal.org/workflow/bibquery"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;the &lt;a href="http://www.perseus.tufts.edu/"&gt;Perseus Project&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://dcc.dickinson.edu/"&gt;Dickenson College Commentaries&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://dge.cchs.csic.es/index.en"&gt;The Diccionario Griego-Español Project&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://www.annee-philologique.com/"&gt;L’Année philologique&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;BibQuery is essentially a visual clone of &lt;a href="http://fractaledmind.com/projects/zotquery/"&gt;ZotQuery&lt;/a&gt; for the Mac app &lt;a href="http://bibdesk.sourceforge.net/"&gt;BibDesk&lt;/a&gt;, which is a citation manager for &lt;a href="http://www.bibtex.org/"&gt;BibTeX&lt;/a&gt;. Users of BibDesk can now enjoy the clean search interface found in ZotQuery, with clear icons for publication type and clean presentation of publication data.&lt;/p&gt;
 
-&lt;p&gt;This is a work-in-progress collection of structured data and scripts for Classical Studies/Classics. The data has been compiled and organized from various online resources including the Perseus Project, Dickenson College Commentaries, The Diccionario Griego-Español Project, and L’Année philologique.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="bibquery.png" src="https://www.evernote.com/shard/s41/sh/e354f593-a127-47e9-8ec3-212124341231/39f92d48e93282af26881d5cc0e95e97/deep/0/bibquery.png" /&gt;&lt;/p&gt;
 
-&lt;p&gt;Currently, these are the JSON structured files:&lt;/p&gt;
+&lt;p&gt;Users can also search their &lt;code&gt;.bib&lt;/code&gt; databases with the same variety of queries:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;DCC Greek Core Vocabulary&lt;/li&gt;
-  &lt;li&gt;DCC Latin Core Vocabulary&lt;/li&gt;
-  &lt;li&gt;Greek Authors&lt;/li&gt;
-  &lt;li&gt;Greek Texts&lt;/li&gt;
-  &lt;li&gt;Latin Texts&lt;/li&gt;
-  &lt;li&gt;L’Année philologique Journal Abbreviations (in two forms)&lt;/li&gt;
+  &lt;li&gt;general (keywords: &lt;code&gt;bib&lt;/code&gt; or &lt;code&gt;b&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;titles (keywords: &lt;code&gt;bib:t&lt;/code&gt; or &lt;code&gt;bt&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;creators (keywords: &lt;code&gt;bib:a&lt;/code&gt; or &lt;code&gt;ba&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;in-keyword (keywords: &lt;code&gt;bib:nk&lt;/code&gt; or &lt;code&gt;bnk&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;in-group (keywords: &lt;code&gt;bib:ng&lt;/code&gt; or &lt;code&gt;bng&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;for keyword (keywords: &lt;code&gt;bib:k&lt;/code&gt; or &lt;code&gt;bk&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;for group (keywords: &lt;code&gt;bib:g&lt;/code&gt; or &lt;code&gt;bg&lt;/code&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;There are also plain text files:&lt;/p&gt;
+&lt;p&gt;Also of note, BibQuery works &lt;em&gt;without&lt;/em&gt; BibDesk being open and even functions if you have multiple &lt;code&gt;.bib&lt;/code&gt; databases that BibDesk manages. In short, BibQuery brings all of your citations to you.&lt;/p&gt;
+
+&lt;p&gt;Once you find the item you’re looking for, BibQuery currently has 3 possible actions:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;DGE Authors and Works&lt;/li&gt;
-  &lt;li&gt;DGE Dictionary Abbreviations&lt;/li&gt;
-  &lt;li&gt;Index to Smyth’s Greek Grammar&lt;/li&gt;
+  &lt;li&gt;you can open up BibDesk to that item (simply press &lt;code&gt;return&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;you can copy a LaTeX cite command for that item (simply press &lt;code&gt;control+return&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;you can open that item’s PDF attachment, if it has one (simply press &lt;code&gt;shift+return&lt;/code&gt;)&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;Finally, there is a random collection of scripts (mostly compiled Applescripts) that I have made at various points for various uses. This section requires much cleaning up, refactoring, and organization at this stage. But I am putting them here for now nonetheless.&lt;/p&gt;
-
-&lt;p&gt;Hopefully, these will find some use for others.&lt;/p&gt;
 </content>
   </entry>
   <entry>

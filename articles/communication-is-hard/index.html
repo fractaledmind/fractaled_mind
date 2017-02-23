@@ -115,8 +115,8 @@
     <div class="navigation">
   <nav role="navigation">
     <ul class="navigation-menu">
-      <li class="nav-link"><a href="../../articles/">articles</a></li>
-      <li class="nav-link"><a href="../">projects</a></li>
+      <li class="nav-link"><a href="../">articles</a></li>
+      <li class="nav-link"><a href="../../projects/">projects</a></li>
       <li class="nav-link"><a href="../../jots/">jots</a></li>
     </ul>
   </nav>
@@ -139,7 +139,7 @@
 
       <ul class="card-tags">
           <li>
-            <a class="badge no-hvr alfred" href="/topics/alfred/">alfred</a>
+            <a class="badge no-hvr prose" href="/topics/prose/">prose</a>
           </li>
       </ul>
 
@@ -147,68 +147,18 @@
       <!-- if post has tags, add filler element -->
         <div id="tag-filler-space"></div>
       <!-- if post has header image, add it -->
-        <img src="../../images/projects/parsers.svg" />
     </div>
 
-    <h2 id="title"><p>Parsers</p>
+    <h2 id="title"><p>Communication is Hard</p>
 </h2>
 
     <hr class="fractal">
 
-    <h4 id="repo"><a href="https://github.com/smargh/alfred_parsers">GitHub Repo</a></h4>
+    <div id="description"><p>Communication is hard. I have found myself contemplating this truth a lot lately. At work it has become a kind of mantra on my team. Have you ever taken the proverbial step back to consider what all is involved in communicating with another human being? We have these thoughts, often messy, squishy, and loosely formed, which we attempt to shuttle from our mind into someone else’s mind (let alone a group of other minds). In order to get these nearly amorphous ideas out of our heads and into another, we package them up in words. We quiver these small muscles in our throats or we engage our wrists and fingers to hammer out some collection of runes or we sometimes even drag our hands across tree pulp scrawling out an even cruder form of these same symbols. There is no inherent connection between the etherial thoughts in our minds and these vibrations in the air or scribbles on a surface; there is nothing that guarantees this representation, whatever physical form it takes, properly encodes our thoughts. In fact, it is impossible for me to imagine that words could ever <em>fully</em> encode thought. But that is only half of it.</p>
 
-    <div id="description"><h4 id="version-20">Version: 2.0</h4>
+<p>After we squeeze these atomless, formless ideas into some physical form, we send them out on a hope and a prayer toward the other mind, the other person. And they fly on what must be a hope and prayer as we no longer have any control over them; it is the chick out of the nest, the child off to college. Our words, these gangly bodies for our pure thoughts, now belong to that other person. He or she receives them, whether by ear or eye, takes them in, and must now begin the delicate, intricate task of decoding them. Their mind, like ours, has little use for mere words; it requires ideas in idea-form. So it attempts to perfectly trace our steps in reverse, to decode what we encoded. And can we really ever blame them for failing to achieve perfection? Perfect listening is a fool’s errand; perfect reading is hopeless. And yet, in the face of this impossible task, against these staggering odds, each and every day, billions of people in thousands of languages meaningfully communicate. To my mind, it is one of the most mesmerizing miracles this side of eternity.</p>
 
-<h4 id="download-at-packalhttpwwwpackalorgworkflowparsers">Download at <a href="http://www.packal.org/workflow/parsers">Packal</a></h4>
-
-<h3 id="introduction">Introduction</h3>
-
-<p><strong><code>Parsers</code></strong> is a relatively simple workflow for <a href="http://www.alfredapp.com/">Alfred</a>. It allows you to quickly and easily look up parsing information for Greek <em>or</em> Latin words. It gets its parsing information from the powerful <a href="http://www.perseus.tufts.edu/">Perseus project</a>, but presents the results in the clean user-interface of Alfred. To use <strong><code>Parsers</code></strong>, simply open Alfred and type the keyword <code>parse</code>. Follow the keyword with the Latin or Greek word you want to look up:</p>
-
-<p><img alt="alfred_parser" src="https://www.evernote.com/shard/s41/sh/2c444d67-b4ca-40b3-b914-c20dc5ebbfb6/9d54f19c489deda365c65f1e6b5232e6/deep/0/alfred_parser.png" /></p>
-
-<p><strong><code>Parsers</code></strong> will display the results for you as quickly as possible.</p>
-
-<p>As you can see, <strong><code>Parsers</code></strong> displays the parsing information in the main title field for each item. Below that, in the sub-title field, it displays the lemma and a short definition separated by <code>::</code>.</p>
-
-<p>Let’s say you are reading some Greek or Latin, however, and don’t want to have to open Alfred, type <code>parse</code>, then type the word you’re interested in. Well, <strong><code>Parsers</code></strong> has thought of that. From within Alfred’s Preferences, you can set up a keyboard shortcut to pass the currently selected text on your Mac to <strong><code>Parsers</code></strong>. I have mine set up as <code>cmd+fn+-&gt;</code>. This makes using <strong><code>Parsers</code></strong> even easier.</p>
-
-<p>Once you have found the parsing information that you believe is correct in your reading context, <strong><code>Parsers</code></strong> can do 2 things for you:</p>
-
-<ul>
-  <li>copy the parsing information to the clipboard in a nicely formatted way (<code>cmd+return</code>)</li>
-  <li>copy the dictionary entry for that lemma to the clipboard (<code>shift+return</code>)</li>
-</ul>
-
-<p>If, for instance, you were to choose the Nominative Singular Feminine form of <code>aura</code> (with <code>cmd+return</code>), <strong><code>Parsers</code></strong> would copy this to the clipboard:</p>
-
-<div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11</pre></td><td class="code"><pre>Type: noun
-Number: sg
-Gender: fem
-Case: voc
-
-Definition: the air (in motion), a breeze, breath of air, wind, blast:
-Lemma:  aura
-
-Lexicon Links:
-  + [Lewis &amp; Short](http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0059%3Aentry%3Daura)
-  + [Elem. Lewis](http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0060%3Aentry%3Daura)
-</pre></td></tr></tbody></table>
-</div>
-
-<p>Alternatively, you can use <code>shift+return</code> to view a HUD of the lexicon entry for that parsing term, and this lexicon data will also be copied to the clipboard (<em>NOTE</em>: Parsers will attempt to display the lexicon entry from the most concise lexicon available for the chosen term or allow you to choose out of the available dictionaries).</p>
-
-<p>All you should need to read your Greek and/or Latin with ease.</p>
+<p>It saddens me, however, that so many people so often add to the burden, make the task that much more difficult, by shirking from communicating openly and honestly. Whether from shame or awkwardness, a twisted sense of propriety or an overly-tuned care for perfection, people consistently mince words, avoid topics, stop at smalltalk, or simply avoid the impossibly delicate dance of true and deep communication altogether. And, on the other side, how many people lazily and sloppily unpack the carefully considered package of meaning sent their way by a caring friend? Communication is hard, so why make it harder with slovenly listening or cheap talk? I would much rather slow down, consider well, package my thoughts carefully, listen empathetically, and dance the intricacies of meaningful communication.</p>
 </div>
 </div>
 
@@ -223,23 +173,23 @@ Lexicon Links:
     <ul class="fa-ul">
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/communication-is-hard/">Communication is Hard</a>
+          <a href="./">Communication is Hard</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/thoughts-on-a-birthday/">Thoughts on a Birthday</a>
+          <a href="../thoughts-on-a-birthday/">Thoughts on a Birthday</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/ruminations-on-a-credal-logic/">Ruminations on a Credal Logic</a>
+          <a href="../ruminations-on-a-credal-logic/">Ruminations on a Credal Logic</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/1-0-9999/">1 = 0.9999...</a>
+          <a href="../1-0-9999/">1 = 0.9999...</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/portrait-of-pain/">Portrait of Pain</a>
+          <a href="../portrait-of-pain/">Portrait of Pain</a>
         </li>
     </ul>
   </div>
