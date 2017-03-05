@@ -176,6 +176,13 @@
   }
 }
 
+.card.pdf-card {
+  max-height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #project-page {
   .card-image {
     margin: 2rem auto;

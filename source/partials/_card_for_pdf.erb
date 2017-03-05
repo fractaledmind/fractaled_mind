@@ -1,0 +1,21 @@
+<li class="card pdf-card ribbon-box">
+  <%= link_to '', item.data['pdf_link'], class: "card-link no-hvr" %>
+
+  <div class="ribbon-wrapper">
+    <div class="ribbon">PDF</div>
+  </div>
+
+  <div class="card-header">
+    <h3 class="card-title">
+      <%= markdownify item.title %>
+    </h3>
+    <% if item.data['subtitle'] %>
+      <h5 class="card-subtitle">
+        <%= markdownify(item.data['subtitle']) %>
+      </h5>
+    <% end %>
+    <h5 class="card-date">
+      <%= item.date.strftime('%d %B %Y') %>
+    </h5>
+  </div>
+</li>
