@@ -1,12 +1,12 @@
 ---
 pageable: true
-per_page: 10
+per_page: 5
 ---
 
 <% posts_date_sorted = posts.sort_by { |a| a.date }.reverse %>
-<ul class="cards">
+<ul class="cards" style="flex-direction:column;justify-content:initial;">
   <% posts_for_page(posts_date_sorted, page_number, per_page).each do |essay| %>
-    <%= partial "partials/card_vertical_li",
+    <%= partial "partials/card_for_pdf",
                 locals: { item: essay } %>
   <% end %>
 </ul>
