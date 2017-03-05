@@ -50,6 +50,17 @@
 </content>
   </entry>
   <entry>
+    <title>Evidentiary Arguments in 5th century prose</title>
+    <link rel="alternate" href="http://blog.url.com/essays/empiricism-in-5th-century-prose/"/>
+    <id>http://blog.url.com/essays/empiricism-in-5th-century-prose/</id>
+    <published>2016-12-17T19:00:00-05:00</published>
+    <updated>2017-03-04T21:45:14-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html"></content>
+  </entry>
+  <entry>
     <title>Ruminations on a Credal Logic</title>
     <link rel="alternate" href="http://blog.url.com/articles/ruminations-on-a-credal-logic/"/>
     <id>http://blog.url.com/articles/ruminations-on-a-credal-logic/</id>
@@ -1006,6 +1017,28 @@ done&lt;/span&gt;
 </content>
   </entry>
   <entry>
+    <title>Consolation and Commemoration in Horace Odes 1.24 and 4.12</title>
+    <link rel="alternate" href="http://blog.url.com/essays/consolation-and-commemoration-in-horace-odes-1-24-and-4-12/"/>
+    <id>http://blog.url.com/essays/consolation-and-commemoration-in-horace-odes-1-24-and-4-12/</id>
+    <published>2015-10-20T20:00:00-04:00</published>
+    <updated>2017-03-04T21:42:49-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html"></content>
+  </entry>
+  <entry>
+    <title>Evidence and Inference in Herodotus</title>
+    <link rel="alternate" href="http://blog.url.com/essays/evidence-and-inference-in-herodotus/"/>
+    <id>http://blog.url.com/essays/evidence-and-inference-in-herodotus/</id>
+    <published>2015-10-20T20:00:00-04:00</published>
+    <updated>2017-03-04T21:46:03-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html"></content>
+  </entry>
+  <entry>
     <title>Full communication is actually impossible, and the degree of communication we do have is a total miracle.</title>
     <link rel="alternate" href="http://blog.url.com/jots/201509221446/"/>
     <id>http://blog.url.com/jots/201509221446/</id>
@@ -1104,347 +1137,6 @@ done&lt;/span&gt;
 </content>
   </entry>
   <entry>
-    <title>Consolation and Commemoration in Horace *Odes* 1.24 and 4.12</title>
-    <link rel="alternate" href="http://blog.url.com/essays/consolation/"/>
-    <id>http://blog.url.com/essays/consolation/</id>
-    <published>2015-06-18T13:38:00-04:00</published>
-    <updated>2016-12-18T14:55:08-05:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;For it shall be my dirge and chant me down&lt;br /&gt;
-Over the mournful flood to the dim shore,&lt;br /&gt;
-Where I shall find Quintilius and our tears.&lt;br /&gt;
-Yes, farewell, Horace! Unto you I leave&lt;br /&gt;
-The laurel and the letters that we loved;&lt;br /&gt;
-Till we shall meet again. I cannot hold&lt;br /&gt;
-Your light yet heavy Epicurean creed;&lt;br /&gt;
-Your lays &lt;em&gt;“shall outlive brass and pyramid”&lt;/em&gt;,&lt;br /&gt;
-But he that made them shall outlive the lays,&lt;br /&gt;
-Though how or where we know not.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;– 328-37, from &lt;em&gt;The Death of Virgil, A Dramatic Narrative&lt;/em&gt; (1907) by Sir
-Thomas H. Warren&lt;/p&gt;
-
-&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
-
-&lt;p&gt;Horace confronts grief and death directly in &lt;em&gt;Odes&lt;/em&gt; 1.24 and 4.12, both of which address the poet Vergil.[^57.53] In 1.24, Vergil receives frank criticism for his excessive mourning following the death of their mutual friend Quintilius Varus.&lt;sup id="fnref:3406"&gt;&lt;a href="#fn:3406" class="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; In 4.12, Vergil is invited to join Horace at a symposium, although the poem was published six years after Vergil’s death in 19 BC. Taken together, these two post-mortem poems to Vergil form an odd pair.[^18.38] While in 1.24 Horace consoles the aggrieved Vergil, in 4.12 Horace finds himself in Vergil’s position– grieving the death of a friend. Both also end with generalizing &lt;em&gt;sententia&lt;/em&gt;, yet their import would appear contradictory. On the one hand, &lt;em&gt;Odes&lt;/em&gt; 1.24 recommends the consolatory power of patience:&lt;/p&gt;
-
-&lt;blockquote style="text-indent: 0;"&gt;
-Durum; sed levius fit patientia&lt;br /&gt;
-&amp;nbsp;&amp;nbsp;quicquid corrigere est nefas&lt;br /&gt;
-&lt;span style="float:right;"&gt;--*Odes* 1.24.19-20&lt;/span&gt;&lt;br /&gt;
-It is hard; but whatever is forbidden to correct becomes easier to bear with patience.[^31.11]
-&lt;/blockquote&gt;
-
-&lt;p&gt;On the other hand, &lt;em&gt;Odes&lt;/em&gt; 4.12 turns to the sweetness of folly:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;misce stultitiam consiliis brevem:
-  dulce est desipere in loco.
-–&lt;em&gt;Odes&lt;/em&gt; 4.12.25-28&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Mix brief folly into your plans: it is sweet to act the fool in the proper place.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;How ought one to understand &lt;em&gt;Odes&lt;/em&gt; 4.12 given its relation to 1.24?&lt;/p&gt;
-
-&lt;h2 id="methodology"&gt;Methodology&lt;/h2&gt;
-
-&lt;p&gt;In order to make sense of this enigmatic ode, one must read it against &lt;em&gt;Odes&lt;/em&gt; 1.24. Taken together, these two post-mortem poems addressed to Vergil form a diptych of sorts, offering insight into how Horace believes one ought to or can mourn. In &lt;em&gt;Odes&lt;/em&gt; 1.24 Horace, in the persona of a philosophical teacher, advises that one &lt;em&gt;ought&lt;/em&gt; to mourn moderately and patiently. In 4.12 Horace the convivial poet suggests that the foolishness of mourning has its proper place.&lt;/p&gt;
-
-&lt;p&gt;This paper begins with brief but thorough readings of the two odes, paying particular attention to their consolatory elements. Having considered each ode individually, I consider how the sentiments of 4.12 modify those of 1.24. This leads me to my final argument, that the “proper place” for foolish mourning is the poetic symposium as Horace constructs it in &lt;em&gt;Odes&lt;/em&gt; 4.12. I contend that the symposium of 4.12 represents a poetic memorial of Horace and Vergil’s friendship.&lt;/p&gt;
-
-&lt;h2 id="odes-124"&gt;Odes 1.24&lt;/h2&gt;
-
-&lt;h3 id="overview"&gt;Overview&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Odes 1.24 was published in 23 B.C. as a part of the first book of Horace’s &lt;em&gt;Carmina&lt;/em&gt;.[^11.41] Horace likely wrote the poem in the mid-20s B.C., after the death of Quintilius Varus of Cremona, a friend to Vergil and Horace alike.{»@spm&lt;/td&gt;
-      &lt;td&gt;Add citation?«} As Michael Putnam points out, the ode conflates the genres of &lt;em&gt;epicedium&lt;/em&gt; and &lt;em&gt;consolatio&lt;/em&gt;, simultaneously a lamentation for Quintilius and condolence for Vergil.[^09.21] These two genres roughly divide the poem in half–the first half is dirge, the second is consolation.[^09.57] Aside from generic elements, the poem has an “almost critical tone,” which Philip Thibodeau argues Epicurean &lt;em&gt;parrhesia&lt;/em&gt;, or frank criticism, underpins.[^10.37] In &lt;em&gt;Odes&lt;/em&gt; 1.24, Horace conflates eulogy, consolation, and therapy. As a result, Vergil occupies three roles: he is the addressee in a dirge, the recipient of consolation, and the patient undergoing therapy.[^11.01] It is this middle role that I wish to focus upon.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id="emotional-therapy"&gt;Emotional Therapy&lt;/h3&gt;
-
-&lt;p&gt;Thibodeau argues convincingly that the poem functions as Epicurean emotional therapy. The central stanza is sufficient to demonstrate the manner and content of Horace’s criticism of Vergil’s mourning:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Multis ille bonis flebilis occidit, /
-nulli flebilior quam tibi, Vergili. /
-Tu frustra pius, heu, non ita creditum /
-poscis Quintilium deos.
-–&lt;em&gt;Odes&lt;/em&gt; 1.24.9-12&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;He died mourned by many good men, but mourned by none more than by you, Vergil. You, uselessly pious, ask the gods for Quintilius, alas! not entrusted on those terms.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Horace is curt. The shift from &lt;em&gt;flebilis&lt;/em&gt; to &lt;em&gt;flebior&lt;/em&gt; points directly to the issue. The Epicureans taught &lt;em&gt;metriopatheia&lt;/em&gt;, emotional moderation,[^49.21] yet Vergil is pictured as the emotional outlier, the single friend mourning excessively. The folly of this excessive grief is immediately felt when Horace describes Vergil as “uselessly pious” (11). Of course, the deep resonances of &lt;em&gt;pius&lt;/em&gt; in Vergil’s own corpus speak for themselves and only ratchet up the force of the phrase. Vergil may be attempting to act correctly in his mourning, but his actions are useless and therefor not pious. Horace does not shy away for the central problem. Beyond merely grieving Quintilius, Vergil is apparently asking the gods to return him to life (11-2). The whole poem is focused on reminding Vergil of the foolishness of such thoughts and desires.&lt;/p&gt;
-
-&lt;p&gt;Horace begins with the euphemistic description of Quintilius’ death: he is “eternally asleep” (&lt;em&gt;perpetuus sopor&lt;/em&gt;, 1.24.5). Near the middle of the poem, Horace becomes more explicit, reminding Vergil that blood, and therefore life, will not “return to the empty shade” (&lt;em&gt;vanae redeat sanguis imagini&lt;/em&gt;, 15). Finally, to close the poem Horace declares that such desires are more than merely useless, they are utterly forbidden (&lt;em&gt;durum; sed levius fit patentia / quicquid corrigere est nefas&lt;/em&gt;, 19-20). The poem as a whole answers the opening question, “What shame or limit should there be to the longing for one so loved?” (&lt;em&gt;Quis desiderio sit pudor aut modus / tam cari capitis?&lt;/em&gt;, 1-2). Death provides the limit; it is a threshold beyond which none can pass. These reminders, while tonally in line with the Epicurean practice of &lt;em&gt;parrhesia&lt;/em&gt;, also follow doctrinal Epicurean metaphysics and ethics.&lt;/p&gt;
-
-&lt;h3 id="epicureanism"&gt;Epicureanism&lt;/h3&gt;
-
-&lt;p&gt;One finds the foundation for all Epicurean thought on death and the proper response to it in &lt;em&gt;Key Doctrines&lt;/em&gt; 2: “death is nothing to us” (ὁ θάνατος οὐδὲν πρὸς ἡμᾶς). This simple statement produces two conclusions. First, it functions as an admonition to Epicureans not to fear death while alive.[^15.01] On the one hand, the dictum is thus a normative reminder of Epicurean ethics. On the other hand, however, the statement that “death is nothing to us” summarizes the argument behind this ethical position. In the &lt;em&gt;Letter to Menoeceus&lt;/em&gt;, Epicurus reminds his friend that death is annihilation:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;συνέθιζε δὲ ἐν τῷ νομίζειν μηδὲν πρὸς ἡμᾶς εἶναι τὸν θάνατον ἐπεὶ πᾶν ἀγαθὸν καὶ κακὸν ἐν αἰσθήσει· στέρησις δέ ἐστιν αἰσθήσεως ὁ θάνατος.
-–&lt;em&gt;LM&lt;/em&gt; 124&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Accustom yourself to hold that death is nothing to us, since all good and evil consist in sensation, and death is the privation of sensation.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Death is thus nothing to us because as soon as we die, no “us” remains. This argument takes aim at the fear of death. For Epicurus, the fear of death was one of the largest impediments to &lt;em&gt;ataraxia&lt;/em&gt;, the state of tranquility all Epicureans seek.{»@spm&lt;/td&gt;
-      &lt;td&gt;Citation?«} If death is annihilation of the self, one cannot experience his or her own death; if one cannot experience one’s own death, one cannot feel any pain when dead. Thus, one ought not to fear death.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Horace, throughout this poem, reminds Vergil of the latter point: death is annihilation. This is why Vergil’s supposed “piety” is useless; this is why the blood will not return to the shade. Yet the parrhesiatic therapy is only half completed by these philosophical reminders and sentiments. In order for the poem to be truly consolatory, Horace must not only tell Vergil what to turn away from (excessive and foolish grief) but also what to turn towards. The therapy states, “Quintilius is dead, nothing can change that”, but the consolation adds, “There is still much to live for and love here”. More specifically, the consolatory element of the ode attempts to demonstrate to Vergil that Horace himself is a friend of Quintilian caliber.&lt;/p&gt;
-
-&lt;h3 id="consolation-of-friendship"&gt;Consolation of Friendship&lt;/h3&gt;
-
-&lt;p&gt;If the therapy of the poem answer the opening question, the consolation answers stanza two’s question:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Ergo Quintilium perpetuus sopor /
-urget, cui Pudor et Iustitiae soror /
-incorrupta Fides nudaque Veritas /
-quando ullum inveniet parem?
-–&lt;em&gt;Odes&lt;/em&gt; 1.24.5-8&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;So, everlasting slumber oppresses Quintilius. When will Shame and uncorrupted Faith, the sister of Justice, and naked Truth find anyone equal to him?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;If frankness is the quintessential quality of Epicurean friendships,[^19.53] then Quintilius himself is the quintessential friend. For proof, one need not look beyond Horace’s corpus. First, the phrase &lt;em&gt;nuda Veritas&lt;/em&gt; (7) captures the meaning of the Greek term &lt;em&gt;parrhesia&lt;/em&gt;, as both terms denote blunt honesty.[^23.12] Along with shame, faith, and justice, frankness is one of Quintilius’ primary virtues. Second, Horace references Quintilius’ oft-used imperative &lt;em&gt;corrigere&lt;/em&gt; (“correct it!”) to conclude 1.24, reminding Vergil of Quintilius’ literary frankness.[^24.34] In his &lt;em&gt;Ars Poetica&lt;/em&gt;, Horace recalls how Quintilius would reduce lines of poetry to rubble with this single word, always willing to offer his critical, but desired opinion. Finally, at &lt;em&gt;Sat&lt;/em&gt;. 1.5.40-42, Quintilius, Vergil, and Plotius are described as &lt;em&gt;candidiores&lt;/em&gt;, which emphasizes their charm and frankness. By practicing the very art that defined so much of Quintilius’ character, Horace deftly reminds Vergil of the friend that still remains. In &lt;em&gt;Odes&lt;/em&gt; 1.24, Horace represents his bond with Vergil in its truest form: one friend openly correcting another in a spirit of good will.&lt;/p&gt;
-
-&lt;h3 id="conclusionsummary"&gt;Conclusion/Summary&lt;/h3&gt;
-
-&lt;p&gt;This correction is summed up in the closing &lt;em&gt;sententia&lt;/em&gt; of the poem:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Durum; sed levius fit patientia /
-quicquid corrigere est nefas
-–&lt;em&gt;Odes&lt;/em&gt; 1.24.19-20&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;It is hard; but whatever is forbidden to correct becomes easier to bear with patience.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;These two lines summarize the three essential points of the ode:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Death is annihilation.&lt;/li&gt;
-  &lt;li&gt;Mourning that borders on desire for resurrection is useless.&lt;/li&gt;
-  &lt;li&gt;But good friends remain.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;We cannot “correct” death, as death is final annihilation. Desire for the laws of nature to be reversed is &lt;em&gt;nefas&lt;/em&gt;. Yet patience and good friends can ease the burden. These sentiments follow the trends of the consolatory tradition,[^59.46] as well as doctrinal Epicureanism, which makes &lt;em&gt;Odes&lt;/em&gt; 4.12 all the more odd.&lt;/p&gt;
-
-&lt;h2 id="odes-412"&gt;Odes 4.12&lt;/h2&gt;
-
-&lt;h3 id="introduction-1"&gt;Introduction&lt;/h3&gt;
-
-&lt;p&gt;&lt;em&gt;Odes&lt;/em&gt; 4.12 is a perplexing poem. Scholars question its addressee, its genre, and its communicative purpose.[^06.56] Recent work by Richard Thomas and Jenny Strauss-Clay, however, has begun to make sense of this enigmatic ode.[^20.47] Thomas’ erudite commentary solidifies the scholarly opinion that the addressee must be Vergil the poet while also offering clear analysis of the ode’s rich intertextual relationships. On the interpretive side, Strauss-Clay has demonstrated that the post-mortem publication date is not a minor detail to be explained away, but rather an integral facet of Horace’s poetic purpose. Strauss-Clay discerns in the ode a grieving Horace seeking imaginative self-consolation. Regrettably, her analysis does not take into account the incongruities generated if &lt;em&gt;Odes&lt;/em&gt; 4.12 is indeed to read as a self-consolation, given the explicit consolatory advise offered in &lt;em&gt;Odes&lt;/em&gt; 1.24. Having enumerated how Horace tells Vergil one &lt;em&gt;ought&lt;/em&gt; to grieve in 1.24, I now turn to illuminate how Horace pictures himself &lt;em&gt;actually grieving&lt;/em&gt; in 4.12.&lt;/p&gt;
-
-&lt;h3 id="a-poetic-evocation"&gt;A Poetic Evocation&lt;/h3&gt;
-
-&lt;p&gt;The spring strophes initiate the evocation and the invitation strophes describe a literary convivium in which poets meet and share their poetic wares.[^45.25]  Each spring stanza prepares the reader for Vergil’s presence at the ode’s heart. The first stanza situates Odes 4.12 within Horace’s lyric triptych. The second stanza alludes to Vergil’s Procne myth. Finally, the third stanza explicitly recalls Vergil’s pastoral locale.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Odes&lt;/em&gt; 4.12 opens with a natural scene that sets the stage for the overarching themes of friendship and death. The first three words, &lt;em&gt;Iam veris comites&lt;/em&gt;, indicate both the ode’s springtime setting and its friendship-centered tone. First, the introduction references Catullus’s spring poem: &lt;em&gt;iam ver egelidos refert tepores&lt;/em&gt; (“Already spring brings tepid warmth,” 46.1), in which Catullus bids farewell to actual companions. Second, &lt;em&gt;comites&lt;/em&gt; may recall Horace’s companions on the road to Brundisium, of which Vergil was a member.[^48.02] Horace’s “comrades of spring” thus initially appear human.[^48.38] Horace elaborates on the “comrades of spring,” however, placing the Thracian winds in apposition:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Iam veris comites, quae mare temperant,
-impellunt animae lintea Thraciae,
-iam nec prata regent nec fluvii strepunt
-hiberna nive turgidi.
-–&lt;em&gt;Odes&lt;/em&gt; 4.12.1-4&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Already the comrades of spring, who soothe the sea, the Thracian winds, drive the sails. Already neither are fields stiff nor do streams groan, swollen with winter snow.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;The use of &lt;em&gt;anima&lt;/em&gt; for &lt;em&gt;ventus&lt;/em&gt; is unique in Horace, and its uniqueness suggests its importance.[^49.37] This Greek cognate usage of &lt;em&gt;anima&lt;/em&gt;, following &lt;em&gt;comites&lt;/em&gt; so closely, may echo &lt;em&gt;Odes&lt;/em&gt; 1.3’s famous &lt;em&gt;animae dimidium meae&lt;/em&gt;. Furthermore, &lt;em&gt;animae&lt;/em&gt; could also recall Vergil, Plotius and Varius, described as &lt;em&gt;animae candidiores&lt;/em&gt; at &lt;em&gt;Satires&lt;/em&gt; 1.5.41.[^50.21] These two possible referents suggest the depth of Horace’s allusive engagement with Vergil and their friendship. In addition, the two verbs governed by “the Thracian winds,” &lt;em&gt;temperant&lt;/em&gt; and &lt;em&gt;impellunt&lt;/em&gt;, recall the nautical setting of &lt;em&gt;Odes&lt;/em&gt; 1.3. Finally, the adjective &lt;em&gt;Thraciae&lt;/em&gt; recalls Orpheus in &lt;em&gt;Odes&lt;/em&gt; 1.24 (&lt;em&gt;Threicio blandius Orpheo&lt;/em&gt;, 13). This reference adumbrates the theme of death and recalls Horace’s previous Vergil odes. This first stanza is a tour de force of self-reference, placing the ode squarely within the tapestry of the Vergil odes as a whole.&lt;/p&gt;
-
-&lt;p&gt;The second stanza offers an extended allusion to the myth of Procne and Tereus. On the literal level, instinct drives a bird to prepare her nest; on the metaphorical level, however, Horace sees in this act resonances of Procne’s tale of death and revenge:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Nidum ponit Ityn flebiliter gemens
-infelix avis et Cecropiae domus
-aeternum opprobrium, quod male barbaras
-regum est ulta libidines.
-–&lt;em&gt;Odes&lt;/em&gt; 4.12.5-8&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;The unlucky bird builds her nest, moaning mournfully for Itys. She is an eternal disgrace to the house of Cecrops because she took foul revenge on the barbarous lusts of kings.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;The central image of the second stanza points directly to Vergil. The &lt;em&gt;infelix avis&lt;/em&gt; is unparalleled in Horace’s corpus, though it recalls Vergil’s two abbreviated descriptions of the myth. First, consider the image of Philomela, Procne’s sister, in the sixth book of the &lt;em&gt;Eclogues&lt;/em&gt;:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;aut ut mutatos Terei narraverit artus,
-quas illi Philomela dapes, quae dona pararit,
-quo cursu deserta petiverit et quibus ante
-infelix sua tecta super volitaverit alis?
-–&lt;em&gt;Eclogues&lt;/em&gt; 6.78-81&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Or how he detailed Tereus’ morphed limbs, what banquets and what gifts Philomela prepared for him, by what route she sought the desert, and on what wings the unlucky woman earlier flitted about her rooftops?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;The image is likewise influenced by Vergil’s description of Orpheus’ lament in the &lt;em&gt;Georgics&lt;/em&gt;:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;qualis populea maerens philomela sub umbra
-amissos queritur fetus, quos durus arator
-observans nido implumes detraxit; at illa
-flet noctem ramoque sedens miserabile carmen
-integrat et maestis late loca questibus implet.
-–&lt;em&gt;Geo.&lt;/em&gt; 4.511-15&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;As Philomela, grieving beneath the poplar’s shade, laments her lost children, whom a rough ploughman snatched as she watched, featherless, from the nest; but she weeps all night and repeats her sad song perched on a branch and fills the place around with mournful cries.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;In this &lt;em&gt;Georgics&lt;/em&gt; section, Vergil describes Orpheus’ grief following the death of his wife, foreshadowing Horace’s foolish apostrophe in the fourth stanza.[^53.48] In both language and theme, Horace echoes Vergil’s treatments of this tragic tale.&lt;/p&gt;
-
-&lt;p&gt;Strophe three engages Vergil’s pastoral &lt;em&gt;Eclogues&lt;/em&gt;. Moving from the mournful songs of the animal world, Horace now imagines man’s music in the form of shepherds’ singing:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Dicunt in tenero gramine pinguium
-custodes ovium carmina fistula
-delectantque deum, cui pecus et nigri
-colles Arcadiae placent.
-–&lt;em&gt;Odes&lt;/em&gt; 4.12.9-12&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;The custodians of fattened sheep sing songs in the soft grass with the pipe, and they delight the god whom the herd and black hills of Arcadia please.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Horace’s reference to Vergil’s pastoral text is layered. First, the &lt;em&gt;fistula&lt;/em&gt; pipe is the primary instrument used throughout the &lt;em&gt;Eclogues&lt;/em&gt;. Second, the &lt;em&gt;deus Arcadiae&lt;/em&gt; Pan appears at the climax of Vergil’s final eclogue.[^54.40] Finally, the reader senses Vergil’s pastoral presence most vividly in Horace’s only reference to the mythical land of Arcadia. Once again, Horace hints at Vergil’s poetic presence before his name actually appears.&lt;/p&gt;
-
-&lt;h3 id="a-poetic-embrace"&gt;A Poetic Embrace&lt;/h3&gt;
-
-&lt;p&gt;This allusive evocation of Vergil’s poetic persona initiates a poetic embrace. Alden Smith defines poetic embrace as the conversation between poets through allusion and intertextuality.[^57.07] Poets can revivify their predecessors and peers by perpetuating their poetic voice in and through their own text. If this understanding of allusion’s immortalizing potency appears anachronistic, one need not look beyond two excerpts from Augustan-age poets. One finds the first in Ovid:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;sed carmina maior imago /
-sunt mea, quae mando qualiacumque legas.
-–&lt;em&gt;Tristia&lt;/em&gt; 1.7.11-12&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;But my poetry is a better image, and whatever the quality, I entrust it to you so that you may read it.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;The second comes from Horace’s fourth book of &lt;em&gt;Odes&lt;/em&gt;:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Vixere fortes ante Agamemnona /
-multi; sed omnes inlacrimabiles /
-urgentur ignotique longa /
-nocte, carent quia uate sacro.
-–&lt;em&gt;Odes&lt;/em&gt; 4.9.25-28&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Many brave men lived before Agamemnon, but all are unwept and unknown, pressed by the long night, because they lacked a sacred poet.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Augustan-age poets recognized that poetry created a persona of the poet as well as anyone else the poet brings into the realm of the poem. These personae are eternal insofar as readers continue to read of them. As readers themselves, poets can knowingly sustain a predecessor or peer’s literary persona. As writers, they can also “revivify” another poet by incorporating some aspect of the predecessor’s poetry into his own text. The poem can thus function as a medium in which poets, dead or alive, forever interact. In &lt;em&gt;Odes&lt;/em&gt; 4.12, Horace cements this aspect of poetry’s power in the image of a symposium.&lt;/p&gt;
-
-&lt;p&gt;Horace creates a wine-for-poetry analogy to suggest the literary aspect of the symposium. Wine and nard are to poetry as a drinking party is to intertextuality. Throughout Horace’s lyric poetry, wine functions as a metonym for poetry itself. In this ode, Horace’s wine “reflects the Dionysiac power of the symposium to renew all life.”[^01.35] Steele Commager details the multivalent function of wine in Horace’s Carmina, particularly with reference to temporality and poetry:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“Immortality is the dimension of an eternal present. Wine represents a seizing of the present, a freedom from contingencies of past and future alike. Bacchus adumbrates the poet’s hold upon an eternal moment, and his apotheosis into the ultimate freedom of immortality.”[^00.42]&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Inviting the now dead Vergil to a symposium mediated by a fine wine, Horace attempts to create “an eternal present” via poetic &lt;em&gt;convivium&lt;/em&gt;. As he begins to drink &lt;em&gt;Liber&lt;/em&gt;, Horace ingests Bacchus’ liberating power. It is to this liberating eternal present that Horace calls Vergil to hasten.&lt;/p&gt;
-
-&lt;p&gt;Vergil’s swift arrival does not suffice, however. He must also brink a small jar of unguent (&lt;em&gt;nardi parvus onyx&lt;/em&gt;, 4.12.17). Horace insists that without Vergil’s gift, there can be no party.[^02.24] If wine serves as metonymy for poetry, what might Vergil’s required nard represent? In the Greek sympotic tradition, spikenard (νάρδος) occasionally flavors wine (ναρδίτης).[^02.49] Horace proposes a &lt;em&gt;quid pro quo&lt;/em&gt;: Vergil’s nard for Horace’s poetry. Vergil’s unguent likely functions on the same metonymic level as Horace’s wine. Timothy Johnson suggests that the nard represents poetry: “The metaphor, gift equals poetry, transforms Vergil’s nard into a poem that he must bring to share at the symposion.”[^03.19] The unguent is not merely aromatic; it compliments the wine. Vergil must hurry and bring his poetry to this literary symposium in order to flavor Horace’s poetic wares. Vergil’s nard represents his poetry, just as wine is a metonym for Horace’s poetry. Literal unguent-mixed wine does not soak Horace’s proposed &lt;em&gt;convivium&lt;/em&gt;, but literary wine—a simulacrum of poetry.&lt;/p&gt;
-
-&lt;p&gt;Inviting a deceased Vergil to a poetic symposium appears no less guilty of the poetic &lt;em&gt;nefas&lt;/em&gt; that doomed Vergil’s mourning in &lt;em&gt;Odes&lt;/em&gt; 1.24. There Horace reminds Vergil of the Epicurean dictum that “death is nothing” and asserts that it is &lt;em&gt;nefas&lt;/em&gt; (1.24.20) to attempt the poetic resurrection of a dead friend, which Vergil supposedly did. Yet here in &lt;em&gt;Odes&lt;/em&gt; 4.12 Horace seems to seek a similar resurrection. Scholars’ metonymic reading of the symposium fails to resolve Horace’s seemingly disparate attitudes toward death and mourning in these two odes. Furthermore, Horace suggests that he is aware of his paradoxical position. At the ode’s conclusion, Horace states sententiously: “to be foolish in the proper place is sweet” (&lt;em&gt;dulce est desipere in loco&lt;/em&gt;, 28). Under the metaphorical reading of the symposium, the “proper place” resides within the realm of poetry. Poetry functions unencumbered by death because poets’ personae can meet in the intertextual space created by allusion to one another. Nonetheless, Horace ignores standard Epicurean doctrine on death and addresses a poem to a deceased friend, seemingly contradicting his own advice to Vergil in &lt;em&gt;Odes&lt;/em&gt; 1.24.[^04.28] This is his acknowledged foolishness, yet does Horace’s response to the death of a friend truly fall victim to his own previous criticism?
-No, because Horace does not seek to resurrect Vergil, but to memorialize and immortalize a friend and a friendship. That Horace avoids 1.24’s &lt;em&gt;nefas&lt;/em&gt; may be seen in the ode’s climax.&lt;/p&gt;
-
-&lt;p&gt;There Horace advised Vergil to allow this Epicurean principle to limit his grief; now, in &lt;em&gt;Odes&lt;/em&gt; 4.12 Horace finds himself in a similar position as Vergil in 1.24—grieving the death of a friend.[^05.12] Just as it was forbidden for Vergil to return the dead Quintilius, it is utter foolishness for Horace to ask a dead Vergil to join a symposium. Horace must face the hard reality that Vergil had forgotten in 1.24: &lt;em&gt;non ita creditum&lt;/em&gt;, that there is nothing and no one to invite post-mortem.[^06.12] Yet Horace is either unable or unwilling to let Vergil’s death enter the realm of the poem. The pathos is striking as Horace invites him to come and drink, though Vergil can never arrive nor enjoy Horace’s wares. He treats the affair euphemistically, exhorting Vergil to “come quickly with your wares” (&lt;em&gt;cum tua / velox merce veni&lt;/em&gt;, 4.1221-2), yet knowing that no amount of haste can return Vergil, that there is no “Vergil” to be returned. Nonetheless, Horace addresses his deceased friend and invites him to the small symposium. Under the Epicurean philosophy that informed his criticism in &lt;em&gt;Odes&lt;/em&gt; 1.24, Horace’s post mortem apostrophe is folly in the deepest sense—it knowingly ignores reality.&lt;/p&gt;
-
-&lt;p&gt;Yet Horace does not fully endorse such foolish responses to death; he adds a caveat. It may be sweet to indulge in grief-induced folly, but only if practiced in the proper place. Where is this folly’s fit abode? I argue that Horace believes one may only ignore the reality of death within the realm of a poem. True to his craft, Horace fashions an image, rather than presents an argument to make this point. Horace does not invite an actual Vergilius to a drinking party; he invokes Vergil’s literary persona to share in a poetic dialogue.&lt;/p&gt;
-
-&lt;p&gt;As Jenny Strauss-Clay points out, when these two poet’s textual personae meet at this literary symposium, “the dialogue of these two poet-friends, which informed their lives and  their work, is momentarily re-animated – through the imagination, through poetry.”[^06.45]&lt;/p&gt;
-
-&lt;p&gt;Returning to the ode’s sententious conclusion, Horace mixes the somber tenor of the ode with levity. From desired haste, Horace quickly pivots to thoughts of wine’s effects. The imperative &lt;em&gt;misce&lt;/em&gt; leads the reader to expect an image of cutting pure wine with water. Instead, Horace urges Vergil to mix “folly with your plans” (&lt;em&gt;stultitiam consiliis&lt;/em&gt;, 27). This reversal of the expected wine motif flows into the ode’s conclusion—folly is sweet in the proper place. This conclusion recalls the likewise sententious clause that closes &lt;em&gt;Odes&lt;/em&gt; 1.24:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Durum; sed levius fit patientia
-  quicquid corrigere est nefas
-–Odes 1.24.19-20&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;It is hard; but whatever is forbidden to correct becomes easier to bear with patience.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;The reference is structural. The two conclusions share a common metrical position for their infinitives; both &lt;em&gt;desipere&lt;/em&gt; and &lt;em&gt;corrigere&lt;/em&gt; are found after the initial trochee of the final line. While patience eases the pain of some forbidden desire, Horace reminds that such patience need not be an emotional coldness; rather, it may be best to face the necessity of death with a little foolishness. Perhaps also the conclusion of &lt;em&gt;Odes&lt;/em&gt; 4.12 also refers to the practice of Epicurean commemoration:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;ἡδὺ ἡ φίλου μνήμη τεθνηκότος.
-–Fragment 213&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“The memory of a deceased friend is sweet.”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Horace’s &lt;em&gt;dulce&lt;/em&gt; translates ἡδὺ. Within Epicurus’ Garden, members would gather for feasts to remember esteemed members now deceased. The most important of these commemorative symposia was for Epicurus himself. The practice likely derives its legitimacy from this dictum, which curiously parallels Horace’s conclusion in &lt;em&gt;Odes&lt;/em&gt; 4.12. If the ode evokes Vergil’s poetic persona, it remembers the renowned poet. Horace therefore memorializes Vergil by remembering his poetry and their friendship. The imagined &lt;em&gt;convivium&lt;/em&gt; playing out an Epicurean practice aimed at commemoration.&lt;/p&gt;
-
-&lt;h2 id="footnotes"&gt;Footnotes&lt;/h2&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;[^59.46]:  {»@spm&lt;/td&gt;
-      &lt;td&gt;Add footnote citation«}&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;one finds this opinion stated as early as the fifth century in the commentary of pseudo-Acro: “[Horace] writes to a Vergil who was a wholesale dealer” (&lt;em&gt;ad Vergilium negotiatorem scribit&lt;/em&gt;). In the tenth century, two manuscripts (Paris MSS 7974 and 7971) provide similar readings: “[an ode written] to a certain Vergil who was an ointments dealer” (&lt;em&gt;ad Vergilium quendam unguentarium&lt;/em&gt;). Even in modern scholarship, many notable scholars—-Fraenkel 1981 and Putnam 2006: 205-6 chief among them—-follow this line of reasoning. They argue that Horace’s language in this poem (&lt;em&gt;iuuenum nobilium cliens&lt;/em&gt;, 15, and &lt;em&gt;studium lucri&lt;/em&gt;, 25) clashes with an invitation to a dead friend, especially one of such stature as Vergil. Fraenkel (1957: 418) goes so far as to describe Horace as “a monster of callousness” for his language.
-Pro Vergil, scholars point to the ode’s Vergilian language and themes.  Belmont 1980: 1-20 imagines a Roman reader attentive to the poem’s intertextuality and contends that this reader could not but identify the addressee as the poet Vergil. The thought experiment persuades many, and today the &lt;em&gt;opinio communis&lt;/em&gt; asserts the identification (See Quinn 1963: 11, Bowra 1928: 165-7, Putnam 2006: 93, Belmont 1980: 1-20, Moritz 1969: 174-93, Porter 1973: 71-87, and Strauss-Clay 2002: 129-45). Whatever incongruities in tone scholars sense, it is difficult to imagine an early reader finishing the ode and not thinking of Rome’s recently deceased national poet. In the most recent commentary on &lt;em&gt;Odes&lt;/em&gt; 4, Richard Thomas (2011: 227) summarizes the argument: “The addressee is indeed the poet [because] &lt;em&gt;C&lt;/em&gt;. 4.12 is replete with Vergilian diction, style, and rhetorical devices, and it seems perverse to take the addressee as being anyone but the poet Vergil, the Vergilius to whom H[orace] refers by the same name on nine other occasions.”&lt;/p&gt;
-
-&lt;p&gt;[^57.07]:  Smith &lt;em&gt;__&lt;/em&gt;: passim. He defines “textual embrace” as “a relationship … in a synchronic continuum between reader and author” (20). Smith examines how Ovid reads, revivifies, and so immortalizes Vergil by alluding to Vergil.&lt;/p&gt;
-
-&lt;div class="footnotes"&gt;
-  &lt;ol&gt;
-    &lt;li id="fn:3406"&gt;
-      &lt;p&gt;For readings of &lt;em&gt;Odes&lt;/em&gt; 1.24, see Commager 1995: 287-90, Khan 1999, Nisbet and Hubbard 1970: 279-89, Lowrie 1994: 377-394, Putnam 1993, and West 1995: 112-15. For the Epicurean, and specifically Philodeman, influence on the ode, see Thibodeau 2003: 243-56 and Armstrong 2008: 97-99. &lt;a href="#fnref:3406" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
-</content>
-  </entry>
-  <entry>
     <title>A Depressed Graduate Student</title>
     <link rel="alternate" href="http://blog.url.com/articles/a-depressed-graduate-student/"/>
     <id>http://blog.url.com/articles/a-depressed-graduate-student/</id>
@@ -1502,542 +1194,6 @@ Pro Vergil, scholars point to the ode’s Vergilian language and themes.  Belmon
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
-</content>
-  </entry>
-  <entry>
-    <title>ZotQuery</title>
-    <link rel="alternate" href="http://blog.url.com/projects/zotquery/"/>
-    <id>http://blog.url.com/projects/zotquery/</id>
-    <published>2015-05-26T20:00:00-04:00</published>
-    <updated>2016-12-02T22:19:11-05:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;h4 id="version-85"&gt;Version 8.5&lt;/h4&gt;
-
-&lt;h4 id="download-on-packalhttppackalorgworkflowzotquery"&gt;Download on &lt;a href="http://packal.org/workflow/zotquery"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; is an Alfred workflow that grants the user access to the data stored in their &lt;a href="https://www.zotero.org"&gt;Zotero&lt;/a&gt; application.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id="requirements"&gt;REQUIREMENTS&lt;/h3&gt;
-
-&lt;p&gt;To date, it has only been tested on a Mac with both Zotero Firefox and Standalone installed. &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; should work with only Zotero Firefox or Standalone installed, but that is currently untested. If you are using the workflow successfully with either one only installed, please let me know. It has also only been tested on Alfred 2.1+. Finally, it was tested on the standard Python distribution for Mac OS X Mavericks (10.9), which is 2.7.6, and not on Python 3. Once again, if anyone is using the workflow successfully on another distribution of Python, please let me know.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id="configuration"&gt;CONFIGURATION&lt;/h3&gt;
-
-&lt;p&gt;When you first download the workflow, you will need to run &lt;code&gt;z:config&lt;/code&gt; first to configure the necessary settings before you attempt any queries. In fact, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; will kick you to the &lt;code&gt;z:config&lt;/code&gt; command if you try any of the queries without having first configured your settings.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="configuration" src="../../images/projects/zotquery/zq_config_init.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;On first run, the configurator will begin by searching for, and creating if necessary, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;’s workflow data folder, which can always be found at &lt;code&gt;/Users/$USER/Library/Application Support/Alfred 2/Workflow Data/com.hackademic.zotquery/&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Now, in version 5.5 and on, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; &lt;strong&gt;no longer needs to install any Python dependencies.&lt;/strong&gt; The workflow ships with all necessary components baked in. This has already removed a vast majority of the support issues.&lt;/p&gt;
-
-&lt;p&gt;The configurator next moves on to find all the necessary Zotero paths. &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; requires the full path to 3 things:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;your Zotero sqlite database&lt;/li&gt;
-  &lt;li&gt;your Zotero storage folder&lt;/li&gt;
-  &lt;li&gt;the folder that holds your linked attachments&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The configurator attempts to find all necessary paths automatically, but if it fails, it will ask you to select one manually. The title of the dialog box will alert you to what path the configurator requires:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="choosing the Zotero folder where linked attachments reside" src="../../images/projects/zotquery/zq_config_choose-folder.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Once all paths are stored, the configurator moves on to set up your &lt;a href="http://www.zotero.org/support/dev/server_api/v2/start"&gt;Zotero API&lt;/a&gt; information. This workflow utilizes the Zotero API to export citations of chosen items. In order for the user to utilize these functions, they must have and set up a Zotero private key. Step one requires your Zotero User ID:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="entering Zotero user ID" src="../../images/projects/zotquery/zq_config_userid.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;If you do not have or do not know your Zotero User ID, click the &lt;code&gt;Where do I find my User ID?&lt;/code&gt; button. This will open Zotero’s “Feeds/API” tab, where you may need to login. Once logged in, you will see a page similar to this:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="creatingnew Zotero private key" src="../../images/projects/zotquery/Zotero___Settings___Feeds_API-2.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;This shows a user who has two API keys set up, one for personal use and one for the iOS app &lt;a title="PaperShip - Manage, Annotate, and Share your Papers On The Go ..." href="http://www.papershipapp.com/"&gt;PaperShip&lt;/a&gt;. If you do not have a Personal API key, you can easily set one up by clicking the “Create new private key” link. Your User ID will be a number, probably less than 8 digits. Insert it into the text field and click &lt;code&gt;Set User ID&lt;/code&gt; (&lt;strong&gt;Note&lt;/strong&gt;: Applescript text input dialog boxes do not respond, typically, to the keyboard shortcut for paste, so you will likely need to right-click and manually paste in the ID).&lt;/p&gt;
-
-&lt;p&gt;Second, you will need to input your API Key:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="entering Zotero API key" src="../../images/projects/zotquery/zq_config_apikey-2.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Since &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; reads this &lt;code&gt;settings.json&lt;/code&gt; file whenever it attempts to connect to the Zotero API, if you don’t insert the proper data here, the “Export Citation” and “Export Reference” (see below) functions &lt;strong&gt;will not work&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Finally, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; (now in version 4.0) will also allow you to set your export style and format. Once you have entered your API information, the configurator will move to setting your export preferences:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="choosing export style and format" src="../../images/projects/zotquery/zq_prefs1.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;First, you will select the &lt;a href="http://citationstyles.org/"&gt;CSL Style&lt;/a&gt; that you wish to use. Currently &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; can export data in 5 different styles: Chicago (author-date), APA, MLA, Zotero’s own RTF-Scan format, and BibTeX. Now, in &lt;strong&gt;version 6.2&lt;/strong&gt;, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; will also allow users to export in the &lt;a href="http://zotero-odf-scan.github.io/zotero-odf-scan/"&gt;ODT-RTF Scannable Cites format&lt;/a&gt; (option not shown in image below). This will determine the format of exported citations and references.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="choosing CSL style" src="../../images/projects/zotquery/zq_prefs2-4.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Next, you will select the text formatting for exported data. &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; (in version 4.0) can export in either &lt;a href="http://daringfireball.net/projects/markdown/basics"&gt;Markdown&lt;/a&gt; or &lt;a href="http://en.wikipedia.org/wiki/Rich_Text_Format"&gt;Rich Text&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="choosing export text format" src="../../images/projects/zotquery/zq_prefs3.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;All exported text is put in your clipboard, so you can use it anywhere in any text editor. You can also alter your export preferences at any point, using the &lt;code&gt;z:settings&lt;/code&gt; command.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="z:settings command" src="../../images/projects/zotquery/zq_export_settings.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Finally, you will need to select which Zotero client you use, either &lt;a href="https://www.zotero.org/download/"&gt;Zotero Standalone&lt;/a&gt; or &lt;a href="https://www.zotero.org/download/"&gt;Zotero for Firefox&lt;/a&gt;. This will determine which app will open any items that you select.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="choosing Zotero client" src="../../images/projects/zotquery/zq_client.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Once all settings and preferences are set, the configurator will finally build the JSON cache of your Zotero data. &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; will clone your Zotero database and also generate a JSON file with all pertinent information. Once cached, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; is configured.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id="functions"&gt;FUNCTIONS&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; has 5 main functions:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Search&lt;/li&gt;
-  &lt;li&gt;Cite&lt;/li&gt;
-  &lt;li&gt;Open&lt;/li&gt;
-  &lt;li&gt;Cache&lt;/li&gt;
-  &lt;li&gt;and Add&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;In general, the order of operations would be: cache, search, open/cite. This means, in order to search, you need to have an up-to-date cache, and in order to cite or open an item, you will first need to search and select it.&lt;/p&gt;
-
-&lt;p&gt;Under &lt;code&gt;Search&lt;/code&gt; there are 8 options:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;General search&lt;/li&gt;
-  &lt;li&gt;Title-specific search&lt;/li&gt;
-  &lt;li&gt;Author-specific search&lt;/li&gt;
-  &lt;li&gt;Tag-specific search&lt;/li&gt;
-  &lt;li&gt;Collection-specific search&lt;/li&gt;
-  &lt;li&gt;Attachment-specific search&lt;/li&gt;
-  &lt;li&gt;Notes-specific search&lt;/li&gt;
-  &lt;li&gt;New items only&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Note that all searches coerce both the query and the data into lowercase, so you can search using lowercase queries and still get matches.&lt;/p&gt;
-
-&lt;p&gt;The &lt;strong&gt;General&lt;/strong&gt; search is launched by the keyword &lt;code&gt;zot&lt;/code&gt; or the short version &lt;code&gt;z&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="zot general search command" src="../../images/projects/zotquery/zq_gen_init-3.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;This will search your entire Zotero database for any use of the query provided. The search script is “loose,” that is, it searches for matches of the query “in” the data not matches that “equal” the data. This means you can search half words, words in the middle of titles, etc.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; will not begin searching until you have entered at least 3 characters. This ensures faster, smarter results. Until you have typed at least 3 characters, you will see this result:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="zot general search with too short query" src="../../images/projects/zotquery/Screen_Shot_2014-01-18_at_6_10_23_PM-4.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Once you complete your query, and the script catches up with you, you will see a list of all of your Zotero items that match the query. If your query doesn’t have any matches, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; returns an error:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="zot general search no results" src="../../images/projects/zotquery/zq_error_res-2.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;If, however, you have results, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; presents them in a ranked order:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="zot general search ranked results" src="../../images/projects/zotquery/zq_gen_search-3.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;For ease of use, the workflow provides unique icons for the various item types:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;article   &lt;img alt="article icon" src="../../images/projects/zotquery/n_article.png" /&gt;&lt;/li&gt;
-  &lt;li&gt;book      &lt;img alt="book icon" src="../../images/projects/zotquery/n_book.png" /&gt;&lt;/li&gt;
-  &lt;li&gt;chapter   &lt;img alt="chapter icon" src="../../images/projects/zotquery/n_book.png" /&gt;&lt;/li&gt;
-  &lt;li&gt;conference paper &lt;img alt="conference icon" src="../../images/projects/zotquery/n_conference.png" /&gt;&lt;/li&gt;
-  &lt;li&gt;other &lt;img alt="other icon" src="../../images/projects/zotquery/n_written.png" /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;If your item has an attachment, the icon changes to signal the addition as will the subtitle field. The subtitle field will include &lt;code&gt;Attachments: n&lt;/code&gt;, where n is the number of attachments:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="item with attachments" src="../../images/projects/zotquery/zq_attachments-4.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;The altered icons each have a small plus sign in the top-right corner:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;article + attachment  &lt;img alt="article icon with attachment" src="../../images/projects/zotquery/att_article.png" /&gt;&lt;/li&gt;
-  &lt;li&gt;book + attachment     &lt;img alt="book icon with attachment" src="../../images/projects/zotquery/att_book.png" /&gt;&lt;/li&gt;
-  &lt;li&gt;chapter + attachment  &lt;img alt="chapter icon with attachment" src="../../images/projects/zotquery/att_chapter.png" /&gt;&lt;/li&gt;
-  &lt;li&gt;conference paper + attachment   &lt;img alt="conference icon with attachment" src="../../images/projects/zotquery/att_conference.png" /&gt;&lt;/li&gt;
-  &lt;li&gt;other + attachment    &lt;img alt="other icon with attachment" src="../../images/projects/zotquery/att_written.png" /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The &lt;strong&gt;Author&lt;/strong&gt; search is launched by &lt;code&gt;zot:a&lt;/code&gt; or the short version &lt;code&gt;za&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="zot:a author search command" src="../../images/projects/zotquery/zq_a_init-4.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;This search only queries the last names of the authors of your Zotero data. For example: &lt;code&gt;zot:a thomas&lt;/code&gt; will return all the items that have an author (or editor, translator, etc.) with the last name “Thomas”.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="zot:a author search results" src="../../images/projects/zotquery/zq_a_search-3.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;The &lt;strong&gt;Title&lt;/strong&gt; search is launched by &lt;code&gt;zot:t&lt;/code&gt; or the short version &lt;code&gt;zt&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="zot:t title search command" src="../../images/projects/zotquery/zq_t_init-3.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;This search only queries the title fields of your Zotero data. For example: &lt;code&gt;zot:t virgil&lt;/code&gt; will return all of the items whose title contains the word “Virgil”.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="zot:t title search results" src="../../images/projects/zotquery/zq_t_search.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;The final two searches (Tag and Collection) are two-step searches. In step-one, you search &lt;em&gt;for&lt;/em&gt; a particular Tag or Collection; in step-two you search &lt;em&gt;within&lt;/em&gt; that particular Tag or Collection for your query.&lt;/p&gt;
-
-&lt;p&gt;The &lt;strong&gt;Tag&lt;/strong&gt; search is launched by &lt;code&gt;z:tag&lt;/code&gt; or the short version &lt;code&gt;ztg&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="z:tag tags search command" src="../../images/projects/zotquery/zq_tag_init.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;This allows you to search through all of your Zotero tags.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="z:tag tags search results" src="../../images/projects/zotquery/zq_tag_search.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Once you select a tag, Alfred will automatically initiate the &lt;code&gt;zot:tag&lt;/code&gt; search, which will search within that tag for your query. The &lt;code&gt;zot:tag&lt;/code&gt; (or &lt;code&gt;znt&lt;/code&gt;) query functions just like the general &lt;code&gt;zot&lt;/code&gt; query, except that it is limited to those items with the previously chosen tag.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="zot:tag in-tag search results" src="../../images/projects/zotquery/zq_intag_seach.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;The &lt;strong&gt;Collection&lt;/strong&gt; search is similar. It is launched by &lt;code&gt;z:col&lt;/code&gt;, or by &lt;code&gt;zc&lt;/code&gt;, which begins a search for all of your Zotero collections.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="z:col collections search command" src="../../images/projects/zotquery/zq_col_init.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;As you type, it will filter any collections that contain the query.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="z:col collections search results" src="../../images/projects/zotquery/zq_col_search-3.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Once you choose a particular collection, Alfred will initiate the &lt;code&gt;zot:c&lt;/code&gt; search (also &lt;code&gt;znc&lt;/code&gt;), which will search within that particular collection.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="zot:c in-collection search results" src="../../images/projects/zotquery/zq_incol_search.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;As above, the &lt;code&gt;zot:c&lt;/code&gt; search functions just like the simple &lt;code&gt;zot&lt;/code&gt; search.&lt;/p&gt;
-
-&lt;p&gt;Finally, you can now (after version 4.1) search only items with attachments using the &lt;code&gt;z:att&lt;/code&gt; query (short version = &lt;code&gt;zat&lt;/code&gt;). This query allows you to quickly find pdfs or epubs in your Zotero library and open them in your default application. As of now, &lt;code&gt;z:att&lt;/code&gt; only allows for you to open the attached files.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="z:att attachments search results" src="../../images/projects/zotquery/zq_attachment_search.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Similarly, you can use &lt;code&gt;zot:n&lt;/code&gt; (or &lt;code&gt;zn&lt;/code&gt;) to search through the notes for any items. This can prove very helpful for people who use Zotero as their notes repository for all of their secondary sources.&lt;/p&gt;
-
-&lt;p&gt;Finally, the &lt;code&gt;z:new&lt;/code&gt; search will bring all of the items added to Zotero since the last cache update. This feature is there to make it easier to find items if you do one long research run, adding lots of items to Zotero before re-using &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;. Using &lt;code&gt;z:new&lt;/code&gt; you can double check exactly what’s been added.&lt;/p&gt;
-
-&lt;p&gt;Together these 8 search options provide you with various ways to find the exact item you need. Once you find that item, you have a few options with what you can do next.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Once you select an item (in all the searches except &lt;code&gt;z:att&lt;/code&gt;), there are 5 options:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Open Zotero to that item.&lt;/li&gt;
-  &lt;li&gt;Export a short reference to that item.&lt;/li&gt;
-  &lt;li&gt;Export a citation of that item.&lt;/li&gt;
-  &lt;li&gt;Open the item’s attachment (if it has any).&lt;/li&gt;
-  &lt;li&gt;Append a citation of the item to a temporary bibliography&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;If you merely hit &lt;code&gt;return&lt;/code&gt; on your chosen item, option 1 will occur and Zotero will open to that item.&lt;/p&gt;
-
-&lt;p&gt;If you hit &lt;code&gt;option+return&lt;/code&gt; when you choose your item, you will export a short reference to that item.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="export reference" src="../../images/projects/zotquery/zq_gen_ref.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Depending on your style and format settings, your reference will be of various types.&lt;/p&gt;
-
-&lt;p&gt;If you hit &lt;code&gt;control+return&lt;/code&gt;, you will export a full citation of the item in your chosen format.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="export markdown citation" src="../../images/projects/zotquery/zq_gen_cite.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Next, if you hit &lt;code&gt;shift+return&lt;/code&gt;, you will open the attachment of that item.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="open attachment" src="../../images/projects/zotquery/zq_gen_open.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Finally, if you hit &lt;code&gt;fn+return&lt;/code&gt;, you will append a citation of the item to a temporary bibliography file.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="append markdown citation to bibliography" src="../../images/zq_gen_append.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;This bibliography file is stored in the workflow’s cache folder. You can add as many citations to it as you wish. This function allows you to dynamically build a Bibliography/Works Cited page. When you have put all the needed citations in the temporary file, you need only run the &lt;code&gt;z:bib&lt;/code&gt; command to export them.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="z:bib export command" src="../../images/projects/zotquery/zq_bib_init-5.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;This will take all of the citations in the temporary bibliography file, organize them in alphabetical order, and copy the result to the clipboard. A result in Markdown format will resemble this:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="exported markdown citations example" src="../../images/projects/zotquery/WORKS_CITED-2.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;The temporary bibliography file is not the only way, however, to automatically generate a full Bibliography/Works Cited page. Since many Zotero users, myself included, use either Tags or Collections to organize their library into writing projects, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; also allows the user to export a full formatted bibliography (in alphabetical order) for any Tag or Collection.&lt;/p&gt;
-
-&lt;p&gt;When you are searching for a Tag or a Collection with &lt;code&gt;z:tag&lt;/code&gt; or &lt;code&gt;z:col&lt;/code&gt;, you can use &lt;code&gt;control+return&lt;/code&gt; to export a bibliography of that Tag or Collection, instead of simply searching within that Tag or Collection by hitting &lt;code&gt;return&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="export bibliography of collection" src="../../images/projects/zotquery/zq_col_bib.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Thus, if you organize the citations for particular project within a certain Collection or under a certain Tag, you can create full, formatted Works Cited pages on the fly from &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;!&lt;/p&gt;
-
-&lt;p&gt;Taken together, these export options make &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; an academic’s best friend in the writing process. You can insert in-text references, full citations, or generate entire Works Cited all from &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;. These citations, references, and bibliographies can also now be Rich Text in addition to Markdown. This allows users who write in &lt;a href="http://office.microsoft.com/en-us/word/"&gt;Microsoft Word&lt;/a&gt;, &lt;a href="http://www.apple.com/mac/pages/"&gt;Pages&lt;/a&gt;, or &lt;a href="http://literatureandlatte.com/scrivener.php"&gt;Scrivener&lt;/a&gt; to utilize &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;. You can also open Zotero directly to an item (for quick meta-data editing) or even open an item’s attachment to double check a quote.&lt;/p&gt;
-
-&lt;p&gt;There are, however, a few caveats and possible configurations. First, these final options (export reference, export citations, append citation, and generate works cited) all use Zotero’s web API, and so they require an internet connection. If you are not connected to the internet, all will fail (gracefully). Second, the workflow defaults to Chicago (author-date) style both for short references and full citations (examples above). If you wish to use another of Zotero’s CSL styles, you will need to change the style via the &lt;code&gt;z:settings&lt;/code&gt; command. Since &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; now exports BibTeX and RTF-Scan cite keys, even users who prefer to write in [MultiMarkdown](http://fletcherpenney.net/multimarkdown/ “MultiMarkdown - fletcherpenney.net”) and convert to [LaTeX](http://www.latex-project.org/ “LaTeX – A document preparation system”) can utilize &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: These features will also require that you have the proper Zotero API data in the &lt;code&gt;settings.json&lt;/code&gt; file. For instructions on setting this up, see above.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;There is also the Caching function. All of the query scripts are querying a JSON cache of your Zotero database. This file is created and then updated with the keyword &lt;code&gt;z:cache&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="z:cache caching command" src="../../images/projects/zotquery/zq_cache_init-3.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;This function will find your Zotero sqlite database, read its contents, and create a JSON cache of the pertinent information.&lt;/p&gt;
-
-&lt;p&gt;When you first download the workflow, the configurator will run this command in order to create the cache that all of the query scripts will read. You will always be able to update the cache with this command as well, although the workflow is configured to auto-update the cache after every query execution; that is, after you do any action on an item (open, reference, citation, append). This means that after you perform an action on an item, the workflow will check if the cache needs updating and if so, the workflow will update it in the background.&lt;/p&gt;
-
-&lt;p&gt;Note, however, that if you have altered your Zotero data and are about to use &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;, you will need to force an update using &lt;code&gt;z:cache&lt;/code&gt; before any of the queries have access to the new information. As a general rule of thumb, I will force update the cache each time I sit down to a lot of work with &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;, but will let it auto-update most of the time.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id="additional-features"&gt;ADDITIONAL FEATURES&lt;/h3&gt;
-
-&lt;p&gt;Aside from the core features, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; comes with some additional features. First, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; comes with the ability to set up a keyboard shortcut to launch the title-specific search. I use &lt;code&gt;command+shift+Z&lt;/code&gt; as my hotkey. If you setup the hotkey, you can launch immediately into the title search (with a snazzy interface):&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="auto title search" src="../../images/projects/zotquery/zq_hotkey_search-2.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;You can also change this hotkey to launch whichever query you like.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; also has the ability to be an option in your Alfred fallback searches. In order to setup &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; as a fallback search option, open Alfred’s preferences and go to the &lt;code&gt;Features&lt;/code&gt; tab. Near the bottom of the page you will see a button to &lt;code&gt;Setup fallback results&lt;/code&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="add fallback search in preferences pt. 1" src="../../images/projects/zotquery/zq_fallback_setup-2.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;When you click that button a panel will slide out of top:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="add fallback search in preferences pt. 2" src="../../images/projects/zotquery/zq_fallback-3.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Click the &lt;code&gt;+&lt;/code&gt; button and select &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; from the &lt;code&gt;Workflow Trigger&lt;/code&gt; list. You can even re-order the fallback searches, and put &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; near the top. When setup, this will allow you to search in Alfred like this:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="add fallback search in preferences pt. 3" src="../../images/projects/zotquery/zq_fallback_search-2.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;And have it immediately become a &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; search.&lt;/p&gt;
-
-&lt;p&gt;It’s also possible to manually determine what &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; will use to search for the various query types. &lt;strong&gt;NOTE:&lt;/strong&gt; This is probably a &lt;em&gt;power-user&lt;/em&gt; feature and not for those who don’t know their way around JSON.&lt;/p&gt;
-
-&lt;p&gt;In order to alter the search scope for any query type, you will need to find and open the &lt;code&gt;zot_filters.json&lt;/code&gt; file in &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;’s storage folder (&lt;code&gt;z:bug&lt;/code&gt; -&amp;gt; &lt;code&gt;Storage&lt;/code&gt; to open that folder). If you edit this file, it changes what &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; looks at for the various filters. The file is (obviously) in JSON format. The keys are the various types of filters (&lt;code&gt;general&lt;/code&gt;, &lt;code&gt;titles&lt;/code&gt;, &lt;code&gt;in-collection&lt;/code&gt;, etc). For each key, there is a list of items that it will search. This items are themselves lists with two items (except for &lt;code&gt;notes&lt;/code&gt;, which is only one item). To remove an item, be sure to remove its entirety:&lt;/p&gt;
-
-&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2
-3
-4&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;[
-"data",
-"title"
-],
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;You could also use a scripting language to read the JSON, manipulate the dictionary, then overwrite the file with new JSON.&lt;/p&gt;
-
-&lt;p&gt;Another “power-user” feature allows users to limit the overall scope of &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; to only their personal library. Since &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; now indexes and caches any Group Libraries that you may be a part of, these items are searchable from &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;. However, it is occasionally the case that user’s don’t want to search these items, but only their own personal items. In order to restrict &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;’s scope to &lt;em&gt;only&lt;/em&gt; your personal library, you only need to change a few things.&lt;/p&gt;
-
-&lt;p&gt;If you open Alfred and &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;, and you open the Run Script action connected to &lt;code&gt;z:cache&lt;/code&gt; you will find this:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;python zotquery.py --cache True False&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;These three arguments tell zotquery to use the caching object (&lt;code&gt;--cache&lt;/code&gt;), to force a cache update (&lt;code&gt;True&lt;/code&gt;) and to not limit the scope to only the user’s personal library (&lt;code&gt;False&lt;/code&gt;). As detailed in the description at the top of &lt;code&gt;zotquery.py&lt;/code&gt;, the last argument is a Boolean value for whether or not to limit the scope of the cache to the user’s personal library. By default, it is set to &lt;code&gt;False&lt;/code&gt;, which means that group libraries are included in &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;’s cache. If you change this to &lt;code&gt;True&lt;/code&gt;, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; will only cache your personal library, and thus will only search your personal library.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; also has a cache updater that runs each time you perform an action. This is the Run Script action beneath the “Citation Copied!” notification for each filter type. If you open this Run Script action you will see:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;python zotquery.py --cache False False&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;This will check to see if the cache needs updating (thus the &lt;code&gt;False&lt;/code&gt; force argument), and will include all libraries. To exclude group libraries, change each of these Run Script actions to:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;python zotquery.py --cache False True&lt;/code&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;So that’s how you use &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;. It’s a powerful tool. I hope you like it.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Wikify</title>
-    <link rel="alternate" href="http://blog.url.com/projects/wikify/"/>
-    <id>http://blog.url.com/projects/wikify/</id>
-    <published>2015-05-26T20:00:00-04:00</published>
-    <updated>2016-12-02T22:19:06-05:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;h4 id="version-26"&gt;Version 2.6&lt;/h4&gt;
-
-&lt;h4 id="download-on-packalhttpwwwpackalorgworkflowwikify"&gt;Download on &lt;a href="http://www.packal.org/workflow/wikify"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; is a workflow to add some great &lt;a href="http://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; and wiki goodness to &lt;a href="https://www.evernote.com/"&gt;Evernote&lt;/a&gt;. In this post, I want to lay out all of the functionality and how to take advantage of it.&lt;/p&gt;
-
-&lt;h3 id="markdown-functionality"&gt;Markdown Functionality&lt;/h3&gt;
-
-&lt;p&gt;One half of &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt;’s functionality concerns integrating Markdown and Evernote. Essentially, this means being able to send Markdown text to Evernote as HTML &lt;em&gt;and&lt;/em&gt; being able to export an Evernote note to a Markdown text file.&lt;/p&gt;
-
-&lt;p&gt;In order to export an Evernote note to a Markdown text file, you can use the &lt;code&gt;enmd&lt;/code&gt; keyword from Alfred. &lt;code&gt;enmd&lt;/code&gt; stands for “Evernote to Markdown”, and this command will take your currently selected Evernote note and create a Markdown formatted text file which will immediately be opened in your default text editor. In addition, &lt;code&gt;enmd&lt;/code&gt; will fill in the note’s title, notebook, and tags as metadata at the top of the file (this will make it a snap to edit the note and send it back to Evernote using the &lt;code&gt;mden&lt;/code&gt; command, which I will talk about next). The workflow also comes with the ability to bind a keyboard shortcut to this function (I use &lt;code&gt;cmd + shift + 9&lt;/code&gt;). No fuss, no hassle, no wait. Export your Evernote note into Markdown in a flash.&lt;/p&gt;
-
-&lt;p&gt;But what about getting data &lt;em&gt;into&lt;/em&gt; Evernote? &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; will also allow you to write notes in Markdown in your text editor of choice and then send that text to Evernote, where it will be formatted and displayed in proper HTML. Now, this function has a bit of quirks to it, so let me elaborate. You can launch this function in one of two ways:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;the &lt;code&gt;mden&lt;/code&gt; keyword in Alfred&lt;/li&gt;
-  &lt;li&gt;setup a keyboard shortcut&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The keyboard shortcut will actually allow you simply to select your text (&lt;code&gt;cmd + a&lt;/code&gt; for “Select All”) and then press the shortcut to run the script. Alternatively, you can select the text, &lt;em&gt;copy it to the clipboard&lt;/em&gt;, and then pop up Alfred and use the &lt;code&gt;mden&lt;/code&gt; command (this is, obviously, short for “Markdown to Evernote”). It is important to note that if you use the &lt;code&gt;mden&lt;/code&gt; command from Alfred, your Markdown text &lt;em&gt;must&lt;/em&gt; be in the clipboard.&lt;/p&gt;
-
-&lt;p&gt;Now, how do you tell &lt;code&gt;mden&lt;/code&gt; &lt;em&gt;where&lt;/em&gt; to send your note, or what tags it should have, or what it’s title is? In order to assign Note Title, Notebook, and Tags, you can use simple &lt;a href="http://fletcherpenney.net/multimarkdown/"&gt;MultiMarkdown Headers&lt;/a&gt;, or simple symbols which are placed at the top of the document:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;Title:&lt;/code&gt; or &lt;code&gt;#&lt;/code&gt; for the note’s title&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;Notebook:&lt;/code&gt; or &lt;code&gt;=&lt;/code&gt; for the note’s notebook destination&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;Tags:&lt;/code&gt; or &lt;code&gt;@&lt;/code&gt; for the note’s tags&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;So, the top of your Markdown text note might look something like this:&lt;/p&gt;
-
-&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2
-3&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;# Text Note Title
-= My Default Notebook
-@ tag1, tag2, tag3
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;But, that’s not all that &lt;code&gt;mden&lt;/code&gt; can do. I’ve added a few extras to its capabilities. In addition to converting Markdown to text to HTML and sending that to Evernote, &lt;code&gt;mden&lt;/code&gt; has three other pretty cool features:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;document-specific text snippets (use &lt;code&gt;^^^snippet^^^&lt;/code&gt; syntax)&lt;/li&gt;
-  &lt;li&gt;auto-linking to pre-existing Evernote notes (no special syntax)&lt;/li&gt;
-  &lt;li&gt;auto-linking to new Evernote notes (use &lt;code&gt;[[double bracket]]&lt;/code&gt; syntax)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;First, let me explain document-specific text snippets. This feature was inspired recently as I was taking notes in class. In-class note-taking is a bit unique, since you won’t exactly know what words will be used repeatedly before the class begins. I’m all about &lt;a href="http://smilesoftware.com/TextExpander/"&gt;TextExpander&lt;/a&gt;, but I can’t set up snippets if I don’t know what will be the key words for that class. Plus, I don’t want to clutter my TextExpander library with these one-off snippets. So, document-specific text snippets was born. The idea is to use snippets in your notes as you type, and then define the &lt;code&gt;snippet:expanded text&lt;/code&gt; relationship before you use &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; to send the notes to Evernote. The syntax is dead-simple. Simply wrap your “snippet dictionary” in triple carets (&lt;code&gt;^^^snippet:expanded text^^^&lt;/code&gt;). You can have one-off “dictionaries” or you can make one long dictionary at the end of your document. The only things you need to remember are:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;ALWAYS use ,, as your in-text prefix (you &lt;em&gt;can&lt;/em&gt; change this in the code)&lt;/li&gt;
-  &lt;li&gt;if its a one-off (only one snippet), the “dictionary” needs to exist on its own line&lt;/li&gt;
-  &lt;li&gt;if its a multi-snippet “dictionary”, use the triple carets like fenced code blocks&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;To ensure these few easy syntax rules makes sense, here’s an example:&lt;/p&gt;
-
-&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2
-3
-4
-5
-6
-7
-8
-9&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;,,p are separated by a blank line.
-^^^p:Paragraphs^^^
-New text.
-2nd paragraph. *,,i*, **,,b**, `,,m`.
-^^^
-i:Italics
-b:BOLD
-m:monospace
-^^^
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Thats all there is to it. Note how each snippet is prefixed by &lt;code&gt;,,&lt;/code&gt;. This ensures that both you and the processor know what text needs to be expanded, and you don’t need to have the commas in the snippet dictionary. You can mix and match single-line snippet dictionaries with multi-snippet dictionaries in the same document. You can even use non-ASCII characters in your snippets or in your expanded text. For me, this is a killer feature. I hope someone else finds it useful.&lt;/p&gt;
-
-&lt;p&gt;Next, auto-linking to pre-existing Evernote notes. This is really the feature at the heart of &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt;, because this is what allows you to “wikify” your Evernote library. The idea is really quite simple: write your note as you normally would (in this case in Markdown, but I’ll discuss later how this can work within Evernote itself), and &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; will ensure that anytime you reference &lt;em&gt;any other Evernote note&lt;/em&gt; by title, your note will have a hyperlink to that other note. Let me offer a simple example. Say I began a new note like so:&lt;/p&gt;
-
-&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2
-3
-4
-5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;# Note Title
-= Notebook
-@ tag1, tag2
-
-This is the first line of my new note on Alfred App!
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Now, if I had a note in my Evernote account entitled “Alfred App”, when I process this note to send it to Evernote, &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; will now catch that and hyperlink to that pre-existing note, so this new note would have the phrase “Alfred App” linked directly to that other Evernote note. No fuss, no hassle, no funky syntax. And (this is what was holding me back on this feature for while), this is SUPER-FAST!&lt;/p&gt;
-
-&lt;p&gt;The final feature that “wikifies” Evernote when you are sending Markdown text to Evernote is smoothly creating new spaces to fill with data later, while simultaneously creating the inter-linking between notes. &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; has you covered here as well. Let’s say as you’re typing up a new Evernote note, you realize that you are discussing an idea, topic, or person that you want to research further, but at some later date. What to do? Well, you can use the standard wiki-syntax of the &lt;code&gt;[[double brackets]]&lt;/code&gt; to mark that idea, topic, or person as something you want to create a new note for, while also linking to that new note from within your current note. To return to our sample note above, let’s say you added this:&lt;/p&gt;
-
-&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2
-3
-4
-5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;# Note Title
-= Notebook
-@ tag1, tag2
-This is the first line of my new note on Alfred App!
-I want to talk more about [[AppleScript]].
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Whenever you have &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; process this Markdown text and send it to Evernote, it will first create a new note (in the same notebook as the one specified in the meta-data) entitled “AppleScript”, then embed the Evernote hyperlink to that new note within this current note. This means that your new Evernote note will have 2 links: one to the pre-existing note “Alfred App” and one to the newly created, blank note “AppleScript”. All of this without you having to do anything but type!&lt;/p&gt;
-
-&lt;p&gt;For anyone who prefers to write in Markdown, but loves the always-there accessibility of Evernote, this can be a powerful addition to your workflow. But obviously, not everyone writes their Evernote notes in Markdown first. Most people just write their notes directly in Evernote. But what if you wanted to still “wikify” your Evernote library, to easily create these interlinked notes? Well, I’ve tried to solve that problem too.&lt;/p&gt;
-
-&lt;h3 id="wiki-functionality"&gt;Wiki Functionality&lt;/h3&gt;
-
-&lt;p&gt;While I’ve already discussed some of the wiki functionality that’s inherent in the &lt;code&gt;mden&lt;/code&gt; function, that isn’t the only way to ensure that all of your Evernote data is intelligently interlinked. I have versions of both the link to pre-existing note and link to new note capabilities detailed above that work purely within Evernote. Here’s how they work.&lt;/p&gt;
-
-&lt;p&gt;In order to interlink any of your current Evernote notes with &lt;em&gt;pre-existing&lt;/em&gt; notes, you can use the &lt;code&gt;wfy&lt;/code&gt; command from Alfred. Simply open up Evernote and select the notes you want to “wikify” (the workflow does accept multiple selections, but you shouldn’t over tax it). Once your notes are selected, pull up Alfred and use the &lt;code&gt;wfy&lt;/code&gt; (short for “wikify”) keyword. The workflow will then process each of your notes individually, auto-linking to any pre-existing other notes which it references by name. &lt;strong&gt;NOTE:&lt;/strong&gt; In order to use this feature, you will need the &lt;a href="http://www.satimage.fr/software/en/downloads_osaxen.html"&gt;Satimage OSAX Scripting Addition&lt;/a&gt;. I’ve set it up such that this is remarkably easy to install. Simply use the keyword in Alfred &lt;code&gt;wfy:install&lt;/code&gt; and the Satimage installer will boot up and walk you through the process. It really is as simple as that. The script will search your note’s content for any references to other notes’ titles. If any are found, that text will be replaced with a hyperlink to that note. Here’s a gif that shows the process in action:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="wfy command" src="../../images/projects/wikify/wfy.gif" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Next, let’s say that you are in Evernote and see a phrase or term in one of your notes that you want to research more, while creating the wiki-environment that &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; is all about. I’ve added a companion feature which will:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;take the currently selected text in the open Evernote note&lt;/li&gt;
-  &lt;li&gt;create a new note in that notebook whose title is the selected text&lt;/li&gt;
-  &lt;li&gt;embed a hyperlink back to the original note as the first line of this new note&lt;/li&gt;
-  &lt;li&gt;and replace the selected text with a hyperlink to that newly created note&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This means that you have two-way hyperlinking (which is impossible in the &lt;code&gt;mden&lt;/code&gt; version of this functionality) between your current note and your new note. Creating spaces for new thought, while retaining context and wiki-style hyperlinking has never been easier. To use this feature, you can either use a user-specified keyboard shortcut, or copy the selected text to the clipboard and run &lt;code&gt;ensel&lt;/code&gt;. Here’s another gif to illustrate:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="ensel command" src="../../images/projects/wikify/ensel.gif" /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;To sum up, &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; has 4 main commands:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;mden&lt;/code&gt; to send Markdown text to Evernote&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;enmd&lt;/code&gt; to export an Evernote note to Markdown&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;wfy&lt;/code&gt; to “wikify” the selected Evernote note&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;ensel&lt;/code&gt; to create and wikify a new Evernote note from selection&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;With these features, and all of the “sub-features” elaborated above, I truly believe that &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; could be a great help to those others out there who love Evernote, Markdown, and Wiki goodness.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Snippets</title>
-    <link rel="alternate" href="http://blog.url.com/projects/snippets/"/>
-    <id>http://blog.url.com/projects/snippets/</id>
-    <published>2015-05-26T20:00:00-04:00</published>
-    <updated>2016-12-02T22:18:59-05:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;h4 id="version-12"&gt;Version: 1.2&lt;/h4&gt;
-
-&lt;h4 id="download-on-packalhttpwwwpackalorgworkflowsnippets"&gt;Download on &lt;a href="http://www.packal.org/workflow/snippets"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
-
-&lt;p&gt;Have you ever been taking notes and realized that certain terms or phrases were going to be used repeatedly? You don’t have the time or really the desire to create all new TextExpander snippets for these terms or phrases, but you’d also really like to shorten your typing. That’s where &lt;strong&gt;&lt;code&gt;Snippets&lt;/code&gt;&lt;/strong&gt; comes in. &lt;strong&gt;&lt;code&gt;Snippets&lt;/code&gt;&lt;/strong&gt; is a dead simple Alfred workflow that allows you to use simple snippet syntax while writing, and then seamlessly convert your text to its full glory.&lt;/p&gt;
-
-&lt;p&gt;The set-up is simple. As you’re typing, and you realize you want to make a snippet, simply prepend your snippet with &lt;code&gt;,,&lt;/code&gt; (comma comma). Then, when you get a free moment, create a “snippet dictionary” to tell Snippets what that snippet means. To create the dictionary, simply wrap it in &lt;code&gt;^^^&lt;/code&gt; (triple carets). Here’s an example:&lt;/p&gt;
-
-&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2
-3
-4
-5
-6&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;This is an example of ,,sn. ,,sn is a fantastic workflow for ,,a!
-
-^^^
-sn: **`Snippets`**
-a: Alfred
-^^^
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;That’s all there is to it. Once your dictionary is complete and you have finished typing, either copy the text to the clipboard and use the keyword &lt;code&gt;snip&lt;/code&gt;, or assign a keyboard shortcut for even quicker results. When you activate &lt;strong&gt;&lt;code&gt;Snippets&lt;/code&gt;&lt;/strong&gt;, the text above will instantly become:&lt;/p&gt;
-
-&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;This is an example of **`Snippets`**. **`Snippets`** is a fantastic workflow for Alfred!
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;It’s so simple. Double-comma before the snippet; dictionary wrapped in triple-carets with snippet: expanded. Nothing more, nothing less.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="demo" src="https://raw.githubusercontent.com/smargh/alfred_snippets/master/snippets.gif" /&gt;&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -2648,6 +1804,542 @@ Lexicon Links:
 </content>
   </entry>
   <entry>
+    <title>Snippets</title>
+    <link rel="alternate" href="http://blog.url.com/projects/snippets/"/>
+    <id>http://blog.url.com/projects/snippets/</id>
+    <published>2015-05-26T20:00:00-04:00</published>
+    <updated>2016-12-02T22:18:59-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;h4 id="version-12"&gt;Version: 1.2&lt;/h4&gt;
+
+&lt;h4 id="download-on-packalhttpwwwpackalorgworkflowsnippets"&gt;Download on &lt;a href="http://www.packal.org/workflow/snippets"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;Have you ever been taking notes and realized that certain terms or phrases were going to be used repeatedly? You don’t have the time or really the desire to create all new TextExpander snippets for these terms or phrases, but you’d also really like to shorten your typing. That’s where &lt;strong&gt;&lt;code&gt;Snippets&lt;/code&gt;&lt;/strong&gt; comes in. &lt;strong&gt;&lt;code&gt;Snippets&lt;/code&gt;&lt;/strong&gt; is a dead simple Alfred workflow that allows you to use simple snippet syntax while writing, and then seamlessly convert your text to its full glory.&lt;/p&gt;
+
+&lt;p&gt;The set-up is simple. As you’re typing, and you realize you want to make a snippet, simply prepend your snippet with &lt;code&gt;,,&lt;/code&gt; (comma comma). Then, when you get a free moment, create a “snippet dictionary” to tell Snippets what that snippet means. To create the dictionary, simply wrap it in &lt;code&gt;^^^&lt;/code&gt; (triple carets). Here’s an example:&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;This is an example of ,,sn. ,,sn is a fantastic workflow for ,,a!
+
+^^^
+sn: **`Snippets`**
+a: Alfred
+^^^
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;That’s all there is to it. Once your dictionary is complete and you have finished typing, either copy the text to the clipboard and use the keyword &lt;code&gt;snip&lt;/code&gt;, or assign a keyboard shortcut for even quicker results. When you activate &lt;strong&gt;&lt;code&gt;Snippets&lt;/code&gt;&lt;/strong&gt;, the text above will instantly become:&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;This is an example of **`Snippets`**. **`Snippets`** is a fantastic workflow for Alfred!
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;It’s so simple. Double-comma before the snippet; dictionary wrapped in triple-carets with snippet: expanded. Nothing more, nothing less.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="demo" src="https://raw.githubusercontent.com/smargh/alfred_snippets/master/snippets.gif" /&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Wikify</title>
+    <link rel="alternate" href="http://blog.url.com/projects/wikify/"/>
+    <id>http://blog.url.com/projects/wikify/</id>
+    <published>2015-05-26T20:00:00-04:00</published>
+    <updated>2016-12-02T22:19:06-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;h4 id="version-26"&gt;Version 2.6&lt;/h4&gt;
+
+&lt;h4 id="download-on-packalhttpwwwpackalorgworkflowwikify"&gt;Download on &lt;a href="http://www.packal.org/workflow/wikify"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; is a workflow to add some great &lt;a href="http://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; and wiki goodness to &lt;a href="https://www.evernote.com/"&gt;Evernote&lt;/a&gt;. In this post, I want to lay out all of the functionality and how to take advantage of it.&lt;/p&gt;
+
+&lt;h3 id="markdown-functionality"&gt;Markdown Functionality&lt;/h3&gt;
+
+&lt;p&gt;One half of &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt;’s functionality concerns integrating Markdown and Evernote. Essentially, this means being able to send Markdown text to Evernote as HTML &lt;em&gt;and&lt;/em&gt; being able to export an Evernote note to a Markdown text file.&lt;/p&gt;
+
+&lt;p&gt;In order to export an Evernote note to a Markdown text file, you can use the &lt;code&gt;enmd&lt;/code&gt; keyword from Alfred. &lt;code&gt;enmd&lt;/code&gt; stands for “Evernote to Markdown”, and this command will take your currently selected Evernote note and create a Markdown formatted text file which will immediately be opened in your default text editor. In addition, &lt;code&gt;enmd&lt;/code&gt; will fill in the note’s title, notebook, and tags as metadata at the top of the file (this will make it a snap to edit the note and send it back to Evernote using the &lt;code&gt;mden&lt;/code&gt; command, which I will talk about next). The workflow also comes with the ability to bind a keyboard shortcut to this function (I use &lt;code&gt;cmd + shift + 9&lt;/code&gt;). No fuss, no hassle, no wait. Export your Evernote note into Markdown in a flash.&lt;/p&gt;
+
+&lt;p&gt;But what about getting data &lt;em&gt;into&lt;/em&gt; Evernote? &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; will also allow you to write notes in Markdown in your text editor of choice and then send that text to Evernote, where it will be formatted and displayed in proper HTML. Now, this function has a bit of quirks to it, so let me elaborate. You can launch this function in one of two ways:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the &lt;code&gt;mden&lt;/code&gt; keyword in Alfred&lt;/li&gt;
+  &lt;li&gt;setup a keyboard shortcut&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The keyboard shortcut will actually allow you simply to select your text (&lt;code&gt;cmd + a&lt;/code&gt; for “Select All”) and then press the shortcut to run the script. Alternatively, you can select the text, &lt;em&gt;copy it to the clipboard&lt;/em&gt;, and then pop up Alfred and use the &lt;code&gt;mden&lt;/code&gt; command (this is, obviously, short for “Markdown to Evernote”). It is important to note that if you use the &lt;code&gt;mden&lt;/code&gt; command from Alfred, your Markdown text &lt;em&gt;must&lt;/em&gt; be in the clipboard.&lt;/p&gt;
+
+&lt;p&gt;Now, how do you tell &lt;code&gt;mden&lt;/code&gt; &lt;em&gt;where&lt;/em&gt; to send your note, or what tags it should have, or what it’s title is? In order to assign Note Title, Notebook, and Tags, you can use simple &lt;a href="http://fletcherpenney.net/multimarkdown/"&gt;MultiMarkdown Headers&lt;/a&gt;, or simple symbols which are placed at the top of the document:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;Title:&lt;/code&gt; or &lt;code&gt;#&lt;/code&gt; for the note’s title&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;Notebook:&lt;/code&gt; or &lt;code&gt;=&lt;/code&gt; for the note’s notebook destination&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;Tags:&lt;/code&gt; or &lt;code&gt;@&lt;/code&gt; for the note’s tags&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So, the top of your Markdown text note might look something like this:&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;# Text Note Title
+= My Default Notebook
+@ tag1, tag2, tag3
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;But, that’s not all that &lt;code&gt;mden&lt;/code&gt; can do. I’ve added a few extras to its capabilities. In addition to converting Markdown to text to HTML and sending that to Evernote, &lt;code&gt;mden&lt;/code&gt; has three other pretty cool features:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;document-specific text snippets (use &lt;code&gt;^^^snippet^^^&lt;/code&gt; syntax)&lt;/li&gt;
+  &lt;li&gt;auto-linking to pre-existing Evernote notes (no special syntax)&lt;/li&gt;
+  &lt;li&gt;auto-linking to new Evernote notes (use &lt;code&gt;[[double bracket]]&lt;/code&gt; syntax)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;First, let me explain document-specific text snippets. This feature was inspired recently as I was taking notes in class. In-class note-taking is a bit unique, since you won’t exactly know what words will be used repeatedly before the class begins. I’m all about &lt;a href="http://smilesoftware.com/TextExpander/"&gt;TextExpander&lt;/a&gt;, but I can’t set up snippets if I don’t know what will be the key words for that class. Plus, I don’t want to clutter my TextExpander library with these one-off snippets. So, document-specific text snippets was born. The idea is to use snippets in your notes as you type, and then define the &lt;code&gt;snippet:expanded text&lt;/code&gt; relationship before you use &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; to send the notes to Evernote. The syntax is dead-simple. Simply wrap your “snippet dictionary” in triple carets (&lt;code&gt;^^^snippet:expanded text^^^&lt;/code&gt;). You can have one-off “dictionaries” or you can make one long dictionary at the end of your document. The only things you need to remember are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ALWAYS use ,, as your in-text prefix (you &lt;em&gt;can&lt;/em&gt; change this in the code)&lt;/li&gt;
+  &lt;li&gt;if its a one-off (only one snippet), the “dictionary” needs to exist on its own line&lt;/li&gt;
+  &lt;li&gt;if its a multi-snippet “dictionary”, use the triple carets like fenced code blocks&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To ensure these few easy syntax rules makes sense, here’s an example:&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;,,p are separated by a blank line.
+^^^p:Paragraphs^^^
+New text.
+2nd paragraph. *,,i*, **,,b**, `,,m`.
+^^^
+i:Italics
+b:BOLD
+m:monospace
+^^^
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Thats all there is to it. Note how each snippet is prefixed by &lt;code&gt;,,&lt;/code&gt;. This ensures that both you and the processor know what text needs to be expanded, and you don’t need to have the commas in the snippet dictionary. You can mix and match single-line snippet dictionaries with multi-snippet dictionaries in the same document. You can even use non-ASCII characters in your snippets or in your expanded text. For me, this is a killer feature. I hope someone else finds it useful.&lt;/p&gt;
+
+&lt;p&gt;Next, auto-linking to pre-existing Evernote notes. This is really the feature at the heart of &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt;, because this is what allows you to “wikify” your Evernote library. The idea is really quite simple: write your note as you normally would (in this case in Markdown, but I’ll discuss later how this can work within Evernote itself), and &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; will ensure that anytime you reference &lt;em&gt;any other Evernote note&lt;/em&gt; by title, your note will have a hyperlink to that other note. Let me offer a simple example. Say I began a new note like so:&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;# Note Title
+= Notebook
+@ tag1, tag2
+
+This is the first line of my new note on Alfred App!
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now, if I had a note in my Evernote account entitled “Alfred App”, when I process this note to send it to Evernote, &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; will now catch that and hyperlink to that pre-existing note, so this new note would have the phrase “Alfred App” linked directly to that other Evernote note. No fuss, no hassle, no funky syntax. And (this is what was holding me back on this feature for while), this is SUPER-FAST!&lt;/p&gt;
+
+&lt;p&gt;The final feature that “wikifies” Evernote when you are sending Markdown text to Evernote is smoothly creating new spaces to fill with data later, while simultaneously creating the inter-linking between notes. &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; has you covered here as well. Let’s say as you’re typing up a new Evernote note, you realize that you are discussing an idea, topic, or person that you want to research further, but at some later date. What to do? Well, you can use the standard wiki-syntax of the &lt;code&gt;[[double brackets]]&lt;/code&gt; to mark that idea, topic, or person as something you want to create a new note for, while also linking to that new note from within your current note. To return to our sample note above, let’s say you added this:&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;# Note Title
+= Notebook
+@ tag1, tag2
+This is the first line of my new note on Alfred App!
+I want to talk more about [[AppleScript]].
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Whenever you have &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; process this Markdown text and send it to Evernote, it will first create a new note (in the same notebook as the one specified in the meta-data) entitled “AppleScript”, then embed the Evernote hyperlink to that new note within this current note. This means that your new Evernote note will have 2 links: one to the pre-existing note “Alfred App” and one to the newly created, blank note “AppleScript”. All of this without you having to do anything but type!&lt;/p&gt;
+
+&lt;p&gt;For anyone who prefers to write in Markdown, but loves the always-there accessibility of Evernote, this can be a powerful addition to your workflow. But obviously, not everyone writes their Evernote notes in Markdown first. Most people just write their notes directly in Evernote. But what if you wanted to still “wikify” your Evernote library, to easily create these interlinked notes? Well, I’ve tried to solve that problem too.&lt;/p&gt;
+
+&lt;h3 id="wiki-functionality"&gt;Wiki Functionality&lt;/h3&gt;
+
+&lt;p&gt;While I’ve already discussed some of the wiki functionality that’s inherent in the &lt;code&gt;mden&lt;/code&gt; function, that isn’t the only way to ensure that all of your Evernote data is intelligently interlinked. I have versions of both the link to pre-existing note and link to new note capabilities detailed above that work purely within Evernote. Here’s how they work.&lt;/p&gt;
+
+&lt;p&gt;In order to interlink any of your current Evernote notes with &lt;em&gt;pre-existing&lt;/em&gt; notes, you can use the &lt;code&gt;wfy&lt;/code&gt; command from Alfred. Simply open up Evernote and select the notes you want to “wikify” (the workflow does accept multiple selections, but you shouldn’t over tax it). Once your notes are selected, pull up Alfred and use the &lt;code&gt;wfy&lt;/code&gt; (short for “wikify”) keyword. The workflow will then process each of your notes individually, auto-linking to any pre-existing other notes which it references by name. &lt;strong&gt;NOTE:&lt;/strong&gt; In order to use this feature, you will need the &lt;a href="http://www.satimage.fr/software/en/downloads_osaxen.html"&gt;Satimage OSAX Scripting Addition&lt;/a&gt;. I’ve set it up such that this is remarkably easy to install. Simply use the keyword in Alfred &lt;code&gt;wfy:install&lt;/code&gt; and the Satimage installer will boot up and walk you through the process. It really is as simple as that. The script will search your note’s content for any references to other notes’ titles. If any are found, that text will be replaced with a hyperlink to that note. Here’s a gif that shows the process in action:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="wfy command" src="../../images/projects/wikify/wfy.gif" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Next, let’s say that you are in Evernote and see a phrase or term in one of your notes that you want to research more, while creating the wiki-environment that &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; is all about. I’ve added a companion feature which will:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;take the currently selected text in the open Evernote note&lt;/li&gt;
+  &lt;li&gt;create a new note in that notebook whose title is the selected text&lt;/li&gt;
+  &lt;li&gt;embed a hyperlink back to the original note as the first line of this new note&lt;/li&gt;
+  &lt;li&gt;and replace the selected text with a hyperlink to that newly created note&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This means that you have two-way hyperlinking (which is impossible in the &lt;code&gt;mden&lt;/code&gt; version of this functionality) between your current note and your new note. Creating spaces for new thought, while retaining context and wiki-style hyperlinking has never been easier. To use this feature, you can either use a user-specified keyboard shortcut, or copy the selected text to the clipboard and run &lt;code&gt;ensel&lt;/code&gt;. Here’s another gif to illustrate:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="ensel command" src="../../images/projects/wikify/ensel.gif" /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;To sum up, &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; has 4 main commands:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;mden&lt;/code&gt; to send Markdown text to Evernote&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;enmd&lt;/code&gt; to export an Evernote note to Markdown&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;wfy&lt;/code&gt; to “wikify” the selected Evernote note&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;ensel&lt;/code&gt; to create and wikify a new Evernote note from selection&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With these features, and all of the “sub-features” elaborated above, I truly believe that &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; could be a great help to those others out there who love Evernote, Markdown, and Wiki goodness.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>ZotQuery</title>
+    <link rel="alternate" href="http://blog.url.com/projects/zotquery/"/>
+    <id>http://blog.url.com/projects/zotquery/</id>
+    <published>2015-05-26T20:00:00-04:00</published>
+    <updated>2016-12-02T22:19:11-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;h4 id="version-85"&gt;Version 8.5&lt;/h4&gt;
+
+&lt;h4 id="download-on-packalhttppackalorgworkflowzotquery"&gt;Download on &lt;a href="http://packal.org/workflow/zotquery"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; is an Alfred workflow that grants the user access to the data stored in their &lt;a href="https://www.zotero.org"&gt;Zotero&lt;/a&gt; application.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id="requirements"&gt;REQUIREMENTS&lt;/h3&gt;
+
+&lt;p&gt;To date, it has only been tested on a Mac with both Zotero Firefox and Standalone installed. &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; should work with only Zotero Firefox or Standalone installed, but that is currently untested. If you are using the workflow successfully with either one only installed, please let me know. It has also only been tested on Alfred 2.1+. Finally, it was tested on the standard Python distribution for Mac OS X Mavericks (10.9), which is 2.7.6, and not on Python 3. Once again, if anyone is using the workflow successfully on another distribution of Python, please let me know.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id="configuration"&gt;CONFIGURATION&lt;/h3&gt;
+
+&lt;p&gt;When you first download the workflow, you will need to run &lt;code&gt;z:config&lt;/code&gt; first to configure the necessary settings before you attempt any queries. In fact, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; will kick you to the &lt;code&gt;z:config&lt;/code&gt; command if you try any of the queries without having first configured your settings.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="configuration" src="../../images/projects/zotquery/zq_config_init.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;On first run, the configurator will begin by searching for, and creating if necessary, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;’s workflow data folder, which can always be found at &lt;code&gt;/Users/$USER/Library/Application Support/Alfred 2/Workflow Data/com.hackademic.zotquery/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now, in version 5.5 and on, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; &lt;strong&gt;no longer needs to install any Python dependencies.&lt;/strong&gt; The workflow ships with all necessary components baked in. This has already removed a vast majority of the support issues.&lt;/p&gt;
+
+&lt;p&gt;The configurator next moves on to find all the necessary Zotero paths. &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; requires the full path to 3 things:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;your Zotero sqlite database&lt;/li&gt;
+  &lt;li&gt;your Zotero storage folder&lt;/li&gt;
+  &lt;li&gt;the folder that holds your linked attachments&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The configurator attempts to find all necessary paths automatically, but if it fails, it will ask you to select one manually. The title of the dialog box will alert you to what path the configurator requires:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="choosing the Zotero folder where linked attachments reside" src="../../images/projects/zotquery/zq_config_choose-folder.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once all paths are stored, the configurator moves on to set up your &lt;a href="http://www.zotero.org/support/dev/server_api/v2/start"&gt;Zotero API&lt;/a&gt; information. This workflow utilizes the Zotero API to export citations of chosen items. In order for the user to utilize these functions, they must have and set up a Zotero private key. Step one requires your Zotero User ID:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="entering Zotero user ID" src="../../images/projects/zotquery/zq_config_userid.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you do not have or do not know your Zotero User ID, click the &lt;code&gt;Where do I find my User ID?&lt;/code&gt; button. This will open Zotero’s “Feeds/API” tab, where you may need to login. Once logged in, you will see a page similar to this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="creatingnew Zotero private key" src="../../images/projects/zotquery/Zotero___Settings___Feeds_API-2.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;This shows a user who has two API keys set up, one for personal use and one for the iOS app &lt;a title="PaperShip - Manage, Annotate, and Share your Papers On The Go ..." href="http://www.papershipapp.com/"&gt;PaperShip&lt;/a&gt;. If you do not have a Personal API key, you can easily set one up by clicking the “Create new private key” link. Your User ID will be a number, probably less than 8 digits. Insert it into the text field and click &lt;code&gt;Set User ID&lt;/code&gt; (&lt;strong&gt;Note&lt;/strong&gt;: Applescript text input dialog boxes do not respond, typically, to the keyboard shortcut for paste, so you will likely need to right-click and manually paste in the ID).&lt;/p&gt;
+
+&lt;p&gt;Second, you will need to input your API Key:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="entering Zotero API key" src="../../images/projects/zotquery/zq_config_apikey-2.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Since &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; reads this &lt;code&gt;settings.json&lt;/code&gt; file whenever it attempts to connect to the Zotero API, if you don’t insert the proper data here, the “Export Citation” and “Export Reference” (see below) functions &lt;strong&gt;will not work&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Finally, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; (now in version 4.0) will also allow you to set your export style and format. Once you have entered your API information, the configurator will move to setting your export preferences:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="choosing export style and format" src="../../images/projects/zotquery/zq_prefs1.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;First, you will select the &lt;a href="http://citationstyles.org/"&gt;CSL Style&lt;/a&gt; that you wish to use. Currently &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; can export data in 5 different styles: Chicago (author-date), APA, MLA, Zotero’s own RTF-Scan format, and BibTeX. Now, in &lt;strong&gt;version 6.2&lt;/strong&gt;, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; will also allow users to export in the &lt;a href="http://zotero-odf-scan.github.io/zotero-odf-scan/"&gt;ODT-RTF Scannable Cites format&lt;/a&gt; (option not shown in image below). This will determine the format of exported citations and references.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="choosing CSL style" src="../../images/projects/zotquery/zq_prefs2-4.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Next, you will select the text formatting for exported data. &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; (in version 4.0) can export in either &lt;a href="http://daringfireball.net/projects/markdown/basics"&gt;Markdown&lt;/a&gt; or &lt;a href="http://en.wikipedia.org/wiki/Rich_Text_Format"&gt;Rich Text&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="choosing export text format" src="../../images/projects/zotquery/zq_prefs3.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;All exported text is put in your clipboard, so you can use it anywhere in any text editor. You can also alter your export preferences at any point, using the &lt;code&gt;z:settings&lt;/code&gt; command.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="z:settings command" src="../../images/projects/zotquery/zq_export_settings.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Finally, you will need to select which Zotero client you use, either &lt;a href="https://www.zotero.org/download/"&gt;Zotero Standalone&lt;/a&gt; or &lt;a href="https://www.zotero.org/download/"&gt;Zotero for Firefox&lt;/a&gt;. This will determine which app will open any items that you select.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="choosing Zotero client" src="../../images/projects/zotquery/zq_client.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once all settings and preferences are set, the configurator will finally build the JSON cache of your Zotero data. &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; will clone your Zotero database and also generate a JSON file with all pertinent information. Once cached, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; is configured.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id="functions"&gt;FUNCTIONS&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; has 5 main functions:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Search&lt;/li&gt;
+  &lt;li&gt;Cite&lt;/li&gt;
+  &lt;li&gt;Open&lt;/li&gt;
+  &lt;li&gt;Cache&lt;/li&gt;
+  &lt;li&gt;and Add&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In general, the order of operations would be: cache, search, open/cite. This means, in order to search, you need to have an up-to-date cache, and in order to cite or open an item, you will first need to search and select it.&lt;/p&gt;
+
+&lt;p&gt;Under &lt;code&gt;Search&lt;/code&gt; there are 8 options:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;General search&lt;/li&gt;
+  &lt;li&gt;Title-specific search&lt;/li&gt;
+  &lt;li&gt;Author-specific search&lt;/li&gt;
+  &lt;li&gt;Tag-specific search&lt;/li&gt;
+  &lt;li&gt;Collection-specific search&lt;/li&gt;
+  &lt;li&gt;Attachment-specific search&lt;/li&gt;
+  &lt;li&gt;Notes-specific search&lt;/li&gt;
+  &lt;li&gt;New items only&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Note that all searches coerce both the query and the data into lowercase, so you can search using lowercase queries and still get matches.&lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;General&lt;/strong&gt; search is launched by the keyword &lt;code&gt;zot&lt;/code&gt; or the short version &lt;code&gt;z&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="zot general search command" src="../../images/projects/zotquery/zq_gen_init-3.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;This will search your entire Zotero database for any use of the query provided. The search script is “loose,” that is, it searches for matches of the query “in” the data not matches that “equal” the data. This means you can search half words, words in the middle of titles, etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; will not begin searching until you have entered at least 3 characters. This ensures faster, smarter results. Until you have typed at least 3 characters, you will see this result:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="zot general search with too short query" src="../../images/projects/zotquery/Screen_Shot_2014-01-18_at_6_10_23_PM-4.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you complete your query, and the script catches up with you, you will see a list of all of your Zotero items that match the query. If your query doesn’t have any matches, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; returns an error:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="zot general search no results" src="../../images/projects/zotquery/zq_error_res-2.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;If, however, you have results, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; presents them in a ranked order:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="zot general search ranked results" src="../../images/projects/zotquery/zq_gen_search-3.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;For ease of use, the workflow provides unique icons for the various item types:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;article   &lt;img alt="article icon" src="../../images/projects/zotquery/n_article.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;book      &lt;img alt="book icon" src="../../images/projects/zotquery/n_book.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;chapter   &lt;img alt="chapter icon" src="../../images/projects/zotquery/n_book.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;conference paper &lt;img alt="conference icon" src="../../images/projects/zotquery/n_conference.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;other &lt;img alt="other icon" src="../../images/projects/zotquery/n_written.png" /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If your item has an attachment, the icon changes to signal the addition as will the subtitle field. The subtitle field will include &lt;code&gt;Attachments: n&lt;/code&gt;, where n is the number of attachments:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="item with attachments" src="../../images/projects/zotquery/zq_attachments-4.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;The altered icons each have a small plus sign in the top-right corner:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;article + attachment  &lt;img alt="article icon with attachment" src="../../images/projects/zotquery/att_article.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;book + attachment     &lt;img alt="book icon with attachment" src="../../images/projects/zotquery/att_book.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;chapter + attachment  &lt;img alt="chapter icon with attachment" src="../../images/projects/zotquery/att_chapter.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;conference paper + attachment   &lt;img alt="conference icon with attachment" src="../../images/projects/zotquery/att_conference.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;other + attachment    &lt;img alt="other icon with attachment" src="../../images/projects/zotquery/att_written.png" /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The &lt;strong&gt;Author&lt;/strong&gt; search is launched by &lt;code&gt;zot:a&lt;/code&gt; or the short version &lt;code&gt;za&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="zot:a author search command" src="../../images/projects/zotquery/zq_a_init-4.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;This search only queries the last names of the authors of your Zotero data. For example: &lt;code&gt;zot:a thomas&lt;/code&gt; will return all the items that have an author (or editor, translator, etc.) with the last name “Thomas”.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="zot:a author search results" src="../../images/projects/zotquery/zq_a_search-3.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;Title&lt;/strong&gt; search is launched by &lt;code&gt;zot:t&lt;/code&gt; or the short version &lt;code&gt;zt&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="zot:t title search command" src="../../images/projects/zotquery/zq_t_init-3.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;This search only queries the title fields of your Zotero data. For example: &lt;code&gt;zot:t virgil&lt;/code&gt; will return all of the items whose title contains the word “Virgil”.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="zot:t title search results" src="../../images/projects/zotquery/zq_t_search.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;The final two searches (Tag and Collection) are two-step searches. In step-one, you search &lt;em&gt;for&lt;/em&gt; a particular Tag or Collection; in step-two you search &lt;em&gt;within&lt;/em&gt; that particular Tag or Collection for your query.&lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;Tag&lt;/strong&gt; search is launched by &lt;code&gt;z:tag&lt;/code&gt; or the short version &lt;code&gt;ztg&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="z:tag tags search command" src="../../images/projects/zotquery/zq_tag_init.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;This allows you to search through all of your Zotero tags.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="z:tag tags search results" src="../../images/projects/zotquery/zq_tag_search.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you select a tag, Alfred will automatically initiate the &lt;code&gt;zot:tag&lt;/code&gt; search, which will search within that tag for your query. The &lt;code&gt;zot:tag&lt;/code&gt; (or &lt;code&gt;znt&lt;/code&gt;) query functions just like the general &lt;code&gt;zot&lt;/code&gt; query, except that it is limited to those items with the previously chosen tag.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="zot:tag in-tag search results" src="../../images/projects/zotquery/zq_intag_seach.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;Collection&lt;/strong&gt; search is similar. It is launched by &lt;code&gt;z:col&lt;/code&gt;, or by &lt;code&gt;zc&lt;/code&gt;, which begins a search for all of your Zotero collections.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="z:col collections search command" src="../../images/projects/zotquery/zq_col_init.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;As you type, it will filter any collections that contain the query.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="z:col collections search results" src="../../images/projects/zotquery/zq_col_search-3.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you choose a particular collection, Alfred will initiate the &lt;code&gt;zot:c&lt;/code&gt; search (also &lt;code&gt;znc&lt;/code&gt;), which will search within that particular collection.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="zot:c in-collection search results" src="../../images/projects/zotquery/zq_incol_search.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;As above, the &lt;code&gt;zot:c&lt;/code&gt; search functions just like the simple &lt;code&gt;zot&lt;/code&gt; search.&lt;/p&gt;
+
+&lt;p&gt;Finally, you can now (after version 4.1) search only items with attachments using the &lt;code&gt;z:att&lt;/code&gt; query (short version = &lt;code&gt;zat&lt;/code&gt;). This query allows you to quickly find pdfs or epubs in your Zotero library and open them in your default application. As of now, &lt;code&gt;z:att&lt;/code&gt; only allows for you to open the attached files.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="z:att attachments search results" src="../../images/projects/zotquery/zq_attachment_search.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Similarly, you can use &lt;code&gt;zot:n&lt;/code&gt; (or &lt;code&gt;zn&lt;/code&gt;) to search through the notes for any items. This can prove very helpful for people who use Zotero as their notes repository for all of their secondary sources.&lt;/p&gt;
+
+&lt;p&gt;Finally, the &lt;code&gt;z:new&lt;/code&gt; search will bring all of the items added to Zotero since the last cache update. This feature is there to make it easier to find items if you do one long research run, adding lots of items to Zotero before re-using &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;. Using &lt;code&gt;z:new&lt;/code&gt; you can double check exactly what’s been added.&lt;/p&gt;
+
+&lt;p&gt;Together these 8 search options provide you with various ways to find the exact item you need. Once you find that item, you have a few options with what you can do next.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Once you select an item (in all the searches except &lt;code&gt;z:att&lt;/code&gt;), there are 5 options:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open Zotero to that item.&lt;/li&gt;
+  &lt;li&gt;Export a short reference to that item.&lt;/li&gt;
+  &lt;li&gt;Export a citation of that item.&lt;/li&gt;
+  &lt;li&gt;Open the item’s attachment (if it has any).&lt;/li&gt;
+  &lt;li&gt;Append a citation of the item to a temporary bibliography&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;If you merely hit &lt;code&gt;return&lt;/code&gt; on your chosen item, option 1 will occur and Zotero will open to that item.&lt;/p&gt;
+
+&lt;p&gt;If you hit &lt;code&gt;option+return&lt;/code&gt; when you choose your item, you will export a short reference to that item.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="export reference" src="../../images/projects/zotquery/zq_gen_ref.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Depending on your style and format settings, your reference will be of various types.&lt;/p&gt;
+
+&lt;p&gt;If you hit &lt;code&gt;control+return&lt;/code&gt;, you will export a full citation of the item in your chosen format.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="export markdown citation" src="../../images/projects/zotquery/zq_gen_cite.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Next, if you hit &lt;code&gt;shift+return&lt;/code&gt;, you will open the attachment of that item.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="open attachment" src="../../images/projects/zotquery/zq_gen_open.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Finally, if you hit &lt;code&gt;fn+return&lt;/code&gt;, you will append a citation of the item to a temporary bibliography file.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="append markdown citation to bibliography" src="../../images/zq_gen_append.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;This bibliography file is stored in the workflow’s cache folder. You can add as many citations to it as you wish. This function allows you to dynamically build a Bibliography/Works Cited page. When you have put all the needed citations in the temporary file, you need only run the &lt;code&gt;z:bib&lt;/code&gt; command to export them.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="z:bib export command" src="../../images/projects/zotquery/zq_bib_init-5.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;This will take all of the citations in the temporary bibliography file, organize them in alphabetical order, and copy the result to the clipboard. A result in Markdown format will resemble this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="exported markdown citations example" src="../../images/projects/zotquery/WORKS_CITED-2.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;The temporary bibliography file is not the only way, however, to automatically generate a full Bibliography/Works Cited page. Since many Zotero users, myself included, use either Tags or Collections to organize their library into writing projects, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; also allows the user to export a full formatted bibliography (in alphabetical order) for any Tag or Collection.&lt;/p&gt;
+
+&lt;p&gt;When you are searching for a Tag or a Collection with &lt;code&gt;z:tag&lt;/code&gt; or &lt;code&gt;z:col&lt;/code&gt;, you can use &lt;code&gt;control+return&lt;/code&gt; to export a bibliography of that Tag or Collection, instead of simply searching within that Tag or Collection by hitting &lt;code&gt;return&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="export bibliography of collection" src="../../images/projects/zotquery/zq_col_bib.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Thus, if you organize the citations for particular project within a certain Collection or under a certain Tag, you can create full, formatted Works Cited pages on the fly from &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;!&lt;/p&gt;
+
+&lt;p&gt;Taken together, these export options make &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; an academic’s best friend in the writing process. You can insert in-text references, full citations, or generate entire Works Cited all from &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;. These citations, references, and bibliographies can also now be Rich Text in addition to Markdown. This allows users who write in &lt;a href="http://office.microsoft.com/en-us/word/"&gt;Microsoft Word&lt;/a&gt;, &lt;a href="http://www.apple.com/mac/pages/"&gt;Pages&lt;/a&gt;, or &lt;a href="http://literatureandlatte.com/scrivener.php"&gt;Scrivener&lt;/a&gt; to utilize &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;. You can also open Zotero directly to an item (for quick meta-data editing) or even open an item’s attachment to double check a quote.&lt;/p&gt;
+
+&lt;p&gt;There are, however, a few caveats and possible configurations. First, these final options (export reference, export citations, append citation, and generate works cited) all use Zotero’s web API, and so they require an internet connection. If you are not connected to the internet, all will fail (gracefully). Second, the workflow defaults to Chicago (author-date) style both for short references and full citations (examples above). If you wish to use another of Zotero’s CSL styles, you will need to change the style via the &lt;code&gt;z:settings&lt;/code&gt; command. Since &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; now exports BibTeX and RTF-Scan cite keys, even users who prefer to write in [MultiMarkdown](http://fletcherpenney.net/multimarkdown/ “MultiMarkdown - fletcherpenney.net”) and convert to [LaTeX](http://www.latex-project.org/ “LaTeX – A document preparation system”) can utilize &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: These features will also require that you have the proper Zotero API data in the &lt;code&gt;settings.json&lt;/code&gt; file. For instructions on setting this up, see above.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;There is also the Caching function. All of the query scripts are querying a JSON cache of your Zotero database. This file is created and then updated with the keyword &lt;code&gt;z:cache&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="z:cache caching command" src="../../images/projects/zotquery/zq_cache_init-3.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;This function will find your Zotero sqlite database, read its contents, and create a JSON cache of the pertinent information.&lt;/p&gt;
+
+&lt;p&gt;When you first download the workflow, the configurator will run this command in order to create the cache that all of the query scripts will read. You will always be able to update the cache with this command as well, although the workflow is configured to auto-update the cache after every query execution; that is, after you do any action on an item (open, reference, citation, append). This means that after you perform an action on an item, the workflow will check if the cache needs updating and if so, the workflow will update it in the background.&lt;/p&gt;
+
+&lt;p&gt;Note, however, that if you have altered your Zotero data and are about to use &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;, you will need to force an update using &lt;code&gt;z:cache&lt;/code&gt; before any of the queries have access to the new information. As a general rule of thumb, I will force update the cache each time I sit down to a lot of work with &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;, but will let it auto-update most of the time.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id="additional-features"&gt;ADDITIONAL FEATURES&lt;/h3&gt;
+
+&lt;p&gt;Aside from the core features, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; comes with some additional features. First, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; comes with the ability to set up a keyboard shortcut to launch the title-specific search. I use &lt;code&gt;command+shift+Z&lt;/code&gt; as my hotkey. If you setup the hotkey, you can launch immediately into the title search (with a snazzy interface):&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="auto title search" src="../../images/projects/zotquery/zq_hotkey_search-2.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can also change this hotkey to launch whichever query you like.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; also has the ability to be an option in your Alfred fallback searches. In order to setup &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; as a fallback search option, open Alfred’s preferences and go to the &lt;code&gt;Features&lt;/code&gt; tab. Near the bottom of the page you will see a button to &lt;code&gt;Setup fallback results&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="add fallback search in preferences pt. 1" src="../../images/projects/zotquery/zq_fallback_setup-2.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;When you click that button a panel will slide out of top:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="add fallback search in preferences pt. 2" src="../../images/projects/zotquery/zq_fallback-3.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Click the &lt;code&gt;+&lt;/code&gt; button and select &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; from the &lt;code&gt;Workflow Trigger&lt;/code&gt; list. You can even re-order the fallback searches, and put &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; near the top. When setup, this will allow you to search in Alfred like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="add fallback search in preferences pt. 3" src="../../images/projects/zotquery/zq_fallback_search-2.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;And have it immediately become a &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; search.&lt;/p&gt;
+
+&lt;p&gt;It’s also possible to manually determine what &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; will use to search for the various query types. &lt;strong&gt;NOTE:&lt;/strong&gt; This is probably a &lt;em&gt;power-user&lt;/em&gt; feature and not for those who don’t know their way around JSON.&lt;/p&gt;
+
+&lt;p&gt;In order to alter the search scope for any query type, you will need to find and open the &lt;code&gt;zot_filters.json&lt;/code&gt; file in &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;’s storage folder (&lt;code&gt;z:bug&lt;/code&gt; -&amp;gt; &lt;code&gt;Storage&lt;/code&gt; to open that folder). If you edit this file, it changes what &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; looks at for the various filters. The file is (obviously) in JSON format. The keys are the various types of filters (&lt;code&gt;general&lt;/code&gt;, &lt;code&gt;titles&lt;/code&gt;, &lt;code&gt;in-collection&lt;/code&gt;, etc). For each key, there is a list of items that it will search. This items are themselves lists with two items (except for &lt;code&gt;notes&lt;/code&gt;, which is only one item). To remove an item, be sure to remove its entirety:&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;[
+"data",
+"title"
+],
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;You could also use a scripting language to read the JSON, manipulate the dictionary, then overwrite the file with new JSON.&lt;/p&gt;
+
+&lt;p&gt;Another “power-user” feature allows users to limit the overall scope of &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; to only their personal library. Since &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; now indexes and caches any Group Libraries that you may be a part of, these items are searchable from &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;. However, it is occasionally the case that user’s don’t want to search these items, but only their own personal items. In order to restrict &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;’s scope to &lt;em&gt;only&lt;/em&gt; your personal library, you only need to change a few things.&lt;/p&gt;
+
+&lt;p&gt;If you open Alfred and &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;, and you open the Run Script action connected to &lt;code&gt;z:cache&lt;/code&gt; you will find this:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;python zotquery.py --cache True False&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;These three arguments tell zotquery to use the caching object (&lt;code&gt;--cache&lt;/code&gt;), to force a cache update (&lt;code&gt;True&lt;/code&gt;) and to not limit the scope to only the user’s personal library (&lt;code&gt;False&lt;/code&gt;). As detailed in the description at the top of &lt;code&gt;zotquery.py&lt;/code&gt;, the last argument is a Boolean value for whether or not to limit the scope of the cache to the user’s personal library. By default, it is set to &lt;code&gt;False&lt;/code&gt;, which means that group libraries are included in &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;’s cache. If you change this to &lt;code&gt;True&lt;/code&gt;, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; will only cache your personal library, and thus will only search your personal library.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; also has a cache updater that runs each time you perform an action. This is the Run Script action beneath the “Citation Copied!” notification for each filter type. If you open this Run Script action you will see:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;python zotquery.py --cache False False&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This will check to see if the cache needs updating (thus the &lt;code&gt;False&lt;/code&gt; force argument), and will include all libraries. To exclude group libraries, change each of these Run Script actions to:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;python zotquery.py --cache False True&lt;/code&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;So that’s how you use &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;. It’s a powerful tool. I hope you like it.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>A Complete PDF Annotation Workflow</title>
     <link rel="alternate" href="http://blog.url.com/articles/a-complete-pdf-annotation-workflow/"/>
     <id>http://blog.url.com/articles/a-complete-pdf-annotation-workflow/</id>
@@ -2911,76 +2603,6 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
 </content>
   </entry>
   <entry>
-    <title>Classical Studies Resources</title>
-    <link rel="alternate" href="http://blog.url.com/projects/classical-studies-resources/"/>
-    <id>http://blog.url.com/projects/classical-studies-resources/</id>
-    <published>2015-05-22T20:00:00-04:00</published>
-    <updated>2016-12-17T23:13:04-05:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;p&gt;This is a work-in-progress collection of structured data and scripts for Classical Studies/Classics.&lt;/p&gt;
-
-&lt;p&gt;The data has been compiled and organized from various online resources including:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;the &lt;a href="http://www.perseus.tufts.edu/"&gt;Perseus Project&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://dcc.dickinson.edu/"&gt;Dickenson College Commentaries&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://dge.cchs.csic.es/index.en"&gt;The Diccionario Griego-Español Project&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://www.annee-philologique.com/"&gt;L’Année philologique&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This is a work-in-progress collection of structured data and scripts for Classical Studies/Classics. The data has been compiled and organized from various online resources including the Perseus Project, Dickenson College Commentaries, The Diccionario Griego-Español Project, and L’Année philologique.&lt;/p&gt;
-
-&lt;p&gt;Currently, these are the JSON structured files:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;DCC Greek Core Vocabulary&lt;/li&gt;
-  &lt;li&gt;DCC Latin Core Vocabulary&lt;/li&gt;
-  &lt;li&gt;Greek Authors&lt;/li&gt;
-  &lt;li&gt;Greek Texts&lt;/li&gt;
-  &lt;li&gt;Latin Texts&lt;/li&gt;
-  &lt;li&gt;L’Année philologique Journal Abbreviations (in two forms)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;There are also plain text files:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;DGE Authors and Works&lt;/li&gt;
-  &lt;li&gt;DGE Dictionary Abbreviations&lt;/li&gt;
-  &lt;li&gt;Index to Smyth’s Greek Grammar&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Finally, there is a random collection of scripts (mostly compiled Applescripts) that I have made at various points for various uses. This section requires much cleaning up, refactoring, and organization at this stage. But I am putting them here for now nonetheless.&lt;/p&gt;
-
-&lt;p&gt;Hopefully, these will find some use for others.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>LibGen</title>
-    <link rel="alternate" href="http://blog.url.com/projects/libgen/"/>
-    <id>http://blog.url.com/projects/libgen/</id>
-    <published>2015-05-22T20:00:00-04:00</published>
-    <updated>2016-12-02T22:18:24-05:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;p&gt;Seach the &lt;a href="http://libgen.in/"&gt;Library Genesis&lt;/a&gt; project's catalogue of books and download right from your keyboard, without ever launching a browser.&lt;/p&gt;
-
-&lt;h4 id="version-11"&gt;Version 1.1&lt;/h4&gt;
-
-&lt;h4 id="download-from-packalhttpwwwpackalorgworkflowlibgen"&gt;Download from &lt;a href="http://www.packal.org/workflow/libgen"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
-
-&lt;p&gt;This is a relatively simple workflow that allows users to search the &lt;a href="http://gen.lib.rus.ec/"&gt;Library Genesis PDF repository&lt;/a&gt;. For those who do not know, the Library Genesis project is:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;based in Russia, this is the largest currently openly available collection. They have several initiatives: i. +1 million files of mainly non-fiction ebooks, ii. +900k of mainly fiction ebooks, iii. +20 million papers from journals of science, history, art etc., iv. comics, magazines and paintings; totally amounting to at least 30 TB – easily the Library of Congress of the digital world. The Libgen movement mainly focusses on downloading whole collections that have already been posted in fora or as torrents, although a significant portion is also due to individual efforts. (per &lt;a href="https://sites.google.com/site/themetalibrary/library-genesis"&gt;Google Sites&lt;/a&gt;)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;This workflow has only one keyword and one action. Use the keyword &lt;code&gt;libgen&lt;/code&gt; to begin a search. Select an item and press &lt;code&gt;Return&lt;/code&gt; to begin a download of the file in your browser of choice. The only real oddity of this workflow is that it requires the user to type a period (&lt;code&gt;.&lt;/code&gt;) after the query in order to initiate the search. This helps with performance.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>Metadata</title>
     <link rel="alternate" href="http://blog.url.com/projects/metadata/"/>
     <id>http://blog.url.com/projects/metadata/</id>
@@ -3225,6 +2847,97 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
 </content>
   </entry>
   <entry>
+    <title>Spritzr</title>
+    <link rel="alternate" href="http://blog.url.com/projects/spritzr/"/>
+    <id>http://blog.url.com/projects/spritzr/</id>
+    <published>2015-05-22T20:00:00-04:00</published>
+    <updated>2016-12-02T22:19:03-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;h4 id="version-11"&gt;Version 1.1&lt;/h4&gt;
+
+&lt;h4 id="download-on-packalhttpwwwpackalorgworkflowspritzr"&gt;Download on &lt;a href="http://www.packal.org/workflow/spritzr"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;Spritzr is a relatively simple workflow that allows you to speed-read text on your Mac using &lt;a href="http://www.spritzinc.com/the-science/"&gt;Spritz-style&lt;/a&gt; techniques. The simple idea is that one word of your input text is displayed at a time in quick enough succession that you are no longer &lt;a href="http://en.wikipedia.org/wiki/Subvocalization"&gt;Sub-Vocalizing&lt;/a&gt;, which is the largest impediment to reading at a comfortable, yet swift pace. The added layer of nuance, however, is that each word is positioned around the so-called &lt;a href="http://www.spritzinc.com/blog/"&gt;Optimal Reading Position&lt;/a&gt;. To borrow an image from the Spritz website, the difference between most electronic speedreaders and Spritz-style speedreaders is the alignment of the words:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="word_positioning_blog3.png" src="http://www.spritzinc.com/wp-content/uploads/2014/02/word_positioning_blog3.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;This workflow achieves a similar affect, thus making reading simpler and faster.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTICE&lt;/strong&gt;: I wrote all of this software from scratch and have no affiliation with the Spritz company. I was inspired by other open-source projects that attempt to mirror the Spritz functionality: &lt;a href="https://github.com/Miserlou/OpenSpritz"&gt;OpenSpritz&lt;/a&gt; and &lt;a href="https://github.com/littleq0903/spritz-cmd"&gt;spritz-cmd&lt;/a&gt;, but this software has no relation to Spritz aside from appearances.&lt;/p&gt;
+
+&lt;p&gt;Spritzr currently only has one command: &lt;code&gt;spritz&lt;/code&gt;. This takes text input which will be parsed and displayed in the Spritzr window.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="spritzr.png" src="https://www.evernote.com/shard/s41/sh/288af1c4-bed2-4dfc-ab5f-391ee6c39b32/606b76b31d8c6fbbb4558f38d505cfe5/deep/0/spritzr.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Alternatively, you can pass text files (&lt;code&gt;.txt&lt;/code&gt;, &lt;code&gt;.md&lt;/code&gt;, &lt;code&gt;.mmd&lt;/code&gt;) into Spritzr using the File Action &lt;code&gt;File Spritzr&lt;/code&gt;. This will parse and display the text content of that file in the Spritzr window.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="spritzr_file.png" src="https://www.evernote.com/shard/s41/sh/0da5e015-ca7c-461a-bdb4-675b69ae26ea/15682e931bf8c6daf2fcad14f9b200eb/deep/0/spritzr_file.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;There are two settings, which can be changed using the &lt;code&gt;spritzr:set&lt;/code&gt; keyword:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Words per Minute&lt;/li&gt;
+  &lt;li&gt;Reading Mode&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you which to change your wpm, simply invoke &lt;code&gt;spritzr:set&lt;/code&gt; and input an integer (the default is 250). If you which to change the reading mode, invoke &lt;code&gt;spritzr:set&lt;/code&gt; and input either &lt;code&gt;dark&lt;/code&gt; or &lt;code&gt;light&lt;/code&gt; (the default is &lt;code&gt;light&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Dark Mode: &lt;img alt="spritzr_dark.png" src="https://www.evernote.com/shard/s41/sh/a620b423-7a24-49b8-86e1-6a6088304b0b/5605e456e9e00a944a2d52609b360222/deep/0/spritzr_dark.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Light Mode: &lt;img alt="spritzr_light.png" src="https://www.evernote.com/shard/s41/sh/95a765b1-b622-4a27-911e-5b7d2e6b5a40/f3b77ee67f52cd3afa44dec5656ee4dc/deep/0/spritzr_light.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Other than that, you can just start spritzing!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Classical Studies Resources</title>
+    <link rel="alternate" href="http://blog.url.com/projects/classical-studies-resources/"/>
+    <id>http://blog.url.com/projects/classical-studies-resources/</id>
+    <published>2015-05-22T20:00:00-04:00</published>
+    <updated>2016-12-17T23:13:04-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;p&gt;This is a work-in-progress collection of structured data and scripts for Classical Studies/Classics.&lt;/p&gt;
+
+&lt;p&gt;The data has been compiled and organized from various online resources including:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the &lt;a href="http://www.perseus.tufts.edu/"&gt;Perseus Project&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://dcc.dickinson.edu/"&gt;Dickenson College Commentaries&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://dge.cchs.csic.es/index.en"&gt;The Diccionario Griego-Español Project&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://www.annee-philologique.com/"&gt;L’Année philologique&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This is a work-in-progress collection of structured data and scripts for Classical Studies/Classics. The data has been compiled and organized from various online resources including the Perseus Project, Dickenson College Commentaries, The Diccionario Griego-Español Project, and L’Année philologique.&lt;/p&gt;
+
+&lt;p&gt;Currently, these are the JSON structured files:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;DCC Greek Core Vocabulary&lt;/li&gt;
+  &lt;li&gt;DCC Latin Core Vocabulary&lt;/li&gt;
+  &lt;li&gt;Greek Authors&lt;/li&gt;
+  &lt;li&gt;Greek Texts&lt;/li&gt;
+  &lt;li&gt;Latin Texts&lt;/li&gt;
+  &lt;li&gt;L’Année philologique Journal Abbreviations (in two forms)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are also plain text files:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;DGE Authors and Works&lt;/li&gt;
+  &lt;li&gt;DGE Dictionary Abbreviations&lt;/li&gt;
+  &lt;li&gt;Index to Smyth’s Greek Grammar&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Finally, there is a random collection of scripts (mostly compiled Applescripts) that I have made at various points for various uses. This section requires much cleaning up, refactoring, and organization at this stage. But I am putting them here for now nonetheless.&lt;/p&gt;
+
+&lt;p&gt;Hopefully, these will find some use for others.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Reboot</title>
     <link rel="alternate" href="http://blog.url.com/projects/reboot/"/>
     <id>http://blog.url.com/projects/reboot/</id>
@@ -3272,51 +2985,6 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
 </content>
   </entry>
   <entry>
-    <title>Spritzr</title>
-    <link rel="alternate" href="http://blog.url.com/projects/spritzr/"/>
-    <id>http://blog.url.com/projects/spritzr/</id>
-    <published>2015-05-22T20:00:00-04:00</published>
-    <updated>2016-12-02T22:19:03-05:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;h4 id="version-11"&gt;Version 1.1&lt;/h4&gt;
-
-&lt;h4 id="download-on-packalhttpwwwpackalorgworkflowspritzr"&gt;Download on &lt;a href="http://www.packal.org/workflow/spritzr"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
-
-&lt;p&gt;Spritzr is a relatively simple workflow that allows you to speed-read text on your Mac using &lt;a href="http://www.spritzinc.com/the-science/"&gt;Spritz-style&lt;/a&gt; techniques. The simple idea is that one word of your input text is displayed at a time in quick enough succession that you are no longer &lt;a href="http://en.wikipedia.org/wiki/Subvocalization"&gt;Sub-Vocalizing&lt;/a&gt;, which is the largest impediment to reading at a comfortable, yet swift pace. The added layer of nuance, however, is that each word is positioned around the so-called &lt;a href="http://www.spritzinc.com/blog/"&gt;Optimal Reading Position&lt;/a&gt;. To borrow an image from the Spritz website, the difference between most electronic speedreaders and Spritz-style speedreaders is the alignment of the words:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="word_positioning_blog3.png" src="http://www.spritzinc.com/wp-content/uploads/2014/02/word_positioning_blog3.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;This workflow achieves a similar affect, thus making reading simpler and faster.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;NOTICE&lt;/strong&gt;: I wrote all of this software from scratch and have no affiliation with the Spritz company. I was inspired by other open-source projects that attempt to mirror the Spritz functionality: &lt;a href="https://github.com/Miserlou/OpenSpritz"&gt;OpenSpritz&lt;/a&gt; and &lt;a href="https://github.com/littleq0903/spritz-cmd"&gt;spritz-cmd&lt;/a&gt;, but this software has no relation to Spritz aside from appearances.&lt;/p&gt;
-
-&lt;p&gt;Spritzr currently only has one command: &lt;code&gt;spritz&lt;/code&gt;. This takes text input which will be parsed and displayed in the Spritzr window.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="spritzr.png" src="https://www.evernote.com/shard/s41/sh/288af1c4-bed2-4dfc-ab5f-391ee6c39b32/606b76b31d8c6fbbb4558f38d505cfe5/deep/0/spritzr.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Alternatively, you can pass text files (&lt;code&gt;.txt&lt;/code&gt;, &lt;code&gt;.md&lt;/code&gt;, &lt;code&gt;.mmd&lt;/code&gt;) into Spritzr using the File Action &lt;code&gt;File Spritzr&lt;/code&gt;. This will parse and display the text content of that file in the Spritzr window.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="spritzr_file.png" src="https://www.evernote.com/shard/s41/sh/0da5e015-ca7c-461a-bdb4-675b69ae26ea/15682e931bf8c6daf2fcad14f9b200eb/deep/0/spritzr_file.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;There are two settings, which can be changed using the &lt;code&gt;spritzr:set&lt;/code&gt; keyword:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Words per Minute&lt;/li&gt;
-  &lt;li&gt;Reading Mode&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;If you which to change your wpm, simply invoke &lt;code&gt;spritzr:set&lt;/code&gt; and input an integer (the default is 250). If you which to change the reading mode, invoke &lt;code&gt;spritzr:set&lt;/code&gt; and input either &lt;code&gt;dark&lt;/code&gt; or &lt;code&gt;light&lt;/code&gt; (the default is &lt;code&gt;light&lt;/code&gt;).&lt;/p&gt;
-
-&lt;p&gt;Dark Mode: &lt;img alt="spritzr_dark.png" src="https://www.evernote.com/shard/s41/sh/a620b423-7a24-49b8-86e1-6a6088304b0b/5605e456e9e00a944a2d52609b360222/deep/0/spritzr_dark.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Light Mode: &lt;img alt="spritzr_light.png" src="https://www.evernote.com/shard/s41/sh/95a765b1-b622-4a27-911e-5b7d2e6b5a40/f3b77ee67f52cd3afa44dec5656ee4dc/deep/0/spritzr_light.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Other than that, you can just start spritzing!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>BibQuery</title>
     <link rel="alternate" href="http://blog.url.com/projects/bibquery/"/>
     <id>http://blog.url.com/projects/bibquery/</id>
@@ -3354,6 +3022,30 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
   &lt;li&gt;you can copy a LaTeX cite command for that item (simply press &lt;code&gt;control+return&lt;/code&gt;)&lt;/li&gt;
   &lt;li&gt;you can open that item’s PDF attachment, if it has one (simply press &lt;code&gt;shift+return&lt;/code&gt;)&lt;/li&gt;
 &lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>LibGen</title>
+    <link rel="alternate" href="http://blog.url.com/projects/libgen/"/>
+    <id>http://blog.url.com/projects/libgen/</id>
+    <published>2015-05-22T20:00:00-04:00</published>
+    <updated>2016-12-02T22:18:24-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;p&gt;Seach the &lt;a href="http://libgen.in/"&gt;Library Genesis&lt;/a&gt; project's catalogue of books and download right from your keyboard, without ever launching a browser.&lt;/p&gt;
+
+&lt;h4 id="version-11"&gt;Version 1.1&lt;/h4&gt;
+
+&lt;h4 id="download-from-packalhttpwwwpackalorgworkflowlibgen"&gt;Download from &lt;a href="http://www.packal.org/workflow/libgen"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;This is a relatively simple workflow that allows users to search the &lt;a href="http://gen.lib.rus.ec/"&gt;Library Genesis PDF repository&lt;/a&gt;. For those who do not know, the Library Genesis project is:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;based in Russia, this is the largest currently openly available collection. They have several initiatives: i. +1 million files of mainly non-fiction ebooks, ii. +900k of mainly fiction ebooks, iii. +20 million papers from journals of science, history, art etc., iv. comics, magazines and paintings; totally amounting to at least 30 TB – easily the Library of Congress of the digital world. The Libgen movement mainly focusses on downloading whole collections that have already been posted in fora or as torrents, although a significant portion is also due to individual efforts. (per &lt;a href="https://sites.google.com/site/themetalibrary/library-genesis"&gt;Google Sites&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This workflow has only one keyword and one action. Use the keyword &lt;code&gt;libgen&lt;/code&gt; to begin a search. Select an item and press &lt;code&gt;Return&lt;/code&gt; to begin a download of the file in your browser of choice. The only real oddity of this workflow is that it requires the user to type a period (&lt;code&gt;.&lt;/code&gt;) after the query in order to initiate the search. This helps with performance.&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -3401,6 +3093,105 @@ Then check the box telling Marked to use this by default. The &lt;code&gt;pandoc
 </content>
   </entry>
   <entry>
+    <title>Plato’s Fractal Line</title>
+    <link rel="alternate" href="http://blog.url.com/essays/platos-fractal-line/"/>
+    <id>http://blog.url.com/essays/platos-fractal-line/</id>
+    <published>2014-10-13T20:00:00-04:00</published>
+    <updated>2017-03-04T21:36:44-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html"></content>
+  </entry>
+  <entry>
+    <title>Aristotle on Secondary Substance</title>
+    <link rel="alternate" href="http://blog.url.com/essays/aristotle-on-secondary-substances/"/>
+    <id>http://blog.url.com/essays/aristotle-on-secondary-substances/</id>
+    <published>2014-07-02T20:00:00-04:00</published>
+    <updated>2017-03-04T21:39:32-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html"></content>
+  </entry>
+  <entry>
+    <title>Aemulatio and Epicurean Semiosis at *Georgics* 1.415-23</title>
+    <link rel="alternate" href="http://blog.url.com/essays/aemulatio-and-epicurian-semiosis-at-georgics-1-415-23/"/>
+    <id>http://blog.url.com/essays/aemulatio-and-epicurian-semiosis-at-georgics-1-415-23/</id>
+    <published>2013-05-06T20:00:00-04:00</published>
+    <updated>2017-03-04T21:36:33-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html"></content>
+  </entry>
+  <entry>
+    <title>*Airs, Waters, Places* in Context</title>
+    <link rel="alternate" href="http://blog.url.com/essays/theory-and-the-language-of-proof-in-awp/"/>
+    <id>http://blog.url.com/essays/theory-and-the-language-of-proof-in-awp/</id>
+    <published>2013-04-30T20:00:00-04:00</published>
+    <updated>2017-03-04T21:51:12-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html"></content>
+  </entry>
+  <entry>
+    <title>What Epicurean Friendship is Not</title>
+    <link rel="alternate" href="http://blog.url.com/essays/what-epicurean-friendship-is-not/"/>
+    <id>http://blog.url.com/essays/what-epicurean-friendship-is-not/</id>
+    <published>2013-04-25T20:00:00-04:00</published>
+    <updated>2017-03-04T21:49:12-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html"></content>
+  </entry>
+  <entry>
+    <title>Banking on Friendship</title>
+    <link rel="alternate" href="http://blog.url.com/essays/banking-on-friendship/"/>
+    <id>http://blog.url.com/essays/banking-on-friendship/</id>
+    <published>2013-01-03T19:00:00-05:00</published>
+    <updated>2017-03-04T21:40:51-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html"></content>
+  </entry>
+  <entry>
+    <title>Saussurean Delimitation and Plato’s *Cratylus*</title>
+    <link rel="alternate" href="http://blog.url.com/essays/saussurean-delimitation-and-platos-cratylus/"/>
+    <id>http://blog.url.com/essays/saussurean-delimitation-and-platos-cratylus/</id>
+    <published>2012-10-07T20:00:00-04:00</published>
+    <updated>2017-03-04T21:46:47-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html"></content>
+  </entry>
+  <entry>
+    <title>Socrates and Reader</title>
+    <link rel="alternate" href="http://blog.url.com/essays/socrates-and-reader/"/>
+    <id>http://blog.url.com/essays/socrates-and-reader/</id>
+    <published>2012-09-06T20:00:00-04:00</published>
+    <updated>2017-03-04T21:49:55-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html"></content>
+  </entry>
+  <entry>
+    <title>Barfield Contra Lewis on Truth and Imagination</title>
+    <link rel="alternate" href="http://blog.url.com/essays/barfield-contra-lewis-on-truth-and-imagination/"/>
+    <id>http://blog.url.com/essays/barfield-contra-lewis-on-truth-and-imagination/</id>
+    <published>2012-09-06T20:00:00-04:00</published>
+    <updated>2017-03-04T21:41:48-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html"></content>
+  </entry>
+  <entry>
     <title>I have come to fret the night, the simple silence that it offers.</title>
     <link rel="alternate" href="http://blog.url.com/jots/201602142233/"/>
     <id>http://blog.url.com/jots/201602142233/</id>
@@ -3414,10 +3205,10 @@ Then check the box telling Marked to use this by default. The &lt;code&gt;pandoc
   </entry>
   <entry>
     <title>Example *Article*</title>
-    <link rel="alternate" href="http://blog.url.com/essays/example-article/"/>
-    <id>http://blog.url.com/essays/example-article/</id>
+    <link rel="alternate" href="http://blog.url.com/articles/example-article/"/>
+    <id>http://blog.url.com/articles/example-article/</id>
     <published>2011-12-31T19:00:00-05:00</published>
-    <updated>2016-12-17T23:24:31-05:00</updated>
+    <updated>2017-03-04T22:19:26-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>

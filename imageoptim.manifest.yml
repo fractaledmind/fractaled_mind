@@ -1,7 +1,12 @@
 ---
 build/images/comic.png: 2015-05-30 10:27:28.000000000 -04:00
+build/images/cube_collection_1.png: 2017-03-04 22:20:31.000000000 -05:00
+build/images/cube_collection_2.png: 2017-03-04 22:20:28.000000000 -05:00
+build/images/cube_collection_3.png: 2017-03-04 22:20:28.000000000 -05:00
 build/images/favicon.png: 2015-05-30 10:26:41.000000000 -04:00
 build/images/pair-of-ducks.png: 2015-06-19 23:26:00.000000000 -04:00
+build/images/pdf_icon.png: 2017-03-04 22:20:39.000000000 -05:00
+build/images/PDFDocument.png: 2017-03-04 22:20:28.000000000 -05:00
 build/images/projects/alfred-workflows.png: 2015-05-24 13:54:18.000000000 -04:00
 build/images/projects/wikify/ensel.gif: 2015-05-30 10:28:23.000000000 -04:00
 build/images/projects/wikify/wfy.gif: 2015-05-30 10:28:28.000000000 -04:00
@@ -70,3 +75,6 @@ build/images/projects/zotquery/zq_t_init-3.png: 2015-05-27 15:21:21.000000000 -0
 build/images/projects/zotquery/zq_t_search.png: 2015-05-27 15:21:21.000000000 -04:00
 build/images/projects/zotquery/zq_tag_init.png: 2015-05-27 15:21:21.000000000 -04:00
 build/images/projects/zotquery/zq_tag_search.png: 2015-05-27 15:21:21.000000000 -04:00
+build/images/tesseract_1.gif: 2017-03-04 22:20:29.000000000 -05:00
+build/images/tesseract_2.gif: 2017-03-04 22:20:29.000000000 -05:00
+build/images/tesseract_3.gif: 2017-03-04 22:20:28.000000000 -05:00
