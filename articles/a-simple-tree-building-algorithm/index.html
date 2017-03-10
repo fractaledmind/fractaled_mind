@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <!-- Metadata declarations -->
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Content declarations -->
+  <title>Fractaled Mind</title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="feed.xml" />
+
+  <!-- External Resources -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+  <!-- Internal Resources -->
+  <link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
+  <link href="../../images/favicon.png" rel="icon" type="image/png" />
+  <script src="../../javascripts/bigfoot.js" type="text/javascript"></script>
+  <script src="../../javascripts/search.js" type="text/javascript"></script>
+
+  <!-- Bigfoot.js Popover Footnotes -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $.bigfoot({
+        numberResetSelector: ".card",
+        activateCallback: function($popover, $button) {
+          if (MathJax && !$button.data('mathjax-processed')) {
+            var content_wrapper = $popover.find('.bigfoot-footnote__content')[0];
+            MathJax.Hub.Queue(['Typeset', MathJax.Hub, content_wrapper]);
+            MathJax.Hub.Queue(function () {
+              $button.attr('data-bigfoot-footnote', content_wrapper.innerHTML);
+              $button.data('mathjax-processed', true);
+            });
+          }
+        }
+      });
+    });
+  </script>
+
+  <!-- Responsive Tables -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("td").each(function() {
+        var $th = $(this).closest('table').find('th').eq($(this).index());
+        $(this).attr('data-th', $th.text());
+      });
+    });
+  </script>
+
+  <!-- Scroll-Fix sidebar
+  <script type="text/javascript">
+    $(window).on("scroll", function(e) {
+      var scroll = $(this).scrollTop();
+      var logo_height = $('#site-logo').height();
+      var nav_height = $('.navigation').height() + 16;
+
+      if (scroll > logo_height) {
+        $('.navigation').css({'position': 'fixed'});
+         $('#sidebar').css({
+           'position': 'fixed',
+           'top': nav_height
+         });
+      } else {
+        $('.navigation').css({'position': 'inherit'});
+        $('#sidebar').css({'position': 'inherit'});
+      }
+    });
+  </script>
+  -->
+
+</head>
+
+
+  <body>
+    <header>
+  <div id="site-logo">
+    <a href="/" class="no-hvr">
+      <img alt="Fractaled Mind" src="../../images/logo.svg" />
+    </a>
+  </div>
+
+  <ul id="social-networks">
+    <li>
+      <a href="https://facebook.com/fractaledmind" class="no-hvr">
+        <i class="fa fa-facebook fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://twitter.com/fractaledmind" class="no-hvr">
+        <i class="fa fa-twitter fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/smargh" class="no-hvr">
+        <i class="fa fa-github fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="mailto:stephen@fractaledmind.com" class="no-hvr">
+        <i class="fa fa-envelope fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="/feed.xml" class="no-hvr">
+        <i class="fa fa-rss fa-lg"></i>
+      </a>
+    </li>
+  </ul>
+</header>
+
+
+    <div class="navigation">
+  <nav role="navigation">
+    <ul class="navigation-menu">
+      <li class="nav-link"><a href="../">articles</a></li>
+      <li class="nav-link"><a href="../../projects/">projects</a></li>
+      <li class="nav-link"><a href="../../jots/">jots</a></li>
+      <li class="nav-link"><a href="../../essays/">essays</a></li>
+    </ul>
+  </nav>
+
+  <div id="search">
+    <div class="searchbar">
+      <form role="search" action="/search" method="get">
+        <input class="search-term" type="search" placeholder="Search..." name="q" />
+        <button class="search-submit" type="submit">
+          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png" alt="Search Icon">
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+    <div id="main" role="main">
+      <div class="card" id="project-page">
+
+
+    <div class="card-image">
+      <!-- if post has tags, add filler element -->
+      <!-- if post has header image, add it -->
+    </div>
+
+    <h2 id="title"><p>A Simple Tree Building Algorithm</p>
+</h2>
+
+    <hr class="fractal">
+
+    <div id="description"><p>It is, unfortunately, not that often that I get the opportunity to devise an algorithm to solve a problem at work. Most work simply doesn’t require that kind of thinking. But I thoroughly enjoy that kind of thinking, and thus thoroughly enjoyed the most recent opportunity I had to employ it. The problem was simple (though I have simplified and abstracted it for this post as well): we have a database table of <code>things</code>, and these <code>things</code> have a parent-child hierarchy, and we need to display a tree of these <code>things</code> in our UI. So, let’s dig in.</p>
+
+<p>First, let’s examine the basic shape of the database table. Each <code>thing</code> has an <em>id</em>, <em>name</em>, and <em>parent_id</em>, like so:</p>
+
+<table class="tables">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>parent_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>A</td>
+      <td>nil</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>B</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>C</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>D</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>E</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>F</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>G</td>
+      <td>nil</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Each row in the table gives us a “node” for our tree and tells us about that node’s parent. This means that we cannot know by looking at a single row whether or not that “node” will have any children, but we can know if that “node” has a parent and what other “node” that parent is. If we want to think of this data in Ruby, this would be an array of hashes:</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9</pre></td><td class="code"><pre><span class="p">[</span>
+  <span class="p">{</span><span class="ss">id: </span><span class="mi">1</span><span class="p">,</span> <span class="ss">name: </span><span class="s1">'A'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="kp">nil</span><span class="p">},</span>
+  <span class="p">{</span><span class="ss">id: </span><span class="mi">2</span><span class="p">,</span> <span class="ss">name: </span><span class="s1">'B'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="mi">1</span><span class="p">},</span>
+  <span class="p">{</span><span class="ss">id: </span><span class="mi">3</span><span class="p">,</span> <span class="ss">name: </span><span class="s1">'C'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="mi">1</span><span class="p">},</span>
+  <span class="p">{</span><span class="ss">id: </span><span class="mi">4</span><span class="p">,</span> <span class="ss">name: </span><span class="s1">'D'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="mi">2</span><span class="p">},</span>
+  <span class="p">{</span><span class="ss">id: </span><span class="mi">5</span><span class="p">,</span> <span class="ss">name: </span><span class="s1">'E'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="mi">4</span><span class="p">},</span>
+  <span class="p">{</span><span class="ss">id: </span><span class="mi">6</span><span class="p">,</span> <span class="ss">name: </span><span class="s1">'F'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="mi">3</span><span class="p">},</span>
+  <span class="p">{</span><span class="ss">id: </span><span class="mi">7</span><span class="p">,</span> <span class="ss">name: </span><span class="s1">'G'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="kp">nil</span><span class="p">}</span>
+<span class="p">]</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>That is the shape of the data that we are starting with, but what is the shape of the data that we want? We want a nested tree in the UI, so I think that is best represented in Ruby as a nested hash:</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre></td><td class="code"><pre><span class="p">{</span>
+  <span class="mi">1</span><span class="p">:</span> <span class="p">{</span>
+    <span class="ss">name: </span><span class="s1">'A'</span><span class="p">,</span>
+    <span class="ss">children: </span><span class="p">{</span>
+      <span class="mi">2</span><span class="p">:</span> <span class="p">{</span>
+        <span class="ss">name: </span><span class="s1">'B'</span><span class="p">,</span>
+        <span class="ss">children: </span><span class="p">{</span>
+          <span class="mi">4</span><span class="p">:</span> <span class="p">{</span>
+            <span class="ss">name: </span><span class="s1">'D'</span><span class="p">,</span>
+            <span class="ss">children: </span><span class="p">{</span>
+              <span class="mi">5</span><span class="p">:</span> <span class="p">{</span>
+                <span class="ss">name: </span><span class="s1">'E'</span>
+              <span class="p">}</span>
+            <span class="p">}</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="mi">3</span><span class="p">:</span> <span class="p">{</span>
+        <span class="ss">name: </span><span class="s1">'C'</span><span class="p">,</span>
+        <span class="ss">children: </span><span class="p">{</span>
+          <span class="mi">6</span><span class="p">:</span> <span class="p">{</span>
+            <span class="ss">name: </span><span class="s1">'F'</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="mi">7</span><span class="p">:</span> <span class="p">{</span>
+    <span class="ss">name: </span><span class="s1">'G'</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>We now know where we are coming from and where we are going; the only thing left to do is to get there.</p>
+
+<p>I like to start with simple facts, things that I know to be true. For example, if we are starting with an array of hashes, our solution is going to need to iterate over that array. It is also a fact that any “node” in the tree can be described as one of three things: a “root”, a “leaf”, or a “branch”. Here I may be stretching the tree metaphor a bit too far, but bear with me.</p>
+
+<ul>
+  <li>A “root” is a top level object; it has children but no parent.</li>
+  <li>A “leaf” is the exact opposite; it has a parent but no children.</li>
+  <li>A “branch”, then, is simply a node that has both a parent and children.</li>
+</ul>
+
+<p>Now, we said earlier that we cannot know by looking at a simple node whether or not it has children. This means that we cannot determine if a particular node is a “branch” or a “leaf” just by examining it. We <em>can</em>, however, determine if a particular node is a “root” or not on its own.</p>
+
+<p>A final thing that we know is that an efficient algorithm to solve this problem will only scan the initial array once. We want to iterate over that array of hashes once and build up our nested hash as we go.</p>
+
+<p>We have some basic facts before us so let’s start actually trying to write some code. We need to iterate over the array of hashes, so let’s start there:</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="c1"># `nodes` = the array of hashes</span>
+<span class="n">nodes</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">node</span><span class="o">|</span>
+  <span class="c1"># some computation</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>We also know that we want to get a hash out at the end, and that we will need to build that hash as we iterate over the array, so let’s initialize that hash as well:</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre><span class="n">tree</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="c1"># `nodes` = the array of hashes</span>
+<span class="n">nodes</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">node</span><span class="o">|</span>
+  <span class="c1"># some computation</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>We know that as we iterate over the <code>nodes</code>, we need to insert each node into the <code>tree</code>. Let’s start with a naive implementation:</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre><span class="n">tree</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="c1"># `nodes` = the array of hashes</span>
+<span class="n">nodes</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">node</span><span class="o">|</span>
+  <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="ss">:id</span><span class="p">]]</span> <span class="o">=</span> <span class="n">node</span><span class="p">.</span><span class="nf">reject</span> <span class="p">{</span> <span class="o">|</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">|</span> <span class="n">k</span> <span class="o">==</span> <span class="ss">:id</span> <span class="p">}</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>I call this “naive” not to be condescending; it is literally where I started and I think it is a healthy place to start. Iteration is at the heart of good programming, good thinking. We know where we are going but not how quite to get there, so let’s experiment and learn as we go. Here, we start to learn something important. For, while this will turn an array of hashes into a single hash, it gets us nowhere near a nested hash. If we were to run this code, we would simply get:</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9</pre></td><td class="code"><pre><span class="p">{</span>
+  <span class="mi">1</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">name: </span><span class="s1">'A'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="kp">nil</span><span class="p">},</span>
+  <span class="mi">2</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">name: </span><span class="s1">'B'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="mi">1</span><span class="p">},</span>
+  <span class="mi">3</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">name: </span><span class="s1">'C'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="mi">1</span><span class="p">},</span>
+  <span class="mi">4</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">name: </span><span class="s1">'D'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="mi">2</span><span class="p">},</span>
+  <span class="mi">5</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">name: </span><span class="s1">'E'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="mi">4</span><span class="p">},</span>
+  <span class="mi">6</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">name: </span><span class="s1">'F'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="mi">3</span><span class="p">},</span>
+  <span class="mi">7</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">name: </span><span class="s1">'G'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="kp">nil</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>Our array is now a hash, but the basic shape of the data hasn’t changed at all. Moreover, this naive approach has shown us that we really need to do something with the <code>parent_id</code> of each node as we process it. Also, I notice a key difference between our starting data and our desired output data: our starting data focuses on the “parent” of the “parent-child” relationship (via <code>parent_id</code>), while our output data focuses on the “child” (with the <code>children</code> key). Making this switch will prove to be difficult, but let’s examine why.</p>
+
+<p>We said earlier that we can tell by looking at a single node whether or not it is a “root” or not, that is, whether or not it has a parent. This means we could build the first level of our nested hash quite simply:</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre><span class="n">tree</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="c1"># `nodes` = the array of hashes</span>
+<span class="n">nodes</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">node</span><span class="o">|</span>
+  <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="ss">:id</span><span class="p">]]</span> <span class="o">=</span> <span class="n">node</span><span class="p">.</span><span class="nf">reject</span> <span class="p">{</span> <span class="o">|</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">|</span> <span class="n">k</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">include?</span> <span class="s1">'id'</span> <span class="p">}</span> <span class="k">if</span> <span class="n">node</span><span class="p">[</span><span class="ss">:parent_id</span><span class="p">]</span> <span class="o">==</span> <span class="kp">nil</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>This would produce a <code>tree</code> with this shape:</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="p">{</span>
+  <span class="mi">1</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">name: </span><span class="s2">"A"</span> <span class="p">},</span>
+  <span class="mi">7</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">name: </span><span class="s2">"G"</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>This, at least, is <em>starting</em> to look like our desired output. But what do we do about the possible children? We don’t know if either of these nodes has children just by looking at them; we only that a node is a child if it has a <code>parent_id</code>. So this switch from a parent-centric perspective to a children-centric perspective is going to be difficult. In fact, spoiler warning, if we want to get the nested hash output we described initially <strong>and</strong> only parse the array once, <em>we are screwed</em>. We are screwed because we can’t insert a node into an arbitrary place in the nested hash.</p>
+
+<p>We could create an auto-vivifying hash and insert a node arbitrarily deep in the hash:</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="n">autovivifying_tree</span> <span class="o">=</span> <span class="no">Hash</span><span class="p">.</span><span class="nf">new</span> <span class="p">{</span> <span class="o">|</span><span class="n">h</span><span class="p">,</span> <span class="n">k</span><span class="o">|</span> <span class="n">h</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="no">Hash</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="o">&amp;</span><span class="n">h</span><span class="p">.</span><span class="nf">default_proc</span><span class="p">)</span> <span class="p">}</span>
+<span class="n">autovivifying_tree</span><span class="p">.</span><span class="nf">dig</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="c1"># autovivifying_tree =&gt; {1=&gt;{2=&gt;{4=&gt;{5=&gt;{}}}}}</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>The problem here is that we have to have the path to the nested node; we need to know that nodes ancestors. But, in our data, we can only learn the ancestor paths by parsing the whole array. This data model also fails to give us the <code>name</code> of each node. So, what to do?</p>
+
+<p>At this point, I determined that the nested hash was simply going to be impossible to create by parsing the array once. Moreover, I realized that it was not necessary (or even most effective) for storing the data in the way my UI would need it. While a nested hash most directly modeled the shape of the data I needed, the directness of the model comes at the expense of efficiency and ease of use. An arbitrarily nested hash is more difficult for the UI code to parse. It would need a recursive function, which would need to check if the hash under consideration had a <code>children</code> key, and would have to traverse the whole tree without knowing the keys (a central benefit of Hashes as a data structure). Thus, while visually the closest to a “tree”, the nested hash comes with too much baggage for our implementation. So let’s go back to the drawing board for what our output data structure could and should look like.</p>
+
+<p>As I turned myself back to the problem, I thought about what kind of code I would like in my UI to generate the visual tree. I would like to efficiently navigate the entire collection of <code>things</code>, moving from the top of the hierarchy (<code>things</code> with no parent, i.e. “roots”) thru the various middle layers (the “branches”) and down to the very bottom (the “leaves”). I want this parsing to be as direct and efficient as the parsing of the database–one pass. When you want to navigate data directly and effienctly, <code>Hash</code>es are a great place to start. But, we have already discussed the difficulties with a nested hash, so let’s use a flat hash. The keys should be the <code>id</code> of the <code>thing</code>, one entry per row in the database. The values need to tell use at least two pieces of information: the <code>parent</code> and the <code>children</code> of that particular <code>thing</code>. That is, we want something that would look like this:</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td><td class="code"><pre><span class="p">{</span>
+  <span class="kp">nil</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">children: </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span> <span class="p">},</span>
+  <span class="mi">1</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">name: </span><span class="s1">'A'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="kp">nil</span><span class="p">,</span> <span class="ss">children: </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="p">},</span>
+  <span class="mi">2</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">name: </span><span class="s1">'B'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="mi">1</span><span class="p">,</span> <span class="ss">children: </span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="p">},</span>
+  <span class="mi">3</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">name: </span><span class="s1">'C'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="mi">1</span><span class="p">,</span> <span class="ss">children: </span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="p">},</span>
+  <span class="mi">4</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">name: </span><span class="s1">'D'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="mi">2</span><span class="p">,</span> <span class="ss">children: </span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="p">},</span>
+  <span class="mi">5</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">name: </span><span class="s1">'E'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="mi">4</span><span class="p">,</span> <span class="ss">children: </span><span class="p">[]</span> <span class="p">},</span>
+  <span class="mi">6</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">name: </span><span class="s1">'F'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="mi">3</span><span class="p">,</span> <span class="ss">children: </span><span class="p">[]</span> <span class="p">},</span>
+  <span class="mi">7</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">name: </span><span class="s1">'G'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="kp">nil</span><span class="p">,</span> <span class="ss">children: </span><span class="p">[]</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>We could navigate this data structure hierarchically with ease.</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16</pre></td><td class="code"><pre><span class="n">visit_children</span> <span class="o">=</span> <span class="o">-&gt;</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">tree</span><span class="p">)</span> <span class="k">do</span>
+  <span class="n">children</span> <span class="o">=</span> <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="ss">:children</span><span class="p">]</span>
+  <span class="n">content_tag</span><span class="p">(</span><span class="ss">:li</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">content_tag</span><span class="p">(</span><span class="ss">:span</span><span class="p">,</span> <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="ss">:name</span><span class="p">])</span> <span class="o">+</span>
+    <span class="p">(</span><span class="n">content_tag</span><span class="p">(</span><span class="ss">:ul</span><span class="p">)</span> <span class="k">do</span>
+      <span class="n">safe_join</span><span class="p">(</span><span class="n">children</span><span class="p">.</span><span class="nf">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">child</span><span class="o">|</span>
+        <span class="n">visit_children</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">tree</span><span class="p">)</span>
+      <span class="k">end</span><span class="p">)</span>
+    <span class="k">end</span><span class="p">)</span> <span class="k">if</span> <span class="n">children</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">roots</span> <span class="o">=</span> <span class="n">tree</span><span class="p">[</span><span class="kp">nil</span><span class="p">][</span><span class="ss">:children</span><span class="p">]</span>
+<span class="n">content_tag</span><span class="p">(</span><span class="ss">:ul</span><span class="p">)</span> <span class="k">do</span>
+  <span class="n">roots</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">root</span><span class="o">|</span> <span class="n">visit_children</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">tree</span><span class="p">)</span> <span class="p">}</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>This code would create this HTML:</p>
+
+<div class="highlight html"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></td><td class="code"><pre><span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;span&gt;</span>A<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;span&gt;</span>B<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;ul&gt;</span>
+          <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;span&gt;</span>D<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;ul&gt;</span>
+              <span class="nt">&lt;li&gt;&lt;span&gt;</span>E<span class="nt">&lt;/span&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+          <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;span&gt;</span>C<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;ul&gt;</span>
+          <span class="nt">&lt;li&gt;&lt;span&gt;</span>F<span class="nt">&lt;/span&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;span&gt;</span>G<span class="nt">&lt;/span&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>Our front-end code suggests to use that this data structure would work well for our needs. So, now all we need to do is munge our array of hashes into a hash of the structure described.</p>
+
+<p>Let’s think through what precisely we need to happen. We need to iterate over an array of hashes. For each item/node/hash in that array, we need to store a reference in the <code>tree</code>. For each node we also need to add that node to its parent reference in the <code>tree</code>. This means we need to ensure that the reference to the parent <em>already exists</em> in the <code>tree</code>; that is, imagine a scenario where we process node 2 before node 1 (the parent of node 2). We cannot add node 2 to node 1’s <code>children</code> if node 1 does not exist in the tree. This, however, should be sufficient for parsing our array of hashes into a hash of nodes to be consumed by our UI code. So, let’s start building it!</p>
+
+<p>We already know we must start with a <code>tree</code> and iterating of the <code>nodes</code>:</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="n">tree</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">nodes</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">node</span><span class="o">|</span>
+  <span class="c1"># ...</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>Now, we also need to either find or create the reference to the <code>node</code> in the <code>tree</code>:</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="n">tree</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">nodes</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">node</span><span class="o">|</span>
+  <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="ss">:id</span><span class="p">]]</span> <span class="o">||=</span> <span class="p">{}</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>The <code>||=</code> operator is what allows us to “find or create” a reference in the <code>tree</code> hash. If <code>tree[node[:id]]</code> already has a value, nothing happens; but, if it doesn’t, the value is set to the empty hash <code>{}</code>.</p>
+
+<p>But we don’t just want an empty hash for the value in the <code>tree</code>; we want to set the <code>parent_id</code> and initialize the <code>children</code> array (plus insert the <code>name</code>):</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="n">tree</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">nodes</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">node</span><span class="o">|</span>
+  <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="ss">:id</span><span class="p">]]</span> <span class="o">||=</span> <span class="p">{</span> <span class="ss">parent_id: </span><span class="n">node</span><span class="p">[</span><span class="ss">:parent_id</span><span class="p">],</span> <span class="ss">children: </span><span class="p">[],</span> <span class="ss">name: </span><span class="n">node</span><span class="p">[</span><span class="ss">:name</span><span class="p">]</span> <span class="p">}</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>If we were to process <code>nodes</code> with just this code, at the end <code>tree</code> would look like this:</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9</pre></td><td class="code"><pre><span class="p">{</span>
+  <span class="mi">1</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">parent_id: </span><span class="kp">nil</span><span class="p">,</span> <span class="ss">children: </span><span class="p">[],</span> <span class="ss">name: </span><span class="s2">"A"</span> <span class="p">},</span>
+  <span class="mi">2</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">parent_id: </span><span class="mi">1</span><span class="p">,</span> <span class="ss">children: </span><span class="p">[],</span> <span class="ss">name: </span><span class="s2">"B"</span> <span class="p">},</span>
+  <span class="mi">3</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">parent_id: </span><span class="mi">1</span><span class="p">,</span> <span class="ss">children: </span><span class="p">[],</span> <span class="ss">name: </span><span class="s2">"C"</span> <span class="p">},</span>
+  <span class="mi">4</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">parent_id: </span><span class="mi">2</span><span class="p">,</span> <span class="ss">children: </span><span class="p">[],</span> <span class="ss">name: </span><span class="s2">"D"</span> <span class="p">},</span>
+  <span class="mi">5</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">parent_id: </span><span class="mi">4</span><span class="p">,</span> <span class="ss">children: </span><span class="p">[],</span> <span class="ss">name: </span><span class="s2">"E"</span> <span class="p">},</span>
+  <span class="mi">6</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">parent_id: </span><span class="mi">3</span><span class="p">,</span> <span class="ss">children: </span><span class="p">[],</span> <span class="ss">name: </span><span class="s2">"F"</span> <span class="p">},</span>
+  <span class="mi">7</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">parent_id: </span><span class="kp">nil</span><span class="p">,</span> <span class="ss">children: </span><span class="p">[],</span> <span class="ss">name: </span><span class="s2">"G"</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>We are close. All we need to do now is fill in the <code>children</code> information. A first step would be to mimic what we do with <code>node[:id]</code> in dealing with <code>node[:parent_id]</code>, that is, “find or create” its reference in the <code>tree</code>:</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre><span class="n">tree</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">nodes</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">node</span><span class="o">|</span>
+  <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="ss">:id</span><span class="p">]]</span> <span class="o">||=</span> <span class="p">{</span> <span class="ss">parent_id: </span><span class="n">node</span><span class="p">[</span><span class="ss">:parent_id</span><span class="p">],</span> <span class="ss">children: </span><span class="p">[],</span> <span class="ss">name: </span><span class="n">node</span><span class="p">[</span><span class="ss">:name</span><span class="p">]</span> <span class="p">}</span>
+  <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="ss">:parent_id</span><span class="p">]]</span> <span class="o">||=</span> <span class="p">{</span> <span class="ss">parent_id: </span><span class="kp">nil</span><span class="p">,</span> <span class="ss">children: </span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="ss">:id</span><span class="p">]],</span> <span class="ss">name: </span><span class="kp">nil</span> <span class="p">}</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>This has a hole, however, in its logic. Every node in <code>tree</code> will only ever have the shape it was initialized with. This means that if we visit node 2 first, node 2’s <code>children</code> array will never be updated to include node 4 and node 1’s reference will never have any more <code>chilren</code> than node 2, never have a <code>name</code>, and never have a <code>parent_id</code> (the logic still holds even if, in this particular scenario, node 1’s parent is <code>nil</code>). So, we need a way to update references when we gather new information (on subsequent iterations). The first thing we must do is ensure that we set <code>parent_id</code> and <code>name</code> for every <code>node</code> as we process it, whether that node has a reference in the <code>tree</code> yet or not:</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code"><pre><span class="n">tree</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">nodes</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">node</span><span class="o">|</span>
+  <span class="n">default</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">parent_id: </span><span class="n">node</span><span class="p">[</span><span class="ss">:parent_id</span><span class="p">],</span> <span class="ss">children: </span><span class="p">[],</span> <span class="ss">name: </span><span class="n">node</span><span class="p">[</span><span class="ss">:name</span><span class="p">]</span> <span class="p">}</span>
+  <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="ss">:id</span><span class="p">]]</span> <span class="o">||=</span> <span class="n">default</span>
+  <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="ss">:id</span><span class="p">]]</span> <span class="o">=</span> <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="ss">:id</span><span class="p">]].</span><span class="nf">merge</span><span class="p">(</span><span class="n">default</span><span class="p">)</span>
+  <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="ss">:parent_id</span><span class="p">]]</span> <span class="o">||=</span> <span class="p">{</span> <span class="ss">parent_id: </span><span class="kp">nil</span><span class="p">,</span> <span class="ss">children: </span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="ss">:id</span><span class="p">]],</span> <span class="ss">name: </span><span class="kp">nil</span> <span class="p">}</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>This code ensures that <code>tree[node[:id]]</code> <em>always</em> has the proper <code>parent_id</code> and <code>name</code>. Unfortunately, however, it also obliterates any <code>children</code> value that may have been previously set. So, let’s remove <code>children</code> from our reference <code>default</code>:</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code"><pre><span class="n">tree</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">nodes</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">node</span><span class="o">|</span>
+  <span class="n">default</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">parent_id: </span><span class="n">node</span><span class="p">[</span><span class="ss">:parent_id</span><span class="p">],</span> <span class="ss">name: </span><span class="n">node</span><span class="p">[</span><span class="ss">:name</span><span class="p">]</span> <span class="p">}</span>
+  <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="ss">:id</span><span class="p">]]</span> <span class="o">||=</span> <span class="n">default</span>
+  <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="ss">:id</span><span class="p">]]</span> <span class="o">=</span> <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="ss">:id</span><span class="p">]].</span><span class="nf">merge</span><span class="p">(</span><span class="n">default</span><span class="p">)</span>
+  <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="ss">:parent_id</span><span class="p">]]</span> <span class="o">||=</span> <span class="p">{</span> <span class="ss">parent_id: </span><span class="kp">nil</span><span class="p">,</span> <span class="ss">children: </span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="ss">:id</span><span class="p">]],</span> <span class="ss">name: </span><span class="kp">nil</span> <span class="p">}</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>This now at least ensures that if I visit a parent node <em>after</em> I have visited one of its children, the parent’s <code>children</code> array will still be intact. It does not, however, ensure that the <code>children</code> array is properly updated. Recall that in our test data node 1 has two children (2 and 3). This code will <em>never</em> give us a reference node with more than one item in the <code>children</code> array. Moreover, it doesn’t help us, when I visit a parent node first and one of its children later, to ensure that the reference to the parent node is updated while processing the child node to have that child node in its <code>children</code> array. What we need is to treat the parent node as intelligently as the current node on each processing cycle:</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11</pre></td><td class="code"><pre><span class="n">tree</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">nodes</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">node</span><span class="o">|</span>
+  <span class="n">current_default</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">parent_id: </span><span class="n">node</span><span class="p">[</span><span class="ss">:parent_id</span><span class="p">],</span> <span class="ss">name: </span><span class="n">node</span><span class="p">[</span><span class="ss">:name</span><span class="p">]</span> <span class="p">}</span>
+  <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="ss">:id</span><span class="p">]]</span> <span class="o">||=</span> <span class="n">current_default</span>
+  <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="ss">:id</span><span class="p">]]</span> <span class="o">=</span> <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="ss">:id</span><span class="p">]].</span><span class="nf">merge</span><span class="p">(</span><span class="n">current_default</span><span class="p">)</span>
+
+  <span class="n">parent_default</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">children: </span><span class="p">[]</span> <span class="p">}</span>
+  <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="ss">:parent_id</span><span class="p">]]</span> <span class="o">||=</span> <span class="n">parent_default</span>
+  <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="ss">:parent_id</span><span class="p">]]</span> <span class="o">=</span> <span class="n">parent_default</span><span class="p">.</span><span class="nf">merge</span><span class="p">(</span><span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="ss">:parent_id</span><span class="p">]])</span>
+  <span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">[</span><span class="ss">:parent_id</span><span class="p">]][</span><span class="ss">:children</span><span class="p">].</span><span class="nf">push</span><span class="p">(</span><span class="n">node</span><span class="p">[</span><span class="ss">:id</span><span class="p">])</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>This code can now handle multiple children and cares not for which node (parent or child) we visit first. This code, when processing our array of nodes, would produce:</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td><td class="code"><pre><span class="p">{</span>
+  <span class="kp">nil</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">children: </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span> <span class="p">},</span>
+  <span class="mi">1</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">name: </span><span class="s1">'A'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="kp">nil</span><span class="p">,</span> <span class="ss">children: </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="p">},</span>
+  <span class="mi">2</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">name: </span><span class="s1">'B'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="mi">1</span><span class="p">,</span> <span class="ss">children: </span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="p">},</span>
+  <span class="mi">3</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">name: </span><span class="s1">'C'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="mi">1</span><span class="p">,</span> <span class="ss">children: </span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="p">},</span>
+  <span class="mi">4</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">name: </span><span class="s1">'D'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="mi">2</span><span class="p">,</span> <span class="ss">children: </span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="p">},</span>
+  <span class="mi">5</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">name: </span><span class="s1">'E'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="mi">4</span><span class="p">,</span> <span class="ss">children: </span><span class="p">[]</span> <span class="p">},</span>
+  <span class="mi">6</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">name: </span><span class="s1">'F'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="mi">3</span><span class="p">,</span> <span class="ss">children: </span><span class="p">[]</span> <span class="p">},</span>
+  <span class="mi">7</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">name: </span><span class="s1">'G'</span><span class="p">,</span> <span class="ss">parent_id: </span><span class="kp">nil</span><span class="p">,</span> <span class="ss">children: </span><span class="p">[]</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>Huzzah! This is what we have been looking for! Pat yourself on the back, we’ve finally made our way to our goal. I hope this long (and sometimes circuitous) journey has helped you. I’ve tried to walk through the ups and downs, the missteps and recalibrations, that my actual process resembled. I have also tried to write code that is readable and understandable before all else. This code, however, is not the code that I actually ended up with or used. I used a few more elegant Ruby-isms to accomplish my goal. So, I leave you with my actual implementation, without a walk-thru, as a bit of mental homework. If you can understand how and why this code accomplishes the same goals as the above code, you will have learned a good deal about Ruby. And, I promise to write up an explanation at some point as well ;)</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9</pre></td><td class="code"><pre><span class="n">tree</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">nodes</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">node</span><span class="o">|</span>
+  <span class="n">current</span> <span class="o">=</span> <span class="n">tree</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="n">node</span><span class="p">[</span><span class="ss">:id</span><span class="p">])</span> <span class="p">{</span> <span class="o">|</span><span class="n">key</span><span class="o">|</span> <span class="n">tree</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span> <span class="p">}</span>
+  <span class="n">parent</span> <span class="o">=</span> <span class="n">tree</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="n">node</span><span class="p">[</span><span class="ss">:parent_id</span><span class="p">])</span> <span class="p">{</span> <span class="o">|</span><span class="n">key</span><span class="o">|</span> <span class="n">tree</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span> <span class="p">}</span>
+  <span class="n">siblings</span> <span class="o">=</span> <span class="n">parent</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="ss">:children</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">key</span><span class="o">|</span> <span class="n">parent</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span> <span class="p">}</span>
+
+  <span class="n">current</span><span class="p">[</span><span class="ss">:parent</span><span class="p">]</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="ss">:parent_id</span><span class="p">]</span>
+  <span class="n">siblings</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="n">node</span><span class="p">[</span><span class="ss">:id</span><span class="p">])</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table>
+</div>
+
+</div>
+</div>
+
+    </div>
+
+    <aside id="sidebar">
+
+  <hr class="fractal">
+
+  <div id="recent-articles">
+    <h5>Recent Posts</h5>
+    <ul class="fa-ul">
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="./">A Simple Tree Building Algorithm</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../communication-is-hard/">Communication is Hard</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../thoughts-on-a-birthday/">Thoughts on a Birthday</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../../essays/empiricism-in-5th-century-prose/">Evidentiary Arguments in 5th century prose</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../ruminations-on-a-credal-logic/">Ruminations on a Credal Logic</a>
+        </li>
+    </ul>
+  </div>
+
+  <div id="all-tags">
+    <h5>Tags</h5>
+    <ul>
+      <!-- Add all Article tags -->
+        <li>
+          <a class="badge no-hvr math" href="/topics/math/">math (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr logic" href="/topics/logic/">logic (3)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr epistemology" href="/topics/epistemology/">epistemology (3)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr hackademics" href="/topics/hackademics/">hackademics (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr grad-school" href="/topics/grad-school/">grad-school (2)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr til" href="/topics/til/">til (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr prose" href="/topics/prose/">prose (4)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr poetry" href="/topics/poetry/">poetry (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr example" href="/topics/example/">example (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr christianity" href="/topics/christianity/">christianity (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr love" href="/topics/love/">love (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr faith" href="/topics/faith/">faith (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr alfred" href="/topics/alfred/">alfred (9)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr git" href="/topics/git/">git (1)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr bash" href="/topics/bash/">bash (2)</a>
+        </li>
+        <li>
+          <a class="badge no-hvr python" href="/topics/python/">python (1)</a>
+        </li>
+    </ul>
+  </div>
+</aside>
+
+
+    <footer role="contentinfo">
+  <div class="footer-info">
+    <p>&copy; Copyright 2015 by Stephen Margheim</p>
+    <p>Powered by <a href="https://middlemanapp.com">Middleman</a>.</p>
+  </div>
+</footer>
+
+
+  </body>
+</html>

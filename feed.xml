@@ -5,10 +5,580 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2017-02-20T19:00:00-05:00</updated>
+  <updated>2017-03-04T19:00:00-05:00</updated>
   <author>
     <name>Stephen Margheim</name>
   </author>
+  <entry>
+    <title>A Simple Tree Building Algorithm</title>
+    <link rel="alternate" href="http://blog.url.com/articles/a-simple-tree-building-algorithm/"/>
+    <id>http://blog.url.com/articles/a-simple-tree-building-algorithm/</id>
+    <published>2017-03-04T19:00:00-05:00</published>
+    <updated>2017-03-09T21:20:30-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;p&gt;It is, unfortunately, not that often that I get the opportunity to devise an algorithm to solve a problem at work. Most work simply doesn’t require that kind of thinking. But I thoroughly enjoy that kind of thinking, and thus thoroughly enjoyed the most recent opportunity I had to employ it. The problem was simple (though I have simplified and abstracted it for this post as well): we have a database table of &lt;code&gt;things&lt;/code&gt;, and these &lt;code&gt;things&lt;/code&gt; have a parent-child hierarchy, and we need to display a tree of these &lt;code&gt;things&lt;/code&gt; in our UI. So, let’s dig in.&lt;/p&gt;
+
+&lt;p&gt;First, let’s examine the basic shape of the database table. Each &lt;code&gt;thing&lt;/code&gt; has an &lt;em&gt;id&lt;/em&gt;, &lt;em&gt;name&lt;/em&gt;, and &lt;em&gt;parent_id&lt;/em&gt;, like so:&lt;/p&gt;
+
+&lt;table class="tables"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;id&lt;/th&gt;
+      &lt;th&gt;name&lt;/th&gt;
+      &lt;th&gt;parent_id&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;nil&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;B&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;C&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;D&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;E&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;F&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;G&lt;/td&gt;
+      &lt;td&gt;nil&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Each row in the table gives us a “node” for our tree and tells us about that node’s parent. This means that we cannot know by looking at a single row whether or not that “node” will have any children, but we can know if that “node” has a parent and what other “node” that parent is. If we want to think of this data in Ruby, this would be an array of hashes:&lt;/p&gt;
+
+&lt;div class="highlight ruby"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="p"&gt;[&lt;/span&gt;
+  &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="ss"&gt;id: &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'A'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="kp"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="ss"&gt;id: &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'B'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="ss"&gt;id: &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'C'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="ss"&gt;id: &lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'D'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="ss"&gt;id: &lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'E'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="ss"&gt;id: &lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'F'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="ss"&gt;id: &lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'G'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="kp"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;That is the shape of the data that we are starting with, but what is the shape of the data that we want? We want a nested tree in the UI, so I think that is best represented in Ruby as a nested hash:&lt;/p&gt;
+
+&lt;div class="highlight ruby"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'A'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+      &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'B'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+          &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'D'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+              &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+                &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'E'&lt;/span&gt;
+              &lt;span class="p"&gt;}&lt;/span&gt;
+            &lt;span class="p"&gt;}&lt;/span&gt;
+          &lt;span class="p"&gt;}&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+      &lt;span class="p"&gt;},&lt;/span&gt;
+      &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'C'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+          &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'F'&lt;/span&gt;
+          &lt;span class="p"&gt;}&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+      &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'G'&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We now know where we are coming from and where we are going; the only thing left to do is to get there.&lt;/p&gt;
+
+&lt;p&gt;I like to start with simple facts, things that I know to be true. For example, if we are starting with an array of hashes, our solution is going to need to iterate over that array. It is also a fact that any “node” in the tree can be described as one of three things: a “root”, a “leaf”, or a “branch”. Here I may be stretching the tree metaphor a bit too far, but bear with me.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A “root” is a top level object; it has children but no parent.&lt;/li&gt;
+  &lt;li&gt;A “leaf” is the exact opposite; it has a parent but no children.&lt;/li&gt;
+  &lt;li&gt;A “branch”, then, is simply a node that has both a parent and children.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now, we said earlier that we cannot know by looking at a simple node whether or not it has children. This means that we cannot determine if a particular node is a “branch” or a “leaf” just by examining it. We &lt;em&gt;can&lt;/em&gt;, however, determine if a particular node is a “root” or not on its own.&lt;/p&gt;
+
+&lt;p&gt;A final thing that we know is that an efficient algorithm to solve this problem will only scan the initial array once. We want to iterate over that array of hashes once and build up our nested hash as we go.&lt;/p&gt;
+
+&lt;p&gt;We have some basic facts before us so let’s start actually trying to write some code. We need to iterate over the array of hashes, so let’s start there:&lt;/p&gt;
+
+&lt;div class="highlight ruby"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="c1"&gt;# `nodes` = the array of hashes&lt;/span&gt;
+&lt;span class="n"&gt;nodes&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;each&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="c1"&gt;# some computation&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We also know that we want to get a hash out at the end, and that we will need to build that hash as we iterate over the array, so let’s initialize that hash as well:&lt;/p&gt;
+
+&lt;div class="highlight ruby"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="n"&gt;tree&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;span class="c1"&gt;# `nodes` = the array of hashes&lt;/span&gt;
+&lt;span class="n"&gt;nodes&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;each&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="c1"&gt;# some computation&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We know that as we iterate over the &lt;code&gt;nodes&lt;/code&gt;, we need to insert each node into the &lt;code&gt;tree&lt;/code&gt;. Let’s start with a naive implementation:&lt;/p&gt;
+
+&lt;div class="highlight ruby"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="n"&gt;tree&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;span class="c1"&gt;# `nodes` = the array of hashes&lt;/span&gt;
+&lt;span class="n"&gt;nodes&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;each&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:id&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;reject&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="ss"&gt;:id&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I call this “naive” not to be condescending; it is literally where I started and I think it is a healthy place to start. Iteration is at the heart of good programming, good thinking. We know where we are going but not how quite to get there, so let’s experiment and learn as we go. Here, we start to learn something important. For, while this will turn an array of hashes into a single hash, it gets us nowhere near a nested hash. If we were to run this code, we would simply get:&lt;/p&gt;
+
+&lt;div class="highlight ruby"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'A'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="kp"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'B'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'C'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'D'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'E'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'F'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'G'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="kp"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Our array is now a hash, but the basic shape of the data hasn’t changed at all. Moreover, this naive approach has shown us that we really need to do something with the &lt;code&gt;parent_id&lt;/code&gt; of each node as we process it. Also, I notice a key difference between our starting data and our desired output data: our starting data focuses on the “parent” of the “parent-child” relationship (via &lt;code&gt;parent_id&lt;/code&gt;), while our output data focuses on the “child” (with the &lt;code&gt;children&lt;/code&gt; key). Making this switch will prove to be difficult, but let’s examine why.&lt;/p&gt;
+
+&lt;p&gt;We said earlier that we can tell by looking at a single node whether or not it is a “root” or not, that is, whether or not it has a parent. This means we could build the first level of our nested hash quite simply:&lt;/p&gt;
+
+&lt;div class="highlight ruby"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="n"&gt;tree&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;span class="c1"&gt;# `nodes` = the array of hashes&lt;/span&gt;
+&lt;span class="n"&gt;nodes&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;each&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:id&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;reject&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;to_s&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;include?&lt;/span&gt; &lt;span class="s1"&gt;'id'&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:parent_id&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="kp"&gt;nil&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This would produce a &lt;code&gt;tree&lt;/code&gt; with this shape:&lt;/p&gt;
+
+&lt;div class="highlight ruby"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s2"&gt;"A"&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s2"&gt;"G"&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This, at least, is &lt;em&gt;starting&lt;/em&gt; to look like our desired output. But what do we do about the possible children? We don’t know if either of these nodes has children just by looking at them; we only that a node is a child if it has a &lt;code&gt;parent_id&lt;/code&gt;. So this switch from a parent-centric perspective to a children-centric perspective is going to be difficult. In fact, spoiler warning, if we want to get the nested hash output we described initially &lt;strong&gt;and&lt;/strong&gt; only parse the array once, &lt;em&gt;we are screwed&lt;/em&gt;. We are screwed because we can’t insert a node into an arbitrary place in the nested hash.&lt;/p&gt;
+
+&lt;p&gt;We could create an auto-vivifying hash and insert a node arbitrarily deep in the hash:&lt;/p&gt;
+
+&lt;div class="highlight ruby"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="n"&gt;autovivifying_tree&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="no"&gt;Hash&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;new&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="no"&gt;Hash&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;new&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;default_proc&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="n"&gt;autovivifying_tree&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;dig&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;# autovivifying_tree =&amp;gt; {1=&amp;gt;{2=&amp;gt;{4=&amp;gt;{5=&amp;gt;{}}}}}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The problem here is that we have to have the path to the nested node; we need to know that nodes ancestors. But, in our data, we can only learn the ancestor paths by parsing the whole array. This data model also fails to give us the &lt;code&gt;name&lt;/code&gt; of each node. So, what to do?&lt;/p&gt;
+
+&lt;p&gt;At this point, I determined that the nested hash was simply going to be impossible to create by parsing the array once. Moreover, I realized that it was not necessary (or even most effective) for storing the data in the way my UI would need it. While a nested hash most directly modeled the shape of the data I needed, the directness of the model comes at the expense of efficiency and ease of use. An arbitrarily nested hash is more difficult for the UI code to parse. It would need a recursive function, which would need to check if the hash under consideration had a &lt;code&gt;children&lt;/code&gt; key, and would have to traverse the whole tree without knowing the keys (a central benefit of Hashes as a data structure). Thus, while visually the closest to a “tree”, the nested hash comes with too much baggage for our implementation. So let’s go back to the drawing board for what our output data structure could and should look like.&lt;/p&gt;
+
+&lt;p&gt;As I turned myself back to the problem, I thought about what kind of code I would like in my UI to generate the visual tree. I would like to efficiently navigate the entire collection of &lt;code&gt;things&lt;/code&gt;, moving from the top of the hierarchy (&lt;code&gt;things&lt;/code&gt; with no parent, i.e. “roots”) thru the various middle layers (the “branches”) and down to the very bottom (the “leaves”). I want this parsing to be as direct and efficient as the parsing of the database–one pass. When you want to navigate data directly and effienctly, &lt;code&gt;Hash&lt;/code&gt;es are a great place to start. But, we have already discussed the difficulties with a nested hash, so let’s use a flat hash. The keys should be the &lt;code&gt;id&lt;/code&gt; of the &lt;code&gt;thing&lt;/code&gt;, one entry per row in the database. The values need to tell use at least two pieces of information: the &lt;code&gt;parent&lt;/code&gt; and the &lt;code&gt;children&lt;/code&gt; of that particular &lt;code&gt;thing&lt;/code&gt;. That is, we want something that would look like this:&lt;/p&gt;
+
+&lt;div class="highlight ruby"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="kp"&gt;nil&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'A'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="kp"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'B'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'C'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'D'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'E'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'F'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'G'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="kp"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We could navigate this data structure hierarchically with ease.&lt;/p&gt;
+
+&lt;div class="highlight ruby"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="n"&gt;visit_children&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+  &lt;span class="n"&gt;children&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="ss"&gt;:children&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+  &lt;span class="n"&gt;content_tag&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:li&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="n"&gt;content_tag&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:span&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="ss"&gt;:name&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;content_tag&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:ul&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+      &lt;span class="n"&gt;safe_join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;children&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;map&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;child&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+        &lt;span class="n"&gt;visit_children&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;call&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;child&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;children&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;span class="n"&gt;roots&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kp"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="ss"&gt;:children&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;content_tag&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:ul&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+  &lt;span class="n"&gt;roots&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;each&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;visit_children&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;call&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This code would create this HTML:&lt;/p&gt;
+
+&lt;div class="highlight html"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;span&amp;gt;&lt;/span&gt;A&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;span&amp;gt;&lt;/span&gt;B&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;span&amp;gt;&lt;/span&gt;D&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+              &lt;span class="nt"&gt;&amp;lt;li&amp;gt;&amp;lt;span&amp;gt;&lt;/span&gt;E&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;span&amp;gt;&lt;/span&gt;C&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;li&amp;gt;&amp;lt;span&amp;gt;&lt;/span&gt;F&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;li&amp;gt;&amp;lt;span&amp;gt;&lt;/span&gt;G&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Our front-end code suggests to use that this data structure would work well for our needs. So, now all we need to do is munge our array of hashes into a hash of the structure described.&lt;/p&gt;
+
+&lt;p&gt;Let’s think through what precisely we need to happen. We need to iterate over an array of hashes. For each item/node/hash in that array, we need to store a reference in the &lt;code&gt;tree&lt;/code&gt;. For each node we also need to add that node to its parent reference in the &lt;code&gt;tree&lt;/code&gt;. This means we need to ensure that the reference to the parent &lt;em&gt;already exists&lt;/em&gt; in the &lt;code&gt;tree&lt;/code&gt;; that is, imagine a scenario where we process node 2 before node 1 (the parent of node 2). We cannot add node 2 to node 1’s &lt;code&gt;children&lt;/code&gt; if node 1 does not exist in the tree. This, however, should be sufficient for parsing our array of hashes into a hash of nodes to be consumed by our UI code. So, let’s start building it!&lt;/p&gt;
+
+&lt;p&gt;We already know we must start with a &lt;code&gt;tree&lt;/code&gt; and iterating of the &lt;code&gt;nodes&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class="highlight ruby"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="n"&gt;tree&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;span class="n"&gt;nodes&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;each&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="c1"&gt;# ...&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now, we also need to either find or create the reference to the &lt;code&gt;node&lt;/code&gt; in the &lt;code&gt;tree&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class="highlight ruby"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="n"&gt;tree&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;span class="n"&gt;nodes&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;each&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:id&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;||=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;||=&lt;/code&gt; operator is what allows us to “find or create” a reference in the &lt;code&gt;tree&lt;/code&gt; hash. If &lt;code&gt;tree[node[:id]]&lt;/code&gt; already has a value, nothing happens; but, if it doesn’t, the value is set to the empty hash &lt;code&gt;{}&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;But we don’t just want an empty hash for the value in the &lt;code&gt;tree&lt;/code&gt;; we want to set the &lt;code&gt;parent_id&lt;/code&gt; and initialize the &lt;code&gt;children&lt;/code&gt; array (plus insert the &lt;code&gt;name&lt;/code&gt;):&lt;/p&gt;
+
+&lt;div class="highlight ruby"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="n"&gt;tree&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;span class="n"&gt;nodes&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;each&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:id&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;||=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:parent_id&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[],&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:name&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If we were to process &lt;code&gt;nodes&lt;/code&gt; with just this code, at the end &lt;code&gt;tree&lt;/code&gt; would look like this:&lt;/p&gt;
+
+&lt;div class="highlight ruby"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="kp"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[],&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s2"&gt;"A"&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[],&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s2"&gt;"B"&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[],&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s2"&gt;"C"&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[],&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s2"&gt;"D"&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[],&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s2"&gt;"E"&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[],&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s2"&gt;"F"&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="kp"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[],&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s2"&gt;"G"&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We are close. All we need to do now is fill in the &lt;code&gt;children&lt;/code&gt; information. A first step would be to mimic what we do with &lt;code&gt;node[:id]&lt;/code&gt; in dealing with &lt;code&gt;node[:parent_id]&lt;/code&gt;, that is, “find or create” its reference in the &lt;code&gt;tree&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class="highlight ruby"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="n"&gt;tree&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;span class="n"&gt;nodes&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;each&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:id&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;||=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:parent_id&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[],&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:name&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:parent_id&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;||=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="kp"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:id&lt;/span&gt;&lt;span class="p"&gt;]],&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="kp"&gt;nil&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This has a hole, however, in its logic. Every node in &lt;code&gt;tree&lt;/code&gt; will only ever have the shape it was initialized with. This means that if we visit node 2 first, node 2’s &lt;code&gt;children&lt;/code&gt; array will never be updated to include node 4 and node 1’s reference will never have any more &lt;code&gt;chilren&lt;/code&gt; than node 2, never have a &lt;code&gt;name&lt;/code&gt;, and never have a &lt;code&gt;parent_id&lt;/code&gt; (the logic still holds even if, in this particular scenario, node 1’s parent is &lt;code&gt;nil&lt;/code&gt;). So, we need a way to update references when we gather new information (on subsequent iterations). The first thing we must do is ensure that we set &lt;code&gt;parent_id&lt;/code&gt; and &lt;code&gt;name&lt;/code&gt; for every &lt;code&gt;node&lt;/code&gt; as we process it, whether that node has a reference in the &lt;code&gt;tree&lt;/code&gt; yet or not:&lt;/p&gt;
+
+&lt;div class="highlight ruby"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="n"&gt;tree&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;span class="n"&gt;nodes&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;each&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="n"&gt;default&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:parent_id&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[],&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:name&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:id&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;||=&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt;
+  &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:id&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:id&lt;/span&gt;&lt;span class="p"&gt;]].&lt;/span&gt;&lt;span class="nf"&gt;merge&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:parent_id&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;||=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="kp"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:id&lt;/span&gt;&lt;span class="p"&gt;]],&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="kp"&gt;nil&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This code ensures that &lt;code&gt;tree[node[:id]]&lt;/code&gt; &lt;em&gt;always&lt;/em&gt; has the proper &lt;code&gt;parent_id&lt;/code&gt; and &lt;code&gt;name&lt;/code&gt;. Unfortunately, however, it also obliterates any &lt;code&gt;children&lt;/code&gt; value that may have been previously set. So, let’s remove &lt;code&gt;children&lt;/code&gt; from our reference &lt;code&gt;default&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class="highlight ruby"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="n"&gt;tree&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;span class="n"&gt;nodes&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;each&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="n"&gt;default&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:parent_id&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:name&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:id&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;||=&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt;
+  &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:id&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:id&lt;/span&gt;&lt;span class="p"&gt;]].&lt;/span&gt;&lt;span class="nf"&gt;merge&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:parent_id&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;||=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="kp"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:id&lt;/span&gt;&lt;span class="p"&gt;]],&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="kp"&gt;nil&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This now at least ensures that if I visit a parent node &lt;em&gt;after&lt;/em&gt; I have visited one of its children, the parent’s &lt;code&gt;children&lt;/code&gt; array will still be intact. It does not, however, ensure that the &lt;code&gt;children&lt;/code&gt; array is properly updated. Recall that in our test data node 1 has two children (2 and 3). This code will &lt;em&gt;never&lt;/em&gt; give us a reference node with more than one item in the &lt;code&gt;children&lt;/code&gt; array. Moreover, it doesn’t help us, when I visit a parent node first and one of its children later, to ensure that the reference to the parent node is updated while processing the child node to have that child node in its &lt;code&gt;children&lt;/code&gt; array. What we need is to treat the parent node as intelligently as the current node on each processing cycle:&lt;/p&gt;
+
+&lt;div class="highlight ruby"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="n"&gt;tree&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;span class="n"&gt;nodes&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;each&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="n"&gt;current_default&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:parent_id&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:name&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:id&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;||=&lt;/span&gt; &lt;span class="n"&gt;current_default&lt;/span&gt;
+  &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:id&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:id&lt;/span&gt;&lt;span class="p"&gt;]].&lt;/span&gt;&lt;span class="nf"&gt;merge&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;current_default&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+  &lt;span class="n"&gt;parent_default&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:parent_id&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;||=&lt;/span&gt; &lt;span class="n"&gt;parent_default&lt;/span&gt;
+  &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:parent_id&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;parent_default&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;merge&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:parent_id&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
+  &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:parent_id&lt;/span&gt;&lt;span class="p"&gt;]][&lt;/span&gt;&lt;span class="ss"&gt;:children&lt;/span&gt;&lt;span class="p"&gt;].&lt;/span&gt;&lt;span class="nf"&gt;push&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:id&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This code can now handle multiple children and cares not for which node (parent or child) we visit first. This code, when processing our array of nodes, would produce:&lt;/p&gt;
+
+&lt;div class="highlight ruby"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="kp"&gt;nil&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'A'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="kp"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'B'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'C'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'D'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'E'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'F'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt;
+  &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="ss"&gt;name: &lt;/span&gt;&lt;span class="s1"&gt;'G'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;parent_id: &lt;/span&gt;&lt;span class="kp"&gt;nil&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ss"&gt;children: &lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Huzzah! This is what we have been looking for! Pat yourself on the back, we’ve finally made our way to our goal. I hope this long (and sometimes circuitous) journey has helped you. I’ve tried to walk through the ups and downs, the missteps and recalibrations, that my actual process resembled. I have also tried to write code that is readable and understandable before all else. This code, however, is not the code that I actually ended up with or used. I used a few more elegant Ruby-isms to accomplish my goal. So, I leave you with my actual implementation, without a walk-thru, as a bit of mental homework. If you can understand how and why this code accomplishes the same goals as the above code, you will have learned a good deal about Ruby. And, I promise to write up an explanation at some point as well ;)&lt;/p&gt;
+
+&lt;div class="highlight ruby"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="n"&gt;tree&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;span class="n"&gt;nodes&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;each&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="n"&gt;current&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;fetch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:id&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="n"&gt;parent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;fetch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:parent_id&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="n"&gt;siblings&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;parent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;fetch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:children&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;parent&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+
+  &lt;span class="n"&gt;current&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:parent&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:parent_id&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+  &lt;span class="n"&gt;siblings&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;push&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;node&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;:id&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+</content>
+  </entry>
   <entry>
     <title>Communication is Hard</title>
     <link rel="alternate" href="http://blog.url.com/articles/communication-is-hard/"/>
@@ -1197,6 +1767,398 @@ done&lt;/span&gt;
 </content>
   </entry>
   <entry>
+    <title>Wikify</title>
+    <link rel="alternate" href="http://blog.url.com/projects/wikify/"/>
+    <id>http://blog.url.com/projects/wikify/</id>
+    <published>2015-05-26T20:00:00-04:00</published>
+    <updated>2016-12-02T22:19:06-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;h4 id="version-26"&gt;Version 2.6&lt;/h4&gt;
+
+&lt;h4 id="download-on-packalhttpwwwpackalorgworkflowwikify"&gt;Download on &lt;a href="http://www.packal.org/workflow/wikify"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; is a workflow to add some great &lt;a href="http://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; and wiki goodness to &lt;a href="https://www.evernote.com/"&gt;Evernote&lt;/a&gt;. In this post, I want to lay out all of the functionality and how to take advantage of it.&lt;/p&gt;
+
+&lt;h3 id="markdown-functionality"&gt;Markdown Functionality&lt;/h3&gt;
+
+&lt;p&gt;One half of &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt;’s functionality concerns integrating Markdown and Evernote. Essentially, this means being able to send Markdown text to Evernote as HTML &lt;em&gt;and&lt;/em&gt; being able to export an Evernote note to a Markdown text file.&lt;/p&gt;
+
+&lt;p&gt;In order to export an Evernote note to a Markdown text file, you can use the &lt;code&gt;enmd&lt;/code&gt; keyword from Alfred. &lt;code&gt;enmd&lt;/code&gt; stands for “Evernote to Markdown”, and this command will take your currently selected Evernote note and create a Markdown formatted text file which will immediately be opened in your default text editor. In addition, &lt;code&gt;enmd&lt;/code&gt; will fill in the note’s title, notebook, and tags as metadata at the top of the file (this will make it a snap to edit the note and send it back to Evernote using the &lt;code&gt;mden&lt;/code&gt; command, which I will talk about next). The workflow also comes with the ability to bind a keyboard shortcut to this function (I use &lt;code&gt;cmd + shift + 9&lt;/code&gt;). No fuss, no hassle, no wait. Export your Evernote note into Markdown in a flash.&lt;/p&gt;
+
+&lt;p&gt;But what about getting data &lt;em&gt;into&lt;/em&gt; Evernote? &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; will also allow you to write notes in Markdown in your text editor of choice and then send that text to Evernote, where it will be formatted and displayed in proper HTML. Now, this function has a bit of quirks to it, so let me elaborate. You can launch this function in one of two ways:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the &lt;code&gt;mden&lt;/code&gt; keyword in Alfred&lt;/li&gt;
+  &lt;li&gt;setup a keyboard shortcut&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The keyboard shortcut will actually allow you simply to select your text (&lt;code&gt;cmd + a&lt;/code&gt; for “Select All”) and then press the shortcut to run the script. Alternatively, you can select the text, &lt;em&gt;copy it to the clipboard&lt;/em&gt;, and then pop up Alfred and use the &lt;code&gt;mden&lt;/code&gt; command (this is, obviously, short for “Markdown to Evernote”). It is important to note that if you use the &lt;code&gt;mden&lt;/code&gt; command from Alfred, your Markdown text &lt;em&gt;must&lt;/em&gt; be in the clipboard.&lt;/p&gt;
+
+&lt;p&gt;Now, how do you tell &lt;code&gt;mden&lt;/code&gt; &lt;em&gt;where&lt;/em&gt; to send your note, or what tags it should have, or what it’s title is? In order to assign Note Title, Notebook, and Tags, you can use simple &lt;a href="http://fletcherpenney.net/multimarkdown/"&gt;MultiMarkdown Headers&lt;/a&gt;, or simple symbols which are placed at the top of the document:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;Title:&lt;/code&gt; or &lt;code&gt;#&lt;/code&gt; for the note’s title&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;Notebook:&lt;/code&gt; or &lt;code&gt;=&lt;/code&gt; for the note’s notebook destination&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;Tags:&lt;/code&gt; or &lt;code&gt;@&lt;/code&gt; for the note’s tags&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So, the top of your Markdown text note might look something like this:&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;# Text Note Title
+= My Default Notebook
+@ tag1, tag2, tag3
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;But, that’s not all that &lt;code&gt;mden&lt;/code&gt; can do. I’ve added a few extras to its capabilities. In addition to converting Markdown to text to HTML and sending that to Evernote, &lt;code&gt;mden&lt;/code&gt; has three other pretty cool features:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;document-specific text snippets (use &lt;code&gt;^^^snippet^^^&lt;/code&gt; syntax)&lt;/li&gt;
+  &lt;li&gt;auto-linking to pre-existing Evernote notes (no special syntax)&lt;/li&gt;
+  &lt;li&gt;auto-linking to new Evernote notes (use &lt;code&gt;[[double bracket]]&lt;/code&gt; syntax)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;First, let me explain document-specific text snippets. This feature was inspired recently as I was taking notes in class. In-class note-taking is a bit unique, since you won’t exactly know what words will be used repeatedly before the class begins. I’m all about &lt;a href="http://smilesoftware.com/TextExpander/"&gt;TextExpander&lt;/a&gt;, but I can’t set up snippets if I don’t know what will be the key words for that class. Plus, I don’t want to clutter my TextExpander library with these one-off snippets. So, document-specific text snippets was born. The idea is to use snippets in your notes as you type, and then define the &lt;code&gt;snippet:expanded text&lt;/code&gt; relationship before you use &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; to send the notes to Evernote. The syntax is dead-simple. Simply wrap your “snippet dictionary” in triple carets (&lt;code&gt;^^^snippet:expanded text^^^&lt;/code&gt;). You can have one-off “dictionaries” or you can make one long dictionary at the end of your document. The only things you need to remember are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ALWAYS use ,, as your in-text prefix (you &lt;em&gt;can&lt;/em&gt; change this in the code)&lt;/li&gt;
+  &lt;li&gt;if its a one-off (only one snippet), the “dictionary” needs to exist on its own line&lt;/li&gt;
+  &lt;li&gt;if its a multi-snippet “dictionary”, use the triple carets like fenced code blocks&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To ensure these few easy syntax rules makes sense, here’s an example:&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;,,p are separated by a blank line.
+^^^p:Paragraphs^^^
+New text.
+2nd paragraph. *,,i*, **,,b**, `,,m`.
+^^^
+i:Italics
+b:BOLD
+m:monospace
+^^^
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Thats all there is to it. Note how each snippet is prefixed by &lt;code&gt;,,&lt;/code&gt;. This ensures that both you and the processor know what text needs to be expanded, and you don’t need to have the commas in the snippet dictionary. You can mix and match single-line snippet dictionaries with multi-snippet dictionaries in the same document. You can even use non-ASCII characters in your snippets or in your expanded text. For me, this is a killer feature. I hope someone else finds it useful.&lt;/p&gt;
+
+&lt;p&gt;Next, auto-linking to pre-existing Evernote notes. This is really the feature at the heart of &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt;, because this is what allows you to “wikify” your Evernote library. The idea is really quite simple: write your note as you normally would (in this case in Markdown, but I’ll discuss later how this can work within Evernote itself), and &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; will ensure that anytime you reference &lt;em&gt;any other Evernote note&lt;/em&gt; by title, your note will have a hyperlink to that other note. Let me offer a simple example. Say I began a new note like so:&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;# Note Title
+= Notebook
+@ tag1, tag2
+
+This is the first line of my new note on Alfred App!
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now, if I had a note in my Evernote account entitled “Alfred App”, when I process this note to send it to Evernote, &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; will now catch that and hyperlink to that pre-existing note, so this new note would have the phrase “Alfred App” linked directly to that other Evernote note. No fuss, no hassle, no funky syntax. And (this is what was holding me back on this feature for while), this is SUPER-FAST!&lt;/p&gt;
+
+&lt;p&gt;The final feature that “wikifies” Evernote when you are sending Markdown text to Evernote is smoothly creating new spaces to fill with data later, while simultaneously creating the inter-linking between notes. &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; has you covered here as well. Let’s say as you’re typing up a new Evernote note, you realize that you are discussing an idea, topic, or person that you want to research further, but at some later date. What to do? Well, you can use the standard wiki-syntax of the &lt;code&gt;[[double brackets]]&lt;/code&gt; to mark that idea, topic, or person as something you want to create a new note for, while also linking to that new note from within your current note. To return to our sample note above, let’s say you added this:&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;# Note Title
+= Notebook
+@ tag1, tag2
+This is the first line of my new note on Alfred App!
+I want to talk more about [[AppleScript]].
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Whenever you have &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; process this Markdown text and send it to Evernote, it will first create a new note (in the same notebook as the one specified in the meta-data) entitled “AppleScript”, then embed the Evernote hyperlink to that new note within this current note. This means that your new Evernote note will have 2 links: one to the pre-existing note “Alfred App” and one to the newly created, blank note “AppleScript”. All of this without you having to do anything but type!&lt;/p&gt;
+
+&lt;p&gt;For anyone who prefers to write in Markdown, but loves the always-there accessibility of Evernote, this can be a powerful addition to your workflow. But obviously, not everyone writes their Evernote notes in Markdown first. Most people just write their notes directly in Evernote. But what if you wanted to still “wikify” your Evernote library, to easily create these interlinked notes? Well, I’ve tried to solve that problem too.&lt;/p&gt;
+
+&lt;h3 id="wiki-functionality"&gt;Wiki Functionality&lt;/h3&gt;
+
+&lt;p&gt;While I’ve already discussed some of the wiki functionality that’s inherent in the &lt;code&gt;mden&lt;/code&gt; function, that isn’t the only way to ensure that all of your Evernote data is intelligently interlinked. I have versions of both the link to pre-existing note and link to new note capabilities detailed above that work purely within Evernote. Here’s how they work.&lt;/p&gt;
+
+&lt;p&gt;In order to interlink any of your current Evernote notes with &lt;em&gt;pre-existing&lt;/em&gt; notes, you can use the &lt;code&gt;wfy&lt;/code&gt; command from Alfred. Simply open up Evernote and select the notes you want to “wikify” (the workflow does accept multiple selections, but you shouldn’t over tax it). Once your notes are selected, pull up Alfred and use the &lt;code&gt;wfy&lt;/code&gt; (short for “wikify”) keyword. The workflow will then process each of your notes individually, auto-linking to any pre-existing other notes which it references by name. &lt;strong&gt;NOTE:&lt;/strong&gt; In order to use this feature, you will need the &lt;a href="http://www.satimage.fr/software/en/downloads_osaxen.html"&gt;Satimage OSAX Scripting Addition&lt;/a&gt;. I’ve set it up such that this is remarkably easy to install. Simply use the keyword in Alfred &lt;code&gt;wfy:install&lt;/code&gt; and the Satimage installer will boot up and walk you through the process. It really is as simple as that. The script will search your note’s content for any references to other notes’ titles. If any are found, that text will be replaced with a hyperlink to that note. Here’s a gif that shows the process in action:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="wfy command" src="images/projects/wikify/wfy.gif" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Next, let’s say that you are in Evernote and see a phrase or term in one of your notes that you want to research more, while creating the wiki-environment that &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; is all about. I’ve added a companion feature which will:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;take the currently selected text in the open Evernote note&lt;/li&gt;
+  &lt;li&gt;create a new note in that notebook whose title is the selected text&lt;/li&gt;
+  &lt;li&gt;embed a hyperlink back to the original note as the first line of this new note&lt;/li&gt;
+  &lt;li&gt;and replace the selected text with a hyperlink to that newly created note&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This means that you have two-way hyperlinking (which is impossible in the &lt;code&gt;mden&lt;/code&gt; version of this functionality) between your current note and your new note. Creating spaces for new thought, while retaining context and wiki-style hyperlinking has never been easier. To use this feature, you can either use a user-specified keyboard shortcut, or copy the selected text to the clipboard and run &lt;code&gt;ensel&lt;/code&gt;. Here’s another gif to illustrate:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="ensel command" src="images/projects/wikify/ensel.gif" /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;To sum up, &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; has 4 main commands:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;mden&lt;/code&gt; to send Markdown text to Evernote&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;enmd&lt;/code&gt; to export an Evernote note to Markdown&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;wfy&lt;/code&gt; to “wikify” the selected Evernote note&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;ensel&lt;/code&gt; to create and wikify a new Evernote note from selection&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With these features, and all of the “sub-features” elaborated above, I truly believe that &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; could be a great help to those others out there who love Evernote, Markdown, and Wiki goodness.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Snippets</title>
+    <link rel="alternate" href="http://blog.url.com/projects/snippets/"/>
+    <id>http://blog.url.com/projects/snippets/</id>
+    <published>2015-05-26T20:00:00-04:00</published>
+    <updated>2016-12-02T22:18:59-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;h4 id="version-12"&gt;Version: 1.2&lt;/h4&gt;
+
+&lt;h4 id="download-on-packalhttpwwwpackalorgworkflowsnippets"&gt;Download on &lt;a href="http://www.packal.org/workflow/snippets"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;Have you ever been taking notes and realized that certain terms or phrases were going to be used repeatedly? You don’t have the time or really the desire to create all new TextExpander snippets for these terms or phrases, but you’d also really like to shorten your typing. That’s where &lt;strong&gt;&lt;code&gt;Snippets&lt;/code&gt;&lt;/strong&gt; comes in. &lt;strong&gt;&lt;code&gt;Snippets&lt;/code&gt;&lt;/strong&gt; is a dead simple Alfred workflow that allows you to use simple snippet syntax while writing, and then seamlessly convert your text to its full glory.&lt;/p&gt;
+
+&lt;p&gt;The set-up is simple. As you’re typing, and you realize you want to make a snippet, simply prepend your snippet with &lt;code&gt;,,&lt;/code&gt; (comma comma). Then, when you get a free moment, create a “snippet dictionary” to tell Snippets what that snippet means. To create the dictionary, simply wrap it in &lt;code&gt;^^^&lt;/code&gt; (triple carets). Here’s an example:&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;This is an example of ,,sn. ,,sn is a fantastic workflow for ,,a!
+
+^^^
+sn: **`Snippets`**
+a: Alfred
+^^^
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;That’s all there is to it. Once your dictionary is complete and you have finished typing, either copy the text to the clipboard and use the keyword &lt;code&gt;snip&lt;/code&gt;, or assign a keyboard shortcut for even quicker results. When you activate &lt;strong&gt;&lt;code&gt;Snippets&lt;/code&gt;&lt;/strong&gt;, the text above will instantly become:&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;This is an example of **`Snippets`**. **`Snippets`** is a fantastic workflow for Alfred!
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;It’s so simple. Double-comma before the snippet; dictionary wrapped in triple-carets with snippet: expanded. Nothing more, nothing less.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="demo" src="https://raw.githubusercontent.com/smargh/alfred_snippets/master/snippets.gif" /&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Skimmer</title>
+    <link rel="alternate" href="http://blog.url.com/projects/skimmer/"/>
+    <id>http://blog.url.com/projects/skimmer/</id>
+    <published>2015-05-26T20:00:00-04:00</published>
+    <updated>2016-12-02T22:18:54-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;h3 id="version-221"&gt;Version: 2.2.1&lt;/h3&gt;
+
+&lt;h3 id="download-at-packalhttpwwwpackalorgworkflowskimmer"&gt;Download at &lt;a href="http://www.packal.org/workflow/skimmer"&gt;Packal&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h2 id="description"&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;This workflow &lt;strong&gt;only&lt;/strong&gt; works with the free Mac PDF app &lt;a href="http://skim-app.sourceforge.net/"&gt;Skim&lt;/a&gt;. Skim is a fantastic app with great Applescript support (and its &lt;em&gt;free!&lt;/em&gt;). This workflow provides quick, easy access to a few custom Applescripts that I’ve written to deal with certain pesky problems I’ve come across when dealing with PDFs. There are currently four actions:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Crop and Split PDF&lt;/li&gt;
+  &lt;li&gt;Extract Data and Search Google Scholar&lt;/li&gt;
+  &lt;li&gt;Export Annotations&lt;/li&gt;
+  &lt;li&gt;Search your PDFs&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In this description I will explain how each of these works, and why you might want to use it.&lt;/p&gt;
+
+&lt;h3 id="crop-and-split-pdf"&gt;Crop and Split PDF&lt;/h3&gt;
+
+&lt;p&gt;First, &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; allows you to properly format those darned scanned PDFs. You know the ones I’m talking about, 2 books pages scanned into one, landscape-oriented PDF page. I want all of my PDFs in pretty, proper format with one PDF page corresponding to one portrait-oriented book/article page. In the past, it was quite the ordeal to crop the PDF so that the right- and left-hand margins were equal, and then to split each individual page and finally reconstruct the entire PDF. &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; makes this whole process as simple as π. You can use either a Hotkey or the Keyword &lt;code&gt;split&lt;/code&gt; to activate this feature.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="split" src="https://www.evernote.com/shard/s41/sh/83197405-2d1a-469e-a3ca-64cc4a481807/36b73f97006ac7fd5b650e22fb122769/deep/0/skimmer_split.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; then does 3 things:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Crop the PDF using a user-inserted Line Annotation (if necessary) (see image below)&lt;/li&gt;
+  &lt;li&gt;Split the two-page PDF into individual pages&lt;/li&gt;
+  &lt;li&gt;Re-assemble everything and clean up&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Let me walk you thru the process. To begin, you will need to &lt;em&gt;ensure that the two scanned book pages have equal margins&lt;/em&gt;. &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; will split the PDF page right down the middle, so we want the middle of the PDF to be the middle of the two pages. If the margins are unequal, you only need to use Skim’s Line Annotation to create a border for &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt;. Here’s an example:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="cropping" src="https://www.evernote.com/shard/s41/sh/d34511a1-b571-4df0-a6df-5c7b370704a6/0759f2d2f21a614c9a39d72f8eab0d42/deep/0/skimmer_original.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Note the small, vertical line at the bottom of the page. &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; will crop off everything to the left of this line. You could put the line anywhere on the page. If you the right-hand margin were too big, you could put it to the right, and &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; would automatically crop the excess stuff to the right of that line. If both margins are too big, you can put two lines on each side and &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; will take care of the rest.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; will crop &lt;em&gt;every page&lt;/em&gt; at this point, so find the farthest extremity on any page and use that as your guide. &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; can tell what page you are looking at, so it’ll make things work (note that in the image above, this is one of the middle pages being used as the cropping template). &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; does not crop Top or Bottom Margins, so you will need to manually crop PDFs with wacky top and/or bottom margins.&lt;/p&gt;
+
+&lt;p&gt;Once &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; has cropped the PDF, it will go thru and split each page into two separate pages. Depending on the length of the PDF, this can take a bit (approximately 0.67 seconds per original PDF page). This is all done invisibly tho, so that’s a bonus.&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; In order to ensure that &lt;code&gt;Skimer&lt;/code&gt; splits the PDF properly, regardless of orientation, the script will split the first page and ask you what portion of the page you are seeing (left-hand, right-hand, top-half, or bottom-half). Your choice will ensure that &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; does the splitting properly.&lt;/p&gt;
+
+&lt;p&gt;After it splits all the pages, &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; will save a copy of your original PDF and then close it as it opens the new, split PDF. This new PDF will be properly formatted and saved in the same folder as the original PDF. Here’s an example of the PDF above after it was automatically cropped and split:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="completed" src="https://www.evernote.com/shard/s41/sh/ac701fb0-3e1b-4ac6-ab6d-04dfdddae2f7/0cfdc3db448db7e430613b018a30f31e/deep/0/skimmer_final.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;For anyone who deals with lots of scanned PDFs, I can promise you, this is a godsend.&lt;/p&gt;
+
+&lt;h3 id="extract-data-and-search-google-scholar"&gt;Extract Data and Search Google Scholar&lt;/h3&gt;
+
+&lt;p&gt;The second feature will take &lt;a href="http://en.wikipedia.org/wiki/Optical_character_recognition"&gt;OCR’d&lt;/a&gt; PDFs and try to extract relevant search information and then search &lt;a href="http://scholar.google.com/"&gt;Google Scholar&lt;/a&gt; (which will make it easy to then add citation information to your citation manager of choice. Users of &lt;a href="http://fractaledmind/projects/zotquery"&gt;ZotQuery&lt;/a&gt; will immediately see where I’m going with this…). This feature can be activated by a user-assigned Hotkey or by the Keyword &lt;code&gt;extract&lt;/code&gt; when the desired PDF is open in Skim.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="extract" src="https://www.evernote.com/shard/s41/sh/5bf09958-9d77-4a54-aaa2-b5fff51ef70a/7edaae34fc339aa9230a700703de218e/deep/0/skimmer_extract.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;This feature will look for three possible things &lt;em&gt;in the currently viewed page&lt;/em&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;a &lt;a href="http://www.doi.org/"&gt;DOI&lt;/a&gt; (Digital Object Identifier)&lt;/li&gt;
+  &lt;li&gt;an ISBN (for books)&lt;/li&gt;
+  &lt;li&gt;JSTOR title page&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If it cannot find any of these things, it will present the user with a list of Capitalized Words from the currently viewed page. You then select whichever words you want to be the Google Scholar query. Once the query is chosen (whether automatically as one of the 3 types above, or user-chosen keywords), &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; will automatically launch your default browser to Google Scholar using the query. What you do from there is up to you.&lt;/p&gt;
+
+&lt;h3 id="export-annotations"&gt;Export Annotations&lt;/h3&gt;
+
+&lt;p&gt;In short, this feature allows you to export all of your PDF annotations from your Skim PDF to &lt;a href="https://www.evernote.com/"&gt;Evernote&lt;/a&gt; (or the clipboard) while giving you &lt;strong&gt;live hyperlinks&lt;/strong&gt; back to the exact PDF page for the annotation!! You heard me, your Evernote note will have all of your PDF annotations, and each annotation will have a hyperlink that will open up that PDF to the exact page where that annotation is. Trust me, it’s super cool, amazingly helpful, and downright near magical.&lt;/p&gt;
+
+&lt;p&gt;Compatible annotations include Text notes, Anchor notes, Underlined text, Strike-Thru text, and Highlighted text. &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; will take all of your annotations, format them into some pretty HTML and send that to Evernote. I have been working on this code for quite some time, so it is FAST! It can handle and 100+ page book in a jiffy. But, since we all work slightly differently, I’ve also worked hard to make it FLEXIBLE. In order to use this function, simply use the &lt;code&gt;export&lt;/code&gt; keyword. Alternatively, you can assign a keyboard shortcut to the command as well (I use &lt;em&gt;cmd + shift + -&lt;/em&gt; myself).&lt;/p&gt;
+
+&lt;p&gt;Let me outline how you can make Annotation Export work exactly as you’d like.&lt;/p&gt;
+
+&lt;p&gt;First and foremost, I’ve added the ability for you to assign your own custom palette of Highlight Colors. One of the nicer touches to this feature is the ability to translate certain highlight colors into text headers. This can come in quite handy for really breaking down your text and your thoughts about the text into certain groupings. Now, I have a default set of 6 colors and their 6 corresponding text values, but you can change both the colors and the text to fit exactly your needs. But how, you might ask? Well, version 2.0 comes with a new Help PDF. Simply use the &lt;code&gt;sk:help&lt;/code&gt; keyword and select &lt;code&gt;Open PDF&lt;/code&gt; to view this document. On the second page, you will see these annotations:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="helper pdf" src="https://www.evernote.com/shard/s41/sh/0e33ffc1-d931-4932-9949-a668c1554a0f/cb6e0abe1897462a15e5708cfffc4043/deep/0/skimmer_config1.pdf-(page-2-of-4).png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;The text of the PDF will lay this all out for you, but basically, you simply change the highlight colors and change the corresponding text to what ever you like. There are an (nearly) infinite number of possibilities. The only things to remember are &lt;strong&gt;don’t mess with the actual highlights, merely change their colors&lt;/strong&gt; and &lt;strong&gt;don’t delete prefixed numbers in the text notes, only the text&lt;/strong&gt;. Otherwise, you can fiddle to your hearts content. Just so you can get a feel for how the process will work, here’s what the Evernote note would look like if you ran the Annotation Export script on the Help PDF (well, this is only the highlights section; run the script to see how text notes are handled):&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="exported note" src="https://www.evernote.com/shard/s41/sh/4fadbe0b-e763-4d0c-b100-d82048ad378a/6b115224808df230224e325e710abeb0/deep/0/skimmer_config.pdf---Evernote-Premium.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; If you change the highlight colors and/or the text meanings, you will have to run &lt;code&gt;sk:help&lt;/code&gt; -&amp;gt; &lt;code&gt;Set Highlights&lt;/code&gt; before &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; will apply your changes. So, to change the Highlights:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Open the Help PDF (&lt;code&gt;sk:help&lt;/code&gt; -&amp;gt; &lt;code&gt;Open PDF&lt;/code&gt;) and alter the highlights and text on the second page.&lt;/li&gt;
+  &lt;li&gt;Run &lt;code&gt;sk:help&lt;/code&gt; -&amp;gt; &lt;code&gt;Set Highlights&lt;/code&gt; to save your changes.&lt;/li&gt;
+  &lt;li&gt;Then, you can use &lt;code&gt;export&lt;/code&gt; to actually send your Skim annotations to Evernote.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now, the ability to alter your highlights palette goes a long way in making this script personalizable (is that even a word?), but I went a step further. You can also tweak the HTML formatting used to create the Evernote note. Unfortunately, however, this will require opening up some Applescript and doing some code tweaking.&lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; But I’ve tried to make it not so scary. Essentially, each annotation type has a general formatting template used to create the HTML. I’ve abstracted this format and placed each variable element under your control. You can find all of the templates and some basic examples in the Help PDF (page 3), but here is one example, for the Highlight Notes:&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;--The alterable variables are wrapped in {curlies}, while the fixed elements are in &amp;lt;carets&amp;gt;.
+{pre}{wrap}&amp;lt;title&amp;gt;{/wrap} {wrap}&amp;lt;note text&amp;gt;{/wrap} {wrap}&amp;lt;link&amp;gt;{p.} &amp;lt;#&amp;gt;{/wrap}
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;So, you can prefix anything you’d like to the front of a note type: a dash, a tab, a few tabs, a word, etc. You can then wrap the title of the highlight (this is the text given for whatever color that highlighted annotation was) in anything at all: make it bold, italics, wrap it in [brackets], whatever. You can also wrap the actual text highlighted: in “quotes”, make it italics, etc. Finally, you have what you wrap the hyperlink in: it could be (parentheses) or {braces}, etc. And you can specify what page abbreviation you want: p., page, #. Now, the script defaults to settings that I think work pretty well, and you can use those to get a feel for what’s possible. Just remember, &lt;em&gt;it needs to be valid HTML&lt;/em&gt;. All of these properties are near the top of the &lt;code&gt;action_export-notes.scpt&lt;/code&gt; found in the workflow directory (you can use &lt;code&gt;sk:bug&lt;/code&gt; -&amp;gt; &lt;code&gt;Root&lt;/code&gt; to open this folder easily). Feel free to ask me if you have something you’d like to format but can’t quite figure it out.&lt;/p&gt;
+
+&lt;p&gt;Since I’ve added the PDF hyperlinking functionality, I’ve also added the ability to copy a PDF pages custom URL to the clipboard, if you want to hyperlink to that PDF page in any other context. Simply use the &lt;code&gt;sk:copy&lt;/code&gt; keyword. This whole URL hyperlinking works because I have written a custom URL handler which is bundled with the workflow that interprets the custom URLs that I’ve written to open PDFs in Skim to the appropriate page. It’s pretty cool, but &lt;em&gt;the URL uses the path to the PDF, so if you move the PDF the URL will &lt;strong&gt;break&lt;/strong&gt; until you alter all the old URLs to use your new path&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3 id="search-your-pdfs"&gt;Search your PDFs&lt;/h3&gt;
+
+&lt;p&gt;Finally, you can also search through all of your PDFs and open any one of them right in Skim. Use either the keyword &lt;code&gt;skimmer&lt;/code&gt; or the shorter &lt;code&gt;sk&lt;/code&gt; to begin the query. Then enter your query term. The results will update as you type. You can hit &lt;code&gt;return&lt;/code&gt; to open any item directly in Skim, or you can &lt;code&gt;right-arrow&lt;/code&gt; to enter Alfred’s file browser for that item.&lt;/p&gt;
+
+&lt;h2 id="conclusion"&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;As I hope you can see, if you’re someone who deals with PDFs frequently, this workflow could be of help. Whether it’s splitting PDFs, searching through your PDF library, or exporting annotations, &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; can help you out.&lt;/p&gt;
+
+&lt;p&gt;Plus, it’s fairly simple to add functionality by simply adding more Applescripts, so if you have a great script for working with Skim, let me know in the comments.&lt;/p&gt;
+
+&lt;div class="footnotes"&gt;
+  &lt;ol&gt;
+    &lt;li id="fn:1"&gt;
+      &lt;p&gt;My original script would have to pop up each individual page for a split second. It was almost stroke inducing. &lt;a href="#fnref:1" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id="fn:2"&gt;
+      &lt;p&gt;Reader DrLulz has given a great example of this by tweaking the workflow to work best for PDFs of outline-based powerpoints. His comment and link can be found &lt;a href="http://www.alfredforum.com/topic/4052-skimmer-pdf-actions-for-skim/?p=27270"&gt;here&lt;/a&gt;. &lt;a href="#fnref:2" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Parsers</title>
+    <link rel="alternate" href="http://blog.url.com/projects/parsers/"/>
+    <id>http://blog.url.com/projects/parsers/</id>
+    <published>2015-05-26T20:00:00-04:00</published>
+    <updated>2016-12-02T22:18:46-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;h4 id="version-20"&gt;Version: 2.0&lt;/h4&gt;
+
+&lt;h4 id="download-at-packalhttpwwwpackalorgworkflowparsers"&gt;Download at &lt;a href="http://www.packal.org/workflow/parsers"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
+
+&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; is a relatively simple workflow for &lt;a href="http://www.alfredapp.com/"&gt;Alfred&lt;/a&gt;. It allows you to quickly and easily look up parsing information for Greek &lt;em&gt;or&lt;/em&gt; Latin words. It gets its parsing information from the powerful &lt;a href="http://www.perseus.tufts.edu/"&gt;Perseus project&lt;/a&gt;, but presents the results in the clean user-interface of Alfred. To use &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt;, simply open Alfred and type the keyword &lt;code&gt;parse&lt;/code&gt;. Follow the keyword with the Latin or Greek word you want to look up:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="alfred_parser" src="https://www.evernote.com/shard/s41/sh/2c444d67-b4ca-40b3-b914-c20dc5ebbfb6/9d54f19c489deda365c65f1e6b5232e6/deep/0/alfred_parser.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; will display the results for you as quickly as possible.&lt;/p&gt;
+
+&lt;p&gt;As you can see, &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; displays the parsing information in the main title field for each item. Below that, in the sub-title field, it displays the lemma and a short definition separated by &lt;code&gt;::&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Let’s say you are reading some Greek or Latin, however, and don’t want to have to open Alfred, type &lt;code&gt;parse&lt;/code&gt;, then type the word you’re interested in. Well, &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; has thought of that. From within Alfred’s Preferences, you can set up a keyboard shortcut to pass the currently selected text on your Mac to &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt;. I have mine set up as &lt;code&gt;cmd+fn+-&amp;gt;&lt;/code&gt;. This makes using &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; even easier.&lt;/p&gt;
+
+&lt;p&gt;Once you have found the parsing information that you believe is correct in your reading context, &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; can do 2 things for you:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;copy the parsing information to the clipboard in a nicely formatted way (&lt;code&gt;cmd+return&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;copy the dictionary entry for that lemma to the clipboard (&lt;code&gt;shift+return&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If, for instance, you were to choose the Nominative Singular Feminine form of &lt;code&gt;aura&lt;/code&gt; (with &lt;code&gt;cmd+return&lt;/code&gt;), &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; would copy this to the clipboard:&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;Type: noun
+Number: sg
+Gender: fem
+Case: voc
+
+Definition: the air (in motion), a breeze, breath of air, wind, blast:
+Lemma:  aura
+
+Lexicon Links:
+  + [Lewis &amp;amp; Short](http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0059%3Aentry%3Daura)
+  + [Elem. Lewis](http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0060%3Aentry%3Daura)
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Alternatively, you can use &lt;code&gt;shift+return&lt;/code&gt; to view a HUD of the lexicon entry for that parsing term, and this lexicon data will also be copied to the clipboard (&lt;em&gt;NOTE&lt;/em&gt;: Parsers will attempt to display the lexicon entry from the most concise lexicon available for the chosen term or allow you to choose out of the available dictionaries).&lt;/p&gt;
+
+&lt;p&gt;All you should need to read your Greek and/or Latin with ease.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Pandoctor</title>
     <link rel="alternate" href="http://blog.url.com/projects/pandoctor/"/>
     <id>http://blog.url.com/projects/pandoctor/</id>
@@ -1611,398 +2573,6 @@ done&lt;/span&gt;
 </content>
   </entry>
   <entry>
-    <title>Parsers</title>
-    <link rel="alternate" href="http://blog.url.com/projects/parsers/"/>
-    <id>http://blog.url.com/projects/parsers/</id>
-    <published>2015-05-26T20:00:00-04:00</published>
-    <updated>2016-12-02T22:18:46-05:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;h4 id="version-20"&gt;Version: 2.0&lt;/h4&gt;
-
-&lt;h4 id="download-at-packalhttpwwwpackalorgworkflowparsers"&gt;Download at &lt;a href="http://www.packal.org/workflow/parsers"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
-
-&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; is a relatively simple workflow for &lt;a href="http://www.alfredapp.com/"&gt;Alfred&lt;/a&gt;. It allows you to quickly and easily look up parsing information for Greek &lt;em&gt;or&lt;/em&gt; Latin words. It gets its parsing information from the powerful &lt;a href="http://www.perseus.tufts.edu/"&gt;Perseus project&lt;/a&gt;, but presents the results in the clean user-interface of Alfred. To use &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt;, simply open Alfred and type the keyword &lt;code&gt;parse&lt;/code&gt;. Follow the keyword with the Latin or Greek word you want to look up:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="alfred_parser" src="https://www.evernote.com/shard/s41/sh/2c444d67-b4ca-40b3-b914-c20dc5ebbfb6/9d54f19c489deda365c65f1e6b5232e6/deep/0/alfred_parser.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; will display the results for you as quickly as possible.&lt;/p&gt;
-
-&lt;p&gt;As you can see, &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; displays the parsing information in the main title field for each item. Below that, in the sub-title field, it displays the lemma and a short definition separated by &lt;code&gt;::&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Let’s say you are reading some Greek or Latin, however, and don’t want to have to open Alfred, type &lt;code&gt;parse&lt;/code&gt;, then type the word you’re interested in. Well, &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; has thought of that. From within Alfred’s Preferences, you can set up a keyboard shortcut to pass the currently selected text on your Mac to &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt;. I have mine set up as &lt;code&gt;cmd+fn+-&amp;gt;&lt;/code&gt;. This makes using &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; even easier.&lt;/p&gt;
-
-&lt;p&gt;Once you have found the parsing information that you believe is correct in your reading context, &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; can do 2 things for you:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;copy the parsing information to the clipboard in a nicely formatted way (&lt;code&gt;cmd+return&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;copy the dictionary entry for that lemma to the clipboard (&lt;code&gt;shift+return&lt;/code&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;If, for instance, you were to choose the Nominative Singular Feminine form of &lt;code&gt;aura&lt;/code&gt; (with &lt;code&gt;cmd+return&lt;/code&gt;), &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; would copy this to the clipboard:&lt;/p&gt;
-
-&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;Type: noun
-Number: sg
-Gender: fem
-Case: voc
-
-Definition: the air (in motion), a breeze, breath of air, wind, blast:
-Lemma:  aura
-
-Lexicon Links:
-  + [Lewis &amp;amp; Short](http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0059%3Aentry%3Daura)
-  + [Elem. Lewis](http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0060%3Aentry%3Daura)
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Alternatively, you can use &lt;code&gt;shift+return&lt;/code&gt; to view a HUD of the lexicon entry for that parsing term, and this lexicon data will also be copied to the clipboard (&lt;em&gt;NOTE&lt;/em&gt;: Parsers will attempt to display the lexicon entry from the most concise lexicon available for the chosen term or allow you to choose out of the available dictionaries).&lt;/p&gt;
-
-&lt;p&gt;All you should need to read your Greek and/or Latin with ease.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Skimmer</title>
-    <link rel="alternate" href="http://blog.url.com/projects/skimmer/"/>
-    <id>http://blog.url.com/projects/skimmer/</id>
-    <published>2015-05-26T20:00:00-04:00</published>
-    <updated>2016-12-02T22:18:54-05:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;h3 id="version-221"&gt;Version: 2.2.1&lt;/h3&gt;
-
-&lt;h3 id="download-at-packalhttpwwwpackalorgworkflowskimmer"&gt;Download at &lt;a href="http://www.packal.org/workflow/skimmer"&gt;Packal&lt;/a&gt;&lt;/h3&gt;
-
-&lt;h2 id="description"&gt;Description&lt;/h2&gt;
-
-&lt;p&gt;This workflow &lt;strong&gt;only&lt;/strong&gt; works with the free Mac PDF app &lt;a href="http://skim-app.sourceforge.net/"&gt;Skim&lt;/a&gt;. Skim is a fantastic app with great Applescript support (and its &lt;em&gt;free!&lt;/em&gt;). This workflow provides quick, easy access to a few custom Applescripts that I’ve written to deal with certain pesky problems I’ve come across when dealing with PDFs. There are currently four actions:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Crop and Split PDF&lt;/li&gt;
-  &lt;li&gt;Extract Data and Search Google Scholar&lt;/li&gt;
-  &lt;li&gt;Export Annotations&lt;/li&gt;
-  &lt;li&gt;Search your PDFs&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In this description I will explain how each of these works, and why you might want to use it.&lt;/p&gt;
-
-&lt;h3 id="crop-and-split-pdf"&gt;Crop and Split PDF&lt;/h3&gt;
-
-&lt;p&gt;First, &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; allows you to properly format those darned scanned PDFs. You know the ones I’m talking about, 2 books pages scanned into one, landscape-oriented PDF page. I want all of my PDFs in pretty, proper format with one PDF page corresponding to one portrait-oriented book/article page. In the past, it was quite the ordeal to crop the PDF so that the right- and left-hand margins were equal, and then to split each individual page and finally reconstruct the entire PDF. &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; makes this whole process as simple as π. You can use either a Hotkey or the Keyword &lt;code&gt;split&lt;/code&gt; to activate this feature.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="split" src="https://www.evernote.com/shard/s41/sh/83197405-2d1a-469e-a3ca-64cc4a481807/36b73f97006ac7fd5b650e22fb122769/deep/0/skimmer_split.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; then does 3 things:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Crop the PDF using a user-inserted Line Annotation (if necessary) (see image below)&lt;/li&gt;
-  &lt;li&gt;Split the two-page PDF into individual pages&lt;/li&gt;
-  &lt;li&gt;Re-assemble everything and clean up&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Let me walk you thru the process. To begin, you will need to &lt;em&gt;ensure that the two scanned book pages have equal margins&lt;/em&gt;. &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; will split the PDF page right down the middle, so we want the middle of the PDF to be the middle of the two pages. If the margins are unequal, you only need to use Skim’s Line Annotation to create a border for &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt;. Here’s an example:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="cropping" src="https://www.evernote.com/shard/s41/sh/d34511a1-b571-4df0-a6df-5c7b370704a6/0759f2d2f21a614c9a39d72f8eab0d42/deep/0/skimmer_original.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Note the small, vertical line at the bottom of the page. &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; will crop off everything to the left of this line. You could put the line anywhere on the page. If you the right-hand margin were too big, you could put it to the right, and &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; would automatically crop the excess stuff to the right of that line. If both margins are too big, you can put two lines on each side and &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; will take care of the rest.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; will crop &lt;em&gt;every page&lt;/em&gt; at this point, so find the farthest extremity on any page and use that as your guide. &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; can tell what page you are looking at, so it’ll make things work (note that in the image above, this is one of the middle pages being used as the cropping template). &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; does not crop Top or Bottom Margins, so you will need to manually crop PDFs with wacky top and/or bottom margins.&lt;/p&gt;
-
-&lt;p&gt;Once &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; has cropped the PDF, it will go thru and split each page into two separate pages. Depending on the length of the PDF, this can take a bit (approximately 0.67 seconds per original PDF page). This is all done invisibly tho, so that’s a bonus.&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; In order to ensure that &lt;code&gt;Skimer&lt;/code&gt; splits the PDF properly, regardless of orientation, the script will split the first page and ask you what portion of the page you are seeing (left-hand, right-hand, top-half, or bottom-half). Your choice will ensure that &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; does the splitting properly.&lt;/p&gt;
-
-&lt;p&gt;After it splits all the pages, &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; will save a copy of your original PDF and then close it as it opens the new, split PDF. This new PDF will be properly formatted and saved in the same folder as the original PDF. Here’s an example of the PDF above after it was automatically cropped and split:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="completed" src="https://www.evernote.com/shard/s41/sh/ac701fb0-3e1b-4ac6-ab6d-04dfdddae2f7/0cfdc3db448db7e430613b018a30f31e/deep/0/skimmer_final.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;For anyone who deals with lots of scanned PDFs, I can promise you, this is a godsend.&lt;/p&gt;
-
-&lt;h3 id="extract-data-and-search-google-scholar"&gt;Extract Data and Search Google Scholar&lt;/h3&gt;
-
-&lt;p&gt;The second feature will take &lt;a href="http://en.wikipedia.org/wiki/Optical_character_recognition"&gt;OCR’d&lt;/a&gt; PDFs and try to extract relevant search information and then search &lt;a href="http://scholar.google.com/"&gt;Google Scholar&lt;/a&gt; (which will make it easy to then add citation information to your citation manager of choice. Users of &lt;a href="http://fractaledmind/projects/zotquery"&gt;ZotQuery&lt;/a&gt; will immediately see where I’m going with this…). This feature can be activated by a user-assigned Hotkey or by the Keyword &lt;code&gt;extract&lt;/code&gt; when the desired PDF is open in Skim.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="extract" src="https://www.evernote.com/shard/s41/sh/5bf09958-9d77-4a54-aaa2-b5fff51ef70a/7edaae34fc339aa9230a700703de218e/deep/0/skimmer_extract.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;This feature will look for three possible things &lt;em&gt;in the currently viewed page&lt;/em&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;a &lt;a href="http://www.doi.org/"&gt;DOI&lt;/a&gt; (Digital Object Identifier)&lt;/li&gt;
-  &lt;li&gt;an ISBN (for books)&lt;/li&gt;
-  &lt;li&gt;JSTOR title page&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;If it cannot find any of these things, it will present the user with a list of Capitalized Words from the currently viewed page. You then select whichever words you want to be the Google Scholar query. Once the query is chosen (whether automatically as one of the 3 types above, or user-chosen keywords), &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; will automatically launch your default browser to Google Scholar using the query. What you do from there is up to you.&lt;/p&gt;
-
-&lt;h3 id="export-annotations"&gt;Export Annotations&lt;/h3&gt;
-
-&lt;p&gt;In short, this feature allows you to export all of your PDF annotations from your Skim PDF to &lt;a href="https://www.evernote.com/"&gt;Evernote&lt;/a&gt; (or the clipboard) while giving you &lt;strong&gt;live hyperlinks&lt;/strong&gt; back to the exact PDF page for the annotation!! You heard me, your Evernote note will have all of your PDF annotations, and each annotation will have a hyperlink that will open up that PDF to the exact page where that annotation is. Trust me, it’s super cool, amazingly helpful, and downright near magical.&lt;/p&gt;
-
-&lt;p&gt;Compatible annotations include Text notes, Anchor notes, Underlined text, Strike-Thru text, and Highlighted text. &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; will take all of your annotations, format them into some pretty HTML and send that to Evernote. I have been working on this code for quite some time, so it is FAST! It can handle and 100+ page book in a jiffy. But, since we all work slightly differently, I’ve also worked hard to make it FLEXIBLE. In order to use this function, simply use the &lt;code&gt;export&lt;/code&gt; keyword. Alternatively, you can assign a keyboard shortcut to the command as well (I use &lt;em&gt;cmd + shift + -&lt;/em&gt; myself).&lt;/p&gt;
-
-&lt;p&gt;Let me outline how you can make Annotation Export work exactly as you’d like.&lt;/p&gt;
-
-&lt;p&gt;First and foremost, I’ve added the ability for you to assign your own custom palette of Highlight Colors. One of the nicer touches to this feature is the ability to translate certain highlight colors into text headers. This can come in quite handy for really breaking down your text and your thoughts about the text into certain groupings. Now, I have a default set of 6 colors and their 6 corresponding text values, but you can change both the colors and the text to fit exactly your needs. But how, you might ask? Well, version 2.0 comes with a new Help PDF. Simply use the &lt;code&gt;sk:help&lt;/code&gt; keyword and select &lt;code&gt;Open PDF&lt;/code&gt; to view this document. On the second page, you will see these annotations:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="helper pdf" src="https://www.evernote.com/shard/s41/sh/0e33ffc1-d931-4932-9949-a668c1554a0f/cb6e0abe1897462a15e5708cfffc4043/deep/0/skimmer_config1.pdf-(page-2-of-4).png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;The text of the PDF will lay this all out for you, but basically, you simply change the highlight colors and change the corresponding text to what ever you like. There are an (nearly) infinite number of possibilities. The only things to remember are &lt;strong&gt;don’t mess with the actual highlights, merely change their colors&lt;/strong&gt; and &lt;strong&gt;don’t delete prefixed numbers in the text notes, only the text&lt;/strong&gt;. Otherwise, you can fiddle to your hearts content. Just so you can get a feel for how the process will work, here’s what the Evernote note would look like if you ran the Annotation Export script on the Help PDF (well, this is only the highlights section; run the script to see how text notes are handled):&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="exported note" src="https://www.evernote.com/shard/s41/sh/4fadbe0b-e763-4d0c-b100-d82048ad378a/6b115224808df230224e325e710abeb0/deep/0/skimmer_config.pdf---Evernote-Premium.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; If you change the highlight colors and/or the text meanings, you will have to run &lt;code&gt;sk:help&lt;/code&gt; -&amp;gt; &lt;code&gt;Set Highlights&lt;/code&gt; before &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; will apply your changes. So, to change the Highlights:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Open the Help PDF (&lt;code&gt;sk:help&lt;/code&gt; -&amp;gt; &lt;code&gt;Open PDF&lt;/code&gt;) and alter the highlights and text on the second page.&lt;/li&gt;
-  &lt;li&gt;Run &lt;code&gt;sk:help&lt;/code&gt; -&amp;gt; &lt;code&gt;Set Highlights&lt;/code&gt; to save your changes.&lt;/li&gt;
-  &lt;li&gt;Then, you can use &lt;code&gt;export&lt;/code&gt; to actually send your Skim annotations to Evernote.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Now, the ability to alter your highlights palette goes a long way in making this script personalizable (is that even a word?), but I went a step further. You can also tweak the HTML formatting used to create the Evernote note. Unfortunately, however, this will require opening up some Applescript and doing some code tweaking.&lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; But I’ve tried to make it not so scary. Essentially, each annotation type has a general formatting template used to create the HTML. I’ve abstracted this format and placed each variable element under your control. You can find all of the templates and some basic examples in the Help PDF (page 3), but here is one example, for the Highlight Notes:&lt;/p&gt;
-
-&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;--The alterable variables are wrapped in {curlies}, while the fixed elements are in &amp;lt;carets&amp;gt;.
-{pre}{wrap}&amp;lt;title&amp;gt;{/wrap} {wrap}&amp;lt;note text&amp;gt;{/wrap} {wrap}&amp;lt;link&amp;gt;{p.} &amp;lt;#&amp;gt;{/wrap}
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;So, you can prefix anything you’d like to the front of a note type: a dash, a tab, a few tabs, a word, etc. You can then wrap the title of the highlight (this is the text given for whatever color that highlighted annotation was) in anything at all: make it bold, italics, wrap it in [brackets], whatever. You can also wrap the actual text highlighted: in “quotes”, make it italics, etc. Finally, you have what you wrap the hyperlink in: it could be (parentheses) or {braces}, etc. And you can specify what page abbreviation you want: p., page, #. Now, the script defaults to settings that I think work pretty well, and you can use those to get a feel for what’s possible. Just remember, &lt;em&gt;it needs to be valid HTML&lt;/em&gt;. All of these properties are near the top of the &lt;code&gt;action_export-notes.scpt&lt;/code&gt; found in the workflow directory (you can use &lt;code&gt;sk:bug&lt;/code&gt; -&amp;gt; &lt;code&gt;Root&lt;/code&gt; to open this folder easily). Feel free to ask me if you have something you’d like to format but can’t quite figure it out.&lt;/p&gt;
-
-&lt;p&gt;Since I’ve added the PDF hyperlinking functionality, I’ve also added the ability to copy a PDF pages custom URL to the clipboard, if you want to hyperlink to that PDF page in any other context. Simply use the &lt;code&gt;sk:copy&lt;/code&gt; keyword. This whole URL hyperlinking works because I have written a custom URL handler which is bundled with the workflow that interprets the custom URLs that I’ve written to open PDFs in Skim to the appropriate page. It’s pretty cool, but &lt;em&gt;the URL uses the path to the PDF, so if you move the PDF the URL will &lt;strong&gt;break&lt;/strong&gt; until you alter all the old URLs to use your new path&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h3 id="search-your-pdfs"&gt;Search your PDFs&lt;/h3&gt;
-
-&lt;p&gt;Finally, you can also search through all of your PDFs and open any one of them right in Skim. Use either the keyword &lt;code&gt;skimmer&lt;/code&gt; or the shorter &lt;code&gt;sk&lt;/code&gt; to begin the query. Then enter your query term. The results will update as you type. You can hit &lt;code&gt;return&lt;/code&gt; to open any item directly in Skim, or you can &lt;code&gt;right-arrow&lt;/code&gt; to enter Alfred’s file browser for that item.&lt;/p&gt;
-
-&lt;h2 id="conclusion"&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;As I hope you can see, if you’re someone who deals with PDFs frequently, this workflow could be of help. Whether it’s splitting PDFs, searching through your PDF library, or exporting annotations, &lt;strong&gt;&lt;code&gt;Skimmer&lt;/code&gt;&lt;/strong&gt; can help you out.&lt;/p&gt;
-
-&lt;p&gt;Plus, it’s fairly simple to add functionality by simply adding more Applescripts, so if you have a great script for working with Skim, let me know in the comments.&lt;/p&gt;
-
-&lt;div class="footnotes"&gt;
-  &lt;ol&gt;
-    &lt;li id="fn:1"&gt;
-      &lt;p&gt;My original script would have to pop up each individual page for a split second. It was almost stroke inducing. &lt;a href="#fnref:1" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id="fn:2"&gt;
-      &lt;p&gt;Reader DrLulz has given a great example of this by tweaking the workflow to work best for PDFs of outline-based powerpoints. His comment and link can be found &lt;a href="http://www.alfredforum.com/topic/4052-skimmer-pdf-actions-for-skim/?p=27270"&gt;here&lt;/a&gt;. &lt;a href="#fnref:2" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Snippets</title>
-    <link rel="alternate" href="http://blog.url.com/projects/snippets/"/>
-    <id>http://blog.url.com/projects/snippets/</id>
-    <published>2015-05-26T20:00:00-04:00</published>
-    <updated>2016-12-02T22:18:59-05:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;h4 id="version-12"&gt;Version: 1.2&lt;/h4&gt;
-
-&lt;h4 id="download-on-packalhttpwwwpackalorgworkflowsnippets"&gt;Download on &lt;a href="http://www.packal.org/workflow/snippets"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
-
-&lt;p&gt;Have you ever been taking notes and realized that certain terms or phrases were going to be used repeatedly? You don’t have the time or really the desire to create all new TextExpander snippets for these terms or phrases, but you’d also really like to shorten your typing. That’s where &lt;strong&gt;&lt;code&gt;Snippets&lt;/code&gt;&lt;/strong&gt; comes in. &lt;strong&gt;&lt;code&gt;Snippets&lt;/code&gt;&lt;/strong&gt; is a dead simple Alfred workflow that allows you to use simple snippet syntax while writing, and then seamlessly convert your text to its full glory.&lt;/p&gt;
-
-&lt;p&gt;The set-up is simple. As you’re typing, and you realize you want to make a snippet, simply prepend your snippet with &lt;code&gt;,,&lt;/code&gt; (comma comma). Then, when you get a free moment, create a “snippet dictionary” to tell Snippets what that snippet means. To create the dictionary, simply wrap it in &lt;code&gt;^^^&lt;/code&gt; (triple carets). Here’s an example:&lt;/p&gt;
-
-&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2
-3
-4
-5
-6&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;This is an example of ,,sn. ,,sn is a fantastic workflow for ,,a!
-
-^^^
-sn: **`Snippets`**
-a: Alfred
-^^^
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;That’s all there is to it. Once your dictionary is complete and you have finished typing, either copy the text to the clipboard and use the keyword &lt;code&gt;snip&lt;/code&gt;, or assign a keyboard shortcut for even quicker results. When you activate &lt;strong&gt;&lt;code&gt;Snippets&lt;/code&gt;&lt;/strong&gt;, the text above will instantly become:&lt;/p&gt;
-
-&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;This is an example of **`Snippets`**. **`Snippets`** is a fantastic workflow for Alfred!
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;It’s so simple. Double-comma before the snippet; dictionary wrapped in triple-carets with snippet: expanded. Nothing more, nothing less.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="demo" src="https://raw.githubusercontent.com/smargh/alfred_snippets/master/snippets.gif" /&gt;&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Wikify</title>
-    <link rel="alternate" href="http://blog.url.com/projects/wikify/"/>
-    <id>http://blog.url.com/projects/wikify/</id>
-    <published>2015-05-26T20:00:00-04:00</published>
-    <updated>2016-12-02T22:19:06-05:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;h4 id="version-26"&gt;Version 2.6&lt;/h4&gt;
-
-&lt;h4 id="download-on-packalhttpwwwpackalorgworkflowwikify"&gt;Download on &lt;a href="http://www.packal.org/workflow/wikify"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; is a workflow to add some great &lt;a href="http://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; and wiki goodness to &lt;a href="https://www.evernote.com/"&gt;Evernote&lt;/a&gt;. In this post, I want to lay out all of the functionality and how to take advantage of it.&lt;/p&gt;
-
-&lt;h3 id="markdown-functionality"&gt;Markdown Functionality&lt;/h3&gt;
-
-&lt;p&gt;One half of &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt;’s functionality concerns integrating Markdown and Evernote. Essentially, this means being able to send Markdown text to Evernote as HTML &lt;em&gt;and&lt;/em&gt; being able to export an Evernote note to a Markdown text file.&lt;/p&gt;
-
-&lt;p&gt;In order to export an Evernote note to a Markdown text file, you can use the &lt;code&gt;enmd&lt;/code&gt; keyword from Alfred. &lt;code&gt;enmd&lt;/code&gt; stands for “Evernote to Markdown”, and this command will take your currently selected Evernote note and create a Markdown formatted text file which will immediately be opened in your default text editor. In addition, &lt;code&gt;enmd&lt;/code&gt; will fill in the note’s title, notebook, and tags as metadata at the top of the file (this will make it a snap to edit the note and send it back to Evernote using the &lt;code&gt;mden&lt;/code&gt; command, which I will talk about next). The workflow also comes with the ability to bind a keyboard shortcut to this function (I use &lt;code&gt;cmd + shift + 9&lt;/code&gt;). No fuss, no hassle, no wait. Export your Evernote note into Markdown in a flash.&lt;/p&gt;
-
-&lt;p&gt;But what about getting data &lt;em&gt;into&lt;/em&gt; Evernote? &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; will also allow you to write notes in Markdown in your text editor of choice and then send that text to Evernote, where it will be formatted and displayed in proper HTML. Now, this function has a bit of quirks to it, so let me elaborate. You can launch this function in one of two ways:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;the &lt;code&gt;mden&lt;/code&gt; keyword in Alfred&lt;/li&gt;
-  &lt;li&gt;setup a keyboard shortcut&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The keyboard shortcut will actually allow you simply to select your text (&lt;code&gt;cmd + a&lt;/code&gt; for “Select All”) and then press the shortcut to run the script. Alternatively, you can select the text, &lt;em&gt;copy it to the clipboard&lt;/em&gt;, and then pop up Alfred and use the &lt;code&gt;mden&lt;/code&gt; command (this is, obviously, short for “Markdown to Evernote”). It is important to note that if you use the &lt;code&gt;mden&lt;/code&gt; command from Alfred, your Markdown text &lt;em&gt;must&lt;/em&gt; be in the clipboard.&lt;/p&gt;
-
-&lt;p&gt;Now, how do you tell &lt;code&gt;mden&lt;/code&gt; &lt;em&gt;where&lt;/em&gt; to send your note, or what tags it should have, or what it’s title is? In order to assign Note Title, Notebook, and Tags, you can use simple &lt;a href="http://fletcherpenney.net/multimarkdown/"&gt;MultiMarkdown Headers&lt;/a&gt;, or simple symbols which are placed at the top of the document:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;Title:&lt;/code&gt; or &lt;code&gt;#&lt;/code&gt; for the note’s title&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;Notebook:&lt;/code&gt; or &lt;code&gt;=&lt;/code&gt; for the note’s notebook destination&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;Tags:&lt;/code&gt; or &lt;code&gt;@&lt;/code&gt; for the note’s tags&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;So, the top of your Markdown text note might look something like this:&lt;/p&gt;
-
-&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2
-3&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;# Text Note Title
-= My Default Notebook
-@ tag1, tag2, tag3
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;But, that’s not all that &lt;code&gt;mden&lt;/code&gt; can do. I’ve added a few extras to its capabilities. In addition to converting Markdown to text to HTML and sending that to Evernote, &lt;code&gt;mden&lt;/code&gt; has three other pretty cool features:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;document-specific text snippets (use &lt;code&gt;^^^snippet^^^&lt;/code&gt; syntax)&lt;/li&gt;
-  &lt;li&gt;auto-linking to pre-existing Evernote notes (no special syntax)&lt;/li&gt;
-  &lt;li&gt;auto-linking to new Evernote notes (use &lt;code&gt;[[double bracket]]&lt;/code&gt; syntax)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;First, let me explain document-specific text snippets. This feature was inspired recently as I was taking notes in class. In-class note-taking is a bit unique, since you won’t exactly know what words will be used repeatedly before the class begins. I’m all about &lt;a href="http://smilesoftware.com/TextExpander/"&gt;TextExpander&lt;/a&gt;, but I can’t set up snippets if I don’t know what will be the key words for that class. Plus, I don’t want to clutter my TextExpander library with these one-off snippets. So, document-specific text snippets was born. The idea is to use snippets in your notes as you type, and then define the &lt;code&gt;snippet:expanded text&lt;/code&gt; relationship before you use &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; to send the notes to Evernote. The syntax is dead-simple. Simply wrap your “snippet dictionary” in triple carets (&lt;code&gt;^^^snippet:expanded text^^^&lt;/code&gt;). You can have one-off “dictionaries” or you can make one long dictionary at the end of your document. The only things you need to remember are:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;ALWAYS use ,, as your in-text prefix (you &lt;em&gt;can&lt;/em&gt; change this in the code)&lt;/li&gt;
-  &lt;li&gt;if its a one-off (only one snippet), the “dictionary” needs to exist on its own line&lt;/li&gt;
-  &lt;li&gt;if its a multi-snippet “dictionary”, use the triple carets like fenced code blocks&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;To ensure these few easy syntax rules makes sense, here’s an example:&lt;/p&gt;
-
-&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2
-3
-4
-5
-6
-7
-8
-9&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;,,p are separated by a blank line.
-^^^p:Paragraphs^^^
-New text.
-2nd paragraph. *,,i*, **,,b**, `,,m`.
-^^^
-i:Italics
-b:BOLD
-m:monospace
-^^^
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Thats all there is to it. Note how each snippet is prefixed by &lt;code&gt;,,&lt;/code&gt;. This ensures that both you and the processor know what text needs to be expanded, and you don’t need to have the commas in the snippet dictionary. You can mix and match single-line snippet dictionaries with multi-snippet dictionaries in the same document. You can even use non-ASCII characters in your snippets or in your expanded text. For me, this is a killer feature. I hope someone else finds it useful.&lt;/p&gt;
-
-&lt;p&gt;Next, auto-linking to pre-existing Evernote notes. This is really the feature at the heart of &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt;, because this is what allows you to “wikify” your Evernote library. The idea is really quite simple: write your note as you normally would (in this case in Markdown, but I’ll discuss later how this can work within Evernote itself), and &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; will ensure that anytime you reference &lt;em&gt;any other Evernote note&lt;/em&gt; by title, your note will have a hyperlink to that other note. Let me offer a simple example. Say I began a new note like so:&lt;/p&gt;
-
-&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2
-3
-4
-5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;# Note Title
-= Notebook
-@ tag1, tag2
-
-This is the first line of my new note on Alfred App!
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Now, if I had a note in my Evernote account entitled “Alfred App”, when I process this note to send it to Evernote, &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; will now catch that and hyperlink to that pre-existing note, so this new note would have the phrase “Alfred App” linked directly to that other Evernote note. No fuss, no hassle, no funky syntax. And (this is what was holding me back on this feature for while), this is SUPER-FAST!&lt;/p&gt;
-
-&lt;p&gt;The final feature that “wikifies” Evernote when you are sending Markdown text to Evernote is smoothly creating new spaces to fill with data later, while simultaneously creating the inter-linking between notes. &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; has you covered here as well. Let’s say as you’re typing up a new Evernote note, you realize that you are discussing an idea, topic, or person that you want to research further, but at some later date. What to do? Well, you can use the standard wiki-syntax of the &lt;code&gt;[[double brackets]]&lt;/code&gt; to mark that idea, topic, or person as something you want to create a new note for, while also linking to that new note from within your current note. To return to our sample note above, let’s say you added this:&lt;/p&gt;
-
-&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2
-3
-4
-5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;# Note Title
-= Notebook
-@ tag1, tag2
-This is the first line of my new note on Alfred App!
-I want to talk more about [[AppleScript]].
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Whenever you have &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; process this Markdown text and send it to Evernote, it will first create a new note (in the same notebook as the one specified in the meta-data) entitled “AppleScript”, then embed the Evernote hyperlink to that new note within this current note. This means that your new Evernote note will have 2 links: one to the pre-existing note “Alfred App” and one to the newly created, blank note “AppleScript”. All of this without you having to do anything but type!&lt;/p&gt;
-
-&lt;p&gt;For anyone who prefers to write in Markdown, but loves the always-there accessibility of Evernote, this can be a powerful addition to your workflow. But obviously, not everyone writes their Evernote notes in Markdown first. Most people just write their notes directly in Evernote. But what if you wanted to still “wikify” your Evernote library, to easily create these interlinked notes? Well, I’ve tried to solve that problem too.&lt;/p&gt;
-
-&lt;h3 id="wiki-functionality"&gt;Wiki Functionality&lt;/h3&gt;
-
-&lt;p&gt;While I’ve already discussed some of the wiki functionality that’s inherent in the &lt;code&gt;mden&lt;/code&gt; function, that isn’t the only way to ensure that all of your Evernote data is intelligently interlinked. I have versions of both the link to pre-existing note and link to new note capabilities detailed above that work purely within Evernote. Here’s how they work.&lt;/p&gt;
-
-&lt;p&gt;In order to interlink any of your current Evernote notes with &lt;em&gt;pre-existing&lt;/em&gt; notes, you can use the &lt;code&gt;wfy&lt;/code&gt; command from Alfred. Simply open up Evernote and select the notes you want to “wikify” (the workflow does accept multiple selections, but you shouldn’t over tax it). Once your notes are selected, pull up Alfred and use the &lt;code&gt;wfy&lt;/code&gt; (short for “wikify”) keyword. The workflow will then process each of your notes individually, auto-linking to any pre-existing other notes which it references by name. &lt;strong&gt;NOTE:&lt;/strong&gt; In order to use this feature, you will need the &lt;a href="http://www.satimage.fr/software/en/downloads_osaxen.html"&gt;Satimage OSAX Scripting Addition&lt;/a&gt;. I’ve set it up such that this is remarkably easy to install. Simply use the keyword in Alfred &lt;code&gt;wfy:install&lt;/code&gt; and the Satimage installer will boot up and walk you through the process. It really is as simple as that. The script will search your note’s content for any references to other notes’ titles. If any are found, that text will be replaced with a hyperlink to that note. Here’s a gif that shows the process in action:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="wfy command" src="../../images/projects/wikify/wfy.gif" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Next, let’s say that you are in Evernote and see a phrase or term in one of your notes that you want to research more, while creating the wiki-environment that &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; is all about. I’ve added a companion feature which will:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;take the currently selected text in the open Evernote note&lt;/li&gt;
-  &lt;li&gt;create a new note in that notebook whose title is the selected text&lt;/li&gt;
-  &lt;li&gt;embed a hyperlink back to the original note as the first line of this new note&lt;/li&gt;
-  &lt;li&gt;and replace the selected text with a hyperlink to that newly created note&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This means that you have two-way hyperlinking (which is impossible in the &lt;code&gt;mden&lt;/code&gt; version of this functionality) between your current note and your new note. Creating spaces for new thought, while retaining context and wiki-style hyperlinking has never been easier. To use this feature, you can either use a user-specified keyboard shortcut, or copy the selected text to the clipboard and run &lt;code&gt;ensel&lt;/code&gt;. Here’s another gif to illustrate:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="ensel command" src="../../images/projects/wikify/ensel.gif" /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;To sum up, &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; has 4 main commands:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;mden&lt;/code&gt; to send Markdown text to Evernote&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;enmd&lt;/code&gt; to export an Evernote note to Markdown&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;wfy&lt;/code&gt; to “wikify” the selected Evernote note&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;ensel&lt;/code&gt; to create and wikify a new Evernote note from selection&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;With these features, and all of the “sub-features” elaborated above, I truly believe that &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; could be a great help to those others out there who love Evernote, Markdown, and Wiki goodness.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>ZotQuery</title>
     <link rel="alternate" href="http://blog.url.com/projects/zotquery/"/>
     <id>http://blog.url.com/projects/zotquery/</id>
@@ -2029,7 +2599,7 @@ I want to talk more about [[AppleScript]].
 
 &lt;p&gt;When you first download the workflow, you will need to run &lt;code&gt;z:config&lt;/code&gt; first to configure the necessary settings before you attempt any queries. In fact, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; will kick you to the &lt;code&gt;z:config&lt;/code&gt; command if you try any of the queries without having first configured your settings.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="configuration" src="../../images/projects/zotquery/zq_config_init.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="configuration" src="images/projects/zotquery/zq_config_init.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;On first run, the configurator will begin by searching for, and creating if necessary, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;’s workflow data folder, which can always be found at &lt;code&gt;/Users/$USER/Library/Application Support/Alfred 2/Workflow Data/com.hackademic.zotquery/&lt;/code&gt;.&lt;/p&gt;
 
@@ -2045,43 +2615,43 @@ I want to talk more about [[AppleScript]].
 
 &lt;p&gt;The configurator attempts to find all necessary paths automatically, but if it fails, it will ask you to select one manually. The title of the dialog box will alert you to what path the configurator requires:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="choosing the Zotero folder where linked attachments reside" src="../../images/projects/zotquery/zq_config_choose-folder.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="choosing the Zotero folder where linked attachments reside" src="images/projects/zotquery/zq_config_choose-folder.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once all paths are stored, the configurator moves on to set up your &lt;a href="http://www.zotero.org/support/dev/server_api/v2/start"&gt;Zotero API&lt;/a&gt; information. This workflow utilizes the Zotero API to export citations of chosen items. In order for the user to utilize these functions, they must have and set up a Zotero private key. Step one requires your Zotero User ID:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="entering Zotero user ID" src="../../images/projects/zotquery/zq_config_userid.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="entering Zotero user ID" src="images/projects/zotquery/zq_config_userid.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;If you do not have or do not know your Zotero User ID, click the &lt;code&gt;Where do I find my User ID?&lt;/code&gt; button. This will open Zotero’s “Feeds/API” tab, where you may need to login. Once logged in, you will see a page similar to this:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="creatingnew Zotero private key" src="../../images/projects/zotquery/Zotero___Settings___Feeds_API-2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="creatingnew Zotero private key" src="images/projects/zotquery/Zotero___Settings___Feeds_API-2.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;This shows a user who has two API keys set up, one for personal use and one for the iOS app &lt;a title="PaperShip - Manage, Annotate, and Share your Papers On The Go ..." href="http://www.papershipapp.com/"&gt;PaperShip&lt;/a&gt;. If you do not have a Personal API key, you can easily set one up by clicking the “Create new private key” link. Your User ID will be a number, probably less than 8 digits. Insert it into the text field and click &lt;code&gt;Set User ID&lt;/code&gt; (&lt;strong&gt;Note&lt;/strong&gt;: Applescript text input dialog boxes do not respond, typically, to the keyboard shortcut for paste, so you will likely need to right-click and manually paste in the ID).&lt;/p&gt;
 
 &lt;p&gt;Second, you will need to input your API Key:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="entering Zotero API key" src="../../images/projects/zotquery/zq_config_apikey-2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="entering Zotero API key" src="images/projects/zotquery/zq_config_apikey-2.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Since &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; reads this &lt;code&gt;settings.json&lt;/code&gt; file whenever it attempts to connect to the Zotero API, if you don’t insert the proper data here, the “Export Citation” and “Export Reference” (see below) functions &lt;strong&gt;will not work&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;Finally, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; (now in version 4.0) will also allow you to set your export style and format. Once you have entered your API information, the configurator will move to setting your export preferences:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="choosing export style and format" src="../../images/projects/zotquery/zq_prefs1.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="choosing export style and format" src="images/projects/zotquery/zq_prefs1.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;First, you will select the &lt;a href="http://citationstyles.org/"&gt;CSL Style&lt;/a&gt; that you wish to use. Currently &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; can export data in 5 different styles: Chicago (author-date), APA, MLA, Zotero’s own RTF-Scan format, and BibTeX. Now, in &lt;strong&gt;version 6.2&lt;/strong&gt;, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; will also allow users to export in the &lt;a href="http://zotero-odf-scan.github.io/zotero-odf-scan/"&gt;ODT-RTF Scannable Cites format&lt;/a&gt; (option not shown in image below). This will determine the format of exported citations and references.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="choosing CSL style" src="../../images/projects/zotquery/zq_prefs2-4.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="choosing CSL style" src="images/projects/zotquery/zq_prefs2-4.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Next, you will select the text formatting for exported data. &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; (in version 4.0) can export in either &lt;a href="http://daringfireball.net/projects/markdown/basics"&gt;Markdown&lt;/a&gt; or &lt;a href="http://en.wikipedia.org/wiki/Rich_Text_Format"&gt;Rich Text&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="choosing export text format" src="../../images/projects/zotquery/zq_prefs3.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="choosing export text format" src="images/projects/zotquery/zq_prefs3.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;All exported text is put in your clipboard, so you can use it anywhere in any text editor. You can also alter your export preferences at any point, using the &lt;code&gt;z:settings&lt;/code&gt; command.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="z:settings command" src="../../images/projects/zotquery/zq_export_settings.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="z:settings command" src="images/projects/zotquery/zq_export_settings.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Finally, you will need to select which Zotero client you use, either &lt;a href="https://www.zotero.org/download/"&gt;Zotero Standalone&lt;/a&gt; or &lt;a href="https://www.zotero.org/download/"&gt;Zotero for Firefox&lt;/a&gt;. This will determine which app will open any items that you select.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="choosing Zotero client" src="../../images/projects/zotquery/zq_client.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="choosing Zotero client" src="images/projects/zotquery/zq_client.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once all settings and preferences are set, the configurator will finally build the JSON cache of your Zotero data. &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; will clone your Zotero database and also generate a JSON file with all pertinent information. Once cached, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; is configured.&lt;/p&gt;
 
@@ -2118,93 +2688,93 @@ I want to talk more about [[AppleScript]].
 
 &lt;p&gt;The &lt;strong&gt;General&lt;/strong&gt; search is launched by the keyword &lt;code&gt;zot&lt;/code&gt; or the short version &lt;code&gt;z&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="zot general search command" src="../../images/projects/zotquery/zq_gen_init-3.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="zot general search command" src="images/projects/zotquery/zq_gen_init-3.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;This will search your entire Zotero database for any use of the query provided. The search script is “loose,” that is, it searches for matches of the query “in” the data not matches that “equal” the data. This means you can search half words, words in the middle of titles, etc.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; will not begin searching until you have entered at least 3 characters. This ensures faster, smarter results. Until you have typed at least 3 characters, you will see this result:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="zot general search with too short query" src="../../images/projects/zotquery/Screen_Shot_2014-01-18_at_6_10_23_PM-4.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="zot general search with too short query" src="images/projects/zotquery/Screen_Shot_2014-01-18_at_6_10_23_PM-4.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once you complete your query, and the script catches up with you, you will see a list of all of your Zotero items that match the query. If your query doesn’t have any matches, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; returns an error:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="zot general search no results" src="../../images/projects/zotquery/zq_error_res-2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="zot general search no results" src="images/projects/zotquery/zq_error_res-2.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;If, however, you have results, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; presents them in a ranked order:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="zot general search ranked results" src="../../images/projects/zotquery/zq_gen_search-3.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="zot general search ranked results" src="images/projects/zotquery/zq_gen_search-3.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;For ease of use, the workflow provides unique icons for the various item types:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;article   &lt;img alt="article icon" src="../../images/projects/zotquery/n_article.png" /&gt;&lt;/li&gt;
-  &lt;li&gt;book      &lt;img alt="book icon" src="../../images/projects/zotquery/n_book.png" /&gt;&lt;/li&gt;
-  &lt;li&gt;chapter   &lt;img alt="chapter icon" src="../../images/projects/zotquery/n_book.png" /&gt;&lt;/li&gt;
-  &lt;li&gt;conference paper &lt;img alt="conference icon" src="../../images/projects/zotquery/n_conference.png" /&gt;&lt;/li&gt;
-  &lt;li&gt;other &lt;img alt="other icon" src="../../images/projects/zotquery/n_written.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;article   &lt;img alt="article icon" src="images/projects/zotquery/n_article.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;book      &lt;img alt="book icon" src="images/projects/zotquery/n_book.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;chapter   &lt;img alt="chapter icon" src="images/projects/zotquery/n_book.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;conference paper &lt;img alt="conference icon" src="images/projects/zotquery/n_conference.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;other &lt;img alt="other icon" src="images/projects/zotquery/n_written.png" /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;If your item has an attachment, the icon changes to signal the addition as will the subtitle field. The subtitle field will include &lt;code&gt;Attachments: n&lt;/code&gt;, where n is the number of attachments:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="item with attachments" src="../../images/projects/zotquery/zq_attachments-4.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="item with attachments" src="images/projects/zotquery/zq_attachments-4.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;The altered icons each have a small plus sign in the top-right corner:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;article + attachment  &lt;img alt="article icon with attachment" src="../../images/projects/zotquery/att_article.png" /&gt;&lt;/li&gt;
-  &lt;li&gt;book + attachment     &lt;img alt="book icon with attachment" src="../../images/projects/zotquery/att_book.png" /&gt;&lt;/li&gt;
-  &lt;li&gt;chapter + attachment  &lt;img alt="chapter icon with attachment" src="../../images/projects/zotquery/att_chapter.png" /&gt;&lt;/li&gt;
-  &lt;li&gt;conference paper + attachment   &lt;img alt="conference icon with attachment" src="../../images/projects/zotquery/att_conference.png" /&gt;&lt;/li&gt;
-  &lt;li&gt;other + attachment    &lt;img alt="other icon with attachment" src="../../images/projects/zotquery/att_written.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;article + attachment  &lt;img alt="article icon with attachment" src="images/projects/zotquery/att_article.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;book + attachment     &lt;img alt="book icon with attachment" src="images/projects/zotquery/att_book.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;chapter + attachment  &lt;img alt="chapter icon with attachment" src="images/projects/zotquery/att_chapter.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;conference paper + attachment   &lt;img alt="conference icon with attachment" src="images/projects/zotquery/att_conference.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;other + attachment    &lt;img alt="other icon with attachment" src="images/projects/zotquery/att_written.png" /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;The &lt;strong&gt;Author&lt;/strong&gt; search is launched by &lt;code&gt;zot:a&lt;/code&gt; or the short version &lt;code&gt;za&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="zot:a author search command" src="../../images/projects/zotquery/zq_a_init-4.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="zot:a author search command" src="images/projects/zotquery/zq_a_init-4.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;This search only queries the last names of the authors of your Zotero data. For example: &lt;code&gt;zot:a thomas&lt;/code&gt; will return all the items that have an author (or editor, translator, etc.) with the last name “Thomas”.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="zot:a author search results" src="../../images/projects/zotquery/zq_a_search-3.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="zot:a author search results" src="images/projects/zotquery/zq_a_search-3.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;The &lt;strong&gt;Title&lt;/strong&gt; search is launched by &lt;code&gt;zot:t&lt;/code&gt; or the short version &lt;code&gt;zt&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="zot:t title search command" src="../../images/projects/zotquery/zq_t_init-3.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="zot:t title search command" src="images/projects/zotquery/zq_t_init-3.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;This search only queries the title fields of your Zotero data. For example: &lt;code&gt;zot:t virgil&lt;/code&gt; will return all of the items whose title contains the word “Virgil”.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="zot:t title search results" src="../../images/projects/zotquery/zq_t_search.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="zot:t title search results" src="images/projects/zotquery/zq_t_search.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;The final two searches (Tag and Collection) are two-step searches. In step-one, you search &lt;em&gt;for&lt;/em&gt; a particular Tag or Collection; in step-two you search &lt;em&gt;within&lt;/em&gt; that particular Tag or Collection for your query.&lt;/p&gt;
 
 &lt;p&gt;The &lt;strong&gt;Tag&lt;/strong&gt; search is launched by &lt;code&gt;z:tag&lt;/code&gt; or the short version &lt;code&gt;ztg&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="z:tag tags search command" src="../../images/projects/zotquery/zq_tag_init.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="z:tag tags search command" src="images/projects/zotquery/zq_tag_init.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;This allows you to search through all of your Zotero tags.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="z:tag tags search results" src="../../images/projects/zotquery/zq_tag_search.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="z:tag tags search results" src="images/projects/zotquery/zq_tag_search.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once you select a tag, Alfred will automatically initiate the &lt;code&gt;zot:tag&lt;/code&gt; search, which will search within that tag for your query. The &lt;code&gt;zot:tag&lt;/code&gt; (or &lt;code&gt;znt&lt;/code&gt;) query functions just like the general &lt;code&gt;zot&lt;/code&gt; query, except that it is limited to those items with the previously chosen tag.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="zot:tag in-tag search results" src="../../images/projects/zotquery/zq_intag_seach.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="zot:tag in-tag search results" src="images/projects/zotquery/zq_intag_seach.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;The &lt;strong&gt;Collection&lt;/strong&gt; search is similar. It is launched by &lt;code&gt;z:col&lt;/code&gt;, or by &lt;code&gt;zc&lt;/code&gt;, which begins a search for all of your Zotero collections.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="z:col collections search command" src="../../images/projects/zotquery/zq_col_init.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="z:col collections search command" src="images/projects/zotquery/zq_col_init.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;As you type, it will filter any collections that contain the query.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="z:col collections search results" src="../../images/projects/zotquery/zq_col_search-3.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="z:col collections search results" src="images/projects/zotquery/zq_col_search-3.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once you choose a particular collection, Alfred will initiate the &lt;code&gt;zot:c&lt;/code&gt; search (also &lt;code&gt;znc&lt;/code&gt;), which will search within that particular collection.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="zot:c in-collection search results" src="../../images/projects/zotquery/zq_incol_search.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="zot:c in-collection search results" src="images/projects/zotquery/zq_incol_search.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;As above, the &lt;code&gt;zot:c&lt;/code&gt; search functions just like the simple &lt;code&gt;zot&lt;/code&gt; search.&lt;/p&gt;
 
 &lt;p&gt;Finally, you can now (after version 4.1) search only items with attachments using the &lt;code&gt;z:att&lt;/code&gt; query (short version = &lt;code&gt;zat&lt;/code&gt;). This query allows you to quickly find pdfs or epubs in your Zotero library and open them in your default application. As of now, &lt;code&gt;z:att&lt;/code&gt; only allows for you to open the attached files.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="z:att attachments search results" src="../../images/projects/zotquery/zq_attachment_search.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="z:att attachments search results" src="images/projects/zotquery/zq_attachment_search.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Similarly, you can use &lt;code&gt;zot:n&lt;/code&gt; (or &lt;code&gt;zn&lt;/code&gt;) to search through the notes for any items. This can prove very helpful for people who use Zotero as their notes repository for all of their secondary sources.&lt;/p&gt;
 
@@ -2228,35 +2798,35 @@ I want to talk more about [[AppleScript]].
 
 &lt;p&gt;If you hit &lt;code&gt;option+return&lt;/code&gt; when you choose your item, you will export a short reference to that item.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="export reference" src="../../images/projects/zotquery/zq_gen_ref.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="export reference" src="images/projects/zotquery/zq_gen_ref.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Depending on your style and format settings, your reference will be of various types.&lt;/p&gt;
 
 &lt;p&gt;If you hit &lt;code&gt;control+return&lt;/code&gt;, you will export a full citation of the item in your chosen format.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="export markdown citation" src="../../images/projects/zotquery/zq_gen_cite.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="export markdown citation" src="images/projects/zotquery/zq_gen_cite.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Next, if you hit &lt;code&gt;shift+return&lt;/code&gt;, you will open the attachment of that item.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="open attachment" src="../../images/projects/zotquery/zq_gen_open.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="open attachment" src="images/projects/zotquery/zq_gen_open.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Finally, if you hit &lt;code&gt;fn+return&lt;/code&gt;, you will append a citation of the item to a temporary bibliography file.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="append markdown citation to bibliography" src="../../images/zq_gen_append.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="append markdown citation to bibliography" src="images/zq_gen_append.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;This bibliography file is stored in the workflow’s cache folder. You can add as many citations to it as you wish. This function allows you to dynamically build a Bibliography/Works Cited page. When you have put all the needed citations in the temporary file, you need only run the &lt;code&gt;z:bib&lt;/code&gt; command to export them.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="z:bib export command" src="../../images/projects/zotquery/zq_bib_init-5.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="z:bib export command" src="images/projects/zotquery/zq_bib_init-5.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;This will take all of the citations in the temporary bibliography file, organize them in alphabetical order, and copy the result to the clipboard. A result in Markdown format will resemble this:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="exported markdown citations example" src="../../images/projects/zotquery/WORKS_CITED-2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="exported markdown citations example" src="images/projects/zotquery/WORKS_CITED-2.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;The temporary bibliography file is not the only way, however, to automatically generate a full Bibliography/Works Cited page. Since many Zotero users, myself included, use either Tags or Collections to organize their library into writing projects, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; also allows the user to export a full formatted bibliography (in alphabetical order) for any Tag or Collection.&lt;/p&gt;
 
 &lt;p&gt;When you are searching for a Tag or a Collection with &lt;code&gt;z:tag&lt;/code&gt; or &lt;code&gt;z:col&lt;/code&gt;, you can use &lt;code&gt;control+return&lt;/code&gt; to export a bibliography of that Tag or Collection, instead of simply searching within that Tag or Collection by hitting &lt;code&gt;return&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="export bibliography of collection" src="../../images/projects/zotquery/zq_col_bib.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="export bibliography of collection" src="images/projects/zotquery/zq_col_bib.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Thus, if you organize the citations for particular project within a certain Collection or under a certain Tag, you can create full, formatted Works Cited pages on the fly from &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;!&lt;/p&gt;
 
@@ -2270,7 +2840,7 @@ I want to talk more about [[AppleScript]].
 
 &lt;p&gt;There is also the Caching function. All of the query scripts are querying a JSON cache of your Zotero database. This file is created and then updated with the keyword &lt;code&gt;z:cache&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="z:cache caching command" src="../../images/projects/zotquery/zq_cache_init-3.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="z:cache caching command" src="images/projects/zotquery/zq_cache_init-3.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;This function will find your Zotero sqlite database, read its contents, and create a JSON cache of the pertinent information.&lt;/p&gt;
 
@@ -2284,21 +2854,21 @@ I want to talk more about [[AppleScript]].
 
 &lt;p&gt;Aside from the core features, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; comes with some additional features. First, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; comes with the ability to set up a keyboard shortcut to launch the title-specific search. I use &lt;code&gt;command+shift+Z&lt;/code&gt; as my hotkey. If you setup the hotkey, you can launch immediately into the title search (with a snazzy interface):&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="auto title search" src="../../images/projects/zotquery/zq_hotkey_search-2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="auto title search" src="images/projects/zotquery/zq_hotkey_search-2.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;You can also change this hotkey to launch whichever query you like.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; also has the ability to be an option in your Alfred fallback searches. In order to setup &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; as a fallback search option, open Alfred’s preferences and go to the &lt;code&gt;Features&lt;/code&gt; tab. Near the bottom of the page you will see a button to &lt;code&gt;Setup fallback results&lt;/code&gt;:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="add fallback search in preferences pt. 1" src="../../images/projects/zotquery/zq_fallback_setup-2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="add fallback search in preferences pt. 1" src="images/projects/zotquery/zq_fallback_setup-2.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;When you click that button a panel will slide out of top:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="add fallback search in preferences pt. 2" src="../../images/projects/zotquery/zq_fallback-3.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="add fallback search in preferences pt. 2" src="images/projects/zotquery/zq_fallback-3.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Click the &lt;code&gt;+&lt;/code&gt; button and select &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; from the &lt;code&gt;Workflow Trigger&lt;/code&gt; list. You can even re-order the fallback searches, and put &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; near the top. When setup, this will allow you to search in Alfred like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="add fallback search in preferences pt. 3" src="../../images/projects/zotquery/zq_fallback_search-2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="add fallback search in preferences pt. 3" src="images/projects/zotquery/zq_fallback_search-2.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;And have it immediately become a &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; search.&lt;/p&gt;
 
@@ -2847,94 +3417,27 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
 </content>
   </entry>
   <entry>
-    <title>Spritzr</title>
-    <link rel="alternate" href="http://blog.url.com/projects/spritzr/"/>
-    <id>http://blog.url.com/projects/spritzr/</id>
+    <title>LibGen</title>
+    <link rel="alternate" href="http://blog.url.com/projects/libgen/"/>
+    <id>http://blog.url.com/projects/libgen/</id>
     <published>2015-05-22T20:00:00-04:00</published>
-    <updated>2016-12-02T22:19:03-05:00</updated>
+    <updated>2016-12-02T22:18:24-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
-    <content type="html">&lt;h4 id="version-11"&gt;Version 1.1&lt;/h4&gt;
+    <content type="html">&lt;p&gt;Seach the &lt;a href="http://libgen.in/"&gt;Library Genesis&lt;/a&gt; project's catalogue of books and download right from your keyboard, without ever launching a browser.&lt;/p&gt;
 
-&lt;h4 id="download-on-packalhttpwwwpackalorgworkflowspritzr"&gt;Download on &lt;a href="http://www.packal.org/workflow/spritzr"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id="version-11"&gt;Version 1.1&lt;/h4&gt;
 
-&lt;p&gt;Spritzr is a relatively simple workflow that allows you to speed-read text on your Mac using &lt;a href="http://www.spritzinc.com/the-science/"&gt;Spritz-style&lt;/a&gt; techniques. The simple idea is that one word of your input text is displayed at a time in quick enough succession that you are no longer &lt;a href="http://en.wikipedia.org/wiki/Subvocalization"&gt;Sub-Vocalizing&lt;/a&gt;, which is the largest impediment to reading at a comfortable, yet swift pace. The added layer of nuance, however, is that each word is positioned around the so-called &lt;a href="http://www.spritzinc.com/blog/"&gt;Optimal Reading Position&lt;/a&gt;. To borrow an image from the Spritz website, the difference between most electronic speedreaders and Spritz-style speedreaders is the alignment of the words:&lt;/p&gt;
+&lt;h4 id="download-from-packalhttpwwwpackalorgworkflowlibgen"&gt;Download from &lt;a href="http://www.packal.org/workflow/libgen"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
 
-&lt;p&gt;&lt;img alt="word_positioning_blog3.png" src="http://www.spritzinc.com/wp-content/uploads/2014/02/word_positioning_blog3.png" /&gt;&lt;/p&gt;
+&lt;p&gt;This is a relatively simple workflow that allows users to search the &lt;a href="http://gen.lib.rus.ec/"&gt;Library Genesis PDF repository&lt;/a&gt;. For those who do not know, the Library Genesis project is:&lt;/p&gt;
 
-&lt;p&gt;This workflow achieves a similar affect, thus making reading simpler and faster.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;based in Russia, this is the largest currently openly available collection. They have several initiatives: i. +1 million files of mainly non-fiction ebooks, ii. +900k of mainly fiction ebooks, iii. +20 million papers from journals of science, history, art etc., iv. comics, magazines and paintings; totally amounting to at least 30 TB – easily the Library of Congress of the digital world. The Libgen movement mainly focusses on downloading whole collections that have already been posted in fora or as torrents, although a significant portion is also due to individual efforts. (per &lt;a href="https://sites.google.com/site/themetalibrary/library-genesis"&gt;Google Sites&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;&lt;strong&gt;NOTICE&lt;/strong&gt;: I wrote all of this software from scratch and have no affiliation with the Spritz company. I was inspired by other open-source projects that attempt to mirror the Spritz functionality: &lt;a href="https://github.com/Miserlou/OpenSpritz"&gt;OpenSpritz&lt;/a&gt; and &lt;a href="https://github.com/littleq0903/spritz-cmd"&gt;spritz-cmd&lt;/a&gt;, but this software has no relation to Spritz aside from appearances.&lt;/p&gt;
-
-&lt;p&gt;Spritzr currently only has one command: &lt;code&gt;spritz&lt;/code&gt;. This takes text input which will be parsed and displayed in the Spritzr window.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="spritzr.png" src="https://www.evernote.com/shard/s41/sh/288af1c4-bed2-4dfc-ab5f-391ee6c39b32/606b76b31d8c6fbbb4558f38d505cfe5/deep/0/spritzr.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Alternatively, you can pass text files (&lt;code&gt;.txt&lt;/code&gt;, &lt;code&gt;.md&lt;/code&gt;, &lt;code&gt;.mmd&lt;/code&gt;) into Spritzr using the File Action &lt;code&gt;File Spritzr&lt;/code&gt;. This will parse and display the text content of that file in the Spritzr window.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="spritzr_file.png" src="https://www.evernote.com/shard/s41/sh/0da5e015-ca7c-461a-bdb4-675b69ae26ea/15682e931bf8c6daf2fcad14f9b200eb/deep/0/spritzr_file.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;There are two settings, which can be changed using the &lt;code&gt;spritzr:set&lt;/code&gt; keyword:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Words per Minute&lt;/li&gt;
-  &lt;li&gt;Reading Mode&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;If you which to change your wpm, simply invoke &lt;code&gt;spritzr:set&lt;/code&gt; and input an integer (the default is 250). If you which to change the reading mode, invoke &lt;code&gt;spritzr:set&lt;/code&gt; and input either &lt;code&gt;dark&lt;/code&gt; or &lt;code&gt;light&lt;/code&gt; (the default is &lt;code&gt;light&lt;/code&gt;).&lt;/p&gt;
-
-&lt;p&gt;Dark Mode: &lt;img alt="spritzr_dark.png" src="https://www.evernote.com/shard/s41/sh/a620b423-7a24-49b8-86e1-6a6088304b0b/5605e456e9e00a944a2d52609b360222/deep/0/spritzr_dark.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Light Mode: &lt;img alt="spritzr_light.png" src="https://www.evernote.com/shard/s41/sh/95a765b1-b622-4a27-911e-5b7d2e6b5a40/f3b77ee67f52cd3afa44dec5656ee4dc/deep/0/spritzr_light.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Other than that, you can just start spritzing!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Classical Studies Resources</title>
-    <link rel="alternate" href="http://blog.url.com/projects/classical-studies-resources/"/>
-    <id>http://blog.url.com/projects/classical-studies-resources/</id>
-    <published>2015-05-22T20:00:00-04:00</published>
-    <updated>2016-12-17T23:13:04-05:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;p&gt;This is a work-in-progress collection of structured data and scripts for Classical Studies/Classics.&lt;/p&gt;
-
-&lt;p&gt;The data has been compiled and organized from various online resources including:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;the &lt;a href="http://www.perseus.tufts.edu/"&gt;Perseus Project&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://dcc.dickinson.edu/"&gt;Dickenson College Commentaries&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://dge.cchs.csic.es/index.en"&gt;The Diccionario Griego-Español Project&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://www.annee-philologique.com/"&gt;L’Année philologique&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This is a work-in-progress collection of structured data and scripts for Classical Studies/Classics. The data has been compiled and organized from various online resources including the Perseus Project, Dickenson College Commentaries, The Diccionario Griego-Español Project, and L’Année philologique.&lt;/p&gt;
-
-&lt;p&gt;Currently, these are the JSON structured files:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;DCC Greek Core Vocabulary&lt;/li&gt;
-  &lt;li&gt;DCC Latin Core Vocabulary&lt;/li&gt;
-  &lt;li&gt;Greek Authors&lt;/li&gt;
-  &lt;li&gt;Greek Texts&lt;/li&gt;
-  &lt;li&gt;Latin Texts&lt;/li&gt;
-  &lt;li&gt;L’Année philologique Journal Abbreviations (in two forms)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;There are also plain text files:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;DGE Authors and Works&lt;/li&gt;
-  &lt;li&gt;DGE Dictionary Abbreviations&lt;/li&gt;
-  &lt;li&gt;Index to Smyth’s Greek Grammar&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Finally, there is a random collection of scripts (mostly compiled Applescripts) that I have made at various points for various uses. This section requires much cleaning up, refactoring, and organization at this stage. But I am putting them here for now nonetheless.&lt;/p&gt;
-
-&lt;p&gt;Hopefully, these will find some use for others.&lt;/p&gt;
+&lt;p&gt;This workflow has only one keyword and one action. Use the keyword &lt;code&gt;libgen&lt;/code&gt; to begin a search. Select an item and press &lt;code&gt;Return&lt;/code&gt; to begin a download of the file in your browser of choice. The only real oddity of this workflow is that it requires the user to type a period (&lt;code&gt;.&lt;/code&gt;) after the query in order to initiate the search. This helps with performance.&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -3025,27 +3528,94 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
 </content>
   </entry>
   <entry>
-    <title>LibGen</title>
-    <link rel="alternate" href="http://blog.url.com/projects/libgen/"/>
-    <id>http://blog.url.com/projects/libgen/</id>
+    <title>Spritzr</title>
+    <link rel="alternate" href="http://blog.url.com/projects/spritzr/"/>
+    <id>http://blog.url.com/projects/spritzr/</id>
     <published>2015-05-22T20:00:00-04:00</published>
-    <updated>2016-12-02T22:18:24-05:00</updated>
+    <updated>2016-12-02T22:19:03-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
-    <content type="html">&lt;p&gt;Seach the &lt;a href="http://libgen.in/"&gt;Library Genesis&lt;/a&gt; project's catalogue of books and download right from your keyboard, without ever launching a browser.&lt;/p&gt;
+    <content type="html">&lt;h4 id="version-11"&gt;Version 1.1&lt;/h4&gt;
 
-&lt;h4 id="version-11"&gt;Version 1.1&lt;/h4&gt;
+&lt;h4 id="download-on-packalhttpwwwpackalorgworkflowspritzr"&gt;Download on &lt;a href="http://www.packal.org/workflow/spritzr"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
 
-&lt;h4 id="download-from-packalhttpwwwpackalorgworkflowlibgen"&gt;Download from &lt;a href="http://www.packal.org/workflow/libgen"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Spritzr is a relatively simple workflow that allows you to speed-read text on your Mac using &lt;a href="http://www.spritzinc.com/the-science/"&gt;Spritz-style&lt;/a&gt; techniques. The simple idea is that one word of your input text is displayed at a time in quick enough succession that you are no longer &lt;a href="http://en.wikipedia.org/wiki/Subvocalization"&gt;Sub-Vocalizing&lt;/a&gt;, which is the largest impediment to reading at a comfortable, yet swift pace. The added layer of nuance, however, is that each word is positioned around the so-called &lt;a href="http://www.spritzinc.com/blog/"&gt;Optimal Reading Position&lt;/a&gt;. To borrow an image from the Spritz website, the difference between most electronic speedreaders and Spritz-style speedreaders is the alignment of the words:&lt;/p&gt;
 
-&lt;p&gt;This is a relatively simple workflow that allows users to search the &lt;a href="http://gen.lib.rus.ec/"&gt;Library Genesis PDF repository&lt;/a&gt;. For those who do not know, the Library Genesis project is:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="word_positioning_blog3.png" src="http://www.spritzinc.com/wp-content/uploads/2014/02/word_positioning_blog3.png" /&gt;&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;based in Russia, this is the largest currently openly available collection. They have several initiatives: i. +1 million files of mainly non-fiction ebooks, ii. +900k of mainly fiction ebooks, iii. +20 million papers from journals of science, history, art etc., iv. comics, magazines and paintings; totally amounting to at least 30 TB – easily the Library of Congress of the digital world. The Libgen movement mainly focusses on downloading whole collections that have already been posted in fora or as torrents, although a significant portion is also due to individual efforts. (per &lt;a href="https://sites.google.com/site/themetalibrary/library-genesis"&gt;Google Sites&lt;/a&gt;)&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;This workflow achieves a similar affect, thus making reading simpler and faster.&lt;/p&gt;
 
-&lt;p&gt;This workflow has only one keyword and one action. Use the keyword &lt;code&gt;libgen&lt;/code&gt; to begin a search. Select an item and press &lt;code&gt;Return&lt;/code&gt; to begin a download of the file in your browser of choice. The only real oddity of this workflow is that it requires the user to type a period (&lt;code&gt;.&lt;/code&gt;) after the query in order to initiate the search. This helps with performance.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTICE&lt;/strong&gt;: I wrote all of this software from scratch and have no affiliation with the Spritz company. I was inspired by other open-source projects that attempt to mirror the Spritz functionality: &lt;a href="https://github.com/Miserlou/OpenSpritz"&gt;OpenSpritz&lt;/a&gt; and &lt;a href="https://github.com/littleq0903/spritz-cmd"&gt;spritz-cmd&lt;/a&gt;, but this software has no relation to Spritz aside from appearances.&lt;/p&gt;
+
+&lt;p&gt;Spritzr currently only has one command: &lt;code&gt;spritz&lt;/code&gt;. This takes text input which will be parsed and displayed in the Spritzr window.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="spritzr.png" src="https://www.evernote.com/shard/s41/sh/288af1c4-bed2-4dfc-ab5f-391ee6c39b32/606b76b31d8c6fbbb4558f38d505cfe5/deep/0/spritzr.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Alternatively, you can pass text files (&lt;code&gt;.txt&lt;/code&gt;, &lt;code&gt;.md&lt;/code&gt;, &lt;code&gt;.mmd&lt;/code&gt;) into Spritzr using the File Action &lt;code&gt;File Spritzr&lt;/code&gt;. This will parse and display the text content of that file in the Spritzr window.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="spritzr_file.png" src="https://www.evernote.com/shard/s41/sh/0da5e015-ca7c-461a-bdb4-675b69ae26ea/15682e931bf8c6daf2fcad14f9b200eb/deep/0/spritzr_file.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;There are two settings, which can be changed using the &lt;code&gt;spritzr:set&lt;/code&gt; keyword:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Words per Minute&lt;/li&gt;
+  &lt;li&gt;Reading Mode&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you which to change your wpm, simply invoke &lt;code&gt;spritzr:set&lt;/code&gt; and input an integer (the default is 250). If you which to change the reading mode, invoke &lt;code&gt;spritzr:set&lt;/code&gt; and input either &lt;code&gt;dark&lt;/code&gt; or &lt;code&gt;light&lt;/code&gt; (the default is &lt;code&gt;light&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Dark Mode: &lt;img alt="spritzr_dark.png" src="https://www.evernote.com/shard/s41/sh/a620b423-7a24-49b8-86e1-6a6088304b0b/5605e456e9e00a944a2d52609b360222/deep/0/spritzr_dark.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Light Mode: &lt;img alt="spritzr_light.png" src="https://www.evernote.com/shard/s41/sh/95a765b1-b622-4a27-911e-5b7d2e6b5a40/f3b77ee67f52cd3afa44dec5656ee4dc/deep/0/spritzr_light.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Other than that, you can just start spritzing!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Classical Studies Resources</title>
+    <link rel="alternate" href="http://blog.url.com/projects/classical-studies-resources/"/>
+    <id>http://blog.url.com/projects/classical-studies-resources/</id>
+    <published>2015-05-22T20:00:00-04:00</published>
+    <updated>2016-12-17T23:13:04-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;p&gt;This is a work-in-progress collection of structured data and scripts for Classical Studies/Classics.&lt;/p&gt;
+
+&lt;p&gt;The data has been compiled and organized from various online resources including:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the &lt;a href="http://www.perseus.tufts.edu/"&gt;Perseus Project&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://dcc.dickinson.edu/"&gt;Dickenson College Commentaries&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://dge.cchs.csic.es/index.en"&gt;The Diccionario Griego-Español Project&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://www.annee-philologique.com/"&gt;L’Année philologique&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This is a work-in-progress collection of structured data and scripts for Classical Studies/Classics. The data has been compiled and organized from various online resources including the Perseus Project, Dickenson College Commentaries, The Diccionario Griego-Español Project, and L’Année philologique.&lt;/p&gt;
+
+&lt;p&gt;Currently, these are the JSON structured files:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;DCC Greek Core Vocabulary&lt;/li&gt;
+  &lt;li&gt;DCC Latin Core Vocabulary&lt;/li&gt;
+  &lt;li&gt;Greek Authors&lt;/li&gt;
+  &lt;li&gt;Greek Texts&lt;/li&gt;
+  &lt;li&gt;Latin Texts&lt;/li&gt;
+  &lt;li&gt;L’Année philologique Journal Abbreviations (in two forms)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are also plain text files:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;DGE Authors and Works&lt;/li&gt;
+  &lt;li&gt;DGE Dictionary Abbreviations&lt;/li&gt;
+  &lt;li&gt;Index to Smyth’s Greek Grammar&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Finally, there is a random collection of scripts (mostly compiled Applescripts) that I have made at various points for various uses. This section requires much cleaning up, refactoring, and organization at this stage. But I am putting them here for now nonetheless.&lt;/p&gt;
+
+&lt;p&gt;Hopefully, these will find some use for others.&lt;/p&gt;
 </content>
   </entry>
   <entry>
