@@ -1,13 +1,14 @@
 ---
 title: 'A Simple Tree Building Algorithm'
-# date: TBD When publishing
-tags: code
+:date: 2017-03-05
+tags: 
 ---
 
 It is, unfortunately, not that often that I get the opportunity to devise an algorithm to solve a problem at work. Most work simply doesn't require that kind of thinking. But I thoroughly enjoy that kind of thinking, and thus thoroughly enjoyed the most recent opportunity I had to employ it. The problem was simple (though I have simplified and abstracted it for this post as well): we have a database table of `things`, and these `things` have a parent-child hierarchy, and we need to display a tree of these `things` in our UI. So, let's dig in.
 
 First, let's examine the basic shape of the database table. Each `thing` has an _id_, _name_, and _parent\_id_, like so:
 
+{:.tables}
 | id | name | parent_id |
 |----|------|-----------|
 |  1 | A    | nil       |
@@ -17,6 +18,7 @@ First, let's examine the basic shape of the database table. Each `thing` has an 
 |  5 | E    | 4         |
 |  6 | F    | 3         |
 |  7 | G    | nil       |
+
 
 Each row in the table gives us a "node" for our tree and tells us about that node's parent. This means that we cannot know by looking at a single row whether or not that "node" will have any children, but we can know if that "node" has a parent and what other "node" that parent is. If we want to think of this data in Ruby, this would be an array of hashes:
 
@@ -229,6 +231,7 @@ Our front-end code suggests to use that this data structure would work well for 
 Let's think through what precisely we need to happen. We need to iterate over an array of hashes. For each item/node/hash in that array, we need to store a reference in the `tree`. For each node we also need to add that node to its parent reference in the `tree`. This means we need to ensure that the reference to the parent _already exists_ in the `tree`; that is, imagine a scenario where we process node 2 before node 1 (the parent of node 2). We cannot add node 2 to node 1's `children` if node 1 does not exist in the tree. This, however, should be sufficient for parsing our array of hashes into a hash of nodes to be consumed by our UI code. So, let's start building it!
 
 We already know we must start with a `tree` and iterating of the `nodes`:
+
 ~~~ruby
 tree = {}
 nodes.each do |node|
@@ -237,6 +240,7 @@ end
 ~~~
 
 Now, we also need to either find or create the reference to the `node` in the `tree`:
+
 ~~~ruby
 tree = {}
 nodes.each do |node|
@@ -247,6 +251,7 @@ end
 The `||=` operator is what allows us to "find or create" a reference in the `tree` hash. If `tree[node[:id]]` already has a value, nothing happens; but, if it doesn't, the value is set to the empty hash `{}`.
 
 But we don't just want an empty hash for the value in the `tree`; we want to set the `parent_id` and initialize the `children` array (plus insert the `name`):
+
 ~~~ruby
 tree = {}
 nodes.each do |node|
@@ -255,6 +260,7 @@ end
 ~~~
 
 If we were to process `nodes` with just this code, at the end `tree` would look like this:
+
 ~~~ruby
 {
   1 => { parent_id: nil, children: [], name: "A" },
@@ -268,6 +274,7 @@ If we were to process `nodes` with just this code, at the end `tree` would look 
 ~~~
 
 We are close. All we need to do now is fill in the `children` information. A first step would be to mimic what we do with `node[:id]` in dealing with `node[:parent_id]`, that is, "find or create" its reference in the `tree`:
+
 ~~~ruby
 tree = {}
 nodes.each do |node|
@@ -277,6 +284,7 @@ end
 ~~~
 
 This has a hole, however, in its logic. Every node in `tree` will only ever have the shape it was initialized with. This means that if we visit node 2 first, node 2's `children` array will never be updated to include node 4 and node 1's reference will never have any more `chilren` than node 2, never have a `name`, and never have a `parent_id` (the logic still holds even if, in this particular scenario, node 1's parent is `nil`). So, we need a way to update references when we gather new information (on subsequent iterations). The first thing we must do is ensure that we set `parent_id` and `name` for every `node` as we process it, whether that node has a reference in the `tree` yet or not:
+
 ~~~ruby
 tree = {}
 nodes.each do |node|
@@ -288,6 +296,7 @@ end
 ~~~
 
 This code ensures that `tree[node[:id]]` _always_ has the proper `parent_id` and `name`. Unfortunately, however, it also obliterates any `children` value that may have been previously set. So, let's remove `children` from our reference `default`:
+
 ~~~ruby
 tree = {}
 nodes.each do |node|
@@ -298,7 +307,8 @@ nodes.each do |node|
 end
 ~~~
 
-This now at least ensures that if I visit a parent node _after_ I have visited one of its children, the parent's `children` array will still be intact. It does not, however, ensure that the `children` array is properly updated. Recall that in our test data node 1 has two children (2 and 3). This code will _never_ give us a reference node with more than one item in the `children` array. Moreover, it doesn't help us, when I visit a parent node first and one of its children later, to ensure that the reference to the parent node is updated while processing the child node to have that child node in its `children` array.
+This now at least ensures that if I visit a parent node _after_ I have visited one of its children, the parent's `children` array will still be intact. It does not, however, ensure that the `children` array is properly updated. Recall that in our test data node 1 has two children (2 and 3). This code will _never_ give us a reference node with more than one item in the `children` array. Moreover, it doesn't help us, when I visit a parent node first and one of its children later, to ensure that the reference to the parent node is updated while processing the child node to have that child node in its `children` array. What we need is to treat the parent node as intelligently as the current node on each processing cycle:
+
 ~~~ruby
 tree = {}
 nodes.each do |node|
@@ -313,9 +323,9 @@ nodes.each do |node|
 end
 ~~~
 
+This code can now handle multiple children and cares not for which node (parent or child) we visit first. This code, when processing our array of nodes, would produce:
 
 ~~~ruby
-{2=>{:parent_id=>1, :name=>"B"}, 1=>{:parent_id=>nil, :children=>[2], :name=>"A"}, 3=>{:parent_id=>1, :name=>"C"}, nil=>{:parent_id=>nil, :children=>[1], :name=>nil}, 7=>{:parent_id=>nil, :name=>"G"}, 4=>{:parent_id=>2, :name=>"D"}, 5=>{:parent_id=>4, :name=>"E"}, 6=>{:parent_id=>3, :name=>"F"}}
 {
   nil => { children: [1, 7] },
   1 => { name: 'A', parent_id: nil, children: [2, 3] },
@@ -327,6 +337,8 @@ end
   7 => { name: 'G', parent_id: nil, children: [] }
 }
 ~~~
+
+Huzzah! This is what we have been looking for! Pat yourself on the back, we've finally made our way to our goal. I hope this long (and sometimes circuitous) journey has helped you. I've tried to walk through the ups and downs, the missteps and recalibrations, that my actual process resembled. I have also tried to write code that is readable and understandable before all else. This code, however, is not the code that I actually ended up with or used. I used a few more elegant Ruby-isms to accomplish my goal. So, I leave you with my actual implementation, without a walk-thru, as a bit of mental homework. If you can understand how and why this code accomplishes the same goals as the above code, you will have learned a good deal about Ruby. And, I promise to write up an explanation at some point as well ;)
 
 ~~~ruby
 tree = {}
