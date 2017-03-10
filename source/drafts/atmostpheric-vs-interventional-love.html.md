@@ -4,6 +4,4 @@ title: 'Atmostpheric vs Interventional Love'
 tags:
 ---
 
-# Atmostpheric vs Interventional Love
-
 Write a draft post :-)

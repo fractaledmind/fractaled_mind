@@ -27,9 +27,9 @@ $badge-font-size: 0.75em !default;
 // Give each tag a different color (up to 8 colors, then repeats start)
 $i: 1;
 <% blog.tags.each_with_index do |obj, i| %>
-  <% i = i > 7 ? i - 7 : i + 1 %>
+  <% fn = ->(j) { (j > 7) ? fn.call(j - 7) : (j + 1) } %>
   .<%= obj[0] %> {
-    $current-color: nth($rainbow-list, <%= i %>);
+    $current-color: nth($rainbow-list, <%= fn.call(i) %>);
     background-color: $current-color;
   }
 <% end %>
