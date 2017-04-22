@@ -2,7 +2,7 @@
 :title: Ruminations on a Credal Logic
 :tags: faith, logic, epistemology
 :date: 2016-09-20
-image: images/credal_logic.png
+image: credal_logic.png
 ---
 How do we understand our faith? More precisely, how do we reason deeply and precisely as faith-adherents? Or, perhaps most precisely, how might our faith shape our reason? Do we have a faith seeking the light of understanding, or a faith seeking out understanding with its light?
 
