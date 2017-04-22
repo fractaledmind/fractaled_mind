@@ -101,11 +101,12 @@
     overflow: hidden;
     max-height: 12rem; // padding-top + filler-space + img height
     max-width: 12rem;
+    margin: 0 auto;
 
     img {
       display: block;
-      margin: 0 auto;
-      height: 10rem;
+      margin: 1.5rem auto;
+      max-height: 10rem;
     }
 
     #tag-filler-space {

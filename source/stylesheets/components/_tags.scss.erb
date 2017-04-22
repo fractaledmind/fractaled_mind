@@ -28,7 +28,7 @@ $badge-font-size: 0.75em !default;
 $i: 1;
 <% blog.tags.each_with_index do |obj, i| %>
   <% fn = ->(j) { (j > 7) ? fn.call(j - 7) : (j + 1) } %>
-  .<%= obj[0] %> {
+  .badge.<%= obj[0] %> {
     $current-color: nth($rainbow-list, <%= fn.call(i) %>);
     background-color: $current-color;
   }
