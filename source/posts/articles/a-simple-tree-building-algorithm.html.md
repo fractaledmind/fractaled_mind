@@ -2,6 +2,7 @@
 title: 'A Simple Tree Building Algorithm'
 :date: 2017-03-05
 tags: code, ruby
+image: images/list_to_tree.png
 ---
 
 It is, unfortunately, not that often that I get the opportunity to devise an algorithm to solve a problem at work. Most work simply doesn't require that kind of thinking. But I thoroughly enjoy that kind of thinking, and thus thoroughly enjoyed the most recent opportunity I had to employ it. The problem was simple (though I have simplified and abstracted it for this post as well): we have a database table of `things`, and these `things` have a parent-child hierarchy, and we need to display a tree of these `things` in our UI. So, let's dig in.
