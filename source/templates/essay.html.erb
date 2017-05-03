@@ -1,19 +1,2 @@
 <div class="card" id="essay-page">
-
-    <% if post.tags.any? %>
-      <ul class="card-tags">
-        <% post.tags.each do |tag| %>
-          <li>
-            <%= link_to "#{tag}", tag_path(tag),
-                class: "badge no-hvr", id: "#{tag}" %>
-          </li>
-        <% end %>
-      </ul>
-    <% end %>
-
-    <h2 id="title"><%= markdownify post.title %></h2>
-
-    <hr class="fractal">
-
-    <div id="description"><%= post.body %></div>
 </div>

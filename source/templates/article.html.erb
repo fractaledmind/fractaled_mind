@@ -1,30 +1,17 @@
 <div class="card" id="project-page">
 
-    <% if post.tags.any? %>
-      <ul class="card-tags">
-        <% post.tags.each do |tag| %>
-          <li>
-            <%= link_to "#{tag}", tag_path(tag),
-                class: "badge no-hvr #{tag}" %>
-          </li>
-        <% end %>
-      </ul>
-    <% end %>
+  <%= partial "partials/card/tags_breadcrumb",
+              locals: { item: post } %>
 
-    <div class="card-image">
-      <!-- if post has tags, add filler element -->
-      <% if post.tags.any? %>
-        <div id="tag-filler-space"></div>
-      <% end %>
-      <!-- if post has header image, add it -->
-      <% if post.data['image'] %>
-        <%= image_tag post.data['image'] %>
-      <% end %>
-    </div>
+  <%= partial "partials/card/tags_filler",
+              locals: { item: post } %>
 
-    <h2 id="title"><%= markdownify post.title %></h2>
+  <%= partial "partials/card/image",
+              locals: { item: post } %>
 
-    <hr class="fractal">
+  <h2 id="title"><%= markdownify post.title %></h2>
 
-    <div id="description"><%= post.body %></div>
+  <hr class="fractal">
+
+  <div id="description"><%= post.body %></div>
 </div>

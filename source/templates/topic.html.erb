@@ -1,12 +1,36 @@
 <div class="card" id="topic-page">
-  <h2 id="title">Articles tagged '<%= tagname %>'</h2>
+  <h2 id="title">Posts tagged <em><%= tagname %></em></h2>
 
-  <ul class="fa-ul">
-    <% articles.each do |article| %>
+  <div class="tree">
+    <%= content_tag(:ul) do
+          tag_roots_for(tag: tagname).map { |root| visit_children(root, tag_tree) }.join
+        end %>
+  </div>
+
+  <hr>
+
+  <ul class="list-none">
+    <% posts.flat_map { |x| x.tags }
+            .select { |x| x.split('>').include?(tagname) }
+            .uniq
+            .each do |tagpath| %>
       <li>
-        <i class="fa-li fa fa-chevron-right"></i>
-        <%= link_to article.title, article %> <span>(<%= article.date.strftime('%b %e') %>)</span>
+        <div class="breadcrumb">
+          <% tagpath.split('>').each do |tag| %>
+            <%= link_to tag, tag_path(tag), class: "#{tag}-tag" %>
+          <% end %>
+        </div>
       </li>
+      <ul class="fa-ul">
+        <% posts.select { |x| x.tags.include?(tagpath) }
+                .each do |post| %>
+          <li>
+            <i class="fa-li fa fa-fractal"></i>
+            <%= link_to post.title, post %>
+            <span>(<%= post.date.strftime('%b %e') %>)</span>
+          </li>
+        <% end %>
+      </ul>
     <% end %>
   </ul>
 </div>

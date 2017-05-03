@@ -1,0 +1,14 @@
+<li class="card pdf-card ribbon-box">
+  <%= partial "partials/card/link",
+              locals: { path: item.data['pdf_link'] } %>
+
+  <div class="ribbon-wrapper">
+    <div class="ribbon">PDF</div>
+  </div>
+
+  <%= partial "partials/card/tags_badges",
+              locals: { item: item } %>
+
+  <%= partial "partials/card/header",
+              locals: { item: item } %>
+</li>

@@ -1,0 +1,12 @@
+<% if item.tags.any? %>
+  <ul class="card-tags">
+    <% item.tags.each do |tagpath| %>
+      <li class="breadcrumb">
+          <% tagpath.split('>').each do |tag| %>
+            <%= link_to tag, tag_path(tag),
+                        class: "#{tag}-tag" %>
+          <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

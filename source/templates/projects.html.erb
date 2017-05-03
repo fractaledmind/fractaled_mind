@@ -6,7 +6,7 @@ per_page: 10
 <% posts_date_sorted = posts.sort_by { |a| a.date }.reverse %>
 <ul class="cards horizontal">
   <% posts_for_page(posts_date_sorted, page_number, per_page).each do |project| %>
-    <%= partial "partials/card_horizontal_li",
+    <%= partial "partials/card/for_horizontal",
                 locals: { item: project } %>
   <% end %>
 </ul>

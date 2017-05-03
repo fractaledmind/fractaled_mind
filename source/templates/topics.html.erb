@@ -1,15 +1,15 @@
 <div>
-  <h2 id="all-tags">All Topics</h2>
+  <h2 id="all-tags">All Topic Sections</h2>
 
-  <div class="grid">
-    <% blog.tags.each do |tag, articles| %>
-      <% link_to tag_path(tag), class: "grid-item no-hvr #{tag}" do %>
-        <div>
-          <span><%= tag %></span>
-          <span class='n'><%= articles.size %></span>
+  <ul class="cards">
+    <% tag_roots.each do |root| %>
+      <li class="card">
+        <div class="card-body tree">
+          <%= content_tag(:ul) do
+                visit_children(root, tag_tree)
+              end %>
         </div>
-      <% end %>
+      </li>
     <% end %>
-  </div>
-
+  </ul>
 </div>

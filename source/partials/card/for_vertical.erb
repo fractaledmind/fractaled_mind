@@ -1,0 +1,22 @@
+<li class="card">
+  <%= partial "partials/card/link",
+              locals: { path: "/#{item.path}" } %>
+
+  <%= partial "partials/card/tags_badges",
+              locals: { item: item } %>
+
+  <%= partial "partials/card/tags_filler",
+              locals: { item: item } %>
+
+  <%= partial "partials/card/image",
+              locals: { item: item } %>
+
+  <%= partial "partials/card/header",
+              locals: { item: item } %>
+
+  <hr class="fractal">
+
+  <div class="card-copy">
+    <%= markdownify item.summary %>
+  </div>
+</li>

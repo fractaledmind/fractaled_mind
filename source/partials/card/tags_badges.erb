@@ -1,0 +1,11 @@
+<!-- item Tags (if any) -->
+<% if item.tags.any? %>
+  <ul class="card-tags">
+    <% item.tags.map{|t| t.split('>').last }.uniq.each do |tag| %>
+      <li>
+        <%= link_to tag, tag_path(tag),
+          class: "badge no-hvr #{tag}-tag" %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
