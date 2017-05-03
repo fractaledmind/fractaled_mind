@@ -106,6 +106,23 @@ helpers do
     page && page.metadata[:locals][key]
   end
 
+  def visit_children(node, tree)
+    children = tree[node]
+    content_tag(:li) do
+      (content_tag(:a, href: "/topics/#{node}.html",
+                       class: "#{node}-tag") do
+        node +
+        content_tag(:span, posts_for(tag: node).count, class: 'dot')
+      end) +
+      (children&.any? ?
+        (content_tag(:ul) do
+          children.map do |child|
+            visit_children(child, tree)
+          end.join
+        end) :
+        ''
+      )
+    end
   end
 end
 
