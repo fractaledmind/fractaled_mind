@@ -5,7 +5,7 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2017-03-08T19:00:00-05:00</updated>
+  <updated>2017-03-08T18:00:00-06:00</updated>
   <author>
     <name>Stephen Margheim</name>
   </author>
@@ -13,8 +13,8 @@
     <title>Flatland and Theological Expectations</title>
     <link rel="alternate" href="http://blog.url.com/articles/flatland-and-theological-expectations/"/>
     <id>http://blog.url.com/articles/flatland-and-theological-expectations/</id>
-    <published>2017-03-08T19:00:00-05:00</published>
-    <updated>2017-04-22T14:49:10-04:00</updated>
+    <published>2017-03-08T18:00:00-06:00</published>
+    <updated>2017-05-01T19:08:26-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -76,8 +76,8 @@
     <title>A Simple Tree Building Algorithm</title>
     <link rel="alternate" href="http://blog.url.com/articles/a-simple-tree-building-algorithm/"/>
     <id>http://blog.url.com/articles/a-simple-tree-building-algorithm/</id>
-    <published>2017-03-04T19:00:00-05:00</published>
-    <updated>2017-04-22T14:49:15-04:00</updated>
+    <published>2017-03-04T18:00:00-06:00</published>
+    <updated>2017-05-01T17:57:24-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -646,8 +646,8 @@
     <title>Communication is Hard</title>
     <link rel="alternate" href="http://blog.url.com/articles/communication-is-hard/"/>
     <id>http://blog.url.com/articles/communication-is-hard/</id>
-    <published>2017-02-20T19:00:00-05:00</published>
-    <updated>2017-02-20T21:38:21-05:00</updated>
+    <published>2017-02-20T18:00:00-06:00</published>
+    <updated>2017-05-01T19:09:29-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -662,8 +662,8 @@
     <title>Thoughts on a Birthday</title>
     <link rel="alternate" href="http://blog.url.com/articles/thoughts-on-a-birthday/"/>
     <id>http://blog.url.com/articles/thoughts-on-a-birthday/</id>
-    <published>2017-01-18T19:00:00-05:00</published>
-    <updated>2017-02-20T21:41:54-05:00</updated>
+    <published>2017-01-18T18:00:00-06:00</published>
+    <updated>2017-05-01T19:07:58-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -686,8 +686,8 @@
     <title>Evidentiary Arguments in 5th century prose</title>
     <link rel="alternate" href="http://blog.url.com/essays/empiricism-in-5th-century-prose/"/>
     <id>http://blog.url.com/essays/empiricism-in-5th-century-prose/</id>
-    <published>2016-12-17T19:00:00-05:00</published>
-    <updated>2017-03-04T21:45:14-05:00</updated>
+    <published>2016-12-17T18:00:00-06:00</published>
+    <updated>2017-05-02T23:16:18-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -697,8 +697,8 @@
     <title>Ruminations on a Credal Logic</title>
     <link rel="alternate" href="http://blog.url.com/articles/ruminations-on-a-credal-logic/"/>
     <id>http://blog.url.com/articles/ruminations-on-a-credal-logic/</id>
-    <published>2016-09-19T20:00:00-04:00</published>
-    <updated>2017-04-22T14:49:24-04:00</updated>
+    <published>2016-09-19T19:00:00-05:00</published>
+    <updated>2017-05-01T19:06:20-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -920,8 +920,8 @@ k &lt;span class="o"&gt;=&lt;/span&gt; 1
     <title>1 = 0.9999...</title>
     <link rel="alternate" href="http://blog.url.com/articles/1-0-9999/"/>
     <id>http://blog.url.com/articles/1-0-9999/</id>
-    <published>2016-08-31T20:32:00-04:00</published>
-    <updated>2017-04-22T14:48:32-04:00</updated>
+    <published>2016-08-31T19:32:00-05:00</published>
+    <updated>2017-05-01T17:55:59-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1025,8 +1025,8 @@ k &lt;span class="o"&gt;=&lt;/span&gt; 1
     <title>Portrait of Pain</title>
     <link rel="alternate" href="http://blog.url.com/articles/portrait-of-pain/"/>
     <id>http://blog.url.com/articles/portrait-of-pain/</id>
-    <published>2016-08-18T20:00:00-04:00</published>
-    <updated>2016-08-18T23:06:16-04:00</updated>
+    <published>2016-08-18T19:00:00-05:00</published>
+    <updated>2017-05-01T19:07:14-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1067,8 +1067,8 @@ k &lt;span class="o"&gt;=&lt;/span&gt; 1
     <title>"Oft evil will shall evil mar" - J.R.R. Tolkien (via Theoden)</title>
     <link rel="alternate" href="http://blog.url.com/jots/201604051529/"/>
     <id>http://blog.url.com/jots/201604051529/</id>
-    <published>2016-04-05T11:29:00-04:00</published>
-    <updated>2016-12-17T22:50:41-05:00</updated>
+    <published>2016-04-05T10:29:00-05:00</published>
+    <updated>2016-12-17T21:50:41-06:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1079,8 +1079,8 @@ k &lt;span class="o"&gt;=&lt;/span&gt; 1
     <title>Elevator</title>
     <link rel="alternate" href="http://blog.url.com/articles/elevator/"/>
     <id>http://blog.url.com/articles/elevator/</id>
-    <published>2016-04-03T20:00:00-04:00</published>
-    <updated>2017-02-20T21:44:25-05:00</updated>
+    <published>2016-04-03T19:00:00-05:00</published>
+    <updated>2017-05-02T23:07:18-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1105,8 +1105,8 @@ Elevator closes and returns, it’s task complete.&lt;/p&gt;
     <title>Cleaning up Git repos</title>
     <link rel="alternate" href="http://blog.url.com/articles/cleaning-up-git-repos/"/>
     <id>http://blog.url.com/articles/cleaning-up-git-repos/</id>
-    <published>2016-03-14T20:00:00-04:00</published>
-    <updated>2016-03-14T23:17:31-04:00</updated>
+    <published>2016-03-14T19:00:00-05:00</published>
+    <updated>2017-05-01T17:57:51-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1167,8 +1167,8 @@ done&lt;/span&gt;
     <title>The best cure for the past is the present</title>
     <link rel="alternate" href="http://blog.url.com/jots/201603111233/"/>
     <id>http://blog.url.com/jots/201603111233/</id>
-    <published>2016-03-11T07:33:00-05:00</published>
-    <updated>2016-12-17T22:42:11-05:00</updated>
+    <published>2016-03-11T06:33:00-06:00</published>
+    <updated>2016-12-17T21:42:11-06:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1179,8 +1179,8 @@ done&lt;/span&gt;
     <title>Everything a word, not everything a meaning</title>
     <link rel="alternate" href="http://blog.url.com/jots/201603111232/"/>
     <id>http://blog.url.com/jots/201603111232/</id>
-    <published>2016-03-11T07:32:00-05:00</published>
-    <updated>2016-12-17T22:42:24-05:00</updated>
+    <published>2016-03-11T06:32:00-06:00</published>
+    <updated>2016-12-17T21:42:24-06:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1191,8 +1191,8 @@ done&lt;/span&gt;
     <title>I, who wear the horns</title>
     <link rel="alternate" href="http://blog.url.com/jots/201603072312/"/>
     <id>http://blog.url.com/jots/201603072312/</id>
-    <published>2016-03-07T18:12:00-05:00</published>
-    <updated>2016-12-17T22:42:39-05:00</updated>
+    <published>2016-03-07T17:12:00-06:00</published>
+    <updated>2016-12-17T21:42:39-06:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1203,8 +1203,8 @@ done&lt;/span&gt;
     <title>Who am I that You are mindful of me?</title>
     <link rel="alternate" href="http://blog.url.com/jots/201603061800/"/>
     <id>http://blog.url.com/jots/201603061800/</id>
-    <published>2016-03-06T13:00:00-05:00</published>
-    <updated>2016-12-17T22:42:56-05:00</updated>
+    <published>2016-03-06T12:00:00-06:00</published>
+    <updated>2016-12-17T21:42:56-06:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1215,8 +1215,8 @@ done&lt;/span&gt;
     <title>Forever the mind races; forever the body reacts. And life keeps spinning all around me.</title>
     <link rel="alternate" href="http://blog.url.com/jots/201603052310/"/>
     <id>http://blog.url.com/jots/201603052310/</id>
-    <published>2016-03-05T18:10:00-05:00</published>
-    <updated>2016-12-17T22:43:11-05:00</updated>
+    <published>2016-03-05T17:10:00-06:00</published>
+    <updated>2016-12-17T21:43:11-06:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1227,8 +1227,8 @@ done&lt;/span&gt;
     <title>In brokenness we find a chaotic refracted beauty that immediately reveals itself to be _real_ and all other beauty to be some mathematical abstraction, some too clean facsimile.</title>
     <link rel="alternate" href="http://blog.url.com/jots/201602231006/"/>
     <id>http://blog.url.com/jots/201602231006/</id>
-    <published>2016-02-23T05:06:00-05:00</published>
-    <updated>2016-12-17T22:43:27-05:00</updated>
+    <published>2016-02-23T04:06:00-06:00</published>
+    <updated>2016-12-17T21:43:27-06:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1239,8 +1239,8 @@ done&lt;/span&gt;
     <title>You, Made and Unmade</title>
     <link rel="alternate" href="http://blog.url.com/articles/you-made-and-unmade/"/>
     <id>http://blog.url.com/articles/you-made-and-unmade/</id>
-    <published>2016-02-21T19:00:00-05:00</published>
-    <updated>2016-08-18T22:42:53-04:00</updated>
+    <published>2016-02-21T18:00:00-06:00</published>
+    <updated>2017-05-01T19:07:41-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1255,8 +1255,8 @@ done&lt;/span&gt;
     <title>Conjunctive Binarism</title>
     <link rel="alternate" href="http://blog.url.com/articles/conjunctive-binarism/"/>
     <id>http://blog.url.com/articles/conjunctive-binarism/</id>
-    <published>2016-02-20T19:00:00-05:00</published>
-    <updated>2017-04-22T14:49:19-04:00</updated>
+    <published>2016-02-20T18:00:00-06:00</published>
+    <updated>2017-05-01T19:09:09-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1499,8 +1499,8 @@ done&lt;/span&gt;
     <title>I am now swimming against the grain.</title>
     <link rel="alternate" href="http://blog.url.com/jots/201602201430/"/>
     <id>http://blog.url.com/jots/201602201430/</id>
-    <published>2016-02-20T09:30:00-05:00</published>
-    <updated>2016-12-17T22:43:44-05:00</updated>
+    <published>2016-02-20T08:30:00-06:00</published>
+    <updated>2016-12-17T21:43:44-06:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1511,8 +1511,8 @@ done&lt;/span&gt;
     <title>The greatest lie the world ever told was that _you_ deserve to be loved.</title>
     <link rel="alternate" href="http://blog.url.com/jots/201602201248/"/>
     <id>http://blog.url.com/jots/201602201248/</id>
-    <published>2016-02-20T07:48:00-05:00</published>
-    <updated>2016-12-17T22:44:03-05:00</updated>
+    <published>2016-02-20T06:48:00-06:00</published>
+    <updated>2016-12-17T21:44:03-06:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1523,8 +1523,8 @@ done&lt;/span&gt;
     <title>"You are more powerful than you think you are, act accordingly." - Seth Godin</title>
     <link rel="alternate" href="http://blog.url.com/jots/201602131253/"/>
     <id>http://blog.url.com/jots/201602131253/</id>
-    <published>2016-02-13T07:53:00-05:00</published>
-    <updated>2016-12-17T22:50:47-05:00</updated>
+    <published>2016-02-13T06:53:00-06:00</published>
+    <updated>2016-12-17T21:50:47-06:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1535,8 +1535,8 @@ done&lt;/span&gt;
     <title>On Lent and Marriage</title>
     <link rel="alternate" href="http://blog.url.com/articles/on-lent-and-marriage/"/>
     <id>http://blog.url.com/articles/on-lent-and-marriage/</id>
-    <published>2016-02-10T22:16:00-05:00</published>
-    <updated>2016-02-12T10:52:34-05:00</updated>
+    <published>2016-02-10T21:16:00-06:00</published>
+    <updated>2017-05-01T19:07:02-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1569,8 +1569,8 @@ done&lt;/span&gt;
     <title>Patience ...</title>
     <link rel="alternate" href="http://blog.url.com/jots/201602101939/"/>
     <id>http://blog.url.com/jots/201602101939/</id>
-    <published>2016-02-10T14:39:00-05:00</published>
-    <updated>2016-12-17T22:44:56-05:00</updated>
+    <published>2016-02-10T13:39:00-06:00</published>
+    <updated>2016-12-17T21:44:56-06:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1581,8 +1581,8 @@ done&lt;/span&gt;
     <title>Sometimes the most loving action is inaction.</title>
     <link rel="alternate" href="http://blog.url.com/jots/201602091517/"/>
     <id>http://blog.url.com/jots/201602091517/</id>
-    <published>2016-02-09T10:17:00-05:00</published>
-    <updated>2016-12-17T22:45:13-05:00</updated>
+    <published>2016-02-09T09:17:00-06:00</published>
+    <updated>2016-12-17T21:45:13-06:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1593,8 +1593,8 @@ done&lt;/span&gt;
     <title>To love is nothing more than to see another as fully human.</title>
     <link rel="alternate" href="http://blog.url.com/jots/201602041409/"/>
     <id>http://blog.url.com/jots/201602041409/</id>
-    <published>2016-02-04T09:09:00-05:00</published>
-    <updated>2016-12-17T22:45:29-05:00</updated>
+    <published>2016-02-04T08:09:00-06:00</published>
+    <updated>2016-12-17T21:45:29-06:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1605,8 +1605,8 @@ done&lt;/span&gt;
     <title>Pain is a yoke requiring another.</title>
     <link rel="alternate" href="http://blog.url.com/jots/201601192153/"/>
     <id>http://blog.url.com/jots/201601192153/</id>
-    <published>2016-01-19T16:53:00-05:00</published>
-    <updated>2016-12-17T22:48:05-05:00</updated>
+    <published>2016-01-19T15:53:00-06:00</published>
+    <updated>2016-12-17T21:48:05-06:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1617,8 +1617,8 @@ done&lt;/span&gt;
     <title>A man’s greatest threats are often the barely bearable burden and the barely there burden.</title>
     <link rel="alternate" href="http://blog.url.com/jots/201601152317/"/>
     <id>http://blog.url.com/jots/201601152317/</id>
-    <published>2016-01-15T18:17:00-05:00</published>
-    <updated>2016-12-17T22:46:12-05:00</updated>
+    <published>2016-01-15T17:17:00-06:00</published>
+    <updated>2016-12-17T21:46:12-06:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1629,8 +1629,8 @@ done&lt;/span&gt;
     <title>The discrete is nothing but an accident of the infinite.</title>
     <link rel="alternate" href="http://blog.url.com/jots/201601011324/"/>
     <id>http://blog.url.com/jots/201601011324/</id>
-    <published>2016-01-01T08:24:00-05:00</published>
-    <updated>2016-12-17T22:46:28-05:00</updated>
+    <published>2016-01-01T07:24:00-06:00</published>
+    <updated>2016-12-17T21:46:28-06:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1641,8 +1641,8 @@ done&lt;/span&gt;
     <title>Analogies are broken fractals.</title>
     <link rel="alternate" href="http://blog.url.com/jots/201510212018/"/>
     <id>http://blog.url.com/jots/201510212018/</id>
-    <published>2015-10-21T16:18:00-04:00</published>
-    <updated>2016-12-17T22:46:47-05:00</updated>
+    <published>2015-10-21T15:18:00-05:00</published>
+    <updated>2016-12-17T21:46:47-06:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1653,8 +1653,8 @@ done&lt;/span&gt;
     <title>Consolation and Commemoration in Horace Odes 1.24 and 4.12</title>
     <link rel="alternate" href="http://blog.url.com/essays/consolation-and-commemoration-in-horace-odes-1-24-and-4-12/"/>
     <id>http://blog.url.com/essays/consolation-and-commemoration-in-horace-odes-1-24-and-4-12/</id>
-    <published>2015-10-20T20:00:00-04:00</published>
-    <updated>2017-03-04T21:42:49-05:00</updated>
+    <published>2015-10-20T19:00:00-05:00</published>
+    <updated>2017-05-02T23:16:13-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1664,8 +1664,8 @@ done&lt;/span&gt;
     <title>Evidence and Inference in Herodotus</title>
     <link rel="alternate" href="http://blog.url.com/essays/evidence-and-inference-in-herodotus/"/>
     <id>http://blog.url.com/essays/evidence-and-inference-in-herodotus/</id>
-    <published>2015-10-20T20:00:00-04:00</published>
-    <updated>2017-03-04T21:46:03-05:00</updated>
+    <published>2015-10-20T19:00:00-05:00</published>
+    <updated>2017-05-02T23:16:28-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1675,8 +1675,8 @@ done&lt;/span&gt;
     <title>Full communication is actually impossible, and the degree of communication we do have is a total miracle.</title>
     <link rel="alternate" href="http://blog.url.com/jots/201509221446/"/>
     <id>http://blog.url.com/jots/201509221446/</id>
-    <published>2015-09-22T10:46:00-04:00</published>
-    <updated>2016-12-17T22:41:28-05:00</updated>
+    <published>2015-09-22T09:46:00-05:00</published>
+    <updated>2016-12-17T21:41:28-06:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1687,8 +1687,8 @@ done&lt;/span&gt;
     <title>To understand and be understood, that is the quest.</title>
     <link rel="alternate" href="http://blog.url.com/jots/201509221444/"/>
     <id>http://blog.url.com/jots/201509221444/</id>
-    <published>2015-09-22T10:44:00-04:00</published>
-    <updated>2016-12-17T22:38:58-05:00</updated>
+    <published>2015-09-22T09:44:00-05:00</published>
+    <updated>2016-12-17T21:38:58-06:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1699,8 +1699,8 @@ done&lt;/span&gt;
     <title>git-do</title>
     <link rel="alternate" href="http://blog.url.com/projects/git-do/"/>
     <id>http://blog.url.com/projects/git-do/</id>
-    <published>2015-07-24T20:00:00-04:00</published>
-    <updated>2016-12-02T22:18:20-05:00</updated>
+    <published>2015-07-24T19:00:00-05:00</published>
+    <updated>2017-05-01T17:51:36-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1773,8 +1773,8 @@ done&lt;/span&gt;
     <title>A Depressed Graduate Student</title>
     <link rel="alternate" href="http://blog.url.com/articles/a-depressed-graduate-student/"/>
     <id>http://blog.url.com/articles/a-depressed-graduate-student/</id>
-    <published>2015-06-18T13:38:00-04:00</published>
-    <updated>2016-08-31T20:46:19-04:00</updated>
+    <published>2015-06-18T12:38:00-05:00</published>
+    <updated>2017-05-01T19:09:52-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1799,8 +1799,8 @@ done&lt;/span&gt;
     <title>A Failed Graduate Student</title>
     <link rel="alternate" href="http://blog.url.com/articles/a-failed-graduate-student/"/>
     <id>http://blog.url.com/articles/a-failed-graduate-student/</id>
-    <published>2015-06-16T20:18:00-04:00</published>
-    <updated>2015-08-10T10:55:37-04:00</updated>
+    <published>2015-06-16T19:18:00-05:00</published>
+    <updated>2017-05-01T19:09:48-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1833,8 +1833,8 @@ done&lt;/span&gt;
     <title>Wikify</title>
     <link rel="alternate" href="http://blog.url.com/projects/wikify/"/>
     <id>http://blog.url.com/projects/wikify/</id>
-    <published>2015-05-26T20:00:00-04:00</published>
-    <updated>2016-12-02T22:19:06-05:00</updated>
+    <published>2015-05-26T19:00:00-05:00</published>
+    <updated>2017-05-01T17:52:23-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -1990,8 +1990,8 @@ I want to talk more about [[AppleScript]].
     <title>Snippets</title>
     <link rel="alternate" href="http://blog.url.com/projects/snippets/"/>
     <id>http://blog.url.com/projects/snippets/</id>
-    <published>2015-05-26T20:00:00-04:00</published>
-    <updated>2016-12-02T22:18:59-05:00</updated>
+    <published>2015-05-26T19:00:00-05:00</published>
+    <updated>2017-05-01T17:52:15-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -2032,8 +2032,8 @@ a: Alfred
     <title>Skimmer</title>
     <link rel="alternate" href="http://blog.url.com/projects/skimmer/"/>
     <id>http://blog.url.com/projects/skimmer/</id>
-    <published>2015-05-26T20:00:00-04:00</published>
-    <updated>2016-12-02T22:18:54-05:00</updated>
+    <published>2015-05-26T19:00:00-05:00</published>
+    <updated>2017-05-01T17:52:12-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -2162,8 +2162,8 @@ a: Alfred
     <title>Parsers</title>
     <link rel="alternate" href="http://blog.url.com/projects/parsers/"/>
     <id>http://blog.url.com/projects/parsers/</id>
-    <published>2015-05-26T20:00:00-04:00</published>
-    <updated>2016-12-02T22:18:46-05:00</updated>
+    <published>2015-05-26T19:00:00-05:00</published>
+    <updated>2017-05-01T17:52:04-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -2225,8 +2225,8 @@ Lexicon Links:
     <title>Pandoctor</title>
     <link rel="alternate" href="http://blog.url.com/projects/pandoctor/"/>
     <id>http://blog.url.com/projects/pandoctor/</id>
-    <published>2015-05-26T20:00:00-04:00</published>
-    <updated>2016-12-02T22:18:42-05:00</updated>
+    <published>2015-05-26T19:00:00-05:00</published>
+    <updated>2017-05-01T17:52:01-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -2639,8 +2639,8 @@ Lexicon Links:
     <title>ZotQuery</title>
     <link rel="alternate" href="http://blog.url.com/projects/zotquery/"/>
     <id>http://blog.url.com/projects/zotquery/</id>
-    <published>2015-05-26T20:00:00-04:00</published>
-    <updated>2016-12-02T22:19:11-05:00</updated>
+    <published>2015-05-26T19:00:00-05:00</published>
+    <updated>2017-05-01T17:52:26-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -2976,8 +2976,8 @@ Lexicon Links:
     <title>A Complete PDF Annotation Workflow</title>
     <link rel="alternate" href="http://blog.url.com/articles/a-complete-pdf-annotation-workflow/"/>
     <id>http://blog.url.com/articles/a-complete-pdf-annotation-workflow/</id>
-    <published>2015-05-26T14:36:00-04:00</published>
-    <updated>2015-05-26T19:20:56-04:00</updated>
+    <published>2015-05-26T13:36:00-05:00</published>
+    <updated>2017-05-01T17:54:59-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -3239,8 +3239,8 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
     <title>Metadata</title>
     <link rel="alternate" href="http://blog.url.com/projects/metadata/"/>
     <id>http://blog.url.com/projects/metadata/</id>
-    <published>2015-05-22T20:00:00-04:00</published>
-    <updated>2016-12-02T22:18:27-05:00</updated>
+    <published>2015-05-22T19:00:00-05:00</published>
+    <updated>2017-05-01T17:51:50-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -3483,8 +3483,8 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
     <title>LibGen</title>
     <link rel="alternate" href="http://blog.url.com/projects/libgen/"/>
     <id>http://blog.url.com/projects/libgen/</id>
-    <published>2015-05-22T20:00:00-04:00</published>
-    <updated>2016-12-02T22:18:24-05:00</updated>
+    <published>2015-05-22T19:00:00-05:00</published>
+    <updated>2017-05-01T17:51:40-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -3507,8 +3507,8 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
     <title>Reboot</title>
     <link rel="alternate" href="http://blog.url.com/projects/reboot/"/>
     <id>http://blog.url.com/projects/reboot/</id>
-    <published>2015-05-22T20:00:00-04:00</published>
-    <updated>2016-12-02T22:18:50-05:00</updated>
+    <published>2015-05-22T19:00:00-05:00</published>
+    <updated>2017-05-01T17:52:08-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -3554,8 +3554,8 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
     <title>BibQuery</title>
     <link rel="alternate" href="http://blog.url.com/projects/bibquery/"/>
     <id>http://blog.url.com/projects/bibquery/</id>
-    <published>2015-05-22T20:00:00-04:00</published>
-    <updated>2016-12-02T22:17:26-05:00</updated>
+    <published>2015-05-22T19:00:00-05:00</published>
+    <updated>2017-05-01T17:51:17-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -3594,8 +3594,8 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
     <title>Spritzr</title>
     <link rel="alternate" href="http://blog.url.com/projects/spritzr/"/>
     <id>http://blog.url.com/projects/spritzr/</id>
-    <published>2015-05-22T20:00:00-04:00</published>
-    <updated>2016-12-02T22:19:03-05:00</updated>
+    <published>2015-05-22T19:00:00-05:00</published>
+    <updated>2017-05-01T17:52:19-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -3639,8 +3639,8 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
     <title>Classical Studies Resources</title>
     <link rel="alternate" href="http://blog.url.com/projects/classical-studies-resources/"/>
     <id>http://blog.url.com/projects/classical-studies-resources/</id>
-    <published>2015-05-22T20:00:00-04:00</published>
-    <updated>2016-12-17T23:13:04-05:00</updated>
+    <published>2015-05-22T19:00:00-05:00</published>
+    <updated>2016-12-17T22:13:04-06:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -3685,8 +3685,8 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
     <title>Pandoc Templates</title>
     <link rel="alternate" href="http://blog.url.com/projects/pandoc-templates/"/>
     <id>http://blog.url.com/projects/pandoc-templates/</id>
-    <published>2015-05-20T20:00:00-04:00</published>
-    <updated>2016-12-02T22:18:33-05:00</updated>
+    <published>2015-05-20T19:00:00-05:00</published>
+    <updated>2016-12-02T21:18:33-06:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -3729,8 +3729,8 @@ Then check the box telling Marked to use this by default. The &lt;code&gt;pandoc
     <title>Plato’s Fractal Line</title>
     <link rel="alternate" href="http://blog.url.com/essays/platos-fractal-line/"/>
     <id>http://blog.url.com/essays/platos-fractal-line/</id>
-    <published>2014-10-13T20:00:00-04:00</published>
-    <updated>2017-03-04T21:36:44-05:00</updated>
+    <published>2014-10-13T19:00:00-05:00</published>
+    <updated>2017-05-02T23:16:31-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -3740,8 +3740,8 @@ Then check the box telling Marked to use this by default. The &lt;code&gt;pandoc
     <title>Aristotle on Secondary Substance</title>
     <link rel="alternate" href="http://blog.url.com/essays/aristotle-on-secondary-substances/"/>
     <id>http://blog.url.com/essays/aristotle-on-secondary-substances/</id>
-    <published>2014-07-02T20:00:00-04:00</published>
-    <updated>2017-03-04T21:39:32-05:00</updated>
+    <published>2014-07-02T19:00:00-05:00</published>
+    <updated>2017-05-02T23:15:46-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -3751,8 +3751,8 @@ Then check the box telling Marked to use this by default. The &lt;code&gt;pandoc
     <title>Aemulatio and Epicurean Semiosis at *Georgics* 1.415-23</title>
     <link rel="alternate" href="http://blog.url.com/essays/aemulatio-and-epicurian-semiosis-at-georgics-1-415-23/"/>
     <id>http://blog.url.com/essays/aemulatio-and-epicurian-semiosis-at-georgics-1-415-23/</id>
-    <published>2013-05-06T20:00:00-04:00</published>
-    <updated>2017-03-04T21:36:33-05:00</updated>
+    <published>2013-05-06T19:00:00-05:00</published>
+    <updated>2017-05-02T23:15:32-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -3762,8 +3762,8 @@ Then check the box telling Marked to use this by default. The &lt;code&gt;pandoc
     <title>*Airs, Waters, Places* in Context</title>
     <link rel="alternate" href="http://blog.url.com/essays/theory-and-the-language-of-proof-in-awp/"/>
     <id>http://blog.url.com/essays/theory-and-the-language-of-proof-in-awp/</id>
-    <published>2013-04-30T20:00:00-04:00</published>
-    <updated>2017-03-04T21:51:12-05:00</updated>
+    <published>2013-04-30T19:00:00-05:00</published>
+    <updated>2017-05-02T23:16:41-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -3773,8 +3773,8 @@ Then check the box telling Marked to use this by default. The &lt;code&gt;pandoc
     <title>What Epicurean Friendship is Not</title>
     <link rel="alternate" href="http://blog.url.com/essays/what-epicurean-friendship-is-not/"/>
     <id>http://blog.url.com/essays/what-epicurean-friendship-is-not/</id>
-    <published>2013-04-25T20:00:00-04:00</published>
-    <updated>2017-03-04T21:49:12-05:00</updated>
+    <published>2013-04-25T19:00:00-05:00</published>
+    <updated>2017-05-02T23:16:44-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -3784,8 +3784,8 @@ Then check the box telling Marked to use this by default. The &lt;code&gt;pandoc
     <title>Banking on Friendship</title>
     <link rel="alternate" href="http://blog.url.com/essays/banking-on-friendship/"/>
     <id>http://blog.url.com/essays/banking-on-friendship/</id>
-    <published>2013-01-03T19:00:00-05:00</published>
-    <updated>2017-03-04T21:40:51-05:00</updated>
+    <published>2013-01-03T18:00:00-06:00</published>
+    <updated>2017-05-02T23:15:52-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -3795,8 +3795,8 @@ Then check the box telling Marked to use this by default. The &lt;code&gt;pandoc
     <title>Saussurean Delimitation and Plato’s *Cratylus*</title>
     <link rel="alternate" href="http://blog.url.com/essays/saussurean-delimitation-and-platos-cratylus/"/>
     <id>http://blog.url.com/essays/saussurean-delimitation-and-platos-cratylus/</id>
-    <published>2012-10-07T20:00:00-04:00</published>
-    <updated>2017-03-04T21:46:47-05:00</updated>
+    <published>2012-10-07T19:00:00-05:00</published>
+    <updated>2017-05-02T23:17:28-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -3806,8 +3806,8 @@ Then check the box telling Marked to use this by default. The &lt;code&gt;pandoc
     <title>Socrates and Reader</title>
     <link rel="alternate" href="http://blog.url.com/essays/socrates-and-reader/"/>
     <id>http://blog.url.com/essays/socrates-and-reader/</id>
-    <published>2012-09-06T20:00:00-04:00</published>
-    <updated>2017-03-04T21:49:55-05:00</updated>
+    <published>2012-09-06T19:00:00-05:00</published>
+    <updated>2017-05-02T23:16:38-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -3817,8 +3817,8 @@ Then check the box telling Marked to use this by default. The &lt;code&gt;pandoc
     <title>Barfield Contra Lewis on Truth and Imagination</title>
     <link rel="alternate" href="http://blog.url.com/essays/barfield-contra-lewis-on-truth-and-imagination/"/>
     <id>http://blog.url.com/essays/barfield-contra-lewis-on-truth-and-imagination/</id>
-    <published>2012-09-06T20:00:00-04:00</published>
-    <updated>2017-03-04T21:41:48-05:00</updated>
+    <published>2012-09-06T19:00:00-05:00</published>
+    <updated>2017-05-02T23:17:25-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -3828,8 +3828,8 @@ Then check the box telling Marked to use this by default. The &lt;code&gt;pandoc
     <title>I have come to fret the night, the simple silence that it offers.</title>
     <link rel="alternate" href="http://blog.url.com/jots/201602142233/"/>
     <id>http://blog.url.com/jots/201602142233/</id>
-    <published>2012-02-14T17:33:00-05:00</published>
-    <updated>2016-12-17T22:44:21-05:00</updated>
+    <published>2012-02-14T16:33:00-06:00</published>
+    <updated>2016-12-17T21:44:21-06:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
@@ -3840,8 +3840,8 @@ Then check the box telling Marked to use this by default. The &lt;code&gt;pandoc
     <title>Example *Article*</title>
     <link rel="alternate" href="http://blog.url.com/articles/example-article/"/>
     <id>http://blog.url.com/articles/example-article/</id>
-    <published>2011-12-31T19:00:00-05:00</published>
-    <updated>2017-03-04T22:19:26-05:00</updated>
+    <published>2011-12-31T18:00:00-06:00</published>
+    <updated>2017-05-01T19:08:42-05:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
