@@ -109,7 +109,7 @@ helpers do
   def visit_children(node, tree)
     children = tree[node]
     content_tag(:li) do
-      (content_tag(:a, href: "/topics/#{node}.html",
+      (content_tag(:a, href: tag_path(node),
                        class: "#{node}-tag") do
         node +
         content_tag(:span, posts_for(tag: node).count, class: 'dot')
