@@ -4,7 +4,7 @@ date: 2015-05-23
 image: projects/libgen.svg
 github: https://github.com/smargh/alfred_libgen
 tags:
-  - alfred
+  - code>alfred
 summary: Seach the [Library Genesis](http://libgen.in/) project's catalogue of books and download right from your keyboard, without ever launching a browser.
 ---
 Seach the [Library Genesis](http://libgen.in/) project\'s catalogue of books and download right from your keyboard, without ever launching a browser.

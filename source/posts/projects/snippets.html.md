@@ -4,7 +4,7 @@ date: 2015-05-27
 image: projects/snippets.svg
 github: https://github.com/smargh/alfred_snippets
 tags:
-  - alfred
+  - code>alfred
 summary: Create on-the-fly text expansion snippets which <code>Snippets</code> will expand when you are finished writing.
 ---
 #### Version: 1.2

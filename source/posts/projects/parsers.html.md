@@ -4,7 +4,7 @@ date: 2015-05-27
 image: projects/parsers.svg
 github: https://github.com/smargh/alfred_parsers
 tags:
-  - alfred
+  - code>alfred
 summary: Parse any Greek or Latin word lightening quick. This workflow uses the [Perseus Digital Library]() backend to provide parsing info on input text.
 ---
 #### Version: 2.0

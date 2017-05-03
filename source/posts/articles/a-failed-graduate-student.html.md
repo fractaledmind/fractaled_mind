@@ -1,7 +1,8 @@
 ---
 title: A Failed Graduate Student
 date: 2015-06-17 00:18 UTC
-tags: grad-school
+tags:
+  - prose>self
 ---
 
 I'm no longer a graduate student. I've graduated; I'm out. It's a somewhat odd feeling, made even odder because I haven't felt like a graduate for the last year. I was in graduate school for 3 years and got my Masters, but for the final year I was a "lame-duck" graduate student--I knew I was leaving, my department knew I was leaving, but I was still there. This lame-duck year has been odd, but it has also been the year where I have grown most, matured more, learned truly important things, and started to better understand myself. Hopefully, I can capture some glimmer of those insights in the few words that follow.

@@ -1,6 +1,7 @@
 ---
 :title: Elevator
-:tags: poetry
+tags:
+  - poetry>relationships
 :summary:
 :date: 2016-04-04
 ---

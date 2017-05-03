@@ -4,7 +4,7 @@ date: 2015-05-27
 image: projects/skimmer.svg
 github: https://github.com/smargh/alfred_skimmer
 tags:
-  - alfred
+  - code>alfred
 summary: Extensions for the PDF application [Skim](http://skim-app.sourceforge.net/) that allow users to split scanned PDF pages, export annotations, or search all your PDFs across your system.
 ---
 ### Version: 2.2.1

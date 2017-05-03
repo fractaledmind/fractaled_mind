@@ -4,7 +4,7 @@ date: 2015-05-27
 image: projects/wikify.svg
 github: https://github.com/smargh/alfred_wikify
 tags:
-  - alfred
+  - code>alfred
 summary: Add the power of a personal wiki and Markdown to [Evernote](https://evernote.com/). Link pre-existing notes to new notes or old notes; write new notes and have references to pre-existing notes automatically linked; convert any Evernote note to Markdown, or write a new note in Markdown and have it converted into an Evernote note.
 ---
 #### Version 2.6

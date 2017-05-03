@@ -1,6 +1,7 @@
 ---
 :title: Portrait of Pain
-:tags: prose
+tags:
+  - prose>relationships
 summary: She lies. Then the sting. Now the ache.
 :date: 2016-08-19
 ---

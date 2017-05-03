@@ -4,7 +4,7 @@ date: 2015-05-27
 image: projects/zotquery.svg
 github: https://github.com/smargh/alfred_zotquery
 tags:
-  - alfred
+  - code>alfred
 summary: Provides lightening fast access to a user's [Zotero](https://www.zotero.org) citation data.
 ---
 #### Version 8.5

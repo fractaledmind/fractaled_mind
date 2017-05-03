@@ -1,7 +1,8 @@
 ---
 title: A Depressed Graduate Student
 date: 2015-06-18 17:38 UTC
-tags: grad-school
+tags:
+  - prose>self
 ---
 
 In my [previous post](http://fractaledmind.com/articles/a-failed-graduate-student) on my time in graduate school, I discussed how I learned to handle failures better. Today, I'm going to talk about how I failed to handle the depression that these mounting failures produced.

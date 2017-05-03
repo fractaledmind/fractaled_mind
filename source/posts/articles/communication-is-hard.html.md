@@ -1,6 +1,7 @@
 ---
 :title: Communication is Hard
-:tags: prose
+tags:
+  - prose>relationships
 :date: 2017-02-21
 ---
 Communication is hard. I have found myself contemplating this truth a lot lately. At work it has become a kind of mantra on my team. Have you ever taken the proverbial step back to consider what all is involved in communicating with another human being? We have these thoughts, often messy, squishy, and loosely formed, which we attempt to shuttle from our mind into someone else's mind (let alone a group of other minds). In order to get these nearly amorphous ideas out of our heads and into another, we package them up in words. We quiver these small muscles in our throats or we engage our wrists and fingers to hammer out some collection of runes or we sometimes even drag our hands across tree pulp scrawling out an even cruder form of these same symbols. There is no inherent connection between the etherial thoughts in our minds and these vibrations in the air or scribbles on a surface; there is nothing that guarantees this representation, whatever physical form it takes, properly encodes our thoughts. In fact, it is impossible for me to imagine that words could ever _fully_ encode thought. But that is only half of it.

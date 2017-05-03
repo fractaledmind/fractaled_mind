@@ -1,7 +1,8 @@
 ---
 title: A Complete PDF Annotation Workflow
 date: 2015-05-26 18:36 UTC
-tags: hackademics
+tags:
+  - tutorial>pdf-workflow
 summary: In this post I want to outline how I (1) prepare PDFs, (2) annotate PDFs, and (3) store PDFs. PDFs can be a pain in the butt, but they are also vitally important in today's world. I hope that some of these tools, some of these ideas at least, can help you handle your PDFs better and with less stress.
 ---
 

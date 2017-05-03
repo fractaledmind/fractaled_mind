@@ -1,6 +1,6 @@
 ---
 title: BibQuery
-tags: alfred
+tags: code>alfred
 date: 2015-05-23
 summary: Access your [BibDesk](http://bibdesk.sourceforge.net/) citation information from within [Alfred](http://www.alfredapp.com/).
 image: projects/bibquery.svg

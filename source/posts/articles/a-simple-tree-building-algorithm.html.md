@@ -1,7 +1,9 @@
 ---
 title: 'A Simple Tree Building Algorithm'
 :date: 2017-03-05
-tags: code, ruby
+tags:
+  - code>ruby
+  - tutorial>algorithms
 image: list_to_tree.png
 ---
 

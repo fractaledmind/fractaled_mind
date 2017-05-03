@@ -4,7 +4,7 @@ date: 2015-05-27
 image: projects/pandoctor.svg
 github: https://github.com/smargh/alfred_pandoctor
 tags:
-  - alfred
+  - code>alfred
 summary: Provides an intuitive GUI for the [`pandoc`](http://pandoc.org/) document converter utility.
 ---
 

@@ -1,6 +1,7 @@
 ---
 :title: Thoughts on a Birthday
-:tags: prose
+tags:
+  - prose>self
 :date: 2017-01-19
 ---
 

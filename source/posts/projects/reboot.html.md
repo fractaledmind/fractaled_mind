@@ -4,7 +4,7 @@ date: 2015-05-23
 image: projects/reboot.svg
 github: https://github.com/smargh/reboot
 tags:
-  - bash
+  - code>bash
 summary: WIP bootstrapping library for OS X.
 ---
 This is my personal fork of [Matthew Mueller's `dots` repo](https://github.com/MatthewMueller/dots).

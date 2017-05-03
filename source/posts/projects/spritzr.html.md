@@ -4,7 +4,7 @@ date: 2015-05-23
 image: projects/spritzr.svg
 github: https://github.com/smargh/alfred_spritzr
 tags:
-  - alfred
+  - code>alfred
 summary: Bring speed-reading to the desktop. Using the [Spritz]() technique, this workflow allows you to speed-read any text files on your Mac.
 ---
 #### Version 1.1

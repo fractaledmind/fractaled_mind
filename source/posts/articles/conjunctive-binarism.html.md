@@ -1,6 +1,7 @@
 ---
 :title: Conjunctive Binarism
-:tags: logic, epistemology
+tags:
+  - philosophy>epistemology>logic
 :date: 2016-02-21
 :summary: What is truth? I'm not sure, but I'm starting to think its `~(P & ¬P)`. This post introduces what those symbols mean and how they represent my growing idea of Conjunctive Binarism, which is my theory of what truth is.
 image: conjunctive_binarism.png

@@ -4,7 +4,7 @@ date: 2015-05-23
 image: projects/metadata.svg
 github: https://github.com/smargh/metadata
 tags:
-  - python
+  - code>python
 summary: A Python module for searching your local files using metadata queries.
 ---
 

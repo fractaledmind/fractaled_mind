@@ -4,8 +4,8 @@ date: 2015-07-25
 image: projects/git-do.svg
 github: https://github.com/smargh/git-do
 tags:
-  - git
-  - bash
+  - code>git
+  - code>bash
 summary: Pre-emptive git commit messages.
 ---
 #### Version 0.1

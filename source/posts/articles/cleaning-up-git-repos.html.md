@@ -1,7 +1,9 @@
 ---
 :title: Cleaning up Git repos
-:tags: til
 :date: 2016-03-15
+tags:
+  - code>git
+  - tutorial>git
 ---
 
 ### Deleting old remote branches
