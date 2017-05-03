@@ -1,0 +1,128 @@
+$branch-height: 30px;
+$connector-color: #ccc;
+$hover-color: #c8e4f8;
+
+.tree {
+  margin: 2rem auto;
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul, ol {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: nowrap;
+    list-style: none;
+    position: relative;
+    padding-top: $branch-height;
+
+    /* Parent Connectors */
+    ul::before,
+    ol::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      border-left: 1px solid $connector-color;
+      height: $branch-height;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: 100%;
+    position: relative;
+    padding: $branch-height 3px 0 3px;
+
+    /* Connectors */
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 50%;
+      height: $branch-height;
+      // Sibling Connectors
+      border-top: 1px solid $connector-color;
+    }
+    &::before {
+      right: 50%;
+    }
+    &::after {
+      left: 50%;
+      // Left-of-Center Children Connectors
+      border-left: 1px solid $connector-color;
+    }
+
+    &:only-child {
+      padding-top: 0;
+      // remove Left-of-Center or Right-of-Center connectors
+      &::after,
+      &::before {
+        display: none;
+      }
+    }
+
+    /* remove left connector from first child and right connector from last child */
+    &:first-child::before,
+    &:last-child::after {
+      border: 0 none;
+    }
+    &:last-child::before {
+      border-radius: 0 5px 0 0;
+      // Right-of-Center Child Connector
+      border-right: 1px solid $connector-color;
+    }
+    &:first-child::after {
+      border-radius: 5px 0 0 0;
+    }
+  }
+
+  a {
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.75em;
+    margin: 0 auto;
+    border: 1px solid $connector-color;
+    padding: 0.33em 0.66em;
+    color: darken($connector-color, 50%);
+    border-radius: 6px;
+    transition-property: background, border-color;
+    transition-duration: 0.33s;
+    background-color: white;
+
+    /* apply the hover effect to lineage of element */
+    &:hover,
+    &:hover+ul li a,
+    &:hover+ol li a{
+      background: $hover-color;
+      color: darken($hover-color, 66%);
+      border-color: darken($hover-color, 33%);
+    }
+
+    /*Connector styles on hover*/
+    &:hover+ul li::after,
+    &:hover+ul li::before,
+    &:hover+ul::before,
+    &:hover+ul ul::before,
+    &:hover+ul ol::before,
+    &:hover+ol li::after,
+    &:hover+ol li::before,
+    &:hover+ol::before,
+    &:hover+ol ol::before
+    &:hover+ol ul::before {
+      border-color: darken($hover-color, 33%);
+    }
+  }
+}
+
