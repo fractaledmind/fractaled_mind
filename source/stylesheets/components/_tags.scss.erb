@@ -1,3 +1,38 @@
+// Give each tag a different color (up to 8 colors, then repeats start)
+$i: 1;
+<% tag_set.each_with_index do |tag, i| %>
+  <% fn = ->(j) { (j > 7) ? fn.call(j - 7) : (j + 1) } %>
+  $current-color: nth($rainbow-list, <%= fn.call(i) %>);
+  $bg-color: $current-color;
+  $border-color: darken($current-color, 0.5);
+  .<%= tag %>-tag {
+    background-color: $bg-color !important;
+    border-color: $border-color !important;
+    color: $lighterest !important;
+  }
+  .breadcrumb {
+    .<%= tag %>-tag {
+      &:first-child {
+        border-left: $border-color;
+      }
+
+      &:last-child {
+        background-color: $bg-color;
+        color: $lighterest;
+      }
+
+      &::before {
+        border-left-color: $border-color;
+      }
+
+      &::after {
+        border-left-color: $bg-color;
+      }
+    }
+  }
+<% end %>
+
+
 $badge-font-size: 0.75em !default;
 
 @mixin badge() {
@@ -23,13 +58,3 @@ $badge-font-size: 0.75em !default;
 }
 
 .badge { @include badge(); }
-
-// Give each tag a different color (up to 8 colors, then repeats start)
-$i: 1;
-<% blog.tags.each_with_index do |obj, i| %>
-  <% fn = ->(j) { (j > 7) ? fn.call(j - 7) : (j + 1) } %>
-  .badge.<%= obj[0] %> {
-    $current-color: nth($rainbow-list, <%= fn.call(i) %>);
-    background-color: $current-color;
-  }
-<% end %>
