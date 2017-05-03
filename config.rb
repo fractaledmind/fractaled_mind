@@ -80,6 +80,16 @@ ready do
             locals: { post: post }, ignore: true
     end
   end
+
+  blog.tags.each do |tagpath, _|
+    tagpath.split('>').each do |tag|
+      proxy "topics/#{tag}.html", 'templates/topic.html',
+            locals: { tagpath: tagpath,
+                      tagname: tag,
+                      posts: posts_for(tag: tag) },
+            ignore: true
+    end
+  end
 end
 
 # Methods defined in the helpers block are available in templates
