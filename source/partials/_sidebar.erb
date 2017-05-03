@@ -14,14 +14,17 @@
     </ul>
   </div>
 
+  <hr class="fractal">
+
   <div id="all-tags">
-    <h5>Tags</h5>
-    <ul>
+    <h5><%= link_to 'Topics', '/topics.html' %></h5>
+    <ul class="list-none">
       <!-- Add all Article tags -->
-      <% blog.tags.each do |tag, articles| %>
-        <li>
-          <%= link_to "#{tag} (#{articles.size})", tag_path(tag),
-              class: "badge no-hvr #{tag}" %>
+      <% blog.tags.each do |tagpath, articles| %>
+        <li class="breadcrumb">
+          <% tagpath.split('>').each do |tag| %>
+            <%= link_to(tag,tag_path(tag), class: "#{tag}-tag") %>
+          <% end %>
         </li>
       <% end %>
     </ul>
