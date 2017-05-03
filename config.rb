@@ -96,17 +96,6 @@ helpers do
     page && page.metadata[:locals][key]
   end
 
-  def sitemap_nested_resources
-    sitemap.resources
-           .select { |r| r.respond_to?(:slug) && r.slug.include?('/') }
-  end
-
-  def site_sections
-    sitemap_nested_resources.map { |r| r.slug.split('/').first }.uniq
-  end
-
-  def slug_section(slug)
-    slug.split('/').first
   end
 end
 
