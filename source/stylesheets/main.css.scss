@@ -69,3 +69,10 @@ body {
 }
 
 .mjx-chtml { margin-right: 2px !important }
+
+.fa-fractal {
+  font-family: fractal;
+  &::before {
+    content: '\e800';
+  }
+}

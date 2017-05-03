@@ -13,12 +13,10 @@
   .card {
     @include display(flex);
     @include flex-wrap(wrap);
-    // @include flex-basis(0);
 
     .card-image {
       @include span-columns(4);
       @include align-self(center);
-      padding: 1rem;
       margin-right: 0;
     }
 
@@ -80,7 +78,6 @@
     &:hover,
     &:active {
       cursor: pointer;
-      // box-shadow: 0px 8px 16px darken($lightest, 40%);
     }
   }
 
@@ -89,28 +86,29 @@
     top: -0.75rem;
     right: 0;
     margin: 0 7.5px;
+    padding: 0;
+    z-index: 2;
 
-    li { display: inline-block; }
+    li {
+      display: inline-block;
 
-    .badge {
-      @include badge();
+      &.breadcrumb:first-child {
+        margin-right: 0.5em;
+      }
+      &.breadcrumb:last-child {
+        margin-left: 0.5em;
+      }
     }
   }
 
   .card-image {
     overflow: hidden;
-    max-height: 12rem; // padding-top + filler-space + img height
     max-width: 12rem;
     margin: 0 auto;
 
     img {
       display: block;
-      margin: 1.5rem auto;
       max-height: 10rem;
-    }
-
-    #tag-filler-space {
-      min-height: 1rem;
     }
   }
 
@@ -171,6 +169,10 @@
   }
 }
 
+#tag-filler-space {
+  min-height: 1.5rem;
+}
+
 .card.timeline-card {
   .card-copy {
     margin: 0.5em;
@@ -182,6 +184,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  .card-tags {
+    margin-right: 5rem;
+  }
 }
 
 #project-page {

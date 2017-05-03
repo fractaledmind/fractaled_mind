@@ -3,7 +3,6 @@
   display: inline-block;
   text-decoration: none;
   position: relative;
-  z-index: 1;
   color: $red;
   line-height:1;
 
@@ -32,7 +31,6 @@
 
 @mixin simple-underline() {
   position: relative;
-  z-index: 1;
   line-height:1;
   color: $red;
 

@@ -16,8 +16,11 @@
   }
 
   #all-tags {
-    ul { padding-left: 1rem; }
-    li { display: inline-block; }
+    ul { padding-left: 0; }
+    li {
+      display: block;
+      margin-bottom: 0.25em;
+    }
 
     .badge {
       @include badge();

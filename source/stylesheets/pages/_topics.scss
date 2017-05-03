@@ -1,3 +1,21 @@
+// NEW TREE CONCEPT
+$dot-size: 1.66em;
+.dot {
+  position: absolute;
+  background: $violet;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  font-weight: bold;
+  width: $dot-size;
+  height: $dot-size;
+  line-height: $dot-size;
+  font-size: $dot-size / 2;
+  top: -($dot-size / 2);
+  right: -($dot-size / 2);
+}
+
+
+// OLD GRID CONCEPT
 $items: 6;
 $item_width: percentage(((100 - ($items * 2)) / $items) / 100);
 $item_n: $items * 2 - 1;
