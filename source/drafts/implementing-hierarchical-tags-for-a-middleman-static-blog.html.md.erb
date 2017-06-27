@@ -1,0 +1,71 @@
+---
+title: 'Implementing Hierarchical Tags for a Middleman Static Blog'
+:date: 2017-05-06
+tags:
+  - code>ruby
+---
+
+I recently updated this blog to add hierarchical tags. I personally really like the new structure, but I wanted to share the implementation details. As articulated in the <%= link_to 'about page', '/about.html' %>, this website is built on top of the [Middleman](https://middlemanapp.com) static site generator. I love static websites; they are quick as lightning and clean to build and maintain. And a static site generator written in Ruby has that little bit of lagniappe, allowing me to hack on top of it. But, before we get to the Ruby, let's cover what precisely I mean by "hierarchical tags".
+
+You will see tags throughout this website in one of three flavors:
+
+1. tree view
+
+    <div class="card-body tree">
+      <%= content_tag(:ul) do
+            visit_children('grand-father', {"grand-father"=>["father", "uncle"], "father"=>["brother", "sister", "me"]})
+          end %>
+    </div>
+
+2. breadcrumb view
+
+    <div class="breadcrumb">
+      <% 'grand-father>father>me'.split('>').each do |tag| %>
+        <%= link_to tag, '#' %>
+      <% end %>
+    </div>
+
+3. badge view
+
+    <div>
+      <%= link_to 'me', '#',
+        class: "badge no-hvr",
+        style: 'border: 1px solid #ddd;' %>
+    </div>
+
+You can inspect the page source to look at the HTML and CSS that renders these components, but I will also lay that out later in the article. Right now, I want simply to focus on how these three components come together to form the UX for this site's hierarchical tags implementation.
+
+We can start with the smallest and simplest--the badge view. This renders a "leaf" of a particular tag path; that is, it represents the most specific tagging of a post. This is what is used in the collection views for <%= link_to 'articles', '/articles.html' %> and <%= link_to 'projects', '/projects.html' %>. While the badge shows just the "leaf", the breadcrumb view displays the entire tag path. This is what is shown when viewing a particular post, as well as the UI for the sidebar. It displays the conceptual "ancestry" that the badge tag belongs to; it gives context. The tree view, thus, shows the conceptual "family" for a set of tags. As you can see in the <%= link_to 'topics page', '/topics.html' %>, this site has a few "families":
+
+- philosophy
+- prose
+- poetry
+- tutorial
+- code
+- academia
+
+For any particular family, you can see all of the various tag paths that relate.
+
+Taken together, these three components allow me to organize my writing in the way that I think: structured collections of hierarchically related ideas. Plus, to my eyes, they look sexy as well 😉.
+
+- - -
+
+But, how do you take a system built to handle simple tags and support hierarchical tags? It all starts from conceiving of the "tag" first and foremost as a "tag path". Instead of tagging a post with simply `tag1` and `tag2`, I tag posts with `general>concrete>tag1` or something like `concept>tag2`. The "tag" remains a simple string, but that string is composed of substrings. The essence of the implementation is to consistently convert these "tag paths" into what I need throughout the rest of the site's codebase
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
