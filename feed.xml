@@ -5,10 +5,118 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2017-08-03T07:20:00-04:00</updated>
+  <updated>2017-08-09T08:25:00-04:00</updated>
   <author>
     <name>Stephen Margheim</name>
   </author>
+  <entry>
+    <title>Initial Thoughts on Infinite Sets and Procedures</title>
+    <link rel="alternate" href="http://blog.url.com/articles/initial-thoughts-on-infinite-sets-and-procedures/"/>
+    <id>http://blog.url.com/articles/initial-thoughts-on-infinite-sets-and-procedures/</id>
+    <published>2017-08-09T08:25:00-04:00</published>
+    <updated>2017-08-10T21:28:55-04:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;p&gt;In a &lt;a href="http://steve-patterson.com/cantor-wrong-no-infinite-sets/"&gt;well-written, clearly articulated piece&lt;/a&gt; on his personal site, Steve Patterson argues that Georg Cantor, the father of modern set theory, was simply, categorically, logically wrong in his understanding and presentation of infinite sets. I appreciate the simplicity, clarity, and forcefulness of his position:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Cantor’s argument isn’t ridiculous in isolation; the entire modern mathematics profession is also damned by association. Modern math, by not weeding out the illogical presuppositions of Cantor, has turned itself into modern Numerology.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;More so, however, I commend his approach. Patterson takes seriously what he calls the “&lt;a href="http://steve-patterson.com/the-metaphysics-of-mathematics-against-platonism/"&gt;metaphysics of mathematics&lt;/a&gt;”; he thinks carefully about the logical nature of these mathematical positions; he is explicit about his terms, what they mean, what he is doing with them, and why they are important. In short, he takes a very philosophical approach to mathematics.&lt;/p&gt;
+
+&lt;p&gt;This is precisely my own bent as well. I am not a professional mathematician, nor am I a fully and/or properly trained mathematician. I am an amateur of the lowest order, but I am deeply drawn to, fascinated by, and enamored with the world of mathematics. I am particularly struck by the ways in which the work of mathematicians who have delved deep into such abstract waters can help us to better think about our minds, the world around us, and the state and nature of knowledge itself.&lt;/p&gt;
+
+&lt;p&gt;But enough with the table setting. I want to write a bit about my response to Patterson’s piece. For while I appreciate his approach, his clarity of thought and presentation, I also fundamentally disagree with him. He places the world of rational, properly meaningful thought on one side and the world of modern mathematics, built on the concepts of set theory, on the other:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Math needs to be logical – grounded in the principles of identity, non-contradiction, and clear conceptual reasoning – and it also needs to be metaphysically precise.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;He begins from classical, Aristotelian logic and needs must (in his mind) cast out modern set theory. I want to work towards understanding the ground that properly unites them such that the one can illumine the other and vice versa.&lt;/p&gt;
+
+&lt;p&gt;So, let’s begin.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;My initial thoughts on this subject focus in on our understanding of what sets &lt;em&gt;even are&lt;/em&gt;. This stands at the heart of Patterson’s critique, and I think he has it quite wrong. In his mind, mathematicians are conceiving of infinite sets in essentially the same manner that they conceive of finite sets:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;To ask, “How many positive integers are there?” is to presuppose an error. Sets aren’t “out there.” They are created. All sets are exactly as large as they’ve been created. There is no such thing as “all the positive integers.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;But are we indeed to conceive of infinite sets as &lt;em&gt;things&lt;/em&gt; that exist “out there”? I think not. I believe mathematicians are quite aware that there aren’t infinite sets “out there,” and I do not think that mathematicians consider infinite sets primarily as “things.” This was how people understood finite sets, yes, but my understanding of Cantor’s position, and why he has affected mathematics so forcefully since, centers on a shift from conceiving of sets as &lt;em&gt;things&lt;/em&gt; to conceiving of them as &lt;em&gt;procedures&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here my own proclivity for computer programming is peeking through, as I am borrowing the concept of procedures from that world. In programming, the “program” is a chunk of executable commands to the computer. When talking about the smaller chunks of executable commands, programmers often refer to “functions” and “procedures,” each being a small, portable chunk of executable commands. The difference between a “function” and a “procedure” is noteworthy when thinking about sets, however. A function will return a value as a result of executing its commands; a procedure will not. Consider the following (pseudo-code):&lt;/p&gt;
+
+&lt;div class="highlight python"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;function&lt;/span&gt;
+    &lt;span class="n"&gt;execute&lt;/span&gt; &lt;span class="n"&gt;command_1&lt;/span&gt;
+    &lt;span class="n"&gt;execute&lt;/span&gt; &lt;span class="n"&gt;command_2&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;div class="highlight python"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;procedure&lt;/span&gt;
+    &lt;span class="n"&gt;execute&lt;/span&gt; &lt;span class="n"&gt;command_1&lt;/span&gt;
+    &lt;span class="n"&gt;execute&lt;/span&gt; &lt;span class="n"&gt;command_2&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;So, when I run the “function,” I will get the “value” back as a result after “command_1” and “command_2” are executed. When I run “procedure” though, “command_1” and “command_2” are both executed, but nothing is returned back to me (the caller) as a result.&lt;/p&gt;
+
+&lt;p&gt;Bringing these concepts back to the world of sets, I begin to see possible conceptual connections. Finite sets are analogous to functions–they return something–, while infinite sets can correspond to procedures. This may seem a trivial analogy, but I believe it lies at the conceptual heart of modern set theory and our understanding of infinite sets (and thus, sets in general).&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Before Cantor’s investigation into infinite sets, set theory had as its “metaphysics” an understanding that sets were “things” or “values”–&lt;code&gt;{1, 1, 2, 3, 5, 8}&lt;/code&gt; is a discrete value. It is a discrete value &lt;em&gt;composed&lt;/em&gt; of other discrete values, sure, but it is nonetheless itself discrete. Were we to consider the concept of “set” as strictly a “value,” Patterson’s critique would ring true, I believe. Infinite sets &lt;em&gt;cannot&lt;/em&gt; be values. Patterson clearly has this understanding of sets in mind when he writes:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A set explicitly means an &lt;em&gt;actual, defined collection of elements&lt;/em&gt;. If you ever, at any point, have an actual collection of elements, you certainly do not have an infinite amount.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;But is this how modern mathematicians, following Cantor, understand sets? I doubt it. And I doubt it primarily because Cantor’s own arguments and writing seem decently aware of this tension (see his desire to consider what we now call “infinite sets” as “&lt;a href="https://en.wikipedia.org/wiki/Transfinite_number"&gt;transfinite sets&lt;/a&gt;”). Moreover, his arguments describing infinite sets are so clearly laying out &lt;em&gt;procedures&lt;/em&gt;, not values. And, in my (very limited) opinion, this is key to Cantor’s revolution.&lt;/p&gt;
+
+&lt;p&gt;He shifts the “metaphysical” understanding of sets away from values to procedures. He does not construct infinite sets by enumerating all of the discrete values that compose the set; he lays out a procedure for generating a set. &lt;strong&gt;The set is the procedure, and the procedure the set&lt;/strong&gt;. The set of all natural numbers is not properly understood as a value composed of all of the discrete values that are the natural numbers; it is to be understood as a procedure, the structure of which maps cleanly and clearly to the structure of the natural numbers.&lt;/p&gt;
+
+&lt;p&gt;Perhaps some pseudo-code would help here. How might we describe the set of the natural numbers as a procedure?&lt;/p&gt;
+
+&lt;div class="highlight python"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;naturals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;naturals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Were we to run this as a program, the computer would yell at us very quickly: “Runtime Error: maximum recursion depth exceeded.” This is a recursive procedure and there is nothing in its construction that would lead to it ever stopping from executing; it would execute forever if it could. This is why it is a procedure – it can never return a value. For to return a value would be to stop execution, but to stop execution would mean it had finished, and thus it was finite; but it is infinite.&lt;/p&gt;
+
+&lt;p&gt;That doesn’t mean, however, that we can’t understand things about this procedure, particularly in comparison with other procedures:&lt;/p&gt;
+
+&lt;div class="highlight python"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;evens&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;evens&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;odds&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;odds&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;There are immediate, clear, and meaningful differences between the structures of the “naturals,” “evens,” and “odds” procedures. Just because none of these procedures would or ever &lt;em&gt;could&lt;/em&gt; return a value doesn’t mean we can’t reason about them. And that is the heart of modern set theory; this is their “metaphysics of sets.” Sets are not primarily values (as this would restrict the definition of sets to include only finite sets); sets are primarily procedures (or, more properly, “programs” as finite sets would map to “functions” because they terminate and return values, while infinite sets would map to “procedures”).&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;I’m going to stop there for now. As I continue mulling on these thoughts, I want to explore further how the arity of the set/procedure (that is, the number of arguments that it takes) relates to the complexity and categorization of all sets, both finite and infinite. I am also interested in thinking through how recursive and non-recursive sets/procedures relate to the categorization of all sets. Finally, I’m curious as to whether a non-terminating procedure (that is, an infinite set) could ever be constructed as anything &lt;em&gt;other than&lt;/em&gt; a recursive procedure in this schema.&lt;/p&gt;
+
+&lt;p&gt;But, all of those thoughts must wait for another day…&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Introducing: Togglicons</title>
     <link rel="alternate" href="http://blog.url.com/articles/introducing-togglicons/"/>
@@ -2984,6 +3092,69 @@ a: Alfred
 </content>
   </entry>
   <entry>
+    <title>Parsers</title>
+    <link rel="alternate" href="http://blog.url.com/projects/parsers/"/>
+    <id>http://blog.url.com/projects/parsers/</id>
+    <published>2015-05-26T20:00:00-04:00</published>
+    <updated>2017-05-01T18:52:04-04:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;h4 id="version-20"&gt;Version: 2.0&lt;/h4&gt;
+
+&lt;h4 id="download-at-packalhttpwwwpackalorgworkflowparsers"&gt;Download at &lt;a href="http://www.packal.org/workflow/parsers"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
+
+&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; is a relatively simple workflow for &lt;a href="http://www.alfredapp.com/"&gt;Alfred&lt;/a&gt;. It allows you to quickly and easily look up parsing information for Greek &lt;em&gt;or&lt;/em&gt; Latin words. It gets its parsing information from the powerful &lt;a href="http://www.perseus.tufts.edu/"&gt;Perseus project&lt;/a&gt;, but presents the results in the clean user-interface of Alfred. To use &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt;, simply open Alfred and type the keyword &lt;code&gt;parse&lt;/code&gt;. Follow the keyword with the Latin or Greek word you want to look up:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="alfred_parser" src="https://www.evernote.com/shard/s41/sh/2c444d67-b4ca-40b3-b914-c20dc5ebbfb6/9d54f19c489deda365c65f1e6b5232e6/deep/0/alfred_parser.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; will display the results for you as quickly as possible.&lt;/p&gt;
+
+&lt;p&gt;As you can see, &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; displays the parsing information in the main title field for each item. Below that, in the sub-title field, it displays the lemma and a short definition separated by &lt;code&gt;::&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Let’s say you are reading some Greek or Latin, however, and don’t want to have to open Alfred, type &lt;code&gt;parse&lt;/code&gt;, then type the word you’re interested in. Well, &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; has thought of that. From within Alfred’s Preferences, you can set up a keyboard shortcut to pass the currently selected text on your Mac to &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt;. I have mine set up as &lt;code&gt;cmd+fn+-&amp;gt;&lt;/code&gt;. This makes using &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; even easier.&lt;/p&gt;
+
+&lt;p&gt;Once you have found the parsing information that you believe is correct in your reading context, &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; can do 2 things for you:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;copy the parsing information to the clipboard in a nicely formatted way (&lt;code&gt;cmd+return&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;copy the dictionary entry for that lemma to the clipboard (&lt;code&gt;shift+return&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If, for instance, you were to choose the Nominative Singular Feminine form of &lt;code&gt;aura&lt;/code&gt; (with &lt;code&gt;cmd+return&lt;/code&gt;), &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; would copy this to the clipboard:&lt;/p&gt;
+
+&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;Type: noun
+Number: sg
+Gender: fem
+Case: voc
+
+Definition: the air (in motion), a breeze, breath of air, wind, blast:
+Lemma:  aura
+
+Lexicon Links:
+  + [Lewis &amp;amp; Short](http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0059%3Aentry%3Daura)
+  + [Elem. Lewis](http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0060%3Aentry%3Daura)
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Alternatively, you can use &lt;code&gt;shift+return&lt;/code&gt; to view a HUD of the lexicon entry for that parsing term, and this lexicon data will also be copied to the clipboard (&lt;em&gt;NOTE&lt;/em&gt;: Parsers will attempt to display the lexicon entry from the most concise lexicon available for the chosen term or allow you to choose out of the available dictionaries).&lt;/p&gt;
+
+&lt;p&gt;All you should need to read your Greek and/or Latin with ease.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Skimmer</title>
     <link rel="alternate" href="http://blog.url.com/projects/skimmer/"/>
     <id>http://blog.url.com/projects/skimmer/</id>
@@ -3111,69 +3282,6 @@ a: Alfred
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Parsers</title>
-    <link rel="alternate" href="http://blog.url.com/projects/parsers/"/>
-    <id>http://blog.url.com/projects/parsers/</id>
-    <published>2015-05-26T20:00:00-04:00</published>
-    <updated>2017-05-01T18:52:04-04:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;h4 id="version-20"&gt;Version: 2.0&lt;/h4&gt;
-
-&lt;h4 id="download-at-packalhttpwwwpackalorgworkflowparsers"&gt;Download at &lt;a href="http://www.packal.org/workflow/parsers"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
-
-&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; is a relatively simple workflow for &lt;a href="http://www.alfredapp.com/"&gt;Alfred&lt;/a&gt;. It allows you to quickly and easily look up parsing information for Greek &lt;em&gt;or&lt;/em&gt; Latin words. It gets its parsing information from the powerful &lt;a href="http://www.perseus.tufts.edu/"&gt;Perseus project&lt;/a&gt;, but presents the results in the clean user-interface of Alfred. To use &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt;, simply open Alfred and type the keyword &lt;code&gt;parse&lt;/code&gt;. Follow the keyword with the Latin or Greek word you want to look up:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="alfred_parser" src="https://www.evernote.com/shard/s41/sh/2c444d67-b4ca-40b3-b914-c20dc5ebbfb6/9d54f19c489deda365c65f1e6b5232e6/deep/0/alfred_parser.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; will display the results for you as quickly as possible.&lt;/p&gt;
-
-&lt;p&gt;As you can see, &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; displays the parsing information in the main title field for each item. Below that, in the sub-title field, it displays the lemma and a short definition separated by &lt;code&gt;::&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Let’s say you are reading some Greek or Latin, however, and don’t want to have to open Alfred, type &lt;code&gt;parse&lt;/code&gt;, then type the word you’re interested in. Well, &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; has thought of that. From within Alfred’s Preferences, you can set up a keyboard shortcut to pass the currently selected text on your Mac to &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt;. I have mine set up as &lt;code&gt;cmd+fn+-&amp;gt;&lt;/code&gt;. This makes using &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; even easier.&lt;/p&gt;
-
-&lt;p&gt;Once you have found the parsing information that you believe is correct in your reading context, &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; can do 2 things for you:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;copy the parsing information to the clipboard in a nicely formatted way (&lt;code&gt;cmd+return&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;copy the dictionary entry for that lemma to the clipboard (&lt;code&gt;shift+return&lt;/code&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;If, for instance, you were to choose the Nominative Singular Feminine form of &lt;code&gt;aura&lt;/code&gt; (with &lt;code&gt;cmd+return&lt;/code&gt;), &lt;strong&gt;&lt;code&gt;Parsers&lt;/code&gt;&lt;/strong&gt; would copy this to the clipboard:&lt;/p&gt;
-
-&lt;div class="highlight plaintext"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;Type: noun
-Number: sg
-Gender: fem
-Case: voc
-
-Definition: the air (in motion), a breeze, breath of air, wind, blast:
-Lemma:  aura
-
-Lexicon Links:
-  + [Lewis &amp;amp; Short](http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0059%3Aentry%3Daura)
-  + [Elem. Lewis](http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.04.0060%3Aentry%3Daura)
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Alternatively, you can use &lt;code&gt;shift+return&lt;/code&gt; to view a HUD of the lexicon entry for that parsing term, and this lexicon data will also be copied to the clipboard (&lt;em&gt;NOTE&lt;/em&gt;: Parsers will attempt to display the lexicon entry from the most concise lexicon available for the chosen term or allow you to choose out of the available dictionaries).&lt;/p&gt;
-
-&lt;p&gt;All you should need to read your Greek and/or Latin with ease.&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -3440,6 +3548,121 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
 </content>
   </entry>
   <entry>
+    <title>Classical Studies Resources</title>
+    <link rel="alternate" href="http://blog.url.com/projects/classical-studies-resources/"/>
+    <id>http://blog.url.com/projects/classical-studies-resources/</id>
+    <published>2015-05-22T20:00:00-04:00</published>
+    <updated>2016-12-17T23:13:04-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;p&gt;This is a work-in-progress collection of structured data and scripts for Classical Studies/Classics.&lt;/p&gt;
+
+&lt;p&gt;The data has been compiled and organized from various online resources including:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the &lt;a href="http://www.perseus.tufts.edu/"&gt;Perseus Project&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://dcc.dickinson.edu/"&gt;Dickenson College Commentaries&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://dge.cchs.csic.es/index.en"&gt;The Diccionario Griego-Español Project&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://www.annee-philologique.com/"&gt;L’Année philologique&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This is a work-in-progress collection of structured data and scripts for Classical Studies/Classics. The data has been compiled and organized from various online resources including the Perseus Project, Dickenson College Commentaries, The Diccionario Griego-Español Project, and L’Année philologique.&lt;/p&gt;
+
+&lt;p&gt;Currently, these are the JSON structured files:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;DCC Greek Core Vocabulary&lt;/li&gt;
+  &lt;li&gt;DCC Latin Core Vocabulary&lt;/li&gt;
+  &lt;li&gt;Greek Authors&lt;/li&gt;
+  &lt;li&gt;Greek Texts&lt;/li&gt;
+  &lt;li&gt;Latin Texts&lt;/li&gt;
+  &lt;li&gt;L’Année philologique Journal Abbreviations (in two forms)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are also plain text files:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;DGE Authors and Works&lt;/li&gt;
+  &lt;li&gt;DGE Dictionary Abbreviations&lt;/li&gt;
+  &lt;li&gt;Index to Smyth’s Greek Grammar&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Finally, there is a random collection of scripts (mostly compiled Applescripts) that I have made at various points for various uses. This section requires much cleaning up, refactoring, and organization at this stage. But I am putting them here for now nonetheless.&lt;/p&gt;
+
+&lt;p&gt;Hopefully, these will find some use for others.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Spritzr</title>
+    <link rel="alternate" href="http://blog.url.com/projects/spritzr/"/>
+    <id>http://blog.url.com/projects/spritzr/</id>
+    <published>2015-05-22T20:00:00-04:00</published>
+    <updated>2017-05-01T18:52:19-04:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;h4 id="version-11"&gt;Version 1.1&lt;/h4&gt;
+
+&lt;h4 id="download-on-packalhttpwwwpackalorgworkflowspritzr"&gt;Download on &lt;a href="http://www.packal.org/workflow/spritzr"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;Spritzr is a relatively simple workflow that allows you to speed-read text on your Mac using &lt;a href="http://www.spritzinc.com/the-science/"&gt;Spritz-style&lt;/a&gt; techniques. The simple idea is that one word of your input text is displayed at a time in quick enough succession that you are no longer &lt;a href="http://en.wikipedia.org/wiki/Subvocalization"&gt;Sub-Vocalizing&lt;/a&gt;, which is the largest impediment to reading at a comfortable, yet swift pace. The added layer of nuance, however, is that each word is positioned around the so-called &lt;a href="http://www.spritzinc.com/blog/"&gt;Optimal Reading Position&lt;/a&gt;. To borrow an image from the Spritz website, the difference between most electronic speedreaders and Spritz-style speedreaders is the alignment of the words:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="word_positioning_blog3.png" src="http://www.spritzinc.com/wp-content/uploads/2014/02/word_positioning_blog3.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;This workflow achieves a similar affect, thus making reading simpler and faster.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTICE&lt;/strong&gt;: I wrote all of this software from scratch and have no affiliation with the Spritz company. I was inspired by other open-source projects that attempt to mirror the Spritz functionality: &lt;a href="https://github.com/Miserlou/OpenSpritz"&gt;OpenSpritz&lt;/a&gt; and &lt;a href="https://github.com/littleq0903/spritz-cmd"&gt;spritz-cmd&lt;/a&gt;, but this software has no relation to Spritz aside from appearances.&lt;/p&gt;
+
+&lt;p&gt;Spritzr currently only has one command: &lt;code&gt;spritz&lt;/code&gt;. This takes text input which will be parsed and displayed in the Spritzr window.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="spritzr.png" src="https://www.evernote.com/shard/s41/sh/288af1c4-bed2-4dfc-ab5f-391ee6c39b32/606b76b31d8c6fbbb4558f38d505cfe5/deep/0/spritzr.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Alternatively, you can pass text files (&lt;code&gt;.txt&lt;/code&gt;, &lt;code&gt;.md&lt;/code&gt;, &lt;code&gt;.mmd&lt;/code&gt;) into Spritzr using the File Action &lt;code&gt;File Spritzr&lt;/code&gt;. This will parse and display the text content of that file in the Spritzr window.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="spritzr_file.png" src="https://www.evernote.com/shard/s41/sh/0da5e015-ca7c-461a-bdb4-675b69ae26ea/15682e931bf8c6daf2fcad14f9b200eb/deep/0/spritzr_file.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;There are two settings, which can be changed using the &lt;code&gt;spritzr:set&lt;/code&gt; keyword:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Words per Minute&lt;/li&gt;
+  &lt;li&gt;Reading Mode&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you which to change your wpm, simply invoke &lt;code&gt;spritzr:set&lt;/code&gt; and input an integer (the default is 250). If you which to change the reading mode, invoke &lt;code&gt;spritzr:set&lt;/code&gt; and input either &lt;code&gt;dark&lt;/code&gt; or &lt;code&gt;light&lt;/code&gt; (the default is &lt;code&gt;light&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Dark Mode: &lt;img alt="spritzr_dark.png" src="https://www.evernote.com/shard/s41/sh/a620b423-7a24-49b8-86e1-6a6088304b0b/5605e456e9e00a944a2d52609b360222/deep/0/spritzr_dark.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Light Mode: &lt;img alt="spritzr_light.png" src="https://www.evernote.com/shard/s41/sh/95a765b1-b622-4a27-911e-5b7d2e6b5a40/f3b77ee67f52cd3afa44dec5656ee4dc/deep/0/spritzr_light.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Other than that, you can just start spritzing!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>LibGen</title>
+    <link rel="alternate" href="http://blog.url.com/projects/libgen/"/>
+    <id>http://blog.url.com/projects/libgen/</id>
+    <published>2015-05-22T20:00:00-04:00</published>
+    <updated>2017-05-01T18:51:40-04:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;p&gt;Seach the &lt;a href="http://libgen.in/"&gt;Library Genesis&lt;/a&gt; project's catalogue of books and download right from your keyboard, without ever launching a browser.&lt;/p&gt;
+
+&lt;h4 id="version-11"&gt;Version 1.1&lt;/h4&gt;
+
+&lt;h4 id="download-from-packalhttpwwwpackalorgworkflowlibgen"&gt;Download from &lt;a href="http://www.packal.org/workflow/libgen"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;This is a relatively simple workflow that allows users to search the &lt;a href="http://gen.lib.rus.ec/"&gt;Library Genesis PDF repository&lt;/a&gt;. For those who do not know, the Library Genesis project is:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;based in Russia, this is the largest currently openly available collection. They have several initiatives: i. +1 million files of mainly non-fiction ebooks, ii. +900k of mainly fiction ebooks, iii. +20 million papers from journals of science, history, art etc., iv. comics, magazines and paintings; totally amounting to at least 30 TB – easily the Library of Congress of the digital world. The Libgen movement mainly focusses on downloading whole collections that have already been posted in fora or as torrents, although a significant portion is also due to individual efforts. (per &lt;a href="https://sites.google.com/site/themetalibrary/library-genesis"&gt;Google Sites&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This workflow has only one keyword and one action. Use the keyword &lt;code&gt;libgen&lt;/code&gt; to begin a search. Select an item and press &lt;code&gt;Return&lt;/code&gt; to begin a download of the file in your browser of choice. The only real oddity of this workflow is that it requires the user to type a period (&lt;code&gt;.&lt;/code&gt;) after the query in order to initiate the search. This helps with performance.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Metadata</title>
     <link rel="alternate" href="http://blog.url.com/projects/metadata/"/>
     <id>http://blog.url.com/projects/metadata/</id>
@@ -3684,52 +3907,6 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
 </content>
   </entry>
   <entry>
-    <title>Classical Studies Resources</title>
-    <link rel="alternate" href="http://blog.url.com/projects/classical-studies-resources/"/>
-    <id>http://blog.url.com/projects/classical-studies-resources/</id>
-    <published>2015-05-22T20:00:00-04:00</published>
-    <updated>2016-12-17T23:13:04-05:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;p&gt;This is a work-in-progress collection of structured data and scripts for Classical Studies/Classics.&lt;/p&gt;
-
-&lt;p&gt;The data has been compiled and organized from various online resources including:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;the &lt;a href="http://www.perseus.tufts.edu/"&gt;Perseus Project&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://dcc.dickinson.edu/"&gt;Dickenson College Commentaries&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://dge.cchs.csic.es/index.en"&gt;The Diccionario Griego-Español Project&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="http://www.annee-philologique.com/"&gt;L’Année philologique&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This is a work-in-progress collection of structured data and scripts for Classical Studies/Classics. The data has been compiled and organized from various online resources including the Perseus Project, Dickenson College Commentaries, The Diccionario Griego-Español Project, and L’Année philologique.&lt;/p&gt;
-
-&lt;p&gt;Currently, these are the JSON structured files:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;DCC Greek Core Vocabulary&lt;/li&gt;
-  &lt;li&gt;DCC Latin Core Vocabulary&lt;/li&gt;
-  &lt;li&gt;Greek Authors&lt;/li&gt;
-  &lt;li&gt;Greek Texts&lt;/li&gt;
-  &lt;li&gt;Latin Texts&lt;/li&gt;
-  &lt;li&gt;L’Année philologique Journal Abbreviations (in two forms)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;There are also plain text files:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;DGE Authors and Works&lt;/li&gt;
-  &lt;li&gt;DGE Dictionary Abbreviations&lt;/li&gt;
-  &lt;li&gt;Index to Smyth’s Greek Grammar&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Finally, there is a random collection of scripts (mostly compiled Applescripts) that I have made at various points for various uses. This section requires much cleaning up, refactoring, and organization at this stage. But I am putting them here for now nonetheless.&lt;/p&gt;
-
-&lt;p&gt;Hopefully, these will find some use for others.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>Reboot</title>
     <link rel="alternate" href="http://blog.url.com/projects/reboot/"/>
     <id>http://blog.url.com/projects/reboot/</id>
@@ -3777,30 +3954,6 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
 </content>
   </entry>
   <entry>
-    <title>LibGen</title>
-    <link rel="alternate" href="http://blog.url.com/projects/libgen/"/>
-    <id>http://blog.url.com/projects/libgen/</id>
-    <published>2015-05-22T20:00:00-04:00</published>
-    <updated>2017-05-01T18:51:40-04:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;p&gt;Seach the &lt;a href="http://libgen.in/"&gt;Library Genesis&lt;/a&gt; project's catalogue of books and download right from your keyboard, without ever launching a browser.&lt;/p&gt;
-
-&lt;h4 id="version-11"&gt;Version 1.1&lt;/h4&gt;
-
-&lt;h4 id="download-from-packalhttpwwwpackalorgworkflowlibgen"&gt;Download from &lt;a href="http://www.packal.org/workflow/libgen"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
-
-&lt;p&gt;This is a relatively simple workflow that allows users to search the &lt;a href="http://gen.lib.rus.ec/"&gt;Library Genesis PDF repository&lt;/a&gt;. For those who do not know, the Library Genesis project is:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;based in Russia, this is the largest currently openly available collection. They have several initiatives: i. +1 million files of mainly non-fiction ebooks, ii. +900k of mainly fiction ebooks, iii. +20 million papers from journals of science, history, art etc., iv. comics, magazines and paintings; totally amounting to at least 30 TB – easily the Library of Congress of the digital world. The Libgen movement mainly focusses on downloading whole collections that have already been posted in fora or as torrents, although a significant portion is also due to individual efforts. (per &lt;a href="https://sites.google.com/site/themetalibrary/library-genesis"&gt;Google Sites&lt;/a&gt;)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;This workflow has only one keyword and one action. Use the keyword &lt;code&gt;libgen&lt;/code&gt; to begin a search. Select an item and press &lt;code&gt;Return&lt;/code&gt; to begin a download of the file in your browser of choice. The only real oddity of this workflow is that it requires the user to type a period (&lt;code&gt;.&lt;/code&gt;) after the query in order to initiate the search. This helps with performance.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>BibQuery</title>
     <link rel="alternate" href="http://blog.url.com/projects/bibquery/"/>
     <id>http://blog.url.com/projects/bibquery/</id>
@@ -3838,51 +3991,6 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
   &lt;li&gt;you can copy a LaTeX cite command for that item (simply press &lt;code&gt;control+return&lt;/code&gt;)&lt;/li&gt;
   &lt;li&gt;you can open that item’s PDF attachment, if it has one (simply press &lt;code&gt;shift+return&lt;/code&gt;)&lt;/li&gt;
 &lt;/ul&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Spritzr</title>
-    <link rel="alternate" href="http://blog.url.com/projects/spritzr/"/>
-    <id>http://blog.url.com/projects/spritzr/</id>
-    <published>2015-05-22T20:00:00-04:00</published>
-    <updated>2017-05-01T18:52:19-04:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;h4 id="version-11"&gt;Version 1.1&lt;/h4&gt;
-
-&lt;h4 id="download-on-packalhttpwwwpackalorgworkflowspritzr"&gt;Download on &lt;a href="http://www.packal.org/workflow/spritzr"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
-
-&lt;p&gt;Spritzr is a relatively simple workflow that allows you to speed-read text on your Mac using &lt;a href="http://www.spritzinc.com/the-science/"&gt;Spritz-style&lt;/a&gt; techniques. The simple idea is that one word of your input text is displayed at a time in quick enough succession that you are no longer &lt;a href="http://en.wikipedia.org/wiki/Subvocalization"&gt;Sub-Vocalizing&lt;/a&gt;, which is the largest impediment to reading at a comfortable, yet swift pace. The added layer of nuance, however, is that each word is positioned around the so-called &lt;a href="http://www.spritzinc.com/blog/"&gt;Optimal Reading Position&lt;/a&gt;. To borrow an image from the Spritz website, the difference between most electronic speedreaders and Spritz-style speedreaders is the alignment of the words:&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="word_positioning_blog3.png" src="http://www.spritzinc.com/wp-content/uploads/2014/02/word_positioning_blog3.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;This workflow achieves a similar affect, thus making reading simpler and faster.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;NOTICE&lt;/strong&gt;: I wrote all of this software from scratch and have no affiliation with the Spritz company. I was inspired by other open-source projects that attempt to mirror the Spritz functionality: &lt;a href="https://github.com/Miserlou/OpenSpritz"&gt;OpenSpritz&lt;/a&gt; and &lt;a href="https://github.com/littleq0903/spritz-cmd"&gt;spritz-cmd&lt;/a&gt;, but this software has no relation to Spritz aside from appearances.&lt;/p&gt;
-
-&lt;p&gt;Spritzr currently only has one command: &lt;code&gt;spritz&lt;/code&gt;. This takes text input which will be parsed and displayed in the Spritzr window.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="spritzr.png" src="https://www.evernote.com/shard/s41/sh/288af1c4-bed2-4dfc-ab5f-391ee6c39b32/606b76b31d8c6fbbb4558f38d505cfe5/deep/0/spritzr.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Alternatively, you can pass text files (&lt;code&gt;.txt&lt;/code&gt;, &lt;code&gt;.md&lt;/code&gt;, &lt;code&gt;.mmd&lt;/code&gt;) into Spritzr using the File Action &lt;code&gt;File Spritzr&lt;/code&gt;. This will parse and display the text content of that file in the Spritzr window.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="spritzr_file.png" src="https://www.evernote.com/shard/s41/sh/0da5e015-ca7c-461a-bdb4-675b69ae26ea/15682e931bf8c6daf2fcad14f9b200eb/deep/0/spritzr_file.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;There are two settings, which can be changed using the &lt;code&gt;spritzr:set&lt;/code&gt; keyword:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Words per Minute&lt;/li&gt;
-  &lt;li&gt;Reading Mode&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;If you which to change your wpm, simply invoke &lt;code&gt;spritzr:set&lt;/code&gt; and input an integer (the default is 250). If you which to change the reading mode, invoke &lt;code&gt;spritzr:set&lt;/code&gt; and input either &lt;code&gt;dark&lt;/code&gt; or &lt;code&gt;light&lt;/code&gt; (the default is &lt;code&gt;light&lt;/code&gt;).&lt;/p&gt;
-
-&lt;p&gt;Dark Mode: &lt;img alt="spritzr_dark.png" src="https://www.evernote.com/shard/s41/sh/a620b423-7a24-49b8-86e1-6a6088304b0b/5605e456e9e00a944a2d52609b360222/deep/0/spritzr_dark.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Light Mode: &lt;img alt="spritzr_light.png" src="https://www.evernote.com/shard/s41/sh/95a765b1-b622-4a27-911e-5b7d2e6b5a40/f3b77ee67f52cd3afa44dec5656ee4dc/deep/0/spritzr_light.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Other than that, you can just start spritzing!&lt;/p&gt;
 </content>
   </entry>
   <entry>
