@@ -5,10 +5,45 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2017-08-09T08:25:00-04:00</updated>
+  <updated>2017-08-14T08:25:00-04:00</updated>
   <author>
     <name>Stephen Margheim</name>
   </author>
+  <entry>
+    <title>On Moral Judgment</title>
+    <link rel="alternate" href="http://blog.url.com/articles/on-moral-judgment/"/>
+    <id>http://blog.url.com/articles/on-moral-judgment/</id>
+    <published>2017-08-14T08:25:00-04:00</published>
+    <updated>2017-08-15T09:02:02-04:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;p&gt;There exists a moral universe. We are subject in that universe just as we are subject in the physical universe. We can affect the state of this universe, just as we can affect the state of the physical universe. We are also objects in the moral universe; we can be affected by the state of this universe. Ethics is a mode of analysis that considers how we do and how we ought to relate to this moral universe. The goal of ethics is to live life well. In order to live life well, we need to&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;see the state of the moral universe as it truly is, and&lt;/li&gt;
+  &lt;li&gt;respond to that state appropriately.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In essence, ethics is this simple; the complexity arises when we actually attempt to live life well. The practice of ethics is difficult.&lt;/p&gt;
+
+&lt;p&gt;I find that one of the most common points of error in the practice of ethics is the application of judgment. I want to consider, briefly, what judgment is with respect to the moral universe, how it can be used properly, and how it is often used improperly.&lt;/p&gt;
+
+&lt;p&gt;Judgment is a type of critical analysis, and critical analysis is absolutely necessary to living life well. It is a key means to the end of seeing the state of the moral universe correctly and responding to it appropriately. It is preparation, exercise, and review. Conceptually, judgment has a few central characteristics. First and foremost, judgment always has a &lt;em&gt;particular&lt;/em&gt; object of focus. We do not judge abstract ideas (we may critique them, but we do not–properly speaking–judge them); we judge people, actions, or beliefs. And this is the first key way in which we can differentiate judgment from criticism. One can be critical of either a general or a particular; one can only judge a particular. “That is bad/wrong/evil.”  There must be a “that” there. Judgment must be focused.&lt;/p&gt;
+
+&lt;p&gt;Note, however, that the language of judgment often elides the judge. &lt;em&gt;I&lt;/em&gt; am not the judge, for I cannot be a sufficient grounds for judgment. What makes “that” “bad/wrong/evil”? The answer to this question can be thought of as the &lt;em&gt;subject&lt;/em&gt; of the judgment. And while the &lt;em&gt;object&lt;/em&gt; of the judgment is &lt;strong&gt;particular&lt;/strong&gt;, the &lt;em&gt;subject&lt;/em&gt; of the judgment must be &lt;strong&gt;general&lt;/strong&gt;. No particular can provide a sufficient foundation for a moral judgement. We judge on the grounds of Right or Truth or Justice. We may be the mouthpiece for judgment, but we are not the judge.&lt;/p&gt;
+
+&lt;p&gt;This leads us to consider the chief way in which judgment can be used properly within the moral universe. We can and should often judge ourselves, make ourselves the particular object of a judgment. We must hold ourselves accountable; we must judge our successes and failures in attempting to correctly see the state of the moral universe and appropriately respond to it. Now, I am not advocating any kind of ethical self-immolation. One could easily imagine taking things too far, but rutting in our mistakes to the exclusion of anything else very clearly does not help us to live life well. To live life well, we must live life; we must act and engage and take risks and keep moving forward, even when we do not know the way. Judgment can help us to turn our past mistakes into guards against future ones, it can help us to more clearly see the correct state of the moral universe, but it shouldn’t be an albatross that drags us into stagnation.&lt;/p&gt;
+
+&lt;p&gt;If ethics is aimed at living life well, in what ways does judging others aid in achieving that goal? Does making someone else the particular object of judgment help me to live my life well? Does making someone else the particular object of judgment help them to live their live well? These are the questions we must ask before even beginning to judge others. In my opinion, there is often little value to my own goal of living life well in judging someone else. And while it might occasionally be beneficial to the other, the &lt;strong&gt;only&lt;/strong&gt; context in which that is true is when I and the other already share a close enough relationship that I can speak truth into their life. I believe firmly that there is no value in judging another with whom you have no pre-existing relationship. It does not help you to live life well and it will not help them to live life well. And yet, to my eyes, this is the &lt;em&gt;primary&lt;/em&gt; context in which I see judgment being practiced.&lt;/p&gt;
+
+&lt;p&gt;Before you start to judge, ask yourself: how is this helping me to live life well? How is this helping them to live life well? If you can’t come up with a concrete answer, an answer you can practically employ, you ought not to judge. In short, we may want to consider the deeper truths behind:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Judge not, lest ye be judged.&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+  </entry>
   <entry>
     <title>Initial Thoughts on Infinite Sets and Procedures</title>
     <link rel="alternate" href="http://blog.url.com/articles/initial-thoughts-on-infinite-sets-and-procedures/"/>
@@ -2168,7 +2203,7 @@ done&lt;/span&gt;
 
 &lt;p&gt;When you first download the workflow, you will need to run &lt;code&gt;z:config&lt;/code&gt; first to configure the necessary settings before you attempt any queries. In fact, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; will kick you to the &lt;code&gt;z:config&lt;/code&gt; command if you try any of the queries without having first configured your settings.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="configuration" src="images/projects/zotquery/zq_config_init.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="configuration" src="../../images/projects/zotquery/zq_config_init.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;On first run, the configurator will begin by searching for, and creating if necessary, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;’s workflow data folder, which can always be found at &lt;code&gt;/Users/$USER/Library/Application Support/Alfred 2/Workflow Data/com.hackademic.zotquery/&lt;/code&gt;.&lt;/p&gt;
 
@@ -2184,43 +2219,43 @@ done&lt;/span&gt;
 
 &lt;p&gt;The configurator attempts to find all necessary paths automatically, but if it fails, it will ask you to select one manually. The title of the dialog box will alert you to what path the configurator requires:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="choosing the Zotero folder where linked attachments reside" src="images/projects/zotquery/zq_config_choose-folder.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="choosing the Zotero folder where linked attachments reside" src="../../images/projects/zotquery/zq_config_choose-folder.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once all paths are stored, the configurator moves on to set up your &lt;a href="http://www.zotero.org/support/dev/server_api/v2/start"&gt;Zotero API&lt;/a&gt; information. This workflow utilizes the Zotero API to export citations of chosen items. In order for the user to utilize these functions, they must have and set up a Zotero private key. Step one requires your Zotero User ID:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="entering Zotero user ID" src="images/projects/zotquery/zq_config_userid.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="entering Zotero user ID" src="../../images/projects/zotquery/zq_config_userid.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;If you do not have or do not know your Zotero User ID, click the &lt;code&gt;Where do I find my User ID?&lt;/code&gt; button. This will open Zotero’s “Feeds/API” tab, where you may need to login. Once logged in, you will see a page similar to this:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="creatingnew Zotero private key" src="images/projects/zotquery/Zotero___Settings___Feeds_API-2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="creatingnew Zotero private key" src="../../images/projects/zotquery/Zotero___Settings___Feeds_API-2.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;This shows a user who has two API keys set up, one for personal use and one for the iOS app &lt;a title="PaperShip - Manage, Annotate, and Share your Papers On The Go ..." href="http://www.papershipapp.com/"&gt;PaperShip&lt;/a&gt;. If you do not have a Personal API key, you can easily set one up by clicking the “Create new private key” link. Your User ID will be a number, probably less than 8 digits. Insert it into the text field and click &lt;code&gt;Set User ID&lt;/code&gt; (&lt;strong&gt;Note&lt;/strong&gt;: Applescript text input dialog boxes do not respond, typically, to the keyboard shortcut for paste, so you will likely need to right-click and manually paste in the ID).&lt;/p&gt;
 
 &lt;p&gt;Second, you will need to input your API Key:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="entering Zotero API key" src="images/projects/zotquery/zq_config_apikey-2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="entering Zotero API key" src="../../images/projects/zotquery/zq_config_apikey-2.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Since &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; reads this &lt;code&gt;settings.json&lt;/code&gt; file whenever it attempts to connect to the Zotero API, if you don’t insert the proper data here, the “Export Citation” and “Export Reference” (see below) functions &lt;strong&gt;will not work&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;Finally, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; (now in version 4.0) will also allow you to set your export style and format. Once you have entered your API information, the configurator will move to setting your export preferences:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="choosing export style and format" src="images/projects/zotquery/zq_prefs1.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="choosing export style and format" src="../../images/projects/zotquery/zq_prefs1.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;First, you will select the &lt;a href="http://citationstyles.org/"&gt;CSL Style&lt;/a&gt; that you wish to use. Currently &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; can export data in 5 different styles: Chicago (author-date), APA, MLA, Zotero’s own RTF-Scan format, and BibTeX. Now, in &lt;strong&gt;version 6.2&lt;/strong&gt;, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; will also allow users to export in the &lt;a href="http://zotero-odf-scan.github.io/zotero-odf-scan/"&gt;ODT-RTF Scannable Cites format&lt;/a&gt; (option not shown in image below). This will determine the format of exported citations and references.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="choosing CSL style" src="images/projects/zotquery/zq_prefs2-4.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="choosing CSL style" src="../../images/projects/zotquery/zq_prefs2-4.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Next, you will select the text formatting for exported data. &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; (in version 4.0) can export in either &lt;a href="http://daringfireball.net/projects/markdown/basics"&gt;Markdown&lt;/a&gt; or &lt;a href="http://en.wikipedia.org/wiki/Rich_Text_Format"&gt;Rich Text&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="choosing export text format" src="images/projects/zotquery/zq_prefs3.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="choosing export text format" src="../../images/projects/zotquery/zq_prefs3.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;All exported text is put in your clipboard, so you can use it anywhere in any text editor. You can also alter your export preferences at any point, using the &lt;code&gt;z:settings&lt;/code&gt; command.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="z:settings command" src="images/projects/zotquery/zq_export_settings.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="z:settings command" src="../../images/projects/zotquery/zq_export_settings.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Finally, you will need to select which Zotero client you use, either &lt;a href="https://www.zotero.org/download/"&gt;Zotero Standalone&lt;/a&gt; or &lt;a href="https://www.zotero.org/download/"&gt;Zotero for Firefox&lt;/a&gt;. This will determine which app will open any items that you select.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="choosing Zotero client" src="images/projects/zotquery/zq_client.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="choosing Zotero client" src="../../images/projects/zotquery/zq_client.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once all settings and preferences are set, the configurator will finally build the JSON cache of your Zotero data. &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; will clone your Zotero database and also generate a JSON file with all pertinent information. Once cached, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; is configured.&lt;/p&gt;
 
@@ -2257,93 +2292,93 @@ done&lt;/span&gt;
 
 &lt;p&gt;The &lt;strong&gt;General&lt;/strong&gt; search is launched by the keyword &lt;code&gt;zot&lt;/code&gt; or the short version &lt;code&gt;z&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="zot general search command" src="images/projects/zotquery/zq_gen_init-3.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="zot general search command" src="../../images/projects/zotquery/zq_gen_init-3.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;This will search your entire Zotero database for any use of the query provided. The search script is “loose,” that is, it searches for matches of the query “in” the data not matches that “equal” the data. This means you can search half words, words in the middle of titles, etc.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; will not begin searching until you have entered at least 3 characters. This ensures faster, smarter results. Until you have typed at least 3 characters, you will see this result:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="zot general search with too short query" src="images/projects/zotquery/Screen_Shot_2014-01-18_at_6_10_23_PM-4.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="zot general search with too short query" src="../../images/projects/zotquery/Screen_Shot_2014-01-18_at_6_10_23_PM-4.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once you complete your query, and the script catches up with you, you will see a list of all of your Zotero items that match the query. If your query doesn’t have any matches, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; returns an error:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="zot general search no results" src="images/projects/zotquery/zq_error_res-2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="zot general search no results" src="../../images/projects/zotquery/zq_error_res-2.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;If, however, you have results, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; presents them in a ranked order:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="zot general search ranked results" src="images/projects/zotquery/zq_gen_search-3.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="zot general search ranked results" src="../../images/projects/zotquery/zq_gen_search-3.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;For ease of use, the workflow provides unique icons for the various item types:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;article   &lt;img alt="article icon" src="images/projects/zotquery/n_article.png" /&gt;&lt;/li&gt;
-  &lt;li&gt;book      &lt;img alt="book icon" src="images/projects/zotquery/n_book.png" /&gt;&lt;/li&gt;
-  &lt;li&gt;chapter   &lt;img alt="chapter icon" src="images/projects/zotquery/n_book.png" /&gt;&lt;/li&gt;
-  &lt;li&gt;conference paper &lt;img alt="conference icon" src="images/projects/zotquery/n_conference.png" /&gt;&lt;/li&gt;
-  &lt;li&gt;other &lt;img alt="other icon" src="images/projects/zotquery/n_written.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;article   &lt;img alt="article icon" src="../../images/projects/zotquery/n_article.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;book      &lt;img alt="book icon" src="../../images/projects/zotquery/n_book.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;chapter   &lt;img alt="chapter icon" src="../../images/projects/zotquery/n_book.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;conference paper &lt;img alt="conference icon" src="../../images/projects/zotquery/n_conference.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;other &lt;img alt="other icon" src="../../images/projects/zotquery/n_written.png" /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;If your item has an attachment, the icon changes to signal the addition as will the subtitle field. The subtitle field will include &lt;code&gt;Attachments: n&lt;/code&gt;, where n is the number of attachments:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="item with attachments" src="images/projects/zotquery/zq_attachments-4.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="item with attachments" src="../../images/projects/zotquery/zq_attachments-4.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;The altered icons each have a small plus sign in the top-right corner:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;article + attachment  &lt;img alt="article icon with attachment" src="images/projects/zotquery/att_article.png" /&gt;&lt;/li&gt;
-  &lt;li&gt;book + attachment     &lt;img alt="book icon with attachment" src="images/projects/zotquery/att_book.png" /&gt;&lt;/li&gt;
-  &lt;li&gt;chapter + attachment  &lt;img alt="chapter icon with attachment" src="images/projects/zotquery/att_chapter.png" /&gt;&lt;/li&gt;
-  &lt;li&gt;conference paper + attachment   &lt;img alt="conference icon with attachment" src="images/projects/zotquery/att_conference.png" /&gt;&lt;/li&gt;
-  &lt;li&gt;other + attachment    &lt;img alt="other icon with attachment" src="images/projects/zotquery/att_written.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;article + attachment  &lt;img alt="article icon with attachment" src="../../images/projects/zotquery/att_article.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;book + attachment     &lt;img alt="book icon with attachment" src="../../images/projects/zotquery/att_book.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;chapter + attachment  &lt;img alt="chapter icon with attachment" src="../../images/projects/zotquery/att_chapter.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;conference paper + attachment   &lt;img alt="conference icon with attachment" src="../../images/projects/zotquery/att_conference.png" /&gt;&lt;/li&gt;
+  &lt;li&gt;other + attachment    &lt;img alt="other icon with attachment" src="../../images/projects/zotquery/att_written.png" /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;The &lt;strong&gt;Author&lt;/strong&gt; search is launched by &lt;code&gt;zot:a&lt;/code&gt; or the short version &lt;code&gt;za&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="zot:a author search command" src="images/projects/zotquery/zq_a_init-4.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="zot:a author search command" src="../../images/projects/zotquery/zq_a_init-4.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;This search only queries the last names of the authors of your Zotero data. For example: &lt;code&gt;zot:a thomas&lt;/code&gt; will return all the items that have an author (or editor, translator, etc.) with the last name “Thomas”.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="zot:a author search results" src="images/projects/zotquery/zq_a_search-3.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="zot:a author search results" src="../../images/projects/zotquery/zq_a_search-3.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;The &lt;strong&gt;Title&lt;/strong&gt; search is launched by &lt;code&gt;zot:t&lt;/code&gt; or the short version &lt;code&gt;zt&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="zot:t title search command" src="images/projects/zotquery/zq_t_init-3.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="zot:t title search command" src="../../images/projects/zotquery/zq_t_init-3.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;This search only queries the title fields of your Zotero data. For example: &lt;code&gt;zot:t virgil&lt;/code&gt; will return all of the items whose title contains the word “Virgil”.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="zot:t title search results" src="images/projects/zotquery/zq_t_search.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="zot:t title search results" src="../../images/projects/zotquery/zq_t_search.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;The final two searches (Tag and Collection) are two-step searches. In step-one, you search &lt;em&gt;for&lt;/em&gt; a particular Tag or Collection; in step-two you search &lt;em&gt;within&lt;/em&gt; that particular Tag or Collection for your query.&lt;/p&gt;
 
 &lt;p&gt;The &lt;strong&gt;Tag&lt;/strong&gt; search is launched by &lt;code&gt;z:tag&lt;/code&gt; or the short version &lt;code&gt;ztg&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="z:tag tags search command" src="images/projects/zotquery/zq_tag_init.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="z:tag tags search command" src="../../images/projects/zotquery/zq_tag_init.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;This allows you to search through all of your Zotero tags.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="z:tag tags search results" src="images/projects/zotquery/zq_tag_search.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="z:tag tags search results" src="../../images/projects/zotquery/zq_tag_search.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once you select a tag, Alfred will automatically initiate the &lt;code&gt;zot:tag&lt;/code&gt; search, which will search within that tag for your query. The &lt;code&gt;zot:tag&lt;/code&gt; (or &lt;code&gt;znt&lt;/code&gt;) query functions just like the general &lt;code&gt;zot&lt;/code&gt; query, except that it is limited to those items with the previously chosen tag.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="zot:tag in-tag search results" src="images/projects/zotquery/zq_intag_seach.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="zot:tag in-tag search results" src="../../images/projects/zotquery/zq_intag_seach.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;The &lt;strong&gt;Collection&lt;/strong&gt; search is similar. It is launched by &lt;code&gt;z:col&lt;/code&gt;, or by &lt;code&gt;zc&lt;/code&gt;, which begins a search for all of your Zotero collections.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="z:col collections search command" src="images/projects/zotquery/zq_col_init.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="z:col collections search command" src="../../images/projects/zotquery/zq_col_init.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;As you type, it will filter any collections that contain the query.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="z:col collections search results" src="images/projects/zotquery/zq_col_search-3.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="z:col collections search results" src="../../images/projects/zotquery/zq_col_search-3.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once you choose a particular collection, Alfred will initiate the &lt;code&gt;zot:c&lt;/code&gt; search (also &lt;code&gt;znc&lt;/code&gt;), which will search within that particular collection.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="zot:c in-collection search results" src="images/projects/zotquery/zq_incol_search.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="zot:c in-collection search results" src="../../images/projects/zotquery/zq_incol_search.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;As above, the &lt;code&gt;zot:c&lt;/code&gt; search functions just like the simple &lt;code&gt;zot&lt;/code&gt; search.&lt;/p&gt;
 
 &lt;p&gt;Finally, you can now (after version 4.1) search only items with attachments using the &lt;code&gt;z:att&lt;/code&gt; query (short version = &lt;code&gt;zat&lt;/code&gt;). This query allows you to quickly find pdfs or epubs in your Zotero library and open them in your default application. As of now, &lt;code&gt;z:att&lt;/code&gt; only allows for you to open the attached files.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="z:att attachments search results" src="images/projects/zotquery/zq_attachment_search.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="z:att attachments search results" src="../../images/projects/zotquery/zq_attachment_search.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Similarly, you can use &lt;code&gt;zot:n&lt;/code&gt; (or &lt;code&gt;zn&lt;/code&gt;) to search through the notes for any items. This can prove very helpful for people who use Zotero as their notes repository for all of their secondary sources.&lt;/p&gt;
 
@@ -2367,35 +2402,35 @@ done&lt;/span&gt;
 
 &lt;p&gt;If you hit &lt;code&gt;option+return&lt;/code&gt; when you choose your item, you will export a short reference to that item.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="export reference" src="images/projects/zotquery/zq_gen_ref.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="export reference" src="../../images/projects/zotquery/zq_gen_ref.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Depending on your style and format settings, your reference will be of various types.&lt;/p&gt;
 
 &lt;p&gt;If you hit &lt;code&gt;control+return&lt;/code&gt;, you will export a full citation of the item in your chosen format.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="export markdown citation" src="images/projects/zotquery/zq_gen_cite.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="export markdown citation" src="../../images/projects/zotquery/zq_gen_cite.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Next, if you hit &lt;code&gt;shift+return&lt;/code&gt;, you will open the attachment of that item.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="open attachment" src="images/projects/zotquery/zq_gen_open.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="open attachment" src="../../images/projects/zotquery/zq_gen_open.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Finally, if you hit &lt;code&gt;fn+return&lt;/code&gt;, you will append a citation of the item to a temporary bibliography file.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="append markdown citation to bibliography" src="images/zq_gen_append.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="append markdown citation to bibliography" src="../../images/zq_gen_append.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;This bibliography file is stored in the workflow’s cache folder. You can add as many citations to it as you wish. This function allows you to dynamically build a Bibliography/Works Cited page. When you have put all the needed citations in the temporary file, you need only run the &lt;code&gt;z:bib&lt;/code&gt; command to export them.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="z:bib export command" src="images/projects/zotquery/zq_bib_init-5.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="z:bib export command" src="../../images/projects/zotquery/zq_bib_init-5.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;This will take all of the citations in the temporary bibliography file, organize them in alphabetical order, and copy the result to the clipboard. A result in Markdown format will resemble this:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="exported markdown citations example" src="images/projects/zotquery/WORKS_CITED-2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="exported markdown citations example" src="../../images/projects/zotquery/WORKS_CITED-2.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;The temporary bibliography file is not the only way, however, to automatically generate a full Bibliography/Works Cited page. Since many Zotero users, myself included, use either Tags or Collections to organize their library into writing projects, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; also allows the user to export a full formatted bibliography (in alphabetical order) for any Tag or Collection.&lt;/p&gt;
 
 &lt;p&gt;When you are searching for a Tag or a Collection with &lt;code&gt;z:tag&lt;/code&gt; or &lt;code&gt;z:col&lt;/code&gt;, you can use &lt;code&gt;control+return&lt;/code&gt; to export a bibliography of that Tag or Collection, instead of simply searching within that Tag or Collection by hitting &lt;code&gt;return&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="export bibliography of collection" src="images/projects/zotquery/zq_col_bib.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="export bibliography of collection" src="../../images/projects/zotquery/zq_col_bib.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Thus, if you organize the citations for particular project within a certain Collection or under a certain Tag, you can create full, formatted Works Cited pages on the fly from &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt;!&lt;/p&gt;
 
@@ -2409,7 +2444,7 @@ done&lt;/span&gt;
 
 &lt;p&gt;There is also the Caching function. All of the query scripts are querying a JSON cache of your Zotero database. This file is created and then updated with the keyword &lt;code&gt;z:cache&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="z:cache caching command" src="images/projects/zotquery/zq_cache_init-3.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="z:cache caching command" src="../../images/projects/zotquery/zq_cache_init-3.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;This function will find your Zotero sqlite database, read its contents, and create a JSON cache of the pertinent information.&lt;/p&gt;
 
@@ -2423,21 +2458,21 @@ done&lt;/span&gt;
 
 &lt;p&gt;Aside from the core features, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; comes with some additional features. First, &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; comes with the ability to set up a keyboard shortcut to launch the title-specific search. I use &lt;code&gt;command+shift+Z&lt;/code&gt; as my hotkey. If you setup the hotkey, you can launch immediately into the title search (with a snazzy interface):&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="auto title search" src="images/projects/zotquery/zq_hotkey_search-2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="auto title search" src="../../images/projects/zotquery/zq_hotkey_search-2.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;You can also change this hotkey to launch whichever query you like.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; also has the ability to be an option in your Alfred fallback searches. In order to setup &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; as a fallback search option, open Alfred’s preferences and go to the &lt;code&gt;Features&lt;/code&gt; tab. Near the bottom of the page you will see a button to &lt;code&gt;Setup fallback results&lt;/code&gt;:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="add fallback search in preferences pt. 1" src="images/projects/zotquery/zq_fallback_setup-2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="add fallback search in preferences pt. 1" src="../../images/projects/zotquery/zq_fallback_setup-2.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;When you click that button a panel will slide out of top:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="add fallback search in preferences pt. 2" src="images/projects/zotquery/zq_fallback-3.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="add fallback search in preferences pt. 2" src="../../images/projects/zotquery/zq_fallback-3.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Click the &lt;code&gt;+&lt;/code&gt; button and select &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; from the &lt;code&gt;Workflow Trigger&lt;/code&gt; list. You can even re-order the fallback searches, and put &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; near the top. When setup, this will allow you to search in Alfred like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="add fallback search in preferences pt. 3" src="images/projects/zotquery/zq_fallback_search-2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="add fallback search in preferences pt. 3" src="../../images/projects/zotquery/zq_fallback_search-2.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;And have it immediately become a &lt;strong&gt;&lt;code&gt;ZotQuery&lt;/code&gt;&lt;/strong&gt; search.&lt;/p&gt;
 
@@ -2606,7 +2641,7 @@ I want to talk more about [[AppleScript]].
 
 &lt;p&gt;In order to interlink any of your current Evernote notes with &lt;em&gt;pre-existing&lt;/em&gt; notes, you can use the &lt;code&gt;wfy&lt;/code&gt; command from Alfred. Simply open up Evernote and select the notes you want to “wikify” (the workflow does accept multiple selections, but you shouldn’t over tax it). Once your notes are selected, pull up Alfred and use the &lt;code&gt;wfy&lt;/code&gt; (short for “wikify”) keyword. The workflow will then process each of your notes individually, auto-linking to any pre-existing other notes which it references by name. &lt;strong&gt;NOTE:&lt;/strong&gt; In order to use this feature, you will need the &lt;a href="http://www.satimage.fr/software/en/downloads_osaxen.html"&gt;Satimage OSAX Scripting Addition&lt;/a&gt;. I’ve set it up such that this is remarkably easy to install. Simply use the keyword in Alfred &lt;code&gt;wfy:install&lt;/code&gt; and the Satimage installer will boot up and walk you through the process. It really is as simple as that. The script will search your note’s content for any references to other notes’ titles. If any are found, that text will be replaced with a hyperlink to that note. Here’s a gif that shows the process in action:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="wfy command" src="images/projects/wikify/wfy.gif" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="wfy command" src="../../images/projects/wikify/wfy.gif" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Next, let’s say that you are in Evernote and see a phrase or term in one of your notes that you want to research more, while creating the wiki-environment that &lt;strong&gt;&lt;code&gt;Wikify&lt;/code&gt;&lt;/strong&gt; is all about. I’ve added a companion feature which will:&lt;/p&gt;
 
@@ -2619,7 +2654,7 @@ I want to talk more about [[AppleScript]].
 
 &lt;p&gt;This means that you have two-way hyperlinking (which is impossible in the &lt;code&gt;mden&lt;/code&gt; version of this functionality) between your current note and your new note. Creating spaces for new thought, while retaining context and wiki-style hyperlinking has never been easier. To use this feature, you can either use a user-specified keyboard shortcut, or copy the selected text to the clipboard and run &lt;code&gt;ensel&lt;/code&gt;. Here’s another gif to illustrate:&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="ensel command" src="images/projects/wikify/ensel.gif" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="ensel command" src="../../images/projects/wikify/ensel.gif" /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -4115,22 +4150,22 @@ Then check the box telling Marked to use this by default. The &lt;code&gt;pandoc
     <content type="html"></content>
   </entry>
   <entry>
-    <title>Socrates and Reader</title>
-    <link rel="alternate" href="http://blog.url.com/essays/socrates-and-reader/"/>
-    <id>http://blog.url.com/essays/socrates-and-reader/</id>
+    <title>Barfield Contra Lewis on Truth and Imagination</title>
+    <link rel="alternate" href="http://blog.url.com/essays/barfield-contra-lewis-on-truth-and-imagination/"/>
+    <id>http://blog.url.com/essays/barfield-contra-lewis-on-truth-and-imagination/</id>
     <published>2012-09-06T20:00:00-04:00</published>
-    <updated>2017-05-03T00:16:38-04:00</updated>
+    <updated>2017-05-03T00:17:25-04:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
     <content type="html"></content>
   </entry>
   <entry>
-    <title>Barfield Contra Lewis on Truth and Imagination</title>
-    <link rel="alternate" href="http://blog.url.com/essays/barfield-contra-lewis-on-truth-and-imagination/"/>
-    <id>http://blog.url.com/essays/barfield-contra-lewis-on-truth-and-imagination/</id>
+    <title>Socrates and Reader</title>
+    <link rel="alternate" href="http://blog.url.com/essays/socrates-and-reader/"/>
+    <id>http://blog.url.com/essays/socrates-and-reader/</id>
     <published>2012-09-06T20:00:00-04:00</published>
-    <updated>2017-05-03T00:17:25-04:00</updated>
+    <updated>2017-05-03T00:16:38-04:00</updated>
     <author>
       <name>Stephen Margheim</name>
     </author>
