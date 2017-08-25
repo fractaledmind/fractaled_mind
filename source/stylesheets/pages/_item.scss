@@ -2,7 +2,11 @@
     // internal padding around text
     padding: 1rem 1.5rem;
     // for tag overflow
-    padding-top: 3rem;
+    // padding-top: 3rem;
+
+    hr.fractal {
+      margin-bottom: 1.5rem;
+    }
 
     h2#title {
       text-align: center;

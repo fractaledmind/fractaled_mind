@@ -6,8 +6,8 @@
   <%= partial "partials/card/tags_filler",
               locals: { item: post } %>
 
-  <%= partial "partials/card/image",
-              locals: { item: post } %>
+  <%= partial("partials/card/image",
+              locals: { item: post }) if post.data['image'] %>
 
   <h2 id="title"><%= markdownify post.title %></h2>
 
