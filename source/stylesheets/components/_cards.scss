@@ -53,8 +53,6 @@
   $card-border: 1px solid $lightest;
   $card-background: white;
 
-
-  @include flex-basis(17em);
   @include flex-grow(1);
   @include transition(all 0.25s ease-in-out);
   background-color: $card-background;
