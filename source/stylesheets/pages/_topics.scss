@@ -14,6 +14,10 @@ $dot-size: 1.66em;
   right: -($dot-size / 2);
 }
 
+#all-tags ~ .cards > .card {
+  @include flex-basis(initial);
+}
+
 
 // OLD GRID CONCEPT
 $items: 6;
