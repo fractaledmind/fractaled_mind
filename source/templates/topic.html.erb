@@ -26,7 +26,7 @@
                 .each do |post| %>
           <li>
             <i class="fa-li fa fa-fractal"></i>
-            <%= link_to post.title, post %>
+            <%= link_to post.title, (post.data['pdf_link'] || post) %>
             <span>(<%= post.date.strftime('%b %e') %>)</span>
           </li>
         <% end %>
