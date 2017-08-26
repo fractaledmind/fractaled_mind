@@ -1,6 +1,6 @@
 ---
 title: Degrees of Separation
-date: 2017-08-24 01:00 UTC
+date: 2017-08-25
 tags:
   - philosophy>epistemology>math
   - philosophy>epistemology>logic
