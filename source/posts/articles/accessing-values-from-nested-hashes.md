@@ -1,6 +1,6 @@
 ---
 title: 'Accessing Values from Nested Hashes'
-date: 2017-10-15
+date: 2016-07-15
 tags:
   - code>ruby
 summary: How can you access values from a nested (i.e. multidimensional) hash without throwing errors when the shape of the hash is not strictly fixed?
