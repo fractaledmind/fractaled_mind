@@ -42,8 +42,8 @@ Hrm. All of the date bits about our time disappeared... What in the hell is goin
 
 In [another](https://stackoverflow.com/a/25702629/2884386) I found these images:
 
-![](activerecord-column-types-1.png)
-![](activerecord-column-types-2.png)
+<%= image_tag 'activerecord-column-types-1.png' %>
+<%= image_tag 'activerecord-column-types-2.png' %>
 
 In my test database, I'm using SQlite, so this column is being stored in the actual database as a SQLite `datetime` object. However, the first answer says that a column of this type represents _only_ the combination of hour, minute, and second. Ok. Well, still, what's going on here?
 
