@@ -182,7 +182,7 @@
 
 <p>When you first download the workflow, you will need to run <code>z:config</code> first to configure the necessary settings before you attempt any queries. In fact, <strong><code>ZotQuery</code></strong> will kick you to the <code>z:config</code> command if you try any of the queries without having first configured your settings.</p>
 
-<p><img alt="configuration" src="images/projects/zotquery/zq_config_init.png" /></p>
+<p><img alt="configuration" src="../../images/projects/zotquery/zq_config_init.png" /></p>
 
 <p>On first run, the configurator will begin by searching for, and creating if necessary, <strong><code>ZotQuery</code></strong>’s workflow data folder, which can always be found at <code>/Users/$USER/Library/Application Support/Alfred 2/Workflow Data/com.hackademic.zotquery/</code>.</p>
 
@@ -198,43 +198,43 @@
 
 <p>The configurator attempts to find all necessary paths automatically, but if it fails, it will ask you to select one manually. The title of the dialog box will alert you to what path the configurator requires:</p>
 
-<p><img alt="choosing the Zotero folder where linked attachments reside" src="images/projects/zotquery/zq_config_choose-folder.png" /></p>
+<p><img alt="choosing the Zotero folder where linked attachments reside" src="../../images/projects/zotquery/zq_config_choose-folder.png" /></p>
 
 <p>Once all paths are stored, the configurator moves on to set up your <a href="http://www.zotero.org/support/dev/server_api/v2/start">Zotero API</a> information. This workflow utilizes the Zotero API to export citations of chosen items. In order for the user to utilize these functions, they must have and set up a Zotero private key. Step one requires your Zotero User ID:</p>
 
-<p><img alt="entering Zotero user ID" src="images/projects/zotquery/zq_config_userid.png" /></p>
+<p><img alt="entering Zotero user ID" src="../../images/projects/zotquery/zq_config_userid.png" /></p>
 
 <p>If you do not have or do not know your Zotero User ID, click the <code>Where do I find my User ID?</code> button. This will open Zotero’s “Feeds/API” tab, where you may need to login. Once logged in, you will see a page similar to this:</p>
 
-<p><img alt="creatingnew Zotero private key" src="images/projects/zotquery/Zotero___Settings___Feeds_API-2.png" /></p>
+<p><img alt="creatingnew Zotero private key" src="../../images/projects/zotquery/Zotero___Settings___Feeds_API-2.png" /></p>
 
 <p>This shows a user who has two API keys set up, one for personal use and one for the iOS app <a title="PaperShip - Manage, Annotate, and Share your Papers On The Go ..." href="http://www.papershipapp.com/">PaperShip</a>. If you do not have a Personal API key, you can easily set one up by clicking the “Create new private key” link. Your User ID will be a number, probably less than 8 digits. Insert it into the text field and click <code>Set User ID</code> (<strong>Note</strong>: Applescript text input dialog boxes do not respond, typically, to the keyboard shortcut for paste, so you will likely need to right-click and manually paste in the ID).</p>
 
 <p>Second, you will need to input your API Key:</p>
 
-<p><img alt="entering Zotero API key" src="images/projects/zotquery/zq_config_apikey-2.png" /></p>
+<p><img alt="entering Zotero API key" src="../../images/projects/zotquery/zq_config_apikey-2.png" /></p>
 
 <p>Since <strong><code>ZotQuery</code></strong> reads this <code>settings.json</code> file whenever it attempts to connect to the Zotero API, if you don’t insert the proper data here, the “Export Citation” and “Export Reference” (see below) functions <strong>will not work</strong>.</p>
 
 <p>Finally, <strong><code>ZotQuery</code></strong> (now in version 4.0) will also allow you to set your export style and format. Once you have entered your API information, the configurator will move to setting your export preferences:</p>
 
-<p><img alt="choosing export style and format" src="images/projects/zotquery/zq_prefs1.png" /></p>
+<p><img alt="choosing export style and format" src="../../images/projects/zotquery/zq_prefs1.png" /></p>
 
 <p>First, you will select the <a href="http://citationstyles.org/">CSL Style</a> that you wish to use. Currently <strong><code>ZotQuery</code></strong> can export data in 5 different styles: Chicago (author-date), APA, MLA, Zotero’s own RTF-Scan format, and BibTeX. Now, in <strong>version 6.2</strong>, <strong><code>ZotQuery</code></strong> will also allow users to export in the <a href="http://zotero-odf-scan.github.io/zotero-odf-scan/">ODT-RTF Scannable Cites format</a> (option not shown in image below). This will determine the format of exported citations and references.</p>
 
-<p><img alt="choosing CSL style" src="images/projects/zotquery/zq_prefs2-4.png" /></p>
+<p><img alt="choosing CSL style" src="../../images/projects/zotquery/zq_prefs2-4.png" /></p>
 
 <p>Next, you will select the text formatting for exported data. <strong><code>ZotQuery</code></strong> (in version 4.0) can export in either <a href="http://daringfireball.net/projects/markdown/basics">Markdown</a> or <a href="http://en.wikipedia.org/wiki/Rich_Text_Format">Rich Text</a>.</p>
 
-<p><img alt="choosing export text format" src="images/projects/zotquery/zq_prefs3.png" /></p>
+<p><img alt="choosing export text format" src="../../images/projects/zotquery/zq_prefs3.png" /></p>
 
 <p>All exported text is put in your clipboard, so you can use it anywhere in any text editor. You can also alter your export preferences at any point, using the <code>z:settings</code> command.</p>
 
-<p><img alt="z:settings command" src="images/projects/zotquery/zq_export_settings.png" /></p>
+<p><img alt="z:settings command" src="../../images/projects/zotquery/zq_export_settings.png" /></p>
 
 <p>Finally, you will need to select which Zotero client you use, either <a href="https://www.zotero.org/download/">Zotero Standalone</a> or <a href="https://www.zotero.org/download/">Zotero for Firefox</a>. This will determine which app will open any items that you select.</p>
 
-<p><img alt="choosing Zotero client" src="images/projects/zotquery/zq_client.png" /></p>
+<p><img alt="choosing Zotero client" src="../../images/projects/zotquery/zq_client.png" /></p>
 
 <p>Once all settings and preferences are set, the configurator will finally build the JSON cache of your Zotero data. <strong><code>ZotQuery</code></strong> will clone your Zotero database and also generate a JSON file with all pertinent information. Once cached, <strong><code>ZotQuery</code></strong> is configured.</p>
 
@@ -271,93 +271,93 @@
 
 <p>The <strong>General</strong> search is launched by the keyword <code>zot</code> or the short version <code>z</code>.</p>
 
-<p><img alt="zot general search command" src="images/projects/zotquery/zq_gen_init-3.png" /></p>
+<p><img alt="zot general search command" src="../../images/projects/zotquery/zq_gen_init-3.png" /></p>
 
 <p>This will search your entire Zotero database for any use of the query provided. The search script is “loose,” that is, it searches for matches of the query “in” the data not matches that “equal” the data. This means you can search half words, words in the middle of titles, etc.</p>
 
 <p><strong><code>ZotQuery</code></strong> will not begin searching until you have entered at least 3 characters. This ensures faster, smarter results. Until you have typed at least 3 characters, you will see this result:</p>
 
-<p><img alt="zot general search with too short query" src="images/projects/zotquery/Screen_Shot_2014-01-18_at_6_10_23_PM-4.png" /></p>
+<p><img alt="zot general search with too short query" src="../../images/projects/zotquery/Screen_Shot_2014-01-18_at_6_10_23_PM-4.png" /></p>
 
 <p>Once you complete your query, and the script catches up with you, you will see a list of all of your Zotero items that match the query. If your query doesn’t have any matches, <strong><code>ZotQuery</code></strong> returns an error:</p>
 
-<p><img alt="zot general search no results" src="images/projects/zotquery/zq_error_res-2.png" /></p>
+<p><img alt="zot general search no results" src="../../images/projects/zotquery/zq_error_res-2.png" /></p>
 
 <p>If, however, you have results, <strong><code>ZotQuery</code></strong> presents them in a ranked order:</p>
 
-<p><img alt="zot general search ranked results" src="images/projects/zotquery/zq_gen_search-3.png" /></p>
+<p><img alt="zot general search ranked results" src="../../images/projects/zotquery/zq_gen_search-3.png" /></p>
 
 <p>For ease of use, the workflow provides unique icons for the various item types:</p>
 
 <ul>
-  <li>article   <img alt="article icon" src="images/projects/zotquery/n_article.png" /></li>
-  <li>book      <img alt="book icon" src="images/projects/zotquery/n_book.png" /></li>
-  <li>chapter   <img alt="chapter icon" src="images/projects/zotquery/n_book.png" /></li>
-  <li>conference paper <img alt="conference icon" src="images/projects/zotquery/n_conference.png" /></li>
-  <li>other <img alt="other icon" src="images/projects/zotquery/n_written.png" /></li>
+  <li>article   <img alt="article icon" src="../../images/projects/zotquery/n_article.png" /></li>
+  <li>book      <img alt="book icon" src="../../images/projects/zotquery/n_book.png" /></li>
+  <li>chapter   <img alt="chapter icon" src="../../images/projects/zotquery/n_book.png" /></li>
+  <li>conference paper <img alt="conference icon" src="../../images/projects/zotquery/n_conference.png" /></li>
+  <li>other <img alt="other icon" src="../../images/projects/zotquery/n_written.png" /></li>
 </ul>
 
 <p>If your item has an attachment, the icon changes to signal the addition as will the subtitle field. The subtitle field will include <code>Attachments: n</code>, where n is the number of attachments:</p>
 
-<p><img alt="item with attachments" src="images/projects/zotquery/zq_attachments-4.png" /></p>
+<p><img alt="item with attachments" src="../../images/projects/zotquery/zq_attachments-4.png" /></p>
 
 <p>The altered icons each have a small plus sign in the top-right corner:</p>
 
 <ul>
-  <li>article + attachment  <img alt="article icon with attachment" src="images/projects/zotquery/att_article.png" /></li>
-  <li>book + attachment     <img alt="book icon with attachment" src="images/projects/zotquery/att_book.png" /></li>
-  <li>chapter + attachment  <img alt="chapter icon with attachment" src="images/projects/zotquery/att_chapter.png" /></li>
-  <li>conference paper + attachment   <img alt="conference icon with attachment" src="images/projects/zotquery/att_conference.png" /></li>
-  <li>other + attachment    <img alt="other icon with attachment" src="images/projects/zotquery/att_written.png" /></li>
+  <li>article + attachment  <img alt="article icon with attachment" src="../../images/projects/zotquery/att_article.png" /></li>
+  <li>book + attachment     <img alt="book icon with attachment" src="../../images/projects/zotquery/att_book.png" /></li>
+  <li>chapter + attachment  <img alt="chapter icon with attachment" src="../../images/projects/zotquery/att_chapter.png" /></li>
+  <li>conference paper + attachment   <img alt="conference icon with attachment" src="../../images/projects/zotquery/att_conference.png" /></li>
+  <li>other + attachment    <img alt="other icon with attachment" src="../../images/projects/zotquery/att_written.png" /></li>
 </ul>
 
 <p>The <strong>Author</strong> search is launched by <code>zot:a</code> or the short version <code>za</code>.</p>
 
-<p><img alt="zot:a author search command" src="images/projects/zotquery/zq_a_init-4.png" /></p>
+<p><img alt="zot:a author search command" src="../../images/projects/zotquery/zq_a_init-4.png" /></p>
 
 <p>This search only queries the last names of the authors of your Zotero data. For example: <code>zot:a thomas</code> will return all the items that have an author (or editor, translator, etc.) with the last name “Thomas”.</p>
 
-<p><img alt="zot:a author search results" src="images/projects/zotquery/zq_a_search-3.png" /></p>
+<p><img alt="zot:a author search results" src="../../images/projects/zotquery/zq_a_search-3.png" /></p>
 
 <p>The <strong>Title</strong> search is launched by <code>zot:t</code> or the short version <code>zt</code>.</p>
 
-<p><img alt="zot:t title search command" src="images/projects/zotquery/zq_t_init-3.png" /></p>
+<p><img alt="zot:t title search command" src="../../images/projects/zotquery/zq_t_init-3.png" /></p>
 
 <p>This search only queries the title fields of your Zotero data. For example: <code>zot:t virgil</code> will return all of the items whose title contains the word “Virgil”.</p>
 
-<p><img alt="zot:t title search results" src="images/projects/zotquery/zq_t_search.png" /></p>
+<p><img alt="zot:t title search results" src="../../images/projects/zotquery/zq_t_search.png" /></p>
 
 <p>The final two searches (Tag and Collection) are two-step searches. In step-one, you search <em>for</em> a particular Tag or Collection; in step-two you search <em>within</em> that particular Tag or Collection for your query.</p>
 
 <p>The <strong>Tag</strong> search is launched by <code>z:tag</code> or the short version <code>ztg</code>.</p>
 
-<p><img alt="z:tag tags search command" src="images/projects/zotquery/zq_tag_init.png" /></p>
+<p><img alt="z:tag tags search command" src="../../images/projects/zotquery/zq_tag_init.png" /></p>
 
 <p>This allows you to search through all of your Zotero tags.</p>
 
-<p><img alt="z:tag tags search results" src="images/projects/zotquery/zq_tag_search.png" /></p>
+<p><img alt="z:tag tags search results" src="../../images/projects/zotquery/zq_tag_search.png" /></p>
 
 <p>Once you select a tag, Alfred will automatically initiate the <code>zot:tag</code> search, which will search within that tag for your query. The <code>zot:tag</code> (or <code>znt</code>) query functions just like the general <code>zot</code> query, except that it is limited to those items with the previously chosen tag.</p>
 
-<p><img alt="zot:tag in-tag search results" src="images/projects/zotquery/zq_intag_seach.png" /></p>
+<p><img alt="zot:tag in-tag search results" src="../../images/projects/zotquery/zq_intag_seach.png" /></p>
 
 <p>The <strong>Collection</strong> search is similar. It is launched by <code>z:col</code>, or by <code>zc</code>, which begins a search for all of your Zotero collections.</p>
 
-<p><img alt="z:col collections search command" src="images/projects/zotquery/zq_col_init.png" /></p>
+<p><img alt="z:col collections search command" src="../../images/projects/zotquery/zq_col_init.png" /></p>
 
 <p>As you type, it will filter any collections that contain the query.</p>
 
-<p><img alt="z:col collections search results" src="images/projects/zotquery/zq_col_search-3.png" /></p>
+<p><img alt="z:col collections search results" src="../../images/projects/zotquery/zq_col_search-3.png" /></p>
 
 <p>Once you choose a particular collection, Alfred will initiate the <code>zot:c</code> search (also <code>znc</code>), which will search within that particular collection.</p>
 
-<p><img alt="zot:c in-collection search results" src="images/projects/zotquery/zq_incol_search.png" /></p>
+<p><img alt="zot:c in-collection search results" src="../../images/projects/zotquery/zq_incol_search.png" /></p>
 
 <p>As above, the <code>zot:c</code> search functions just like the simple <code>zot</code> search.</p>
 
 <p>Finally, you can now (after version 4.1) search only items with attachments using the <code>z:att</code> query (short version = <code>zat</code>). This query allows you to quickly find pdfs or epubs in your Zotero library and open them in your default application. As of now, <code>z:att</code> only allows for you to open the attached files.</p>
 
-<p><img alt="z:att attachments search results" src="images/projects/zotquery/zq_attachment_search.png" /></p>
+<p><img alt="z:att attachments search results" src="../../images/projects/zotquery/zq_attachment_search.png" /></p>
 
 <p>Similarly, you can use <code>zot:n</code> (or <code>zn</code>) to search through the notes for any items. This can prove very helpful for people who use Zotero as their notes repository for all of their secondary sources.</p>
 
@@ -381,35 +381,35 @@
 
 <p>If you hit <code>option+return</code> when you choose your item, you will export a short reference to that item.</p>
 
-<p><img alt="export reference" src="images/projects/zotquery/zq_gen_ref.png" /></p>
+<p><img alt="export reference" src="../../images/projects/zotquery/zq_gen_ref.png" /></p>
 
 <p>Depending on your style and format settings, your reference will be of various types.</p>
 
 <p>If you hit <code>control+return</code>, you will export a full citation of the item in your chosen format.</p>
 
-<p><img alt="export markdown citation" src="images/projects/zotquery/zq_gen_cite.png" /></p>
+<p><img alt="export markdown citation" src="../../images/projects/zotquery/zq_gen_cite.png" /></p>
 
 <p>Next, if you hit <code>shift+return</code>, you will open the attachment of that item.</p>
 
-<p><img alt="open attachment" src="images/projects/zotquery/zq_gen_open.png" /></p>
+<p><img alt="open attachment" src="../../images/projects/zotquery/zq_gen_open.png" /></p>
 
 <p>Finally, if you hit <code>fn+return</code>, you will append a citation of the item to a temporary bibliography file.</p>
 
-<p><img alt="append markdown citation to bibliography" src="images/zq_gen_append.png" /></p>
+<p><img alt="append markdown citation to bibliography" src="../../images/zq_gen_append.png" /></p>
 
 <p>This bibliography file is stored in the workflow’s cache folder. You can add as many citations to it as you wish. This function allows you to dynamically build a Bibliography/Works Cited page. When you have put all the needed citations in the temporary file, you need only run the <code>z:bib</code> command to export them.</p>
 
-<p><img alt="z:bib export command" src="images/projects/zotquery/zq_bib_init-5.png" /></p>
+<p><img alt="z:bib export command" src="../../images/projects/zotquery/zq_bib_init-5.png" /></p>
 
 <p>This will take all of the citations in the temporary bibliography file, organize them in alphabetical order, and copy the result to the clipboard. A result in Markdown format will resemble this:</p>
 
-<p><img alt="exported markdown citations example" src="images/projects/zotquery/WORKS_CITED-2.png" /></p>
+<p><img alt="exported markdown citations example" src="../../images/projects/zotquery/WORKS_CITED-2.png" /></p>
 
 <p>The temporary bibliography file is not the only way, however, to automatically generate a full Bibliography/Works Cited page. Since many Zotero users, myself included, use either Tags or Collections to organize their library into writing projects, <strong><code>ZotQuery</code></strong> also allows the user to export a full formatted bibliography (in alphabetical order) for any Tag or Collection.</p>
 
 <p>When you are searching for a Tag or a Collection with <code>z:tag</code> or <code>z:col</code>, you can use <code>control+return</code> to export a bibliography of that Tag or Collection, instead of simply searching within that Tag or Collection by hitting <code>return</code>.</p>
 
-<p><img alt="export bibliography of collection" src="images/projects/zotquery/zq_col_bib.png" /></p>
+<p><img alt="export bibliography of collection" src="../../images/projects/zotquery/zq_col_bib.png" /></p>
 
 <p>Thus, if you organize the citations for particular project within a certain Collection or under a certain Tag, you can create full, formatted Works Cited pages on the fly from <strong><code>ZotQuery</code></strong>!</p>
 
@@ -423,7 +423,7 @@
 
 <p>There is also the Caching function. All of the query scripts are querying a JSON cache of your Zotero database. This file is created and then updated with the keyword <code>z:cache</code>.</p>
 
-<p><img alt="z:cache caching command" src="images/projects/zotquery/zq_cache_init-3.png" /></p>
+<p><img alt="z:cache caching command" src="../../images/projects/zotquery/zq_cache_init-3.png" /></p>
 
 <p>This function will find your Zotero sqlite database, read its contents, and create a JSON cache of the pertinent information.</p>
 
@@ -437,21 +437,21 @@
 
 <p>Aside from the core features, <strong><code>ZotQuery</code></strong> comes with some additional features. First, <strong><code>ZotQuery</code></strong> comes with the ability to set up a keyboard shortcut to launch the title-specific search. I use <code>command+shift+Z</code> as my hotkey. If you setup the hotkey, you can launch immediately into the title search (with a snazzy interface):</p>
 
-<p><img alt="auto title search" src="images/projects/zotquery/zq_hotkey_search-2.png" /></p>
+<p><img alt="auto title search" src="../../images/projects/zotquery/zq_hotkey_search-2.png" /></p>
 
 <p>You can also change this hotkey to launch whichever query you like.</p>
 
 <p><strong><code>ZotQuery</code></strong> also has the ability to be an option in your Alfred fallback searches. In order to setup <strong><code>ZotQuery</code></strong> as a fallback search option, open Alfred’s preferences and go to the <code>Features</code> tab. Near the bottom of the page you will see a button to <code>Setup fallback results</code>:</p>
 
-<p><img alt="add fallback search in preferences pt. 1" src="images/projects/zotquery/zq_fallback_setup-2.png" /></p>
+<p><img alt="add fallback search in preferences pt. 1" src="../../images/projects/zotquery/zq_fallback_setup-2.png" /></p>
 
 <p>When you click that button a panel will slide out of top:</p>
 
-<p><img alt="add fallback search in preferences pt. 2" src="images/projects/zotquery/zq_fallback-3.png" /></p>
+<p><img alt="add fallback search in preferences pt. 2" src="../../images/projects/zotquery/zq_fallback-3.png" /></p>
 
 <p>Click the <code>+</code> button and select <strong><code>ZotQuery</code></strong> from the <code>Workflow Trigger</code> list. You can even re-order the fallback searches, and put <strong><code>ZotQuery</code></strong> near the top. When setup, this will allow you to search in Alfred like this:</p>
 
-<p><img alt="add fallback search in preferences pt. 3" src="images/projects/zotquery/zq_fallback_search-2.png" /></p>
+<p><img alt="add fallback search in preferences pt. 3" src="../../images/projects/zotquery/zq_fallback_search-2.png" /></p>
 
 <p>And have it immediately become a <strong><code>ZotQuery</code></strong> search.</p>
 
@@ -504,6 +504,14 @@
     <ul class="fa-ul">
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../../articles/accessing-values-from-nested-hashes/">Accessing Values from Nested Hashes</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../../articles/the-word-of-god/">The Word of God</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
           <a href="../../articles/on-antinomies-and-paradoxes/">On Antinomies and Paradoxes</a>
         </li>
         <li>
@@ -513,14 +521,6 @@
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
           <a href="../../articles/i-am-but-a-water-glass/">I am but a water glass</a>
-        </li>
-        <li>
-          <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/portrait-of-pain-ii/">Portrait of Pain II</a>
-        </li>
-        <li>
-          <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/recalling-my-earliest-deep-regret/">Recalling my earliest deep regret</a>
         </li>
     </ul>
   </div>
@@ -550,11 +550,15 @@
             <a class="self-tag" href="/topics/self/">self</a>
         </li>
         <li class="breadcrumb">
-            <a class="poetry-tag" href="/topics/poetry/">poetry</a>
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="ruby-tag" href="/topics/ruby/">ruby</a>
         </li>
         <li class="breadcrumb">
             <a class="code-tag" href="/topics/code/">code</a>
-            <a class="ruby-tag" href="/topics/ruby/">ruby</a>
+            <a class="rails-tag" href="/topics/rails/">rails</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="poetry-tag" href="/topics/poetry/">poetry</a>
         </li>
         <li class="breadcrumb">
             <a class="tutorial-tag" href="/topics/tutorial/">tutorial</a>
