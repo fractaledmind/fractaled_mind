@@ -6,7 +6,7 @@ tags:
   - code>ruby>interpreter
   - philosophy>epistemology>logic
   - tutorial>interpreter
-summary: The second in a series of posts laying out the process, step by step, of building an interpreter in Ruby for working with propositional logic. In this second post, 
+summary: The second in a series of posts laying out the process, step by step, of building an interpreter in Ruby for working with propositional logic. In this second post, we expand the interpreter to handle the full range of valid expressions in classical propositional logic.
 ---
 
 In the [first post](http://fractaledmind.com/articles/ruby-logic-interpreter-1/) of this series, we built an interpreter to work with a basic subset of propositional logic. In this post, we are going to extend that interpreter to handle the full range of valid expressions in classical propositional logic. Specifically, this means we are going to allow for
