@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <!-- Metadata declarations -->
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Content declarations -->
+  <title>Fractaled Mind</title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="feed.xml" />
+
+  <!-- External Resources -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+  <!-- Internal Resources -->
+  <link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
+  <link href="../../images/favicon.png" rel="icon" type="image/png" />
+  <script src="../../javascripts/bigfoot.js" type="text/javascript"></script>
+  <script src="../../javascripts/search.js" type="text/javascript"></script>
+
+  <!-- Bigfoot.js Popover Footnotes -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $.bigfoot({
+        numberResetSelector: ".card",
+        activateCallback: function($popover, $button) {
+          if (MathJax && !$button.data('mathjax-processed')) {
+            var content_wrapper = $popover.find('.bigfoot-footnote__content')[0];
+            MathJax.Hub.Queue(['Typeset', MathJax.Hub, content_wrapper]);
+            MathJax.Hub.Queue(function () {
+              $button.attr('data-bigfoot-footnote', content_wrapper.innerHTML);
+              $button.data('mathjax-processed', true);
+            });
+          }
+        }
+      });
+    });
+  </script>
+
+  <!-- Responsive Tables -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("td").each(function() {
+        var $th = $(this).closest('table').find('th').eq($(this).index());
+        $(this).attr('data-th', $th.text());
+      });
+    });
+  </script>
+
+  <!-- Scroll-Fix sidebar
+  <script type="text/javascript">
+    $(window).on("scroll", function(e) {
+      var scroll = $(this).scrollTop();
+      var logo_height = $('#site-logo').height();
+      var nav_height = $('.navigation').height() + 16;
+
+      if (scroll > logo_height) {
+        $('.navigation').css({'position': 'fixed'});
+         $('#sidebar').css({
+           'position': 'fixed',
+           'top': nav_height
+         });
+      } else {
+        $('.navigation').css({'position': 'inherit'});
+        $('#sidebar').css({'position': 'inherit'});
+      }
+    });
+  </script>
+  -->
+
+</head>
+
+
+  <body>
+    <header>
+  <div id="site-logo">
+    <a href="/" class="no-hvr">
+      <img alt="Fractaled Mind" src="../../images/logo-single-line.svg" />
+    </a>
+  </div>
+</header>
+
+
+    <div class="navigation">
+  <ul id="social-networks">
+    <li>
+      <a href="https://facebook.com/fractaledmind" class="no-hvr">
+        <i class="fa fa-facebook fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://twitter.com/fractaledmind" class="no-hvr">
+        <i class="fa fa-twitter fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/fractaledmind" class="no-hvr">
+        <i class="fa fa-github fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="mailto:stephen@fractaledmind.com" class="no-hvr">
+        <i class="fa fa-envelope fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="/feed.xml" class="no-hvr">
+        <i class="fa fa-rss fa-lg"></i>
+      </a>
+    </li>
+  </ul>
+
+  <nav role="navigation">
+    <ul class="navigation-menu">
+      <li class="nav-link"><a href="../">articles</a></li>
+      <li class="nav-link"><a href="../../projects/">projects</a></li>
+      <li class="nav-link"><a href="../../jots/">jots</a></li>
+      <li class="nav-link"><a href="../../essays/">essays</a></li>
+    </ul>
+  </nav>
+
+  <div id="search">
+    <div class="searchbar">
+      <form role="search" action="/search" method="get">
+        <input class="search-term" type="search" placeholder="Search..." name="q" />
+        <button class="search-submit" type="submit">
+          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png" alt="Search Icon">
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+    <div id="main" role="main">
+      <div class="card" id="project-page">
+
+    <ul class="card-tags">
+      <li class="breadcrumb">
+            <a class="prose-tag" href="/topics/prose/">prose</a>
+            <a class="relationships-tag" href="/topics/relationships/">relationships</a>
+      </li>
+      <li class="breadcrumb">
+            <a class="philosophy-tag" href="/topics/philosophy/">philosophy</a>
+            <a class="ethics-tag" href="/topics/ethics/">ethics</a>
+      </li>
+  </ul>
+
+
+  <!-- if item has tags, add filler element -->
+  <div id="tag-filler-space"></div>
+
+
+  
+
+  <h2 id="title"><p>On White Lies and Gas Lights</p>
+</h2>
+
+  <hr class="fractal">
+
+  <div id="description"><p>When was the last time you told a “white lie”? You know the one I mean, that harmless little lie you told to avoid hurting someone’s feelings. Our world is rife with them, and they are slowly killing me.</p>
+
+<span id='readmore'></span>
+
+<hr />
+
+<p>Here’s another question: when was the last time you made an inference about the state of the world? If you’re not sure, I can help you out—it was 5 seconds ago when you read the words “about the state of” and your mind immediately inferred that the following words would be “the world.” Our minds are unfathomable guessing machines. We are making guesses, formulating opinions, and inferring truths <em>all of the time</em>. And when it comes to inferring, what we lack in accuracy, we make up in quantity.</p>
+
+<p>I sometimes get lost thinking about the miracle of how successful we all are in our constant guessing. And an absolutely key ingredient in our success is the fact that we all <em>learn</em> from our past guesses. We aren’t flipping a coin time and time and time again, hoping things come up heads and our guess is right; we are building a complex model of the world and people around us that is constantly evolving to better and better represent the true state of affairs.</p>
+
+<hr />
+
+<p>Let’s return to the cancer of white lies. A white lie is a lie made with good intentions; you want to avoid offense, want to avoid hurting someone, want to avoid malevolence. And yet, as is so often the case, the road to hell is indeed paved with our good intentions. White lies are little more than gas lights with better PR.</p>
+
+<hr />
+
+<p>In 1938, playwright Patrick Hamilton penned and produced <a href="https://en.wikipedia.org/wiki/Gas_Light">“Gas Light”</a>, a stage play about a husband who attempts to convince his wife that she is insane when she notices odd details and behaviors stemming from his attempt at covering up a murder. This play, and its later movie adaptations, form the source of the modern concept of “gaslighting”—an attempt to manipulate people into questioning their memory, perception, and even sanity.</p>
+
+<p>While true gaslighting is intentional, it is utterly possible to deconstruct someone else’s sanity unintentionally. Enter white lies.</p>
+
+<p>By definition, you tell a white lie whenever you say that the state of the world is <em>X</em> (those gas lights didn’t dim last night), when the state of the world is actually <em>Y</em> (the gas lights did dim). And, you are doing this with some twisted sense of doing good by the person to whom you are lying. Consider, however, the consequences of your lie when the person you are lying to has the pre-existing belief that the state of the world is <em>Y</em>. This person has guessed, has inferred from the world around them, that the state of things is <em>Y</em>. Maybe this makes them sad or uncomfortable, maybe it doesn’t. Either way, the apparatus of their mind has applied itself to the people and world around them and surmised that things are in state <em>Y</em>. Now, you enter and declare that, in fact, the state of the world is <em>X</em>. The person you have just lied to is now faced with a dilemma—do they trust you or trust their judgment? Before even getting into the consequences of them choosing to trust you, consider the position your white lie has put that person in, this person you apparently have enough good will for that you are attempting to do good by them. You have put them in conflict, you have pitted yourself against their own mind. You are telling them to doubt themselves and trust you. Good will, my ass.</p>
+
+<p>But, what then if they do as you wish and trust you instead of their own sense of things? Well, now their minds must update the model of the people and the world around them. And not simply update the model, but tear down the old, presumed faulty, model of the world. Your lie asks them to deconstruct their own apparatus for determining what is real and what isn’t, the apparatus of their sanity.</p>
+
+<p>In small doses, such deconstruction and updating has little noticeable effect; you would be surprised, however, how quickly this process can bring a person to an utterly untenable state. You see, the problem is not so much that a person will end up with an inference machine in their mind that is rarely correct. Reality is always reality, and so every other signal besides your lie will be suggesting that the state of things is indeed <em>Y</em>. So what ends up happening is that the tension each and every lie forces upon a person—do I trust this person and think things are <em>X</em> or do I trust my intuition and think things are <em>Y</em>—simply grows and grows. And the more that they choose to trust you and your lies, the more that the eventual collapse will hurt and break them.</p>
+
+<p>For, as we said above, reality is always reality, and so the truth always eventually makes itself known. And when that happens, if you have convinced someone time and time again to trust you and your lies, that person will now be left with a sanity apparatus left in shambles.</p>
+
+<hr />
+
+<p>I have been unintentionally gaslit with white lies by various people throughout my life. And, to be honest, I didn’t recognize what was going on or what the consequences were in my life until I was full-blown gaslit by someone. Now, I am able to see much more clearly the small effects that small lies have on me. Now, I am unable to form a solid opinion about what is real and what isn’t, when someone is lying or not, whether they have good intentions or not. White lies and black lies alike have stripped me of my most basic ability to make sense of the people and world around me.</p>
+
+<p>If you actually care even at all for someone, don’t lie to them. Ever. Don’t ask them to choose between you and their own minds. There are no white lies, only gas lights.</p>
+</div>
+</div>
+
+    </div>
+
+    <aside id="sidebar">
+
+  <hr class="fractal">
+
+  <div id="recent-articles">
+    <h5>Recent Posts</h5>
+    <ul class="fa-ul">
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../css-tree/">Building Pure CSS Trees (part 1)</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="./">On White Lies and Gas Lights</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../ruby-logic-interpreter-2/">Building an Interpreter for Propositional Logic</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../ruby-logic-interpreter-1/">Building an Interpreter for Propositional Logic</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../death-of-self/">Death of Self</a>
+        </li>
+    </ul>
+  </div>
+
+  <hr class="fractal">
+
+  <div id="all-tags">
+    <h5><a href="../../topics/">Topics</a></h5>
+    <ul class="list-none">
+      <!-- Add all Article tags -->
+        <li class="breadcrumb">
+            <a class="philosophy-tag" href="/topics/philosophy/">philosophy</a>
+            <a class="epistemology-tag" href="/topics/epistemology/">epistemology</a>
+            <a class="math-tag" href="/topics/math/">math</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="philosophy-tag" href="/topics/philosophy/">philosophy</a>
+            <a class="epistemology-tag" href="/topics/epistemology/">epistemology</a>
+            <a class="logic-tag" href="/topics/logic/">logic</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="tutorial-tag" href="/topics/tutorial/">tutorial</a>
+            <a class="pdf-workflow-tag" href="/topics/pdf-workflow/">pdf-workflow</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="prose-tag" href="/topics/prose/">prose</a>
+            <a class="self-tag" href="/topics/self/">self</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="ruby-tag" href="/topics/ruby/">ruby</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="rails-tag" href="/topics/rails/">rails</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="poetry-tag" href="/topics/poetry/">poetry</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="tutorial-tag" href="/topics/tutorial/">tutorial</a>
+            <a class="algorithms-tag" href="/topics/algorithms/">algorithms</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="philosophy-tag" href="/topics/philosophy/">philosophy</a>
+            <a class="faith-tag" href="/topics/faith/">faith</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="git-tag" href="/topics/git/">git</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="tutorial-tag" href="/topics/tutorial/">tutorial</a>
+            <a class="git-tag" href="/topics/git/">git</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="prose-tag" href="/topics/prose/">prose</a>
+            <a class="relationships-tag" href="/topics/relationships/">relationships</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="css-tag" href="/topics/css/">css</a>
+            <a class="trees-tag" href="/topics/trees/">trees</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="tutorial-tag" href="/topics/tutorial/">tutorial</a>
+            <a class="css-tag" href="/topics/css/">css</a>
+            <a class="trees-tag" href="/topics/trees/">trees</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="poetry-tag" href="/topics/poetry/">poetry</a>
+            <a class="relationships-tag" href="/topics/relationships/">relationships</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="css-tag" href="/topics/css/">css</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="prose-tag" href="/topics/prose/">prose</a>
+            <a class="life-tag" href="/topics/life/">life</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="prose-tag" href="/topics/prose/">prose</a>
+            <a class="faith-tag" href="/topics/faith/">faith</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="philosophy-tag" href="/topics/philosophy/">philosophy</a>
+            <a class="ethics-tag" href="/topics/ethics/">ethics</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="ruby-tag" href="/topics/ruby/">ruby</a>
+            <a class="interpreter-tag" href="/topics/interpreter/">interpreter</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="tutorial-tag" href="/topics/tutorial/">tutorial</a>
+            <a class="interpreter-tag" href="/topics/interpreter/">interpreter</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="latin-tag" href="/topics/latin/">latin</a>
+            <a class="vergil-tag" href="/topics/vergil/">vergil</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="greek-tag" href="/topics/greek/">greek</a>
+            <a class="epicurus-tag" href="/topics/epicurus/">epicurus</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="greek-tag" href="/topics/greek/">greek</a>
+            <a class="aristotle-tag" href="/topics/aristotle/">aristotle</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="latin-tag" href="/topics/latin/">latin</a>
+            <a class="horace-tag" href="/topics/horace/">horace</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="modern-tag" href="/topics/modern/">modern</a>
+            <a class="lewis-tag" href="/topics/lewis/">lewis</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="modern-tag" href="/topics/modern/">modern</a>
+            <a class="barfield-tag" href="/topics/barfield/">barfield</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="greek-tag" href="/topics/greek/">greek</a>
+            <a class="herodotus-tag" href="/topics/herodotus/">herodotus</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="greek-tag" href="/topics/greek/">greek</a>
+            <a class="hippocrates-tag" href="/topics/hippocrates/">hippocrates</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="greek-tag" href="/topics/greek/">greek</a>
+            <a class="plato-tag" href="/topics/plato/">plato</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="modern-tag" href="/topics/modern/">modern</a>
+            <a class="saussure-tag" href="/topics/saussure/">saussure</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="alfred-tag" href="/topics/alfred/">alfred</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="bash-tag" href="/topics/bash/">bash</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="python-tag" href="/topics/python/">python</a>
+        </li>
+    </ul>
+  </div>
+</aside>
+
+
+    <footer role="contentinfo">
+  <div class="footer-info">
+    <p>&copy; Copyright 2015 by Stephen Margheim</p>
+    <p>Powered by <a href="https://middlemanapp.com">Middleman</a>.</p>
+  </div>
+</footer>
+
+
+  </body>
+</html>

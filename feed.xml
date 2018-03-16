@@ -5,10 +5,400 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2018-01-02T19:00:00-05:00</updated>
+  <updated>2018-03-04T19:00:00-05:00</updated>
   <author>
     <name>Stephen Margheim</name>
   </author>
+  <entry>
+    <title>Building Pure CSS Trees (part 1)</title>
+    <link rel="alternate" href="http://blog.url.com/articles/css-tree/"/>
+    <id>http://blog.url.com/articles/css-tree/</id>
+    <published>2018-03-04T19:00:00-05:00</published>
+    <updated>2018-03-16T15:12:02-04:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;p&gt;Have you ever wanted to represent some hierarchical data on a webpage as a tree? In this series of posts, we are going to build a CSS-only solution for rendering hierarchical trees.&lt;/p&gt;
+
+&lt;p&gt;{{read more}}&lt;/p&gt;
+
+&lt;p&gt;The HTML for our hierarchical data will be structured as nested lists:&lt;/p&gt;
+
+&lt;div class="highlight html"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;ul&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;"tree"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;span&amp;gt;&amp;lt;code&amp;gt;&lt;/span&gt;1&lt;span class="nt"&gt;&amp;lt;/code&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;span&amp;gt;&amp;lt;code&amp;gt;&lt;/span&gt;1.1&lt;span class="nt"&gt;&amp;lt;/code&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;span&amp;gt;&amp;lt;code&amp;gt;&lt;/span&gt;1.2&lt;span class="nt"&gt;&amp;lt;/code&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;span&amp;gt;&amp;lt;code&amp;gt;&lt;/span&gt;1.2.1&lt;span class="nt"&gt;&amp;lt;/code&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;span&amp;gt;&amp;lt;code&amp;gt;&lt;/span&gt;1.2.2&lt;span class="nt"&gt;&amp;lt;/code&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;li&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;span&amp;gt;&amp;lt;code&amp;gt;&lt;/span&gt;1.2.3&lt;span class="nt"&gt;&amp;lt;/code&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Let’s begin by clearing the list of any default list styling:&lt;/p&gt;
+
+&lt;div class="highlight scss"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nc"&gt;.tree&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="nl"&gt;list-style&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;none&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  
+  &lt;span class="k"&gt;&amp;amp;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nl"&gt;margin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nl"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p data-height="160" data-theme-id="0" data-slug-hash="BYgNJN" data-default-tab="result" data-user="smargh" data-embed-version="2" data-pen-title="css-tree__1" class="codepen"&gt;See the Pen &lt;a href="https://codepen.io/smargh/pen/BYgNJN/"&gt;css-tree__1&lt;/a&gt; by Stephen Margheim (&lt;a href="https://codepen.io/smargh"&gt;@smargh&lt;/a&gt;) on &lt;a href="https://codepen.io"&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async="" src="https://static.codepen.io/assets/embed/ei.js"&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"&gt;Flexbox&lt;/a&gt; is going to be the heart of our CSS-only implementation. It will give us the power and the flexibility to take our nested lists HTML and render it as a hierarchical tree in a number of different orientations. Initially, however, let’s build a tree that renders along the horizontal axis:&lt;/p&gt;
+
+&lt;div class="highlight scss"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nc"&gt;.tree&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="c1"&gt;// ...
+&lt;/span&gt;
+  &lt;span class="nt"&gt;li&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;flex&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nl"&gt;flex-direction&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;row&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nl"&gt;align-items&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;center&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This CSS declares that every node is going to be a flex container where the orientation is left-to-right along the horizontal axis and the flex children will be centered along their respective vertical axes.&lt;/p&gt;
+
+&lt;p data-height="125" data-theme-id="0" data-slug-hash="mXZJQd" data-default-tab="result" data-user="smargh" data-embed-version="2" data-pen-title="css-tree__2" class="codepen"&gt;See the Pen &lt;a href="https://codepen.io/smargh/pen/mXZJQd/"&gt;css-tree__2&lt;/a&gt; by Stephen Margheim (&lt;a href="https://codepen.io/smargh"&gt;@smargh&lt;/a&gt;) on &lt;a href="https://codepen.io"&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async="" src="https://static.codepen.io/assets/embed/ei.js"&gt;&lt;/script&gt;
+
+&lt;p&gt;Before we start building the connectors, let’s quickly add some basic styling for the nodes so that we can better see our connectors as we build them:&lt;/p&gt;
+
+&lt;div class="highlight scss"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nc"&gt;.tree&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="c1"&gt;// ...
+&lt;/span&gt;  
+  &lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;border&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;1px&lt;/span&gt; &lt;span class="nb"&gt;solid&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nl"&gt;text-align&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;center&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nl"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="mi"&gt;.33em&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="mi"&gt;.66em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p data-height="175" data-theme-id="0" data-slug-hash="gvNpZp" data-default-tab="result" data-user="smargh" data-embed-version="2" data-pen-title="css-tree__3" class="codepen"&gt;See the Pen &lt;a href="https://codepen.io/smargh/pen/gvNpZp/"&gt;css-tree__3&lt;/a&gt; by Stephen Margheim (&lt;a href="https://codepen.io/smargh"&gt;@smargh&lt;/a&gt;) on &lt;a href="https://codepen.io"&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async="" src="https://static.codepen.io/assets/embed/ei.js"&gt;&lt;/script&gt;
+
+&lt;p&gt;The first connector that we want to build is the line from parent-to-children. Given that we are starting with a simple left-to-right, horizontal tree, this connector will extend out to the right of any parent node.&lt;/p&gt;
+
+&lt;div class="highlight scss"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nc"&gt;.tree&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="c1"&gt;// ...
+&lt;/span&gt;  
+  &lt;span class="nt"&gt;ul&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nt"&gt;ol&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;padding-left&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;2vw&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nl"&gt;position&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;relative&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+    &lt;span class="c1"&gt;// [connector] parent-to-children
+&lt;/span&gt;    &lt;span class="err"&gt;&amp;amp;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;before&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+      &lt;span class="nl"&gt;content&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+      &lt;span class="nl"&gt;position&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;absolute&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+      &lt;span class="nl"&gt;left&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+      &lt;span class="nl"&gt;top&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;50%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+      &lt;span class="nl"&gt;border-top&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;1px&lt;/span&gt; &lt;span class="nb"&gt;solid&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+      &lt;span class="nl"&gt;width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;2vw&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p data-height="175" data-theme-id="0" data-slug-hash="paXjja" data-default-tab="result" data-user="smargh" data-embed-version="2" data-pen-title="css-tree__4" class="codepen"&gt;See the Pen &lt;a href="https://codepen.io/smargh/pen/paXjja/"&gt;css-tree__4&lt;/a&gt; by Stephen Margheim (&lt;a href="https://codepen.io/smargh"&gt;@smargh&lt;/a&gt;) on &lt;a href="https://codepen.io"&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async="" src="https://static.codepen.io/assets/embed/ei.js"&gt;&lt;/script&gt;
+
+&lt;p&gt;This CSS declares that any nested lists (&lt;code&gt;ul&lt;/code&gt;s or &lt;code&gt;ol&lt;/code&gt;s that are descendants of the &lt;code&gt;.tree&lt;/code&gt; list) will have a 1-pixel line, the width of which will be 2% of the viewport width, that is vertically centered and horizontally aligned to the far-left.&lt;/p&gt;
+
+&lt;p&gt;The goal is to have a line that comes out of the center of any parent node; notably, however, we do not put the border on the parent &lt;code&gt;li&lt;/code&gt; element, but on the &lt;code&gt;ul&lt;/code&gt; or &lt;code&gt;ol&lt;/code&gt; element that represents the set of children for the parent node. We do this because we will need both the &lt;code&gt;:before&lt;/code&gt; and &lt;code&gt;:after&lt;/code&gt; pseudo-elements of the &lt;code&gt;li&lt;/code&gt;s to build the connectors for the children.&lt;/p&gt;
+
+&lt;p&gt;Let’s start building those connectors now.&lt;/p&gt;
+
+&lt;div class="highlight scss"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nc"&gt;.tree&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="c1"&gt;// ...
+&lt;/span&gt;
+  &lt;span class="nt"&gt;li&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="c1"&gt;// ...
+&lt;/span&gt;
+    &lt;span class="nl"&gt;position&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;relative&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nl"&gt;padding-left&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;2vw&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    
+    &lt;span class="c1"&gt;// [connector] child-to-parent
+&lt;/span&gt;    &lt;span class="err"&gt;&amp;amp;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;before&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+      &lt;span class="nl"&gt;content&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+      &lt;span class="nl"&gt;position&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;absolute&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+      &lt;span class="nl"&gt;left&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+      &lt;span class="nl"&gt;top&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;50%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+      &lt;span class="nl"&gt;border-top&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;1px&lt;/span&gt; &lt;span class="nb"&gt;solid&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+      &lt;span class="nl"&gt;width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;2vw&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p data-height="175" data-theme-id="0" data-slug-hash="ddBYVo" data-default-tab="result" data-user="smargh" data-embed-version="2" data-pen-title="css-tree__5" class="codepen"&gt;See the Pen &lt;a href="https://codepen.io/smargh/pen/ddBYVo/"&gt;css-tree__5&lt;/a&gt; by Stephen Margheim (&lt;a href="https://codepen.io/smargh"&gt;@smargh&lt;/a&gt;) on &lt;a href="https://codepen.io"&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async="" src="https://static.codepen.io/assets/embed/ei.js"&gt;&lt;/script&gt;
+
+&lt;p&gt;This CSS is simple insofar as it is a direct re-use of the CSS used for the nested &lt;code&gt;ul&lt;/code&gt;s and &lt;code&gt;ol&lt;/code&gt;s. For every &lt;code&gt;li&lt;/code&gt; element, we ensure that it has a 1-pixel line, the width of which will be 2% of the viewport width, that is vertically centered and horizontally aligned to the far-left.&lt;/p&gt;
+
+&lt;p&gt;You should note immediately one issue: the root node has a child-to-parent connector, though it has no parent. Let us remedy that first:&lt;/p&gt;
+
+&lt;div class="highlight scss"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nc"&gt;.tree&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="c1"&gt;// ...
+&lt;/span&gt;
+  &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="nt"&gt;li&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;padding-left&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    
+    &lt;span class="err"&gt;&amp;amp;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;before&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+    &lt;span class="o"&gt;&amp;amp;::&lt;/span&gt;&lt;span class="n"&gt;after&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+      &lt;span class="nl"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;none&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p data-height="175" data-theme-id="0" data-slug-hash="oErbqG" data-default-tab="result" data-user="smargh" data-embed-version="2" data-pen-title="css-tree__6" class="codepen"&gt;See the Pen &lt;a href="https://codepen.io/smargh/pen/oErbqG/"&gt;css-tree__6&lt;/a&gt; by Stephen Margheim (&lt;a href="https://codepen.io/smargh"&gt;@smargh&lt;/a&gt;) on &lt;a href="https://codepen.io"&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async="" src="https://static.codepen.io/assets/embed/ei.js"&gt;&lt;/script&gt;
+
+&lt;p&gt;This ensures that the root node (the direct child of the &lt;code&gt;.tree&lt;/code&gt; list) has no left padding and no child-to-parent connector.&lt;/p&gt;
+
+&lt;p&gt;The only connector left is the vertical line that groups a set of siblings together. In order to create such a line, we need to isolate the first child of a set, the last child, and any middle children. For the middle children, we simple draw a vertical line that is the same height as the child, horizontally aligned to the far-left. For the first child, we want to draw a vertical line that is half the height as the child and that is drawn &lt;em&gt;beneath&lt;/em&gt; the child-to-parent connector. Finally, for the last child, we want another half-height vertical line, but this time it is drawn &lt;em&gt;above&lt;/em&gt; the child-to-parent connector. For this task, we will use the &lt;code&gt;:after&lt;/code&gt; pseudo-element:&lt;/p&gt;
+
+&lt;div class="highlight scss"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nc"&gt;.tree&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="c1"&gt;// ...
+&lt;/span&gt;
+  &lt;span class="nt"&gt;li&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="c1"&gt;// ...
+&lt;/span&gt;
+    &lt;span class="c1"&gt;// [connector] sibling-to-sibling
+&lt;/span&gt;    &lt;span class="err"&gt;&amp;amp;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;after&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+      &lt;span class="nl"&gt;content&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+      &lt;span class="nl"&gt;position&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;absolute&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+      &lt;span class="nl"&gt;left&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+      &lt;span class="nl"&gt;border-left&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;1px&lt;/span&gt; &lt;span class="nb"&gt;solid&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="c1"&gt;// [connector] sibling-to-sibling:last-child
+&lt;/span&gt;    &lt;span class="k"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nd"&gt;:last-of-type::after&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+      &lt;span class="nl"&gt;height&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;50%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+      &lt;span class="nl"&gt;top&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="c1"&gt;// [connector] sibling-to-sibling:first-child
+&lt;/span&gt;    &lt;span class="k"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nd"&gt;:first-of-type::after&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+      &lt;span class="nl"&gt;height&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;50%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+      &lt;span class="nl"&gt;bottom&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="c1"&gt;// [connector] sibling-to-sibling:middle-child(ren)
+&lt;/span&gt;    &lt;span class="k"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nd"&gt;:not&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nd"&gt;:first-of-type&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="nd"&gt;:not&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nd"&gt;:last-of-type&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="nd"&gt;::after&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+      &lt;span class="nl"&gt;height&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;100%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p data-height="175" data-theme-id="0" data-slug-hash="PQrZyx" data-default-tab="result" data-user="smargh" data-embed-version="2" data-pen-title="css-tree__7" class="codepen"&gt;See the Pen &lt;a href="https://codepen.io/smargh/pen/PQrZyx/"&gt;css-tree__7&lt;/a&gt; by Stephen Margheim (&lt;a href="https://codepen.io/smargh"&gt;@smargh&lt;/a&gt;) on &lt;a href="https://codepen.io"&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async="" src="https://static.codepen.io/assets/embed/ei.js"&gt;&lt;/script&gt;
+
+&lt;p&gt;The only major bit we will add for now is some vertical spacing between children nodes by adding&lt;/p&gt;
+
+&lt;div class="highlight scss"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;  &lt;span class="nl"&gt;padding-top&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;.5vh&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;padding-bottom&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;.5vh&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;to the &lt;code&gt;li&lt;/code&gt; selector.&lt;/p&gt;
+
+&lt;p data-height="185" data-theme-id="0" data-slug-hash="EQBKKw" data-default-tab="result" data-user="smargh" data-embed-version="2" data-pen-title="css-tree__8" class="codepen"&gt;See the Pen &lt;a href="https://codepen.io/smargh/pen/EQBKKw/"&gt;css-tree__8&lt;/a&gt; by Stephen Margheim (&lt;a href="https://codepen.io/smargh"&gt;@smargh&lt;/a&gt;) on &lt;a href="https://codepen.io"&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async="" src="https://static.codepen.io/assets/embed/ei.js"&gt;&lt;/script&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;With 78 lines of CSS, we have rendered a nested list as a hierarchical tree graph. In following posts we will extend this CSS to allow for more flexibility and robustness.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>On White Lies and Gas Lights</title>
+    <link rel="alternate" href="http://blog.url.com/articles/on-white-lies-and-gas-lights/"/>
+    <id>http://blog.url.com/articles/on-white-lies-and-gas-lights/</id>
+    <published>2018-02-13T19:00:00-05:00</published>
+    <updated>2018-03-06T09:22:36-05:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;p&gt;When was the last time you told a “white lie”? You know the one I mean, that harmless little lie you told to avoid hurting someone’s feelings. Our world is rife with them, and they are slowly killing me.&lt;/p&gt;
+
+&lt;p&gt;{{read more}}&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Here’s another question: when was the last time you made an inference about the state of the world? If you’re not sure, I can help you out—it was 5 seconds ago when you read the words “about the state of” and your mind immediately inferred that the following words would be “the world.” Our minds are unfathomable guessing machines. We are making guesses, formulating opinions, and inferring truths &lt;em&gt;all of the time&lt;/em&gt;. And when it comes to inferring, what we lack in accuracy, we make up in quantity.&lt;/p&gt;
+
+&lt;p&gt;I sometimes get lost thinking about the miracle of how successful we all are in our constant guessing. And an absolutely key ingredient in our success is the fact that we all &lt;em&gt;learn&lt;/em&gt; from our past guesses. We aren’t flipping a coin time and time and time again, hoping things come up heads and our guess is right; we are building a complex model of the world and people around us that is constantly evolving to better and better represent the true state of affairs.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Let’s return to the cancer of white lies. A white lie is a lie made with good intentions; you want to avoid offense, want to avoid hurting someone, want to avoid malevolence. And yet, as is so often the case, the road to hell is indeed paved with our good intentions. White lies are little more than gas lights with better PR.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;In 1938, playwright Patrick Hamilton penned and produced &lt;a href="https://en.wikipedia.org/wiki/Gas_Light"&gt;“Gas Light”&lt;/a&gt;, a stage play about a husband who attempts to convince his wife that she is insane when she notices odd details and behaviors stemming from his attempt at covering up a murder. This play, and its later movie adaptations, form the source of the modern concept of “gaslighting”—an attempt to manipulate people into questioning their memory, perception, and even sanity.&lt;/p&gt;
+
+&lt;p&gt;While true gaslighting is intentional, it is utterly possible to deconstruct someone else’s sanity unintentionally. Enter white lies.&lt;/p&gt;
+
+&lt;p&gt;By definition, you tell a white lie whenever you say that the state of the world is &lt;em&gt;X&lt;/em&gt; (those gas lights didn’t dim last night), when the state of the world is actually &lt;em&gt;Y&lt;/em&gt; (the gas lights did dim). And, you are doing this with some twisted sense of doing good by the person to whom you are lying. Consider, however, the consequences of your lie when the person you are lying to has the pre-existing belief that the state of the world is &lt;em&gt;Y&lt;/em&gt;. This person has guessed, has inferred from the world around them, that the state of things is &lt;em&gt;Y&lt;/em&gt;. Maybe this makes them sad or uncomfortable, maybe it doesn’t. Either way, the apparatus of their mind has applied itself to the people and world around them and surmised that things are in state &lt;em&gt;Y&lt;/em&gt;. Now, you enter and declare that, in fact, the state of the world is &lt;em&gt;X&lt;/em&gt;. The person you have just lied to is now faced with a dilemma—do they trust you or trust their judgment? Before even getting into the consequences of them choosing to trust you, consider the position your white lie has put that person in, this person you apparently have enough good will for that you are attempting to do good by them. You have put them in conflict, you have pitted yourself against their own mind. You are telling them to doubt themselves and trust you. Good will, my ass.&lt;/p&gt;
+
+&lt;p&gt;But, what then if they do as you wish and trust you instead of their own sense of things? Well, now their minds must update the model of the people and the world around them. And not simply update the model, but tear down the old, presumed faulty, model of the world. Your lie asks them to deconstruct their own apparatus for determining what is real and what isn’t, the apparatus of their sanity.&lt;/p&gt;
+
+&lt;p&gt;In small doses, such deconstruction and updating has little noticeable effect; you would be surprised, however, how quickly this process can bring a person to an utterly untenable state. You see, the problem is not so much that a person will end up with an inference machine in their mind that is rarely correct. Reality is always reality, and so every other signal besides your lie will be suggesting that the state of things is indeed &lt;em&gt;Y&lt;/em&gt;. So what ends up happening is that the tension each and every lie forces upon a person—do I trust this person and think things are &lt;em&gt;X&lt;/em&gt; or do I trust my intuition and think things are &lt;em&gt;Y&lt;/em&gt;—simply grows and grows. And the more that they choose to trust you and your lies, the more that the eventual collapse will hurt and break them.&lt;/p&gt;
+
+&lt;p&gt;For, as we said above, reality is always reality, and so the truth always eventually makes itself known. And when that happens, if you have convinced someone time and time again to trust you and your lies, that person will now be left with a sanity apparatus left in shambles.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;I have been unintentionally gaslit with white lies by various people throughout my life. And, to be honest, I didn’t recognize what was going on or what the consequences were in my life until I was full-blown gaslit by someone. Now, I am able to see much more clearly the small effects that small lies have on me. Now, I am unable to form a solid opinion about what is real and what isn’t, when someone is lying or not, whether they have good intentions or not. White lies and black lies alike have stripped me of my most basic ability to make sense of the people and world around me.&lt;/p&gt;
+
+&lt;p&gt;If you actually care even at all for someone, don’t lie to them. Ever. Don’t ask them to choose between you and their own minds. There are no white lies, only gas lights.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Building an Interpreter for Propositional Logic</title>
     <link rel="alternate" href="http://blog.url.com/articles/ruby-logic-interpreter-2/"/>
@@ -2426,87 +2816,6 @@ a fluid resembling a solid.&lt;/p&gt;
 </content>
   </entry>
   <entry>
-    <title>Portrait of Pain II</title>
-    <link rel="alternate" href="http://blog.url.com/articles/portrait-of-pain-ii/"/>
-    <id>http://blog.url.com/articles/portrait-of-pain-ii/</id>
-    <published>2017-08-19T20:00:00-04:00</published>
-    <updated>2017-08-20T17:59:26-04:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;p&gt;I had felt it for a while, though even then I didn’t know it. I didn’t know that I knew. It’s odd when truth gnaws at your gut, but you stubbornly ignore it. It is odd because, on the one hand, &lt;em&gt;you&lt;/em&gt; know it, but on the other, &lt;em&gt;you&lt;/em&gt; don’t. It’s odd and it’s dangerous. The truth is the truth, and you know it, and it gnaws at your gut. But you ignore it, and it keeps gnawing and gnawing and biting and biting, until it finally eats you up. The truth eats you up and spits you out. I remember the night the truth vomited me out.&lt;/p&gt;
-
-&lt;p&gt;In a total fluke, she updates her operating system and all of a sudden her phone has started sharing her location with me. She doesn’t know it; I know she doesn’t know. And in a normal situation, I would have just told her, and she would have turned it off, and we would have gone on none the wiser. But this wasn’t a normal situation, because I &lt;em&gt;knew&lt;/em&gt;, though I didn’t know that I knew. I knew and so I let it be. I didn’t say anything; but I would check from time to time. See where she is, imagine what she’s doing. And the imagining fed the truth. I &lt;em&gt;felt&lt;/em&gt; it; I’m starting to know what I knew.&lt;/p&gt;
-
-&lt;p&gt;One night, I see that she leaves work and goes to a bar. I know she has a meeting coming up, and we’re texting, and I know she’s texting me from this bar. And we’re texting, chatting, and I’m thinking “Why is she at this bar? When is she going to leave? Why hasn’t she left yet?” And these questions start driving me mad. She’s still at the bar; we’re still texting. And the questions are burrowing deeper and deeper into my mind; I can’t get them out. “What is she doing here? Who did she meet? Why hasn’t she left?” I have to know. So I try to find out; I try to ask without asking, so I ask my awkward question, whatever it is. She gives her answer, whatever it is. And it’s fine. Question answered. But it isn’t fine; I &lt;em&gt;know&lt;/em&gt;. I know it and I feel it, but I’m unaware.&lt;/p&gt;
-
-&lt;p&gt;Maybe it was the mixture of unawareness and knowledge and feeling, maybe it wasn’t. Maybe we can’t know and not know for too long. Or maybe we all have little monsters in our minds waiting for their moment to grab a passing thought and spin a story. Maybe the monster doesn’t want us to really know, but can’t deny that we &lt;em&gt;know&lt;/em&gt;, so the monster is forced to spin the trueish false story that so easily ensares us. Maybe; or maybe not. I don’t know.&lt;/p&gt;
-
-&lt;p&gt;But, after she answered, I felt searing guilt. I have rarely, if ever, felt such strong guilt. It burned me. What was I thinking? Why didn’t I trust her? Why was I lying to her by keeping her location sharing silent? I felt guilty and I felt evil. I had done a terrible thing. I had failed to trust her, I had angled and tried to manipulate her. I had suspected her. I was filthy and dirty and shameful and wrong. The weight was too much to bear. And so it broke me.&lt;/p&gt;
-
-&lt;p&gt;Whatever the reasons, however odd or normal, it doesn’t really matter, but when I break, I want to break myself. This is one of my monsters. Now, I can be honest and say that I have truly never wanted to end my own life; but, I have wanted to break myself. And it sounds vague because it is vague. It is just a strong sense that I need to make things right by &lt;em&gt;doing something&lt;/em&gt;, and doing it to myself. And so when I broke, on that night,&lt;br /&gt;
-  I wanted to break myself;&lt;br /&gt;
-    I wanted to break my skin;&lt;br /&gt;
-      I wanted to make amends;&lt;br /&gt;
-deep down, I just wanted all the pain to stop. And maybe &lt;em&gt;real&lt;/em&gt; pain would stop this other, amorphous, silent, scary pain. And that’s what I thought, and that’s what I wanted. And I sat on the side of the bed and I cried. I cried because I felt such guilt and shame; I cried because I wanted to hurt myself; I cried because I felt utterly broken; I cried because I felt &lt;em&gt;it&lt;/em&gt;, the truth, slowly spitting me out.&lt;/p&gt;
-
-&lt;p&gt;I cried, long and hard and ugly. And at some point I had gathered enough of myself to call her. I had to tell her. I had to take away the possibility of snooping and lying. I had to confess and start to make amends.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“I asked those awkward questions because I knew you were at the bar, and I knew you had your meeting, and I was honestly a bit suspicious. I’m so sorry. I’m so so sorry that I didn’t trust you, that I didn’t tell you about your location sharing.”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;She was understandably upset. She didn’t want to come home; she needed time.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“How could you do this? This is an invasion of my privacy. I feel hurt. I need time; I need space”.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Every word rang fully true. I had failed; I was a failure. I knew it and she knew it. And I broke again.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“You’re right. You are so right. It was wrong and I knew it was wrong. I feel so terrible.”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I was broken and I wanted to break myself. But I couldn’t; I couldn’t really. I liked the idea more than the execution. So I told her.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“I want to hurt myself”.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I was reaching out; I was asking her what to do, I think. Am I broken? Should I do something to make up for being broken?&lt;/p&gt;
-
-&lt;p&gt;She freaked out a bit, told me not to do anything, asked if I wanted to kill myself.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“No. Nothing like that. I just feel so bad.”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“Don’t freak me out like that. Are you just trying to get me to come home? Is this a stunt?”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I don’t know; maybe, yes, no. I don’t know.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“No, it’s not a stunt. But you’re right, I was being crazy. I said something dumb in a low spot. I’m alright. You are understandably upset. You don’t need to come home. I promise; I won’t do anything.”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;And I didn’t.&lt;/p&gt;
-
-&lt;p&gt;I cried more, but I didn’t &lt;em&gt;do&lt;/em&gt; anything. I had broken twice, the truth gnawing at my gut had finally chewed its way through me. But it’s not like I realized anything that night, nothing changed. All I knew was the pain. And it wasn’t good, and it wasn’t bad; it simply was, like the truth that I knew and yet didn’t know.&lt;/p&gt;
-
-&lt;p&gt;Truth and pain&lt;br /&gt;
-pain and truth&lt;br /&gt;
-me and her&lt;br /&gt;
-me and I&lt;/p&gt;
-
-&lt;p&gt;some things simply are, or simply were, or simply will be …&lt;/p&gt;
-
-&lt;p&gt;pain&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>Time in Ruby and ActiveRecord</title>
     <link rel="alternate" href="http://blog.url.com/articles/time-in-ruby-and-activerecord/"/>
     <id>http://blog.url.com/articles/time-in-ruby-and-activerecord/</id>
@@ -2597,6 +2906,87 @@ me and I&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Portrait of Pain II</title>
+    <link rel="alternate" href="http://blog.url.com/articles/portrait-of-pain-ii/"/>
+    <id>http://blog.url.com/articles/portrait-of-pain-ii/</id>
+    <published>2017-08-19T20:00:00-04:00</published>
+    <updated>2017-08-20T17:59:26-04:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;p&gt;I had felt it for a while, though even then I didn’t know it. I didn’t know that I knew. It’s odd when truth gnaws at your gut, but you stubbornly ignore it. It is odd because, on the one hand, &lt;em&gt;you&lt;/em&gt; know it, but on the other, &lt;em&gt;you&lt;/em&gt; don’t. It’s odd and it’s dangerous. The truth is the truth, and you know it, and it gnaws at your gut. But you ignore it, and it keeps gnawing and gnawing and biting and biting, until it finally eats you up. The truth eats you up and spits you out. I remember the night the truth vomited me out.&lt;/p&gt;
+
+&lt;p&gt;In a total fluke, she updates her operating system and all of a sudden her phone has started sharing her location with me. She doesn’t know it; I know she doesn’t know. And in a normal situation, I would have just told her, and she would have turned it off, and we would have gone on none the wiser. But this wasn’t a normal situation, because I &lt;em&gt;knew&lt;/em&gt;, though I didn’t know that I knew. I knew and so I let it be. I didn’t say anything; but I would check from time to time. See where she is, imagine what she’s doing. And the imagining fed the truth. I &lt;em&gt;felt&lt;/em&gt; it; I’m starting to know what I knew.&lt;/p&gt;
+
+&lt;p&gt;One night, I see that she leaves work and goes to a bar. I know she has a meeting coming up, and we’re texting, and I know she’s texting me from this bar. And we’re texting, chatting, and I’m thinking “Why is she at this bar? When is she going to leave? Why hasn’t she left yet?” And these questions start driving me mad. She’s still at the bar; we’re still texting. And the questions are burrowing deeper and deeper into my mind; I can’t get them out. “What is she doing here? Who did she meet? Why hasn’t she left?” I have to know. So I try to find out; I try to ask without asking, so I ask my awkward question, whatever it is. She gives her answer, whatever it is. And it’s fine. Question answered. But it isn’t fine; I &lt;em&gt;know&lt;/em&gt;. I know it and I feel it, but I’m unaware.&lt;/p&gt;
+
+&lt;p&gt;Maybe it was the mixture of unawareness and knowledge and feeling, maybe it wasn’t. Maybe we can’t know and not know for too long. Or maybe we all have little monsters in our minds waiting for their moment to grab a passing thought and spin a story. Maybe the monster doesn’t want us to really know, but can’t deny that we &lt;em&gt;know&lt;/em&gt;, so the monster is forced to spin the trueish false story that so easily ensares us. Maybe; or maybe not. I don’t know.&lt;/p&gt;
+
+&lt;p&gt;But, after she answered, I felt searing guilt. I have rarely, if ever, felt such strong guilt. It burned me. What was I thinking? Why didn’t I trust her? Why was I lying to her by keeping her location sharing silent? I felt guilty and I felt evil. I had done a terrible thing. I had failed to trust her, I had angled and tried to manipulate her. I had suspected her. I was filthy and dirty and shameful and wrong. The weight was too much to bear. And so it broke me.&lt;/p&gt;
+
+&lt;p&gt;Whatever the reasons, however odd or normal, it doesn’t really matter, but when I break, I want to break myself. This is one of my monsters. Now, I can be honest and say that I have truly never wanted to end my own life; but, I have wanted to break myself. And it sounds vague because it is vague. It is just a strong sense that I need to make things right by &lt;em&gt;doing something&lt;/em&gt;, and doing it to myself. And so when I broke, on that night,&lt;br /&gt;
+  I wanted to break myself;&lt;br /&gt;
+    I wanted to break my skin;&lt;br /&gt;
+      I wanted to make amends;&lt;br /&gt;
+deep down, I just wanted all the pain to stop. And maybe &lt;em&gt;real&lt;/em&gt; pain would stop this other, amorphous, silent, scary pain. And that’s what I thought, and that’s what I wanted. And I sat on the side of the bed and I cried. I cried because I felt such guilt and shame; I cried because I wanted to hurt myself; I cried because I felt utterly broken; I cried because I felt &lt;em&gt;it&lt;/em&gt;, the truth, slowly spitting me out.&lt;/p&gt;
+
+&lt;p&gt;I cried, long and hard and ugly. And at some point I had gathered enough of myself to call her. I had to tell her. I had to take away the possibility of snooping and lying. I had to confess and start to make amends.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“I asked those awkward questions because I knew you were at the bar, and I knew you had your meeting, and I was honestly a bit suspicious. I’m so sorry. I’m so so sorry that I didn’t trust you, that I didn’t tell you about your location sharing.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;She was understandably upset. She didn’t want to come home; she needed time.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“How could you do this? This is an invasion of my privacy. I feel hurt. I need time; I need space”.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Every word rang fully true. I had failed; I was a failure. I knew it and she knew it. And I broke again.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“You’re right. You are so right. It was wrong and I knew it was wrong. I feel so terrible.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I was broken and I wanted to break myself. But I couldn’t; I couldn’t really. I liked the idea more than the execution. So I told her.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“I want to hurt myself”.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I was reaching out; I was asking her what to do, I think. Am I broken? Should I do something to make up for being broken?&lt;/p&gt;
+
+&lt;p&gt;She freaked out a bit, told me not to do anything, asked if I wanted to kill myself.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“No. Nothing like that. I just feel so bad.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Don’t freak me out like that. Are you just trying to get me to come home? Is this a stunt?”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I don’t know; maybe, yes, no. I don’t know.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“No, it’s not a stunt. But you’re right, I was being crazy. I said something dumb in a low spot. I’m alright. You are understandably upset. You don’t need to come home. I promise; I won’t do anything.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And I didn’t.&lt;/p&gt;
+
+&lt;p&gt;I cried more, but I didn’t &lt;em&gt;do&lt;/em&gt; anything. I had broken twice, the truth gnawing at my gut had finally chewed its way through me. But it’s not like I realized anything that night, nothing changed. All I knew was the pain. And it wasn’t good, and it wasn’t bad; it simply was, like the truth that I knew and yet didn’t know.&lt;/p&gt;
+
+&lt;p&gt;Truth and pain&lt;br /&gt;
+pain and truth&lt;br /&gt;
+me and her&lt;br /&gt;
+me and I&lt;/p&gt;
+
+&lt;p&gt;some things simply are, or simply were, or simply will be …&lt;/p&gt;
+
+&lt;p&gt;pain&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -8134,46 +8524,6 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
 </content>
   </entry>
   <entry>
-    <title>BibQuery</title>
-    <link rel="alternate" href="http://blog.url.com/projects/bibquery/"/>
-    <id>http://blog.url.com/projects/bibquery/</id>
-    <published>2015-05-22T20:00:00-04:00</published>
-    <updated>2017-05-01T18:51:17-04:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;h4 id="version-101"&gt;Version: 1.0.1&lt;/h4&gt;
-
-&lt;h4 id="download-from-packalhttpwwwpackalorgworkflowbibquery"&gt;Download from &lt;a href="http://www.packal.org/workflow/bibquery"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
-
-&lt;p&gt;BibQuery is essentially a visual clone of &lt;a href="http://fractaledmind.com/projects/zotquery/"&gt;ZotQuery&lt;/a&gt; for the Mac app &lt;a href="http://bibdesk.sourceforge.net/"&gt;BibDesk&lt;/a&gt;, which is a citation manager for &lt;a href="http://www.bibtex.org/"&gt;BibTeX&lt;/a&gt;. Users of BibDesk can now enjoy the clean search interface found in ZotQuery, with clear icons for publication type and clean presentation of publication data.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="bibquery.png" src="https://www.evernote.com/shard/s41/sh/e354f593-a127-47e9-8ec3-212124341231/39f92d48e93282af26881d5cc0e95e97/deep/0/bibquery.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Users can also search their &lt;code&gt;.bib&lt;/code&gt; databases with the same variety of queries:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;general (keywords: &lt;code&gt;bib&lt;/code&gt; or &lt;code&gt;b&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;titles (keywords: &lt;code&gt;bib:t&lt;/code&gt; or &lt;code&gt;bt&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;creators (keywords: &lt;code&gt;bib:a&lt;/code&gt; or &lt;code&gt;ba&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;in-keyword (keywords: &lt;code&gt;bib:nk&lt;/code&gt; or &lt;code&gt;bnk&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;in-group (keywords: &lt;code&gt;bib:ng&lt;/code&gt; or &lt;code&gt;bng&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;for keyword (keywords: &lt;code&gt;bib:k&lt;/code&gt; or &lt;code&gt;bk&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;for group (keywords: &lt;code&gt;bib:g&lt;/code&gt; or &lt;code&gt;bg&lt;/code&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Also of note, BibQuery works &lt;em&gt;without&lt;/em&gt; BibDesk being open and even functions if you have multiple &lt;code&gt;.bib&lt;/code&gt; databases that BibDesk manages. In short, BibQuery brings all of your citations to you.&lt;/p&gt;
-
-&lt;p&gt;Once you find the item you’re looking for, BibQuery currently has 3 possible actions:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;you can open up BibDesk to that item (simply press &lt;code&gt;return&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;you can copy a LaTeX cite command for that item (simply press &lt;code&gt;control+return&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;you can open that item’s PDF attachment, if it has one (simply press &lt;code&gt;shift+return&lt;/code&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-  </entry>
-  <entry>
     <title>Reboot</title>
     <link rel="alternate" href="http://blog.url.com/projects/reboot/"/>
     <id>http://blog.url.com/projects/reboot/</id>
@@ -8217,6 +8567,46 @@ ocr&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Original project by &lt;a href="https://github.com/MatthewMueller/"&gt;Matthew Mueller&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>BibQuery</title>
+    <link rel="alternate" href="http://blog.url.com/projects/bibquery/"/>
+    <id>http://blog.url.com/projects/bibquery/</id>
+    <published>2015-05-22T20:00:00-04:00</published>
+    <updated>2017-05-01T18:51:17-04:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;h4 id="version-101"&gt;Version: 1.0.1&lt;/h4&gt;
+
+&lt;h4 id="download-from-packalhttpwwwpackalorgworkflowbibquery"&gt;Download from &lt;a href="http://www.packal.org/workflow/bibquery"&gt;Packal&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;BibQuery is essentially a visual clone of &lt;a href="http://fractaledmind.com/projects/zotquery/"&gt;ZotQuery&lt;/a&gt; for the Mac app &lt;a href="http://bibdesk.sourceforge.net/"&gt;BibDesk&lt;/a&gt;, which is a citation manager for &lt;a href="http://www.bibtex.org/"&gt;BibTeX&lt;/a&gt;. Users of BibDesk can now enjoy the clean search interface found in ZotQuery, with clear icons for publication type and clean presentation of publication data.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="bibquery.png" src="https://www.evernote.com/shard/s41/sh/e354f593-a127-47e9-8ec3-212124341231/39f92d48e93282af26881d5cc0e95e97/deep/0/bibquery.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Users can also search their &lt;code&gt;.bib&lt;/code&gt; databases with the same variety of queries:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;general (keywords: &lt;code&gt;bib&lt;/code&gt; or &lt;code&gt;b&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;titles (keywords: &lt;code&gt;bib:t&lt;/code&gt; or &lt;code&gt;bt&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;creators (keywords: &lt;code&gt;bib:a&lt;/code&gt; or &lt;code&gt;ba&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;in-keyword (keywords: &lt;code&gt;bib:nk&lt;/code&gt; or &lt;code&gt;bnk&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;in-group (keywords: &lt;code&gt;bib:ng&lt;/code&gt; or &lt;code&gt;bng&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;for keyword (keywords: &lt;code&gt;bib:k&lt;/code&gt; or &lt;code&gt;bk&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;for group (keywords: &lt;code&gt;bib:g&lt;/code&gt; or &lt;code&gt;bg&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Also of note, BibQuery works &lt;em&gt;without&lt;/em&gt; BibDesk being open and even functions if you have multiple &lt;code&gt;.bib&lt;/code&gt; databases that BibDesk manages. In short, BibQuery brings all of your citations to you.&lt;/p&gt;
+
+&lt;p&gt;Once you find the item you’re looking for, BibQuery currently has 3 possible actions:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;you can open up BibDesk to that item (simply press &lt;code&gt;return&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;you can copy a LaTeX cite command for that item (simply press &lt;code&gt;control+return&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;you can open that item’s PDF attachment, if it has one (simply press &lt;code&gt;shift+return&lt;/code&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 </content>
   </entry>
