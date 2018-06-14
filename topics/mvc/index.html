@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <!-- Metadata declarations -->
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Content declarations -->
+  <title>Fractaled Mind</title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="feed.xml" />
+
+  <!-- External Resources -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+  <!-- Internal Resources -->
+  <link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
+  <link href="../../images/favicon.png" rel="icon" type="image/png" />
+  <script src="../../javascripts/bigfoot.js" type="text/javascript"></script>
+  <script src="../../javascripts/search.js" type="text/javascript"></script>
+
+  <!-- Bigfoot.js Popover Footnotes -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $.bigfoot({
+        numberResetSelector: ".card",
+        activateCallback: function($popover, $button) {
+          if (MathJax && !$button.data('mathjax-processed')) {
+            var content_wrapper = $popover.find('.bigfoot-footnote__content')[0];
+            MathJax.Hub.Queue(['Typeset', MathJax.Hub, content_wrapper]);
+            MathJax.Hub.Queue(function () {
+              $button.attr('data-bigfoot-footnote', content_wrapper.innerHTML);
+              $button.data('mathjax-processed', true);
+            });
+          }
+        }
+      });
+    });
+  </script>
+
+  <!-- Responsive Tables -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("td").each(function() {
+        var $th = $(this).closest('table').find('th').eq($(this).index());
+        $(this).attr('data-th', $th.text());
+      });
+    });
+  </script>
+
+  <!-- Scroll-Fix sidebar
+  <script type="text/javascript">
+    $(window).on("scroll", function(e) {
+      var scroll = $(this).scrollTop();
+      var logo_height = $('#site-logo').height();
+      var nav_height = $('.navigation').height() + 16;
+
+      if (scroll > logo_height) {
+        $('.navigation').css({'position': 'fixed'});
+         $('#sidebar').css({
+           'position': 'fixed',
+           'top': nav_height
+         });
+      } else {
+        $('.navigation').css({'position': 'inherit'});
+        $('#sidebar').css({'position': 'inherit'});
+      }
+    });
+  </script>
+  -->
+
+</head>
+
+
+  <body>
+    <header>
+  <div id="site-logo">
+    <a href="/" class="no-hvr">
+      <img alt="Fractaled Mind" src="../../images/logo-single-line.svg" />
+    </a>
+  </div>
+</header>
+
+
+    <div class="navigation">
+  <ul id="social-networks">
+    <li>
+      <a href="https://facebook.com/fractaledmind" class="no-hvr">
+        <i class="fa fa-facebook fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://twitter.com/fractaledmind" class="no-hvr">
+        <i class="fa fa-twitter fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/fractaledmind" class="no-hvr">
+        <i class="fa fa-github fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="mailto:stephen@fractaledmind.com" class="no-hvr">
+        <i class="fa fa-envelope fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="/feed.xml" class="no-hvr">
+        <i class="fa fa-rss fa-lg"></i>
+      </a>
+    </li>
+  </ul>
+
+  <nav role="navigation">
+    <ul class="navigation-menu">
+      <li class="nav-link"><a href="../../articles/">articles</a></li>
+      <li class="nav-link"><a href="../../projects/">projects</a></li>
+      <li class="nav-link"><a href="../../jots/">jots</a></li>
+      <li class="nav-link"><a href="../../essays/">essays</a></li>
+    </ul>
+  </nav>
+
+  <div id="search">
+    <div class="searchbar">
+      <form role="search" action="/search" method="get">
+        <input class="search-term" type="search" placeholder="Search..." name="q" />
+        <button class="search-submit" type="submit">
+          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png" alt="Search Icon">
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+    <div id="main" role="main">
+      <div class="card" id="topic-page">
+  <h2 id="title">Posts tagged <em>mvc</em></h2>
+
+  <div class="tree">
+    <ul><li><a href="/topics/code/" class="code-tag">code<span class="dot">29</span></a><ul><li><a href="/topics/ruby/" class="ruby-tag">ruby<span class="dot">10</span></a><ul><li><a href="/topics/interpreter/" class="interpreter-tag">interpreter<span class="dot">2</span></a></li></ul></li><li><a href="/topics/rails/" class="rails-tag">rails<span class="dot">7</span></a></li><li><a href="/topics/git/" class="git-tag">git<span class="dot">2</span></a></li><li><a href="/topics/css/" class="css-tag">css<span class="dot">4</span></a><ul><li><a href="/topics/trees/" class="trees-tag">trees<span class="dot">2</span></a></li></ul></li><li><a href="/topics/http/" class="http-tag">http<span class="dot">1</span></a></li><li><a href="/topics/mvc/" class="mvc-tag">mvc<span class="dot">1</span></a></li><li><a href="/topics/alfred/" class="alfred-tag">alfred<span class="dot">9</span></a></li><li><a href="/topics/bash/" class="bash-tag">bash<span class="dot">2</span></a></li><li><a href="/topics/python/" class="python-tag">python<span class="dot">1</span></a></li></ul></li></ul>
+  </div>
+
+  <hr>
+
+  <ul class="list-none">
+      <li>
+        <div class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="mvc-tag" href="/topics/mvc/">mvc</a>
+        </div>
+      </li>
+      <ul class="fa-ul">
+          <li>
+            <i class="fa-li fa fa-fractal"></i>
+            <a href="../../articles/what-is-mvc/">What is MVC?</a>
+            <span>(Feb 21)</span>
+          </li>
+      </ul>
+  </ul>
+</div>
+
+    </div>
+
+    <aside id="sidebar">
+
+  <hr class="fractal">
+
+  <div id="recent-articles">
+    <h5>Recent Posts</h5>
+    <ul class="fa-ul">
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../../articles/safely-accessing-values-from-a-nested-hash-again/">Safely Accessing Values from Nested Hashes (again)'</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../../articles/basic-restful-filtering-with-rails/">Basic RESTful Filtering with Rails</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../../articles/css-tree-vertical/">Building Pure CSS Trees (part 2)</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../../articles/css-tree/">Building Pure CSS Trees (part 1)</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../../articles/what-is-mvc/">What is MVC?</a>
+        </li>
+    </ul>
+  </div>
+
+  <hr class="fractal">
+
+  <div id="all-tags">
+    <h5><a href="../">Topics</a></h5>
+    <ul class="list-none">
+      <!-- Add all Article tags -->
+        <li class="breadcrumb">
+            <a class="philosophy-tag" href="/topics/philosophy/">philosophy</a>
+            <a class="epistemology-tag" href="/topics/epistemology/">epistemology</a>
+            <a class="math-tag" href="/topics/math/">math</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="philosophy-tag" href="/topics/philosophy/">philosophy</a>
+            <a class="epistemology-tag" href="/topics/epistemology/">epistemology</a>
+            <a class="logic-tag" href="/topics/logic/">logic</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="tutorial-tag" href="/topics/tutorial/">tutorial</a>
+            <a class="pdf-workflow-tag" href="/topics/pdf-workflow/">pdf-workflow</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="prose-tag" href="/topics/prose/">prose</a>
+            <a class="self-tag" href="/topics/self/">self</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="ruby-tag" href="/topics/ruby/">ruby</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="rails-tag" href="/topics/rails/">rails</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="poetry-tag" href="/topics/poetry/">poetry</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="tutorial-tag" href="/topics/tutorial/">tutorial</a>
+            <a class="algorithms-tag" href="/topics/algorithms/">algorithms</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="philosophy-tag" href="/topics/philosophy/">philosophy</a>
+            <a class="faith-tag" href="/topics/faith/">faith</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="git-tag" href="/topics/git/">git</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="tutorial-tag" href="/topics/tutorial/">tutorial</a>
+            <a class="git-tag" href="/topics/git/">git</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="prose-tag" href="/topics/prose/">prose</a>
+            <a class="relationships-tag" href="/topics/relationships/">relationships</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="css-tag" href="/topics/css/">css</a>
+            <a class="trees-tag" href="/topics/trees/">trees</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="tutorial-tag" href="/topics/tutorial/">tutorial</a>
+            <a class="css-tag" href="/topics/css/">css</a>
+            <a class="trees-tag" href="/topics/trees/">trees</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="poetry-tag" href="/topics/poetry/">poetry</a>
+            <a class="relationships-tag" href="/topics/relationships/">relationships</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="css-tag" href="/topics/css/">css</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="http-tag" href="/topics/http/">http</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="prose-tag" href="/topics/prose/">prose</a>
+            <a class="life-tag" href="/topics/life/">life</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="prose-tag" href="/topics/prose/">prose</a>
+            <a class="faith-tag" href="/topics/faith/">faith</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="philosophy-tag" href="/topics/philosophy/">philosophy</a>
+            <a class="ethics-tag" href="/topics/ethics/">ethics</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="ruby-tag" href="/topics/ruby/">ruby</a>
+            <a class="interpreter-tag" href="/topics/interpreter/">interpreter</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="tutorial-tag" href="/topics/tutorial/">tutorial</a>
+            <a class="interpreter-tag" href="/topics/interpreter/">interpreter</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="mvc-tag" href="/topics/mvc/">mvc</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="latin-tag" href="/topics/latin/">latin</a>
+            <a class="vergil-tag" href="/topics/vergil/">vergil</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="greek-tag" href="/topics/greek/">greek</a>
+            <a class="epicurus-tag" href="/topics/epicurus/">epicurus</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="greek-tag" href="/topics/greek/">greek</a>
+            <a class="aristotle-tag" href="/topics/aristotle/">aristotle</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="latin-tag" href="/topics/latin/">latin</a>
+            <a class="horace-tag" href="/topics/horace/">horace</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="modern-tag" href="/topics/modern/">modern</a>
+            <a class="lewis-tag" href="/topics/lewis/">lewis</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="modern-tag" href="/topics/modern/">modern</a>
+            <a class="barfield-tag" href="/topics/barfield/">barfield</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="greek-tag" href="/topics/greek/">greek</a>
+            <a class="herodotus-tag" href="/topics/herodotus/">herodotus</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="greek-tag" href="/topics/greek/">greek</a>
+            <a class="hippocrates-tag" href="/topics/hippocrates/">hippocrates</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="greek-tag" href="/topics/greek/">greek</a>
+            <a class="plato-tag" href="/topics/plato/">plato</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="modern-tag" href="/topics/modern/">modern</a>
+            <a class="saussure-tag" href="/topics/saussure/">saussure</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="alfred-tag" href="/topics/alfred/">alfred</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="bash-tag" href="/topics/bash/">bash</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="python-tag" href="/topics/python/">python</a>
+        </li>
+    </ul>
+  </div>
+</aside>
+
+
+    <footer role="contentinfo">
+  <div class="footer-info">
+    <p>&copy; Copyright 2015 by Stephen Margheim</p>
+    <p>Powered by <a href="https://middlemanapp.com">Middleman</a>.</p>
+  </div>
+</footer>
+
+
+  </body>
+</html>

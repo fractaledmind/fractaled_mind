@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <!-- Metadata declarations -->
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Content declarations -->
+  <title>Fractaled Mind</title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="feed.xml" />
+
+  <!-- External Resources -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+  <!-- Internal Resources -->
+  <link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
+  <link href="../../images/favicon.png" rel="icon" type="image/png" />
+  <script src="../../javascripts/bigfoot.js" type="text/javascript"></script>
+  <script src="../../javascripts/search.js" type="text/javascript"></script>
+
+  <!-- Bigfoot.js Popover Footnotes -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $.bigfoot({
+        numberResetSelector: ".card",
+        activateCallback: function($popover, $button) {
+          if (MathJax && !$button.data('mathjax-processed')) {
+            var content_wrapper = $popover.find('.bigfoot-footnote__content')[0];
+            MathJax.Hub.Queue(['Typeset', MathJax.Hub, content_wrapper]);
+            MathJax.Hub.Queue(function () {
+              $button.attr('data-bigfoot-footnote', content_wrapper.innerHTML);
+              $button.data('mathjax-processed', true);
+            });
+          }
+        }
+      });
+    });
+  </script>
+
+  <!-- Responsive Tables -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("td").each(function() {
+        var $th = $(this).closest('table').find('th').eq($(this).index());
+        $(this).attr('data-th', $th.text());
+      });
+    });
+  </script>
+
+  <!-- Scroll-Fix sidebar
+  <script type="text/javascript">
+    $(window).on("scroll", function(e) {
+      var scroll = $(this).scrollTop();
+      var logo_height = $('#site-logo').height();
+      var nav_height = $('.navigation').height() + 16;
+
+      if (scroll > logo_height) {
+        $('.navigation').css({'position': 'fixed'});
+         $('#sidebar').css({
+           'position': 'fixed',
+           'top': nav_height
+         });
+      } else {
+        $('.navigation').css({'position': 'inherit'});
+        $('#sidebar').css({'position': 'inherit'});
+      }
+    });
+  </script>
+  -->
+
+</head>
+
+
+  <body>
+    <header>
+  <div id="site-logo">
+    <a href="/" class="no-hvr">
+      <img alt="Fractaled Mind" src="../../images/logo-single-line.svg" />
+    </a>
+  </div>
+</header>
+
+
+    <div class="navigation">
+  <ul id="social-networks">
+    <li>
+      <a href="https://facebook.com/fractaledmind" class="no-hvr">
+        <i class="fa fa-facebook fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://twitter.com/fractaledmind" class="no-hvr">
+        <i class="fa fa-twitter fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/fractaledmind" class="no-hvr">
+        <i class="fa fa-github fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="mailto:stephen@fractaledmind.com" class="no-hvr">
+        <i class="fa fa-envelope fa-lg"></i>
+      </a>
+    </li>
+    <li>
+      <a href="/feed.xml" class="no-hvr">
+        <i class="fa fa-rss fa-lg"></i>
+      </a>
+    </li>
+  </ul>
+
+  <nav role="navigation">
+    <ul class="navigation-menu">
+      <li class="nav-link"><a href="../">articles</a></li>
+      <li class="nav-link"><a href="../../projects/">projects</a></li>
+      <li class="nav-link"><a href="../../jots/">jots</a></li>
+      <li class="nav-link"><a href="../../essays/">essays</a></li>
+    </ul>
+  </nav>
+
+  <div id="search">
+    <div class="searchbar">
+      <form role="search" action="/search" method="get">
+        <input class="search-term" type="search" placeholder="Search..." name="q" />
+        <button class="search-submit" type="submit">
+          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png" alt="Search Icon">
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+    <div id="main" role="main">
+      <div class="card" id="project-page">
+
+    <ul class="card-tags">
+      <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="rails-tag" href="/topics/rails/">rails</a>
+      </li>
+      <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="ruby-tag" href="/topics/ruby/">ruby</a>
+      </li>
+  </ul>
+
+
+  <!-- if item has tags, add filler element -->
+  <div id="tag-filler-space"></div>
+
+
+  
+
+  <h2 id="title"><p>Basic RESTful Filtering with Rails</p>
+</h2>
+
+  <hr class="fractal">
+
+  <div id="description"><p>Filtering a collection of data objects into a subset is one of the most common tasks in data-management applications. While well-tread, this problem space provides rich opportunity for exploring and learning about how to implement RESTful, maintainable, flexible, and robust Rails applications. In this post I want to implement a simple filtering feature, walking through the various aspects at the model, controller, and view layers.</p>
+
+<span id='readmore'></span>
+
+<h3 id="the-feature">The Feature</h3>
+
+<p>Let’s imagine a basic index route for some resource. We have a table for the set of resources, a button to create a new resource, and a search form for selecting a subset of the resources.</p>
+
+<p><img alt="feature mockup" src="../../images/index-as-manage__root.png" /></p>
+
+<p>We are focusing on that search form. Here are the requirements:</p>
+
+<ul>
+  <li>the search form is composed of 1 to n filter inputs</li>
+  <li>each filter input will correspond to a <code>WHERE :attribute == :value</code> database query</li>
+  <li>submitting the search form reloads the index route, displaying the result of the queries</li>
+  <li>the search form repopulates the values placed in the filter inputs on reload</li>
+  <li>the state of the search form is encoded in the URL</li>
+</ul>
+
+<p>This is a purposefully limited set of requirements; they will provide the foundation for a solid feature while also allowing us to build something focused and precise. In future posts, I plan to expand the functionality.</p>
+
+<hr />
+
+<h3 id="the-model-layer">The Model Layer</h3>
+
+<p>We are building this feature for an imagined standard Rails application, so our model layer will be comprised of <code>ActiveRecord</code> classes. We need to add nothing to such classes to allow for <code>WHERE</code> database querying, as the <a href="http://api.rubyonrails.org/classes/ActiveRecord/QueryMethods.html#method-i-where"><code>where</code> method</a> inherited from <code>ActiveRecord::Base</code> provides us precisely what we need.</p>
+
+<p>Moreover, the <code>where</code> method allows us to pass <a href="http://guides.rubyonrails.org/active_record_querying.html#conditions">a hash of attribute keys and query values</a>, which will make integrating with the controller layer relatively straightfoward as well. Lovely. Thank you, Rails!</p>
+
+<h3 id="the-controller-layer">The Controller Layer</h3>
+
+<p>Our feature requirements state that the query filters need to be encoded in the URL (this is what makes the implementation RESTful), so we know that we will need to work with request parameters. For ease of use and organization, let’s nest each of our query filters under the <code>filter</code> parameter, requiring a controller method like so:</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="k">def</span> <span class="nf">filter_params</span>
+  <span class="n">params</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="ss">:filter</span><span class="p">,</span> <span class="p">{})</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>This method allows the <code>filter</code> parameter namespace to be optional in the URL (contrary to an implementation using <code>params.require(:filter)</code>) and also ensures that the nested parameters are returned (instead of the nested hash returned if we used <code>params.permit(:filter)</code>).</p>
+
+<p>With the request parameters in hand, we can build a basic <code>filter</code> method to use these parameters to scope some <code>ActiveRecord::Relation</code> appropriately. Our logic will be relatively simple for this basic implementation:</p>
+
+<ul>
+  <li>if there are no filter parameters, simply return the passed in <code>ActiveRecord::Relation</code></li>
+  <li>if there are filter parameters, pass then directly into the <code>where</code> method</li>
+</ul>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre><span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="n">relation</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">relation</span> <span class="k">unless</span> <span class="n">filter_params</span><span class="p">.</span><span class="nf">any?</span>
+
+  <span class="n">relation</span><span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="n">filter_params</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>We can now use this method in the <code>#index</code> action of a controller, allowing us to have an index route that works with any or no filter parameters.</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="k">def</span> <span class="nf">index</span>
+  <span class="vi">@things</span> <span class="o">=</span> <span class="n">filter</span><span class="p">(</span><span class="no">Thing</span><span class="p">.</span><span class="nf">all</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>With this controller infrastructure in place, we can now handle simple equality attribute filtering on any <code>ActiveRecord</code> resource. In order to complete the feature, however, we need to finalize the view layer.</p>
+
+<h3 id="the-view-layer">The View Layer</h3>
+
+<p>Our index view, as mocked up above, will have a search/filter form at the top of the page with a results table beneath it. It is this search/filter form that will make the request back to the <code>#index</code> controller action with the appropriate <code>filter</code> params. This means we need to build a form that has inputs with <code>name</code> attributes of the <code>filter[:attribute:]</code> shape. Moreover, this form needs to repopulate the values of those inputs to display back to the user after the form is submitted and the index view is reloaded with the result of the filter query displayed in the table below. So, how can we use Rails to achieve these features?</p>
+
+<p>We are building a form, so we should use the <code>form_for</code> helper. We want to reload the index route on submission, so, instead of making a <code>POST</code> call on submission, let’s make a <code>GET</code> call back to the index route (<code>form_for(some_object, method: :get, url: things_path)</code>). With a <code>FormBuilder</code> object to use, the actual filter inputs are simple; we can use methods like <code>f.text_field(:attribute_name)</code> to generate the filter inputs. This is all standard and stock Rails. The extra bit that we need is the object that we pass into the <code>form_for</code> method. This object needs to give the filter inputs the appropriate param namespace (<code>filter</code> in our case) as well as allow those methods to repopulate the filter inputs with the appropriate value when the index route is reloaded after form submission. So, how do we do that?</p>
+
+<p>Let’s break down the problem into is constituent parts. First, we need an object; that object needs getters for the various filters; those getters need to return values if values were submitted as request parameters to the <code>#index</code> action. Next, that object needs to be used in a <code>form_for</code> method such that the <code>FormBuilder</code> object it creates uses the desired parameter namespace. Let’s focus on the first requirement.</p>
+
+<p>We know that all of our filter values will live under the <code>filter</code> namespace in the request parameters. In both the controller and view layers, we have access to a hash representation of the request parameters using the <code>params</code> method. In our controller, we had a method for accessing the filter params (<code>params.fetch(:filter, {})</code>); we can use this exact logic in the view layer. The issue in our form context, however, is that this gives us a hash and we need an object. So, how can we convert a hash with entries into an object with getters? Well, a common way is to use the <code>OpenStruct</code> class; you can initialize an <code>OpenStruct</code> instance with a hash and it will create an object with getters matching the hash keys:</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="no">OpenStruct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">a: </span><span class="s1">'b'</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="c1">#&lt;OpenStruct a="b"&gt;</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>This solution would work perfectly well if we could guarantee that our params hash would <em>always</em> be a flat hash (i.e. that the values would always be scalar and never a nested hash). We cannot guarantee that, however. So, how can we use <code>OpenStruct</code>s with nested hashes? I offer a simple and elegant “hack”: the <a href="https://ruby-doc.org/stdlib-2.4.0/libdoc/json/rdoc/JSON.html#method-i-parse"><code>JSON.parse</code></a> method. The <code>JSON.parse</code> method converts a JSON-encoded string into a Ruby object, and by default that Ruby object is a Hash; however, you can specify which Ruby object you want to convert the data into, and you can specify <code>OpenStruct</code> as that object:</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">({</span> <span class="ss">a: </span><span class="p">{</span> <span class="ss">b: </span><span class="s1">'c'</span> <span class="p">}</span> <span class="p">}.</span><span class="nf">to_json</span><span class="p">,</span> <span class="ss">object_class: </span><span class="no">OpenStruct</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="c1">#&lt;OpenStruct a=#&lt;OpenStruct b="c"&gt;&gt;</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>With this tool at our disposal, we can now create an object that corresponds to the request parameters for our filters, where getters return values if they are present or <code>nil</code> if they are not. Let’s put this logic in a Rails helper module and generalize it to work with any param namespace:</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td class="code"><pre><span class="k">module</span> <span class="nn">FormForHelper</span>
+  <span class="k">def</span> <span class="nf">form_for_object_from_param</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+    <span class="n">form_for_params</span> <span class="o">=</span> <span class="n">params</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="p">{})</span>
+
+    <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">form_for_params</span><span class="p">.</span><span class="nf">to_json</span><span class="p">,</span>
+               <span class="ss">object_class: </span><span class="no">OpenStruct</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>With our first requirement met, let’s expand this helper method a bit to meet our second requirement–creating an object where the <code>form_for</code> uses the desired parameter namespace when creating form controls. If you dig into the source code for the <code>form_for</code> method and the <code>FormBuilder</code> object it creates, you will come to learn that it inspects the object it is passed for a <code>#model_name</code> method when constructing input names. It then expects the return value of the <code>#model_name</code> method to respond to the <code>#param_key</code> method (these methods are part of the <a href="http://api.rubyonrails.org/classes/ActiveModel/Naming.html"><code>ActiveModel::Naming</code></a> module). So, in order for our custom built object to work with <code>form_for</code> the way that we desire, we simply need to ensure that <code>object.model_name.param_key</code> returns the parameter namespace. Given that we are using <code>JSON.parse</code> and <code>OpenStruct</code>s to create an object with getters from a nested hash, this is as easy as merging a hash of the appropriate shape into the params hash:</p>
+
+<div class="highlight ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9</pre></td><td class="code"><pre><span class="k">module</span> <span class="nn">FormForHelper</span>
+  <span class="k">def</span> <span class="nf">form_for_object_from_param</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+    <span class="n">form_for_params</span> <span class="o">=</span> <span class="n">params</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="p">{})</span>
+    <span class="n">form_for_requirements</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">model_name: </span><span class="p">{</span> <span class="ss">param_key: </span><span class="n">param</span> <span class="p">}</span> <span class="p">}</span>
+
+    <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">form_for_params</span><span class="p">.</span><span class="nf">merge</span><span class="p">(</span><span class="n">form_for_requirements</span><span class="p">).</span><span class="nf">to_json</span><span class="p">,</span>
+               <span class="ss">object_class: </span><span class="no">OpenStruct</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>With a mechanism by which we can turn certain request parameters into an object appropriate for use with <code>form_for</code>, let’s build our filters search form:</p>
+
+<div class="highlight erb"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16</pre></td><td class="code"><pre><span class="cp">&lt;%=</span> <span class="n">form_for</span><span class="p">(</span><span class="n">form_for_object_from_param</span><span class="p">(</span><span class="ss">:filter</span><span class="p">),</span>
+             <span class="ss">method: :get</span><span class="p">,</span>
+             <span class="ss">url: </span><span class="n">things_path</span><span class="p">,</span>
+             <span class="ss">html: </span><span class="p">{</span> <span class="ss">class: </span><span class="s1">'form'</span> <span class="p">})</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="cp">%&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+    <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">label</span><span class="p">(</span><span class="ss">:attribute</span><span class="p">,</span> <span class="ss">class: </span><span class="s1">'control-label'</span><span class="p">)</span> <span class="cp">%&gt;</span>
+    <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">text_field</span><span class="p">(</span><span class="ss">:attribute</span><span class="p">,</span> <span class="ss">class: </span><span class="s1">'form-control'</span><span class="p">)</span> <span class="cp">%&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-right"</span><span class="nt">&gt;</span>
+    <span class="cp">&lt;%=</span> <span class="n">content_tag</span><span class="p">(</span><span class="ss">:button</span><span class="p">,</span>
+                    <span class="s1">'Search'</span><span class="p">,</span>
+                    <span class="ss">type: </span><span class="s1">'submit'</span><span class="p">,</span>
+                    <span class="ss">class: </span><span class="s1">'btn btn-info'</span><span class="p">)</span> <span class="cp">%&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>This is obviously a simplified example, but it is a fully functioning simplified example. We now have a search filter form which will reload an <code>#index</code> route with a matching subset of data objects, where the search form is repopulated with any values used for the search, and where the filters are RESTfully encoded in the URL as parameters.</p>
+</div>
+</div>
+
+    </div>
+
+    <aside id="sidebar">
+
+  <hr class="fractal">
+
+  <div id="recent-articles">
+    <h5>Recent Posts</h5>
+    <ul class="fa-ul">
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../safely-accessing-values-from-a-nested-hash-again/">Safely Accessing Values from Nested Hashes (again)'</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="./">Basic RESTful Filtering with Rails</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../css-tree-vertical/">Building Pure CSS Trees (part 2)</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../css-tree/">Building Pure CSS Trees (part 1)</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../what-is-mvc/">What is MVC?</a>
+        </li>
+    </ul>
+  </div>
+
+  <hr class="fractal">
+
+  <div id="all-tags">
+    <h5><a href="../../topics/">Topics</a></h5>
+    <ul class="list-none">
+      <!-- Add all Article tags -->
+        <li class="breadcrumb">
+            <a class="philosophy-tag" href="/topics/philosophy/">philosophy</a>
+            <a class="epistemology-tag" href="/topics/epistemology/">epistemology</a>
+            <a class="math-tag" href="/topics/math/">math</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="philosophy-tag" href="/topics/philosophy/">philosophy</a>
+            <a class="epistemology-tag" href="/topics/epistemology/">epistemology</a>
+            <a class="logic-tag" href="/topics/logic/">logic</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="tutorial-tag" href="/topics/tutorial/">tutorial</a>
+            <a class="pdf-workflow-tag" href="/topics/pdf-workflow/">pdf-workflow</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="prose-tag" href="/topics/prose/">prose</a>
+            <a class="self-tag" href="/topics/self/">self</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="ruby-tag" href="/topics/ruby/">ruby</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="rails-tag" href="/topics/rails/">rails</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="poetry-tag" href="/topics/poetry/">poetry</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="tutorial-tag" href="/topics/tutorial/">tutorial</a>
+            <a class="algorithms-tag" href="/topics/algorithms/">algorithms</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="philosophy-tag" href="/topics/philosophy/">philosophy</a>
+            <a class="faith-tag" href="/topics/faith/">faith</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="git-tag" href="/topics/git/">git</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="tutorial-tag" href="/topics/tutorial/">tutorial</a>
+            <a class="git-tag" href="/topics/git/">git</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="prose-tag" href="/topics/prose/">prose</a>
+            <a class="relationships-tag" href="/topics/relationships/">relationships</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="css-tag" href="/topics/css/">css</a>
+            <a class="trees-tag" href="/topics/trees/">trees</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="tutorial-tag" href="/topics/tutorial/">tutorial</a>
+            <a class="css-tag" href="/topics/css/">css</a>
+            <a class="trees-tag" href="/topics/trees/">trees</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="poetry-tag" href="/topics/poetry/">poetry</a>
+            <a class="relationships-tag" href="/topics/relationships/">relationships</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="css-tag" href="/topics/css/">css</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="http-tag" href="/topics/http/">http</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="prose-tag" href="/topics/prose/">prose</a>
+            <a class="life-tag" href="/topics/life/">life</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="prose-tag" href="/topics/prose/">prose</a>
+            <a class="faith-tag" href="/topics/faith/">faith</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="philosophy-tag" href="/topics/philosophy/">philosophy</a>
+            <a class="ethics-tag" href="/topics/ethics/">ethics</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="ruby-tag" href="/topics/ruby/">ruby</a>
+            <a class="interpreter-tag" href="/topics/interpreter/">interpreter</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="tutorial-tag" href="/topics/tutorial/">tutorial</a>
+            <a class="interpreter-tag" href="/topics/interpreter/">interpreter</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="mvc-tag" href="/topics/mvc/">mvc</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="latin-tag" href="/topics/latin/">latin</a>
+            <a class="vergil-tag" href="/topics/vergil/">vergil</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="greek-tag" href="/topics/greek/">greek</a>
+            <a class="epicurus-tag" href="/topics/epicurus/">epicurus</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="greek-tag" href="/topics/greek/">greek</a>
+            <a class="aristotle-tag" href="/topics/aristotle/">aristotle</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="latin-tag" href="/topics/latin/">latin</a>
+            <a class="horace-tag" href="/topics/horace/">horace</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="modern-tag" href="/topics/modern/">modern</a>
+            <a class="lewis-tag" href="/topics/lewis/">lewis</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="modern-tag" href="/topics/modern/">modern</a>
+            <a class="barfield-tag" href="/topics/barfield/">barfield</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="greek-tag" href="/topics/greek/">greek</a>
+            <a class="herodotus-tag" href="/topics/herodotus/">herodotus</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="greek-tag" href="/topics/greek/">greek</a>
+            <a class="hippocrates-tag" href="/topics/hippocrates/">hippocrates</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="greek-tag" href="/topics/greek/">greek</a>
+            <a class="plato-tag" href="/topics/plato/">plato</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="academia-tag" href="/topics/academia/">academia</a>
+            <a class="modern-tag" href="/topics/modern/">modern</a>
+            <a class="saussure-tag" href="/topics/saussure/">saussure</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="alfred-tag" href="/topics/alfred/">alfred</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="bash-tag" href="/topics/bash/">bash</a>
+        </li>
+        <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="python-tag" href="/topics/python/">python</a>
+        </li>
+    </ul>
+  </div>
+</aside>
+
+
+    <footer role="contentinfo">
+  <div class="footer-info">
+    <p>&copy; Copyright 2015 by Stephen Margheim</p>
+    <p>Powered by <a href="https://middlemanapp.com">Middleman</a>.</p>
+  </div>
+</footer>
+
+
+  </body>
+</html>
