@@ -123,6 +123,34 @@
     <div id="main" role="main">
       <ul class="cards">
         <li class="card">
+          <a class="card-link no-hvr" href="slideover-bootstrap-modals/"></a>
+          <!-- item Tags (if any) -->
+          <ul class="card-tags">
+            <li>
+              <a class="badge no-hvr css-tag" href="/topics/css/">css</a>
+            </li>
+            <li>
+              <a class="badge no-hvr bootstrap-tag" href="/topics/bootstrap/">bootstrap</a>
+            </li>
+          </ul>
+          <!-- if item has tags, add filler element -->
+          <div id="tag-filler-space"></div>
+          <div class="card-image">
+          </div>
+          <div class="card-header">
+            <h3 class="card-title">
+              <p>Slideover Bootstrap Modals</p>
+            </h3>
+            <h5 class="card-date">
+              31 July 2018
+  </h5>
+          </div>
+          <hr class="fractal">
+          <div class="card-copy">
+            <p>Sometimes we don’t want a modal floating in the center of the viewport; sometimes, we want a full-height modal that slides into frame. Luckily, we can write a bit of CSS to extend the Bootstrap <code>modal</code> component to support slideover modals.</p>
+          </div>
+        </li>
+        <li class="card">
           <a class="card-link no-hvr" href="rails-forms-and-request-parameters/"></a>
           <!-- item Tags (if any) -->
           <ul class="card-tags">
@@ -229,6 +257,31 @@
           </div>
         </li>
         <li class="card">
+          <a class="card-link no-hvr" href="css-tree-vertical/"></a>
+          <!-- item Tags (if any) -->
+          <ul class="card-tags">
+            <li>
+              <a class="badge no-hvr trees-tag" href="/topics/trees/">trees</a>
+            </li>
+          </ul>
+          <!-- if item has tags, add filler element -->
+          <div id="tag-filler-space"></div>
+          <div class="card-image">
+          </div>
+          <div class="card-header">
+            <h3 class="card-title">
+              <p>Building Pure CSS Trees (part 2)</p>
+            </h3>
+            <h5 class="card-date">
+              06 March 2018
+  </h5>
+          </div>
+          <hr class="fractal">
+          <div class="card-copy">
+            <p>In our <a href="http://fractaledmind.com/articles/css-tree/">last post</a>, we built a simple pure-CSS tree from a nested list. That tree was horizontally oriented, but what if we wanted a vertically oriented tree? Today, let’s build that.</p>
+          </div>
+        </li>
+        <li class="card">
           <a class="card-link no-hvr" href="maintaining-binary-state-in-css/"></a>
           <!-- item Tags (if any) -->
           <ul class="card-tags">
@@ -259,31 +312,6 @@
                 </li>
               </ol>
             </div>
-          </div>
-        </li>
-        <li class="card">
-          <a class="card-link no-hvr" href="css-tree-vertical/"></a>
-          <!-- item Tags (if any) -->
-          <ul class="card-tags">
-            <li>
-              <a class="badge no-hvr trees-tag" href="/topics/trees/">trees</a>
-            </li>
-          </ul>
-          <!-- if item has tags, add filler element -->
-          <div id="tag-filler-space"></div>
-          <div class="card-image">
-          </div>
-          <div class="card-header">
-            <h3 class="card-title">
-              <p>Building Pure CSS Trees (part 2)</p>
-            </h3>
-            <h5 class="card-date">
-              06 March 2018
-  </h5>
-          </div>
-          <hr class="fractal">
-          <div class="card-copy">
-            <p>In our <a href="http://fractaledmind.com/articles/css-tree/">last post</a>, we built a simple pure-CSS tree from a nested list. That tree was horizontally oriented, but what if we wanted a vertically oriented tree? Today, let’s build that.</p>
           </div>
         </li>
         <li class="card">
@@ -371,34 +399,6 @@
             <p>A user browses to some URL in their browser. Please describe in as much detail as you think is appropriate the lifecycle of this request and what happens in the browser, over the network, on servers, and in the Rails application before the request completes.</p>
           </div>
         </li>
-        <li class="card">
-          <a class="card-link no-hvr" href="on-white-lies-and-gas-lights/"></a>
-          <!-- item Tags (if any) -->
-          <ul class="card-tags">
-            <li>
-              <a class="badge no-hvr relationships-tag" href="/topics/relationships/">relationships</a>
-            </li>
-            <li>
-              <a class="badge no-hvr ethics-tag" href="/topics/ethics/">ethics</a>
-            </li>
-          </ul>
-          <!-- if item has tags, add filler element -->
-          <div id="tag-filler-space"></div>
-          <div class="card-image">
-          </div>
-          <div class="card-header">
-            <h3 class="card-title">
-              <p>On White Lies and Gas Lights</p>
-            </h3>
-            <h5 class="card-date">
-              14 February 2018
-  </h5>
-          </div>
-          <hr class="fractal">
-          <div class="card-copy">
-            <p>When was the last time you told a “white lie”? You know the one I mean, that harmless little lie you told to avoid hurting someone’s feelings. Our world is rife with them, and they are slowly killing me.</p>
-          </div>
-        </li>
       </ul>
       <div class="pagination">
         <ul>
@@ -419,6 +419,10 @@
         <ul class="fa-ul">
           <li>
             <i class="fa-li fa fa-chevron-right"></i>
+            <a href="slideover-bootstrap-modals/">Slideover Bootstrap Modals</a>
+          </li>
+          <li>
+            <i class="fa-li fa fa-chevron-right"></i>
             <a href="rails-forms-and-request-parameters/">Rails Forms and Request Parameters</a>
           </li>
           <li>
@@ -432,10 +436,6 @@
           <li>
             <i class="fa-li fa fa-chevron-right"></i>
             <a href="basic-restful-filtering-with-rails/">Basic RESTful Filtering with Rails</a>
-          </li>
-          <li>
-            <i class="fa-li fa fa-chevron-right"></i>
-            <a href="maintaining-binary-state-in-css/">Maintaining Binary State in CSS</a>
           </li>
         </ul>
       </div>
@@ -535,6 +535,11 @@
           <li class="breadcrumb">
             <a class="tutorial-tag" href="/topics/tutorial/">tutorial</a>
             <a class="interpreter-tag" href="/topics/interpreter/">interpreter</a>
+          </li>
+          <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="css-tag" href="/topics/css/">css</a>
+            <a class="bootstrap-tag" href="/topics/bootstrap/">bootstrap</a>
           </li>
           <li class="breadcrumb">
             <a class="code-tag" href="/topics/code/">code</a>

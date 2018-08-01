@@ -5,10 +5,99 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2018-07-28T20:00:00-04:00</updated>
+  <updated>2018-07-30T20:00:00-04:00</updated>
   <author>
     <name>Stephen Margheim</name>
   </author>
+  <entry>
+    <title>Slideover Bootstrap Modals</title>
+    <link rel="alternate" href="http://blog.url.com/articles/slideover-bootstrap-modals/"/>
+    <id>http://blog.url.com/articles/slideover-bootstrap-modals/</id>
+    <published>2018-07-30T20:00:00-04:00</published>
+    <updated>2018-07-31T23:13:55-04:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;p&gt;Sometimes we don’t want a modal floating in the center of the viewport; sometimes, we want a full-height modal that slides into frame. Luckily, we can write a bit of CSS to extend the Bootstrap &lt;code&gt;modal&lt;/code&gt; component to support slideover modals.&lt;/p&gt;
+
+&lt;p&gt;{{read more}}&lt;/p&gt;
+
+&lt;p&gt;We want our slideover modals to have a few key characteristics:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;take up the full-height of the viewport&lt;/li&gt;
+  &lt;li&gt;take up the natural width Bootstrap would give the viewport, unless the viewport width is such that the modal would take up more than 80% of the width, in which case, cap the modal width at 80% of the viewport width&lt;/li&gt;
+  &lt;li&gt;keep the header at the top of the modal always, regardless of content height&lt;/li&gt;
+  &lt;li&gt;keep the footer at the bottom of the modal always, regardless of content height&lt;/li&gt;
+  &lt;li&gt;allow the content to be internally scrollable if it overflows&lt;/li&gt;
+  &lt;li&gt;support forms within the modal out-of-the-box&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With these goals in mind, I wrote a small bit of CSS to achieve our ends. I used the class name &lt;code&gt;.modal-dialog-slideover&lt;/code&gt;, which we can simply add to the element that already has the &lt;code&gt;.modal-dialog&lt;/code&gt; class to seamlessly convert a floating modal to a slideout modal. It is a concise 27 lines of SCSS:&lt;/p&gt;
+
+&lt;div class="highlight scss"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nc"&gt;.modal-dialog.modal-dialog-slideover&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="nl"&gt;margin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;margin-left&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;auto&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="nl"&gt;max-width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;80%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+  &lt;span class="nc"&gt;.modal.fade&lt;/span&gt; &lt;span class="k"&gt;&amp;amp;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;transform&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nf"&gt;translate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;100%&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="nc"&gt;.modal.fade.show&lt;/span&gt; &lt;span class="k"&gt;&amp;amp;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;transform&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nf"&gt;translate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nl"&gt;flex-flow&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;column&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="k"&gt;&amp;amp;&lt;/span&gt; &lt;span class="nc"&gt;.modal-content&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;border&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nl"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nl"&gt;height&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;100vh&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="k"&gt;&amp;amp;&lt;/span&gt; &lt;span class="nc"&gt;.modal-body&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;max-height&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;100%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nl"&gt;overflow-y&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;auto&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+  &lt;span class="k"&gt;&amp;amp;&lt;/span&gt; &lt;span class="nc"&gt;.modal-form&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;flex&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nl"&gt;flex-direction&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;column&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nl"&gt;flex&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="nb"&gt;auto&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Here is a CodePen that offers a number of examples of Bootstrap 4 modals converted to slideover modals. Enjoy!&lt;/p&gt;
+
+&lt;p data-height="530" data-theme-id="0" data-slug-hash="MXaaaB" data-default-tab="result" data-user="smargh" data-pen-title="Bootstrap 4 SlideOut Modal examples" class="codepen"&gt;See the Pen &lt;a href="https://codepen.io/smargh/pen/MXaaaB/"&gt;Bootstrap 4 SlideOut Modal examples&lt;/a&gt; by Stephen Margheim (&lt;a href="https://codepen.io/smargh"&gt;@smargh&lt;/a&gt;) on &lt;a href="https://codepen.io"&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async="" src="https://static.codepen.io/assets/embed/ei.js"&gt;&lt;/script&gt;
+
+</content>
+  </entry>
   <entry>
     <title>Rails Forms and Request Parameters</title>
     <link rel="alternate" href="http://blog.url.com/articles/rails-forms-and-request-parameters/"/>
@@ -574,107 +663,6 @@
 </content>
   </entry>
   <entry>
-    <title>Maintaining Binary State in CSS</title>
-    <link rel="alternate" href="http://blog.url.com/articles/maintaining-binary-state-in-css/"/>
-    <id>http://blog.url.com/articles/maintaining-binary-state-in-css/</id>
-    <published>2018-03-05T19:00:00-05:00</published>
-    <updated>2018-06-14T15:27:22-04:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;p&gt;I really like CSS, and I think of it as a programming language. It does not, however, have many of the utilities of other programming languages. As a result, many programmers quickly turn to Javascript whenever they need client-side interactivity. For whatever reason, this is a habit that I never picked up; in fact, I picked up the complete opposite habit—whenever I need some particular client-side interactivity, I first try to implement it in pure CSS.&lt;/p&gt;
-
-&lt;p&gt;As you might imagine, this doesn’t always work out. It has, however, led me to some pure CSS solutions that I quite like.&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; In this post, I want to outline one technique that I use time and time again to make more pure CSS solutions possible.&lt;/p&gt;
-
-&lt;p&gt;{{read more}}&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;It is difficult, if not impossible, to implement many interactive features without &lt;em&gt;any&lt;/em&gt; form of state. To have a UI look or do &lt;code&gt;X&lt;/code&gt; under one condition and then look or do &lt;code&gt;Y&lt;/code&gt; under another condition presupposes &lt;em&gt;two distinct conditions/state&lt;/em&gt;. One of the chief drawbacks of CSS qua programming language is that it doesn’t really have a true form of state. It does, however, have a pseudo-form of state; and that is what we will focus on today.&lt;/p&gt;
-
-&lt;p&gt;In HTML a checkbox can exist in either a checked or unchecked state. In CSS we have access to those states:&lt;/p&gt;
-
-&lt;div class="highlight scss"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;input&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nt"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"checkbox"&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="nd"&gt;:checked&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
-&lt;span class="nt"&gt;input&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nt"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"checkbox"&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="nd"&gt;:not&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nd"&gt;:checked&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;This simple fact provides the foundation upon which we can built any number of &lt;a href="https://css-tricks.com/the-checkbox-hack/"&gt;interactive features&lt;/a&gt; that require a binary state.&lt;/p&gt;
-
-&lt;p&gt;Moreover, we can clean up the UI for any such feature using another fact of HTML—&lt;code&gt;label&lt;/code&gt;s with nested &lt;code&gt;input&lt;/code&gt;s are automatically bound to one another. This means that HTML of the form:&lt;/p&gt;
-
-&lt;div class="highlight html"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2
-3
-4&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;label&amp;gt;&lt;/span&gt;
-  &lt;span class="nt"&gt;&amp;lt;input&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;"checkbox"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class="nt"&gt;&amp;lt;span&amp;gt;&lt;/span&gt;Click me!&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
-&lt;span class="nt"&gt;&amp;lt;/label&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Will allow us to click the text and toggle the state of the checkbox.&lt;/p&gt;
-
-&lt;p&gt;So, in order to build out an interactive feature that uses binary state, we can use the &lt;code&gt;label &amp;gt; input&lt;/code&gt; HTML structure to create a text element that has binary state that we will have access to in our CSS.&lt;/p&gt;
-
-&lt;p&gt;For most any such feature, however, the UI won’t need the &lt;code&gt;input&lt;/code&gt; visible. So, I have put together a simple CSS utility class to help me create HTML elements that have binary state:&lt;/p&gt;
-
-&lt;div class="highlight scss"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2
-3
-4
-5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;label&lt;/span&gt;&lt;span class="nc"&gt;.toggleable&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="nl"&gt;cursor&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;pointer&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  
-  &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="nt"&gt;input&lt;/span&gt;&lt;span class="nd"&gt;:first-child&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nl"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;none&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Let’s use this utility class to implement an incredibly simple interactive feature: toggling the color of the text.&lt;/p&gt;
-
-&lt;p&gt;We can start with our HTML from earlier, but with our utility class applied:&lt;/p&gt;
-
-&lt;div class="highlight html"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2
-3
-4&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;label&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;"toggleable"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class="nt"&gt;&amp;lt;input&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;"checkbox"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class="nt"&gt;&amp;lt;span&amp;gt;&lt;/span&gt;Click me!&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
-&lt;span class="nt"&gt;&amp;lt;/label&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Now, for our CSS we can use the handy sibling selector (which is the reason we &lt;em&gt;always&lt;/em&gt; want to put the input as the first child of the label; it will allow us to use its state to select any of its siblings) to select the text &lt;code&gt;span&lt;/code&gt; depending on the binary state:&lt;/p&gt;
-
-&lt;div class="highlight scss"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
-2&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nl"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="no"&gt;green&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="nt"&gt;input&lt;/span&gt;&lt;span class="nd"&gt;:checked&lt;/span&gt; &lt;span class="o"&gt;~&lt;/span&gt; &lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nl"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="no"&gt;red&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p data-height="261" data-theme-id="0" data-slug-hash="QQeyqz" data-default-tab="css,result" data-user="smargh" data-embed-version="2" data-pen-title="Using label &amp;gt; input to create text element with toggleable state" class="codepen"&gt;See the Pen &lt;a href="https://codepen.io/smargh/pen/QQeyqz/"&gt;Using label &amp;rt; input to create text element with toggleable state&lt;/a&gt; by Stephen Margheim (&lt;a href="https://codepen.io/smargh"&gt;@smargh&lt;/a&gt;) on &lt;a href="https://codepen.io"&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
-&lt;script async="" src="https://static.codepen.io/assets/embed/ei.js"&gt;&lt;/script&gt;
-
-&lt;p&gt;We simply set the default value and then change the value whenever the &lt;code&gt;input&lt;/code&gt; state is changed. And that’s all there is to it!&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Having the ability to work with binary state gives us a foundation upon which to start building pure CSS interactive features. Using this technique, in a future post, we will use only CSS to implement a tabs feature.&lt;/p&gt;
-
-&lt;div class="footnotes"&gt;
-  &lt;ol&gt;
-    &lt;li id="fn:1"&gt;
-      &lt;p&gt;For example, consider my &lt;a href="http://fractaledmind.com/projects/togglicons/"&gt;Togglicons&lt;/a&gt; library and my work with &lt;a href="http://fractaledmind.com/articles/css-tree/"&gt;CSS trees&lt;/a&gt; &lt;a href="#fnref:1" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
-</content>
-  </entry>
-  <entry>
     <title>Building Pure CSS Trees (part 2)</title>
     <link rel="alternate" href="http://blog.url.com/articles/css-tree-vertical/"/>
     <id>http://blog.url.com/articles/css-tree-vertical/</id>
@@ -962,6 +950,107 @@
 &lt;hr /&gt;
 
 &lt;p&gt;Since our vertical tree is really only a “rotation” of our horizontal tree, in our next post, we will consolidate these two components into one &lt;code&gt;.tree&lt;/code&gt; component with two modifiers.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Maintaining Binary State in CSS</title>
+    <link rel="alternate" href="http://blog.url.com/articles/maintaining-binary-state-in-css/"/>
+    <id>http://blog.url.com/articles/maintaining-binary-state-in-css/</id>
+    <published>2018-03-05T19:00:00-05:00</published>
+    <updated>2018-06-14T15:27:22-04:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;p&gt;I really like CSS, and I think of it as a programming language. It does not, however, have many of the utilities of other programming languages. As a result, many programmers quickly turn to Javascript whenever they need client-side interactivity. For whatever reason, this is a habit that I never picked up; in fact, I picked up the complete opposite habit—whenever I need some particular client-side interactivity, I first try to implement it in pure CSS.&lt;/p&gt;
+
+&lt;p&gt;As you might imagine, this doesn’t always work out. It has, however, led me to some pure CSS solutions that I quite like.&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; In this post, I want to outline one technique that I use time and time again to make more pure CSS solutions possible.&lt;/p&gt;
+
+&lt;p&gt;{{read more}}&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;It is difficult, if not impossible, to implement many interactive features without &lt;em&gt;any&lt;/em&gt; form of state. To have a UI look or do &lt;code&gt;X&lt;/code&gt; under one condition and then look or do &lt;code&gt;Y&lt;/code&gt; under another condition presupposes &lt;em&gt;two distinct conditions/state&lt;/em&gt;. One of the chief drawbacks of CSS qua programming language is that it doesn’t really have a true form of state. It does, however, have a pseudo-form of state; and that is what we will focus on today.&lt;/p&gt;
+
+&lt;p&gt;In HTML a checkbox can exist in either a checked or unchecked state. In CSS we have access to those states:&lt;/p&gt;
+
+&lt;div class="highlight scss"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;input&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nt"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"checkbox"&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="nd"&gt;:checked&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;span class="nt"&gt;input&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nt"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"checkbox"&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="nd"&gt;:not&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nd"&gt;:checked&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This simple fact provides the foundation upon which we can built any number of &lt;a href="https://css-tricks.com/the-checkbox-hack/"&gt;interactive features&lt;/a&gt; that require a binary state.&lt;/p&gt;
+
+&lt;p&gt;Moreover, we can clean up the UI for any such feature using another fact of HTML—&lt;code&gt;label&lt;/code&gt;s with nested &lt;code&gt;input&lt;/code&gt;s are automatically bound to one another. This means that HTML of the form:&lt;/p&gt;
+
+&lt;div class="highlight html"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;label&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;input&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;"checkbox"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;span&amp;gt;&lt;/span&gt;Click me!&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/label&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Will allow us to click the text and toggle the state of the checkbox.&lt;/p&gt;
+
+&lt;p&gt;So, in order to build out an interactive feature that uses binary state, we can use the &lt;code&gt;label &amp;gt; input&lt;/code&gt; HTML structure to create a text element that has binary state that we will have access to in our CSS.&lt;/p&gt;
+
+&lt;p&gt;For most any such feature, however, the UI won’t need the &lt;code&gt;input&lt;/code&gt; visible. So, I have put together a simple CSS utility class to help me create HTML elements that have binary state:&lt;/p&gt;
+
+&lt;div class="highlight scss"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;label&lt;/span&gt;&lt;span class="nc"&gt;.toggleable&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="nl"&gt;cursor&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;pointer&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  
+  &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="nt"&gt;input&lt;/span&gt;&lt;span class="nd"&gt;:first-child&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nl"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;none&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Let’s use this utility class to implement an incredibly simple interactive feature: toggling the color of the text.&lt;/p&gt;
+
+&lt;p&gt;We can start with our HTML from earlier, but with our utility class applied:&lt;/p&gt;
+
+&lt;div class="highlight html"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;label&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;"toggleable"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;input&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;"checkbox"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;span&amp;gt;&lt;/span&gt;Click me!&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/label&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now, for our CSS we can use the handy sibling selector (which is the reason we &lt;em&gt;always&lt;/em&gt; want to put the input as the first child of the label; it will allow us to use its state to select any of its siblings) to select the text &lt;code&gt;span&lt;/code&gt; depending on the binary state:&lt;/p&gt;
+
+&lt;div class="highlight scss"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1
+2&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nl"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="no"&gt;green&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="nt"&gt;input&lt;/span&gt;&lt;span class="nd"&gt;:checked&lt;/span&gt; &lt;span class="o"&gt;~&lt;/span&gt; &lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nl"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="no"&gt;red&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p data-height="261" data-theme-id="0" data-slug-hash="QQeyqz" data-default-tab="css,result" data-user="smargh" data-embed-version="2" data-pen-title="Using label &amp;gt; input to create text element with toggleable state" class="codepen"&gt;See the Pen &lt;a href="https://codepen.io/smargh/pen/QQeyqz/"&gt;Using label &amp;rt; input to create text element with toggleable state&lt;/a&gt; by Stephen Margheim (&lt;a href="https://codepen.io/smargh"&gt;@smargh&lt;/a&gt;) on &lt;a href="https://codepen.io"&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async="" src="https://static.codepen.io/assets/embed/ei.js"&gt;&lt;/script&gt;
+
+&lt;p&gt;We simply set the default value and then change the value whenever the &lt;code&gt;input&lt;/code&gt; state is changed. And that’s all there is to it!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Having the ability to work with binary state gives us a foundation upon which to start building pure CSS interactive features. Using this technique, in a future post, we will use only CSS to implement a tabs feature.&lt;/p&gt;
+
+&lt;div class="footnotes"&gt;
+  &lt;ol&gt;
+    &lt;li id="fn:1"&gt;
+      &lt;p&gt;For example, consider my &lt;a href="http://fractaledmind.com/projects/togglicons/"&gt;Togglicons&lt;/a&gt; library and my work with &lt;a href="http://fractaledmind.com/articles/css-tree/"&gt;CSS trees&lt;/a&gt; &lt;a href="#fnref:1" class="reversefootnote"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
 </content>
   </entry>
   <entry>
@@ -1311,43 +1400,6 @@
 </content>
   </entry>
   <entry>
-    <title>The Lifecycle of a Web Request</title>
-    <link rel="alternate" href="http://blog.url.com/articles/lifecycle-of-a-web-request/"/>
-    <id>http://blog.url.com/articles/lifecycle-of-a-web-request/</id>
-    <published>2018-02-20T19:00:00-05:00</published>
-    <updated>2018-06-14T14:42:25-04:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;p&gt;As a part of a recent job application process, I was asked a few general questions pertaining to software development. I thought I would share the questions and my answers here on my blog.&lt;/p&gt;
-
-&lt;h3 id="the-question"&gt;The Question&lt;/h3&gt;
-
-&lt;p&gt;A user browses to some URL in their browser. Please describe in as much detail as you think is appropriate the lifecycle of this request and what happens in the browser, over the network, on servers, and in the Rails application before the request completes.&lt;/p&gt;
-
-&lt;p&gt;{{read more}}&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id="the-lifecycle-of-a-web-request"&gt;The Lifecycle of a Web Request&lt;/h3&gt;
-
-&lt;p&gt;When a user navigates to a URL in his or her browser, the very first thing that happens is the browser determining what the IP address of that URL is. Presuming the browser does not already have the IP address cached, it would use a DNS server to resolve the URL into an IP address.&lt;/p&gt;
-
-&lt;p&gt;With an IP address in-hand, the browser can now initiate the HTTP request to the host server. The browser will open a TCP connection to the IP address and send the HTTP request (in this case a GET request) to the host server.&lt;/p&gt;
-
-&lt;p&gt;On the host server for GitLab, the server software, whatever it is (Apache and Nginx are two that I know of), handles the now open TCP connection and passes the HTTP request to the application process. This is a stage that I know less about. I have worked with Apache, but not extensively. Most of my knowledge of Apache starts and ends at the application’s &lt;code&gt;.htaccess&lt;/code&gt; file.&lt;/p&gt;
-
-&lt;p&gt;Now that the HTTP request has been passed to the application process, Rails gets to work. Rails will first attempt to match the URL of the HTTP request to a route defined in the &lt;code&gt;config/routes.rb&lt;/code&gt; file. When matched, Rails knows the controller and action that will process this request. Before calling the appropriate controller action, Rails ensures that the &lt;code&gt;request&lt;/code&gt; object and the &lt;code&gt;params&lt;/code&gt; object are properly hydrated from the raw HTTP request data.&lt;/p&gt;
-
-&lt;p&gt;When calling the controller action, Rails checks if any &lt;code&gt;before_filter&lt;/code&gt;s have been defined the action (for example, authenticating the user) and runs any of those first. It will then call the actual controller action, the execution of which will end with some kind of view rendering (whether implicitly or explicitly).&lt;/p&gt;
-
-&lt;p&gt;With the view rendered, Rails passes this back as the HTTP response. Rails ensures that the HTTP response is properly formatted and filled with the proper data (like headers and cookies).&lt;/p&gt;
-
-&lt;p&gt;Finally the browser receives the response. In this case, the response will include HTML, CSS, and (likely) Javascript which the browser will render on the screen.&lt;/p&gt;
-
-</content>
-  </entry>
-  <entry>
     <title>What is MVC?</title>
     <link rel="alternate" href="http://blog.url.com/articles/what-is-mvc/"/>
     <id>http://blog.url.com/articles/what-is-mvc/</id>
@@ -1427,6 +1479,43 @@
 &lt;h4 id="conclusion"&gt;Conclusion&lt;/h4&gt;
 
 &lt;p&gt;In the end, the goal is always the same: to write robust applications that are understandable and maintainable. The MVC pattern is a time-worn and well-tested architecture that helps human developers structure large code bases. Rails specifically, with its emphasis on convention over configuration, uses the MVC pattern to great effect, allowing its structure to form the backbone of Rails’ conventions. And while large and complex applications will likely need additional layers to manage and structure their complexity, these layers (like the concern and service layers) build on top of the MVC pattern and do not overturn it.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>The Lifecycle of a Web Request</title>
+    <link rel="alternate" href="http://blog.url.com/articles/lifecycle-of-a-web-request/"/>
+    <id>http://blog.url.com/articles/lifecycle-of-a-web-request/</id>
+    <published>2018-02-20T19:00:00-05:00</published>
+    <updated>2018-06-14T14:42:25-04:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;p&gt;As a part of a recent job application process, I was asked a few general questions pertaining to software development. I thought I would share the questions and my answers here on my blog.&lt;/p&gt;
+
+&lt;h3 id="the-question"&gt;The Question&lt;/h3&gt;
+
+&lt;p&gt;A user browses to some URL in their browser. Please describe in as much detail as you think is appropriate the lifecycle of this request and what happens in the browser, over the network, on servers, and in the Rails application before the request completes.&lt;/p&gt;
+
+&lt;p&gt;{{read more}}&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id="the-lifecycle-of-a-web-request"&gt;The Lifecycle of a Web Request&lt;/h3&gt;
+
+&lt;p&gt;When a user navigates to a URL in his or her browser, the very first thing that happens is the browser determining what the IP address of that URL is. Presuming the browser does not already have the IP address cached, it would use a DNS server to resolve the URL into an IP address.&lt;/p&gt;
+
+&lt;p&gt;With an IP address in-hand, the browser can now initiate the HTTP request to the host server. The browser will open a TCP connection to the IP address and send the HTTP request (in this case a GET request) to the host server.&lt;/p&gt;
+
+&lt;p&gt;On the host server for GitLab, the server software, whatever it is (Apache and Nginx are two that I know of), handles the now open TCP connection and passes the HTTP request to the application process. This is a stage that I know less about. I have worked with Apache, but not extensively. Most of my knowledge of Apache starts and ends at the application’s &lt;code&gt;.htaccess&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;p&gt;Now that the HTTP request has been passed to the application process, Rails gets to work. Rails will first attempt to match the URL of the HTTP request to a route defined in the &lt;code&gt;config/routes.rb&lt;/code&gt; file. When matched, Rails knows the controller and action that will process this request. Before calling the appropriate controller action, Rails ensures that the &lt;code&gt;request&lt;/code&gt; object and the &lt;code&gt;params&lt;/code&gt; object are properly hydrated from the raw HTTP request data.&lt;/p&gt;
+
+&lt;p&gt;When calling the controller action, Rails checks if any &lt;code&gt;before_filter&lt;/code&gt;s have been defined the action (for example, authenticating the user) and runs any of those first. It will then call the actual controller action, the execution of which will end with some kind of view rendering (whether implicitly or explicitly).&lt;/p&gt;
+
+&lt;p&gt;With the view rendered, Rails passes this back as the HTTP response. Rails ensures that the HTTP response is properly formatted and filled with the proper data (like headers and cookies).&lt;/p&gt;
+
+&lt;p&gt;Finally the browser receives the response. In this case, the response will include HTML, CSS, and (likely) Javascript which the browser will render on the screen.&lt;/p&gt;
+
 </content>
   </entry>
   <entry>
@@ -3890,87 +3979,6 @@ a fluid resembling a solid.&lt;/p&gt;
 </content>
   </entry>
   <entry>
-    <title>Portrait of Pain II</title>
-    <link rel="alternate" href="http://blog.url.com/articles/portrait-of-pain-ii/"/>
-    <id>http://blog.url.com/articles/portrait-of-pain-ii/</id>
-    <published>2017-08-19T20:00:00-04:00</published>
-    <updated>2017-08-20T17:59:26-04:00</updated>
-    <author>
-      <name>Stephen Margheim</name>
-    </author>
-    <content type="html">&lt;p&gt;I had felt it for a while, though even then I didn’t know it. I didn’t know that I knew. It’s odd when truth gnaws at your gut, but you stubbornly ignore it. It is odd because, on the one hand, &lt;em&gt;you&lt;/em&gt; know it, but on the other, &lt;em&gt;you&lt;/em&gt; don’t. It’s odd and it’s dangerous. The truth is the truth, and you know it, and it gnaws at your gut. But you ignore it, and it keeps gnawing and gnawing and biting and biting, until it finally eats you up. The truth eats you up and spits you out. I remember the night the truth vomited me out.&lt;/p&gt;
-
-&lt;p&gt;In a total fluke, she updates her operating system and all of a sudden her phone has started sharing her location with me. She doesn’t know it; I know she doesn’t know. And in a normal situation, I would have just told her, and she would have turned it off, and we would have gone on none the wiser. But this wasn’t a normal situation, because I &lt;em&gt;knew&lt;/em&gt;, though I didn’t know that I knew. I knew and so I let it be. I didn’t say anything; but I would check from time to time. See where she is, imagine what she’s doing. And the imagining fed the truth. I &lt;em&gt;felt&lt;/em&gt; it; I’m starting to know what I knew.&lt;/p&gt;
-
-&lt;p&gt;One night, I see that she leaves work and goes to a bar. I know she has a meeting coming up, and we’re texting, and I know she’s texting me from this bar. And we’re texting, chatting, and I’m thinking “Why is she at this bar? When is she going to leave? Why hasn’t she left yet?” And these questions start driving me mad. She’s still at the bar; we’re still texting. And the questions are burrowing deeper and deeper into my mind; I can’t get them out. “What is she doing here? Who did she meet? Why hasn’t she left?” I have to know. So I try to find out; I try to ask without asking, so I ask my awkward question, whatever it is. She gives her answer, whatever it is. And it’s fine. Question answered. But it isn’t fine; I &lt;em&gt;know&lt;/em&gt;. I know it and I feel it, but I’m unaware.&lt;/p&gt;
-
-&lt;p&gt;Maybe it was the mixture of unawareness and knowledge and feeling, maybe it wasn’t. Maybe we can’t know and not know for too long. Or maybe we all have little monsters in our minds waiting for their moment to grab a passing thought and spin a story. Maybe the monster doesn’t want us to really know, but can’t deny that we &lt;em&gt;know&lt;/em&gt;, so the monster is forced to spin the trueish false story that so easily ensares us. Maybe; or maybe not. I don’t know.&lt;/p&gt;
-
-&lt;p&gt;But, after she answered, I felt searing guilt. I have rarely, if ever, felt such strong guilt. It burned me. What was I thinking? Why didn’t I trust her? Why was I lying to her by keeping her location sharing silent? I felt guilty and I felt evil. I had done a terrible thing. I had failed to trust her, I had angled and tried to manipulate her. I had suspected her. I was filthy and dirty and shameful and wrong. The weight was too much to bear. And so it broke me.&lt;/p&gt;
-
-&lt;p&gt;Whatever the reasons, however odd or normal, it doesn’t really matter, but when I break, I want to break myself. This is one of my monsters. Now, I can be honest and say that I have truly never wanted to end my own life; but, I have wanted to break myself. And it sounds vague because it is vague. It is just a strong sense that I need to make things right by &lt;em&gt;doing something&lt;/em&gt;, and doing it to myself. And so when I broke, on that night,&lt;br /&gt;
-  I wanted to break myself;&lt;br /&gt;
-    I wanted to break my skin;&lt;br /&gt;
-      I wanted to make amends;&lt;br /&gt;
-deep down, I just wanted all the pain to stop. And maybe &lt;em&gt;real&lt;/em&gt; pain would stop this other, amorphous, silent, scary pain. And that’s what I thought, and that’s what I wanted. And I sat on the side of the bed and I cried. I cried because I felt such guilt and shame; I cried because I wanted to hurt myself; I cried because I felt utterly broken; I cried because I felt &lt;em&gt;it&lt;/em&gt;, the truth, slowly spitting me out.&lt;/p&gt;
-
-&lt;p&gt;I cried, long and hard and ugly. And at some point I had gathered enough of myself to call her. I had to tell her. I had to take away the possibility of snooping and lying. I had to confess and start to make amends.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“I asked those awkward questions because I knew you were at the bar, and I knew you had your meeting, and I was honestly a bit suspicious. I’m so sorry. I’m so so sorry that I didn’t trust you, that I didn’t tell you about your location sharing.”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;She was understandably upset. She didn’t want to come home; she needed time.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“How could you do this? This is an invasion of my privacy. I feel hurt. I need time; I need space”.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Every word rang fully true. I had failed; I was a failure. I knew it and she knew it. And I broke again.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“You’re right. You are so right. It was wrong and I knew it was wrong. I feel so terrible.”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I was broken and I wanted to break myself. But I couldn’t; I couldn’t really. I liked the idea more than the execution. So I told her.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“I want to hurt myself”.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I was reaching out; I was asking her what to do, I think. Am I broken? Should I do something to make up for being broken?&lt;/p&gt;
-
-&lt;p&gt;She freaked out a bit, told me not to do anything, asked if I wanted to kill myself.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“No. Nothing like that. I just feel so bad.”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“Don’t freak me out like that. Are you just trying to get me to come home? Is this a stunt?”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I don’t know; maybe, yes, no. I don’t know.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“No, it’s not a stunt. But you’re right, I was being crazy. I said something dumb in a low spot. I’m alright. You are understandably upset. You don’t need to come home. I promise; I won’t do anything.”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;And I didn’t.&lt;/p&gt;
-
-&lt;p&gt;I cried more, but I didn’t &lt;em&gt;do&lt;/em&gt; anything. I had broken twice, the truth gnawing at my gut had finally chewed its way through me. But it’s not like I realized anything that night, nothing changed. All I knew was the pain. And it wasn’t good, and it wasn’t bad; it simply was, like the truth that I knew and yet didn’t know.&lt;/p&gt;
-
-&lt;p&gt;Truth and pain&lt;br /&gt;
-pain and truth&lt;br /&gt;
-me and her&lt;br /&gt;
-me and I&lt;/p&gt;
-
-&lt;p&gt;some things simply are, or simply were, or simply will be …&lt;/p&gt;
-
-&lt;p&gt;pain&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>Time in Ruby and ActiveRecord</title>
     <link rel="alternate" href="http://blog.url.com/articles/time-in-ruby-and-activerecord/"/>
     <id>http://blog.url.com/articles/time-in-ruby-and-activerecord/</id>
@@ -4061,6 +4069,87 @@ me and I&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Portrait of Pain II</title>
+    <link rel="alternate" href="http://blog.url.com/articles/portrait-of-pain-ii/"/>
+    <id>http://blog.url.com/articles/portrait-of-pain-ii/</id>
+    <published>2017-08-19T20:00:00-04:00</published>
+    <updated>2017-08-20T17:59:26-04:00</updated>
+    <author>
+      <name>Stephen Margheim</name>
+    </author>
+    <content type="html">&lt;p&gt;I had felt it for a while, though even then I didn’t know it. I didn’t know that I knew. It’s odd when truth gnaws at your gut, but you stubbornly ignore it. It is odd because, on the one hand, &lt;em&gt;you&lt;/em&gt; know it, but on the other, &lt;em&gt;you&lt;/em&gt; don’t. It’s odd and it’s dangerous. The truth is the truth, and you know it, and it gnaws at your gut. But you ignore it, and it keeps gnawing and gnawing and biting and biting, until it finally eats you up. The truth eats you up and spits you out. I remember the night the truth vomited me out.&lt;/p&gt;
+
+&lt;p&gt;In a total fluke, she updates her operating system and all of a sudden her phone has started sharing her location with me. She doesn’t know it; I know she doesn’t know. And in a normal situation, I would have just told her, and she would have turned it off, and we would have gone on none the wiser. But this wasn’t a normal situation, because I &lt;em&gt;knew&lt;/em&gt;, though I didn’t know that I knew. I knew and so I let it be. I didn’t say anything; but I would check from time to time. See where she is, imagine what she’s doing. And the imagining fed the truth. I &lt;em&gt;felt&lt;/em&gt; it; I’m starting to know what I knew.&lt;/p&gt;
+
+&lt;p&gt;One night, I see that she leaves work and goes to a bar. I know she has a meeting coming up, and we’re texting, and I know she’s texting me from this bar. And we’re texting, chatting, and I’m thinking “Why is she at this bar? When is she going to leave? Why hasn’t she left yet?” And these questions start driving me mad. She’s still at the bar; we’re still texting. And the questions are burrowing deeper and deeper into my mind; I can’t get them out. “What is she doing here? Who did she meet? Why hasn’t she left?” I have to know. So I try to find out; I try to ask without asking, so I ask my awkward question, whatever it is. She gives her answer, whatever it is. And it’s fine. Question answered. But it isn’t fine; I &lt;em&gt;know&lt;/em&gt;. I know it and I feel it, but I’m unaware.&lt;/p&gt;
+
+&lt;p&gt;Maybe it was the mixture of unawareness and knowledge and feeling, maybe it wasn’t. Maybe we can’t know and not know for too long. Or maybe we all have little monsters in our minds waiting for their moment to grab a passing thought and spin a story. Maybe the monster doesn’t want us to really know, but can’t deny that we &lt;em&gt;know&lt;/em&gt;, so the monster is forced to spin the trueish false story that so easily ensares us. Maybe; or maybe not. I don’t know.&lt;/p&gt;
+
+&lt;p&gt;But, after she answered, I felt searing guilt. I have rarely, if ever, felt such strong guilt. It burned me. What was I thinking? Why didn’t I trust her? Why was I lying to her by keeping her location sharing silent? I felt guilty and I felt evil. I had done a terrible thing. I had failed to trust her, I had angled and tried to manipulate her. I had suspected her. I was filthy and dirty and shameful and wrong. The weight was too much to bear. And so it broke me.&lt;/p&gt;
+
+&lt;p&gt;Whatever the reasons, however odd or normal, it doesn’t really matter, but when I break, I want to break myself. This is one of my monsters. Now, I can be honest and say that I have truly never wanted to end my own life; but, I have wanted to break myself. And it sounds vague because it is vague. It is just a strong sense that I need to make things right by &lt;em&gt;doing something&lt;/em&gt;, and doing it to myself. And so when I broke, on that night,&lt;br /&gt;
+  I wanted to break myself;&lt;br /&gt;
+    I wanted to break my skin;&lt;br /&gt;
+      I wanted to make amends;&lt;br /&gt;
+deep down, I just wanted all the pain to stop. And maybe &lt;em&gt;real&lt;/em&gt; pain would stop this other, amorphous, silent, scary pain. And that’s what I thought, and that’s what I wanted. And I sat on the side of the bed and I cried. I cried because I felt such guilt and shame; I cried because I wanted to hurt myself; I cried because I felt utterly broken; I cried because I felt &lt;em&gt;it&lt;/em&gt;, the truth, slowly spitting me out.&lt;/p&gt;
+
+&lt;p&gt;I cried, long and hard and ugly. And at some point I had gathered enough of myself to call her. I had to tell her. I had to take away the possibility of snooping and lying. I had to confess and start to make amends.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“I asked those awkward questions because I knew you were at the bar, and I knew you had your meeting, and I was honestly a bit suspicious. I’m so sorry. I’m so so sorry that I didn’t trust you, that I didn’t tell you about your location sharing.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;She was understandably upset. She didn’t want to come home; she needed time.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“How could you do this? This is an invasion of my privacy. I feel hurt. I need time; I need space”.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Every word rang fully true. I had failed; I was a failure. I knew it and she knew it. And I broke again.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“You’re right. You are so right. It was wrong and I knew it was wrong. I feel so terrible.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I was broken and I wanted to break myself. But I couldn’t; I couldn’t really. I liked the idea more than the execution. So I told her.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“I want to hurt myself”.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I was reaching out; I was asking her what to do, I think. Am I broken? Should I do something to make up for being broken?&lt;/p&gt;
+
+&lt;p&gt;She freaked out a bit, told me not to do anything, asked if I wanted to kill myself.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“No. Nothing like that. I just feel so bad.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Don’t freak me out like that. Are you just trying to get me to come home? Is this a stunt?”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I don’t know; maybe, yes, no. I don’t know.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“No, it’s not a stunt. But you’re right, I was being crazy. I said something dumb in a low spot. I’m alright. You are understandably upset. You don’t need to come home. I promise; I won’t do anything.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And I didn’t.&lt;/p&gt;
+
+&lt;p&gt;I cried more, but I didn’t &lt;em&gt;do&lt;/em&gt; anything. I had broken twice, the truth gnawing at my gut had finally chewed its way through me. But it’s not like I realized anything that night, nothing changed. All I knew was the pain. And it wasn’t good, and it wasn’t bad; it simply was, like the truth that I knew and yet didn’t know.&lt;/p&gt;
+
+&lt;p&gt;Truth and pain&lt;br /&gt;
+pain and truth&lt;br /&gt;
+me and her&lt;br /&gt;
+me and I&lt;/p&gt;
+
+&lt;p&gt;some things simply are, or simply were, or simply will be …&lt;/p&gt;
+
+&lt;p&gt;pain&lt;/p&gt;
 </content>
   </entry>
   <entry>

@@ -116,7 +116,7 @@
   <nav role="navigation">
     <ul class="navigation-menu">
       <li class="nav-link"><a href="../../articles/">articles</a></li>
-      <li class="nav-link"><a href="../">projects</a></li>
+      <li class="nav-link"><a href="../../projects/">projects</a></li>
       <li class="nav-link"><a href="../../jots/">jots</a></li>
       <li class="nav-link"><a href="../../essays/">essays</a></li>
     </ul>
@@ -136,133 +136,31 @@
 
 
     <div id="main" role="main">
-      <div class="card" id="project-page">
+      <div class="card" id="topic-page">
+  <h2 id="title">Posts tagged <em>bootstrap</em></h2>
 
-    <ul class="card-tags">
-      <li class="breadcrumb">
+  <div class="tree">
+    <ul><li><a href="/topics/code/" class="code-tag">code<span class="dot">33</span></a><ul><li><a href="/topics/ruby/" class="ruby-tag">ruby<span class="dot">12</span></a><ul><li><a href="/topics/interpreter/" class="interpreter-tag">interpreter<span class="dot">2</span></a></li></ul></li><li><a href="/topics/rails/" class="rails-tag">rails<span class="dot">8</span></a></li><li><a href="/topics/git/" class="git-tag">git<span class="dot">2</span></a></li><li><a href="/topics/css/" class="css-tag">css<span class="dot">6</span></a><ul><li><a href="/topics/trees/" class="trees-tag">trees<span class="dot">2</span></a></li><li><a href="/topics/bootstrap/" class="bootstrap-tag">bootstrap<span class="dot">1</span></a></li></ul></li><li><a href="/topics/http/" class="http-tag">http<span class="dot">1</span></a></li><li><a href="/topics/mvc/" class="mvc-tag">mvc<span class="dot">1</span></a></li><li><a href="/topics/alfred/" class="alfred-tag">alfred<span class="dot">9</span></a></li><li><a href="/topics/bash/" class="bash-tag">bash<span class="dot">2</span></a></li><li><a href="/topics/python/" class="python-tag">python<span class="dot">1</span></a></li></ul></li></ul>
+  </div>
+
+  <hr>
+
+  <ul class="list-none">
+      <li>
+        <div class="breadcrumb">
             <a class="code-tag" href="/topics/code/">code</a>
             <a class="css-tag" href="/topics/css/">css</a>
+            <a class="bootstrap-tag" href="/topics/bootstrap/">bootstrap</a>
+        </div>
       </li>
+      <ul class="fa-ul">
+          <li>
+            <i class="fa-li fa fa-fractal"></i>
+            <a href="../../articles/slideover-bootstrap-modals/">Slideover Bootstrap Modals</a>
+            <span>(Jul 31)</span>
+          </li>
+      </ul>
   </ul>
-
-
-  <!-- if item has tags, add filler element -->
-  <div id="tag-filler-space"></div>
-
-
-  <div class="card-image">
-    <img src="../../images/projects/togglicons.svg" />
-</div>
-
-
-  <h2 id="title"><p>togglicons</p>
-</h2>
-
-  <hr class="fractal">
-
-  <h4 id="repo">
-    <a href="https://github.com/fractaledmind/togglicons">GitHub Repo</a>
-  </h4>
-
-  <div id="description"><p><strong>Demo:</strong> <a href="http://togglicons.com">http://togglicons.com</a></p>
-
-<h2 id="what">What?</h2>
-
-<p>A “togglicon” is an icon that toggles between two states. <strong><code>Togglicons</code></strong> is a toolkit for creating and adding any number and kind of togglicons to your project. In many ways, this project is similar to the <a href="http://www.transformicons.com">Transformicons</a> project. The key differences are:</p>
-
-<ol>
-  <li>that <strong><code>Togglicons</code></strong> is a “pure CSS” (it’s actually all written in SCSS) solution, requiring no JavaScript, and</li>
-  <li>that <strong><code>Togglicons</code></strong> offers nearly total control over the look and combination of your icons.</li>
-</ol>
-
-<h2 id="why">Why?</h2>
-
-<p>Why use a togglicon, and in what contexts does it make sense? Since any and all togglicons can only switch between two icons, they only really make sense when you are toggling between two states and you want a UI signal of which state things are in at any given moment. One primary example would be collapsible panels. Another would be a button that show/hides a menu.</p>
-
-<p>Within those contexts, togglicons can help to add a sense of polish and whimsy to your UI. Instead of simply swapping out on Font Awesome icon for another, have <code>iconA</code> magically morph into <code>iconB</code>.</p>
-
-<h2 id="how">How?</h2>
-
-<p>In order to add <strong><code>Togglicons</code></strong> to your project, you first need to download the SCSS source code and bring it into your project.</p>
-
-<p>Once you have the <code>src/</code> directory in your project, you will have access to the <code>togglicon</code> mixin. Given the deep dynamicity of <strong><code>Togglicons</code></strong>, no CSS will be generated and no toggling icons will be added to your site until you <code>@include togglicon</code> somewhere in your projects SASS/SCSS. This will allow you to have multiple, different togglicons present on the same page, as well as reduce the overall CSS footprint of the togglicon library in your final stylesheets. For example, you might include the mixin within a particular namespace:</p>
-
-<div class="highlight scss"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3</pre></td><td class="code"><pre><span class="nc">.togglicon-container</span> <span class="p">{</span>
-    <span class="k">@include</span> <span class="nd">togglicon</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-
-<p>This, however, is the least interesting way to include the mixin, as the mixin allows for a number of parameters to customize the look and feel of your togglicons.</p>
-
-<p>First and foremost, you can declare which specific icons you want to toggle between. This will immediately and drastically reduce the final CSS footprint of togglicons, as the library will now only generate the CSS required for those specific icons. You set the set of icons you want these togglicons to toggle between with the <code>$icons</code> parameter passed to the mixin:</p>
-
-<div class="highlight scss"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3</pre></td><td class="code"><pre><span class="nc">.togglicon-container</span> <span class="p">{</span>
-    <span class="k">@include</span> <span class="nd">togglicon</span><span class="p">(</span><span class="nv">$icons</span><span class="o">:</span> <span class="p">(</span><span class="s1">'chevron-up'</span><span class="o">,</span> <span class="s1">'chevron-down'</span><span class="p">));</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-
-<p>When it comes to the overall look of your icons, you have a number of options. You can also set the width (in pixels) of the icons as well as the multiplier used to calculate the height of the icons (<em>Note:</em> Given the math used to ensure each icon is perfect positioned, the height needs to be a multiple of the width). This allows you to have togglicons as tall and thick or as small as your app requires. These variables are set using the <code>$width</code> and <code>$multiplier</code> parameters:</p>
-
-<div class="highlight scss"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4</pre></td><td class="code"><pre><span class="nc">.togglicon-container</span> <span class="p">{</span>
-    <span class="k">@include</span> <span class="nd">togglicon</span><span class="p">(</span><span class="nv">$width</span><span class="o">:</span> <span class="m">3</span><span class="o">,</span>
-                       <span class="nv">$multiplier</span><span class="o">:</span> <span class="m">7</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-
-<p>Furthermore, you can specify the <code>border-radius</code> of the icons by setting the <code>$radius</code> parameter:</p>
-
-<div class="highlight scss"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5</pre></td><td class="code"><pre><span class="nc">.togglicon-container</span> <span class="p">{</span>
-    <span class="k">@include</span> <span class="nd">togglicon</span><span class="p">(</span><span class="nv">$width</span><span class="o">:</span> <span class="m">3</span><span class="o">,</span>
-                       <span class="nv">$multiplier</span><span class="o">:</span> <span class="m">7</span><span class="o">,</span>
-                       <span class="nv">$radius</span><span class="o">:</span> <span class="m">2</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-
-<p>You can then also set the color of the icons with the <code>$color</code> parameter:</p>
-
-<div class="highlight scss"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6</pre></td><td class="code"><pre><span class="nc">.togglicon-container</span> <span class="p">{</span>
-    <span class="k">@include</span> <span class="nd">togglicon</span><span class="p">(</span><span class="nv">$width</span><span class="o">:</span> <span class="m">3</span><span class="o">,</span>
-                       <span class="nv">$multiplier</span><span class="o">:</span> <span class="m">7</span><span class="o">,</span>
-                       <span class="nv">$radius</span><span class="o">:</span> <span class="m">2</span><span class="o">,</span>
-                       <span class="nv">$color</span><span class="o">:</span> <span class="mh">#111111</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-
-<p>The final bit of control you have is over the transitions between the icons. You can set both the <code>transition-duration</code> property (<code>$duration</code>) as well as the <code>transition-timing-function</code> property (<code>$transition</code>):</p>
-
-<div class="highlight scss"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4</pre></td><td class="code"><pre><span class="nc">.togglicon-container</span> <span class="p">{</span>
-    <span class="k">@include</span> <span class="nd">togglicon</span><span class="p">(</span><span class="nv">$duration</span><span class="o">:</span> <span class="m">0</span><span class="mi">.5</span><span class="o">,</span>
-                       <span class="nv">$transition</span><span class="o">:</span> <span class="nf">cubic-bezier</span><span class="p">(</span><span class="m">0</span><span class="mi">.68</span><span class="o">,</span> <span class="m">-0</span><span class="mi">.55</span><span class="o">,</span> <span class="m">0</span><span class="mi">.265</span><span class="o">,</span> <span class="m">1</span><span class="mi">.55</span><span class="p">));</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-
-<p>With any or all of these parameters set, <strong><code>Togglicons</code></strong> will output precisely the CSS required to have beautiful toggling icons on your page.</p>
-</div>
 </div>
 
     </div>
@@ -300,7 +198,7 @@
   <hr class="fractal">
 
   <div id="all-tags">
-    <h5><a href="../../topics/">Topics</a></h5>
+    <h5><a href="../">Topics</a></h5>
     <ul class="list-none">
       <!-- Add all Article tags -->
         <li class="breadcrumb">

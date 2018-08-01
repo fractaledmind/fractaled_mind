@@ -115,8 +115,8 @@
 
   <nav role="navigation">
     <ul class="navigation-menu">
-      <li class="nav-link"><a href="../../articles/">articles</a></li>
-      <li class="nav-link"><a href="../">projects</a></li>
+      <li class="nav-link"><a href="../">articles</a></li>
+      <li class="nav-link"><a href="../../projects/">projects</a></li>
       <li class="nav-link"><a href="../../jots/">jots</a></li>
       <li class="nav-link"><a href="../../essays/">essays</a></li>
     </ul>
@@ -143,6 +143,11 @@
             <a class="code-tag" href="/topics/code/">code</a>
             <a class="css-tag" href="/topics/css/">css</a>
       </li>
+      <li class="breadcrumb">
+            <a class="code-tag" href="/topics/code/">code</a>
+            <a class="css-tag" href="/topics/css/">css</a>
+            <a class="bootstrap-tag" href="/topics/bootstrap/">bootstrap</a>
+      </li>
   </ul>
 
 
@@ -150,118 +155,91 @@
   <div id="tag-filler-space"></div>
 
 
-  <div class="card-image">
-    <img src="../../images/projects/togglicons.svg" />
-</div>
+  
 
-
-  <h2 id="title"><p>togglicons</p>
+  <h2 id="title"><p>Slideover Bootstrap Modals</p>
 </h2>
 
   <hr class="fractal">
 
-  <h4 id="repo">
-    <a href="https://github.com/fractaledmind/togglicons">GitHub Repo</a>
-  </h4>
+  <div id="description"><p>Sometimes we don’t want a modal floating in the center of the viewport; sometimes, we want a full-height modal that slides into frame. Luckily, we can write a bit of CSS to extend the Bootstrap <code>modal</code> component to support slideover modals.</p>
 
-  <div id="description"><p><strong>Demo:</strong> <a href="http://togglicons.com">http://togglicons.com</a></p>
+<span id='readmore'></span>
 
-<h2 id="what">What?</h2>
+<p>We want our slideover modals to have a few key characteristics:</p>
 
-<p>A “togglicon” is an icon that toggles between two states. <strong><code>Togglicons</code></strong> is a toolkit for creating and adding any number and kind of togglicons to your project. In many ways, this project is similar to the <a href="http://www.transformicons.com">Transformicons</a> project. The key differences are:</p>
+<ul>
+  <li>take up the full-height of the viewport</li>
+  <li>take up the natural width Bootstrap would give the viewport, unless the viewport width is such that the modal would take up more than 80% of the width, in which case, cap the modal width at 80% of the viewport width</li>
+  <li>keep the header at the top of the modal always, regardless of content height</li>
+  <li>keep the footer at the bottom of the modal always, regardless of content height</li>
+  <li>allow the content to be internally scrollable if it overflows</li>
+  <li>support forms within the modal out-of-the-box</li>
+</ul>
 
-<ol>
-  <li>that <strong><code>Togglicons</code></strong> is a “pure CSS” (it’s actually all written in SCSS) solution, requiring no JavaScript, and</li>
-  <li>that <strong><code>Togglicons</code></strong> offers nearly total control over the look and combination of your icons.</li>
-</ol>
-
-<h2 id="why">Why?</h2>
-
-<p>Why use a togglicon, and in what contexts does it make sense? Since any and all togglicons can only switch between two icons, they only really make sense when you are toggling between two states and you want a UI signal of which state things are in at any given moment. One primary example would be collapsible panels. Another would be a button that show/hides a menu.</p>
-
-<p>Within those contexts, togglicons can help to add a sense of polish and whimsy to your UI. Instead of simply swapping out on Font Awesome icon for another, have <code>iconA</code> magically morph into <code>iconB</code>.</p>
-
-<h2 id="how">How?</h2>
-
-<p>In order to add <strong><code>Togglicons</code></strong> to your project, you first need to download the SCSS source code and bring it into your project.</p>
-
-<p>Once you have the <code>src/</code> directory in your project, you will have access to the <code>togglicon</code> mixin. Given the deep dynamicity of <strong><code>Togglicons</code></strong>, no CSS will be generated and no toggling icons will be added to your site until you <code>@include togglicon</code> somewhere in your projects SASS/SCSS. This will allow you to have multiple, different togglicons present on the same page, as well as reduce the overall CSS footprint of the togglicon library in your final stylesheets. For example, you might include the mixin within a particular namespace:</p>
-
-<div class="highlight scss"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3</pre></td><td class="code"><pre><span class="nc">.togglicon-container</span> <span class="p">{</span>
-    <span class="k">@include</span> <span class="nd">togglicon</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-
-<p>This, however, is the least interesting way to include the mixin, as the mixin allows for a number of parameters to customize the look and feel of your togglicons.</p>
-
-<p>First and foremost, you can declare which specific icons you want to toggle between. This will immediately and drastically reduce the final CSS footprint of togglicons, as the library will now only generate the CSS required for those specific icons. You set the set of icons you want these togglicons to toggle between with the <code>$icons</code> parameter passed to the mixin:</p>
-
-<div class="highlight scss"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3</pre></td><td class="code"><pre><span class="nc">.togglicon-container</span> <span class="p">{</span>
-    <span class="k">@include</span> <span class="nd">togglicon</span><span class="p">(</span><span class="nv">$icons</span><span class="o">:</span> <span class="p">(</span><span class="s1">'chevron-up'</span><span class="o">,</span> <span class="s1">'chevron-down'</span><span class="p">));</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-
-<p>When it comes to the overall look of your icons, you have a number of options. You can also set the width (in pixels) of the icons as well as the multiplier used to calculate the height of the icons (<em>Note:</em> Given the math used to ensure each icon is perfect positioned, the height needs to be a multiple of the width). This allows you to have togglicons as tall and thick or as small as your app requires. These variables are set using the <code>$width</code> and <code>$multiplier</code> parameters:</p>
-
-<div class="highlight scss"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4</pre></td><td class="code"><pre><span class="nc">.togglicon-container</span> <span class="p">{</span>
-    <span class="k">@include</span> <span class="nd">togglicon</span><span class="p">(</span><span class="nv">$width</span><span class="o">:</span> <span class="m">3</span><span class="o">,</span>
-                       <span class="nv">$multiplier</span><span class="o">:</span> <span class="m">7</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-
-<p>Furthermore, you can specify the <code>border-radius</code> of the icons by setting the <code>$radius</code> parameter:</p>
-
-<div class="highlight scss"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5</pre></td><td class="code"><pre><span class="nc">.togglicon-container</span> <span class="p">{</span>
-    <span class="k">@include</span> <span class="nd">togglicon</span><span class="p">(</span><span class="nv">$width</span><span class="o">:</span> <span class="m">3</span><span class="o">,</span>
-                       <span class="nv">$multiplier</span><span class="o">:</span> <span class="m">7</span><span class="o">,</span>
-                       <span class="nv">$radius</span><span class="o">:</span> <span class="m">2</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
-
-<p>You can then also set the color of the icons with the <code>$color</code> parameter:</p>
+<p>With these goals in mind, I wrote a small bit of CSS to achieve our ends. I used the class name <code>.modal-dialog-slideover</code>, which we can simply add to the element that already has the <code>.modal-dialog</code> class to seamlessly convert a floating modal to a slideout modal. It is a concise 27 lines of SCSS:</p>
 
 <div class="highlight scss"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="nc">.togglicon-container</span> <span class="p">{</span>
-    <span class="k">@include</span> <span class="nd">togglicon</span><span class="p">(</span><span class="nv">$width</span><span class="o">:</span> <span class="m">3</span><span class="o">,</span>
-                       <span class="nv">$multiplier</span><span class="o">:</span> <span class="m">7</span><span class="o">,</span>
-                       <span class="nv">$radius</span><span class="o">:</span> <span class="m">2</span><span class="o">,</span>
-                       <span class="nv">$color</span><span class="o">:</span> <span class="mh">#111111</span><span class="p">);</span>
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre></td><td class="code"><pre><span class="nc">.modal-dialog.modal-dialog-slideover</span> <span class="p">{</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">margin-left</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+  <span class="nl">max-width</span><span class="p">:</span> <span class="m">80%</span><span class="p">;</span>
+
+  <span class="nc">.modal.fade</span> <span class="k">&amp;</span> <span class="p">{</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="nf">translate</span><span class="p">(</span><span class="m">100%</span><span class="o">,</span> <span class="m">0</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nc">.modal.fade.show</span> <span class="k">&amp;</span> <span class="p">{</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="nf">translate</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="p">);</span>
+    <span class="nl">flex-flow</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">&amp;</span> <span class="nc">.modal-content</span> <span class="p">{</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100vh</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">&amp;</span> <span class="nc">.modal-body</span> <span class="p">{</span>
+    <span class="nl">max-height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">overflow-y</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">&amp;</span> <span class="nc">.modal-form</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+    <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span>
+    <span class="nl">flex</span><span class="p">:</span> <span class="m">1</span> <span class="m">1</span> <span class="nb">auto</span><span class="p">;</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table>
 </div>
 
-<p>The final bit of control you have is over the transitions between the icons. You can set both the <code>transition-duration</code> property (<code>$duration</code>) as well as the <code>transition-timing-function</code> property (<code>$transition</code>):</p>
+<p>Here is a CodePen that offers a number of examples of Bootstrap 4 modals converted to slideover modals. Enjoy!</p>
 
-<div class="highlight scss"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4</pre></td><td class="code"><pre><span class="nc">.togglicon-container</span> <span class="p">{</span>
-    <span class="k">@include</span> <span class="nd">togglicon</span><span class="p">(</span><span class="nv">$duration</span><span class="o">:</span> <span class="m">0</span><span class="mi">.5</span><span class="o">,</span>
-                       <span class="nv">$transition</span><span class="o">:</span> <span class="nf">cubic-bezier</span><span class="p">(</span><span class="m">0</span><span class="mi">.68</span><span class="o">,</span> <span class="m">-0</span><span class="mi">.55</span><span class="o">,</span> <span class="m">0</span><span class="mi">.265</span><span class="o">,</span> <span class="m">1</span><span class="mi">.55</span><span class="p">));</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table>
-</div>
+<p data-height="530" data-theme-id="0" data-slug-hash="MXaaaB" data-default-tab="result" data-user="smargh" data-pen-title="Bootstrap 4 SlideOut Modal examples" class="codepen">See the Pen <a href="https://codepen.io/smargh/pen/MXaaaB/">Bootstrap 4 SlideOut Modal examples</a> by Stephen Margheim (<a href="https://codepen.io/smargh">@smargh</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async="" src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-<p>With any or all of these parameters set, <strong><code>Togglicons</code></strong> will output precisely the CSS required to have beautiful toggling icons on your page.</p>
 </div>
 </div>
 
@@ -276,23 +254,23 @@
     <ul class="fa-ul">
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/slideover-bootstrap-modals/">Slideover Bootstrap Modals</a>
+          <a href="./">Slideover Bootstrap Modals</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/rails-forms-and-request-parameters/">Rails Forms and Request Parameters</a>
+          <a href="../rails-forms-and-request-parameters/">Rails Forms and Request Parameters</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/expecting-exceptions-in-ruby/">Expecting Exceptions in Ruby</a>
+          <a href="../expecting-exceptions-in-ruby/">Expecting Exceptions in Ruby</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/safely-accessing-values-from-a-nested-hash-again/">Safely Accessing Values from Nested Hashes (again)'</a>
+          <a href="../safely-accessing-values-from-a-nested-hash-again/">Safely Accessing Values from Nested Hashes (again)'</a>
         </li>
         <li>
           <i class="fa-li fa fa-chevron-right"></i>
-          <a href="../../articles/basic-restful-filtering-with-rails/">Basic RESTful Filtering with Rails</a>
+          <a href="../basic-restful-filtering-with-rails/">Basic RESTful Filtering with Rails</a>
         </li>
     </ul>
   </div>
