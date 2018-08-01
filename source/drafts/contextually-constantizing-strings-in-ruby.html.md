@@ -1,5 +1,5 @@
 ---
-title: `contextual_constantize`
+title: Contextually Constantizing Strings in Ruby
 tags:
   - code>ruby
   - code>rails
