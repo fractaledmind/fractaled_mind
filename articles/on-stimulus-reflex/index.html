@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Metadata declarations -->
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Content declarations -->
+  <title>Fractaled Mind</title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="feed.xml" />
+
+  <!-- External Resources -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+  <!-- Internal Resources -->
+  <link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
+  <link href="../../images/favicon.png" rel="icon" type="image/png" />
+  <script src="../../javascripts/bigfoot.js" type="text/javascript"></script>
+  <script src="../../javascripts/search.js" type="text/javascript"></script>
+
+  <!-- Bigfoot.js Popover Footnotes -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $.bigfoot({
+        numberResetSelector: ".card",
+        activateCallback: function($popover, $button) {
+          if (MathJax && !$button.data('mathjax-processed')) {
+            var content_wrapper = $popover.find('.bigfoot-footnote__content')[0];
+            MathJax.Hub.Queue(['Typeset', MathJax.Hub, content_wrapper]);
+            MathJax.Hub.Queue(function() {
+              $button.attr('data-bigfoot-footnote', content_wrapper.innerHTML);
+              $button.data('mathjax-processed', true);
+            });
+          }
+        }
+      });
+    });
+  </script>
+
+  <!-- Responsive Tables -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("td").each(function() {
+        var $th = $(this).closest('table').find('th').eq($(this).index());
+        $(this).attr('data-th', $th.text());
+      });
+    });
+  </script>
+
+  <!-- Scroll-Fix sidebar
+  <script type="text/javascript">
+    $(window).on("scroll", function(e) {
+      var scroll = $(this).scrollTop();
+      var logo_height = $('#site-logo').height();
+      var nav_height = $('.navigation').height() + 16;
+
+      if (scroll > logo_height) {
+        $('.navigation').css({'position': 'fixed'});
+         $('#sidebar').css({
+           'position': 'fixed',
+           'top': nav_height
+         });
+      } else {
+        $('.navigation').css({'position': 'inherit'});
+        $('#sidebar').css({'position': 'inherit'});
+      }
+    });
+  </script>
+  -->
+
+</head>
+
+<body>
+  <header>
+    <div id="site-logo">
+      <a href="/" class="no-hvr">
+        <img alt="Fractaled Mind" src="../../images/logo-single-line.svg" />
+      </a>
+    </div>
+  </header>
+
+  <div class="navigation">
+    <ul id="social-networks">
+      <li>
+        <a href="https://facebook.com/fractaledmind" class="no-hvr">
+          <i class="fa fa-facebook fa-lg"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://twitter.com/fractaledmind" class="no-hvr">
+          <i class="fa fa-twitter fa-lg"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/fractaledmind" class="no-hvr">
+          <i class="fa fa-github fa-lg"></i>
+        </a>
+      </li>
+      <li>
+        <a href="mailto:stephen@fractaledmind.com" class="no-hvr">
+          <i class="fa fa-envelope fa-lg"></i>
+        </a>
+      </li>
+      <li>
+        <a href="/feed.xml" class="no-hvr">
+          <i class="fa fa-rss fa-lg"></i>
+        </a>
+      </li>
+    </ul>
+
+    <nav role="navigation">
+      <ul class="navigation-menu">
+        <li class="nav-link"><a href="../">articles</a></li>
+        <li class="nav-link"><a href="../../projects/">projects</a></li>
+        <li class="nav-link"><a href="../../jots/">jots</a></li>
+        <li class="nav-link"><a href="../../essays/">essays</a></li>
+      </ul>
+    </nav>
+
+    <div id="search">
+      <div class="searchbar">
+        <form role="search" action="/search" method="get">
+          <input class="search-term" type="search" placeholder="Search..." name="q" />
+          <button class="search-submit" type="submit">
+            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png" alt="Search Icon">
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="main" role="main">
+    <div class="card" id="project-page">
+
+      <ul class="card-tags">
+        <li class="breadcrumb">
+          <a class="code-tag" href="/topics/code/">code</a>
+          <a class="rails-tag" href="/topics/rails/">rails</a>
+        </li>
+      </ul>
+
+      <!-- if item has tags, add filler element -->
+      <div id="tag-filler-space"></div>
+
+      <h2 id="title">
+        <p>On Stimulus Reflex: What and Why</p>
+      </h2>
+
+      <hr class="fractal">
+
+      <div id="description">
+        <p>For those who don&#39;t already know, <a href="https://docs.stimulusreflex.com">StimulusReflex</a> (SR) is a Ruby on Rails gem to empower developers to build more interactive web applications. Although I have been a member of the <a href="https://discord.gg/d3zeZ5Uc">excellent Discord server</a>, it has taken me a long time to start to wrap my head around how to understand the world with a &quot;<abbr title="StimulusReflex">SR</abbr> mindset.&quot; In this post, I want to share my current thoughts on how <abbr title="StimulusReflex">SR</abbr> fits into the landscape of web development tools and paradigms and why it is a powerful and exciting addition to this landscape for Rails developers.</p>
+
+        <span id='readmore'></span>
+
+        <h3 id="apps-and-interactivity">Apps and Interactivity</h3>
+        <p>While &quot;Web 3.0&quot; is the topic of our times it seems, I still find myself thinking about &quot;Web 1.0&quot; and &quot;Web 2.0&quot; far more often. What were &quot;Web 1.0&quot; and &quot;Web 2.0&quot; and why do people even use these labels? And what does any of this have to do with StimulusReflex? </p>
+        <p>In simple terms, &quot;Web 1.0&quot; is a label used to describe the an era in the life of the internet where developers and users primarily conceived of the internet and websites as &quot;electronic documents&quot;. In this era, stateless REST came to the forefront as the primary paradigm for structuring sites. Users interact with nouns (resources) and each page represents a static and distinct snapshot of the state of the system at that time. Some pages provided forms to allow users themselves to change the state of the system, and they could see the results of those changes by visiting a relevant page after making submitting the form. Web 1.0 is built on links, buttons, and forms and centered on the page as a representation of a document/resource. In this world, pages were the atomic unit (so you could compose pages into “flows” at best) and stateless HTTP meant no client-side continuity. And with a single server, speed was limited by distance and the response handling layers. </p>
+        <p>&quot;Web 2.0&quot; is meant to capture the era of the internet where developers and users began to push for more interactivity; the era where some web sites became web apps. In the &quot;Web 2.0&quot; era, internet denizens all pushed to make web sites look and feel more like native applications. We pushed beyond the document and began exploring the vast landscape of possibilities that the Web 1.0 tools (links, buttons, forms, REST) provided. This expansion into the frontiers of possibilities aimed to improve 2 key aspects of a user&#39;s experience on a web app: </p>
+        <ol>
+          <li>speed, and</li>
+          <li>continuity</li>
+        </ol>
+        <p>Native applications have long provided users with a sense of near immediate reaction to their inputs, and the flow of state changes to the system felt continuous and integrated. For example, in Excel when you update a cell used in a formula, the spreadsheet immediately updates that formula cell with the newly calculated value. There is no &quot;page reload&quot; to demarcate &quot;state 1&quot; from &quot;state 2&quot; and likewise no delay for such a &quot;page reload.&quot; Thus, this state change feels fast and a part of a continuous stream of changes.</p>
+        <p>We are still, whatever the crypto branding fans might say, squarely in the &quot;Web 2.0&quot; era. Users expect interactive applications, whether on the web or native, and developers are expected to be able to provide such interactivity. So, what does Web 2.0 look like in the Rails world?</p>
+        <h3 id="web-2-0-and-rails">Web 2.0 and Rails</h3>
+        <p>To my mind, the single most important Rails feature that begins to provide Web 2.0 functionality to Rails application is <code>Turbo</code> (nee <code>Turbolinks</code>). Originally, Turbolinks provided a simple and straightforward way to developers to take their Web 1.0 sites and push toward Web 2.0 speed and continuity. However, the continuity improvements were less significant than the speed improvements. Yes, you don’t have to refetch assets, but client-side state of components is reset. Moreover, the speed gains are naturally constrained by the Rails request handling flow. </p>
+        <p>The new Hotwire bundle of tools is the next big step in Rails embracing and empower Web 2.0 applications. Turbolinks becomes Turbo Drive, bringing the &quot;make a request, but in the background&quot; approach to forms in addition to links. Turbo Frames allow you to take slices of your Web 1.0 pages (e.g. <code>User#show</code>) and mix them into other pages (like <code>Post#show</code>). Turbo Streams then provide a mechanism for the server to push targeted page updates to clients. And finally Stimulus provides a tool set and framework for sprinkling client-side interactivity into your application.</p>
+        <p>The unifying theme to these tools is that they all aim to build on top of and extend the Web 1.0 paradigm. You work with links, buttons, and forms that make HTTP requests to RESTful endpoints that return HTML responses. This is, in my opinion, a powerful and positive set of constraints to help developers build robust and stable applications. And, to be honest, I think in many cases these are appropriate constraints for many problems. I am a big fan of the Hotwire bundle of tools, and I am very excited for the future of Rails as it provides this solid toolset for building Web 2.0 applications. </p>
+        <p>Turbo(links) gave us some notable speed and continuity improvements but no composition improvements (still stuck at the level of the page). Turbo Frames brought composition improvements by allowing us to compose “pages”. However, there are trade-offs and limits.</p>
+        <p>Building on top of the Web 1.0 request/response RESTful model means that the Hotwire toolset is deeply bound up in the Rails routing and request handling stack as well as the completely noun-centric perspective of REST. Even Turbo Frames need a standardly defined route and controller action, which means a Frame needs to be able to standalone as a page. This kind of approach has 3 primary consequences:</p>
+        <ol>
+          <li>speed improvements have a cap, as the entire Rails routing and request handling layers must be executed for every interaction,</li>
+          <li>server-side state updates cannot be kept continuous with client-side state updates, as even Turbo Drive requests will &quot;nuke and pave&quot; client-side state for any page sections updated, and</li>
+          <li>composition is restricted to nouns, as every interaction must be shaped to fit the RESTful mold.</li>
+        </ol>
+        <p>Now, these are not terrible limitations, but there are certainly applications and features where their pain will be felt more acutely, and this is where StimulusReflex steps up.</p>
+        <h3 id="web-2-0-and-stimulusreflex">Web 2.0 and StimulusReflex</h3>
+        <p><abbr title="StimulusReflex">SR</abbr> provides two related but distinct approaches for building web apps that feel &quot;alive&quot;. The first can be seen as a continuation of the Turbo approach (page morphs), the second is more a server-centric reinterpretation of something like React (selector/nothing morphs). </p>
+        <p>Like Turbo, page morphs maintain the power of a single mental model—the page is a response to a request. Unlike Turbo though, you get additional speed gains (avoiding the routing and middleware layers) as well as major continuity gains (<code>morphdom</code> keeping client-side state alive and continuous). The cost of these gains is introducing a new layer to your server app code (reflexes) that quack like a controller and hand off to controllers but are not controllers. You therefore need to learn what properly belongs in that layer and what in the controller layer. But aside from this, you can continue to work and think in the request-&gt;response mindset, and treat SR as Turbo++.</p>
+        <p>Like React, selector and/or nothing morphs allow you to build and consider “components” as the atomic unit, not the page they are contained within. The page is the atomic unit of REST, and the limitations of such a “large” atomic component go hand in hand with the simplicity of the mental model. In contrast, React has shown that allowing pages to become scaffolding that hold “alive” and “reactive” components brings an exiting new level of interactivity to your users. And this shift can bring newfound developer happiness as well. This happiness is often tampered by the pain of state syncing tho. The second “mode” of SR strikes out to find a middle ground: the aliveness of components but the simplicity of a single source of truth. When you keep REST bound to the page-level, RPC fits naturally at the component level, and riding the same communication channels in both directions for client-&gt;server and server-&gt;client interactions helps you to shape and build your components in a clean and consistent manner.</p>
+        <p>For me, the key point is not that Railsy REST can&#39;t handle it; it is that it need not. This is where my growing focus on continuity and composition when thinking thru problems comes to the fore. REST is explicitly meant to be discontinuous. For many contexts, this is a useful constraint; for some, however, it is an unnecessary burden. And when you provide a mechanism to build server&lt;-&gt;client interactions centered on Verbs (RPC) and not Nouns (REST), you unlock a new kind of composability. This is a key moment in using Stimulus—embracing the power of a controller mapping to a Verb/Behavior and not a Noun. In this way, thinking of Reflexes as Stimulus controllers on the server provides, indeed, a wonderful frame. They provide a structure for encoding Behaviors that span both server and client as first class citizens in your app architecture. And when you can build both Resources and Behaviors with much the same ease, you now have a powerful toolbelt to bring to bear on quite literally any problem space.</p>
+
+      </div>
+    </div>
+
+  </div>
+
+  <aside id="sidebar">
+
+    <hr class="fractal">
+
+    <div id="recent-articles">
+      <h5>Recent Posts</h5>
+      <ul class="fa-ul">
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../slideover-bootstrap-modals/">Slideover Bootstrap Modals</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../rails-forms-and-request-parameters/">Rails Forms and Request Parameters</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../expecting-exceptions-in-ruby/">Expecting Exceptions in Ruby</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../safely-accessing-values-from-a-nested-hash-again/">Safely Accessing Values from Nested Hashes (again)'</a>
+        </li>
+        <li>
+          <i class="fa-li fa fa-chevron-right"></i>
+          <a href="../basic-restful-filtering-with-rails/">Basic RESTful Filtering with Rails</a>
+        </li>
+      </ul>
+    </div>
+
+    <hr class="fractal">
+
+    <div id="all-tags">
+      <h5><a href="../../topics/">Topics</a></h5>
+      <ul class="list-none">
+        <!-- Add all Article tags -->
+        <li class="breadcrumb">
+          <a class="philosophy-tag" href="/topics/philosophy/">philosophy</a>
+          <a class="epistemology-tag" href="/topics/epistemology/">epistemology</a>
+          <a class="math-tag" href="/topics/math/">math</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="philosophy-tag" href="/topics/philosophy/">philosophy</a>
+          <a class="epistemology-tag" href="/topics/epistemology/">epistemology</a>
+          <a class="logic-tag" href="/topics/logic/">logic</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="tutorial-tag" href="/topics/tutorial/">tutorial</a>
+          <a class="pdf-workflow-tag" href="/topics/pdf-workflow/">pdf-workflow</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="prose-tag" href="/topics/prose/">prose</a>
+          <a class="self-tag" href="/topics/self/">self</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="code-tag" href="/topics/code/">code</a>
+          <a class="ruby-tag" href="/topics/ruby/">ruby</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="code-tag" href="/topics/code/">code</a>
+          <a class="rails-tag" href="/topics/rails/">rails</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="poetry-tag" href="/topics/poetry/">poetry</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="tutorial-tag" href="/topics/tutorial/">tutorial</a>
+          <a class="algorithms-tag" href="/topics/algorithms/">algorithms</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="philosophy-tag" href="/topics/philosophy/">philosophy</a>
+          <a class="faith-tag" href="/topics/faith/">faith</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="code-tag" href="/topics/code/">code</a>
+          <a class="git-tag" href="/topics/git/">git</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="tutorial-tag" href="/topics/tutorial/">tutorial</a>
+          <a class="git-tag" href="/topics/git/">git</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="prose-tag" href="/topics/prose/">prose</a>
+          <a class="relationships-tag" href="/topics/relationships/">relationships</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="code-tag" href="/topics/code/">code</a>
+          <a class="css-tag" href="/topics/css/">css</a>
+          <a class="trees-tag" href="/topics/trees/">trees</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="tutorial-tag" href="/topics/tutorial/">tutorial</a>
+          <a class="css-tag" href="/topics/css/">css</a>
+          <a class="trees-tag" href="/topics/trees/">trees</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="poetry-tag" href="/topics/poetry/">poetry</a>
+          <a class="relationships-tag" href="/topics/relationships/">relationships</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="code-tag" href="/topics/code/">code</a>
+          <a class="css-tag" href="/topics/css/">css</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="code-tag" href="/topics/code/">code</a>
+          <a class="http-tag" href="/topics/http/">http</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="prose-tag" href="/topics/prose/">prose</a>
+          <a class="life-tag" href="/topics/life/">life</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="prose-tag" href="/topics/prose/">prose</a>
+          <a class="faith-tag" href="/topics/faith/">faith</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="philosophy-tag" href="/topics/philosophy/">philosophy</a>
+          <a class="ethics-tag" href="/topics/ethics/">ethics</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="code-tag" href="/topics/code/">code</a>
+          <a class="ruby-tag" href="/topics/ruby/">ruby</a>
+          <a class="interpreter-tag" href="/topics/interpreter/">interpreter</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="tutorial-tag" href="/topics/tutorial/">tutorial</a>
+          <a class="interpreter-tag" href="/topics/interpreter/">interpreter</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="code-tag" href="/topics/code/">code</a>
+          <a class="css-tag" href="/topics/css/">css</a>
+          <a class="bootstrap-tag" href="/topics/bootstrap/">bootstrap</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="code-tag" href="/topics/code/">code</a>
+          <a class="mvc-tag" href="/topics/mvc/">mvc</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="academia-tag" href="/topics/academia/">academia</a>
+          <a class="latin-tag" href="/topics/latin/">latin</a>
+          <a class="vergil-tag" href="/topics/vergil/">vergil</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="academia-tag" href="/topics/academia/">academia</a>
+          <a class="greek-tag" href="/topics/greek/">greek</a>
+          <a class="epicurus-tag" href="/topics/epicurus/">epicurus</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="academia-tag" href="/topics/academia/">academia</a>
+          <a class="greek-tag" href="/topics/greek/">greek</a>
+          <a class="aristotle-tag" href="/topics/aristotle/">aristotle</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="academia-tag" href="/topics/academia/">academia</a>
+          <a class="latin-tag" href="/topics/latin/">latin</a>
+          <a class="horace-tag" href="/topics/horace/">horace</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="academia-tag" href="/topics/academia/">academia</a>
+          <a class="modern-tag" href="/topics/modern/">modern</a>
+          <a class="lewis-tag" href="/topics/lewis/">lewis</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="academia-tag" href="/topics/academia/">academia</a>
+          <a class="modern-tag" href="/topics/modern/">modern</a>
+          <a class="barfield-tag" href="/topics/barfield/">barfield</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="academia-tag" href="/topics/academia/">academia</a>
+          <a class="greek-tag" href="/topics/greek/">greek</a>
+          <a class="herodotus-tag" href="/topics/herodotus/">herodotus</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="academia-tag" href="/topics/academia/">academia</a>
+          <a class="greek-tag" href="/topics/greek/">greek</a>
+          <a class="hippocrates-tag" href="/topics/hippocrates/">hippocrates</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="academia-tag" href="/topics/academia/">academia</a>
+          <a class="greek-tag" href="/topics/greek/">greek</a>
+          <a class="plato-tag" href="/topics/plato/">plato</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="academia-tag" href="/topics/academia/">academia</a>
+          <a class="modern-tag" href="/topics/modern/">modern</a>
+          <a class="saussure-tag" href="/topics/saussure/">saussure</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="code-tag" href="/topics/code/">code</a>
+          <a class="alfred-tag" href="/topics/alfred/">alfred</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="code-tag" href="/topics/code/">code</a>
+          <a class="bash-tag" href="/topics/bash/">bash</a>
+        </li>
+        <li class="breadcrumb">
+          <a class="code-tag" href="/topics/code/">code</a>
+          <a class="python-tag" href="/topics/python/">python</a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <footer role="contentinfo">
+    <div class="footer-info">
+      <p>&copy; Copyright 2015 by Stephen Margheim</p>
+      <p>Powered by <a href="https://middlemanapp.com">Middleman</a>.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
