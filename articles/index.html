@@ -136,7 +136,7 @@
           </div>
           <div class="card-header">
             <h3 class="card-title">
-              <p>SQLite Quasi-ULIDs</p>
+              <p>SQLite Hex-ULIDs</p>
             </h3>
             <h5 class="card-date">
               4 December 2022
@@ -144,7 +144,7 @@
           </div>
           <hr class="fractal">
           <div class="card-copy">
-            <p>While we can't natively get UUIDs or ULIDs in a SQLite database, with a bit of ingenuity we can natively generate universally unique, lexicographically sortable identifiers. In this post, we build a SQLite expression that can function as the default for a primary key column on a table. Our quasi-ULIDs will produce URL-friendly identifiers that don't expose any information about your system, but retain table sort behavior.</p>
+            <p>While we can't natively get UUIDs or ULIDs in a SQLite database, with a bit of ingenuity we can natively generate universally unique, lexicographically sortable identifiers (ULIDs). In this post, we build a SQLite expression that can function as the default for a primary key column on a table. Our quasi-ULIDs will have the same bit structure as standard ULIDs, but encoded in base16 instead of base32. These hex-ULIDs are URL-friendly identifiers that don't expose any information about your system, but retain table sort behavior.</p>
           </div>
         </li>
         <li class="card">
